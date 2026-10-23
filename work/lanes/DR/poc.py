@@ -151,7 +151,8 @@ def proxy(sched=SCHED, verify=True, builder=None):
         n = 7 + nm + 7
         rec = lambda i: f"rec[{i - n}]"
         for (typ, S), tags in cat_bits.items():
-            init = [(0 if typ == "X" else 3) + i for i in gens_of(S)]
+            # typ "C": an ancilla-only parity (no data stabilizer term)
+            init = [(0 if typ == "X" else 3) + i for i in gens_of(S)] if typ in ("X", "Z") else []
             lines.append("DETECTOR " + " ".join(rec(7 + bit[t]) for t in tags) + " " + " ".join(rec(k) for k in init))
         for t in ver_tags:
             lines.append(f"DETECTOR {rec(7 + bit[t])}")
