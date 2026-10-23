@@ -1,0 +1,10 @@
+circuit central_retain_s0.qasm: 286 noise channels, 2130 faults, 489 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 4.9217e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.16697e-04   (pairs 1.16697e-04 + same-channel normalisation 1.574e-22)
+1-F (2nd order) = 1.16697e-04
+acceptance: first order 0.61074, second order 0.68642; exp(-A1) = 0.67756  (A1 = 0.38926)
+time: model+singles 0.4s, pairs 2.9s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '6.675e-06', 'gate': '3.930e-05', 'idle': '7.072e-05'}

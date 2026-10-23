@@ -95,7 +95,6 @@ def build(D,helpers,seed,threads=1,maxcx=None,pivfix=None):
         s.add_clause([-nz]+sB)
         for a in sB: s.add_clause([nz,-a])
         s.add_clause(d+[-nz,pB]); s.add_clause(d+[nz,-pB])
-        F+=1
 
     A={(j,i):nv() for j in range(K) for i in range(K)}
     for v in cells:

@@ -6,8 +6,10 @@ from ortools.sat.python import cp_model
 from lay3 import nbrs, EDGES, PRE
 R = C = 6; N = 36
 F = [5,11,12,16,17,18] + list(range(21,36))
+import os
+MAXD = int(os.environ.get("MAXD", "3"))
 ROLE = {"A": "a", "B": "b", "C": "c"}
-def solve(allowed, seconds, workers, seed=0, pre=PRE, pen=None, maxM=None, maxh=6):
+def solve(allowed, seconds, workers, seed=0, pre=PRE, pen=None, maxM=None, maxh=8):
     pen = pen or {}
     m = cp_model.CpModel()
     roles = "dabc"
@@ -36,7 +38,9 @@ def solve(allowed, seconds, workers, seed=0, pre=PRE, pen=None, maxM=None, maxh=
         if q in allowed:
             stg = sum(st[(X,i,q)] for X in "ABC" for i in range(7)) + sum(h[X][q] for X in "ABC")
             m.Add(stg <= 1)
-            m.Add(rnd + stg <= 1 + sum(mm[(X,i,q)] for X in "ABC" for i in range(7)))
+            rabc = sum(x[(k,i,q)] for k in 'abc' for i in range(7))
+            m.Add(rabc + stg <= 1 + sum(mm[(X,i,q)] for X in "ABC" for i in range(7)))
+            m.Add(sum(x[('d',i,q)] for i in range(7)) + sum(mm[(X,i,q)] for X in 'ABC' for i in range(7)) <= 1)
     m.Add(sum(h[X][q] for X in "ABC" for q in allowed) <= maxh)
     # connectivity per block
     for X in "ABC":
@@ -50,6 +54,41 @@ def solve(allowed, seconds, workers, seed=0, pre=PRE, pen=None, maxM=None, maxh=
         for q in allowed:
             m.Add(sum(f[(q,p)] for p in nbrs(q) if p in allowed) - sum(f[(p,q)] for p in nbrs(q) if p in allowed)
                   == 7*st[(X,0,q)] - isb[q])
+
+    # data routes: shortest grid paths whose intermediate cells carry no block cell
+    blk = {}
+    for q in range(N):
+        b = m.NewBoolVar("")
+        terms = [x[(k,i,q)] for k in "abc" for i in range(7)]
+        m.Add(b == sum(terms)); blk[q] = b
+    import itertools
+    def paths(a, bq):
+        ra, ca = divmod(a, C); rb, cb = divmod(bq, C)
+        dr = 1 if rb > ra else -1; dc = 1 if cb > ca else -1
+        steps = ["r"] * abs(rb - ra) + ["c"] * abs(cb - ca)
+        out = set()
+        for perm in set(itertools.permutations(steps)):
+            r, c = ra, ca; cells = []
+            for t in perm:
+                if t == "r": r += dr
+                else: c += dc
+                cells.append(r * C + c)
+            out.add(tuple(cells[:-1]))
+        return out
+    for i, pc in enumerate(pre):
+        for q in range(N):
+            D = abs(q//C-pc//C) + abs(q%C-pc%C)
+            if D > MAXD:
+                m.Add(x[("d",i,q)] == 0); continue
+            if D <= 1: continue
+            oks = []
+            for pth in paths(pc, q):
+                o = m.NewBoolVar("")
+                for c in pth: m.AddImplication(o, blk[c].Not())
+                oks.append(o)
+            m.AddBoolOr(oks).OnlyEnforceIf(x[("d",i,q)])
+    for q in (pre if os.environ.get('NOPRE','1')=='1' else []):
+        if q in allowed: m.Add(sum(st[(X,i,q)] for X in 'ABC' for i in range(7)) + sum(h[X][q] for X in 'ABC') == 0)
     # costs
     dist = [sum(x[("d",i,q)]*(abs(q//C-pc//C)+abs(q%C-pc%C)) for q in range(N)) for i,pc in enumerate(pre)]
     M = m.NewIntVar(0, 12, "")

@@ -1,0 +1,10 @@
+circuit extra1_pinned_s0.qasm: 361 noise channels, 2615 faults, 671 (s,d) classes, rotation rank 6, 33 detectors, noiseless acceptance 1.000000
+first order : c1 p = 1.6020e-18   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.24129e-04   (pairs 1.24129e-04 + same-channel normalisation 6.747e-22)
+1-F (2nd order) = 1.24129e-04
+acceptance: first order 0.46152, second order 0.60625; exp(-A1) = 0.58364  (A1 = 0.53848)
+time: model+singles 0.4s, pairs 7.5s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '7.647e-06', 'gate': '4.465e-05', 'idle': '7.183e-05'}

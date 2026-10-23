@@ -15,6 +15,7 @@ N = 36
 PRE = [0, 20, 7, 4, 3, 15, 8]
 BUSY = {0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 13, 14, 15, 19, 20}
 import os
+WM = int(os.environ.get("WM", 1))
 W_AD, W_BC, W_BUSY = 1, 3, int(os.environ.get("WB", 1))
 
 
@@ -71,7 +72,7 @@ def solve(ein, rest, seconds, workers):
             inn = sum(f[(p, q)] for p in nbrs(q))
             m.Add(out - inn == 7 * root[q] - occ(role, q))
     busy_use = sum(occ("abc", q) for q in BUSY)
-    m.Minimize(sum(cost) + W_BUSY * busy_use + sum(x[("d", i, q)] * (abs(q // C - pc // C) + abs(q % C - pc % C))
+    m.Minimize(sum(cost) + W_BUSY * busy_use + WM * sum(x[("d", i, q)] * (abs(q // C - pc // C) + abs(q % C - pc % C))
                                                    for i, pc in enumerate(PRE) for q in range(N)))
     s = cp_model.CpSolver()
     s.parameters.max_time_in_seconds = seconds

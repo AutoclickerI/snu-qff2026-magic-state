@@ -1,0 +1,3442 @@
+{
+ "note": "loss_attribution sums to 2x loss (each pair is credited to both partners); dloss_dP = d(1-F)/d(channel probability) at the current p",
+ "kinds": {
+  "flip": 6.275393254817757e-06,
+  "gate": 3.975781747931386e-05,
+  "idle": 6.531273314863546e-05
+ },
+ "loss": 0.0001113459438827639,
+ "loss1": -3.1408785959065485e-18,
+ "loss2": 0.00011134594388276704,
+ "acc1": 0.6257667818378053,
+ "acc2": 0.6956763931292056,
+ "locations": [
+  {
+   "channel": 0,
+   "kind": "flip",
+   "qasm_line": 5,
+   "qubits": [
+    2
+   ],
+   "steps": "0",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 1,
+   "kind": "flip",
+   "qasm_line": 6,
+   "qubits": [
+    3
+   ],
+   "steps": "0",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 2,
+   "kind": "gate2",
+   "qasm_line": 9,
+   "qubits": [
+    3,
+    2
+   ],
+   "steps": "1",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 3,
+   "kind": "idle",
+   "qasm_line": 9,
+   "qubits": [
+    2
+   ],
+   "steps": "2..2",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 4,
+   "kind": "idle",
+   "qasm_line": 9,
+   "qubits": [
+    3
+   ],
+   "steps": "2..8",
+   "prob": 0.006972062139325413,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 5,
+   "kind": "flip",
+   "qasm_line": 11,
+   "qubits": [
+    14
+   ],
+   "steps": "2",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 6,
+   "kind": "flip",
+   "qasm_line": 12,
+   "qubits": [
+    15
+   ],
+   "steps": "2",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 7,
+   "kind": "flip",
+   "qasm_line": 14,
+   "qubits": [
+    1
+   ],
+   "steps": "2",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 8,
+   "kind": "flip",
+   "qasm_line": 17,
+   "qubits": [
+    8
+   ],
+   "steps": "3",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 9,
+   "kind": "flip",
+   "qasm_line": 19,
+   "qubits": [
+    7
+   ],
+   "steps": "3",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 10,
+   "kind": "flip",
+   "qasm_line": 21,
+   "qubits": [
+    13
+   ],
+   "steps": "3",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 11,
+   "kind": "gate2",
+   "qasm_line": 23,
+   "qubits": [
+    15,
+    14
+   ],
+   "steps": "3",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 12,
+   "kind": "idle",
+   "qasm_line": 23,
+   "qubits": [
+    15
+   ],
+   "steps": "4..6",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 13,
+   "kind": "gate2",
+   "qasm_line": 24,
+   "qubits": [
+    1,
+    2
+   ],
+   "steps": "3",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 14,
+   "kind": "gate2",
+   "qasm_line": 26,
+   "qubits": [
+    8,
+    2
+   ],
+   "steps": "4",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 15,
+   "kind": "gate2",
+   "qasm_line": 27,
+   "qubits": [
+    13,
+    14
+   ],
+   "steps": "4",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 16,
+   "kind": "gate2",
+   "qasm_line": 28,
+   "qubits": [
+    7,
+    1
+   ],
+   "steps": "4",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 17,
+   "kind": "gate2",
+   "qasm_line": 30,
+   "qubits": [
+    8,
+    14
+   ],
+   "steps": "5",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 18,
+   "kind": "idle",
+   "qasm_line": 30,
+   "qubits": [
+    8
+   ],
+   "steps": "6..7",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 19,
+   "kind": "gate2",
+   "qasm_line": 31,
+   "qubits": [
+    2,
+    1
+   ],
+   "steps": "5",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 20,
+   "kind": "gate2",
+   "qasm_line": 32,
+   "qubits": [
+    7,
+    13
+   ],
+   "steps": "5",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 21,
+   "kind": "flip",
+   "qasm_line": 34,
+   "qubits": [
+    9
+   ],
+   "steps": "6",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 22,
+   "kind": "gate2",
+   "qasm_line": 35,
+   "qubits": [
+    14,
+    13
+   ],
+   "steps": "6",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 23,
+   "kind": "gate2",
+   "qasm_line": 36,
+   "qubits": [
+    1,
+    7
+   ],
+   "steps": "6",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 24,
+   "kind": "idle",
+   "qasm_line": 36,
+   "qubits": [
+    1
+   ],
+   "steps": "7..9",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 25,
+   "kind": "gate2",
+   "qasm_line": 38,
+   "qubits": [
+    15,
+    9
+   ],
+   "steps": "7",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 26,
+   "kind": "idle",
+   "qasm_line": 38,
+   "qubits": [
+    15
+   ],
+   "steps": "8..14",
+   "prob": 0.006972062139325413,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 27,
+   "kind": "gate2",
+   "qasm_line": 39,
+   "qubits": [
+    13,
+    7
+   ],
+   "steps": "7",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 28,
+   "kind": "idle",
+   "qasm_line": 39,
+   "qubits": [
+    13
+   ],
+   "steps": "8..8",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 29,
+   "kind": "gate2",
+   "qasm_line": 41,
+   "qubits": [
+    8,
+    9
+   ],
+   "steps": "8",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 30,
+   "kind": "idle",
+   "qasm_line": 41,
+   "qubits": [
+    8
+   ],
+   "steps": "9..13",
+   "prob": 0.0049866844325955895,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 31,
+   "kind": "gate1",
+   "qasm_line": 42,
+   "qubits": [
+    7
+   ],
+   "steps": "8",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 32,
+   "kind": "flip",
+   "qasm_line": 44,
+   "qubits": [
+    10
+   ],
+   "steps": "9",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 33,
+   "kind": "flip",
+   "qasm_line": 46,
+   "qubits": [
+    19
+   ],
+   "steps": "9",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 34,
+   "kind": "gate2",
+   "qasm_line": 48,
+   "qubits": [
+    3,
+    9
+   ],
+   "steps": "9",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 35,
+   "kind": "idle",
+   "qasm_line": 48,
+   "qubits": [
+    3
+   ],
+   "steps": "10..12",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 36,
+   "kind": "gate2",
+   "qasm_line": 49,
+   "qubits": [
+    13,
+    7
+   ],
+   "steps": "9",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 37,
+   "kind": "flip",
+   "qasm_line": 51,
+   "qubits": [
+    0
+   ],
+   "steps": "10",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 38,
+   "kind": "gate2",
+   "qasm_line": 53,
+   "qubits": [
+    10,
+    9
+   ],
+   "steps": "10",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 39,
+   "kind": "gate2",
+   "qasm_line": 54,
+   "qubits": [
+    1,
+    7
+   ],
+   "steps": "10",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 40,
+   "kind": "idle",
+   "qasm_line": 54,
+   "qubits": [
+    7
+   ],
+   "steps": "11..14",
+   "prob": 0.0039920071087406195,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 41,
+   "kind": "gate2",
+   "qasm_line": 55,
+   "qubits": [
+    19,
+    13
+   ],
+   "steps": "10",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 42,
+   "kind": "gate2",
+   "qasm_line": 57,
+   "qubits": [
+    9,
+    10
+   ],
+   "steps": "11",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 43,
+   "kind": "idle",
+   "qasm_line": 57,
+   "qubits": [
+    10
+   ],
+   "steps": "12..12",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 44,
+   "kind": "gate2",
+   "qasm_line": 58,
+   "qubits": [
+    0,
+    1
+   ],
+   "steps": "11",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 45,
+   "kind": "gate2",
+   "qasm_line": 59,
+   "qubits": [
+    13,
+    19
+   ],
+   "steps": "11",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 46,
+   "kind": "flip",
+   "qasm_line": 60,
+   "qubits": [
+    20
+   ],
+   "steps": "11",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 47,
+   "kind": "flip",
+   "qasm_line": 62,
+   "qubits": [
+    4
+   ],
+   "steps": "12",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 48,
+   "kind": "gate2",
+   "qasm_line": 64,
+   "qubits": [
+    1,
+    0
+   ],
+   "steps": "12",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 49,
+   "kind": "idle",
+   "qasm_line": 64,
+   "qubits": [
+    0
+   ],
+   "steps": "13..14",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 50,
+   "kind": "flip",
+   "qasm_line": 65,
+   "qubits": [
+    14
+   ],
+   "steps": "12",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 51,
+   "kind": "flip",
+   "qasm_line": 66,
+   "qubits": [
+    9
+   ],
+   "steps": "12",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 52,
+   "kind": "flip",
+   "qasm_line": 68,
+   "qubits": [
+    13
+   ],
+   "steps": "12",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 53,
+   "kind": "gate2",
+   "qasm_line": 70,
+   "qubits": [
+    19,
+    20
+   ],
+   "steps": "12",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 54,
+   "kind": "gate2",
+   "qasm_line": 72,
+   "qubits": [
+    4,
+    10
+   ],
+   "steps": "13",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 55,
+   "kind": "flip",
+   "qasm_line": 73,
+   "qubits": [
+    2
+   ],
+   "steps": "13",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 56,
+   "kind": "flip",
+   "qasm_line": 74,
+   "qubits": [
+    1
+   ],
+   "steps": "13",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 57,
+   "kind": "gate2",
+   "qasm_line": 76,
+   "qubits": [
+    13,
+    14
+   ],
+   "steps": "13",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 58,
+   "kind": "idle",
+   "qasm_line": 76,
+   "qubits": [
+    13
+   ],
+   "steps": "14..14",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 59,
+   "kind": "gate2",
+   "qasm_line": 77,
+   "qubits": [
+    20,
+    19
+   ],
+   "steps": "13",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 60,
+   "kind": "idle",
+   "qasm_line": 77,
+   "qubits": [
+    19
+   ],
+   "steps": "14..32",
+   "prob": 0.018773713515746804,
+   "loss_attribution": -6.947669667632866e-19,
+   "dloss_dP": -3.700743415417188e-17
+  },
+  {
+   "channel": 61,
+   "kind": "gate2",
+   "qasm_line": 78,
+   "qubits": [
+    9,
+    3
+   ],
+   "steps": "13",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 62,
+   "kind": "idle",
+   "qasm_line": 78,
+   "qubits": [
+    3
+   ],
+   "steps": "14..14",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 63,
+   "kind": "gate2",
+   "qasm_line": 80,
+   "qubits": [
+    10,
+    4
+   ],
+   "steps": "14",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 64,
+   "kind": "idle",
+   "qasm_line": 80,
+   "qubits": [
+    4
+   ],
+   "steps": "15..18",
+   "prob": 0.0039920071087406195,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 65,
+   "kind": "gate2",
+   "qasm_line": 81,
+   "qubits": [
+    1,
+    2
+   ],
+   "steps": "14",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 66,
+   "kind": "gate2",
+   "qasm_line": 82,
+   "qubits": [
+    9,
+    8
+   ],
+   "steps": "14",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 67,
+   "kind": "gate2",
+   "qasm_line": 83,
+   "qubits": [
+    14,
+    20
+   ],
+   "steps": "14",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 68,
+   "kind": "idle",
+   "qasm_line": 83,
+   "qubits": [
+    20
+   ],
+   "steps": "15..16",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 69,
+   "kind": "flip",
+   "qasm_line": 85,
+   "qubits": [
+    10
+   ],
+   "steps": "15",
+   "prob": 0.001,
+   "loss_attribution": 1.0833333333333336e-07,
+   "dloss_dP": 0.00010833333333333336
+  },
+  {
+   "channel": 70,
+   "kind": "gate2",
+   "qasm_line": 86,
+   "qubits": [
+    1,
+    0
+   ],
+   "steps": "15",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 71,
+   "kind": "idle",
+   "qasm_line": 86,
+   "qubits": [
+    0
+   ],
+   "steps": "16..16",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 72,
+   "kind": "gate2",
+   "qasm_line": 87,
+   "qubits": [
+    2,
+    3
+   ],
+   "steps": "15",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 73,
+   "kind": "idle",
+   "qasm_line": 87,
+   "qubits": [
+    3
+   ],
+   "steps": "16..16",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 74,
+   "kind": "gate2",
+   "qasm_line": 88,
+   "qubits": [
+    9,
+    15
+   ],
+   "steps": "15",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 75,
+   "kind": "gate2",
+   "qasm_line": 89,
+   "qubits": [
+    13,
+    7
+   ],
+   "steps": "15",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 76,
+   "kind": "idle",
+   "qasm_line": 89,
+   "qubits": [
+    13
+   ],
+   "steps": "16..17",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 77,
+   "kind": "gate2",
+   "qasm_line": 90,
+   "qubits": [
+    14,
+    8
+   ],
+   "steps": "15",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 78,
+   "kind": "gate2",
+   "qasm_line": 92,
+   "qubits": [
+    9,
+    10
+   ],
+   "steps": "16",
+   "prob": 0.001,
+   "loss_attribution": 1.4444444444437039e-08,
+   "dloss_dP": 1.4444444444437038e-05
+  },
+  {
+   "channel": 79,
+   "kind": "idle",
+   "qasm_line": 92,
+   "qubits": [
+    10
+   ],
+   "steps": "17..18",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 7.217407407407242e-08,
+   "dloss_dP": 3.611111111111111e-05
+  },
+  {
+   "channel": 80,
+   "kind": "gate2",
+   "qasm_line": 93,
+   "qubits": [
+    14,
+    15
+   ],
+   "steps": "16",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 81,
+   "kind": "gate2",
+   "qasm_line": 94,
+   "qubits": [
+    1,
+    7
+   ],
+   "steps": "16",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 82,
+   "kind": "gate2",
+   "qasm_line": 95,
+   "qubits": [
+    2,
+    8
+   ],
+   "steps": "16",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 83,
+   "kind": "gate2",
+   "qasm_line": 97,
+   "qubits": [
+    3,
+    9
+   ],
+   "steps": "17",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 84,
+   "kind": "idle",
+   "qasm_line": 97,
+   "qubits": [
+    3
+   ],
+   "steps": "18..18",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 85,
+   "kind": "gate2",
+   "qasm_line": 98,
+   "qubits": [
+    15,
+    14
+   ],
+   "steps": "17",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 86,
+   "kind": "gate2",
+   "qasm_line": 99,
+   "qubits": [
+    7,
+    1
+   ],
+   "steps": "17",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 87,
+   "kind": "idle",
+   "qasm_line": 99,
+   "qubits": [
+    1
+   ],
+   "steps": "18..18",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 88,
+   "kind": "gate2",
+   "qasm_line": 100,
+   "qubits": [
+    8,
+    2
+   ],
+   "steps": "17",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 89,
+   "kind": "idle",
+   "qasm_line": 100,
+   "qubits": [
+    2
+   ],
+   "steps": "18..18",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 90,
+   "kind": "gate1",
+   "qasm_line": 101,
+   "qubits": [
+    0
+   ],
+   "steps": "17",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 91,
+   "kind": "idle",
+   "qasm_line": 101,
+   "qubits": [
+    0
+   ],
+   "steps": "18..18",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 92,
+   "kind": "gate1",
+   "qasm_line": 102,
+   "qubits": [
+    20
+   ],
+   "steps": "17",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 93,
+   "kind": "idle",
+   "qasm_line": 102,
+   "qubits": [
+    20
+   ],
+   "steps": "18..19",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 94,
+   "kind": "gate2",
+   "qasm_line": 104,
+   "qubits": [
+    7,
+    13
+   ],
+   "steps": "18",
+   "prob": 0.001,
+   "loss_attribution": 1.1111111111111113e-09,
+   "dloss_dP": 1.1111111111111112e-06
+  },
+  {
+   "channel": 95,
+   "kind": "idle",
+   "qasm_line": 104,
+   "qubits": [
+    7
+   ],
+   "steps": "19..21",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 1.664445432098723e-08,
+   "dloss_dP": 5.555555555555556e-06
+  },
+  {
+   "channel": 96,
+   "kind": "gate2",
+   "qasm_line": 105,
+   "qubits": [
+    8,
+    14
+   ],
+   "steps": "18",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 97,
+   "kind": "gate2",
+   "qasm_line": 106,
+   "qubits": [
+    15,
+    9
+   ],
+   "steps": "18",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 98,
+   "kind": "idle",
+   "qasm_line": 106,
+   "qubits": [
+    15
+   ],
+   "steps": "19..21",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 99,
+   "kind": "gate2",
+   "qasm_line": 108,
+   "qubits": [
+    10,
+    4
+   ],
+   "steps": "19",
+   "prob": 0.001,
+   "loss_attribution": 1.4444444444444447e-08,
+   "dloss_dP": 1.4444444444444446e-05
+  },
+  {
+   "channel": 100,
+   "kind": "idle",
+   "qasm_line": 108,
+   "qubits": [
+    4
+   ],
+   "steps": "20..20",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 101,
+   "kind": "gate2",
+   "qasm_line": 109,
+   "qubits": [
+    8,
+    9
+   ],
+   "steps": "19",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 102,
+   "kind": "idle",
+   "qasm_line": 109,
+   "qubits": [
+    8
+   ],
+   "steps": "20..21",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 103,
+   "kind": "gate2",
+   "qasm_line": 110,
+   "qubits": [
+    0,
+    1
+   ],
+   "steps": "19",
+   "prob": 0.001,
+   "loss_attribution": 3.555555555555524e-08,
+   "dloss_dP": 3.555555555555524e-05
+  },
+  {
+   "channel": 104,
+   "kind": "idle",
+   "qasm_line": 110,
+   "qubits": [
+    0
+   ],
+   "steps": "20..22",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 5.32622538271587e-07,
+   "dloss_dP": 0.00017777777777777632
+  },
+  {
+   "channel": 105,
+   "kind": "gate2",
+   "qasm_line": 111,
+   "qubits": [
+    3,
+    2
+   ],
+   "steps": "19",
+   "prob": 0.001,
+   "loss_attribution": 4.444444444444446e-09,
+   "dloss_dP": 4.444444444444446e-06
+  },
+  {
+   "channel": 106,
+   "kind": "idle",
+   "qasm_line": 111,
+   "qubits": [
+    3
+   ],
+   "steps": "20..22",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 6.657781728394895e-08,
+   "dloss_dP": 2.222222222222223e-05
+  },
+  {
+   "channel": 107,
+   "kind": "gate2",
+   "qasm_line": 112,
+   "qubits": [
+    13,
+    14
+   ],
+   "steps": "19",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 108,
+   "kind": "idle",
+   "qasm_line": 112,
+   "qubits": [
+    13
+   ],
+   "steps": "20..32",
+   "prob": 0.012896506753689613,
+   "loss_attribution": -4.772666245060014e-19,
+   "dloss_dP": -3.700743415417188e-17
+  },
+  {
+   "channel": 109,
+   "kind": "gate2",
+   "qasm_line": 114,
+   "qubits": [
+    20,
+    14
+   ],
+   "steps": "20",
+   "prob": 0.001,
+   "loss_attribution": 5.555555555554818e-08,
+   "dloss_dP": 5.555555555554818e-05
+  },
+  {
+   "channel": 110,
+   "kind": "idle",
+   "qasm_line": 114,
+   "qubits": [
+    20
+   ],
+   "steps": "21..22",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 2.7759259259258607e-07,
+   "dloss_dP": 0.0001388888888888888
+  },
+  {
+   "channel": 111,
+   "kind": "gate2",
+   "qasm_line": 115,
+   "qubits": [
+    1,
+    2
+   ],
+   "steps": "20",
+   "prob": 0.001,
+   "loss_attribution": -2.2204460492503132e-20,
+   "dloss_dP": -2.2204460492503132e-17
+  },
+  {
+   "channel": 112,
+   "kind": "gate2",
+   "qasm_line": 116,
+   "qubits": [
+    9,
+    10
+   ],
+   "steps": "20",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 113,
+   "kind": "gate2",
+   "qasm_line": 118,
+   "qubits": [
+    4,
+    10
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": 2.888888888888148e-08,
+   "dloss_dP": 2.888888888888148e-05
+  },
+  {
+   "channel": 114,
+   "kind": "idle",
+   "qasm_line": 118,
+   "qubits": [
+    4
+   ],
+   "steps": "22..22",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 7.222222222222029e-08,
+   "dloss_dP": 7.222222222222223e-05
+  },
+  {
+   "channel": 115,
+   "kind": "flip",
+   "qasm_line": 119,
+   "qubits": [
+    2
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 116,
+   "kind": "gate1",
+   "qasm_line": 119,
+   "qubits": [
+    2
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 117,
+   "kind": "flip",
+   "qasm_line": 120,
+   "qubits": [
+    14
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 118,
+   "kind": "gate1",
+   "qasm_line": 120,
+   "qubits": [
+    14
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 119,
+   "kind": "flip",
+   "qasm_line": 122,
+   "qubits": [
+    1
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 120,
+   "kind": "gate1",
+   "qasm_line": 122,
+   "qubits": [
+    1
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 121,
+   "kind": "flip",
+   "qasm_line": 124,
+   "qubits": [
+    9
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 122,
+   "kind": "gate1",
+   "qasm_line": 124,
+   "qubits": [
+    9
+   ],
+   "steps": "21",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 123,
+   "kind": "flip",
+   "qasm_line": 126,
+   "qubits": [
+    10
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 124,
+   "kind": "gate1",
+   "qasm_line": 126,
+   "qubits": [
+    10
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 125,
+   "kind": "flip",
+   "qasm_line": 127,
+   "qubits": [
+    9
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 126,
+   "kind": "flip",
+   "qasm_line": 129,
+   "qubits": [
+    2
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 127,
+   "kind": "flip",
+   "qasm_line": 131,
+   "qubits": [
+    1
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 128,
+   "kind": "flip",
+   "qasm_line": 133,
+   "qubits": [
+    14
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 129,
+   "kind": "flip",
+   "qasm_line": 135,
+   "qubits": [
+    6
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 130,
+   "kind": "gate1",
+   "qasm_line": 137,
+   "qubits": [
+    7
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 5.555555555555556e-09,
+   "dloss_dP": 5.555555555555556e-06
+  },
+  {
+   "channel": 131,
+   "kind": "gate1",
+   "qasm_line": 138,
+   "qubits": [
+    8
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 132,
+   "kind": "gate1",
+   "qasm_line": 139,
+   "qubits": [
+    15
+   ],
+   "steps": "22",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 133,
+   "kind": "flip",
+   "qasm_line": 141,
+   "qubits": [
+    10
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 134,
+   "kind": "gate1",
+   "qasm_line": 143,
+   "qubits": [
+    3
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": 2.2222222222222214e-08,
+   "dloss_dP": 2.2222222222222213e-05
+  },
+  {
+   "channel": 135,
+   "kind": "gate1",
+   "qasm_line": 144,
+   "qubits": [
+    4
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": 7.222222222222221e-08,
+   "dloss_dP": 7.22222222222222e-05
+  },
+  {
+   "channel": 136,
+   "kind": "gate2",
+   "qasm_line": 145,
+   "qubits": [
+    6,
+    0
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": 7.111111111110309e-08,
+   "dloss_dP": 7.111111111110308e-05
+  },
+  {
+   "channel": 137,
+   "kind": "idle",
+   "qasm_line": 145,
+   "qubits": [
+    0
+   ],
+   "steps": "24..34",
+   "prob": 0.010926959219235727,
+   "loss_attribution": 1.9425705278641127e-06,
+   "dloss_dP": 0.00017777777777777627
+  },
+  {
+   "channel": 138,
+   "kind": "gate2",
+   "qasm_line": 146,
+   "qubits": [
+    14,
+    20
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": 5.555555555554818e-08,
+   "dloss_dP": 5.555555555554818e-05
+  },
+  {
+   "channel": 139,
+   "kind": "idle",
+   "qasm_line": 146,
+   "qubits": [
+    20
+   ],
+   "steps": "24..30",
+   "prob": 0.006972062139325413,
+   "loss_attribution": 9.683419637951962e-07,
+   "dloss_dP": 0.00013888888888888886
+  },
+  {
+   "channel": 140,
+   "kind": "gate2",
+   "qasm_line": 147,
+   "qubits": [
+    2,
+    8
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 141,
+   "kind": "idle",
+   "qasm_line": 147,
+   "qubits": [
+    2
+   ],
+   "steps": "24..31",
+   "prob": 0.007962766056472975,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 142,
+   "kind": "gate2",
+   "qasm_line": 148,
+   "qubits": [
+    1,
+    7
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": 2.222222222214821e-09,
+   "dloss_dP": 2.2222222222148207e-06
+  },
+  {
+   "channel": 143,
+   "kind": "idle",
+   "qasm_line": 148,
+   "qubits": [
+    1
+   ],
+   "steps": "24..32",
+   "prob": 0.008952149035064333,
+   "loss_attribution": 4.9734161305912966e-08,
+   "dloss_dP": 5.555555555555556e-06
+  },
+  {
+   "channel": 144,
+   "kind": "gate2",
+   "qasm_line": 149,
+   "qubits": [
+    9,
+    15
+   ],
+   "steps": "23",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 145,
+   "kind": "idle",
+   "qasm_line": 149,
+   "qubits": [
+    15
+   ],
+   "steps": "24..31",
+   "prob": 0.007962766056472975,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 146,
+   "kind": "gate2",
+   "qasm_line": 151,
+   "qubits": [
+    9,
+    3
+   ],
+   "steps": "24",
+   "prob": 0.001,
+   "loss_attribution": 1.9999999999999848e-08,
+   "dloss_dP": 1.999999999999985e-05
+  },
+  {
+   "channel": 147,
+   "kind": "idle",
+   "qasm_line": 151,
+   "qubits": [
+    3
+   ],
+   "steps": "25..30",
+   "prob": 0.0059800355200188005,
+   "loss_attribution": 1.3288967822263995e-07,
+   "dloss_dP": 2.2222222222222213e-05
+  },
+  {
+   "channel": 148,
+   "kind": "gate2",
+   "qasm_line": 152,
+   "qubits": [
+    10,
+    4
+   ],
+   "steps": "24",
+   "prob": 0.001,
+   "loss_attribution": 2.8888888888881466e-08,
+   "dloss_dP": 2.8888888888881465e-05
+  },
+  {
+   "channel": 149,
+   "kind": "idle",
+   "qasm_line": 152,
+   "qubits": [
+    4
+   ],
+   "steps": "25..30",
+   "prob": 0.0059800355200188005,
+   "loss_attribution": 4.318914542235798e-07,
+   "dloss_dP": 7.222222222222219e-05
+  },
+  {
+   "channel": 150,
+   "kind": "gate2",
+   "qasm_line": 153,
+   "qubits": [
+    7,
+    6
+   ],
+   "steps": "24",
+   "prob": 0.001,
+   "loss_attribution": 1.166592592592586e-07,
+   "dloss_dP": 0.0001166592592592586
+  },
+  {
+   "channel": 151,
+   "kind": "idle",
+   "qasm_line": 153,
+   "qubits": [
+    6
+   ],
+   "steps": "25..31",
+   "prob": 0.006972062139325413,
+   "loss_attribution": 1.239477713657841e-06,
+   "dloss_dP": 0.00017777777777777632
+  },
+  {
+   "channel": 152,
+   "kind": "gate2",
+   "qasm_line": 154,
+   "qubits": [
+    8,
+    14
+   ],
+   "steps": "24",
+   "prob": 0.001,
+   "loss_attribution": 5.664445432098722e-08,
+   "dloss_dP": 5.664445432098722e-05
+  },
+  {
+   "channel": 153,
+   "kind": "idle",
+   "qasm_line": 154,
+   "qubits": [
+    14
+   ],
+   "steps": "25..29",
+   "prob": 0.0049866844325955895,
+   "loss_attribution": 6.925950600827205e-07,
+   "dloss_dP": 0.00013888888888888883
+  },
+  {
+   "channel": 154,
+   "kind": "gate2",
+   "qasm_line": 156,
+   "qubits": [
+    9,
+    10
+   ],
+   "steps": "25",
+   "prob": 0.001,
+   "loss_attribution": 3.111111111111096e-08,
+   "dloss_dP": 3.111111111111096e-05
+  },
+  {
+   "channel": 155,
+   "kind": "idle",
+   "qasm_line": 156,
+   "qubits": [
+    10
+   ],
+   "steps": "26..29",
+   "prob": 0.0039920071087406195,
+   "loss_attribution": 2.8831162452015577e-07,
+   "dloss_dP": 7.22222222222222e-05
+  },
+  {
+   "channel": 156,
+   "kind": "gate2",
+   "qasm_line": 157,
+   "qubits": [
+    8,
+    7
+   ],
+   "steps": "25",
+   "prob": 0.001,
+   "loss_attribution": 1.099703802469128e-07,
+   "dloss_dP": 0.0001099703802469128
+  },
+  {
+   "channel": 157,
+   "kind": "idle",
+   "qasm_line": 157,
+   "qubits": [
+    7
+   ],
+   "steps": "26..30",
+   "prob": 0.0049866844325955895,
+   "loss_attribution": 1.994489081022208e-06,
+   "dloss_dP": 0.00039996296296296183
+  },
+  {
+   "channel": 158,
+   "kind": "gate2",
+   "qasm_line": 159,
+   "qubits": [
+    8,
+    9
+   ],
+   "steps": "26",
+   "prob": 0.001,
+   "loss_attribution": 2.2222222222148205e-09,
+   "dloss_dP": 2.2222222222148203e-06
+  },
+  {
+   "channel": 159,
+   "kind": "idle",
+   "qasm_line": 159,
+   "qubits": [
+    9
+   ],
+   "steps": "27..28",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 1.1103703703703448e-08,
+   "dloss_dP": 5.555555555555555e-06
+  },
+  {
+   "channel": 160,
+   "kind": "flip",
+   "qasm_line": 162,
+   "qubits": [
+    8
+   ],
+   "steps": "27",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 161,
+   "kind": "gate1",
+   "qasm_line": 162,
+   "qubits": [
+    8
+   ],
+   "steps": "27",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 162,
+   "kind": "flip",
+   "qasm_line": 164,
+   "qubits": [
+    8
+   ],
+   "steps": "28",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 163,
+   "kind": "gate2",
+   "qasm_line": 167,
+   "qubits": [
+    8,
+    9
+   ],
+   "steps": "29",
+   "prob": 0.001,
+   "loss_attribution": 2.2222222222148205e-09,
+   "dloss_dP": 2.2222222222148203e-06
+  },
+  {
+   "channel": 164,
+   "kind": "gate2",
+   "qasm_line": 169,
+   "qubits": [
+    8,
+    14
+   ],
+   "steps": "30",
+   "prob": 0.001,
+   "loss_attribution": 3.444444444444443e-08,
+   "dloss_dP": 3.444444444444443e-05
+  },
+  {
+   "channel": 165,
+   "kind": "gate2",
+   "qasm_line": 170,
+   "qubits": [
+    9,
+    10
+   ],
+   "steps": "30",
+   "prob": 0.001,
+   "loss_attribution": 3.111111111111096e-08,
+   "dloss_dP": 3.111111111111096e-05
+  },
+  {
+   "channel": 166,
+   "kind": "gate2",
+   "qasm_line": 172,
+   "qubits": [
+    8,
+    7
+   ],
+   "steps": "31",
+   "prob": 0.001,
+   "loss_attribution": 8.55481481481478e-08,
+   "dloss_dP": 8.554814814814779e-05
+  },
+  {
+   "channel": 167,
+   "kind": "gate2",
+   "qasm_line": 173,
+   "qubits": [
+    9,
+    3
+   ],
+   "steps": "31",
+   "prob": 0.001,
+   "loss_attribution": 1.1971194896023327e-07,
+   "dloss_dP": 0.00011971194896023326
+  },
+  {
+   "channel": 168,
+   "kind": "idle",
+   "qasm_line": 173,
+   "qubits": [
+    3
+   ],
+   "steps": "32..34",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 1.6644454320987228e-07,
+   "dloss_dP": 5.5555555555555545e-05
+  },
+  {
+   "channel": 169,
+   "kind": "gate2",
+   "qasm_line": 174,
+   "qubits": [
+    14,
+    20
+   ],
+   "steps": "31",
+   "prob": 0.001,
+   "loss_attribution": 2.82074271473277e-07,
+   "dloss_dP": 0.00028207427147327696
+  },
+  {
+   "channel": 170,
+   "kind": "idle",
+   "qasm_line": 174,
+   "qubits": [
+    20
+   ],
+   "steps": "32..33",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 1.4094311097948118e-06,
+   "dloss_dP": 0.0007051856786832109
+  },
+  {
+   "channel": 171,
+   "kind": "gate2",
+   "qasm_line": 175,
+   "qubits": [
+    10,
+    4
+   ],
+   "steps": "31",
+   "prob": 0.001,
+   "loss_attribution": 2.266666666666568e-07,
+   "dloss_dP": 0.00022666666666665682
+  },
+  {
+   "channel": 172,
+   "kind": "idle",
+   "qasm_line": 175,
+   "qubits": [
+    4
+   ],
+   "steps": "32..36",
+   "prob": 0.0049866844325955895,
+   "loss_attribution": 2.8257878451374696e-06,
+   "dloss_dP": 0.0005666666666666604
+  },
+  {
+   "channel": 173,
+   "kind": "gate2",
+   "qasm_line": 177,
+   "qubits": [
+    9,
+    15
+   ],
+   "steps": "32",
+   "prob": 0.001,
+   "loss_attribution": 4.444444444443706e-08,
+   "dloss_dP": 4.444444444443706e-05
+  },
+  {
+   "channel": 174,
+   "kind": "idle",
+   "qasm_line": 177,
+   "qubits": [
+    15
+   ],
+   "steps": "33..34",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 2.22074074074069e-07,
+   "dloss_dP": 0.00011111111111111112
+  },
+  {
+   "channel": 175,
+   "kind": "gate2",
+   "qasm_line": 178,
+   "qubits": [
+    7,
+    6
+   ],
+   "steps": "32",
+   "prob": 0.001,
+   "loss_attribution": 1.166592592592586e-07,
+   "dloss_dP": 0.0001166592592592586
+  },
+  {
+   "channel": 176,
+   "kind": "idle",
+   "qasm_line": 178,
+   "qubits": [
+    6
+   ],
+   "steps": "33..34",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 3.5531851851850747e-07,
+   "dloss_dP": 0.00017777777777777632
+  },
+  {
+   "channel": 177,
+   "kind": "gate2",
+   "qasm_line": 179,
+   "qubits": [
+    2,
+    8
+   ],
+   "steps": "32",
+   "prob": 0.001,
+   "loss_attribution": -7.401486830834377e-21,
+   "dloss_dP": -7.401486830834377e-18
+  },
+  {
+   "channel": 178,
+   "kind": "idle",
+   "qasm_line": 179,
+   "qubits": [
+    8
+   ],
+   "steps": "33..33",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 179,
+   "kind": "flip",
+   "qasm_line": 181,
+   "qubits": [
+    10
+   ],
+   "steps": "32",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 180,
+   "kind": "gate1",
+   "qasm_line": 181,
+   "qubits": [
+    10
+   ],
+   "steps": "32",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 181,
+   "kind": "flip",
+   "qasm_line": 183,
+   "qubits": [
+    14
+   ],
+   "steps": "32",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 182,
+   "kind": "gate1",
+   "qasm_line": 183,
+   "qubits": [
+    14
+   ],
+   "steps": "32",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 183,
+   "kind": "flip",
+   "qasm_line": 185,
+   "qubits": [
+    19
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 184,
+   "kind": "gate1",
+   "qasm_line": 185,
+   "qubits": [
+    19
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 185,
+   "kind": "flip",
+   "qasm_line": 187,
+   "qubits": [
+    13
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 186,
+   "kind": "gate1",
+   "qasm_line": 187,
+   "qubits": [
+    13
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 8.444444444444068e-07,
+   "dloss_dP": 0.0008444444444444068
+  },
+  {
+   "channel": 187,
+   "kind": "gate2",
+   "qasm_line": 189,
+   "qubits": [
+    1,
+    7
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 1.1111111111103712e-08,
+   "dloss_dP": 1.1111111111103712e-05
+  },
+  {
+   "channel": 188,
+   "kind": "idle",
+   "qasm_line": 189,
+   "qubits": [
+    7
+   ],
+   "steps": "34..34",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 2.777777777777703e-08,
+   "dloss_dP": 2.7777777777777776e-05
+  },
+  {
+   "channel": 189,
+   "kind": "flip",
+   "qasm_line": 191,
+   "qubits": [
+    9
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 190,
+   "kind": "gate1",
+   "qasm_line": 191,
+   "qubits": [
+    9
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 5.0648896790122124e-06,
+   "dloss_dP": 0.005064889679012212
+  },
+  {
+   "channel": 191,
+   "kind": "flip",
+   "qasm_line": 194,
+   "qubits": [
+    2
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 192,
+   "kind": "gate1",
+   "qasm_line": 194,
+   "qubits": [
+    2
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 193,
+   "kind": "flip",
+   "qasm_line": 195,
+   "qubits": [
+    14
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 3.4111185135814957e-07,
+   "dloss_dP": 0.00034111185135814957
+  },
+  {
+   "channel": 194,
+   "kind": "flip",
+   "qasm_line": 196,
+   "qubits": [
+    10
+   ],
+   "steps": "33",
+   "prob": 0.001,
+   "loss_attribution": 8.666666666666664e-07,
+   "dloss_dP": 0.0008666666666666664
+  },
+  {
+   "channel": 195,
+   "kind": "gate1",
+   "qasm_line": 198,
+   "qubits": [
+    8
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 196,
+   "kind": "gate1",
+   "qasm_line": 199,
+   "qubits": [
+    20
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 7.051856786832108e-07,
+   "dloss_dP": 0.0007051856786832108
+  },
+  {
+   "channel": 197,
+   "kind": "flip",
+   "qasm_line": 201,
+   "qubits": [
+    1
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 198,
+   "kind": "gate1",
+   "qasm_line": 201,
+   "qubits": [
+    1
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 9.333333333332901e-07,
+   "dloss_dP": 0.0009333333333332901
+  },
+  {
+   "channel": 199,
+   "kind": "flip",
+   "qasm_line": 203,
+   "qubits": [
+    2
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 7.666666666666664e-07,
+   "dloss_dP": 0.0007666666666666664
+  },
+  {
+   "channel": 200,
+   "kind": "flip",
+   "qasm_line": 204,
+   "qubits": [
+    19
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 3.4111185135814957e-07,
+   "dloss_dP": 0.00034111185135814957
+  },
+  {
+   "channel": 201,
+   "kind": "gate2",
+   "qasm_line": 205,
+   "qubits": [
+    13,
+    14
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 4.93037431835435e-07,
+   "dloss_dP": 0.0004930374318354349
+  },
+  {
+   "channel": 202,
+   "kind": "idle",
+   "qasm_line": 205,
+   "qubits": [
+    13
+   ],
+   "steps": "35..35",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 6.162967897943053e-07,
+   "dloss_dP": 0.0006162967897943219
+  },
+  {
+   "channel": 203,
+   "kind": "gate2",
+   "qasm_line": 206,
+   "qubits": [
+    9,
+    10
+   ],
+   "steps": "34",
+   "prob": 0.001,
+   "loss_attribution": 2.4881780938271e-06,
+   "dloss_dP": 0.0024881780938271
+  },
+  {
+   "channel": 204,
+   "kind": "idle",
+   "qasm_line": 206,
+   "qubits": [
+    10
+   ],
+   "steps": "35..36",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 6.216298271077944e-06,
+   "dloss_dP": 0.0031102226172838995
+  },
+  {
+   "channel": 205,
+   "kind": "gate2",
+   "qasm_line": 208,
+   "qubits": [
+    6,
+    0
+   ],
+   "steps": "35",
+   "prob": 0.001,
+   "loss_attribution": 3.288888888888778e-07,
+   "dloss_dP": 0.0003288888888888778
+  },
+  {
+   "channel": 206,
+   "kind": "idle",
+   "qasm_line": 208,
+   "qubits": [
+    6
+   ],
+   "steps": "36..39",
+   "prob": 0.0039920071087406195,
+   "loss_attribution": -1.4773394021970456e-19,
+   "dloss_dP": -3.700743415417188e-17
+  },
+  {
+   "channel": 207,
+   "kind": "gate1",
+   "qasm_line": 209,
+   "qubits": [
+    3
+   ],
+   "steps": "35",
+   "prob": 0.001,
+   "loss_attribution": 5.5555555555555555e-08,
+   "dloss_dP": 5.555555555555555e-05
+  },
+  {
+   "channel": 208,
+   "kind": "gate1",
+   "qasm_line": 210,
+   "qubits": [
+    7
+   ],
+   "steps": "35",
+   "prob": 0.001,
+   "loss_attribution": 2.7777777777777777e-08,
+   "dloss_dP": 2.7777777777777776e-05
+  },
+  {
+   "channel": 209,
+   "kind": "gate2",
+   "qasm_line": 211,
+   "qubits": [
+    1,
+    2
+   ],
+   "steps": "35",
+   "prob": 0.001,
+   "loss_attribution": 6.133333333333096e-07,
+   "dloss_dP": 0.0006133333333333096
+  },
+  {
+   "channel": 210,
+   "kind": "gate2",
+   "qasm_line": 212,
+   "qubits": [
+    20,
+    19
+   ],
+   "steps": "35",
+   "prob": 0.001,
+   "loss_attribution": 1.2394671404774282e-06,
+   "dloss_dP": 0.0012394671404774283
+  },
+  {
+   "channel": 211,
+   "kind": "gate2",
+   "qasm_line": 213,
+   "qubits": [
+    8,
+    14
+   ],
+   "steps": "35",
+   "prob": 0.001,
+   "loss_attribution": 4.561118315722025e-07,
+   "dloss_dP": 0.0004561118315722025
+  },
+  {
+   "channel": 212,
+   "kind": "gate2",
+   "qasm_line": 214,
+   "qubits": [
+    15,
+    9
+   ],
+   "steps": "35",
+   "prob": 0.001,
+   "loss_attribution": 1.0526528187003457e-06,
+   "dloss_dP": 0.0010526528187003456
+  },
+  {
+   "channel": 213,
+   "kind": "gate2",
+   "qasm_line": 216,
+   "qubits": [
+    19,
+    20
+   ],
+   "steps": "36",
+   "prob": 0.001,
+   "loss_attribution": 1.239467140477428e-06,
+   "dloss_dP": 0.001239467140477428
+  },
+  {
+   "channel": 214,
+   "kind": "gate2",
+   "qasm_line": 217,
+   "qubits": [
+    0,
+    1
+   ],
+   "steps": "36",
+   "prob": 0.001,
+   "loss_attribution": 1.4530962962962877e-06,
+   "dloss_dP": 0.0014530962962962877
+  },
+  {
+   "channel": 215,
+   "kind": "gate2",
+   "qasm_line": 218,
+   "qubits": [
+    2,
+    3
+   ],
+   "steps": "36",
+   "prob": 0.001,
+   "loss_attribution": 4.602189527441678e-07,
+   "dloss_dP": 0.0004602189527441678
+  },
+  {
+   "channel": 216,
+   "kind": "gate2",
+   "qasm_line": 219,
+   "qubits": [
+    7,
+    13
+   ],
+   "steps": "36",
+   "prob": 0.001,
+   "loss_attribution": 1.2650709038523523e-06,
+   "dloss_dP": 0.0012650709038523522
+  },
+  {
+   "channel": 217,
+   "kind": "gate2",
+   "qasm_line": 220,
+   "qubits": [
+    15,
+    14
+   ],
+   "steps": "36",
+   "prob": 0.001,
+   "loss_attribution": 1.2696908032272694e-06,
+   "dloss_dP": 0.0012696908032272694
+  },
+  {
+   "channel": 218,
+   "kind": "gate2",
+   "qasm_line": 221,
+   "qubits": [
+    9,
+    8
+   ],
+   "steps": "36",
+   "prob": 0.001,
+   "loss_attribution": 6.54196780329792e-07,
+   "dloss_dP": 0.0006541967803297919
+  },
+  {
+   "channel": 219,
+   "kind": "gate1",
+   "qasm_line": 223,
+   "qubits": [
+    15
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 2.0214816790123334e-06,
+   "dloss_dP": 0.0020214816790123332
+  },
+  {
+   "channel": 220,
+   "kind": "gate1",
+   "qasm_line": 224,
+   "qubits": [
+    0
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 2.7997037037037015e-06,
+   "dloss_dP": 0.0027997037037037014
+  },
+  {
+   "channel": 221,
+   "kind": "gate2",
+   "qasm_line": 225,
+   "qubits": [
+    4,
+    10
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 2.012829827160458e-06,
+   "dloss_dP": 0.002012829827160458
+  },
+  {
+   "channel": 222,
+   "kind": "flip",
+   "qasm_line": 226,
+   "qubits": [
+    16
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 5.43111170370366e-06,
+   "dloss_dP": 0.00543111170370366
+  },
+  {
+   "channel": 223,
+   "kind": "gate2",
+   "qasm_line": 227,
+   "qubits": [
+    7,
+    1
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 1.3896040002803024e-06,
+   "dloss_dP": 0.0013896040002803023
+  },
+  {
+   "channel": 224,
+   "kind": "gate2",
+   "qasm_line": 228,
+   "qubits": [
+    2,
+    8
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 1.1476898071480328e-06,
+   "dloss_dP": 0.0011476898071480328
+  },
+  {
+   "channel": 225,
+   "kind": "gate2",
+   "qasm_line": 229,
+   "qubits": [
+    14,
+    20
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 1.0705782515885386e-06,
+   "dloss_dP": 0.0010705782515885386
+  },
+  {
+   "channel": 226,
+   "kind": "idle",
+   "qasm_line": 229,
+   "qubits": [
+    20
+   ],
+   "steps": "38..39",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 4.018356740477284e-06,
+   "dloss_dP": 0.0020105187160493875
+  },
+  {
+   "channel": 227,
+   "kind": "gate2",
+   "qasm_line": 230,
+   "qubits": [
+    19,
+    13
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 2.2034968886255668e-06,
+   "dloss_dP": 0.002203496888625567
+  },
+  {
+   "channel": 228,
+   "kind": "idle",
+   "qasm_line": 230,
+   "qubits": [
+    19
+   ],
+   "steps": "38..39",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 4.862238221958747e-06,
+   "dloss_dP": 0.0024327409382716102
+  },
+  {
+   "channel": 229,
+   "kind": "gate2",
+   "qasm_line": 231,
+   "qubits": [
+    9,
+    3
+   ],
+   "steps": "37",
+   "prob": 0.001,
+   "loss_attribution": 1.3306855212679514e-06,
+   "dloss_dP": 0.0013306855212679514
+  },
+  {
+   "channel": 230,
+   "kind": "gate1",
+   "qasm_line": 233,
+   "qubits": [
+    4
+   ],
+   "steps": "38",
+   "prob": 0.001,
+   "loss_attribution": 2.8771853827160235e-06,
+   "dloss_dP": 0.0028771853827160234
+  },
+  {
+   "channel": 231,
+   "kind": "gate2",
+   "qasm_line": 234,
+   "qubits": [
+    1,
+    0
+   ],
+   "steps": "38",
+   "prob": 0.001,
+   "loss_attribution": 2.239733333333313e-06,
+   "dloss_dP": 0.002239733333333313
+  },
+  {
+   "channel": 232,
+   "kind": "idle",
+   "qasm_line": 234,
+   "qubits": [
+    0
+   ],
+   "steps": "39..41",
+   "prob": 0.0029960017777777015,
+   "loss_attribution": 2.569504280256699e-05,
+   "dloss_dP": 0.008576444444444359
+  },
+  {
+   "channel": 233,
+   "kind": "gate2",
+   "qasm_line": 235,
+   "qubits": [
+    8,
+    2
+   ],
+   "steps": "38",
+   "prob": 0.001,
+   "loss_attribution": 1.1476898071480326e-06,
+   "dloss_dP": 0.0011476898071480326
+  },
+  {
+   "channel": 234,
+   "kind": "gate2",
+   "qasm_line": 236,
+   "qubits": [
+    13,
+    7
+   ],
+   "steps": "38",
+   "prob": 0.001,
+   "loss_attribution": 1.1212457665851955e-06,
+   "dloss_dP": 0.0011212457665851956
+  },
+  {
+   "channel": 235,
+   "kind": "idle",
+   "qasm_line": 236,
+   "qubits": [
+    7
+   ],
+   "steps": "39..39",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 2.954815012345603e-06,
+   "dloss_dP": 0.002954815012345682
+  },
+  {
+   "channel": 236,
+   "kind": "gate2",
+   "qasm_line": 237,
+   "qubits": [
+    14,
+    15
+   ],
+   "steps": "38",
+   "prob": 0.001,
+   "loss_attribution": 1.125749174650369e-06,
+   "dloss_dP": 0.001125749174650369
+  },
+  {
+   "channel": 237,
+   "kind": "idle",
+   "qasm_line": 237,
+   "qubits": [
+    15
+   ],
+   "steps": "39..39",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 3.585189330700143e-06,
+   "dloss_dP": 0.0035851893307002392
+  },
+  {
+   "channel": 238,
+   "kind": "gate2",
+   "qasm_line": 238,
+   "qubits": [
+    10,
+    16
+   ],
+   "steps": "38",
+   "prob": 0.001,
+   "loss_attribution": 1.5518092233223437e-06,
+   "dloss_dP": 0.0015518092233223436
+  },
+  {
+   "channel": 239,
+   "kind": "idle",
+   "qasm_line": 238,
+   "qubits": [
+    16
+   ],
+   "steps": "39..39",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 1.9214816790122793e-06,
+   "dloss_dP": 0.001921481679012331
+  },
+  {
+   "channel": 240,
+   "kind": "gate2",
+   "qasm_line": 239,
+   "qubits": [
+    3,
+    9
+   ],
+   "steps": "38",
+   "prob": 0.001,
+   "loss_attribution": 1.3306855212679512e-06,
+   "dloss_dP": 0.0013306855212679512
+  },
+  {
+   "channel": 241,
+   "kind": "idle",
+   "qasm_line": 239,
+   "qubits": [
+    3
+   ],
+   "steps": "39..39",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 4.681649828561866e-06,
+   "dloss_dP": 0.004681649828561992
+  },
+  {
+   "channel": 242,
+   "kind": "gate2",
+   "qasm_line": 241,
+   "qubits": [
+    1,
+    2
+   ],
+   "steps": "39",
+   "prob": 0.001,
+   "loss_attribution": 2.970259970930962e-06,
+   "dloss_dP": 0.002970259970930962
+  },
+  {
+   "channel": 243,
+   "kind": "gate2",
+   "qasm_line": 242,
+   "qubits": [
+    14,
+    13
+   ],
+   "steps": "39",
+   "prob": 0.001,
+   "loss_attribution": 2.0161207680015844e-06,
+   "dloss_dP": 0.0020161207680015844
+  },
+  {
+   "channel": 244,
+   "kind": "gate2",
+   "qasm_line": 243,
+   "qubits": [
+    10,
+    4
+   ],
+   "steps": "39",
+   "prob": 0.001,
+   "loss_attribution": 2.693764897396402e-06,
+   "dloss_dP": 0.002693764897396402
+  },
+  {
+   "channel": 245,
+   "kind": "idle",
+   "qasm_line": 243,
+   "qubits": [
+    4
+   ],
+   "steps": "40..41",
+   "prob": 0.001998666666666621,
+   "loss_attribution": 1.5851057183867682e-05,
+   "dloss_dP": 0.007930815802469002
+  },
+  {
+   "channel": 246,
+   "kind": "gate2",
+   "qasm_line": 244,
+   "qubits": [
+    8,
+    9
+   ],
+   "steps": "39",
+   "prob": 0.001,
+   "loss_attribution": 1.6578601672167207e-06,
+   "dloss_dP": 0.0016578601672167207
+  },
+  {
+   "channel": 247,
+   "kind": "flip",
+   "qasm_line": 247,
+   "qubits": [
+    6
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 248,
+   "kind": "gate1",
+   "qasm_line": 247,
+   "qubits": [
+    6
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 249,
+   "kind": "flip",
+   "qasm_line": 248,
+   "qubits": [
+    13
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 2.2295622143267385e-06,
+   "dloss_dP": 0.0022295622143267383
+  },
+  {
+   "channel": 250,
+   "kind": "gate1",
+   "qasm_line": 248,
+   "qubits": [
+    13
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 251,
+   "kind": "gate2",
+   "qasm_line": 249,
+   "qubits": [
+    1,
+    7
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 4.194133728395028e-06,
+   "dloss_dP": 0.0041941337283950275
+  },
+  {
+   "channel": 252,
+   "kind": "idle",
+   "qasm_line": 249,
+   "qubits": [
+    7
+   ],
+   "steps": "41..41",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 9.529778765431778e-06,
+   "dloss_dP": 0.009529778765432035
+  },
+  {
+   "channel": 253,
+   "kind": "gate2",
+   "qasm_line": 250,
+   "qubits": [
+    3,
+    2
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 4.591771279572902e-06,
+   "dloss_dP": 0.004591771279572902
+  },
+  {
+   "channel": 254,
+   "kind": "idle",
+   "qasm_line": 250,
+   "qubits": [
+    3
+   ],
+   "steps": "41..41",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 9.329778765431733e-06,
+   "dloss_dP": 0.009329778765431984
+  },
+  {
+   "channel": 255,
+   "kind": "gate2",
+   "qasm_line": 251,
+   "qubits": [
+    20,
+    19
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 3.865363358024646e-06,
+   "dloss_dP": 0.0038653633580246457
+  },
+  {
+   "channel": 256,
+   "kind": "idle",
+   "qasm_line": 251,
+   "qubits": [
+    19
+   ],
+   "steps": "41..41",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 8.97451950617252e-06,
+   "dloss_dP": 0.008974519506172762
+  },
+  {
+   "channel": 257,
+   "kind": "gate2",
+   "qasm_line": 252,
+   "qubits": [
+    14,
+    8
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 4.9937189135801714e-06,
+   "dloss_dP": 0.004993718913580171
+  },
+  {
+   "channel": 258,
+   "kind": "idle",
+   "qasm_line": 252,
+   "qubits": [
+    8
+   ],
+   "steps": "41..41",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 9.64088987654285e-06,
+   "dloss_dP": 0.009640889876543109
+  },
+  {
+   "channel": 259,
+   "kind": "gate2",
+   "qasm_line": 253,
+   "qubits": [
+    9,
+    10
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 4.79881481481455e-07,
+   "dloss_dP": 0.000479881481481455
+  },
+  {
+   "channel": 260,
+   "kind": "gate2",
+   "qasm_line": 254,
+   "qubits": [
+    16,
+    15
+   ],
+   "steps": "40",
+   "prob": 0.001,
+   "loss_attribution": 4.335172344625706e-06,
+   "dloss_dP": 0.0043351723446257056
+  },
+  {
+   "channel": 261,
+   "kind": "idle",
+   "qasm_line": 254,
+   "qubits": [
+    15
+   ],
+   "steps": "41..41",
+   "prob": 0.0009999999999999731,
+   "loss_attribution": 8.95200098765395e-06,
+   "dloss_dP": 0.008952000987654191
+  },
+  {
+   "channel": 262,
+   "kind": "flip",
+   "qasm_line": 257,
+   "qubits": [
+    1
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 263,
+   "kind": "gate1",
+   "qasm_line": 257,
+   "qubits": [
+    1
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 264,
+   "kind": "flip",
+   "qasm_line": 258,
+   "qubits": [
+    2
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": 8.000000000000002e-07,
+   "dloss_dP": 0.0008000000000000001
+  },
+  {
+   "channel": 265,
+   "kind": "gate1",
+   "qasm_line": 258,
+   "qubits": [
+    2
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 266,
+   "kind": "flip",
+   "qasm_line": 260,
+   "qubits": [
+    14
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 267,
+   "kind": "gate1",
+   "qasm_line": 260,
+   "qubits": [
+    14
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 268,
+   "kind": "flip",
+   "qasm_line": 262,
+   "qubits": [
+    9
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 269,
+   "kind": "gate1",
+   "qasm_line": 262,
+   "qubits": [
+    9
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 270,
+   "kind": "flip",
+   "qasm_line": 263,
+   "qubits": [
+    10
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": 1.6662222222222072e-06,
+   "dloss_dP": 0.0016662222222222072
+  },
+  {
+   "channel": 271,
+   "kind": "gate1",
+   "qasm_line": 263,
+   "qubits": [
+    10
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 272,
+   "kind": "flip",
+   "qasm_line": 265,
+   "qubits": [
+    20
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 273,
+   "kind": "gate1",
+   "qasm_line": 265,
+   "qubits": [
+    20
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  },
+  {
+   "channel": 274,
+   "kind": "flip",
+   "qasm_line": 267,
+   "qubits": [
+    16
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": 0.0,
+   "dloss_dP": 0.0
+  },
+  {
+   "channel": 275,
+   "kind": "gate1",
+   "qasm_line": 267,
+   "qubits": [
+    16
+   ],
+   "steps": "41",
+   "prob": 0.001,
+   "loss_attribution": -1.1102230246251566e-19,
+   "dloss_dP": -1.1102230246251565e-16
+  }
+ ]
+}

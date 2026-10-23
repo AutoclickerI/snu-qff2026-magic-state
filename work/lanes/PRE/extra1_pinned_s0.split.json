@@ -1,0 +1,5484 @@
+{
+  "summary": {
+    "name": "extra1_pinned_s0",
+    "CX": 139,
+    "pre_end_step": 50,
+    "depth": 55,
+    "loss1": 1.602002579975027e-18,
+    "loss2": 0.00012412928685431944,
+    "A1": 0.5384783972504976,
+    "pre_A1": 0.5122801750282759,
+    "suffix_A1": 0.02619822222222168,
+    "exp_minus_A1": 0.5836356386705721,
+    "pre_loss2": 4.121597654910786e-05,
+    "suffix_loss2": 8.291331030521158e-05,
+    "delta_loss2": 1.193433978735675e-05,
+    "construction_pre_A1": 0.490214397250498,
+    "construction_suffix_A1": 0.04826399999999964,
+    "construction_pre_loss2": 2.1135647666079005e-05,
+    "construction_suffix_loss2": 0.00010299363918824043,
+    "passed": true,
+    "acceptance": 0.583202,
+    "check_shots": 1000000
+  },
+  "channels": [
+    {
+      "channel": 0,
+      "kind": "flip",
+      "line": 5,
+      "qubits": [
+        2
+      ],
+      "steps": "0",
+      "ins": "instruction 1 (reset q[2])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 1,
+      "kind": "flip",
+      "line": 6,
+      "qubits": [
+        1
+      ],
+      "steps": "0",
+      "ins": "instruction 2 (reset q[1])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 2,
+      "kind": "flip",
+      "line": 9,
+      "qubits": [
+        14
+      ],
+      "steps": "1",
+      "ins": "instruction 5 (reset q[14])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 3,
+      "kind": "flip",
+      "line": 10,
+      "qubits": [
+        8
+      ],
+      "steps": "1",
+      "ins": "instruction 6 (reset q[8])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 4,
+      "kind": "flip",
+      "line": 12,
+      "qubits": [
+        13
+      ],
+      "steps": "1",
+      "ins": "instruction 8 (reset q[13])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 5,
+      "kind": "gate2",
+      "line": 14,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "1",
+      "ins": "instruction 10 (cx q[1], q[2])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 6,
+      "kind": "idle",
+      "line": 14,
+      "qubits": [
+        1
+      ],
+      "steps": "2..2",
+      "ins": "instruction 10 (cx q[1], q[2])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 7,
+      "kind": "flip",
+      "line": 16,
+      "qubits": [
+        3
+      ],
+      "steps": "2",
+      "ins": "instruction 12 (reset q[3])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 8,
+      "kind": "flip",
+      "line": 18,
+      "qubits": [
+        7
+      ],
+      "steps": "2",
+      "ins": "instruction 14 (reset q[7])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 9,
+      "kind": "gate2",
+      "line": 20,
+      "qubits": [
+        8,
+        2
+      ],
+      "steps": "2",
+      "ins": "instruction 16 (cx q[8], q[2])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 10,
+      "kind": "gate2",
+      "line": 21,
+      "qubits": [
+        13,
+        14
+      ],
+      "steps": "2",
+      "ins": "instruction 17 (cx q[13], q[14])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 11,
+      "kind": "idle",
+      "line": 21,
+      "qubits": [
+        13
+      ],
+      "steps": "3..3",
+      "ins": "instruction 17 (cx q[13], q[14])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 12,
+      "kind": "flip",
+      "line": 23,
+      "qubits": [
+        15
+      ],
+      "steps": "3",
+      "ins": "instruction 19 (reset q[15])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 13,
+      "kind": "gate2",
+      "line": 25,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "3",
+      "ins": "instruction 21 (cx q[3], q[2])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 14,
+      "kind": "idle",
+      "line": 25,
+      "qubits": [
+        3
+      ],
+      "steps": "4..8",
+      "ins": "instruction 21 (cx q[3], q[2])",
+      "A1": 0.0049866844325955895,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 15,
+      "kind": "gate2",
+      "line": 26,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "3",
+      "ins": "instruction 22 (cx q[8], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 16,
+      "kind": "idle",
+      "line": 26,
+      "qubits": [
+        8
+      ],
+      "steps": "4..9",
+      "ins": "instruction 22 (cx q[8], q[14])",
+      "A1": 0.0059800355200188005,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 17,
+      "kind": "gate2",
+      "line": 27,
+      "qubits": [
+        7,
+        1
+      ],
+      "steps": "3",
+      "ins": "instruction 23 (cx q[7], q[1])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 18,
+      "kind": "gate2",
+      "line": 29,
+      "qubits": [
+        15,
+        14
+      ],
+      "steps": "4",
+      "ins": "instruction 25 (cx q[15], q[14])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 19,
+      "kind": "idle",
+      "line": 29,
+      "qubits": [
+        15
+      ],
+      "steps": "5..7",
+      "ins": "instruction 25 (cx q[15], q[14])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 20,
+      "kind": "gate2",
+      "line": 30,
+      "qubits": [
+        2,
+        1
+      ],
+      "steps": "4",
+      "ins": "instruction 26 (cx q[2], q[1])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 21,
+      "kind": "gate2",
+      "line": 31,
+      "qubits": [
+        7,
+        13
+      ],
+      "steps": "4",
+      "ins": "instruction 27 (cx q[7], q[13])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 22,
+      "kind": "gate2",
+      "line": 33,
+      "qubits": [
+        14,
+        13
+      ],
+      "steps": "5",
+      "ins": "instruction 29 (cx q[14], q[13])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 23,
+      "kind": "gate2",
+      "line": 34,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "5",
+      "ins": "instruction 30 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 24,
+      "kind": "idle",
+      "line": 34,
+      "qubits": [
+        1
+      ],
+      "steps": "6..7",
+      "ins": "instruction 30 (cx q[1], q[7])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 25,
+      "kind": "flip",
+      "line": 36,
+      "qubits": [
+        9
+      ],
+      "steps": "6",
+      "ins": "instruction 32 (reset q[9])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 26,
+      "kind": "flip",
+      "line": 37,
+      "qubits": [
+        10
+      ],
+      "steps": "6",
+      "ins": "instruction 33 (reset q[10])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 27,
+      "kind": "gate2",
+      "line": 39,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "6",
+      "ins": "instruction 35 (cx q[13], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 28,
+      "kind": "idle",
+      "line": 39,
+      "qubits": [
+        13
+      ],
+      "steps": "7..8",
+      "ins": "instruction 35 (cx q[13], q[7])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 29,
+      "kind": "gate2",
+      "line": 41,
+      "qubits": [
+        10,
+        9
+      ],
+      "steps": "7",
+      "ins": "instruction 37 (cx q[10], q[9])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 30,
+      "kind": "idle",
+      "line": 41,
+      "qubits": [
+        10
+      ],
+      "steps": "8..10",
+      "ins": "instruction 37 (cx q[10], q[9])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 31,
+      "kind": "gate1",
+      "line": 42,
+      "qubits": [
+        7
+      ],
+      "steps": "7",
+      "ins": "instruction 38 (t q[7])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 32,
+      "kind": "flip",
+      "line": 44,
+      "qubits": [
+        0
+      ],
+      "steps": "8",
+      "ins": "instruction 40 (reset q[0])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 33,
+      "kind": "gate2",
+      "line": 46,
+      "qubits": [
+        15,
+        9
+      ],
+      "steps": "8",
+      "ins": "instruction 42 (cx q[15], q[9])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 34,
+      "kind": "idle",
+      "line": 46,
+      "qubits": [
+        15
+      ],
+      "steps": "9..13",
+      "ins": "instruction 42 (cx q[15], q[9])",
+      "A1": 0.0049866844325955895,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 35,
+      "kind": "gate2",
+      "line": 47,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "8",
+      "ins": "instruction 43 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 36,
+      "kind": "flip",
+      "line": 49,
+      "qubits": [
+        19
+      ],
+      "steps": "9",
+      "ins": "instruction 45 (reset q[19])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 37,
+      "kind": "gate2",
+      "line": 51,
+      "qubits": [
+        3,
+        9
+      ],
+      "steps": "9",
+      "ins": "instruction 47 (cx q[3], q[9])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 38,
+      "kind": "idle",
+      "line": 51,
+      "qubits": [
+        3
+      ],
+      "steps": "10..12",
+      "ins": "instruction 47 (cx q[3], q[9])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 39,
+      "kind": "gate2",
+      "line": 52,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "9",
+      "ins": "instruction 48 (cx q[13], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 40,
+      "kind": "idle",
+      "line": 52,
+      "qubits": [
+        7
+      ],
+      "steps": "10..11",
+      "ins": "instruction 48 (cx q[13], q[7])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 41,
+      "kind": "gate2",
+      "line": 53,
+      "qubits": [
+        0,
+        1
+      ],
+      "steps": "9",
+      "ins": "instruction 49 (cx q[0], q[1])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 42,
+      "kind": "gate2",
+      "line": 55,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "10",
+      "ins": "instruction 51 (cx q[8], q[9])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 43,
+      "kind": "idle",
+      "line": 55,
+      "qubits": [
+        8
+      ],
+      "steps": "11..13",
+      "ins": "instruction 51 (cx q[8], q[9])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 44,
+      "kind": "gate2",
+      "line": 56,
+      "qubits": [
+        19,
+        13
+      ],
+      "steps": "10",
+      "ins": "instruction 52 (cx q[19], q[13])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 45,
+      "kind": "gate2",
+      "line": 57,
+      "qubits": [
+        1,
+        0
+      ],
+      "steps": "10",
+      "ins": "instruction 53 (cx q[1], q[0])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 46,
+      "kind": "idle",
+      "line": 57,
+      "qubits": [
+        0
+      ],
+      "steps": "11..12",
+      "ins": "instruction 53 (cx q[1], q[0])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 47,
+      "kind": "gate2",
+      "line": 59,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "11",
+      "ins": "instruction 55 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 48,
+      "kind": "idle",
+      "line": 59,
+      "qubits": [
+        10
+      ],
+      "steps": "12..12",
+      "ins": "instruction 55 (cx q[9], q[10])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 49,
+      "kind": "gate2",
+      "line": 60,
+      "qubits": [
+        13,
+        19
+      ],
+      "steps": "11",
+      "ins": "instruction 56 (cx q[13], q[19])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 50,
+      "kind": "idle",
+      "line": 60,
+      "qubits": [
+        19
+      ],
+      "steps": "12..12",
+      "ins": "instruction 56 (cx q[13], q[19])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 51,
+      "kind": "flip",
+      "line": 61,
+      "qubits": [
+        1
+      ],
+      "steps": "11",
+      "ins": "instruction 57 (reset q[1])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 52,
+      "kind": "flip",
+      "line": 64,
+      "qubits": [
+        4
+      ],
+      "steps": "12",
+      "ins": "instruction 60 (reset q[4])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 53,
+      "kind": "flip",
+      "line": 66,
+      "qubits": [
+        14
+      ],
+      "steps": "12",
+      "ins": "instruction 62 (reset q[14])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 54,
+      "kind": "flip",
+      "line": 67,
+      "qubits": [
+        20
+      ],
+      "steps": "12",
+      "ins": "instruction 63 (reset q[20])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 55,
+      "kind": "flip",
+      "line": 68,
+      "qubits": [
+        9
+      ],
+      "steps": "12",
+      "ins": "instruction 64 (reset q[9])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 56,
+      "kind": "flip",
+      "line": 70,
+      "qubits": [
+        13
+      ],
+      "steps": "12",
+      "ins": "instruction 66 (reset q[13])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 57,
+      "kind": "gate2",
+      "line": 72,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "12",
+      "ins": "instruction 68 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 58,
+      "kind": "idle",
+      "line": 72,
+      "qubits": [
+        7
+      ],
+      "steps": "13..13",
+      "ins": "instruction 68 (cx q[1], q[7])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 59,
+      "kind": "gate2",
+      "line": 74,
+      "qubits": [
+        4,
+        10
+      ],
+      "steps": "13",
+      "ins": "instruction 70 (cx q[4], q[10])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 60,
+      "kind": "flip",
+      "line": 75,
+      "qubits": [
+        2
+      ],
+      "steps": "13",
+      "ins": "instruction 71 (reset q[2])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 61,
+      "kind": "gate2",
+      "line": 76,
+      "qubits": [
+        13,
+        14
+      ],
+      "steps": "13",
+      "ins": "instruction 72 (cx q[13], q[14])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 62,
+      "kind": "gate2",
+      "line": 77,
+      "qubits": [
+        19,
+        20
+      ],
+      "steps": "13",
+      "ins": "instruction 73 (cx q[19], q[20])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 63,
+      "kind": "gate2",
+      "line": 78,
+      "qubits": [
+        1,
+        0
+      ],
+      "steps": "13",
+      "ins": "instruction 74 (cx q[1], q[0])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 64,
+      "kind": "idle",
+      "line": 78,
+      "qubits": [
+        0
+      ],
+      "steps": "14..16",
+      "ins": "instruction 74 (cx q[1], q[0])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 65,
+      "kind": "gate2",
+      "line": 79,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "13",
+      "ins": "instruction 75 (cx q[9], q[3])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 66,
+      "kind": "idle",
+      "line": 79,
+      "qubits": [
+        3
+      ],
+      "steps": "14..16",
+      "ins": "instruction 75 (cx q[9], q[3])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 67,
+      "kind": "gate2",
+      "line": 81,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "14",
+      "ins": "instruction 77 (cx q[10], q[4])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 68,
+      "kind": "idle",
+      "line": 81,
+      "qubits": [
+        4
+      ],
+      "steps": "15..18",
+      "ins": "instruction 77 (cx q[10], q[4])",
+      "A1": 0.0039920071087406195,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 69,
+      "kind": "gate2",
+      "line": 82,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "14",
+      "ins": "instruction 78 (cx q[1], q[2])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 70,
+      "kind": "idle",
+      "line": 82,
+      "qubits": [
+        2
+      ],
+      "steps": "15..15",
+      "ins": "instruction 78 (cx q[1], q[2])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 71,
+      "kind": "gate2",
+      "line": 83,
+      "qubits": [
+        20,
+        19
+      ],
+      "steps": "14",
+      "ins": "instruction 79 (cx q[20], q[19])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 72,
+      "kind": "idle",
+      "line": 83,
+      "qubits": [
+        19
+      ],
+      "steps": "15..45",
+      "ins": "instruction 79 (cx q[20], q[19])",
+      "A1": 0.020258611374214197,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 73,
+      "kind": "gate2",
+      "line": 84,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "14",
+      "ins": "instruction 80 (cx q[9], q[15])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 74,
+      "kind": "idle",
+      "line": 84,
+      "qubits": [
+        15
+      ],
+      "steps": "15..15",
+      "ins": "instruction 80 (cx q[9], q[15])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 75,
+      "kind": "gate2",
+      "line": 85,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "14",
+      "ins": "instruction 81 (cx q[13], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 76,
+      "kind": "idle",
+      "line": 85,
+      "qubits": [
+        13
+      ],
+      "steps": "15..15",
+      "ins": "instruction 81 (cx q[13], q[7])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 77,
+      "kind": "gate2",
+      "line": 86,
+      "qubits": [
+        14,
+        8
+      ],
+      "steps": "14",
+      "ins": "instruction 82 (cx q[14], q[8])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 78,
+      "kind": "flip",
+      "line": 88,
+      "qubits": [
+        10
+      ],
+      "steps": "15",
+      "ins": "instruction 84 (reset q[10])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 5.416666666666678e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 79,
+      "kind": "gate2",
+      "line": 89,
+      "qubits": [
+        9,
+        8
+      ],
+      "steps": "15",
+      "ins": "instruction 85 (cx q[9], q[8])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 80,
+      "kind": "gate2",
+      "line": 90,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "15",
+      "ins": "instruction 86 (cx q[14], q[20])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 81,
+      "kind": "idle",
+      "line": 90,
+      "qubits": [
+        20
+      ],
+      "steps": "16..17",
+      "ins": "instruction 86 (cx q[14], q[20])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 82,
+      "kind": "gate2",
+      "line": 91,
+      "qubits": [
+        7,
+        1
+      ],
+      "steps": "15",
+      "ins": "instruction 87 (cx q[7], q[1])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 83,
+      "kind": "idle",
+      "line": 91,
+      "qubits": [
+        1
+      ],
+      "steps": "16..16",
+      "ins": "instruction 87 (cx q[7], q[1])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 84,
+      "kind": "gate2",
+      "line": 93,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "16",
+      "ins": "instruction 89 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.222222222222237e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 85,
+      "kind": "idle",
+      "line": 93,
+      "qubits": [
+        10
+      ],
+      "steps": "17..18",
+      "ins": "instruction 89 (cx q[9], q[10])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 3.6087037037036283e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 86,
+      "kind": "gate2",
+      "line": 94,
+      "qubits": [
+        14,
+        15
+      ],
+      "steps": "16",
+      "ins": "instruction 90 (cx q[14], q[15])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 87,
+      "kind": "gate2",
+      "line": 95,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "16",
+      "ins": "instruction 91 (cx q[2], q[8])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 88,
+      "kind": "idle",
+      "line": 95,
+      "qubits": [
+        8
+      ],
+      "steps": "17..17",
+      "ins": "instruction 91 (cx q[2], q[8])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 89,
+      "kind": "gate2",
+      "line": 96,
+      "qubits": [
+        7,
+        13
+      ],
+      "steps": "16",
+      "ins": "instruction 92 (cx q[7], q[13])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 5.555555555555566e-10,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 90,
+      "kind": "idle",
+      "line": 96,
+      "qubits": [
+        7
+      ],
+      "steps": "17..21",
+      "ins": "instruction 92 (cx q[7], q[13])",
+      "A1": 0.0049866844325955895,
+      "loss2_half_attribution": 1.385190120165444e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 91,
+      "kind": "gate2",
+      "line": 98,
+      "qubits": [
+        2,
+        3
+      ],
+      "steps": "17",
+      "ins": "instruction 94 (cx q[2], q[3])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 92,
+      "kind": "idle",
+      "line": 98,
+      "qubits": [
+        3
+      ],
+      "steps": "18..18",
+      "ins": "instruction 94 (cx q[2], q[3])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 93,
+      "kind": "gate2",
+      "line": 99,
+      "qubits": [
+        0,
+        1
+      ],
+      "steps": "17",
+      "ins": "instruction 95 (cx q[0], q[1])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.7777777777777645e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 94,
+      "kind": "idle",
+      "line": 99,
+      "qubits": [
+        0
+      ],
+      "steps": "18..21",
+      "ins": "instruction 95 (cx q[0], q[1])",
+      "A1": 0.0039920071087406195,
+      "loss2_half_attribution": 3.548450763324972e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 95,
+      "kind": "gate2",
+      "line": 100,
+      "qubits": [
+        15,
+        9
+      ],
+      "steps": "17",
+      "ins": "instruction 96 (cx q[15], q[9])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 96,
+      "kind": "idle",
+      "line": 100,
+      "qubits": [
+        15
+      ],
+      "steps": "18..18",
+      "ins": "instruction 96 (cx q[15], q[9])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 97,
+      "kind": "gate2",
+      "line": 101,
+      "qubits": [
+        13,
+        14
+      ],
+      "steps": "17",
+      "ins": "instruction 97 (cx q[13], q[14])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 98,
+      "kind": "idle",
+      "line": 101,
+      "qubits": [
+        13
+      ],
+      "steps": "18..45",
+      "ins": "instruction 97 (cx q[13], q[14])",
+      "A1": 0.01833451718379886,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 99,
+      "kind": "gate2",
+      "line": 103,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "18",
+      "ins": "instruction 99 (cx q[8], q[9])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 100,
+      "kind": "gate2",
+      "line": 104,
+      "qubits": [
+        20,
+        14
+      ],
+      "steps": "18",
+      "ins": "instruction 100 (cx q[20], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.0611111111111109e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 101,
+      "kind": "idle",
+      "line": 104,
+      "qubits": [
+        20
+      ],
+      "steps": "19..21",
+      "ins": "instruction 100 (cx q[20], q[14])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 2.0805567901234066e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 102,
+      "kind": "gate2",
+      "line": 105,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "18",
+      "ins": "instruction 101 (cx q[1], q[2])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 5.554074074074021e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 103,
+      "kind": "idle",
+      "line": 105,
+      "qubits": [
+        1
+      ],
+      "steps": "19..20",
+      "ins": "instruction 101 (cx q[1], q[2])",
+      "A1": 0.001332444444444414,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 104,
+      "kind": "gate2",
+      "line": 107,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "19",
+      "ins": "instruction 103 (cx q[10], q[4])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 7.222222222222237e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 105,
+      "kind": "idle",
+      "line": 107,
+      "qubits": [
+        4
+      ],
+      "steps": "20..20",
+      "ins": "instruction 103 (cx q[10], q[4])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 106,
+      "kind": "gate2",
+      "line": 108,
+      "qubits": [
+        3,
+        9
+      ],
+      "steps": "19",
+      "ins": "instruction 104 (cx q[3], q[9])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 107,
+      "kind": "gate2",
+      "line": 109,
+      "qubits": [
+        15,
+        14
+      ],
+      "steps": "19",
+      "ins": "instruction 105 (cx q[15], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 9.111111111111109e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 108,
+      "kind": "idle",
+      "line": 109,
+      "qubits": [
+        15
+      ],
+      "steps": "20..21",
+      "ins": "instruction 105 (cx q[15], q[14])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 109,
+      "kind": "gate2",
+      "line": 110,
+      "qubits": [
+        8,
+        2
+      ],
+      "steps": "19",
+      "ins": "instruction 106 (cx q[8], q[2])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 2.7770370370370136e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 110,
+      "kind": "gate2",
+      "line": 112,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "20",
+      "ins": "instruction 108 (cx q[8], q[14])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 111,
+      "kind": "idle",
+      "line": 112,
+      "qubits": [
+        8
+      ],
+      "steps": "21..21",
+      "ins": "instruction 108 (cx q[8], q[14])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 112,
+      "kind": "gate2",
+      "line": 113,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "20",
+      "ins": "instruction 109 (cx q[3], q[2])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 4.444444444444453e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 113,
+      "kind": "idle",
+      "line": 113,
+      "qubits": [
+        3
+      ],
+      "steps": "21..22",
+      "ins": "instruction 109 (cx q[3], q[2])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 2.220740740740694e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 114,
+      "kind": "gate2",
+      "line": 114,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "20",
+      "ins": "instruction 110 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 115,
+      "kind": "gate2",
+      "line": 116,
+      "qubits": [
+        4,
+        10
+      ],
+      "steps": "21",
+      "ins": "instruction 112 (cx q[4], q[10])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.4444444444444473e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 116,
+      "kind": "idle",
+      "line": 116,
+      "qubits": [
+        4
+      ],
+      "steps": "22..22",
+      "ins": "instruction 112 (cx q[4], q[10])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 3.611111111111021e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 117,
+      "kind": "flip",
+      "line": 117,
+      "qubits": [
+        2
+      ],
+      "steps": "21",
+      "ins": "instruction 113 (measure q[2])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 118,
+      "kind": "gate1",
+      "line": 117,
+      "qubits": [
+        2
+      ],
+      "steps": "21",
+      "ins": "instruction 113 (measure q[2])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 119,
+      "kind": "flip",
+      "line": 118,
+      "qubits": [
+        14
+      ],
+      "steps": "21",
+      "ins": "instruction 114 (measure q[14])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 120,
+      "kind": "gate1",
+      "line": 118,
+      "qubits": [
+        14
+      ],
+      "steps": "21",
+      "ins": "instruction 114 (measure q[14])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 121,
+      "kind": "flip",
+      "line": 120,
+      "qubits": [
+        1
+      ],
+      "steps": "21",
+      "ins": "instruction 116 (measure q[1])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 122,
+      "kind": "gate1",
+      "line": 120,
+      "qubits": [
+        1
+      ],
+      "steps": "21",
+      "ins": "instruction 116 (measure q[1])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 123,
+      "kind": "flip",
+      "line": 122,
+      "qubits": [
+        9
+      ],
+      "steps": "21",
+      "ins": "instruction 118 (measure q[9])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 124,
+      "kind": "gate1",
+      "line": 122,
+      "qubits": [
+        9
+      ],
+      "steps": "21",
+      "ins": "instruction 118 (measure q[9])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 125,
+      "kind": "flip",
+      "line": 124,
+      "qubits": [
+        10
+      ],
+      "steps": "22",
+      "ins": "instruction 120 (measure q[10])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 126,
+      "kind": "gate1",
+      "line": 124,
+      "qubits": [
+        10
+      ],
+      "steps": "22",
+      "ins": "instruction 120 (measure q[10])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 127,
+      "kind": "flip",
+      "line": 125,
+      "qubits": [
+        9
+      ],
+      "steps": "22",
+      "ins": "instruction 121 (reset q[9])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 128,
+      "kind": "flip",
+      "line": 127,
+      "qubits": [
+        2
+      ],
+      "steps": "22",
+      "ins": "instruction 123 (reset q[2])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 129,
+      "kind": "flip",
+      "line": 129,
+      "qubits": [
+        1
+      ],
+      "steps": "22",
+      "ins": "instruction 125 (reset q[1])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 130,
+      "kind": "flip",
+      "line": 131,
+      "qubits": [
+        14
+      ],
+      "steps": "22",
+      "ins": "instruction 127 (reset q[14])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 131,
+      "kind": "flip",
+      "line": 133,
+      "qubits": [
+        6
+      ],
+      "steps": "22",
+      "ins": "instruction 129 (reset q[6])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 132,
+      "kind": "gate1",
+      "line": 135,
+      "qubits": [
+        0
+      ],
+      "steps": "22",
+      "ins": "instruction 131 (t q[0])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 8.88888888888882e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 133,
+      "kind": "gate1",
+      "line": 136,
+      "qubits": [
+        7
+      ],
+      "steps": "22",
+      "ins": "instruction 132 (t q[7])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 2.7777777777777792e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 134,
+      "kind": "gate1",
+      "line": 137,
+      "qubits": [
+        8
+      ],
+      "steps": "22",
+      "ins": "instruction 133 (t q[8])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 135,
+      "kind": "gate1",
+      "line": 138,
+      "qubits": [
+        20
+      ],
+      "steps": "22",
+      "ins": "instruction 134 (t q[20])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 6.944444444444445e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 136,
+      "kind": "gate1",
+      "line": 139,
+      "qubits": [
+        15
+      ],
+      "steps": "22",
+      "ins": "instruction 135 (t q[15])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 137,
+      "kind": "flip",
+      "line": 141,
+      "qubits": [
+        10
+      ],
+      "steps": "23",
+      "ins": "instruction 137 (reset q[10])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 138,
+      "kind": "gate1",
+      "line": 143,
+      "qubits": [
+        3
+      ],
+      "steps": "23",
+      "ins": "instruction 139 (t q[3])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 1.1111111111111122e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 139,
+      "kind": "gate1",
+      "line": 144,
+      "qubits": [
+        4
+      ],
+      "steps": "23",
+      "ins": "instruction 140 (t q[4])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 3.6111111111111126e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 140,
+      "kind": "gate2",
+      "line": 145,
+      "qubits": [
+        6,
+        0
+      ],
+      "steps": "23",
+      "ins": "instruction 141 (cx q[6], q[0])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 3.5555555555555276e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 141,
+      "kind": "idle",
+      "line": 145,
+      "qubits": [
+        0
+      ],
+      "steps": "24..30",
+      "ins": "instruction 141 (cx q[6], q[0])",
+      "A1": 0.006972062139325413,
+      "loss2_half_attribution": 6.19738856828921e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 142,
+      "kind": "gate2",
+      "line": 146,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "23",
+      "ins": "instruction 142 (cx q[14], q[20])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 2.7777777777777804e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 143,
+      "kind": "idle",
+      "line": 146,
+      "qubits": [
+        20
+      ],
+      "steps": "24..33",
+      "ins": "instruction 142 (cx q[14], q[20])",
+      "A1": 0.009940212836350881,
+      "loss2_half_attribution": 6.902925580799226e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 144,
+      "kind": "gate2",
+      "line": 147,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "23",
+      "ins": "instruction 143 (cx q[2], q[8])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 145,
+      "kind": "idle",
+      "line": 147,
+      "qubits": [
+        2
+      ],
+      "steps": "24..32",
+      "ins": "instruction 143 (cx q[2], q[8])",
+      "A1": 0.008952149035064333,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 146,
+      "kind": "gate2",
+      "line": 148,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "23",
+      "ins": "instruction 144 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.1111111111111117e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 147,
+      "kind": "idle",
+      "line": 148,
+      "qubits": [
+        1
+      ],
+      "steps": "24..31",
+      "ins": "instruction 144 (cx q[1], q[7])",
+      "A1": 0.007962766056472975,
+      "loss2_half_attribution": 2.2118794601313833e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 148,
+      "kind": "gate2",
+      "line": 149,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "23",
+      "ins": "instruction 145 (cx q[9], q[15])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 149,
+      "kind": "idle",
+      "line": 149,
+      "qubits": [
+        15
+      ],
+      "steps": "24..32",
+      "ins": "instruction 145 (cx q[9], q[15])",
+      "A1": 0.008952149035064333,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 150,
+      "kind": "gate2",
+      "line": 151,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "24",
+      "ins": "instruction 147 (cx q[9], q[3])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 9.999999999999932e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 151,
+      "kind": "idle",
+      "line": 151,
+      "qubits": [
+        3
+      ],
+      "steps": "25..30",
+      "ins": "instruction 147 (cx q[9], q[3])",
+      "A1": 0.0059800355200188005,
+      "loss2_half_attribution": 6.644483911132006e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 152,
+      "kind": "gate2",
+      "line": 152,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "24",
+      "ins": "instruction 148 (cx q[10], q[4])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.4444444444444444e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 153,
+      "kind": "idle",
+      "line": 152,
+      "qubits": [
+        4
+      ],
+      "steps": "25..33",
+      "ins": "instruction 148 (cx q[10], q[4])",
+      "A1": 0.008952149035064333,
+      "loss2_half_attribution": 3.232720484884345e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 154,
+      "kind": "gate2",
+      "line": 153,
+      "qubits": [
+        7,
+        6
+      ],
+      "steps": "24",
+      "ins": "instruction 149 (cx q[7], q[6])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 5.8329629629629326e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 155,
+      "kind": "idle",
+      "line": 153,
+      "qubits": [
+        6
+      ],
+      "steps": "25..29",
+      "ins": "instruction 149 (cx q[7], q[6])",
+      "A1": 0.0049866844325955895,
+      "loss2_half_attribution": 4.4326083845293783e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 156,
+      "kind": "gate2",
+      "line": 154,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "24",
+      "ins": "instruction 150 (cx q[8], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 2.6107407407407288e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 157,
+      "kind": "idle",
+      "line": 154,
+      "qubits": [
+        14
+      ],
+      "steps": "25..31",
+      "ins": "instruction 150 (cx q[8], q[14])",
+      "A1": 0.006972062139325413,
+      "loss2_half_attribution": 4.841709818975983e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 158,
+      "kind": "gate2",
+      "line": 156,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "25",
+      "ins": "instruction 152 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.5555555555555488e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 159,
+      "kind": "idle",
+      "line": 156,
+      "qubits": [
+        10
+      ],
+      "steps": "26..31",
+      "ins": "instruction 152 (cx q[9], q[10])",
+      "A1": 0.0059800355200188005,
+      "loss2_half_attribution": 2.1594572711179012e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 160,
+      "kind": "gate2",
+      "line": 157,
+      "qubits": [
+        8,
+        7
+      ],
+      "steps": "25",
+      "ins": "instruction 153 (cx q[8], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 5.277037037037008e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 161,
+      "kind": "idle",
+      "line": 157,
+      "qubits": [
+        7
+      ],
+      "steps": "26..28",
+      "ins": "instruction 153 (cx q[8], q[7])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 5.991448740411339e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 162,
+      "kind": "gate2",
+      "line": 159,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "26",
+      "ins": "instruction 155 (cx q[8], q[9])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.1111111111111117e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 163,
+      "kind": "idle",
+      "line": 159,
+      "qubits": [
+        9
+      ],
+      "steps": "27..29",
+      "ins": "instruction 155 (cx q[8], q[9])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 8.322227160493619e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 164,
+      "kind": "flip",
+      "line": 162,
+      "qubits": [
+        8
+      ],
+      "steps": "27",
+      "ins": "instruction 158 (measure q[8])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 165,
+      "kind": "gate1",
+      "line": 162,
+      "qubits": [
+        8
+      ],
+      "steps": "27",
+      "ins": "instruction 158 (measure q[8])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 166,
+      "kind": "flip",
+      "line": 164,
+      "qubits": [
+        8
+      ],
+      "steps": "28",
+      "ins": "instruction 160 (reset q[8])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 167,
+      "kind": "gate2",
+      "line": 167,
+      "qubits": [
+        8,
+        7
+      ],
+      "steps": "29",
+      "ins": "instruction 163 (cx q[8], q[7])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.999259259259225e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 168,
+      "kind": "gate2",
+      "line": 169,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "30",
+      "ins": "instruction 165 (cx q[8], q[9])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 5.277037037037009e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 169,
+      "kind": "idle",
+      "line": 169,
+      "qubits": [
+        8
+      ],
+      "steps": "31..31",
+      "ins": "instruction 165 (cx q[8], q[9])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 6.109259259259036e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 170,
+      "kind": "gate2",
+      "line": 170,
+      "qubits": [
+        7,
+        6
+      ],
+      "steps": "30",
+      "ins": "instruction 166 (cx q[7], q[6])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 5.8329629629629326e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 171,
+      "kind": "idle",
+      "line": 170,
+      "qubits": [
+        7
+      ],
+      "steps": "31..31",
+      "ins": "instruction 166 (cx q[7], q[6])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 2.7777777777777044e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 172,
+      "kind": "gate2",
+      "line": 172,
+      "qubits": [
+        6,
+        0
+      ],
+      "steps": "31",
+      "ins": "instruction 168 (cx q[6], q[0])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 3.5555555555555276e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 173,
+      "kind": "idle",
+      "line": 172,
+      "qubits": [
+        6
+      ],
+      "steps": "32..32",
+      "ins": "instruction 168 (cx q[6], q[0])",
+      "A1": 0.0006666666666666488,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 174,
+      "kind": "gate2",
+      "line": 173,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "31",
+      "ins": "instruction 169 (cx q[9], q[3])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 4.082962962962951e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 175,
+      "kind": "idle",
+      "line": 173,
+      "qubits": [
+        3
+      ],
+      "steps": "32..32",
+      "ins": "instruction 169 (cx q[9], q[3])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 1.1111111111110822e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 176,
+      "kind": "gate2",
+      "line": 175,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "32",
+      "ins": "instruction 171 (cx q[8], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 2.6107407407407288e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 177,
+      "kind": "idle",
+      "line": 175,
+      "qubits": [
+        14
+      ],
+      "steps": "33..33",
+      "ins": "instruction 171 (cx q[8], q[14])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 6.944444444444257e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 178,
+      "kind": "gate2",
+      "line": 176,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "32",
+      "ins": "instruction 172 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 4.5274074074073954e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 179,
+      "kind": "idle",
+      "line": 176,
+      "qubits": [
+        10
+      ],
+      "steps": "33..33",
+      "ins": "instruction 172 (cx q[9], q[10])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 3.611111111111016e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 180,
+      "kind": "gate2",
+      "line": 177,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "32",
+      "ins": "instruction 173 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.1111111111111117e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 181,
+      "kind": "gate1",
+      "line": 178,
+      "qubits": [
+        0
+      ],
+      "steps": "32",
+      "ins": "instruction 174 (tdg q[0])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 8.888888888888825e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 182,
+      "kind": "gate2",
+      "line": 180,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "33",
+      "ins": "instruction 176 (cx q[9], q[15])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 183,
+      "kind": "idle",
+      "line": 180,
+      "qubits": [
+        15
+      ],
+      "steps": "34..34",
+      "ins": "instruction 176 (cx q[9], q[15])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 184,
+      "kind": "gate2",
+      "line": 181,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "33",
+      "ins": "instruction 177 (cx q[2], q[8])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 185,
+      "kind": "gate1",
+      "line": 182,
+      "qubits": [
+        3
+      ],
+      "steps": "33",
+      "ins": "instruction 178 (tdg q[3])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 1.1111111111111123e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 186,
+      "kind": "gate1",
+      "line": 183,
+      "qubits": [
+        7
+      ],
+      "steps": "33",
+      "ins": "instruction 179 (tdg q[7])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 2.777777777777781e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 187,
+      "kind": "flip",
+      "line": 185,
+      "qubits": [
+        1
+      ],
+      "steps": "33",
+      "ins": "instruction 181 (measure q[1])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 188,
+      "kind": "gate1",
+      "line": 185,
+      "qubits": [
+        1
+      ],
+      "steps": "33",
+      "ins": "instruction 181 (measure q[1])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 189,
+      "kind": "flip",
+      "line": 187,
+      "qubits": [
+        6
+      ],
+      "steps": "33",
+      "ins": "instruction 183 (measure q[6])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 190,
+      "kind": "gate1",
+      "line": 187,
+      "qubits": [
+        6
+      ],
+      "steps": "33",
+      "ins": "instruction 183 (measure q[6])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 191,
+      "kind": "gate1",
+      "line": 188,
+      "qubits": [
+        0
+      ],
+      "steps": "33",
+      "ins": "instruction 184 (t q[0])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 8.888888888888814e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 192,
+      "kind": "idle",
+      "line": 188,
+      "qubits": [
+        0
+      ],
+      "steps": "34..34",
+      "ins": "instruction 184 (t q[0])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 8.888888888888578e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 193,
+      "kind": "gate2",
+      "line": 190,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "34",
+      "ins": "instruction 186 (cx q[14], q[20])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 2.7777777777777804e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 194,
+      "kind": "gate2",
+      "line": 191,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "34",
+      "ins": "instruction 187 (cx q[10], q[4])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.4444444444444444e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 195,
+      "kind": "gate1",
+      "line": 192,
+      "qubits": [
+        8
+      ],
+      "steps": "34",
+      "ins": "instruction 188 (tdg q[8])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 196,
+      "kind": "flip",
+      "line": 194,
+      "qubits": [
+        9
+      ],
+      "steps": "34",
+      "ins": "instruction 190 (measure q[9])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 197,
+      "kind": "gate1",
+      "line": 194,
+      "qubits": [
+        9
+      ],
+      "steps": "34",
+      "ins": "instruction 190 (measure q[9])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 198,
+      "kind": "flip",
+      "line": 196,
+      "qubits": [
+        2
+      ],
+      "steps": "34",
+      "ins": "instruction 192 (measure q[2])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 199,
+      "kind": "gate1",
+      "line": 196,
+      "qubits": [
+        2
+      ],
+      "steps": "34",
+      "ins": "instruction 192 (measure q[2])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 200,
+      "kind": "flip",
+      "line": 197,
+      "qubits": [
+        1
+      ],
+      "steps": "34",
+      "ins": "instruction 193 (reset q[1])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 201,
+      "kind": "flip",
+      "line": 199,
+      "qubits": [
+        6
+      ],
+      "steps": "34",
+      "ins": "instruction 195 (reset q[6])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 202,
+      "kind": "gate1",
+      "line": 201,
+      "qubits": [
+        7
+      ],
+      "steps": "34",
+      "ins": "instruction 197 (t q[7])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 2.7777777777777792e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 203,
+      "kind": "gate1",
+      "line": 202,
+      "qubits": [
+        3
+      ],
+      "steps": "34",
+      "ins": "instruction 198 (t q[3])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 1.1111111111111114e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 204,
+      "kind": "idle",
+      "line": 202,
+      "qubits": [
+        3
+      ],
+      "steps": "35..35",
+      "ins": "instruction 198 (t q[3])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 1.1111111111110814e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 205,
+      "kind": "gate1",
+      "line": 204,
+      "qubits": [
+        15
+      ],
+      "steps": "35",
+      "ins": "instruction 200 (tdg q[15])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 206,
+      "kind": "gate1",
+      "line": 205,
+      "qubits": [
+        4
+      ],
+      "steps": "35",
+      "ins": "instruction 201 (tdg q[4])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 3.611111111111114e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 207,
+      "kind": "gate1",
+      "line": 206,
+      "qubits": [
+        20
+      ],
+      "steps": "35",
+      "ins": "instruction 202 (tdg q[20])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 6.944444444444453e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 208,
+      "kind": "flip",
+      "line": 208,
+      "qubits": [
+        10
+      ],
+      "steps": "35",
+      "ins": "instruction 204 (measure q[10])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 209,
+      "kind": "gate1",
+      "line": 208,
+      "qubits": [
+        10
+      ],
+      "steps": "35",
+      "ins": "instruction 204 (measure q[10])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 210,
+      "kind": "flip",
+      "line": 210,
+      "qubits": [
+        14
+      ],
+      "steps": "35",
+      "ins": "instruction 206 (measure q[14])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 211,
+      "kind": "gate1",
+      "line": 210,
+      "qubits": [
+        14
+      ],
+      "steps": "35",
+      "ins": "instruction 206 (measure q[14])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 212,
+      "kind": "flip",
+      "line": 211,
+      "qubits": [
+        9
+      ],
+      "steps": "35",
+      "ins": "instruction 207 (reset q[9])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 213,
+      "kind": "flip",
+      "line": 213,
+      "qubits": [
+        2
+      ],
+      "steps": "35",
+      "ins": "instruction 209 (reset q[2])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 214,
+      "kind": "gate1",
+      "line": 215,
+      "qubits": [
+        8
+      ],
+      "steps": "35",
+      "ins": "instruction 211 (t q[8])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 215,
+      "kind": "gate2",
+      "line": 216,
+      "qubits": [
+        6,
+        0
+      ],
+      "steps": "35",
+      "ins": "instruction 212 (cx q[6], q[0])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 3.555555555555524e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 216,
+      "kind": "idle",
+      "line": 216,
+      "qubits": [
+        0
+      ],
+      "steps": "36..47",
+      "ins": "instruction 212 (cx q[6], q[0])",
+      "A1": 0.011912389940276685,
+      "loss2_half_attribution": 1.058879105802363e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 217,
+      "kind": "gate2",
+      "line": 217,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "35",
+      "ins": "instruction 213 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.1111111111111117e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 218,
+      "kind": "idle",
+      "line": 217,
+      "qubits": [
+        1
+      ],
+      "steps": "36..45",
+      "ins": "instruction 213 (cx q[1], q[7])",
+      "A1": 0.009940212836350881,
+      "loss2_half_attribution": 2.7611702323196906e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 219,
+      "kind": "flip",
+      "line": 219,
+      "qubits": [
+        10
+      ],
+      "steps": "36",
+      "ins": "instruction 215 (reset q[10])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 220,
+      "kind": "flip",
+      "line": 221,
+      "qubits": [
+        14
+      ],
+      "steps": "36",
+      "ins": "instruction 217 (reset q[14])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 221,
+      "kind": "gate1",
+      "line": 223,
+      "qubits": [
+        20
+      ],
+      "steps": "36",
+      "ins": "instruction 219 (t q[20])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 6.944444444444445e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 222,
+      "kind": "gate1",
+      "line": 224,
+      "qubits": [
+        15
+      ],
+      "steps": "36",
+      "ins": "instruction 220 (t q[15])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 223,
+      "kind": "gate1",
+      "line": 225,
+      "qubits": [
+        4
+      ],
+      "steps": "36",
+      "ins": "instruction 221 (t q[4])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 3.611111111111114e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 224,
+      "kind": "gate2",
+      "line": 226,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "36",
+      "ins": "instruction 222 (cx q[9], q[3])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 4.444444444444446e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 225,
+      "kind": "idle",
+      "line": 226,
+      "qubits": [
+        3
+      ],
+      "steps": "37..44",
+      "ins": "instruction 222 (cx q[9], q[3])",
+      "A1": 0.007962766056472975,
+      "loss2_half_attribution": 8.84751784052553e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 226,
+      "kind": "gate2",
+      "line": 227,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "36",
+      "ins": "instruction 223 (cx q[2], q[8])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 227,
+      "kind": "idle",
+      "line": 227,
+      "qubits": [
+        2
+      ],
+      "steps": "37..44",
+      "ins": "instruction 223 (cx q[2], q[8])",
+      "A1": 0.007962766056472975,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 228,
+      "kind": "gate2",
+      "line": 228,
+      "qubits": [
+        7,
+        6
+      ],
+      "steps": "36",
+      "ins": "instruction 224 (cx q[7], q[6])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 5.83296296296293e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 229,
+      "kind": "idle",
+      "line": 228,
+      "qubits": [
+        6
+      ],
+      "steps": "37..44",
+      "ins": "instruction 224 (cx q[7], q[6])",
+      "A1": 0.007962766056472975,
+      "loss2_half_attribution": 7.078014272420365e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 230,
+      "kind": "gate2",
+      "line": 230,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "37",
+      "ins": "instruction 226 (cx q[14], q[20])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 2.7777777777777804e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 231,
+      "kind": "idle",
+      "line": 230,
+      "qubits": [
+        20
+      ],
+      "steps": "38..43",
+      "ins": "instruction 226 (cx q[14], q[20])",
+      "A1": 0.0059800355200188005,
+      "loss2_half_attribution": 4.1528024444575033e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 232,
+      "kind": "gate2",
+      "line": 231,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "37",
+      "ins": "instruction 227 (cx q[10], q[4])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.4444444444444449e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 233,
+      "kind": "idle",
+      "line": 231,
+      "qubits": [
+        4
+      ],
+      "steps": "38..43",
+      "ins": "instruction 227 (cx q[10], q[4])",
+      "A1": 0.0059800355200188005,
+      "loss2_half_attribution": 2.1594572711179017e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 234,
+      "kind": "gate2",
+      "line": 232,
+      "qubits": [
+        8,
+        7
+      ],
+      "steps": "37",
+      "ins": "instruction 228 (cx q[8], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 4.3329629629629457e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 235,
+      "kind": "idle",
+      "line": 232,
+      "qubits": [
+        7
+      ],
+      "steps": "38..43",
+      "ins": "instruction 228 (cx q[8], q[7])",
+      "A1": 0.0059800355200188005,
+      "loss2_half_attribution": 1.195896362605234e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 236,
+      "kind": "gate2",
+      "line": 233,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "37",
+      "ins": "instruction 229 (cx q[9], q[15])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 9.999999999999927e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 237,
+      "kind": "idle",
+      "line": 233,
+      "qubits": [
+        15
+      ],
+      "steps": "38..43",
+      "ins": "instruction 229 (cx q[9], q[15])",
+      "A1": 0.0059800355200188005,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 238,
+      "kind": "gate2",
+      "line": 235,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "38",
+      "ins": "instruction 231 (cx q[8], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.7777777777777777e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 239,
+      "kind": "idle",
+      "line": 235,
+      "qubits": [
+        14
+      ],
+      "steps": "39..42",
+      "ins": "instruction 231 (cx q[8], q[14])",
+      "A1": 0.0039920071087406195,
+      "loss2_half_attribution": 2.772227158847654e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 240,
+      "kind": "gate2",
+      "line": 236,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "38",
+      "ins": "instruction 232 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.5555555555555488e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 241,
+      "kind": "idle",
+      "line": 236,
+      "qubits": [
+        10
+      ],
+      "steps": "39..42",
+      "ins": "instruction 232 (cx q[9], q[10])",
+      "A1": 0.0039920071087406195,
+      "loss2_half_attribution": 1.44155812260078e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 242,
+      "kind": "gate2",
+      "line": 238,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "39",
+      "ins": "instruction 234 (cx q[8], q[9])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.1111111111111117e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 243,
+      "kind": "idle",
+      "line": 238,
+      "qubits": [
+        9
+      ],
+      "steps": "40..41",
+      "ins": "instruction 234 (cx q[8], q[9])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 5.551851851851726e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 244,
+      "kind": "flip",
+      "line": 241,
+      "qubits": [
+        8
+      ],
+      "steps": "40",
+      "ins": "instruction 237 (measure q[8])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 245,
+      "kind": "gate1",
+      "line": 241,
+      "qubits": [
+        8
+      ],
+      "steps": "40",
+      "ins": "instruction 237 (measure q[8])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 246,
+      "kind": "flip",
+      "line": 243,
+      "qubits": [
+        8
+      ],
+      "steps": "41",
+      "ins": "instruction 239 (reset q[8])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 247,
+      "kind": "gate2",
+      "line": 246,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "42",
+      "ins": "instruction 242 (cx q[8], q[9])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.1111111111111117e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 248,
+      "kind": "gate2",
+      "line": 248,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "43",
+      "ins": "instruction 244 (cx q[8], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.777777777777778e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 249,
+      "kind": "gate2",
+      "line": 249,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "43",
+      "ins": "instruction 245 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.5555555555555488e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 250,
+      "kind": "gate2",
+      "line": 251,
+      "qubits": [
+        8,
+        7
+      ],
+      "steps": "44",
+      "ins": "instruction 247 (cx q[8], q[7])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 4.3329629629629457e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 251,
+      "kind": "gate2",
+      "line": 252,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "44",
+      "ins": "instruction 248 (cx q[9], q[15])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 1.1858239812616499e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 252,
+      "kind": "idle",
+      "line": 252,
+      "qubits": [
+        15
+      ],
+      "steps": "45..47",
+      "ins": "instruction 248 (cx q[9], q[15])",
+      "A1": 0.0029960017777777015,
+      "loss2_half_attribution": 1.664445432098723e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 253,
+      "kind": "gate2",
+      "line": 253,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "44",
+      "ins": "instruction 249 (cx q[14], q[20])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.8542242943220287e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 254,
+      "kind": "idle",
+      "line": 253,
+      "qubits": [
+        20
+      ],
+      "steps": "45..46",
+      "ins": "instruction 249 (cx q[14], q[20])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 9.264940723962188e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 255,
+      "kind": "gate2",
+      "line": 254,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "44",
+      "ins": "instruction 250 (cx q[10], q[4])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.1333333333333215e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 256,
+      "kind": "idle",
+      "line": 254,
+      "qubits": [
+        4
+      ],
+      "steps": "45..48",
+      "ins": "instruction 250 (cx q[10], q[4])",
+      "A1": 0.0039920071087406195,
+      "loss2_half_attribution": 1.1310686808098302e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 257,
+      "kind": "gate2",
+      "line": 256,
+      "qubits": [
+        7,
+        6
+      ],
+      "steps": "45",
+      "ins": "instruction 252 (cx q[7], q[6])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 5.83296296296293e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 258,
+      "kind": "idle",
+      "line": 256,
+      "qubits": [
+        6
+      ],
+      "steps": "46..47",
+      "ins": "instruction 252 (cx q[7], q[6])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 1.7765925925925373e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 259,
+      "kind": "gate2",
+      "line": 257,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "45",
+      "ins": "instruction 253 (cx q[9], q[3])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.8888888888888755e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 260,
+      "kind": "idle",
+      "line": 257,
+      "qubits": [
+        3
+      ],
+      "steps": "46..47",
+      "ins": "instruction 253 (cx q[9], q[3])",
+      "A1": 0.001998666666666621,
+      "loss2_half_attribution": 9.438148148147862e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 261,
+      "kind": "gate2",
+      "line": 258,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "45",
+      "ins": "instruction 254 (cx q[2], q[8])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 262,
+      "kind": "idle",
+      "line": 258,
+      "qubits": [
+        8
+      ],
+      "steps": "46..46",
+      "ins": "instruction 254 (cx q[2], q[8])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 263,
+      "kind": "flip",
+      "line": 260,
+      "qubits": [
+        10
+      ],
+      "steps": "45",
+      "ins": "instruction 256 (measure q[10])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 264,
+      "kind": "gate1",
+      "line": 260,
+      "qubits": [
+        10
+      ],
+      "steps": "45",
+      "ins": "instruction 256 (measure q[10])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 265,
+      "kind": "flip",
+      "line": 262,
+      "qubits": [
+        14
+      ],
+      "steps": "45",
+      "ins": "instruction 258 (measure q[14])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 266,
+      "kind": "gate1",
+      "line": 262,
+      "qubits": [
+        14
+      ],
+      "steps": "45",
+      "ins": "instruction 258 (measure q[14])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 267,
+      "kind": "flip",
+      "line": 264,
+      "qubits": [
+        19
+      ],
+      "steps": "46",
+      "ins": "instruction 260 (measure q[19])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 268,
+      "kind": "gate1",
+      "line": 264,
+      "qubits": [
+        19
+      ],
+      "steps": "46",
+      "ins": "instruction 260 (measure q[19])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 269,
+      "kind": "flip",
+      "line": 266,
+      "qubits": [
+        13
+      ],
+      "steps": "46",
+      "ins": "instruction 262 (measure q[13])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 270,
+      "kind": "gate1",
+      "line": 266,
+      "qubits": [
+        13
+      ],
+      "steps": "46",
+      "ins": "instruction 262 (measure q[13])",
+      "when": "after",
+      "A1": 0.0006666666666666666,
+      "loss2_half_attribution": 4.2222222222222194e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 271,
+      "kind": "gate2",
+      "line": 268,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "46",
+      "ins": "instruction 264 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.777777777777783e-09,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 272,
+      "kind": "idle",
+      "line": 268,
+      "qubits": [
+        7
+      ],
+      "steps": "47..47",
+      "ins": "instruction 264 (cx q[1], q[7])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 1.9444444444443933e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 273,
+      "kind": "flip",
+      "line": 270,
+      "qubits": [
+        9
+      ],
+      "steps": "46",
+      "ins": "instruction 266 (measure q[9])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 274,
+      "kind": "gate1",
+      "line": 270,
+      "qubits": [
+        9
+      ],
+      "steps": "46",
+      "ins": "instruction 266 (measure q[9])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 2.5324448395061426e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 275,
+      "kind": "flip",
+      "line": 273,
+      "qubits": [
+        2
+      ],
+      "steps": "46",
+      "ins": "instruction 269 (measure q[2])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 276,
+      "kind": "gate1",
+      "line": 273,
+      "qubits": [
+        2
+      ],
+      "steps": "46",
+      "ins": "instruction 269 (measure q[2])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 277,
+      "kind": "flip",
+      "line": 274,
+      "qubits": [
+        14
+      ],
+      "steps": "46",
+      "ins": "instruction 270 (reset q[14])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 2.8700077703742724e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 278,
+      "kind": "flip",
+      "line": 275,
+      "qubits": [
+        10
+      ],
+      "steps": "46",
+      "ins": "instruction 271 (reset q[10])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 4.333333333333333e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 279,
+      "kind": "gate1",
+      "line": 277,
+      "qubits": [
+        8
+      ],
+      "steps": "47",
+      "ins": "instruction 273 (tdg q[8])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 280,
+      "kind": "gate1",
+      "line": 278,
+      "qubits": [
+        20
+      ],
+      "steps": "47",
+      "ins": "instruction 274 (tdg q[20])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 4.6355607358050704e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 281,
+      "kind": "flip",
+      "line": 280,
+      "qubits": [
+        1
+      ],
+      "steps": "47",
+      "ins": "instruction 276 (measure q[1])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 282,
+      "kind": "gate1",
+      "line": 280,
+      "qubits": [
+        1
+      ],
+      "steps": "47",
+      "ins": "instruction 276 (measure q[1])",
+      "when": "after",
+      "A1": 0.0006666666666666666,
+      "loss2_half_attribution": 4.666666666666636e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 283,
+      "kind": "flip",
+      "line": 282,
+      "qubits": [
+        2
+      ],
+      "steps": "47",
+      "ins": "instruction 278 (reset q[2])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 3.833333333333333e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 284,
+      "kind": "flip",
+      "line": 283,
+      "qubits": [
+        19
+      ],
+      "steps": "47",
+      "ins": "instruction 279 (reset q[19])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 2.8700077703742724e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 285,
+      "kind": "gate2",
+      "line": 284,
+      "qubits": [
+        13,
+        14
+      ],
+      "steps": "47",
+      "ins": "instruction 280 (cx q[13], q[14])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 3.06400414419961e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 286,
+      "kind": "idle",
+      "line": 284,
+      "qubits": [
+        13
+      ],
+      "steps": "48..48",
+      "ins": "instruction 280 (cx q[13], q[14])",
+      "A1": 0.0009999999999999731,
+      "loss2_half_attribution": 3.8300051802494115e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 287,
+      "kind": "gate2",
+      "line": 285,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "47",
+      "ins": "instruction 281 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0005333333333333335,
+      "loss2_half_attribution": 1.244089046913568e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 288,
+      "kind": "idle",
+      "line": 285,
+      "qubits": [
+        10
+      ],
+      "steps": "48..49",
+      "ins": "instruction 281 (cx q[9], q[10])",
+      "A1": 0.001332444444444414,
+      "loss2_half_attribution": 3.108149135538991e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 289,
+      "kind": "gate2",
+      "line": 287,
+      "qubits": [
+        6,
+        0
+      ],
+      "steps": "48",
+      "ins": "instruction 283 (cx q[6], q[0])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 1.733333333333315e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 290,
+      "kind": "idle",
+      "line": 287,
+      "qubits": [
+        6
+      ],
+      "steps": "49..49",
+      "ins": "instruction 283 (cx q[6], q[0])",
+      "A1": 0.0006666666666666488,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 291,
+      "kind": "gate1",
+      "line": 288,
+      "qubits": [
+        3
+      ],
+      "steps": "48",
+      "ins": "instruction 284 (tdg q[3])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 4.722222222222187e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 292,
+      "kind": "gate1",
+      "line": 289,
+      "qubits": [
+        7
+      ],
+      "steps": "48",
+      "ins": "instruction 285 (tdg q[7])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 1.9444444444444452e-08,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 293,
+      "kind": "gate2",
+      "line": 290,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "48",
+      "ins": "instruction 286 (cx q[1], q[2])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 3.066666666666659e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 294,
+      "kind": "gate2",
+      "line": 291,
+      "qubits": [
+        20,
+        19
+      ],
+      "steps": "48",
+      "ins": "instruction 287 (cx q[20], q[19])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 7.085041576298389e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 295,
+      "kind": "gate2",
+      "line": 292,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "48",
+      "ins": "instruction 288 (cx q[8], q[14])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 2.863264882047074e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 296,
+      "kind": "gate2",
+      "line": 293,
+      "qubits": [
+        15,
+        9
+      ],
+      "steps": "48",
+      "ins": "instruction 289 (cx q[15], q[9])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 6.425647768147623e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 297,
+      "kind": "gate1",
+      "line": 295,
+      "qubits": [
+        4
+      ],
+      "steps": "49",
+      "ins": "instruction 291 (tdg q[4])",
+      "when": "after",
+      "A1": 0.001,
+      "loss2_half_attribution": 2.833333333333302e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 298,
+      "kind": "gate2",
+      "line": 296,
+      "qubits": [
+        19,
+        20
+      ],
+      "steps": "49",
+      "ins": "instruction 292 (cx q[19], q[20])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 7.085041576298389e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 299,
+      "kind": "gate2",
+      "line": 297,
+      "qubits": [
+        0,
+        1
+      ],
+      "steps": "49",
+      "ins": "instruction 293 (cx q[0], q[1])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.354370370370311e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 300,
+      "kind": "gate2",
+      "line": 298,
+      "qubits": [
+        2,
+        3
+      ],
+      "steps": "49",
+      "ins": "instruction 294 (cx q[2], q[3])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 2.9825439401602143e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 301,
+      "kind": "gate2",
+      "line": 299,
+      "qubits": [
+        7,
+        13
+      ],
+      "steps": "49",
+      "ins": "instruction 295 (cx q[7], q[13])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.76536781961026e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 302,
+      "kind": "gate2",
+      "line": 300,
+      "qubits": [
+        15,
+        14
+      ],
+      "steps": "49",
+      "ins": "instruction 296 (cx q[15], q[14])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.978095666881181e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 303,
+      "kind": "gate2",
+      "line": 301,
+      "qubits": [
+        9,
+        8
+      ],
+      "steps": "49",
+      "ins": "instruction 297 (cx q[9], q[8])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 4.6996653962402004e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 304,
+      "kind": "gate1",
+      "line": 303,
+      "qubits": [
+        15
+      ],
+      "steps": "50",
+      "ins": "instruction 299 (tdg q[15])",
+      "when": "after",
+      "A1": 0.0006666666666666666,
+      "loss2_half_attribution": 1.010740839506175e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 305,
+      "kind": "gate1",
+      "line": 304,
+      "qubits": [
+        0
+      ],
+      "steps": "50",
+      "ins": "instruction 300 (tdg q[0])",
+      "when": "after",
+      "A1": 0.0006666666666666666,
+      "loss2_half_attribution": 1.4442962962962942e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 306,
+      "kind": "flip",
+      "line": 306,
+      "qubits": [
+        6
+      ],
+      "steps": "50",
+      "ins": "instruction 302 (measure q[6])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 307,
+      "kind": "gate1",
+      "line": 306,
+      "qubits": [
+        6
+      ],
+      "steps": "50",
+      "ins": "instruction 302 (measure q[6])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 1.0
+    },
+    {
+      "channel": 308,
+      "kind": "gate2",
+      "line": 307,
+      "qubits": [
+        4,
+        10
+      ],
+      "steps": "50",
+      "ins": "instruction 303 (cx q[4], q[10])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 1.0064149135802368e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 309,
+      "kind": "idle",
+      "line": 307,
+      "qubits": [
+        4
+      ],
+      "steps": "51..51",
+      "ins": "instruction 303 (cx q[4], q[10])",
+      "A1": 0.0006666666666666488,
+      "loss2_half_attribution": 1.4385926913579815e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 310,
+      "kind": "flip",
+      "line": 308,
+      "qubits": [
+        16
+      ],
+      "steps": "50",
+      "ins": "instruction 304 (reset q[16])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 2.715555851851856e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 311,
+      "kind": "gate2",
+      "line": 309,
+      "qubits": [
+        7,
+        1
+      ],
+      "steps": "50",
+      "ins": "instruction 305 (cx q[7], q[1])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 8.155291475905531e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 312,
+      "kind": "gate2",
+      "line": 310,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "50",
+      "ins": "instruction 306 (cx q[2], q[8])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 7.737764694425099e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 313,
+      "kind": "gate2",
+      "line": 311,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "50",
+      "ins": "instruction 307 (cx q[14], q[20])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 6.240597131853942e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 314,
+      "kind": "idle",
+      "line": 311,
+      "qubits": [
+        20
+      ],
+      "steps": "51..52",
+      "ins": "instruction 307 (cx q[14], q[20])",
+      "A1": 0.001332444444444414,
+      "loss2_half_attribution": 2.142422814683082e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 315,
+      "kind": "gate2",
+      "line": 312,
+      "qubits": [
+        19,
+        13
+      ],
+      "steps": "50",
+      "ins": "instruction 308 (cx q[19], q[13])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 1.1905190317039028e-06,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 316,
+      "kind": "idle",
+      "line": 312,
+      "qubits": [
+        19
+      ],
+      "steps": "51..52",
+      "ins": "instruction 308 (cx q[19], q[13])",
+      "A1": 0.001332444444444414,
+      "loss2_half_attribution": 2.5643635554238138e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 317,
+      "kind": "gate2",
+      "line": 313,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "50",
+      "ins": "instruction 309 (cx q[9], q[3])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.915958537633917e-07,
+      "pre_fraction": 1.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 318,
+      "kind": "gate2",
+      "line": 315,
+      "qubits": [
+        1,
+        0
+      ],
+      "steps": "51",
+      "ins": "instruction 311 (cx q[1], q[0])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 1.137644444444434e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 319,
+      "kind": "idle",
+      "line": 315,
+      "qubits": [
+        0
+      ],
+      "steps": "52..54",
+      "ins": "instruction 311 (cx q[1], q[0])",
+      "A1": 0.0,
+      "loss2_half_attribution": 1.2847521401283496e-05,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 320,
+      "kind": "gate2",
+      "line": 316,
+      "qubits": [
+        8,
+        2
+      ],
+      "steps": "51",
+      "ins": "instruction 312 (cx q[8], q[2])",
+      "when": "after",
+      "A1": 0.0010000000000000002,
+      "loss2_half_attribution": 7.737764694425099e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 321,
+      "kind": "gate2",
+      "line": 317,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "51",
+      "ins": "instruction 313 (cx q[13], q[7])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.511873937038622e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 322,
+      "kind": "idle",
+      "line": 317,
+      "qubits": [
+        7
+      ],
+      "steps": "52..52",
+      "ins": "instruction 313 (cx q[13], q[7])",
+      "A1": 0.0006666666666666488,
+      "loss2_half_attribution": 1.4774075061728004e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 323,
+      "kind": "gate2",
+      "line": 318,
+      "qubits": [
+        14,
+        15
+      ],
+      "steps": "51",
+      "ins": "instruction 314 (cx q[14], q[15])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 6.096003849350798e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 324,
+      "kind": "idle",
+      "line": 318,
+      "qubits": [
+        15
+      ],
+      "steps": "52..52",
+      "ins": "instruction 314 (cx q[14], q[15])",
+      "A1": 0.0006666666666666488,
+      "loss2_half_attribution": 1.7931860738106334e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 325,
+      "kind": "gate2",
+      "line": 319,
+      "qubits": [
+        10,
+        16
+      ],
+      "steps": "51",
+      "ins": "instruction 315 (cx q[10], q[16])",
+      "when": "after",
+      "A1": 0.0008000000000000001,
+      "loss2_half_attribution": 9.886027217431035e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 326,
+      "kind": "idle",
+      "line": 319,
+      "qubits": [
+        16
+      ],
+      "steps": "52..52",
+      "ins": "instruction 315 (cx q[10], q[16])",
+      "A1": 0.0006666666666666488,
+      "loss2_half_attribution": 9.607408395061473e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 327,
+      "kind": "gate2",
+      "line": 320,
+      "qubits": [
+        3,
+        9
+      ],
+      "steps": "51",
+      "ins": "instruction 316 (cx q[3], q[9])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 7.915958537633917e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 328,
+      "kind": "idle",
+      "line": 320,
+      "qubits": [
+        3
+      ],
+      "steps": "52..52",
+      "ins": "instruction 316 (cx q[3], q[9])",
+      "A1": 0.0006666666666666488,
+      "loss2_half_attribution": 2.900016207088495e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 329,
+      "kind": "gate2",
+      "line": 322,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "52",
+      "ins": "instruction 318 (cx q[1], q[2])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 1.7176953914773986e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 330,
+      "kind": "gate2",
+      "line": 323,
+      "qubits": [
+        14,
+        13
+      ],
+      "steps": "52",
+      "ins": "instruction 319 (cx q[14], q[13])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 1.3293077063210953e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 331,
+      "kind": "gate2",
+      "line": 324,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "52",
+      "ins": "instruction 320 (cx q[10], q[4])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 1.5595805587801293e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 332,
+      "kind": "idle",
+      "line": 324,
+      "qubits": [
+        4
+      ],
+      "steps": "53..54",
+      "ins": "instruction 320 (cx q[10], q[4])",
+      "A1": 0.0,
+      "loss2_half_attribution": 7.925528591933878e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 333,
+      "kind": "gate2",
+      "line": 325,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "52",
+      "ins": "instruction 321 (cx q[8], q[9])",
+      "when": "after",
+      "A1": 0.0009333333333333335,
+      "loss2_half_attribution": 9.529976966740155e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 334,
+      "kind": "flip",
+      "line": 327,
+      "qubits": [
+        13
+      ],
+      "steps": "53",
+      "ins": "instruction 323 (measure q[13])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 1.986568863147777e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 335,
+      "kind": "gate1",
+      "line": 327,
+      "qubits": [
+        13
+      ],
+      "steps": "53",
+      "ins": "instruction 323 (measure q[13])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 336,
+      "kind": "gate2",
+      "line": 328,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "53",
+      "ins": "instruction 324 (cx q[1], q[7])",
+      "when": "after",
+      "A1": 0.0005333333333333335,
+      "loss2_half_attribution": 2.114844641975293e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 337,
+      "kind": "idle",
+      "line": 328,
+      "qubits": [
+        7
+      ],
+      "steps": "54..54",
+      "ins": "instruction 324 (cx q[1], q[7])",
+      "A1": 0.0,
+      "loss2_half_attribution": 4.764889382715891e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 338,
+      "kind": "gate2",
+      "line": 329,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "53",
+      "ins": "instruction 325 (cx q[3], q[2])",
+      "when": "after",
+      "A1": 0.0005333333333333335,
+      "loss2_half_attribution": 2.5195621569094876e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 339,
+      "kind": "idle",
+      "line": 329,
+      "qubits": [
+        3
+      ],
+      "steps": "54..54",
+      "ins": "instruction 325 (cx q[3], q[2])",
+      "A1": 0.0,
+      "loss2_half_attribution": 4.664889382715886e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 340,
+      "kind": "gate2",
+      "line": 330,
+      "qubits": [
+        20,
+        19
+      ],
+      "steps": "53",
+      "ins": "instruction 326 (cx q[20], q[19])",
+      "when": "after",
+      "A1": 0.0005333333333333335,
+      "loss2_half_attribution": 1.9860150123456538e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 341,
+      "kind": "idle",
+      "line": 330,
+      "qubits": [
+        19
+      ],
+      "steps": "54..54",
+      "ins": "instruction 326 (cx q[20], q[19])",
+      "A1": 0.0,
+      "loss2_half_attribution": 4.487259753086253e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 342,
+      "kind": "gate2",
+      "line": 331,
+      "qubits": [
+        14,
+        8
+      ],
+      "steps": "53",
+      "ins": "instruction 327 (cx q[14], q[8])",
+      "when": "after",
+      "A1": 0.0005333333333333335,
+      "loss2_half_attribution": 2.5235261234567575e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 343,
+      "kind": "idle",
+      "line": 331,
+      "qubits": [
+        8
+      ],
+      "steps": "54..54",
+      "ins": "instruction 327 (cx q[14], q[8])",
+      "A1": 0.0,
+      "loss2_half_attribution": 4.820444938271435e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 344,
+      "kind": "gate2",
+      "line": 332,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "53",
+      "ins": "instruction 328 (cx q[9], q[10])",
+      "when": "after",
+      "A1": 0.0008000000000000003,
+      "loss2_half_attribution": 2.399407407407386e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 345,
+      "kind": "gate2",
+      "line": 333,
+      "qubits": [
+        16,
+        15
+      ],
+      "steps": "53",
+      "ins": "instruction 329 (cx q[16], q[15])",
+      "when": "after",
+      "A1": 0.0005333333333333335,
+      "loss2_half_attribution": 2.1678227356970876e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 346,
+      "kind": "idle",
+      "line": 333,
+      "qubits": [
+        15
+      ],
+      "steps": "54..54",
+      "ins": "instruction 329 (cx q[16], q[15])",
+      "A1": 0.0,
+      "loss2_half_attribution": 4.476000493827004e-06,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 347,
+      "kind": "flip",
+      "line": 336,
+      "qubits": [
+        1
+      ],
+      "steps": "54",
+      "ins": "instruction 332 (measure q[1])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 6.666666666666667e-08,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 348,
+      "kind": "gate1",
+      "line": 336,
+      "qubits": [
+        1
+      ],
+      "steps": "54",
+      "ins": "instruction 332 (measure q[1])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 349,
+      "kind": "flip",
+      "line": 337,
+      "qubits": [
+        2
+      ],
+      "steps": "54",
+      "ins": "instruction 333 (measure q[2])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 4.0000000000000014e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 350,
+      "kind": "gate1",
+      "line": 337,
+      "qubits": [
+        2
+      ],
+      "steps": "54",
+      "ins": "instruction 333 (measure q[2])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 351,
+      "kind": "flip",
+      "line": 339,
+      "qubits": [
+        14
+      ],
+      "steps": "54",
+      "ins": "instruction 335 (measure q[14])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 1e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 352,
+      "kind": "gate1",
+      "line": 339,
+      "qubits": [
+        14
+      ],
+      "steps": "54",
+      "ins": "instruction 335 (measure q[14])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 353,
+      "kind": "flip",
+      "line": 341,
+      "qubits": [
+        9
+      ],
+      "steps": "54",
+      "ins": "instruction 337 (measure q[9])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 354,
+      "kind": "gate1",
+      "line": 341,
+      "qubits": [
+        9
+      ],
+      "steps": "54",
+      "ins": "instruction 337 (measure q[9])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 355,
+      "kind": "flip",
+      "line": 342,
+      "qubits": [
+        10
+      ],
+      "steps": "54",
+      "ins": "instruction 338 (measure q[10])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 8.331111111111037e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 356,
+      "kind": "gate1",
+      "line": 342,
+      "qubits": [
+        10
+      ],
+      "steps": "54",
+      "ins": "instruction 338 (measure q[10])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 357,
+      "kind": "flip",
+      "line": 344,
+      "qubits": [
+        20
+      ],
+      "steps": "54",
+      "ins": "instruction 340 (measure q[20])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 1e-07,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 358,
+      "kind": "gate1",
+      "line": 344,
+      "qubits": [
+        20
+      ],
+      "steps": "54",
+      "ins": "instruction 340 (measure q[20])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 359,
+      "kind": "flip",
+      "line": 346,
+      "qubits": [
+        16
+      ],
+      "steps": "54",
+      "ins": "instruction 342 (measure q[16])",
+      "when": "before",
+      "A1": 0.001,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    },
+    {
+      "channel": 360,
+      "kind": "gate1",
+      "line": 346,
+      "qubits": [
+        16
+      ],
+      "steps": "54",
+      "ins": "instruction 342 (measure q[16])",
+      "when": "after",
+      "A1": 0.0,
+      "loss2_half_attribution": 0.0,
+      "pre_fraction": 0.0,
+      "construction_pre_fraction": 0.0
+    }
+  ]
+}
