@@ -81,6 +81,14 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: no announcement changes rules, judge or scoring as of 2026-10-24 00:40; nobody asks the
   organizers about the ranking or re-draws; the written rules stand (ranking = official seed-0 score).
 
+## R-20261024-2 — 2026-10-24 02:50 KST — Codex-only workers
+> "don't fall back to sonnet worker. just try to assign only to codex. keep current workers running now, but take that policy if you assign work to next workers."
+
+- Source: this session.
+- Effect: CONSTRAINTS rule 11: every new worker is a Codex lane, with no fallback to Sonnet or any other
+  model; a Codex job that fails is relaunched on Codex. The Sonnet lanes already running (ST_BC, ST_TP,
+  PARITY) finish as they are.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
