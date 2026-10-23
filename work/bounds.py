@@ -13,6 +13,9 @@ of p/15), for a qubit whose last two CNOTs are the two check types in consecutiv
   * the previous CNOT (other type) leaves its own type undetected the same way.
   * idle until the end: 1 step for direct readout (ancilla measured at s+1), 2 steps for Bell
     readout (unbell at s+1, measure at s+2), p/3 per Pauli per step.
+  * or, instead of that idle step, a dummy CX(q -> data) from a |0> partner q that was itself checked
+    by CX(q -> c) at step s (c read in Z): the data gets DEPOLARIZE2's marginal (4/15 per Pauli) plus
+    q's undetectable X (4/15). This beats idling, so one idle step on every data qubit is not forced.
 """
 import itertools
 
@@ -35,18 +38,55 @@ def pair_loss(masses):
     return tot
 
 
-def tail(kind, last, p=1e-3):
+H = [[0, 0, 0, 1, 1, 1, 1], [0, 1, 1, 0, 0, 1, 1], [1, 0, 1, 0, 1, 0, 1]]
+
+
+def exact_loss(masses):
+    """All orders over 4^7 patterns of independent per-qubit channels, with the judge's lookup decoding."""
+    def syn(v):
+        return tuple(sum(h[i] * v[i] for i in range(7)) % 2 for h in H)
+    fix = {syn([int(j == i) for j in range(7)]): i for i in range(7)}
+
+    def logical(v):
+        s = syn(v)
+        w = list(v)
+        if any(s):
+            w[fix[s]] ^= 1
+        return sum(w) % 2 == 1
+    tot = 0.0
+    for pat in itertools.product("IXYZ", repeat=7):
+        pr = 1.0
+        for P, m in zip(pat, masses):
+            pr *= 1 - sum(m.values()) if P == "I" else m[P]
+        if pr < 1e-13:
+            continue
+        fx = logical([P in "XY" for P in pat])
+        fz = logical([P in "ZY" for P in pat])
+        tot += pr * (0.5 if fx else (1.0 if fz else 0.0))
+    return tot
+
+
+def final_step(dummy, p=1e-3):
+    """Undetectable noise of the final step alone: idle (p/3 per Pauli) or the dummy CX above."""
+    return {"X": 8 * p / 15, "Y": 4 * p / 15, "Z": 4 * p / 15} if dummy else {P: p / 3 for P in "XYZ"}
+
+
+def tail(kind, last, p=1e-3, dummy=False):
     """Minimal tail of one qubit. kind: 'direct' or 'bell'; last: type of the final check CNOT
-    ('X' = X-check, catches Z-type errors; 'Z' = Z-check)."""
+    ('X' = X-check, catches Z-type errors; 'Z' = Z-check); dummy: final step as in final_step."""
     g = (2 if kind == "direct" else 1) / 15 * p
-    idle = (1 if kind == "direct" else 2) * p / 3
-    m = {P: g + idle for P in "XYZ"}               # last CNOT + idle: every Pauli undetected
+    end = final_step(dummy, p) if kind == "direct" else {P: 2 * p / 3 for P in "XYZ"}
+    m = {P: g + end[P] for P in "XYZ"}             # last CNOT + final step: every Pauli undetected
     other = "X" if last == "X" else "Z"            # X-check last -> X-only errors also escape...
     m["X" if last == "X" else "Z"] += g            # ...from the previous (Z-check) CNOT
     return m
 
 
 if __name__ == "__main__":
+    for dummy in (False, True):
+        print(f"final step only, dummy={dummy}: {exact_loss([final_step(dummy)] * 7):.4e} (exact)")
+    best = min(pair_loss([tail("direct", o, dummy=True) for o in orient]) for orient in itertools.product("XZ", repeat=7))
+    print(f"direct readout floor with dummy final steps: {best:.3e}")
     for kind in ("direct", "bell"):
         best = min((pair_loss([tail(kind, o) for o in orient]), orient)
                    for orient in itertools.product("XZ", repeat=7))
