@@ -2,6 +2,7 @@
 
     python submit.py submit submissions/<name>.qasm submissions/<name>.json
     python submit.py status          # my recent submissions (status, score, message)
+    python submit.py wait            # seconds until the next submission is accepted (-1: unknown/pending)
     python submit.py board           # public leaderboard
 
 Credentials come from ../.submit_credentials (TEAM=..., PASSWORD=...), never printed.
@@ -55,6 +56,9 @@ def main():
         print(st, json.dumps(rows, indent=1, ensure_ascii=False)[:4000])
         st, nxt = call("/rest/v1/rpc/team_next_submission", {"p_team_name": team, "p_password": pw})
         print("next:", st, nxt)
+    elif cmd == "wait":  # seconds until the server accepts our next submission
+        st, nxt = call("/rest/v1/rpc/team_next_submission", {"p_team_name": team, "p_password": pw})
+        print(nxt[0]["wait_seconds"] if st == 200 and not nxt[0]["pending"] else -1)
     elif cmd == "submit":
         qasm = pathlib.Path(sys.argv[2]).read_text(encoding="utf-8").strip()
         dq = json.loads(pathlib.Path(sys.argv[3]).read_text())["data_qubits"]

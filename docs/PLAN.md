@@ -1,12 +1,14 @@
 # Plan
 
-## Status (2026-10-23 20:0x KST)
+## Status (2026-10-23 20:35 KST)
 - Board (20:08): us 0.000121 (v10, 115 CX), Placeholder 0.000124 (133 CX; 0.000422 at 16:03).
-- v10 = A1 layout + interleaved cycle seeded from L1's CP-SAT orders + ALAP: server 1.21115e-4,
-  3-seed mean 1.2208e-4.
+- v11 `work/submissions/v11_A1i_alap45` (v10's cycle, ALAP priority seed 45): seed 0 1.19400e-4,
+  3-seed mean 1.2020e-4 (v10 1.2208e-4); judge PASS; auto-submits at 21:05:35. Most of the seed-0 gain
+  is selection among ALAP variants (spread ±1.5%).
 - Cycle schedules have converged for the A1 layout (proxy 1.09799e-4) and the v6 layout (1.12744e-4).
   About 80% of the remaining loss is data idle in the final readout cycle, so the next lever is
   structural (P3 readout, P4 layout).
+- L2's Codex job died on 429 rate limits (19:49); L2 now runs as a Claude agent (global reroute rule).
 - Milestone: lanes report by 23:00; the session report is due 2026-10-23 23:59 KST (R-20261023-5).
 
 ## Critical path
@@ -21,7 +23,7 @@ limit: the hourly quota, so the next candidate is verified before each slot.
 |---|---|---|---|---|---|---|
 | 1 | P2 | G1 | Submit the best verified candidate in every hourly slot | every slot used until 2026-10-30 12:00 | main session (`work/submit_when_ready.sh`) | active |
 | 2 | P3 | G1 | Direct-readout final round with hook protection; the tail floor is 2.6e-5 vs 5.9e-5 for Bell pairs | a valid candidate beats the best Bell-pair true mean, or a mechanism rules it out | Codex L3 (`work/lanes/L3_direct_readout`) | active |
-| 3 | P4 | G1 | Layout co-design (moves, roles, extras) with the schedule | best layout for the cycle found or bounded | Codex L2 (`work/lanes/L2_layout_cpsat`) | active |
+| 3 | P4 | G1 | Layout co-design (moves, roles, extras) with the schedule | best layout for the cycle found or bounded | Claude agent L2 (`work/lanes/L2_layout_cpsat`) | active |
 | 4 | P5 | G2 | Full-circuit fast evaluator validated against 3-seed means | ranks new-architecture candidates like 3-seed means | Codex L4 (`work/lanes/L4_fullproxy`) | active |
 | 5 | P6 | G1 | CP-SAT on the A1 layout and on P4 layouts | certified or improved proxy optimum | Codex L1 (`work/lanes/L1_cpsat_schedule`) | active |
 | 6 | P7 | G1 | Pre-cycle and boundary changes beyond ALAP | gain in 3-seed means | Codex L5 (`work/lanes/L5_precycle`) | active |
