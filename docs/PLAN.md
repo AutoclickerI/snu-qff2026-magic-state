@@ -7,6 +7,8 @@
   (`work/submit_when_ready.sh`, submits only if the sequential judge passes).
 - About 80% of the remaining loss is data idle in the final readout cycle (FINDINGS). The next large
   lever is the readout paradigm (P3, P4), not more pre-cycle tuning.
+- Next action: confirm v10 scored on the server (20:05 slot), then rank the next A1/v6-layout anneal
+  batch (hippo) and the tom ALAP screen by 3-seed means and arm the 21:05 slot.
 - Milestone: lanes report by 23:00 and the session's report is due 2026-10-23 23:59 KST (R-20261023-5).
   Contest deadline 2026-10-30 12:00 KST.
 

@@ -32,17 +32,17 @@ From the repo root (all steps reuse what is already on disk):
    then `rsync -a --exclude .submit_credentials --exclude '.xtim_cache/' --exclude 'vendor/' --exclude
    '.git/' /home/jihoon/competitions/quantumn <h>:/home/jihoon/competitions/`. Run with
    `ssh <h> 'cd /home/jihoon/competitions/quantumn/work && ../.venv/bin/python ...'` and rsync results
-   back. hippo reproduces the official v8 score bit for bit (2026-10-23 19:57).
+   back. Use `ssh -q` (hosts print large banners). hippo reproduces the official v8 score bit for bit (2026-10-23 19:57).
 
 ## Inventory
 | Resource | Capacity | Current use | Headroom | Access / notes |
 |---|---|---|---|---|
 | zebra (this host) | 64 cores, 188 GB RAM; 2× RTX PRO 6000 96 GB | Codex lanes, submissions, screens; load 13–86 on 2026-10-23 | cap ~75% CPU (rule 9); GPU0 is another user's, never use; GPU1 shared | repo, venv, credentials live here |
-| hippo | 48 cores, 123 GB free RAM, `/data/jihoon` (2.2 TB free) | anneal batch since 2026-10-23 20:0x | idle at 19:5x (load 0.0) | mirrored env, verified bit-identical |
-| tom | 64 cores, 468 GB free RAM, `/data1`, `/data2` | — | load 7 at 19:5x | mirrored env, imports OK |
-| jerry | 64 cores, 482 GB free RAM, `/data1`, `/data2`; no GPU driver | — | load 15 at 20:0x | mirroring 20:0x |
-| owl | 96 cores, 122 GB free RAM, `/data`, `/data2`; glibc 2.17 | — | idle at 20:0x | mirroring 20:0x; wheel compatibility unverified |
-| sunfish | 32 cores, 180 GB free RAM, `/hdd1/jihoon`; home only 49 GB free | — | idle at 20:0x | mirroring 20:0x |
+| hippo | 48 cores, 123 GB free RAM, `/data/jihoon` (2.2 TB free) | anneal batches (gmodel, ~1 min per 24 chains) | was idle before 20:00; check `uptime` | mirrored env, official score bit-identical to the server (v8, 2026-10-23 19:57) |
+| tom | 64 cores, 468 GB free RAM, `/data1`, `/data2` | ALAP seed screen from 20:01 (40 processes) | load 7 before 20:00 | mirrored env, imports OK |
+| jerry | 64 cores, 482 GB free RAM, `/data1`, `/data2`; no GPU driver | — | load 15 at 20:00 | mirrored env, imports OK |
+| owl | 96 cores, 122 GB free RAM, `/data`, `/data2`; glibc 2.17 | — | idle at 20:00 | not usable as mirrored: system libstdc++ lacks GLIBCXX_3.4.20 needed by stim (would need a newer libstdc++ on `LD_LIBRARY_PATH`) |
+| sunfish | 32 cores, 180 GB free RAM, `/hdd1/jihoon`; home only 49 GB free | — | idle at 20:00 | mirrored env, imports OK |
 | faraday | 64 cores, 4 GPUs | busy (load 102, GPUs 56–95%) at 19:5x | little | not mirrored |
 | dragon | 24 cores, 4× 3090 | busy (load 27, GPUs ~100%) at 19:5x | little | not mirrored |
 | pegasus | allowed (R-20261023-7) | — | unknown | SSH timed out from zebra at 20:0x |

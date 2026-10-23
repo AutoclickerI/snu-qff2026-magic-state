@@ -31,7 +31,7 @@ A negative closes only the recipe tested. "Leaves open" names what the result do
 | Remove all pre-cycle/cycle barriers (ASAP everything) | 1.94e-4, worse | cycle CNOTs start before the check stage settles, more window pairs | partial overlaps | `work/lanes/L5_precycle/REPORT.md` |
 | Two-hop extra cat members (d2, d3) | worse than v6 | 2 extra CNOTs per hop add more than they save | other hop geometries | session 2026-10-23 |
 | One idealized extra on any data, adjacency ignored | no gain | tail already near its floor for those qubits | extras on moved layouts | `work/ceiling_extras.py`, `work/ceil*.log` |
-| Uniform input noise added to the proxy | no ranking gain | pre-cycle errors are not uniform | a full-circuit evaluator (P4) | session 2026-10-23 |
+| Uniform input noise added to the proxy | no ranking gain | pre-cycle errors are not uniform | a full-circuit evaluator (P5) | session 2026-10-23 |
 | Measurement-based flagged prep (Codex) | 0.162, c1 = 188 | not FT at first order | flag schedules searched on the grid | `work/codex/NOTES.md` |
 | Min-total-idle pre-cycle schedule as objective | not pursued | idle total uncorrelated with score (above) | weighted idle by location | `ML/idlestats.py` |
 
