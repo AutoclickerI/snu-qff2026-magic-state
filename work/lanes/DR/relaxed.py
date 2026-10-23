@@ -62,7 +62,26 @@ def events(sched, T, start):
     return out
 
 
+def valid(sched):
+    """Cat checks X_S and Z_S' commute only if an even number of their shared data see the
+    X coupling first (otherwise a detector is random)."""
+    when = {}
+    for q in range(7):
+        for t, cid, typ in sched[q]:
+            when[(q, cid)] = t
+    xs = {cid for q in range(7) for _, cid, typ in sched[q] if typ == "X"}
+    zs = {cid for q in range(7) for _, cid, typ in sched[q] if typ == "Z"}
+    for a in xs:
+        for b in zs:
+            shared = W4[a[1]] & W4[b[1]]
+            if sum(when[(q, a)] < when[(q, b)] for q in shared) % 2:
+                return False
+    return True
+
+
 def loss(sched, T, start):
+    if not valid(sched):
+        return float("inf")
     by = {}
     for g, q, pd, pr in events(sched, T, start):
         m = by.setdefault(g, [dict() for _ in range(7)])
@@ -98,7 +117,12 @@ def solve(xt, zt, mode, restarts, rng):
         pass
     best = (float("inf"), None)
     for _ in range(restarts):
-        cur = [rng.choice(o) for o in opts]
+        for _try in range(200000):
+            cur = [rng.choice(o) for o in opts]
+            if valid(cur):
+                break
+        else:
+            continue
         if mode == "optimistic":
             st = start
         else:
