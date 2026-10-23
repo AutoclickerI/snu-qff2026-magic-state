@@ -1,0 +1,77 @@
+{
+  "c1": 3.70074341541719e-17,
+  "n_faults": 2076,
+  "by_instruction": [],
+  "positive": [
+    {
+      "contribution": 7.401486830834377e-18,
+      "weight": 0.06666666666666667,
+      "gates": "X_ERROR(1) 3\nX_ERROR(1) 2",
+      "nearby_lines": [
+        "CX 8 9",
+        "DEPOLARIZE2(0.0) 8 9",
+        "CX 3 2",
+        "@FAULT@",
+        "DEPOLARIZE1(0.0) 2",
+        "CX 15 14",
+        "DEPOLARIZE2(0.0) 15 14"
+      ]
+    },
+    {
+      "contribution": 7.401486830834377e-18,
+      "weight": 0.06666666666666667,
+      "gates": "Y_ERROR(1) 3\nY_ERROR(1) 2",
+      "nearby_lines": [
+        "CX 8 9",
+        "DEPOLARIZE2(0.0) 8 9",
+        "CX 3 2",
+        "@FAULT@",
+        "DEPOLARIZE1(0.0) 2",
+        "CX 15 14",
+        "DEPOLARIZE2(0.0) 15 14"
+      ]
+    },
+    {
+      "contribution": 7.401486830834377e-18,
+      "weight": 0.06666666666666667,
+      "gates": "X_ERROR(1) 15\nX_ERROR(1) 14",
+      "nearby_lines": [
+        "DEPOLARIZE2(0.0) 3 2",
+        "DEPOLARIZE1(0.0) 2",
+        "CX 15 14",
+        "@FAULT@",
+        "DEPOLARIZE1(0.0) 15",
+        "RX 13",
+        "Z_ERROR(0.0) 13"
+      ]
+    },
+    {
+      "contribution": 7.401486830834377e-18,
+      "weight": 0.06666666666666667,
+      "gates": "Y_ERROR(1) 15\nY_ERROR(1) 14",
+      "nearby_lines": [
+        "DEPOLARIZE2(0.0) 3 2",
+        "DEPOLARIZE1(0.0) 2",
+        "CX 15 14",
+        "@FAULT@",
+        "DEPOLARIZE1(0.0) 15",
+        "RX 13",
+        "Z_ERROR(0.0) 13"
+      ]
+    },
+    {
+      "contribution": 7.401486830834377e-18,
+      "weight": 0.06666666666666667,
+      "gates": "X_ERROR(1) 7\nX_ERROR(1) 13",
+      "nearby_lines": [
+        "CX 9 10",
+        "DEPOLARIZE2(0.0) 9 10",
+        "CX 7 13",
+        "@FAULT@",
+        "DEPOLARIZE1(0.0) 13",
+        "CX 4 10",
+        "DEPOLARIZE2(0.0) 4 10"
+      ]
+    }
+  ]
+}

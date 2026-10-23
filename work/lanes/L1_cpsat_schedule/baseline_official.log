@@ -1,0 +1,30 @@
+[twirl_records] circuit channels: 23 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+check {'file': 'ordered_first.json', 'idx': 0, 'proxy': 0.00011839336692347942, 'passed': True, 'score': np.float64(0.0001310302140991363), 'sem': np.float64(1.1846053783986153e-06), 'acceptance': 0.66610591, 'n_2q': 113, 'shots': 100000000, 'seed': 0, 'check_seconds': 12.748996257781982, 'qasm_sha256': 'a400b6abde0cf2c56fd25a8aafc87b9002be3144cbe1f736721a52d30170e951', 'data_qubits': [0, 20, 7, 4, 3, 15, 8]}
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/L1_cpsat_schedule/verify.py", line 31, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/L1_cpsat_schedule/verify.py", line 28, in main
+    results.append(r); save(args.tag+'.json',results); print('verified',r,flush=True)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/L1_cpsat_schedule/common.py", line 44, in save
+    Path(path).write_text(json.dumps(obj, indent=2)+'\n')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable
