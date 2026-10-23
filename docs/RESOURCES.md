@@ -43,7 +43,7 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 | faraday, dragon | overflow only | not mirrored; other users often keep them above 75% load, so check `uptime` first |
 | pegasus | — | SSH from zebra times out |
 | Submission quota | one per hour | `work/submit.py`; board keeps the best entry |
-| Codex (`codex:codex-rescue`) | parallel lanes L1–L5 in `work/lanes/` | `codex-companion.mjs status`; job logs under `~/.claude/plugins/data/codex-openai-codex/state/*/jobs/`; a resume while a task runs is unsafe |
+| Codex (`codex:codex-rescue`) | parallel lanes L1–L5 in `work/lanes/` | `codex-companion.mjs status`; job logs under `~/.claude/plugins/data/codex-openai-codex/state/*/jobs/`; a resume while a task runs is unsafe; briefs forbid `spawn_agent` (FINDINGS "Failures") |
 | Prior artifacts | starting points and receipts | `work/submissions/`, `work/lanes/me_layout/res_*.json`, `alapvar/`, `work/receipts/`, lane outputs |
 | Upstream | judge and cultivation code | `upstream/snu-qff2026-problem` (76fe47c), `upstream/magic-state-cultivation` (871e68f); not in git |
 

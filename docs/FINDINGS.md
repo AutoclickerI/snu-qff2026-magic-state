@@ -68,6 +68,7 @@ A negative closes only the recipe tested. "Leaves open" names what the result do
 ## Failures
 | Symptom | Cause | Avoid / fix | Cost | Receipt |
 |---|---|---|---|---|
+| Codex task fails with `unsupported_websocket_event` (status 400) 2–3 min in | inferred: the job called `spawn_agent` (sub-agents, prompted by the parallel-work rules); the error appears only in sessions that spawned ≥ 2 sub-agents, though some with 3 survived | every Codex brief says: no spawn_agent or sub-agent tools, parallelism through background processes; relaunch on Codex (rule 11) | 4 jobs (SCHED, PARITY, PROXY ×2), 2026-10-24 | `~/.codex/sessions/2026/10/24/rollout-*` |
 | Shell dies with exit 144 | `pkill -f <pattern>` matched the shell running the command | kill by PID from `pgrep -f "[x]yz"` (bracket trick) | twice, 2026-10-23 | session |
 | Submission refused "Next submission allowed in 3 seconds" | the slot was timed from the clock, 2 s before 1 h after the last `submitted_at` | `submit_when_ready.sh` waits 3605 s from the server's last `submitted_at` | one retry, 2026-10-23 20:05 | `work/receipts/submit_v10.txt` |
 | A wait never ended | waited for an output file that a crashed job never wrote | wait on process exit (`while pgrep ...`), then read the log | 20 min | `ML/log_A1r9.txt` |
