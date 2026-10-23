@@ -62,6 +62,7 @@ class Schedule:
         self.model.add_forbidden_assignments(list(self.v.values())+self.o, [[a[k] for k in self.keys]+list(o)])
 
     def solve(self,seconds=30,workers=8,seed=0):
+        assert 1<=workers<=8, 'This lane is limited to eight CPU workers.'
         s=cp_model.CpSolver(); s.parameters.num_search_workers=workers
         if getattr(self,'disable_presolve',False): s.parameters.cp_model_presolve=False
         s.parameters.max_time_in_seconds=seconds; s.parameters.random_seed=seed

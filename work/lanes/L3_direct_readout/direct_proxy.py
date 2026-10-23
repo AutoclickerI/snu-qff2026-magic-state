@@ -199,6 +199,8 @@ def _full(noisy, bits, groups, logical, q_in):
             terms.append(rec(ref))
         lines.append("DETECTOR " + " ".join(terms))
     for k in range(6):
+        # rec(k) is the initial stabilizer; the judge's initial six records precede the logical
+        # record at rec[6].  The cycle body begins after those seven records.
         lines.append(f"OBSERVABLE_INCLUDE({k}) {rec(7 + nm + k)} {rec(k)}")
     # Logical X^7 is compared with its initial record (rec[6]); the leading 7 records are
     # six checks plus the initial logical observable.

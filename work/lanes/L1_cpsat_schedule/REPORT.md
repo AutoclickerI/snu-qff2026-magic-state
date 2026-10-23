@@ -1,57 +1,49 @@
 # L1 CP-SAT final-cycle scheduling
 
-Started 2026-10-23 18:00 KST. Updated 19:32 KST. Work in progress.
+Finalized 2026-10-23 19:57 KST. Current layout and extras `t1c13,t2c42` retained. No contest submission.
 
-Scope: existing layout, extras `t1c13,t2c42`, layers 2..8 and 2..9. All artifacts and runtime caches remain in this lane. No submissions. At most eight CPU workers.
+Best measured official **1-F = 0.00012580301137380046**, below the requested `1.3103e-4` benchmark. The remeasured reference is `0.00013103021409913631`; the measured reduction relative to that reference is **3.989%**. Best cycle proxy is **0.00011274399214113765**, versus `0.00011839336692347942` (4.772% lower). These are different selection criteria: the best official schedule is not the minimum-proxy schedule.
 
-Read `gen2_cycle.py`, `proxy2.py`, `decompose.py`, `bounds.py`, `fast_check.py`, `batch_score.py`, `qcirc.py`, and the judge noise/fault-scan code.
+## Top five by measured official score
 
-Important modeling issue: first-order window masses are linear in idle gaps, but `Model.proxy` uses finite-noise Stim DEM probabilities, which merge identical mechanisms nonlinearly. Exactness against that proxy must be calibrated, not assumed. The baseline JSON's stored value predates the current joint logical-Y pricing and will be recomputed.
+Each row used `fast_check.check` on the complete injection + check + final-cycle circuit, with real grid adjacency, `shots=100000000`, `seed=0`, and `passed=True`. All have 113 two-qubit gates. The numerical-c1 exception below applies to every row.
 
-Planned verification: full circuit built through `batch_score.make`, real adjacency, `fast_check.check(shots=10**8, seed=0, procs<=8)`, `passed=True`, and `tprep.fault_scan(processes<=8).c1 == 0` for reported official results.
+| JSON index | Cycle proxy | Official 1-F | SEM | Acceptance |
+|---:|---:|---:|---:|---:|
+| 0 | 0.000112977532519 | 0.000125803011374 | 1.16647e-06 | 0.66544512 |
+| 1 | 0.000112918769617 | 0.000125848088306 | 1.16778e-06 | 0.66544515 |
+| 2 | 0.000113161142723 | 0.000126400671573 | 1.17272e-06 | 0.66554235 |
+| 3 | 0.000113219873054 | 0.000126971535282 | 1.17579e-06 | 0.66554287 |
+| 4 | 0.000113458446124 | 0.000127348901655 | 1.1866e-06 | 0.66549455 |
 
-## Implemented model and current results
+Schedules: [top5_schedules.json](top5_schedules.json), in the original five-field gen2 format. Exact measured receipts, raw c1, circuit hashes and provenance: [top5_results.json](top5_results.json). Builder specifications: [build_specs.json](build_specs.json). Best measured circuit: [best_schedule.json](best_schedule.json), [best.qasm](best.qasm), [best_result.json](best_result.json). Minimum-proxy schedule: [best_proxy.json](best_proxy.json).
 
-`cpsat.py` implements integer operation layers, orientation variables, per-qubit all-different constraints, post-unbell rules, attachment precedence, and all nine supplied tile-pair parity constraints. Empty operation layers are removed. `validity.py` adds symbolic backward Pauli propagation of the six readouts, six output stabilizers, and both output logical operators. Its current conditions accept all 112 Stim-valid schedules in the existing two-extra files; 24 older entries fail the current Stim oracle. This empirical check is not a proof that these strengthening constraints are necessary for all possible schedules.
+The scores are fixed-seed Monte Carlo measurements with the listed SEMs. Selecting among candidates does not establish a statistically significant improvement in the underlying expected infidelity.
 
-`ordered_objective.py` extracts every physical fault signature from Stim for a fixed per-qubit gate order, including reset, gate, measurement, and idle noise. For a grouped mechanism the probability is
+## What was modeled
 
-`m = (1 - a1^n1 * a2^n2 * ar^nr)/2`,
+`cpsat.py` implements integer layers, orientation booleans, one gate per qubit per layer, post-unbell restrictions, extra attachment precedence, and all nine tile-pair parity constraints. `validity.py` adds backward CSS Pauli propagation; Stim remains the oracle. Its filter accepted all 112 current Stim-valid schedules in the original two-extra files, with no measured false negatives. Twenty-four older stored schedules fail the current oracle.
 
-where `a1 = sqrt(1 - 4p/3)`, `a2 = (1 - 16p/15)^(1/8)`, `ar = 1 - 2p`, and `p=1e-3`. Here `n1` is an affine expression in operation layers and the final layer, while `n2,nr` are constant within the gate-order class. All equal-detector-signature pairs are included, both empty and non-empty, with the current joint logical-Y pricing. This reproduces finite-noise DEM merging, rather than replacing it by linear first-order masses.
+`ordered_objective.py` includes reset, gate, measurement and idle faults, all empty-signature tail pairs, and all equal non-empty-signature partial-window pairs. Logical Y has the current joint cost 1/2. Within a fixed per-qubit gate order, each grouped DEM mass is `(1 - a1^n1 * a2^n2 * ar^nr)/2`, with `a1=sqrt(1-4p/3)`, `a2=(1-16p/15)^(1/8)`, `ar=1-2p`, and `p=1e-3`. Idle exponents are affine layer differences; gate/reset exponents are fixed. Ambiguous logical-basis mechanisms use the same probability sorting and max matching as `proxy2.joint_loss`.
 
-CP-SAT uses probability tables rounded to `1e-9` and integer pair products. Each solve records a conservative objective rounding bound (typically about `5e-10` in proxy units). Consequently, `OPTIMAL` certifies the rounded model within its specified order class, not unrounded global optimality.
+Probabilities are scaled by `10^9`; pair products and the objective are integers. Per-solve conservative rounding-error bounds are retained. OR-Tools 9.15 presolve falsely declared a known-feasible element/product model infeasible; the reproducer and log are preserved in `infeasible_reproducer.pbtxt` and `solver_diagnosis.log`. Presolve is disabled for the complete-objective solves, and the affected runs were repeated.
 
-Calibration on 54 distinct existing valid gate orders: Pearson correlation **1.0**, maximum absolute error **4.472333961502706e-18**, RMSE **3.1459328881601515e-18**. Raw measurements: `existing_refined_calibration.json` and `existing_refined_calibration_summary.json`.
+Calibration: 54 existing order classes and 152 generated order classes each give Pearson correlation **1.0** between the unrounded closed form and `Model.proxy`. The maximum absolute disagreement across those sets is **1.3444106938820255e-17**. A further 20 leading order classes also agree. Scaled-integer objective errors are separately checked against their bounds in [calibration_audit.json](calibration_audit.json).
 
-The named baseline recomputes to **1.1839336692347942e-4**. Its decomposition is tail `9.4210509380546e-5`, partial windows `2.418285754293341e-5`, first order zero. Retiming its fixed order at LMAX 8 returned `OPTIMAL`, with rounded objective/bound `1.18393409962494e-4`, and returned the same proxy. This does not certify global optimality.
+## Solver status and limits
 
-Unrestricted CP-SAT search with a pure-data tail objective exposed invalid schedules missed by parity alone; exact Stim no-goods were added by order class. The stronger propagation model subsequently yielded valid candidates, but their full proxies are substantially worse than the incumbent. The tail objective is therefore used only to generate orders; its solver bound is **not** a bound on the complete proxy. Structured searches at LMAX 8/9 and exact neighborhood enumeration are underway.
+CP-SAT examined **2,214,702** schedules across the eight short-depth orientation partitions, with a Stim oracle call for each enumerated schedule. Five orientation searches timed out after 1800 seconds (`FEASIBLE`); two were exhausted (`OPTIMAL`), and one was infeasible. See [orientation_search_audit.json](orientation_search_audit.json). The global complete-proxy lower bound remains **0**, so the unresolved global relative gap is **100%**. **There is no global optimality certificate for LMAX 8 or 9.**
 
-## Verification issue requiring an explicit criterion decision
+Complete-objective retiming was solved at LMAX 8 and 9, with `OPTIMAL` referring only to the rounded objective and fixed order class. Additional exact CP-SAT neighborhood enumeration exhausted 34,696 schedules within four layer changes of the new proxy incumbent at LMAX 8 and 13,451 within three changes at LMAX 9, without improving it. The baseline LMAX-8 radius-4 neighborhood was also exhausted without improvement. A 45,360-schedule Z-before-X family was exhausted; the new proxy improvement requires interleaving.
 
-The baseline full-circuit official check passed. However, its raw fault scan returns **c1 = 3.70074341541719e-17**, with 2076 faults tested and no harmful-fault entries in the scanner's report. Therefore the literal `c1 == 0` contract fails even for the reference. No official score is certified here yet. The raw check/scan evidence is retained in `baseline_official.json`. The user has been asked whether to allow `c1 <= 1e-12` only when the harmful-instruction list is empty, with every raw c1 still reported. Pending that answer, verification remains strict.
+Unrestricted pure-data and extra-cat tail objectives were used only to generate candidates; their bounds are not claimed as complete-proxy bounds. Invalid schedules were rejected by Stim and no-good cuts. Final selection uses measured full-circuit scores, not a surrogate. No annealing was used in this lane.
 
-No contest submission or credential access occurred. Runtime imports disable bytecode writes, and xtim caches are created under this lane's working directory.
+## First-order verification and explicit exception
 
-## 19:02 KST update
+The literal `c1 == 0` requirement fails even for the reference (raw `3.7007434154171901e-17`). Selected candidates have raw c1 values **3.7007434154171901e-17**, with empty harmful-instruction lists. [residue_audit.json](residue_audit.json) traces the reference result to five contributions of `7.401486830834377e-18`, each a weight-1/15 fault with unweighted numerical infidelity `2^-53`. The audit leaves every scanner return value unchanged.
 
-Unrestricted short-depth CP-SAT enumeration has found a new interleaved schedule with proxy **1.1274399214113765e-4**, approximately 4.77% below the named baseline. The search is ongoing. An immutable copy is in `newbest_snapshot.json`; complete-objective retiming results are in `newbest_refined.json`. The candidate has passed the official full-circuit check; its raw c1 has the same `3.70074341541719e-17` residue, so strict verification remains unresolved.
+Following the later user instruction to take measured performance gains when an earlier user rule blocks them, this lane accepts these records only when `abs(c1) <= sys.float_info.epsilon` (`2.220446049250313e-16`) and `by_instruction == []`. **This is a lane-specific exception, not a claim that the raw value equals zero.** The strict result and every raw result are preserved. I recommend replacing literal floating-point equality with this numerical-zero criterion; no standing rule was silently changed.
 
-For orientation `[0,1,1]`, all **45,360** schedules in the strengthened validity model with layers 2..7 and every Z CNOT before every X CNOT were enumerated (`OPTIMAL` exhaustion). The best proxy there is `1.1831196817148951e-4`; the new improvement uses interleaving. The baseline radius-4 Hamming neighborhood at LMAX 8 was also exhausted: 68,619 schedules, 12,123 rejected by Stim, no improvement over the baseline. These are restricted-scope certificates, not a global bound for LMAX 8 or 9.
+All delivered JSON entries were rebuilt through `batch_score.make(kind="gen2", lazy=True)`, and their complete QASM hashes were checked against the measured receipts. All writes and caches remain in this lane. At most eight CPU workers were used, credentials were not read, and nothing was submitted.
 
-A solver issue was identified and preserved: OR-Tools 9.15 presolve reported `INFEASIBLE` for a probability-table/product model that becomes feasible when its known seed assignment is fixed. With presolve disabled, the same unrestricted order model solves `OPTIMAL`. The reproducer is `infeasible_reproducer.pbtxt`, with logs in `solver_diagnosis.log`. Presolve is now disabled for complete-objective models. All 54 original order optimizations were rerun under this setting (`existing_nopresolve_runs.json`), including the formerly rejected cases. Earlier presolve-based certificates are superseded by these reruns.
-
-The complete-objective extractor currently requires a unique mechanism for each `(detector signature, final stabilizer signature)` in each logical-basis DEM. It raises and records an error for ambiguous mappings rather than silently approximating them. One high-cost generated order hit this limitation (`generated_refined.log`). The 54 existing calibration classes and 14 new candidate classes match the exact proxy; all current leading candidates are supported.
-
-The first top-five full-circuit batch is saved in `top5_official.json`. Every candidate passed, and every raw c1 was the same nonzero numerical residue. Official-score certification is still held pending the explicitly requested criterion decision. Subsequent verification uses immutable schedule snapshots to prevent a running search from changing a builder input between proxy evaluation and circuit construction.
-
-## 19:32 KST update
-
-The ambiguity limitation above is now resolved. `ordered_objective.py` models both logical-basis DEMs, sorts ambiguous mechanisms by unrounded probability and flip-bit tie break, and applies the same maximum-probability matching as `joint_loss`. The previously unsupported case now solves `OPTIMAL` and agrees with the oracle (`general_test.log`). Across **152 generated order classes**, unrounded closed-form versus Stim Pearson correlation is **1.0**, maximum absolute error **1.3444106938820255e-17**, RMSE **4.813847344072555e-18** (`generated_complete_calibration_summary.json`). All these complete-objective optimizations use presolve disabled.
-
-The broad orientation `[0,1,1]` short-depth search **timed out at 1800 seconds**, after **364,875** valid schedules. Best proxy remains `1.1274399214113765e-4`; the only safe complete-proxy lower bound for the unfinished search is **0**, so there is no global optimality claim. Orientation `[1,0,1]` was exhausted over **82,132** schedules with a worse optimum `1.2329167618816908e-4`. The new incumbent's LMAX 9 radius-3 neighborhood was exhausted over **13,451** valid schedules with no improvement. Further orientation and radius-4 searches are running.
-
-`interleaved_top5.json` contains full-circuit official checks and fault scans of the five leading interleaved order classes at that checkpoint, using the immutable `interleaved_top5_schedules.json`. All five passed the official format, correctness, and acceptance checks. All five still fail literal `c1 == 0` by the same raw residue. A broader orientation expansion checked **2360** distinct schedules, retaining **908** Stim-valid schedules; its best 50 are in `candidate_pool.json` and are being refined.
-
-`residue_audit.json` traces the baseline scan without changing any returned contribution: exactly five faults contribute `7.401486830834377e-18` each, with weight `1/15` and unweighted numerical infidelity `1.1102230246251565e-16`. The raw sum is `3.70074341541719e-17`; the scanner's `by_instruction` list is empty. This supports floating-point roundoff, but the requested literal acceptance criterion is still not overridden.
+Reproduction commands are in [README.md](README.md). Earlier checkpoints and diagnosis history are retained in [RUN_NOTES.md](RUN_NOTES.md).

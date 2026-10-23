@@ -163,7 +163,12 @@ def _cycle_only_from_full(text: str, q_in: float):
         out += final
         for syn in range(6):
             out.append("DETECTOR " + " ".join([*(ref_mid(j) for j in by_syndrome[syn]), ref_initial(syn)]))
-        out.append(f"OBSERVABLE_INCLUDE(0) rec[-1] {ref_initial(6)}")
+        # Match proxy2's convention: observables 0..5 are the final stabilizer
+        # parities used by lookup correction, and observable 6 is the logical
+        # parity.  proxy2.loss then applies the syndrome to the logical bit.
+        for k in range(6):
+            out.append(f"OBSERVABLE_INCLUDE({k}) rec[-{7-k}] {ref_initial(k)}")
+        out.append(f"OBSERVABLE_INCLUDE(6) rec[-1] {ref_initial(6)}")
         return stim.Circuit("\n".join(out))
 
     return make(final_x, "X"), make(final_z, "Z")
