@@ -72,6 +72,15 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: CONSTRAINTS boundary case (re-draws); submissions are the best seed-0 draw of the best
   true-mean circuit, reported with the true mean. Rule 10 is covered by a teammate (name not given).
 
+## R-20261024-1 — 2026-10-24 00:40 KST — open chat; asking organizers
+> Q: The contest's KakaoTalk open chat is where 'all key announcements' go … Are you in it, and has anything been announced since Oct 22? A: "In it, nothing relevant"
+
+> Q: Should someone ask the organizers (Office Hour Sun 10/25 or the open chat) how the final ranking is computed? A: "Don't ask"
+
+- Source: this session (question-tool answers).
+- Effect: no announcement changes rules, judge or scoring as of 2026-10-24 00:40; nobody asks the
+  organizers about the ranking or re-draws; the written rules stand (ranking = official seed-0 score).
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
