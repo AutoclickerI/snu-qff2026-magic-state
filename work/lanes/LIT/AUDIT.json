@@ -1,0 +1,141 @@
+{
+  "p": 0.001,
+  "tails": {
+    "final_idle_exact": 1.1625234428879869e-05,
+    "final_dummy_exact": 1.1158766326647034e-05,
+    "final_idle_pair": 1.1666666666666707e-05,
+    "direct_pair": 2.5666666666666683e-05,
+    "direct_exact_independent": 2.5529800030865465e-05,
+    "bell_pair": 5.856666666666659e-05
+  },
+  "arithmetic": {
+    "CC_H_infidelity_coeff": 13.32,
+    "CC_paper_acceptance": 0.9277086733900014,
+    "Wan_d3_A_truncated10": 0.6867847489562791,
+    "Wan_d3_leading_p2": 0.4266666666666667,
+    "Wan_d3_p3_coefficient": 447.3064444444445,
+    "DK_EC_fit": 2.4394884319717904e-05,
+    "DK_ED_fit": 5.129770999999999e-07,
+    "DK_EC_accept_fit": 0.8472931119685
+  },
+  "qasm_counts": [
+    {
+      "file": "work/submissions/v12_L5lns12_r86.qasm",
+      "sha256": "7dfc97ad9c7054a4d235e7854413bbcbe618324205023f9dc5de23cd80664c65",
+      "bytes": 7474,
+      "statements": 267,
+      "T": 15,
+      "CX": 115,
+      "measure_reset": 54
+    },
+    {
+      "file": "work/lanes/RM_PROTO/va_ta0_PA.qasm",
+      "sha256": "894ceb4d65151f12bacd874eb41bf48d9d38c3a121b627688c745ab44c53cc81",
+      "bytes": 11286,
+      "statements": 306,
+      "T": 15,
+      "CX": 119,
+      "measure_reset": 91
+    },
+    {
+      "file": "work/lanes/RM_PROTO/rm_circuit.qasm",
+      "sha256": "5e9dc3ce1ae09cbb2b46b5038e4a20e60f68cfd16e6bf23932935930a70e03cd",
+      "bytes": 3236,
+      "statements": 184,
+      "T": 15,
+      "CX": 89,
+      "measure_reset": 53
+    },
+    {
+      "file": "work/lanes/CC/cc_hm_best.qasm",
+      "sha256": "4a21c2987664521865d89f374f96677b496b0bb6aa38a348a5a1a903b5ea7220",
+      "bytes": 1660,
+      "statements": 114,
+      "T": 15,
+      "CX": 73,
+      "measure_reset": 4
+    }
+  ],
+  "RM_measured": {
+    "mean": 8.51894583018658e-05,
+    "seed0": 8.482888543088663e-05,
+    "acceptance": 0.6429397666666666
+  },
+  "GSJ_deposited_counts": [
+    {
+      "file": "work/lanes/SEARCH/found/zenodo-13777072/extracted/circuits/for_perfectionist_decoding/c=inject[teleport]+cultivate,p=0.001,noise=uniform,g=css,q=18,b=Y,r=6,d1=3.stim",
+      "sha256": "e1c8ad72625b7d3b1b1bd77f7b4a8342719e087ce8acc5285527e86e4866f68f",
+      "q": 18,
+      "cx": 104,
+      "measurements": 38,
+      "counts": {
+        "QUBIT_COORDS": 18,
+        "RX": 20,
+        "R": 18,
+        "X_ERROR": 18,
+        "Z_ERROR": 20,
+        "DEPOLARIZE1": 456,
+        "TICK": 0,
+        "CX": 104,
+        "DEPOLARIZE2": 208,
+        "M": 10,
+        "MX": 21,
+        "DETECTOR": 62,
+        "S_DAG": 8,
+        "S": 7,
+        "OBSERVABLE_INCLUDE": 5,
+        "MPP": 55
+      }
+    },
+    {
+      "file": "work/lanes/SEARCH/found/zenodo-13777072/extracted/circuits/for_perfectionist_decoding/c=inject[bell]+cultivate,p=0.001,noise=uniform,g=css,q=14,b=Y,r=5,d1=3.stim",
+      "sha256": "7eb579300e4b1dbb4ea8adec9350f2e3a5421a6f3edae2c90739f0d50d02aac1",
+      "q": 14,
+      "cx": 75,
+      "measurements": 25,
+      "counts": {
+        "QUBIT_COORDS": 14,
+        "RX": 15,
+        "R": 10,
+        "X_ERROR": 10,
+        "Z_ERROR": 15,
+        "DEPOLARIZE1": 291,
+        "TICK": 0,
+        "CX": 75,
+        "DEPOLARIZE2": 146,
+        "S_DAG": 8,
+        "M": 7,
+        "MX": 11,
+        "DETECTOR": 35,
+        "S": 7,
+        "OBSERVABLE_INCLUDE": 5,
+        "MPP": 55
+      }
+    },
+    {
+      "file": "work/lanes/SEARCH/found/zenodo-13777072/extracted/circuits/for_perfectionist_decoding/c=inject[unitary]+cultivate,p=0.001,noise=uniform,g=css,q=15,b=Y,r=4,d1=3.stim",
+      "sha256": "2703960812bb0ffceef9b97371acadebfb79e20c4dee2ae224de9b7cb2c94b17",
+      "q": 15,
+      "cx": 81,
+      "measurements": 21,
+      "counts": {
+        "QUBIT_COORDS": 15,
+        "RX": 20,
+        "R": 7,
+        "X_ERROR": 7,
+        "Z_ERROR": 20,
+        "DEPOLARIZE1": 396,
+        "TICK": 0,
+        "CX": 81,
+        "DEPOLARIZE2": 162,
+        "S_DAG": 8,
+        "M": 4,
+        "MX": 10,
+        "DETECTOR": 26,
+        "S": 7,
+        "OBSERVABLE_INCLUDE": 5,
+        "MPP": 55
+      }
+    }
+  ]
+}
