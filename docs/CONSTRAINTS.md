@@ -48,3 +48,5 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
 | — | AI agents doing the work | "LLM 등 생성형 AI 도구를 사용할 수 있습니다" (S) | allowed (text: S) |
 | — | Reusing Gidney's open cultivation code | no rule restricts prior code; P cites that literature | allowed (text) |
 | 1 | Data-qubit moves and extra cat members | any cx between neighbours is allowed | allowed (text: P §1.1) |
+| 1 | Reusing a measured qubit without reset (`h, measure, h` leaves \|±⟩; a Z `measure` leaves \|m⟩) | "측정한 qubit을 `reset` 없이 다시 쓰려면 `h`, `measure`, `h`로 쓰세요"; the `h`s carry no noise or time | allowed (text: P §1.2) |
+| 6 | Registering a second team | no rule addresses it; it would double the hourly quota and could take a second podium place | not used: against the contest's spirit, and the quota does not bind (official scores are reproducible locally) |
