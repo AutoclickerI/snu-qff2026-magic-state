@@ -17,10 +17,12 @@ limit: the hourly quota, so the next candidate is verified before each slot.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P14 | G1 | Steane round on the grid: B+C joint prep for L5 | verified prep, <= 10 layers | Sonnet lane ST_BC (`work/lanes/ST_BC`, jerry, tom) | active |
+| 1 | P14 | G1 | Steane round on the grid: B+C joint prep for L5 | exact min depth with proof status (CP-SAT: none at 6–12; light-cone bound 6) | Sonnet lane ST_BC (`work/lanes/ST_BC`, jerry, tom) | active |
 | 2 | P15 | G1 | Layouts with three independently connected block regions (parallel small preps) | layouts.json with preps | Sonnet lane ST_LAY (`work/lanes/ST_LAY`, hippo, sunfish) | active |
-| 3 | P16 | G1 | Integrate (`work/lanes/DR/merge.py`), score, submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | waiting on P14/P15 |
-| 4 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used | main session | v12 submitted 22:10 |
+| 3 | P17 | G1 | Exact block encoders: BFS over CSS states (X-stabilizer subspaces), every optimal circuit scored by exact danger; replaces seed sampling | encoders with min CX, min depth and min danger proven per class | Codex lane EXENC (`work/lanes/EXENC`, zebra) | active |
+| 4 | P5 | G1 | Exact second-order full-circuit evaluator (fault pairs through the judge's engine), loss by fault pair, per-location sensitivity | agrees with v12's 12-seed MC mean within the third-order residual | Sonnet lane EVAL (`work/lanes/EVAL`, owl) | active |
+| 5 | P16 | G1 | Integrate (`work/lanes/DR/merge.py`), score, submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | waiting on P14/P15 |
+| 6 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used | main session | active |
 
 ## Open questions
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us
