@@ -89,6 +89,13 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
   model; a Codex job that fails is relaunched on Codex. The Sonnet lanes already running (ST_BC, ST_TP,
   PARITY) finish as they are.
 
+## R-20261024-3 — 2026-10-24 02:20 KST — goal 1e-5
+> "Ok. with those, set up the project goal and work until you reach the final goal. set the goal to 1e-5. and go there. be as close as possible."
+
+- Source: this session, after the report that 1e-5 lies below the judge-noise floor (1.116e-5).
+- Effect: GOAL G0 is now "official 1-F of 1e-5, or as close as possible, by the deadline"; work continues
+  without stopping until the deadline or the floor.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
