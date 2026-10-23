@@ -20,3 +20,6 @@ Serves: G1, G2. Read before reasoning about scores, noise, validity or evaluator
 - **Gates checked.** `format`, `class`, `correctness`, `acceptance` (CONSTRAINTS rules 1–4). The judge
   does not run `fault_scan`; c1 is our diagnostic. c1 ≈ 3.7e-17 is roundoff (FINDINGS).
 - **Board.** Key = 1-F at 3 s.f., then fewer 2q gates, then earlier submission; best entry per team.
+- **Measure, then reuse without reset.** The judge charges X_ERROR(p) before `measure` (state and record flip together) and DEPOLARIZE1(p) after it, so a measured qubit reused at once is a known |m⟩ with 2p/3 harmful error, one step earlier than `reset` (X_ERROR p). Waiting before the reuse is charged; waiting before a reset is not. The X^m offset must land only where a detector can XOR the record in (never on the output), or correctness fails.
+- **Frame.** v12 and st_L2_v0 use none (auto frame empty), so record choice for the frame is no lever.
+- **No other levers in the code** (read 2026-10-23): noise follows problem.md §1.5 for every operation; the only free operations are `barrier` and the `h` folded into MX/RX; the sign-only correction equals the §2.2 lookup; comments cannot inject Stim text; MPP and every 2q gate but `cx` are rejected.
