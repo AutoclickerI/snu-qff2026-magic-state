@@ -14,6 +14,9 @@ All 1-F values are at p=1e-3, 1e8 shots, seed 0 unless a seed is named. `R/` = `
 | Proxy ranks full circuits once ALAP is applied | proxy 1.1274/1.1337/1.1437/1.1839e-4 → mean 1.234/1.238/1.248/1.30e-4 | 4 schedule classes | measured | `ML/mseed.jsonl` |
 | Proxy does not rank without ALAP | L1 proxy −4.8% vs v6, official 1.3078e-4 vs 1.3103e-4 | v6 layout | measured | `L1/interleaved_top5.json` |
 | A1 seeded from L1 interleaved schedules | proxy 1.09799e-4 (6 chains agree); + ALAP seed-0 1.2102–1.2219e-4, 3-seed means 1.2207–1.2225e-4 | A1, lmax 9 | measured | `ML/res_A1_9b_*.json`, `ML/log_alap_A1b0.txt`, `ML/mseed.jsonl` |
+| v11 true 1-F | 1.2189e-4 ± 0.012e-4 (mean of 100 re-draws; sd of one draw 1.20e-6); seed-0 draws 1.1927–1.24e-4 | v11, same noise model | measured | `R/reorder_v11.txt` |
+| v11 loss by region (seed 0) | all 1.194e-4; pre-stage only (ideal final round) 1.44e-6; final round only 9.96e-5; final-round gates only 1.63e-5; data tail idle only 2.28e-5; gates + tails 6.78e-5; pre × round cross ≈ 1.8e-5 | v11 | measured | `R/region_decomp_v11.txt`, `work/region_decomp.py` |
+| Tail floor with cat-member X propagation | 2.884e-5 (direct readout, all last checks X) | second order, any cat-based direct readout | model | `work/bounds.py` + 2/15 p X per data |
 | Loss by idle window, v8 | none 1.75e-5; pre-cycle only 2.58e-5; cycle only 1.162e-4; cycle data only 1.039e-4; all 1.231e-4 | v8 | measured | `R/idle_decomp_v8.txt` |
 | Tail-pair floor, any circuit | direct 1-step readout 2.567e-5; Bell-pair readout 5.857e-5 (all last checks X) | second-order tails under judge noise | model | `work/bounds.py` |
 | v6 loss split | tail pairs 9.42e-5 (72%), partial windows 2.42e-5 (18%), outside cycle model 1.26e-5 (10%) | v6 | model | `work/decompose.py`, `L1/REPORT.md` |

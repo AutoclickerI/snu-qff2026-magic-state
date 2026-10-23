@@ -1,15 +1,13 @@
 # Plan
 
-## Status (2026-10-23 20:35 KST)
-- Board (20:08): us 0.000121 (v10, 115 CX), Placeholder 0.000124 (133 CX; 0.000422 at 16:03).
-- v11 `work/submissions/v11_A1i_alap45` (v10's cycle, ALAP priority seed 45): seed 0 1.19400e-4,
-  3-seed mean 1.2020e-4 (v10 1.2208e-4); judge PASS; auto-submits at 21:05:35. Most of the seed-0 gain
-  is selection among ALAP variants (spread ±1.5%).
-- Cycle schedules have converged for the A1 layout (proxy 1.09799e-4) and the v6 layout (1.12744e-4).
-  About 80% of the remaining loss is data idle in the final readout cycle, so the next lever is
-  structural (P3 readout, P4 layout).
-- L2's Codex job died on 429 rate limits (19:49); L2 now runs as a Claude agent (global reroute rule).
-- Milestone: lanes report by 23:00; the session report is due 2026-10-23 23:59 KST (R-20261023-5).
+## Status (2026-10-23 21:40 KST)
+- Board 21:08: Placeholder 8.475e-5 (147 CX, acc 0.603, 20:36), us 1.194e-4 (v11, 115 CX; true mean
+  1.219e-4).
+- Jihoon stopped all work at 21:15 to re-analyze the lower bound and the route to it first. All lanes
+  and host jobs are stopped. Nothing is armed to submit.
+- v11 loss split: the final round is ≈98% (round alone 9.96e-5, plus 1.8e-5 cross with the pre-stage);
+  the injection + double-cat check alone is 1.4e-6. Floors: any circuit ≥ 2.57e-5 (direct readout
+  tails); our Bell-pair class ≥ 5.86e-5.
 
 ## Critical path
 edit (minutes) → proxy (0.2 s) → anneal on hippo (~1 min per 24 chains) → full circuit + ALAP variants
@@ -31,6 +29,5 @@ limit: the hourly quota, so the next candidate is verified before each slot.
 | 8 | P9 | G2 | Tell lanes that c1 = 0 is not required and that the hosts in CONSTRAINTS rule 9 are usable | lanes use them | main session | next: at each lane's next resume |
 
 ## Open questions
-- Jihoon: who attends the 2026-10-31 16:30 ceremony if we win (CONSTRAINTS rule 10)?
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us
   either way.

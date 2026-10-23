@@ -63,6 +63,15 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
   tool (agent memory).
 - Confirmed: in the words.
 
+## R-20261023-10 — 2026-10-23 21:00 KST — seed-0 re-draws; ceremony
+> Q: Seed-0 re-draws [reorder simultaneous gates: identical noise model, fresh seed-0 draw; pick the best of ~100] … Use it for our submissions? A: "Yes, use re-draws (Recommended)"
+
+> Q: If we win, who attends the award ceremony in person on 2026-10-31 (Sat) 16:30? A: "A teammate will attend"
+
+- Source: T:4795 (question-tool answers).
+- Effect: CONSTRAINTS boundary case (re-draws); submissions are the best seed-0 draw of the best
+  true-mean circuit, reported with the true mean. Rule 10 is covered by a teammate (name not given).
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
