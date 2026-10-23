@@ -1,9 +1,9 @@
 # Plan
 
 ## Status (2026-10-23 20:0x KST)
-- Board: us 0.000123 (v8, 115 CX), Placeholder 0.000129 (103 CX, improving fast).
-- v10 submitted 20:05:30: A1 layout + interleaved cycle seeded from L1's CP-SAT orders + ALAP.
-  Seed-0 1.21115e-4 (key 0.000121), 3-seed mean 1.2208e-4, 115 CX.
+- Board (20:08): us 0.000121 (v10, 115 CX), Placeholder 0.000124 (133 CX; 0.000422 at 16:03).
+- v10 = A1 layout + interleaved cycle seeded from L1's CP-SAT orders + ALAP: server 1.21115e-4,
+  3-seed mean 1.2208e-4.
 - Cycle schedules have converged for the A1 layout (proxy 1.09799e-4) and the v6 layout (1.12744e-4).
   About 80% of the remaining loss is data idle in the final readout cycle, so the next lever is
   structural (P3 readout, P4 layout).
