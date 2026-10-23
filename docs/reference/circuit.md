@@ -17,6 +17,7 @@ Serves: G1, G2. Read before changing the circuit, its layout or the search code.
 
 ## Code map (`work/`)
 - `qcirc.py`: QASM builder (`Circ`), `rescheduled(lazy_init=True)` emits a fixed layer schedule.
+- `lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`: exact score of a whole submission, no sampling (faults as bit signatures through the T-rotation frame, 2nd order in 2 s, 3rd order in ~30 s); loss by fault pair and per-channel sensitivity. Matches v12's 12-seed MC mean to −0.08% at 3rd order; below acceptance ~0.5 the series converges slowly (st_L2_v0: −6% at 3rd order), so rank such circuits with MC.
 - `proxy2.py`: exact second-order loss of the cycle alone via Stim DEM; `joint_loss` prices Y_L at ½.
 - `gen2_cycle.py`: v6-era cycle model and annealer (gen2 json format). `batch_score.make(spec)` builds
   full circuits from gen2 files.

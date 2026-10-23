@@ -8,11 +8,10 @@
 - Closed this evening: BP push (1.193e-4, no gain over v12), DRG cat embedding (cat graphs not bipartite), Codex audit (no bound).
 
 ## Critical path
-edit (minutes) → proxy (0.2 s) → anneal on hippo (~1 min per 24 chains) → full circuit + ALAP variants
-(1 s) → official seed-0 score (10 s at 20 processes) → 3-seed mean (30 s) → sequential judge (2 min) →
-submit (hourly, ~2 min to score). Bottleneck: the cycle-only proxy ranks only Bell-pair circuits with
-ALAP applied, so new architectures need official MC to rank (10–30 s per candidate). Fix: P5. Second
-limit: the hourly quota, so the next candidate is verified before each slot.
+edit (minutes) → exact score `lanes/EVAL/exact2.py` (2 s, 2nd order; `--third` 30 s) → official seed-0 MC
+(10 s at 20 processes) and 3-seed mean (30 s) for the finalists → sequential judge (2 min) → submit (hourly,
+~2 min to score). Bottleneck now: no valid grid Steane-round circuit yet (P14–P17); the hourly quota limits
+only submissions, so the next candidate is verified before each slot.
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
@@ -20,7 +19,6 @@ limit: the hourly quota, so the next candidate is verified before each slot.
 | 1 | P14 | G1 | Steane round on the grid: B+C joint prep for L5 | exact min depth with proof status (CP-SAT: none at 6–12; light-cone bound 6) | Sonnet lane ST_BC (`work/lanes/ST_BC`, jerry, tom) | active |
 | 2 | P15 | G1 | Layouts with three independently connected block regions (parallel small preps) | layouts.json with preps | Sonnet lane ST_LAY (`work/lanes/ST_LAY`, hippo, sunfish) | active |
 | 3 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`): A on L5 done (FINDINGS); run on B, C (and A) of every ST_LAY layout | preps for each candidate layout | main session | next |
-| 4 | P5 | G1 | Exact second-order full-circuit evaluator (fault pairs through the judge's engine), loss by fault pair, per-location sensitivity | agrees with v12's 12-seed MC mean within the third-order residual | Sonnet lane EVAL (`work/lanes/EVAL`, owl) | active |
 | 5 | P16 | G1 | Integrate (`work/lanes/DR/merge.py`), score, submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | waiting on P14/P15 |
 | 6 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used | main session | active |
 

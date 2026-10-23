@@ -1,0 +1,27 @@
+circuit ../../candidates/st_L2_v0.qasm: 460 noise channels, 3398 faults, 543 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 2.57027e-04   (pairs 2.57027e-04 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 2.57027e-04
+third order: 3.13253e-04   (weight-3 sets 3.50297e-04 + pair-times-others -3.70438e-05)
+1-F (to 3rd order) = 5.70281e-04
+acceptance: first order 0.04036, second order 0.50176; exp(-A1) = 0.38303  (A1 = 0.95964)
+time: model+singles 0.7s, pairs 2.8s, triples 46.1s
+
+top 15 fault pairs by contribution to 1-F (each pair counted once):
+  1.172e-05 ( 4.56%)  n_ij=1.000  L220 idle Z@q5 t=36..71   +   L255 flip Z@q10 t=48
+  7.879e-06 ( 3.07%)  n_ij=1.000  L249 idle Z@q35 t=48..71   +   L252 flip Z@q3 t=48
+  7.174e-06 ( 2.79%)  n_ij=1.000  L230 idle Z@q32 t=39..71   +   L270 idle Z@q3 t=51..52
+  7.174e-06 ( 2.79%)  n_ij=1.000  L230 idle Y@q32 t=39..71   +   L270 idle Y@q3 t=51..52
+  5.280e-06 ( 2.05%)  n_ij=1.000  L255 flip Z@q10 t=48   +   L299 idle Z@q4 t=56..71
+  5.249e-06 ( 2.04%)  n_ij=1.000  L249 idle Z@q35 t=48..71   +   L262 idle Z@q2 t=50..51
+  4.954e-06 ( 1.93%)  n_ij=1.000  L252 flip Z@q3 t=48   +   L305 idle Z@q34 t=57..71
+  3.590e-06 ( 1.40%)  n_ij=1.000  L230 idle Z@q32 t=39..71   +   L287 idle Z@q3 t=54..54
+  3.313e-06 ( 1.29%)  n_ij=1.000  L252 flip Z@q3 t=48   +   L342 idle Z@q29 t=62..71
+  3.300e-06 ( 1.28%)  n_ij=1.000  L262 idle Z@q2 t=50..51   +   L305 idle Z@q34 t=57..71
+  3.300e-06 ( 1.28%)  n_ij=1.000  L270 idle Z@q3 t=51..52   +   L304 idle Z@q33 t=57..71
+  3.300e-06 ( 1.28%)  n_ij=1.000  L270 idle Y@q3 t=51..52   +   L304 idle Y@q33 t=57..71
+  2.654e-06 ( 1.03%)  n_ij=1.000  L255 flip Z@q10 t=48   +   L349 idle Z@q11 t=64..71
+  2.207e-06 ( 0.86%)  n_ij=1.000  L262 idle Z@q2 t=50..51   +   L342 idle Z@q29 t=62..71
+  1.791e-06 ( 0.70%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L207 idle X@q26 t=1..33
+
+loss by channel kind (each pair split half/half): {'flip': '4.086e-05', 'gate': '7.317e-05', 'idle': '1.430e-04'}
