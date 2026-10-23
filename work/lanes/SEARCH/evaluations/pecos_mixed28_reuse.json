@@ -1,0 +1,56 @@
+{
+  "name": "pecos_mixed28_reuse",
+  "scope": "ideal encoded input, noisy extraction only",
+  "shots_per_basis": 5000000,
+  "p": 0.001,
+  "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+  "num_qubits": 10,
+  "cx": 28,
+  "basis": {
+    "X": {
+      "bad": 1021,
+      "accepted": 4541476,
+      "acceptance": 0.9082952,
+      "decoded_failure": 0.00022481677762912323,
+      "sem": 7.035047332631574e-06,
+      "single_fault_diagnostic": {
+        "malignant_mechanisms": 0,
+        "weight_sum": 0
+      }
+    },
+    "Y": {
+      "bad": 2078,
+      "accepted": 4542949,
+      "acceptance": 0.9085898,
+      "decoded_failure": 0.00045741213471689864,
+      "sem": 1.0031954684525672e-05,
+      "single_fault_diagnostic": {
+        "malignant_mechanisms": 0,
+        "weight_sum": 0
+      }
+    }
+  },
+  "asap_steps": 16,
+  "stabilizer_supports": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      1,
+      2,
+      4,
+      5
+    ],
+    [
+      2,
+      3,
+      5,
+      6
+    ]
+  ],
+  "loss": 0.00034111445617301093,
+  "sem": 6.126418320779752e-06
+}

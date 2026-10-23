@@ -1,0 +1,120 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "source": "SCHED encoders/merge.py L5; A exact enumeration; B+C ST_BC/sat4_16_2.json; order a,bc",
+  "encoder": {
+    "ops": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          9,
+          15
+        ]
+      ],
+      [
+        [
+          2,
+          8
+        ],
+        [
+          16,
+          15
+        ]
+      ],
+      [
+        [
+          1,
+          2
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          15,
+          14
+        ]
+      ],
+      [
+        [
+          8,
+          2
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      [
+        [
+          14,
+          8
+        ]
+      ],
+      [
+        [
+          8,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          8
+        ]
+      ]
+    ],
+    "pivots": [
+      1,
+      8,
+      9,
+      16
+    ],
+    "danger_units": 9,
+    "danger_vector_units": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      2,
+      3
+    ],
+    "danger": 0.0006000000000000002,
+    "danger_pure_logical": 0.0,
+    "danger_per_qubit": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0002666666666666667,
+      0.00013333333333333334,
+      0.0002
+    ],
+    "cx": 13,
+    "depth": 7
+  },
+  "round_start": 53,
+  "pre_end": 33,
+  "sha256": "7a258f85af743496f912685a6982a484a32cf5d797d1cba6b5c972ef44612375",
+  "schedule_audit": {
+    "layers": 56,
+    "operations": 320,
+    "native_steps_match": true
+  }
+}

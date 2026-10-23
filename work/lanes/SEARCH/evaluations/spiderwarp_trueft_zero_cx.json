@@ -1,0 +1,45 @@
+{
+  "name": "spiderwarp_trueft_zero_cx",
+  "scope": "noisy logical basis-state preparation",
+  "shots_per_basis": 5000000,
+  "p": 0.001,
+  "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+  "num_qubits": 10,
+  "cx": 18,
+  "basis": {
+    "Z": {
+      "bad": 3845,
+      "accepted": 4719660,
+      "acceptance": 0.943932,
+      "decoded_failure": 0.0008146773284516258,
+      "sem": 1.313289528553294e-05,
+      "single_fault_diagnostic": {
+        "malignant_mechanisms": 0,
+        "weight_sum": 0
+      }
+    }
+  },
+  "asap_steps": 17,
+  "stabilizer_supports": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      2,
+      4,
+      6
+    ]
+  ],
+  "loss": 0.0008146773284516258,
+  "sem": 1.313289528553294e-05
+}

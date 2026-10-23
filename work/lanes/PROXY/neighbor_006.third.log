@@ -1,0 +1,18 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/PROXY/neighbor_006.qasm: 282 noise channels, 2118 faults, 488 (s,d) classes, rotation rank 5, 23 detectors, noiseless acceptance 1.000000
+first order : c1 p = 9.9895e-20   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.12768e-04   (pairs 1.12768e-04 + same-channel normalisation 1.801e-23)
+1-F (2nd order) = 1.12768e-04
+third order: 2.16462e-06   (weight-3 sets 8.25614e-06 + pair-times-others -6.09151e-06)
+1-F (to 3rd order) = 1.14933e-04
+acceptance: first order 0.62903, second order 0.69777; exp(-A1) = 0.69006  (A1 = 0.37097)
+time: model+singles 0.4s, pairs 2.0s, triples 28.3s
+
+top 6 fault pairs by contribution to 1-F (each pair counted once):
+  6.653e-07 ( 0.59%)  n_ij=1.000  L236 idle Y@q0 t=39..41   +   L245 idle Z@q4 t=40..41
+  6.653e-07 ( 0.59%)  n_ij=1.000  L236 idle Z@q0 t=39..41   +   L245 idle Y@q4 t=40..41
+  6.653e-07 ( 0.59%)  n_ij=1.000  L236 idle Z@q0 t=39..41   +   L245 idle Z@q4 t=40..41
+  5.000e-07 ( 0.44%)  n_ij=0.500  L196 flip X@q10 t=33   +   L265 flip X@q10 t=41
+  5.000e-07 ( 0.44%)  n_ij=0.500  L204 flip X@q2 t=34   +   L257 flip X@q2 t=41
+  4.993e-07 ( 0.44%)  n_ij=0.500  L233 flip X@q16 t=37   +   L236 idle X@q0 t=39..41
+
+loss by channel kind (each pair split half/half): {'flip': '6.280e-06', 'gate': '4.049e-05', 'idle': '6.600e-05'}

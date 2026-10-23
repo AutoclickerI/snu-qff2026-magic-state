@@ -1,0 +1,62 @@
+[
+  {
+    "name": "DR Steane pair W3[0,1]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[0,2]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[1,2]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[1,3]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[1,5]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[2,4]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[2,5]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[3,4]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[3,5]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[3,6]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[4,5]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[4,6]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR Steane pair W3[5,6]",
+    "error": "verification overlaps the encoder; start B earlier"
+  },
+  {
+    "name": "DR poc default verified=False",
+    "error": "The circuit contains non-deterministic detectors.\n\nTo make an SVG picture of the problem, you can use the python API like this:\n    your_circuit.diagram('detslice-with-ops-svg', tick=range(0, 5), filter_coords=['D0', 'D1', ])\nor the command line API like this:\n    stim diagram --in your_circuit_file.stim --type detslice-with-ops-svg --tick 0:5 --filter_coords D0:D1 > output_image.svg\n\nThis was discovered while analyzing an X-basis reset (RX) on:\n    qubit 27\n\nThe collapse anti-commuted with these detectors/observables:\n    D0\n    D1\n\nThe backward-propagating error sensitivity for D0 was:\n    Z0\n    Z1\n    Z3\n    Z6\n    Z7\n    Z8\n    Z19\n    Z21\n    Z23\n    Z27\n\nThe backward-propagating error sensitivity for D1 was:\n    Z0\n    Z1\n    Z4\n    Z5\n    Z11\n    Z19\n    Z20\n    Z24\n    Z27\n\nCircuit stack trace:\n    at instruction #14 [which is RX 27]"
+  },
+  {
+    "name": "DR poc default verified=True",
+    "error": "The circuit contains non-deterministic detectors.\n\nTo make an SVG picture of the problem, you can use the python API like this:\n    your_circuit.diagram('detslice-with-ops-svg', tick=range(0, 5), filter_coords=['D0', 'D1', ])\nor the command line API like this:\n    stim diagram --in your_circuit_file.stim --type detslice-with-ops-svg --tick 0:5 --filter_coords D0:D1 > output_image.svg\n\nThis was discovered while analyzing an X-basis reset (RX) on:\n    qubit 32\n\nThe collapse anti-commuted with these detectors/observables:\n    D0\n    D1\n\nThe backward-propagating error sensitivity for D0 was:\n    Z0\n    Z1\n    Z3\n    Z6\n    Z7\n    Z8\n    Z22\n    Z24\n    Z27\n    Z32\n\nThe backward-propagating error sensitivity for D1 was:\n    Z0\n    Z1\n    Z4\n    Z5\n    Z12\n    Z22\n    Z23\n    Z28\n    Z32\n\nCircuit stack trace:\n    at instruction #14 [which is RX 32]"
+  }
+]

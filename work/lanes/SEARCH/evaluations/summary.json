@@ -1,0 +1,878 @@
+[
+  {
+    "name": "heussen_steane_plus",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 8,
+    "cx": 11,
+    "basis": {
+      "X": {
+        "bad": 736,
+        "accepted": 4933038,
+        "acceptance": 0.9866076,
+        "decoded_failure": 0.00014919812091453583,
+        "sem": 5.499105426560677e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 7,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.00014919812091453583,
+    "sem": 5.499105426560677e-06
+  },
+  {
+    "name": "mqt_plus_ft_heuristic_heuristic",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 8,
+    "cx": 11,
+    "basis": {
+      "X": {
+        "bad": 1087,
+        "accepted": 4907496,
+        "acceptance": 0.9814992,
+        "decoded_failure": 0.0002214978881286913,
+        "sem": 6.717485145962719e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 8,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.0002214978881286913,
+    "sem": 6.717485145962719e-06
+  },
+  {
+    "name": "mqt_plus_ft_heuristic_opt",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 8,
+    "cx": 11,
+    "basis": {
+      "X": {
+        "bad": 1087,
+        "accepted": 4907496,
+        "acceptance": 0.9814992,
+        "decoded_failure": 0.0002214978881286913,
+        "sem": 6.717485145962719e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 8,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.0002214978881286913,
+    "sem": 6.717485145962719e-06
+  },
+  {
+    "name": "mqt_plus_ft_opt_opt",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 8,
+    "cx": 11,
+    "basis": {
+      "X": {
+        "bad": 979,
+        "accepted": 4909877,
+        "acceptance": 0.9819754,
+        "decoded_failure": 0.0001993939970390297,
+        "sem": 6.372024415651716e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 8,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.0001993939970390297,
+    "sem": 6.372024415651716e-06
+  },
+  {
+    "name": "mqt_plus_non_ft_heuristic",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 7,
+    "cx": 8,
+    "basis": {
+      "X": {
+        "bad": 34578,
+        "accepted": 5000000,
+        "acceptance": 1.0,
+        "decoded_failure": 0.0069156,
+        "sem": 3.7061501525545346e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 10,
+          "weight_sum": 0.006925578434924482
+        }
+      }
+    },
+    "asap_steps": 4,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.0069156,
+    "sem": 3.7061501525545346e-05
+  },
+  {
+    "name": "mqt_plus_non_ft_opt",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 7,
+    "cx": 8,
+    "basis": {
+      "X": {
+        "bad": 21973,
+        "accepted": 5000000,
+        "acceptance": 1.0,
+        "decoded_failure": 0.0043946,
+        "sem": 2.958137079595873e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 10,
+          "weight_sum": 0.004327375153611383
+        }
+      }
+    },
+    "asap_steps": 6,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.0043946,
+    "sem": 2.958137079595873e-05
+  },
+  {
+    "name": "mqt_zero_ft_heuristic_heuristic",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 8,
+    "cx": 11,
+    "basis": {
+      "Z": {
+        "bad": 796,
+        "accepted": 4933145,
+        "acceptance": 0.986629,
+        "decoded_failure": 0.00016135751128336994,
+        "sem": 5.718703918026479e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 8,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.00016135751128336994,
+    "sem": 5.718703918026479e-06
+  },
+  {
+    "name": "mqt_zero_ft_heuristic_opt",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 8,
+    "cx": 11,
+    "basis": {
+      "Z": {
+        "bad": 795,
+        "accepted": 4927862,
+        "acceptance": 0.9855724,
+        "decoded_failure": 0.00016132756964379278,
+        "sem": 5.7212377076610855e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 8,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.00016132756964379278,
+    "sem": 5.7212377076610855e-06
+  },
+  {
+    "name": "mqt_zero_ft_opt_opt",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 8,
+    "cx": 11,
+    "basis": {
+      "Z": {
+        "bad": 1061,
+        "accepted": 4946457,
+        "acceptance": 0.9892914,
+        "decoded_failure": 0.00021449696216908386,
+        "sem": 6.584410085485566e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 8,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.00021449696216908386,
+    "sem": 6.584410085485566e-06
+  },
+  {
+    "name": "mqt_zero_non_ft_heuristic",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 7,
+    "cx": 8,
+    "basis": {
+      "Z": {
+        "bad": 27741,
+        "accepted": 5000000,
+        "acceptance": 1.0,
+        "decoded_failure": 0.0055482,
+        "sem": 3.321872206078975e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 10,
+          "weight_sum": 0.005596862975000822
+        }
+      }
+    },
+    "asap_steps": 4,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.0055482,
+    "sem": 3.321872206078975e-05
+  },
+  {
+    "name": "mqt_zero_non_ft_opt",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 7,
+    "cx": 8,
+    "basis": {
+      "Z": {
+        "bad": 6933,
+        "accepted": 5000000,
+        "acceptance": 1.0,
+        "decoded_failure": 0.0013866,
+        "sem": 1.6641378190762925e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 11,
+          "weight_sum": 0.001333849207936829
+        }
+      }
+    },
+    "asap_steps": 5,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ]
+    ],
+    "loss": 0.0013866,
+    "sem": 1.6641378190762925e-05
+  },
+  {
+    "name": "pecos_mixed28_reuse",
+    "scope": "ideal encoded input, noisy extraction only",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 10,
+    "cx": 28,
+    "basis": {
+      "X": {
+        "bad": 1021,
+        "accepted": 4541476,
+        "acceptance": 0.9082952,
+        "decoded_failure": 0.00022481677762912323,
+        "sem": 7.035047332631574e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      },
+      "Y": {
+        "bad": 2078,
+        "accepted": 4542949,
+        "acceptance": 0.9085898,
+        "decoded_failure": 0.00045741213471689864,
+        "sem": 1.0031954684525672e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 16,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        3,
+        5,
+        6
+      ]
+    ],
+    "loss": 0.00034111445617301093,
+    "sem": 6.126418320779752e-06
+  },
+  {
+    "name": "pecos_mixed28_separate",
+    "scope": "ideal encoded input, noisy extraction only",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 13,
+    "cx": 28,
+    "basis": {
+      "X": {
+        "bad": 1011,
+        "accepted": 4542599,
+        "acceptance": 0.9085198,
+        "decoded_failure": 0.00022255981652793917,
+        "sem": 6.998788075536468e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      },
+      "Y": {
+        "bad": 1724,
+        "accepted": 4543646,
+        "acceptance": 0.9087292,
+        "decoded_failure": 0.0003794309679935453,
+        "sem": 9.136539476249572e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 14,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        3,
+        5,
+        6
+      ]
+    ],
+    "loss": 0.0003009953922607422,
+    "sem": 5.754550115502911e-06
+  },
+  {
+    "name": "poor14_XZ_reuse",
+    "scope": "ideal encoded input, noisy extraction only",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 11,
+    "cx": 28,
+    "basis": {
+      "X": {
+        "bad": 3704,
+        "accepted": 4445397,
+        "acceptance": 0.8890794,
+        "decoded_failure": 0.0008332214198191973,
+        "sem": 1.36849725233685e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      },
+      "Y": {
+        "bad": 4304,
+        "accepted": 4445813,
+        "acceptance": 0.8891626,
+        "decoded_failure": 0.0009681018972232975,
+        "sem": 1.4749408955021967e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 19,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        3,
+        5,
+        6
+      ]
+    ],
+    "loss": 0.0009006616585212474,
+    "sem": 1.0060113536732985e-05
+  },
+  {
+    "name": "poor14_XZ_separate",
+    "scope": "ideal encoded input, noisy extraction only",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 15,
+    "cx": 28,
+    "basis": {
+      "X": {
+        "bad": 1297,
+        "accepted": 4602061,
+        "acceptance": 0.9204122,
+        "decoded_failure": 0.0002818302495338502,
+        "sem": 7.824496666135871e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      },
+      "Y": {
+        "bad": 1884,
+        "accepted": 4600944,
+        "acceptance": 0.9201888,
+        "decoded_failure": 0.0004094811847307857,
+        "sem": 9.432016807635403e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 11,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        3,
+        5,
+        6
+      ]
+    ],
+    "loss": 0.00034565571713231794,
+    "sem": 6.127513548289553e-06
+  },
+  {
+    "name": "poor14_ZX_reuse",
+    "scope": "ideal encoded input, noisy extraction only",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 11,
+    "cx": 28,
+    "basis": {
+      "X": {
+        "bad": 1104,
+        "accepted": 4446101,
+        "acceptance": 0.8892202,
+        "decoded_failure": 0.0002483074496058457,
+        "sem": 7.472248156843262e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      },
+      "Y": {
+        "bad": 4294,
+        "accepted": 4445887,
+        "acceptance": 0.8891774,
+        "decoded_failure": 0.0009658365136135939,
+        "sem": 1.4732035944721031e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 19,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        3,
+        5,
+        6
+      ]
+    ],
+    "loss": 0.0006070719816097198,
+    "sem": 8.259348878604173e-06
+  },
+  {
+    "name": "poor14_ZX_separate",
+    "scope": "ideal encoded input, noisy extraction only",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 15,
+    "cx": 28,
+    "basis": {
+      "X": {
+        "bad": 1081,
+        "accepted": 4601808,
+        "acceptance": 0.9203616,
+        "decoded_failure": 0.00023490767107189173,
+        "sem": 7.143866607479707e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      },
+      "Y": {
+        "bad": 1896,
+        "accepted": 4600911,
+        "acceptance": 0.9201822,
+        "decoded_failure": 0.0004120923008508532,
+        "sem": 9.462062905630119e-06,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 11,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        3,
+        5,
+        6
+      ]
+    ],
+    "loss": 0.0003234999859613725,
+    "sem": 5.928015362150411e-06
+  },
+  {
+    "name": "spiderwarp_trueft_zero_cx",
+    "scope": "noisy logical basis-state preparation",
+    "shots_per_basis": 5000000,
+    "p": 0.001,
+    "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+    "num_qubits": 10,
+    "cx": 18,
+    "basis": {
+      "Z": {
+        "bad": 3845,
+        "accepted": 4719660,
+        "acceptance": 0.943932,
+        "decoded_failure": 0.0008146773284516258,
+        "sem": 1.313289528553294e-05,
+        "single_fault_diagnostic": {
+          "malignant_mechanisms": 0,
+          "weight_sum": 0
+        }
+      }
+    },
+    "asap_steps": 17,
+    "stabilizer_supports": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        5,
+        6
+      ],
+      [
+        0,
+        2,
+        4,
+        6
+      ]
+    ],
+    "loss": 0.0008146773284516258,
+    "sem": 1.313289528553294e-05
+  }
+]

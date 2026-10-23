@@ -1,0 +1,45 @@
+{
+  "name": "mqt_plus_non_ft_heuristic",
+  "scope": "noisy logical basis-state preparation",
+  "shots_per_basis": 5000000,
+  "p": 0.001,
+  "noise": "tprep.noise.STANDARD; initial=0 only for existing perfect input",
+  "num_qubits": 7,
+  "cx": 8,
+  "basis": {
+    "X": {
+      "bad": 34578,
+      "accepted": 5000000,
+      "acceptance": 1.0,
+      "decoded_failure": 0.0069156,
+      "sem": 3.7061501525545346e-05,
+      "single_fault_diagnostic": {
+        "malignant_mechanisms": 10,
+        "weight_sum": 0.006925578434924482
+      }
+    }
+  },
+  "asap_steps": 4,
+  "stabilizer_supports": [
+    [
+      0,
+      1,
+      3,
+      6
+    ],
+    [
+      0,
+      1,
+      4,
+      5
+    ],
+    [
+      0,
+      2,
+      3,
+      5
+    ]
+  ],
+  "loss": 0.0069156,
+  "sem": 3.7061501525545346e-05
+}

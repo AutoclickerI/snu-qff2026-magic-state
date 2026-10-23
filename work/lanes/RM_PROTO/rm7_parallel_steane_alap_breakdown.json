@@ -1,0 +1,182 @@
+{
+  "definition": "last data-operation noise (entire CX channel) plus terminal data idle gaps; all other channels rest",
+  "tail_channels": [
+    {
+      "channel": 338,
+      "kind": "gate2",
+      "line": 290,
+      "qubits": [
+        15,
+        4
+      ],
+      "steps": "36",
+      "ins": "instruction 286 (cx q[15], q[4])",
+      "when": "after"
+    },
+    {
+      "channel": 339,
+      "kind": "idle",
+      "line": 290,
+      "qubits": [
+        4
+      ],
+      "steps": "37..37",
+      "ins": "instruction 286 (cx q[15], q[4])"
+    },
+    {
+      "channel": 340,
+      "kind": "gate2",
+      "line": 291,
+      "qubits": [
+        16,
+        2
+      ],
+      "steps": "36",
+      "ins": "instruction 287 (cx q[16], q[2])",
+      "when": "after"
+    },
+    {
+      "channel": 341,
+      "kind": "idle",
+      "line": 291,
+      "qubits": [
+        2
+      ],
+      "steps": "37..37",
+      "ins": "instruction 287 (cx q[16], q[2])"
+    },
+    {
+      "channel": 342,
+      "kind": "gate2",
+      "line": 292,
+      "qubits": [
+        17,
+        3
+      ],
+      "steps": "36",
+      "ins": "instruction 288 (cx q[17], q[3])",
+      "when": "after"
+    },
+    {
+      "channel": 343,
+      "kind": "idle",
+      "line": 292,
+      "qubits": [
+        3
+      ],
+      "steps": "37..37",
+      "ins": "instruction 288 (cx q[17], q[3])"
+    },
+    {
+      "channel": 344,
+      "kind": "gate2",
+      "line": 293,
+      "qubits": [
+        18,
+        0
+      ],
+      "steps": "36",
+      "ins": "instruction 289 (cx q[18], q[0])",
+      "when": "after"
+    },
+    {
+      "channel": 345,
+      "kind": "idle",
+      "line": 293,
+      "qubits": [
+        0
+      ],
+      "steps": "37..37",
+      "ins": "instruction 289 (cx q[18], q[0])"
+    },
+    {
+      "channel": 346,
+      "kind": "gate2",
+      "line": 294,
+      "qubits": [
+        19,
+        5
+      ],
+      "steps": "36",
+      "ins": "instruction 290 (cx q[19], q[5])",
+      "when": "after"
+    },
+    {
+      "channel": 347,
+      "kind": "idle",
+      "line": 294,
+      "qubits": [
+        5
+      ],
+      "steps": "37..37",
+      "ins": "instruction 290 (cx q[19], q[5])"
+    },
+    {
+      "channel": 348,
+      "kind": "gate2",
+      "line": 295,
+      "qubits": [
+        20,
+        1
+      ],
+      "steps": "36",
+      "ins": "instruction 291 (cx q[20], q[1])",
+      "when": "after"
+    },
+    {
+      "channel": 349,
+      "kind": "idle",
+      "line": 295,
+      "qubits": [
+        1
+      ],
+      "steps": "37..37",
+      "ins": "instruction 291 (cx q[20], q[1])"
+    },
+    {
+      "channel": 350,
+      "kind": "gate2",
+      "line": 296,
+      "qubits": [
+        21,
+        6
+      ],
+      "steps": "36",
+      "ins": "instruction 292 (cx q[21], q[6])",
+      "when": "after"
+    },
+    {
+      "channel": 351,
+      "kind": "idle",
+      "line": 296,
+      "qubits": [
+        6
+      ],
+      "steps": "37..37",
+      "ins": "instruction 292 (cx q[21], q[6])"
+    }
+  ],
+  "all": {
+    "loss1": -1.2509992138706567e-18,
+    "loss2": 0.00013184340818736835,
+    "loss": 0.0001318434081873671,
+    "A1": 0.689478926342417,
+    "acc2": 0.5477263069705984
+  },
+  "tail": {
+    "loss1": 2.5905203907919825e-19,
+    "loss2": 2.2866666666665785e-05,
+    "loss": 2.2866666666666042e-05,
+    "A1": 0.0037333333333333337,
+    "acc2": 0.9962726399999999
+  },
+  "rest": {
+    "loss1": -1.5100512529498551e-18,
+    "loss2": 0.00010350118596514711,
+    "loss": 0.00010350118596514561,
+    "A1": 0.6857455930090838,
+    "acc2": 0.5488504891016361
+  },
+  "cross2": 5.475555555555455e-06,
+  "fraction2_tail_including_half_cross": 0.19420344783605664
+}

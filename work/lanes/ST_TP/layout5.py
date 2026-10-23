@@ -21,6 +21,7 @@ K = 2
 import os
 WT = int(os.environ.get('WT', 1000))
 WH = int(os.environ.get('WH', 2))
+WHO = int(os.environ.get('WHO', 0))
 HB = int(os.environ.get('HB', 0))
 WM = int(os.environ.get('WM', 40))
 K = int(os.environ.get('K', 3))
@@ -223,7 +224,7 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
                     m.Add(te[x] <= s_[y]).OnlyEnforceIf([tmp[(x, q)], tmp[(y, q)], order[(x, y)]])
                     m.Add(te[y] <= s_[x]).OnlyEnforceIf([tmp[(x, q)], tmp[(y, q)], order[(x, y)].Not()])
     nh = sum(H[(g, q)] for g in G for q in range(N))
-    m.Minimize(WT * T + WM * mv + sum(28 * len(groups[g]) * st[g] for g in G) + 7 * sum(idle) + WH * nh)
+    m.Minimize(WT * T + WM * mv + sum(28 * len(groups[g]) * st[g] for g in G) + 7 * sum(idle) + WH * nh + WHO * sum(H[(0, q)] for q in range(N)))
     s = cp_model.CpSolver()
     s.parameters.max_time_in_seconds = seconds
     s.parameters.num_workers = workers

@@ -1,0 +1,12 @@
+circuit work/lanes/SCHED/cand2_scheduled.qasm: 489 noise channels, 3857 faults, 557 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 5.0330e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 8.75841e-05   (pairs 8.75841e-05 + same-channel normalisation 1.860e-22)
+1-F (2nd order) = 8.75841e-05
+third order: 3.85210e-05   (weight-3 sets 4.75436e-05 + pair-times-others -9.02263e-06)
+1-F (to 3rd order) = 1.26105e-04
+acceptance: first order 0.31492, second order 0.55039; exp(-A1) = 0.50405  (A1 = 0.68508)
+time: model+singles 0.2s, pairs 6.1s, triples 89.4s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '7.512e-06', 'idle': '3.453e-05', 'gate': '4.554e-05'}
