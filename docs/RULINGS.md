@@ -104,6 +104,13 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: CONSTRAINTS boundary case under rule 3: rank by 1-F alone; acceptance headroom above 0.5 is budget to spend on
   lower 1-F, with no margin kept beyond verification.
 
+## R-20261024-5 — 2026-10-24 03:12 KST — CPU cap reading
+> Q: "The CPU cap \"~75%\": does it limit only OUR processes to 75% of each host's cores, or the host's TOTAL load (other users included)? ..." A: "Ours ≤75%, total ≤100% (Recommended)"
+
+- Source: question tool, this session.
+- Effect: CONSTRAINTS rule 9: our processes use at most ~75% of each host's cores, and we never push a host's total
+  load above its core count.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |

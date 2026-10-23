@@ -23,9 +23,9 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
    goes only to the contest API via `work/submit.py`; `.gitignore` keeps `.submit_credentials` out of
    git and the host mirrors. [external: S]
 9. **Hosts.** [hard] Ours: zebra, dragon, faraday, hippo, jerry, owl, pegasus, sunfish, tom, with
-   `/hdd*/jihoon` and `/data*/jihoon`. Never Parrot; never zebra GPU0 (another user's). Our CPU use stays
-   ≤ ~75% of each host. zebra's kernel caps SSH connections. [Jihoon, R-20261023-7, R-20261023-8,
-   R-20261023-9]
+   `/hdd*/jihoon` and `/data*/jihoon`. Never Parrot; never zebra GPU0 (another user's). Our processes use ≤ ~75% of each host's
+   cores, and the host's total load (other users included) stays ≤ its core count. zebra's kernel caps SSH
+   connections. [Jihoon, R-20261023-7, R-20261023-8, R-20261023-9, R-20261024-5]
 10. **Award attendance.** [hard] "수상 팀은 10월 31일(토) 시상식에 팀원 중 최소 1명이 현장에 직접
     참석해야 합니다" (S). Jihoon's action. [external: S]
 
