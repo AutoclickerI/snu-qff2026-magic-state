@@ -35,6 +35,7 @@ def parity_space(text):
             b.add(1 << i)
             complement.append(1 << i)
     missing, vals = [], []
+    max_random_abs = 0.0
     b = Basis()
     for d in independent:
         b.add(d)
@@ -48,6 +49,8 @@ def parity_space(text):
                 b.add(d)
                 missing.append(d)
                 vals.append(val)
+        else:
+            max_random_abs = max(max_random_abs,abs(val))
     # The QASM clbit numbering differs from measurement-record order.
     names = re.findall(r'measure\s+q\[\d+\]\s*->\s*c\[(\d+)\]', text)
     def clbits(d):
@@ -57,6 +60,7 @@ def parity_space(text):
                 independent_records=independent, missing_records=missing,
                 independent_clbits=[clbits(d) for d in independent],
                 missing_clbits=[clbits(d) for d in missing], missing_values=vals,
+                max_random_abs=max_random_abs,
                 full_records=list(b.vecs), record_clbits=list(map(int,names)))
 
 def scalar(r):

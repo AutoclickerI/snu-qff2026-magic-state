@@ -5,7 +5,7 @@ All 1-F values are at p=1e-3, 1e8 shots, seed 0 unless a seed is named. `R/` = `
 
 | Quantity | Value ± uncertainty | Scope | Class | Receipt |
 |---|---|---|---|---|
-| `fast_check` vs server | bit-identical (v6, v7, v8) | official setting | official | `R/server_status_1949.json`, `R/seq_v8_*.txt` |
+| `fast_check` vs server | bit-identical (v6, v7, v8, v12 = re-draw r86: 1.1268915187690942e-4, acceptance 0.6904835) | official setting | official | `R/server_status_1949.json`, `R/seq_v8_*.txt`, `R/submit_v12.txt` |
 | MC noise of one official score | ±1.2e-6 (≈1%) | circuits near 1.2e-4 | measured | sem in every check output |
 | v6 → v7 true gain | 1.3254e-4 → 1.2954e-4 (−2.3%); seed 0 alone showed −0.6% | 3-seed means | measured | `R/multiseed_v6_v7.txt` |
 | Pre-cycle ALAP gain | v7 1.2954e-4 → 1.248–1.251e-4 (≈−3.5%) | A1 layout, 3-seed means | measured | `R/multiseed_v6_v7.txt`, `ML/mseed.jsonl` |
@@ -60,6 +60,7 @@ A negative closes only the recipe tested. "Leaves open" names what the result do
 | Verified-cat direct-readout rounds placed on the grid (DRG: CP-SAT placement of the 34-, 43- and 55-qubit prototypes) | INFEASIBLE for all three | their verifier/cat interaction graphs contain odd cycles (triangles), and the nearest-neighbour grid is bipartite | cat/verifier topologies that are bipartite, with a new detector proof | `work/lanes/DRG/REPORT.md` |
 | Extra double-cat checks in the v12 pre-stage, and ALAP/verify variants (Codex PRE, 21 circuits) | one added check: +9–13% exact, +13.2% MC (1.282e-4); two: +18–20% and acceptance ≈ 0.50; ALAP best −0.76% exact, MC +0.6% (unresolved) | the pre-stage carries only 1.46e-5 of v12's loss, so a check can remove at most that, while its gates and the later final cycle add more | checks that also shorten the final cycle's exposure | `work/lanes/PRE/REPORT.md` |
 | Relay-and-reset joint B+C prep on L5 (B routed through C's empty cells, reset, then C) | impossible | adjacency: cells 17 and 5 (C) touch only B cells, and 6, 11, 4 (B) touch only C cells, so some CX joins a B cell and a C cell that both hold state | other layouts | ST_BC session report 2026-10-24 |
+| Detector-set changes on v12 and cand2 (Codex DET: every 1–4-generator drop, small subspaces, greedy; 17 third-order finalists, MC for 4) | no gain: both already declare the full deterministic parity span (rank 20/20, 24/24, proved with the judge's exact engine); the best drop (`c[3]`) is score-neutral (v12 MC 1.1331 vs 1.1327e-4) and frees 0.8% acceptance | every other declared parity catches harmful pairs | subspaces outside the searched neighbourhoods (no orders above 3) | `work/lanes/DET/REPORT.md` |
 | Circuit-independent lower bound from the judge code alone (Codex AUDIT) | only 1-F >= 0 proved; best constructed circuit 1.75e-2 | a positive bound needs an architecture assumption (our model floors in "Floor, any circuit") | positive bounds under stated architecture assumptions | `work/lanes/AUDIT/REPORT.md` |
 
 ## Failures

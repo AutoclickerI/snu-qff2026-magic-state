@@ -23,7 +23,7 @@ Best competitor: Placeholder 7.604e-5, 161 CX, acceptance 0.590 (board 2026-10-2
 | v9: L1 CP-SAT interleaved cycle on the v6 layout + ALAP | local official | 1.232e-4, 113 CX (mean 1.234e-4) | `work/submissions/v9_L1i0_alap.*` |
 | v10: A1 + interleaved cycle seeded from L1 orders + ALAP | server | 1.2111e-4, 115 CX (mean 1.2208e-4) | `work/submissions/v10_A1i_alap.*`, `work/lanes/me_layout/mseed.jsonl` |
 | v11: v10's cycle, ALAP priority seed 45 | server | 1.1940e-4, 115 CX (mean of 100 re-draws 1.2189e-4) | `work/submissions/v11_A1i_alap45.*`, `work/receipts/reorder_v11.txt` |
-| v12: v11 + L5-lane pre-stage gains | server | 1.1269e-4, 115 CX (3-seed 1.133e-4, 12-seed 1.1422e-4) | `work/submissions/v12_L5lns12.*`, `work/lanes/L5_precycle/REPORT.md`, `work/receipts/submit_v12.txt` |
+| v12: v11 + L5-lane pre-stage gains | server | 1.1269e-4, 115 CX (3-seed 1.133e-4, 12-seed 1.1422e-4) | `work/submissions/v12_L5lns12.*` (submitted text: seed-0 re-draw `v12_L5lns12_r86.*`), `work/lanes/L5_precycle/REPORT.md`, `work/receipts/submit_v12.txt` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
