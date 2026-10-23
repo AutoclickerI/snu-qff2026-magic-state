@@ -18,6 +18,12 @@ import sys
 from ortools.sat.python import cp_model
 
 K = 2
+import os
+WT = int(os.environ.get('WT', 1000))
+WH = int(os.environ.get('WH', 2))
+HB = int(os.environ.get('HB', 0))
+WM = int(os.environ.get('WM', 40))
+K = int(os.environ.get('K', 3))
 R = C = 6
 N = 36
 D0 = [0, 20, 7, 4, 3, 15, 8]
@@ -94,7 +100,29 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
         for i in range(7):
             m.AddExactlyOne(F[(k, i, q)] for q in range(N))
             m.Add(sum(Mx[(k, i, q)] for q in range(N)) == st[grp[k]])
-    isD = [1 if q in d else 0 for q in range(N)]
+    isD0 = [1 if q in d else 0 for q in range(N)]
+    Dfin = {}
+    mv = 0
+    T0 = m.NewIntVar(33, Tmax, "T0")
+    for j in range(7):
+        r0_, c0_ = divmod(d[j], C)
+        for q in [d[j]] + [p for p in range(N) if p not in d and 0 < abs(p // C - r0_) + abs(p % C - c0_) <= K]:
+            Dfin[(j, q)] = B()
+            dist = abs(q // C - r0_) + abs(q % C - c0_)
+            if dist:
+                m.Add(T0 >= 33 + 3 * dist).OnlyEnforceIf(Dfin[(j, q)])
+                mv += dist * Dfin[(j, q)]
+        m.AddExactlyOne(Dfin[(j, q)] for q in range(N) if (j, q) in Dfin)
+    isD_b = [None] * N
+    isD = [isD0[q] if isD0[q] else sum(Dfin[(j, q)] for j in range(7) if (j, q) in Dfin) for q in range(N)]
+    for q in range(N):
+        if not isD0[q]:
+            m.Add(isD[q] <= 1)
+            isD_b[q] = B()
+            m.Add(isD_b[q] == isD[q])
+    for g, v in enumerate(os.environ.get('FORCE', '').split(',')):
+        if v in '01' and v:
+            m.Add(st[g] == int(v))
     fsum = lambda ks, q: sum(F[(k, i, q)] for k in ks for i in range(7))
     msum = lambda ks, q: sum(Mx[(k, i, q)] for k in ks for i in range(7))
     for q in range(N):
@@ -116,7 +144,8 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
         for j in range(7):
             m.Add(p1[(i, j)] == sum(s1[n] for n, s in enumerate(AUT) if s[i] == j))
             m.Add(p3[(i, j)] == sum(s3[n] for n, s in enumerate(AUT) if s[i] == j))
-            m.Add(sum(F[(0, i, q)] for q in nbrs(d[j])) == 1).OnlyEnforceIf(p1[(i, j)])
+            for q in range(N):
+                m.AddBoolOr([Dfin[(j, p)] for p in nbrs(q) if (j, p) in Dfin] + [p1[(i, j)].Not()]).OnlyEnforceIf(F[(0, i, q)])
     for i in range(7):
         for q in range(N):
             m.AddBoolOr([F[(0, i, p)] for p in nbrs(q)]).OnlyEnforceIf(F[(1, i, q)])
@@ -130,7 +159,10 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
         m.Add(n1 == (7 - ncol if k != 1 else ncol))
     for g in G:
         ks = groups[g]
-        n = 7 * len(ks)
+        hb = HB if 1 in ks else 0
+        n = 7 * len(ks) + hb
+        if hb:
+            m.Add(sum(H[(g, q)] for q in range(N)) == hb)
         rg = [B() for _ in range(N)]
         r0 = [B() for _ in range(N)]
         for q in range(N):
@@ -138,7 +170,7 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
             m.Add(rg[q] == msum(ks, q) + H[(g, q)]).OnlyEnforceIf(st[g])
             m.Add(r0[q] == F[(ks[0], 0, q)]).OnlyEnforceIf(st[g].Not())
             m.Add(r0[q] == Mx[(ks[0], 0, q)]).OnlyEnforceIf(st[g])
-        absorb = [rg[q] - H[(g, q)] for q in range(N)]
+        absorb = [rg[q] - H[(g, q)] for q in range(N)] if not hb else list(rg)
         f = {e: m.NewIntVar(0, n, "") for e in EDGES}
         for (u, v), fe in f.items():
             m.Add(fe <= n * rg[u])
@@ -148,6 +180,7 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
             inn = sum(f[(p, q)] for p in nbrs(q))
             m.Add(out - inn == n * r0[q] - absorb[q])
     T = m.NewIntVar(33, Tmax, "T")
+    m.Add(T >= T0)
     s_ = [m.NewIntVar(0, Tmax, "") for _ in G]
     h_ = [m.NewIntVar(0, Tmax, "") for _ in G]
     fs = [m.NewIntVar(0, Tmax, "") for _ in G]
@@ -175,6 +208,10 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
             if rel[q]:
                 m.Add(s_[g] >= rel[q]).OnlyEnforceIf(tmp[(g, q)])
                 m.Add(fs[g] >= rel[q]).OnlyEnforceIf(fin[(g, q)])
+    for q in range(N):
+        if not isD0[q]:
+            for x in G:
+                m.Add(te[x] <= 33).OnlyEnforceIf([tmp[(x, q)], isD_b[q]])
     order = {(x, y): B() for x in G for y in G if x < y}
     for x in G:
         for y in G:
@@ -186,7 +223,7 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
                     m.Add(te[x] <= s_[y]).OnlyEnforceIf([tmp[(x, q)], tmp[(y, q)], order[(x, y)]])
                     m.Add(te[y] <= s_[x]).OnlyEnforceIf([tmp[(x, q)], tmp[(y, q)], order[(x, y)].Not()])
     nh = sum(H[(g, q)] for g in G for q in range(N))
-    m.Minimize(1000 * T + sum(28 * len(groups[g]) * st[g] for g in G) + 7 * sum(idle) + 2 * nh)
+    m.Minimize(WT * T + WM * mv + sum(28 * len(groups[g]) * st[g] for g in G) + 7 * sum(idle) + WH * nh)
     s = cp_model.CpSolver()
     s.parameters.max_time_in_seconds = seconds
     s.parameters.num_workers = workers
@@ -197,7 +234,8 @@ def solve(pl, seconds, workers, groups=((0,), (1, 2)), P=(7, 16), Tmax=70, log=F
     g_ = s.Value
     res = {"status": s.StatusName(status), "T": g_(T), "s": [g_(x) for x in s_], "h": [g_(x) for x in h_],
            "obj": s.ObjectiveValue(), "bound": s.BestObjectiveBound(), "staged": [g_(x) for x in st],
-           "groups": [list(x) for x in groups], "d": d, "anc": anc}
+           "groups": [list(x) for x in groups], "d0": d, "anc": anc,
+           "d": [next(q for q in range(N) if (j, q) in Dfin and g_(Dfin[(j, q)])) for j in range(7)]}
     for k, nm in enumerate("obc"):
         res[nm] = [next(q for q in range(N) if g_(F[(k, i, q)])) for i in range(7)]
         res[nm + "_stage"] = [next(q for q in range(N) if g_(Mx[(k, i, q)])) for i in range(7)] if g_(st[grp[k]]) else None

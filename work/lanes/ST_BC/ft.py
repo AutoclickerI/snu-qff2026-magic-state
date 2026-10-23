@@ -5,9 +5,9 @@ def syn(e,blk):
     bits=[(q in e) for q in blk]
     return tuple(sum(bits[i] for i in r)%2 for r in ROWS), sum(bits)%2
 def bad(e):
-    sB,pB=syn(e,B); sC,_=syn(e,C)
+    sB,pB=syn(e,B); sC,pC=syn(e,C)
     zero=not any(sB)
-    return sB==sC and pB==zero
+    return sB==sC and pB==pC and pB==zero
 def faults(d,cells=None):
     ops=d["ops"]; D=len(ops)
     cells=cells or sorted({q for L in ops for e in L for q in e}|set(B)|set(C)|set(d["pivots"]))
