@@ -1,13 +1,13 @@
 # Plan
 
-## Status (2026-10-24 02:15 KST)
-- Board: Placeholder 6.286e-5 (169 CX, acc 0.546); us 1.098e-4 (v13 = v12 with q[16] measured at first use; mean of
-  100 re-draws 1.1257e-4).
-- Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS), so
-  1e-5 is out of reach and ~2.6–3e-5 is the practical limit.
-- Steane-type round on the grid: best `cand14` at MC 1.153e-4; separate blocks do not fit (area); the teleport chain fits
-  only with a 37–58-CX O prep (ST_TP, 1.53e-4, acceptance 0.405). The new lead is a different preparation: RM15 → Steane
-  gauge fixing (arXiv:2609.12698, 210 p³ before the output tail), lanes P28/P29.
+## Status (2026-10-24 02:35 KST)
+- Board: Placeholder 6.286e-5 (169 CX, acc 0.546); us 1.098e-4 (v13). Next: v14 (`v14_bcm_r100`, seed-0 1.00638e-4,
+  100-draw mean 1.03817e-4), submitted at the 03:01 slot by `submit_when_ready.sh`.
+- Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
+  targets 1e-5, so the gap is measured against that floor.
+- Steane-type round on L5: v14 = FT joint B+C (82 CX) + first-use measurement. A parity check on A would give −17.5% but
+  needs free cells next to A (P32). The new lead is RM15 → Steane gauge fixing (arXiv:2609.12698, 210 p³ before the output
+  tail), lanes P28/P29.
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s; the 2nd order alone is 2% low on v12 and 30% low on
@@ -19,19 +19,20 @@ big Steane circuits) → 1e8-shot MC at seeds 0/1000/2000 (about 1 min on hippo)
 |---|---|---|---|---|---|---|
 | 1 | P28 | G1 | Reproduce RM15 → Steane magic-state prep (arXiv:2609.12698) and score it under our judge grid-free, with the output tail optimised | circuit file, reproduction, our-noise 1-F and acceptance | Codex lane RM_PROTO (`work/lanes/RM_PROTO`, jerry, owl) | active |
 | 2 | P29 | G1 | Embed the RM15 → Steane protocol on the 6×6 grid (placement, routing, generator and flag re-choice), FT-checked | judge-valid circuit with --third and 3-seed MC | Codex lane RM_GRID (`work/lanes/RM_GRID`, tom, sunfish) | active |
-| 3 | P30 | G1 | Literature table: every candidate protocol's reported error, acceptance, size, output-tail treatment and our-metric estimate | ranked top 3 with citations | Codex lane LIT (`work/lanes/LIT`) | active |
-| 4 | P31 | G1 | Public-code search (GitHub `language:OpenQASM`, Stim circuits, paper code, Zenodo) for adoptable circuits; other contest entries listed, not opened | artifact table and top 5 adoption plans | Codex lane SEARCH (`work/lanes/SEARCH`) | active |
-| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (`sat4.py` CEGAR at depths 12–15, plus a CX-count cap of 65/60/55); then fix the over-strict FT rule (feedback 3) and measure helpers out (feedback 6) | a merged circuit below v12 by 3-seed MC | Sonnet lane ST_BC (`work/lanes/ST_BC`; jerry 12 jobs, hippo 10, logs `log5_*`) | active |
-| 6 | P26 | G1 | Logical-X parity check (e.g. X2X4X5) on block A of cand14, early or after d→a (feedback 4, 5) | built circuits with --third and 3-seed MC | Sonnet lane PARITY (`work/lanes/PARITY`, owl; rerouted after a Codex API failure) | active |
-| 7 | P25 | G1 | Measurement-based preps: first-use measure + detector, MX-init with folded records, retained measurements (feedback 2, 8), on v12 and cand14 | variants with --third and 3-seed MC | Codex lane INIT (`work/lanes/INIT`, owl) | active |
-| 8 | P27 | G1 | Exact X/Y proxy for Clifford rounds (feedback 1), then stabilizer-support choice for the v12-family cycle on the grid (feedback 9) | re-scored proxies, ranking test vs MC; best cycles with --third and MC | Codex lane PROXY (`work/lanes/PROXY`, sunfish, owl) | active |
-| 9 | P22 | G1 | Exact-objective scheduler (idea 7) and encoder choice by full-circuit score (idea 6), on v12 and cand2 (then cand14) | scheduled circuits with --third and 3-seed MC | Codex lane SCHED (`work/lanes/SCHED`, zebra, sunfish) | active |
-| 10 | P24 | G1 | Chamberland–Cross flag-based injection (idea 10) as a full circuit or a smaller pre-stage | judge-valid grid circuit, scores, verdict | Codex lane CC (`work/lanes/CC`, jerry) | active |
-| 11 | P15 | G1 | Star round co-placed with the pre-stage: ~48 symmetry/translation placements, staged blocks with one-hop moves, optional block D; checkerboard pruning (idea 5) | per placement: feasible, R, --third score of the winners (c1 = 0) | Sonnet lane ST_LAY (`work/lanes/ST_LAY`) | parked: P29 (staged star gives R ≈ 46 with 20/32-CX B/C preps, FINDINGS; time-aware data routes, placements and colour pruning not run) |
-| 12 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set over danger vector, depth and CX (feedback 7) | preps for each candidate layout | main session | parked: P29 layouts |
-| 13 | P16 | G1 | Integrate, rank by --third then MC (idea 9), submit the best verified candidate | official 3-seed mean below 6.29e-5 | main session | parked: P28/P29 |
-| 14 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used; each new best submitted at once (ties go to fewer 2q gates, then the earlier entry); final best in by 2026-10-30 10:00 | main session | active |
-| 15 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | Codex lane FLAG (`work/lanes/FLAG`) | parked: P26 (job ended without a report; scorer and candidates in the lane dir are unverified) |
+| 3 | P32 | G1 | New Steane-round layout with free cells next to A for a late X_L parity check, joint FT B+C prep (sat6, CX cap), measurement-init | built circuit below v14 (3rd < 1.019e-4) with 3-seed MC | Codex lane LAYOUT2 (`work/lanes/LAYOUT2`, owl, tom) | active |
+| 4 | P30 | G1 | Literature table: every candidate protocol's reported error, acceptance, size, output-tail treatment and our-metric estimate | ranked top 3 with citations | Codex lane LIT (`work/lanes/LIT`) | active |
+| 5 | P31 | G1 | Public-code search (GitHub `language:OpenQASM`, Stim circuits, paper code, Zenodo) for adoptable circuits; other contest entries listed, not opened | artifact table and top 5 adoption plans | Codex lane SEARCH (`work/lanes/SEARCH`) | active |
+| 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (`sat4.py` CEGAR at depths 12–15, plus a CX-count cap of 65/60/55); then fix the over-strict FT rule (feedback 3) and measure helpers out (feedback 6) | a merged circuit below v12 by 3-seed MC | Sonnet lane ST_BC (`work/lanes/ST_BC`; ~40 sat6/sat7 jobs on jerry and hippo, `auto.sh` + `minpipe.sh` score each) | active: best `cand_best_m` = v14 |
+| 7 | P26 | G1 | Logical-X parity check (e.g. X2X4X5) on block A of cand14, early or after d→a (feedback 4, 5) | built circuits with --third and 3-seed MC | Sonnet lane PARITY (`work/lanes/PARITY`) | done: impossible on L5, −17.5% ceiling (FINDINGS); continued in P32 |
+| 8 | P25 | G1 | Measurement-based preps: first-use measure + detector, MX-init with folded records, retained measurements (feedback 2, 8), on v12 and cand14 | variants with --third and 3-seed MC | Codex lane INIT (`work/lanes/INIT`, owl) | active |
+| 9 | P27 | G1 | Exact X/Y proxy for Clifford rounds (feedback 1), then stabilizer-support choice for the v12-family cycle on the grid (feedback 9) | re-scored proxies, ranking test vs MC; best cycles with --third and MC | Codex lane PROXY (`work/lanes/PROXY`, sunfish, owl) | active |
+| 10 | P22 | G1 | Exact-objective scheduler (idea 7) and encoder choice by full-circuit score (idea 6), on v12 and cand2 (then cand14) | scheduled circuits with --third and 3-seed MC | Codex lane SCHED (`work/lanes/SCHED`, zebra, sunfish) | active |
+| 11 | P24 | G1 | Chamberland–Cross flag-based injection (idea 10) as a full circuit or a smaller pre-stage | judge-valid grid circuit, scores, verdict | Codex lane CC (`work/lanes/CC`, jerry) | active |
+| 12 | P15 | G1 | Star round co-placed with the pre-stage: ~48 symmetry/translation placements, staged blocks with one-hop moves, optional block D; checkerboard pruning (idea 5) | per placement: feasible, R, --third score of the winners (c1 = 0) | Sonnet lane ST_LAY (`work/lanes/ST_LAY`) | parked: P29 (staged star gives R ≈ 46 with 20/32-CX B/C preps, FINDINGS; time-aware data routes, placements and colour pruning not run) |
+| 13 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set over danger vector, depth and CX (feedback 7) | preps for each candidate layout | main session | parked: P29 layouts |
+| 14 | P16 | G1 | Integrate, rank by --third then MC (idea 9), submit the best verified candidate | official 3-seed mean below 6.29e-5 | main session | parked: P28/P29 |
+| 15 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used; each new best submitted at once (ties go to fewer 2q gates, then the earlier entry); final best in by 2026-10-30 10:00 | main session | active |
+| 16 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | Codex lane FLAG (`work/lanes/FLAG`) | parked: P26 (job ended without a report; scorer and candidates in the lane dir are unverified) |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.
