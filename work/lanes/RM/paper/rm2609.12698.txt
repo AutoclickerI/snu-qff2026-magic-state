@@ -1,0 +1,1187 @@
+                                                 Extremely Low-Cost Magic State Preparation toward Fault-Tolerant Quantum
+                                                                                Computing
+                                                                                    Jianshuo Gao,1 Xiao Yuan,2 and Yuan Yao2
+                                                                             1
+                                                                             School of Physics, Peking University, Beijing 100871, China
+                                                2
+                                                    Center on Frontiers of Computing Studies, School of Computer Science, Peking University, Beijing 100871, China
+                                                                                             (Dated: September 14, 2026)
+                                                              Fault-tolerant preparation of non-Clifford resource states is a major contributor to the overhead
+                                                           of quantum computation, motivating protocols that achieve high output fidelity with minimal qubit
+                                                           and circuit costs. We introduce a low-cost magic-state preparation protocol in which the choice of
+                                                           stabilizer generators is co-designed with the flag gadgets, allowing the syndrome-extraction circuit
+                                                           itself to filter correlated faults across a non-Clifford layer. The protocol prepares a logical plus
+                                                           state in the 15-qubit quantum Reed–Muller code, applies a transversal T gate, and gauge-fixes
+                                                           the same register into the seven-qubit Steane code. By reorganizing equivalent Z-type stabilizer
+arXiv:2609.12698v1 [quant-ph] 11 Sep 2026
+
+
+
+
+                                                           generators into jointly flagged measurement groups, the protocol eliminates all accepted logical-
+                                                           error contributions arising from one or two circuit faults under destructive error detection. Under a
+                                                           uniform circuit-level depolarizing noise model, the postselected infidelity is 210.2p3 + O(p4 ). At p =
+                                                           10−3 , exact low-order enumeration combined with stratified sampling bounds the infidelity by 2.2 ×
+                                                           10−7 at 99.9% joint confidence, while retaining an acceptance probability of 86.9%. The complete
+                                                           circuit requires only 19 qubits and 82 CNOT gates. These results demonstrate that stabilizer-
+                                                           generator design can substantially reduce the cost of postselected magic-state preparation, although
+                                                           corrected operation and the fidelity of an unmeasured output block require separate analysis.
+
+
+                                                               I.   INTRODUCTION                                ture and logical evolution to reduce resource require-
+                                                                                                                ments [8, 9].
+                                               Fault-tolerant quantum computation requires a univer-              Eﬀicient error detection is a common ingredient in
+                                            sal set of logical operations. However, the Eastin–Knill            these preparation schemes. Flag-based methods intro-
+                                            theorem shows that a universal gate set cannot be re-               duce auxiliary flag qubits to identify correlated faults
+                                            alized solely through transversal encoded operations [1].           with low ancilla overhead [10–12], while fault-tolerant
+                                            This limitation motivated the development of alterna-               postselection exploits syndrome information to suppress
+                                            tive approaches for implementing non-Clifford operations            accepted logical errors [13]. These techniques suggest
+                                            within fault-tolerant architectures. Among these ap-                that the structure of error-detection circuits itself can pro-
+                                            proaches, the Clifford+T framework became particularly              vide additional resources for reducing magic-state prepa-
+                                            influential because Clifford operations are eﬀiciently sup-         ration overhead.
+                                            ported by many quantum error-correcting codes, while                  The [[15, 1, 3]] quantum Reed–Muller (qRM) code and
+                                            the T gate provides a minimal non-Clifford extension                the [[7, 1, 3]] Steane code sit on opposite sides of a gate-
+                                            that enables universal quantum computation. Moreover,               set-versus-footprint tradeoff. The qRM code uses 15
+                                            several important quantum codes, such as the 15-qubit               physical qubits and admits a transversal logical T gate,
+                                            quantum Reed–Muller code, allow fault-tolerant imple-               but it does not supply the full transversal Clifford group;
+                                            mentations of the T gate through transversal construc-              the Steane code uses only seven physical qubits and ad-
+                                            tions. This combination led to the widespread adoption              mits transversal logical Clifford gates, but not a transver-
+                                            of the magic-state approach, in which an encoded T state,           sal logical T [3, 14–16]. Converting between them lets the
+                                            |T i = T |+i, is prepared as a consumable resource for uni-         non-Clifford gate be executed in qRM while the resulting
+                                            versal computation [2].                                             logical state is stored or processed in the smaller Steane
+                                               The high overhead of preparing high-fidelity magic               block.
+                                            states remains a major challenge for fault-tolerant quan-             The prior work divides naturally by code pair and by
+                                            tum computing. Conventional approaches rely primar-                 switching mechanism. For the Steane–qRM pair itself,
+                                            ily on magic-state distillation, where noisy non-Clifford           Anderson et al. constructed bidirectional fault-tolerant
+                                            resources are purified using Clifford operations and mea-           conversion by representing the two codes as different
+                                            surements [2]. Subsequent developments have improved                gauge choices of a common subsystem code [17], and
+                                            the eﬀiciency of distillation through structured code               Quan et al. reduced the required gauge measurements
+                                            constructions, multilevel protocols, and optimized fault-           and extended the construction to adjacent Reed–Muller
+                                            tolerant factory architectures [3–6]. Nevertheless, the             codes [18]. In this common-subsystem description the
+                                            resource cost of these approaches remains strongly de-              mechanism is gauge fixing. Stabilizer code rewiring is
+                                            pendent on the target fidelity and underlying code ar-              a related but wider notion: it constructs measurement
+                                            chitecture [7]. This has motivated alternative encoded              paths between stabilizer codes without requiring, by defi-
+                                            preparation strategies, including magic-state cultivation           nition, a fixed common subsystem-code presentation [19].
+                                            and code-switching approaches, which exploit code struc-            Throughout, we use “gauge fixing” for the algebraic con-
+                                                                                                                              2
+
+version implemented below and keep “rewiring” for the         then gives a logical infidelity cubic in the physical er-
+broader framework [20–22].                                    ror rate. An asymptotic order alone says nothing about
+   A separate line of work treats dimensional switching       the higher fault orders at a specific nonzero error rate,
+within the color code family. Kubica and Beverland com-       so we also construct a finite-p certificate: a one-sided
+bined transversal phase gates in higher-dimensional color     upper bound on the total conditional logical infidelity
+codes with a Hadamard obtained by switching between           at p = 10−3 , built from exact low-order enumeration,
+color codes of different dimensions [23]; Butt et al. then    statistically bounded higher-order sampling, and a con-
+constructed deterministic and postselected flag-based cir-    servative tail bound. This certificate and the circuit re-
+cuits between distance-three two- and three-dimensional       sources are compared with the polynomial benchmark of
+color codes [24]. Returning to the distance-three 7/15 set-   Daguerre and Kim [9]. Three operational cases are kept
+ting, Daguerre and Kim proposed a two-block protocol          distinct throughout: a destructive postselected diagnos-
+that couples separately prepared qRM and Steane blocks        tic, standard error correction, and a retained unmeasured
+through a transversal inter-block gate [9]. Heußen and        encoded output. The cubic advantage is established for
+Hilder developed teleportation-based switching between        the first case only.
+the seven-qubit Steane code and the 15-qubit tetrahe-            Section II collects the background on stabilizer and
+dral color code using logical auxiliary blocks and one-       CSS codes, the qRM and Steane codes, subsystem codes
+way transversal CNOT gates [25]. Daguerre et al. sub-         and gauge fixing, code switching, and flagged syndrome
+sequently demonstrated qRM-to-Steane code switching           extraction. The single-register gauge fix and the grouped
+and logical magic state preparation on a trapped-ion pro-     flagged check circuits are defined in Sec. III, and Sec. IV
+cessor [26].                                                  sets up the accepted-fault sets and shows that no logi-
+   Different choices of stabilizer generators describe the    cal failure survives through fault order two. Section V
+same codespace, but they need not give equivalent fault-      attaches circuit-level probabilities to those fault sets,
+tolerant implementations. Each measured generator             builds the finite-p certificate, and presents the logical-
+comes with its own syndrome-extraction circuit, and the       performance and resource benchmarks. Section VI re-
+ancilla–data connectivity and gate ordering of that cir-      turns to the stabilizer basis as a circuit-level design
+cuit control how physical faults propagate. Faults dur-       variable and to the limits of the destructive diagnostic,
+ing a multiqubit check can leave correlated hook er-          Sec. VII considers superconducting, neutral-atom, and
+rors whose structure depends on the measurement se-           trapped-ion implementations, and Sec. VIII concludes.
+quence and the circuit layout. Flag ancillas add infor-
+mation about whether such a correlated fault has oc-
+curred, which the decoder and the acceptance rule can                         II.   PRELIMINARIES
+then use to correct or reject the event. The logical error
+rate of an implementation thus depends on the generator                    A. Stabilizer and CSS codes
+choice, the measurement ordering, the flag architecture,
+and the decoding strategy, and not on the underlying             Let Pn denote the n-qubit Pauli group. For a subgroup
+code alone. The dependence matters most when residual         A ⊆ Pn , its Pauli normalizer is NPn (A) := {P ∈ Pn :
+undetected Pauli errors are about to cross a non-Clifford     P AP † = A}. An [[n, k, d]] stabilizer code is specified
+operation. Flag-based schemes suppress dangerous cor-         by an Abelian subgroup S ⊂ Pn that does not contain
+related faults with a small number of additional ancil-       −I. If S has n − k independent generators, its simul-
+las [27–30], while malignant-set analysis identifies the      taneous +1 eigenspace has dimension 2k and encodes k
+combinations of faults that dominate the leading logical      logical qubits. We write N (S) := NPn (S); logical Pauli
+error contribution [31, 32].                                  operators are elements of N (S) \ S, and two representa-
+   The preceding protocols primarily reduce the num-          tives that differ by an element of S act identically on the
+ber of measured gauge operators, optimize flag-assisted       codespace. Here wt(P ) denotes the number of noniden-
+switching circuits, or transfer the logical state between     tity single-qubit tensor factors of P . The code distance
+separately encoded blocks. Our protocol instead treats        is
+the stabilizer-generator basis and the check ordering as
+fault-filtering design variables, and keeps the state in-                        d=          min    wt(P ),                  (1)
+                                                                                       P ∈N (S)\S
+side one 15-qubit register throughout the qRM-to-Steane
+handoff. Eight qubits are measured in the X basis and         so a distance-three code corrects an arbitrary single-qubit
+the remaining seven become the Steane block after a           Pauli error in the ideal error-correction setting.
+record-dependent software frame update, which removes           For a binary vector v ∈ Fn2 , define
+the second encoded block together with its transversal
+block CNOT. Within the same shared-flag template, and                            Y
+                                                                                 n                            Y
+                                                                                                              n
+                                                                                         v                            v
+without changing their span or gate count, the ten Z                    X(v) =         Xj j ,      Z(v) =           Zj j .   (2)
+checks are regrouped so that all accepted one- and two-                          j=1                          j=1
+fault logical contributions vanish under the matched er-
+ror detection diagnostic. Exact low-order enumeration           A Calderbank–Shor–Steane (CSS) code is defined by
+                                                                                                                                 3
+
+two binary linear codes CX and CZ satisfying                          B.   Subsystem codes and gauge fixing
+
+                         CX ⊆ CZ⊥ ,                             A subsystem code is a codespace C ⊆ (C2 )⊗n that ad-
+                                                              mits a Hilbert-space isomorphism
+with stabilizer group
+                                                                                      C∼
+                                                                                       = HL ⊗ H G .                             (9)
+          S = hX(x), x ∈ CX ; Z(z), z ∈ CZ i .         (3)    Here HL is the protected logical subsystem, HG is the
+                                                              gauge subsystem, and ∼   = denotes an isomorphism rather
+This separation allows bit-flip and phase errors to be de-    than literal equality of subspaces. For an [[n, k, d; r]] sub-
+tected independently through the corresponding Z- and         system code, dim HL = 2k and dim HG = 2r , so the code
+X-type parity checks.                             Q           contains k protected logical qubits and r gauge qubits.
+  For any subset S ⊆ {1, . . . , n}, we write PS = j∈S Pj       The code is specified by a generally non-Abelian gauge
+for P ∈ {X, Z}; for example, X1267 = X1 X2 X6 X7 . Com-       group G ⊆ Pn . For any subgroup A ⊆ Pn , define its
+mas in such a subscript separate multi-digit labels only,     Pauli centralizer by
+so Z4,5,11,12 = Z4 Z5 Z11 Z12 .
+  The seven-qubit Steane code is the self-dual CSS code        CPn (A) := {P ∈ Pn : P A = AP for every A ∈ A}. (10)
+obtained from the classical [7, 4, 3] Hamming code [15].      Up to the irrelevant Pauli phases, the stabilizer group of
+In the qubit labeling used throughout this work, a con-       the subsystem code is
+venient generating set is
+                                                                                     S = G ∩ CPn (G).                          (11)
+               SSt = hX1267 , X2347 , X4567 ,                 Thus S is the commuting center of G, has rank n − k − r,
+                      Z1267 , Z2347 , Z4567 i,         (4)    and fixes the full codespace C. Elements of G may act
+                                                              nontrivially on HG but act as the identity on HL . The
+with logical representatives                                  protected distance is
+
+              X St = X123 ,       Z St = Z123 .        (5)                        d=       min       wt(P ),                   (12)
+                                                                                        P ∈N (S)\G
+
+
+The code has parameters [[7, 1, 3]] and supports transver-    where N (S) is the Pauli normalizer defined in Sec. II A.
+sal logical Clifford operations, so it is a compact target       Suppose G contains r pairs of gauge-Pauli representa-
+for storing and processing a prepared magic state.            tives {(Xga , Zga )}ra=1 satisfying
+  The 15-qubit quantum Reed–Muller code can be de-               Xga Zgb = (−1)δab Zgb Xga ,          a, b ∈ {1, . . . , r},   (13)
+scribed by indexing the physical qubits by the nonzero
+vectors v ∈ F42 . Let rµ ∈ F15
+                            2 be the evaluation vector of     where δab is the Kronecker delta; all of these operators
+the coordinate function vµ , and define                       commute with S. Fixing the Z gauge means adjoining a
+                                                              commuting set of signed operators {±Zga } to S, whereas
+              CX = span{r1 , r2 , r3 , r4 },                  fixing the X gauge means adjoining {±Xga }. This re-
+                                                              placement of one complete commuting gauge set by an-
+              CZ = span{1, r1 , r2 , r3 , r4 }⊥ .      (6)
+                                                              other is called gauge fixing. To convert from a Z-fixed
+                                                              sector to an X-fixed sector, one measures the target oper-
+Its CSS stabilizer is                                         ators Xga and uses the conjugate operators Zga as phys-
+                                                              ical corrections or software frame updates for the mea-
+       SqRM = hX(x) : x ∈ CX , Z(z) : z ∈ CZ i.        (7)    sured signs [20–22]. The measurement and frame update
+                                                              alter only HG ; hence an ideal gauge fix preserves every
+This stabilizer has four independent X generators and         state, including states entangled with a reference system,
+ten independent Z generators and therefore defines an         in the protected subsystem HL .
+[[15, 1, 3]] code. One may take X(1) as a logical X rep-         For the qRM–Steane conversion used here, let
+                                   ⊥
+resentative and any vector in CX     \ CZ as a logical Z
+representative. With the labeling adopted below, we use        h1 = {1, 2, 6, 7}, b1 = {8, 9, 13, 14},
+the stabilizer-equivalent representatives                      h2 = {2, 3, 4, 7}, b2 = {9, 10, 11, 14},
+                                                               h3 = {4, 5, 6, 7}, b3 = {11, 12, 13, 14},
+           X qRM = X1···7 ,        Z qRM = Z123 .      (8)
+                                                                                  b4 = {8, 9, 10, 11, 12, 13, 14, 15}, (14)
+The Reed–Muller structure permits a transversal non-          and define ca = ha ∪˙ ba for a = 1, 2, 3, where ∪˙ denotes
+Clifford logical T , with the physical T /T † pattern fixed   disjoint union, and c4 = b4 . The qRM and extended-
+by the labeling convention [3, 14]. The two gate struc-       Steane descriptions share the rank-11 stabilizer group
+tures are complementary, which suggests applying T in
+the qRM code and then moving the logical state to the              S0 = hXc1 , Xc2 , Xc3 , Xc4 , Zc1 , Zc2 , Zc3 , Zc4 ,
+                                                                                                                               (15)
+smaller Steane code.                                                     Zh1 , Zh2 , Zh3 i.
+                                                                                                                                                                                       4
+
+                                                        15
+                                                                                                                     extended-Steane sector; measuring and discarding the
+                                                                                                                     auxiliary qubits in B then leaves the [[7, 1, 3]] Steane code
+                                                                        10
+                                                                                                                     on H. Appendix A proves the corresponding factoriza-
+                                          8                                                                          tion and branchwise conversion maps.
+                                                            9
+
+                                                                         11
+
+                                                   13        14 12                   3
+                                                        2
+                         1                                                                                               C.   Code switching and measurement-based
+                                                                7
+                                                                                 4
+                                                                                                                                          conversion
+                   Z T ype
+                                                   6
+                   Gauge F ixing
+
+                             15                                                                                         Code switching is any fault-tolerant process that trans-
+                                                                             5
+                                                                                                                     fers an encoded logical state from a source code A to a
+                                                                                         X T ype
+                                                                                         Gauge F ixing               target code B while preserving the logical information.
+               8
+                                          10
+                                                                                                                     Let VA and VB be encoding isometries for the same log-
+                                 9                                                                                   ical Hilbert space. For a measurement-based conversion
+                                  14 12
+                                              11
+                                                        3
+                                                                                                                     with outcome record m and branch operator Km , ideal
+                      13                                                                                         3
+                             2                                                                2                      logical preservation means that
+       1                                                            1
+
+                                     7                                                            7
+                                                   4                                                         4                               K m V A = c m Fm V B                    (18)
+                     6                                                                   6
+
+
+
+                                               5
+                                                                                                                     for every accepted record, where cm is a scalar and Fm
+                                                                                                         5
+                                                                                                                     is a known target-code frame update. Equation (18) is
+                                                                                                                     stronger than checking a single input state: it shows that
+FIG. 1. Geometric relation between the common stabilizer
+                                                                                                                     the complete logical channel, including arbitrary super-
+parent and its two gauge-fixed branches. The rank-11 com-
+mon stabilizer group S0 defines the [[15, 4, 3]] stabilizer par-
+                                                                                                                     positions and entanglement with a reference system, is
+ent shown at the top. Fixing the three Z-type gauge oper-                                                            preserved branch by branch.
+ators, SqRM = hS0 , Zg1 , Zg2 , Zg3 i, gives the [[15, 1, 3]] qRM                                                       Gauge fixing is the restricted case of code switching
+code shown at the lower left. Fixing the conjugate X-type                                                            in which the source and target are two complete gauge
+gauge operators, SERM = hS0 , Xg1 , Xg2 , Xg3 i, instead gives                                                       choices of one common subsystem code, as shown in
+the 15-qubit extended-Steane sector. Measuring and discard-                                                          Fig. 2(b). Teleportation-based switching instead uses sep-
+ing the auxiliary qubits B = {8, . . . , 15} leaves the [[7, 1, 3]]                                                  arately encoded source and target blocks, an inter-block
+Steane code on H = {1, . . . , 7}, shown at the lower right.                                                         logical operation, and feed-forward, as in Fig. 2(a) [9, 25].
+                                                                                                                     Stabilizer code rewiring is broader still: it describes se-
+                                                                                                                     quences of Pauli measurements that map one stabilizer
+Because 15−rank(S0 ) = 4, this center defines a [[15, 4, 3]]                                                         code to another and need not begin with a specified com-
+stabilizer parent. Designating one of its four encoded                                                               mon gauge group [19]. Some rewiring or deformation
+qubits as protected and the remaining three as gauge                                                                 paths do admit a gauge fixing interpretation [22], but
+gives the [[15, 1, 3; 3]] subsystem code. A convenient set                                                           the two terms are not interchangeable.
+of gauge pairs is                                                                                                       The present construction is specifically a common-
+                                                                                                                     subsystem gauge fix. The source and target remain
+              (Xg1 , Zg1 ) = (X1267 , Z4,7,11,14 ),
+                                                                                                                     within one physical register; measuring the eight-qubit
+              (Xg2 , Zg2 ) = (X2347 , Z4,5,11,12 ),                                                                  complement of a seven-point hyperplane fixes the re-
+              (Xg3 , Zg3 ) = (X4567 , Z2,7,9,14 ).                                                           (16)    quired X-type gauge information, removes the bulk, and
+                                                                                                                     leaves the protected logical state on the seven retained
+They obey Eq. (13). The two rank-14 stabilizer choices                                                               qubits after a record-dependent Pauli frame update. Sec-
+are therefore                                                                                                        tion III A gives the explicit measurement relations and
+                                                                                                                     frame map.
+                   SqRM = hS0 , Zg1 , Zg2 , Zg3 i,
+                   SERM = hS0 , Xg1 , Xg2 , Xg3 i.                                                           (17)
+                                                                                                                         D.   Flagged extraction, generator choice, and
+Here SERM denotes the 15-qubit extended-Steane gauge.                                                                                accepted logical faults
+Its protected factor is the seven-qubit Steane code on the
+retained set H = {1, . . . , 7}, while the eight-qubit auxil-
+                                                                                                                       A stabilizer group does not have a unique generating
+iary factor on B = {8, . . . , 15} is fixed independently of
+                                                                                                                     set. If S = hs1 , . . . , sm i, then any invertible matrix M ∈
+the protected logical state [17, 18]. Figure 1 summarizes
+                                                                                                                     GL(m, F2 ) defines another basis
+the resulting geometric relation. Starting from the com-
+mon [[15, 4, 3]] stabilizer parent, fixing the three Z-type                                                                           Y
+                                                                                                                                      m
+gauge operators yields the [[15, 1, 3]] qRM code. Fixing                                                                      sea =         sM ai
+                                                                                                                                                    =⇒    he
+                                                                                                                                                           s1 , . . . , sem i = S.   (19)
+                                                                                                                                             i
+the conjugate X-type gauge operators instead yields the                                                                               i=1
+                                                                                                                                          5
+
+        (a) Two-block teleportation-based code switching
+                          [[15, 1, 3]]
+                         qRM code
+
+
+
+
+                                                                               destructive logical-X
+                                                                                   measurement
+
+                                         T
+
+
+
+
+                                                                                                   m
+                                                                                               Z
+
+
+                          [[7, 1, 3]]                          transversal inter-block                              |T ⟩
+                        Steane code                                    CNOT                                   on Steane code
+
+        (b) Single-register gauge fixing
+                                                           bulk X measurements
+                                                          MX (B), B = {q8 , . . . , q15 }
+                                                              u = (u8 , . . . , u15 )
+
+
+
+
+                                                                                       F (u)
+
+
+                                                                          conditional gauge correction
+                           |T ⟩                                              (Pauli-frame update)                   |T ⟩
+                       on qRM code                                                                            on Steane code
+
+                                                                                                        H = {q1 , . . . , q7 } retained
+                                                                                                       on the same physical register
+
+
+FIG. 2. Comparison of two qRM-to-Steane handoff mechanisms for an encoded logical T state. (a) In two-block teleportation-
+based code switching, a 15-qubit qRM block carrying the logical T state is coupled to a separately prepared seven-qubit Steane
+block by a transversal inter-block CNOT. The qRM logical operator X is then measured destructively, and the measurement
+                                                            m
+bit m determines a conditional logical-frame update Z on the Steane block. The logical state is thereby transferred to a
+different physical register. (b) In the single-register gauge fix used in this work, the eight-qubit bulk B = {q8 , . . . , q15 } is
+measured destructively in the X basis, while the seven-qubit hyperplane H = {q1 , . . . , q7 } is retained. The measurement record
+u = (u8 , . . . , u15 ) determines the acceptance parity and a conditional gauge correction F (u), implemented as a Pauli frame
+update. The retained qubits in H then constitute the live Steane output block. Highlighted vertices in panel (b) indicate
+the seven physical qubits retained throughout the in-place conversion. Unlike panel (a), panel (b) requires neither a second
+encoded Steane block nor an inter-block transversal CNOT.
+
+
+The two bases define exactly the same ideal code. Their               so a Zs component is copied to every data control that in-
+syndrome-extraction circuits, however, can have different             teracts with the same syndrome target after the fault oc-
+fault-tolerance properties. The support of a generator                curs. Figure 3 separates two consequences of the CNOT
+determines which data qubits interact with the syndrome               schedule: moving the same faulty interaction later can
+ancilla; the CNOT order determines how an ancilla fault               reduce the propagated data support, while reordering
+propagates into a correlated data error; and the order                at a fixed insertion index can change the support of a
+in which the checks are executed determines which later               hook without changing its weight. The figure also gives
+outcomes can still reveal an error produced earlier. For              a schematic illustration of how opening and closing flag
+a data-to-syndrome CNOT,                                              couplings record such propagation.
+                                                                        A flag qubit is coupled to the syndrome-extraction cir-
+            CNOTd→s Zs CNOT†d→s = Zd Zs ,                  (20)       cuit so that a single fault capable of producing a po-
+                                                                                                                                                                  6
+
+                                                                    (a) Moving the same faulty interaction later reduces the propagated support
+tentially uncorrectable correlated data error also yields
+a nontrivial flag outcome or an otherwise distinguish-          d1                                             d1
+
+able syndrome record [27–29]. The flag does not prevent         d2                                             d2
+
+the physical propagation shown in Fig. 3. Instead, the          d3                                     Z       d3
+
+opening and closing flag couplings convert a residual syn-      d4                                     Z       d4                                         Z
+
+                                                                    s |0i                                       s |0i
+drome component into a detectable flag record. In the                                                      Z                                                  Z
+                                                                               Id2 Zs component                                        Id2 Zs component
+complete grouped gadgets used below, one flag is shared                       order (d1 , d2 , d3 , d4 )                     order (d1 , d3 , d2 , d4 )
+by two or three syndrome rails, so panel (c) illustrates                    Edata = Zd3 Zd4 , wt = 2                        Edata = Zd4 , wt = 1
+                                                                    (b) At a fixed Zs -insertion index, CNOT order changes the hook support
+only the local propagation mechanism rather than the
+                                                                d1                                             d1
+full extraction topology.
+                                                                d2                                             d2                                         Z
+   The local flag criterion is therefore a one-fault detec-     d3                                     Z       d3
+tion condition, not by itself a proof of the final logical      d4                                     Z       d4                                         Z
+failure rate. That rate also depends on the complete gen-           s |0i                                  Z    s |0i                                         Z
+erator basis, the CNOT and check orderings, the down-                           Zs component                                    Zs component
+                                                                            order (d1 , d2 , d3 , d4 )                       order (d1 , d3 , d2 , d4 )
+stream bulk-parity and Steane detectors, and the rule by               Zs component after CNOT 2:                       Zs component after CNOT 2:
+which the classical record is decoded or postselected.                        Edata = Zd3 Zd4                                  Edata = Zd2 Zd4
+
+
+   More formally, let F be a set of circuit faults, D(F )           (c) A flag ancilla detects the weight-two hook
+the resulting syndrome-and-flag record, and L(F ) the in-
+duced logical Pauli class after the prescribed frame up-        f     |+i                                           X
+                                                                                                                                (X)
+                                                                                                                               mf     = −1
+dates. A decoder maps D(F ) to a correction, while a           d1
+
+postselection rule maps it to either acceptance or rejec-      d2
+tion. Neither rule alters the physical propagation that        d3                                                   Z
+produced D(F ); they only sort the residual error into         d4                                                   Z
+                                                                                                                          Zf
+a correction, a rejection, or an accepted logical failure.      s     |0i                                           Z
+Under pure error detection, an accepted logical fault is a                                Zs component
+fault set satisfying
+                                                                       CNOTf →s Zs CNOT†f →s = Zf Zs .
+                                                                       Hence the weight-two hook
+              A[D(F )] = 1,       L(F ) 6= I,          (21)            Zd3 Zd4 is accompanied by a non-
+                                                                       trivial X-basis flag outcome.
+
+
+
+where A is the acceptance indicator. Even with the ab-         FIG. 3.     Local hook-error propagation while measuring a
+stract stabilizer code held fixed, the noisy preparation       weight-four Z check with data-to-syndrome CNOTs. (a) The
+instrument is set by the generator basis together with         same Id2 Zs fault component of the d2 → s interaction is com-
+                                                               pared under two CNOT schedules. In the order (d1 , d2 , d3 , d4 ),
+the CNOT and check orderings, the flag topology, the
+                                                               the residual Zs component crosses the two subsequent data
+decoder, and the acceptance conditions.                        CNOTs and produces the weight-two data error Zd3 Zd4 . Mov-
+   The syndrome and flag records are used differently in       ing the same interaction to the third position in (d1 , d3 , d2 , d4 )
+three operational tasks, so it matters which logical quan-     leaves only one subsequent data CNOT and reduces the prop-
+tity is being bounded. In a destructive error detection        agated error to the weight-one operator Zd4 . (b) When the
+diagnostic, the output block is measured and nontrivial        Zs component is instead inserted after the second CNOT in
+syndrome or flag outcomes are used as rejection condi-         both schedules, reordering changes the weight-two hook sup-
+tions when inferring a logical observable. In standard         port from Zd3 Zd4 to Zd2 Zd4 . (c) A schematic single-syndrome
+                                                               flag circuit uses opening and closing f → s CNOTs. These
+error correction, the same records are decoder inputs: all
+                                                               two couplings cancel in the ideal circuit, whereas a Zs com-
+correctable records are retained and mapped to correc-         ponent arising between them crosses the closing coupling as
+tions. For a live output fidelity, the encoded block is not    Zs 7→ Zf Zs and therefore flips the final X-basis flag result to
+destructively measured and must be certified while re-            (X)
+                                                               mf = −1. The complete protocol uses shared-flag gadgets
+maining available for later computation. The flag record       containing two or three syndrome rails; their exact CNOT
+therefore plays a different role in each of the three tasks,   schedules are given in Appendix B.
+and a bound proved for one of them does not transfer to
+the other two.
+   A second distinction separates an asymptotic order
+                                                                                            III.       PROTOCOL DESIGN
+from a numerical guarantee. A low-noise expansion such
+as I(p) = Cpr +O(pr+1 ) identifies the leading fault order,
+but on its own it bounds nothing about the higher orders         Figure 4 shows the architecture before the algebraic
+at a specified nonzero p. We use the term finite-p certifi-    and circuit details are introduced. Against Daguerre–
+cate for a statistically valid one-sided upper bound on the    Kim we keep the 25-CNOT qRM encoder, the seven-
+complete conditional logical infidelity at a fixed physical    CNOT logical-X verifier, and the same four-gadget
+error rate, including controlled contributions from higher     shared-flag resource envelope. Two coupled elements
+fault orders.                                                  change: the rank-ten Z-generator basis together with its
+                                                                                                                                         7
+
+execution order, and the handoff itself, where a destruc-         determines the linear bulk-parity map g : F82 → F2 :
+tive bulk-X gauge fix in the original 15-qubit register
+replaces the two-block teleportation. Reading the figure                           s1 (u) = u8 ⊕ u9 ⊕ u13 ⊕ u14 ,
+from left to right, the protocol (i) prepares and verifies                         s2 (u) = u9 ⊕ u10 ⊕ u11 ⊕ u14 ,
+|+L i in qRM, (ii) extracts two flagged triples and two                            s3 (u) = u11 ⊕ u12 ⊕ u13 ⊕ u14 ,
+flagged pairs, (iii) applies transversal T /T † , (iv) measures
+the eight-qubit bulk and computes the parity detector                                         M
+                                                                                              15
+
+and Pauli frame, and (v) retains the seven-qubit Steane                             g(u) :=         uj .                             (24)
+                                                                                              j=8
+block. The dashed branch after the live Steane block is
+an alternative destructive diagnostic used for the perfor-
+                                                                  Thus g(u) = 0 labels even-parity bulk records and g(u) =
+mance study; it is not an additional stage in a live output
+                                                                  1 labels odd-parity records. For a measurement branch
+preparation shot.
+                                                                  u, the three Steane X-check eigenvalues are (−1)s1 (u) ,
+                                                                  (−1)s2 (u) , and (−1)s3 (u) , respectively, while an ideal con-
+                                                                  version satisfies g(u) = 0. The record-dependent Pauli
+            A. Single-register gauge fixing                       frame
+                                                                                                 s (u)       s (u)     s (u)
+   As reviewed in Sec. II B, the qRM code and the 15-                                F (u) = Z471          Z452      Z273            (25)
+qubit extended-Steane description are two gauge fixings
+                                                                  maps every even-parity branch to the standard Steane
+of the same [[15, 1, 3; 3]] subsystem code. We label the
+                                                                  frame. Because this update is tracked in software, the
+15 physical qRM qubits by the nonzero vectors v =
+                                                                  three bits s1 (u), s2 (u), s3 (u) are corrected rather than
+(v1 , v2 , v3 , v4 ) ∈ F42 \ {0} and choose the seven-point hy-
+                                                                  postselected; only a nontrivial parity value g(u) = 1 is
+perplane
+                                                                  rejected.
+                                                                     The protected logical information remains entirely on
+           H = {q1 , . . . , q7 } = {v 6= 0 : v4 = 0}     (22)
+                                                                  H. By Eqs. (5) and (8), the qRM and Steane logical
+                                                                  Z representatives coincide on the retained qubits, while
+as the retained Steane block. Its complement is                   their logical X representatives differ only by the Steane
+                                                                  stabilizer X4567 . Measuring B therefore neither reveals
+             B = {q8 , . . . , q15 } = {v : v4 = 1},      (23)    nor removes the logical amplitudes. The eight measure-
+                                                                  ment outcomes decompose into one parity detector, three
+which is destructively measured in the X basis.                   gauge-frame bits, and four branch labels that act triv-
+   Figure 5 displays this partition in a three-dimensional        ially on the retained logical subsystem. Appendix A 1
+tetrahedral representation of the 15-qubit qRM geometry.          gives the explicit codespace factorization and proves the
+The seven qubits in H are highlighted as the blue Steane          conversion identity branch by branch.
+face, while the remaining eight qubits in B are shown in
+orange. The isolated face on the right repeats the same
+physical qubits q1 , . . . , q7 to make the retained Steane                   B.    Grouped flagged source checks
+geometry explicit.
+   The geometric extraction in Fig. 5 should not be inter-           The Daguerre–Kim protocol prepares the qRM source
+preted as teleportation from a 15-qubit block to a sepa-          block with a 25-CNOT |+L i encoder followed by a seven-
+rately prepared seven-qubit block. The protected logical          CNOT logical-X verifier [9]. To suppress errors that
+information is already supported on the retained hyper-           would propagate through the transversal T /T † layer, it
+plane H. Measuring the complementary set B fixes the              then measures a rank-ten basis of the qRM Z-stabilizer
+remaining gauge degrees of freedom, disentangles and re-          space and postselects on trivial syndrome and flag out-
+moves the bulk, and leaves an encoded state on the orig-          comes. Instead of measuring the ten checks in ten sep-
+inal physical qubits q1 , . . . , q7 after a record-dependent     arately flagged circuits, Daguerre and Kim adapt si-
+Pauli frame update.                                               multaneous shared-flag extraction and organize them
+   The eight physical readouts are therefore not eight in-        into two two-check gadgets and two three-check gad-
+dependent gauge measurements. Together they refine the            gets. In the plaquette labeling of Ref. [9], their basis
+three commuting X-type gauge outcomes, remove the                 is {p1 , p2 , p3 , p7 , p8 , p9 , p13 , p16 , p17 , p18 }, grouped as the
+eight-qubit bulk, and supply one additional parity detec-         pairs (p13 , p9 ) and (p7 , p8 ) and the triples (p1 , p2 , p3 ) and
+tor. This single-register handoff requires neither a second       (p16 , p17 , p18 ). This reduces the source-verification re-
+encoded block nor an inter-block transversal CNOT.                quirement to three syndrome ancillas and one shared flag
+   Let u = (u8 , . . . , u15 ) ∈ F82 denote the bulk measure-     ancilla, which can be reset and reused across the four gad-
+ment record, where uj = 0 for the +1 eigenvalue of Xj ,           gets. After the qRM block passes verification and receives
+uj = 1 for the −1 eigenvalue, and ⊕ denotes addition              transversal T /T † , their code switching stage prepares a
+modulo two. The record determines three frame bits as-            separate Steane |0L i block, applies a transversal block
+sociated with the Steane X stabilizers in Eq. (4). It also        CNOT, destructively measures all 15 qRM qubits in the
+                                                                                                                                                                                                                                        8
+
+                                                                                                  T A T B PA PB
+                                                                                  f : |+⟩
+                                                                                  a3 : |0⟩
+                                                                                  a2 : |0⟩
+                                                                                  a1 : |0⟩
+                                                                                   +                    +     +            +
+                                                             logical-X verification
+                    aX : |+⟩                                                                                                   transversal T /T †                                              classical Pauli frame z = F u
+                                                                                                                                                            u = (u8⊕  , . . . , u15 )
+                                                                                                                                                            reject if    j uj = 1
+   q1                                                                                                                                  T
+   q2                                                             +                                                                    T†
+   q3                                                                                                 grouped flagged                  T                                                Z z3             live            alternative
+   q4                                                                                                 Z-check circuits
+                                                                      +                                                                T†                                               Z z4          [[7, 1, 3]]     destructive X/Y
+                    25-CNOT qRM |+L ⟩ encoder
+
+
+
+
+   q5                                                                                                                                  T                                                Z z5        Steane block         diagnostic
+   q6                                                                         +                                                        T†                                               Z z6
+   q7                                                                                                                                  T                                                Z z7
+                                                                                                                                              measure q8 , . . . , q15
+   q8                                                                             +                                                    T†                   MX
+   q9                                                                                                                                  T                    MX
+  q10                                                                                 +                                                T†                   MX
+  q11                                                                                                                                  T                    MX
+  q12                                                                                     +              TA → TB                       T†                   MX
+  q13                                                                                                    PA → PB                       T                    MX
+                                                                                                      30 + 20 CNOTs
+  q14                                                                                         +                                        T†                   MX
+  q15                                                                                                                                  T                    MX
+                                                                                  TA = (p14 , p16 , p17 ), TB = (p1 , p2 , p3 );
+                                                                                     PA = (p8 , p12 ), PB = (p10 , p11 )
+            prepare and verify                                                           serial flag extraction non-Clifford layer                        single-register gauge fix                  encoded output
+
+
+FIG. 4. Architecture and circuit flow of the single-register qRM-to-Steane preparation protocol. Blue wires (q1 –q7 ) are retained;
+orange wires (q8 –q15 ) are measured in X. The verifier ancilla controls seven CNOTs, and the four ancillas a1 , a2 , a3 , f are reset
+and reused for two triple (TA , TB ) and two pair (PA , PB ) check circuits. Odd-labeled data qubits receive T and even-labeled
+qubits receive T † . The record u supplies an even-parity detector and a software Z-frame update on the retained Steane face.
+Dashed arrows are classical; the dashed destructive X/Y branch is an alternative characterization endpoint rather than part
+of the live output circuit. Exact check supports, CNOT orders, and frame equations are given in Appendices A and B.
+
+
+                              15
+
+                                                                                      1   retained node qj        8   measured bulk node qj
+                                                                                                                                                    the Steane block. The role of their grouped flag circuits
+                                                                                      B = {q8, . . . , q15}
+                                                                                                                                                    is low-overhead qRM source verification; the logical hand-
+                                                         10
+                                                                          measured in the X basis (v4 = 1)                                          off itself is still a two-block one-bit teleportation.
+                                                                                      retained seven-qubit Steane block
+               12
+                                   11                                                                                              3
+                                                                                                                                                       Our protocol retains the same 25-CNOT qRM en-
+                                                         8    9
+
+                              13
+                                                14
+                                                                          3
+                                                                                   retain H                    4
+                                                                                                                                                    coder, seven-CNOT logical-X verifier, ten measured Z
+                                        4
+                                                                                                                       7
+                                                                                                                               2                    checks, two-triple/two-pair shared-flag resource template,
+                                                                                                                                                    four reusable ancillas, and 50-CNOT source-syndrome-
+                                                                      2                           5
+                                                     7
+        5                                                                                                     6
+
+                                 6
+                                                                  1
+                                                                                                                               1
+                                                                                                                                                    extraction cost. We therefore do not obtain the improve-
+            H = {q1, . . . , q7}
+                                                                                             the same physical qubits q1 , . . . , q7               ment by adding another verification round or enlarging
+                                                                                          shown as an isolated two-dimensional face
+    retained Steane hyperplane (v4 = 0)                                                                                                             the local flag gadgets. Instead, we modify two coupled
+                                                                                                                                                    parts of the circuit. First, Sec. III A replaces the two-
+FIG. 5. Three-dimensional geometric labeling of the 15 phys-                                                                                        block teleportation by a single-register bulk-X gauge fix.
+ical qubits of the [[15, 1, 3]] qRM code and the seven-qubit                                                                                        Second, within the unchanged shared-flag template, we
+Steane subsystem retained by the gauge fix. The blue nodes                                                                                          replace the Daguerre–Kim rank-ten generator basis and
+form the seven-point hyperplane H = {q1 , . . . , q7 } = {v 6=                                                                                      grouping by a basis and order chosen for the detector
+0 : v4 = 0}, which remains as the live Steane block. The or-                                                                                        structure of this single-register handoff.
+ange nodes form the complementary set B = {q8 , . . . , q15 } =                                                                                        For self-containment, the ten Z-type plaquette checks
+{v : v4 = 1} and are measured destructively in the X ba-
+                                                                                                                                                    used here are
+sis. The right-hand diagram isolates the same physical qubits
+q1 , . . . , q7 to display the retained Steane geometry; it does not
+denote a separate register or an inter-block transfer. Lines                                                                                              p1 = Z1267 ,       p2 = Z2347 ,       p3 = Z4567 ,
+and shaded regions indicate the geometric embedding and                                                                                                   p8 = Z4,5,11,12 , p10 = Z6,7,13,14 , p11 = Z2,7,9,14 ,
+the highlighted retained face, rather than physical circuit cou-
+plings.                                                                                                                                                  p12 = Z4,7,11,14 , p14 = Z8,9,10,15 , p16 = Z8,9,13,14 ,
+                                                                                                                                                                            p17 = Z9,10,11,14 .                  (26)
+
+X basis, postselects on the inferred qRM X syndrome,                                                                                                Three syndrome ancillas prepared in |0i and one flag an-
+and applies a record-dependent logical-Z correction to                                                                                              cilla prepared in |+i are reset and reused in the fixed
+                                                                                                                                  9
+
+order                                                                   qRM block, after which the eight bulk measurements
+                                                                        complete the single-register gauge fix. The generator
+(p14 , p16 , p17 ) −→ (p1 , p2 , p3 ) −→ (p8 , p12 ) −→ (p10 , p11 ).   regrouping leaves the source-verification resource count
+                                                                (27)    unchanged, whereas the single-register handoff removes
+The first two groups use three-check gadgets and the last               the separately encoded Steane block, its transversal block
+two use two-check gadgets. The selected plaquettes are                  CNOT, and the destructive 15-qubit qRM logical-X read-
+distinct, have binary rank ten, and span the same com-                  out. Under the common counting convention summa-
+plete qRM Z-stabilizer space as the earlier basis. The                  rized in Table II, the full circuit is thereby reduced from
+ideal qRM state, the number of extracted syndromes,                     26 to 19 qubits, from 100 to 82 CNOTs, from 31 to
+and the local ancilla resources are unchanged; only the                 23 measurements, and from component depth 81 to 70,
+physical extraction instrument differs. The supports of                 with 15 physical T /T † gates in both cases. The seven
+the selected generators and their placement in the four                 remaining qubits form an unmeasured encoded output
+gadgets alter which correlated hook errors are produced                 before any destructive characterization. In Fig. 4, the
+and which syndrome–flag signatures remain available to                  solid endpoint denotes that live Steane block, whereas
+detect them.                                                            the dashed X/Y branch denotes a separate destructive-
+   The simultaneous shared-flag topology originates in                  characterization experiment used to define the matched
+Ref. [27], was adapted to qRM verification in Ref. [9],                 diagnostic below; the two endpoints are not executed in
+and satisfies the general flag criterion of Refs. [28, 29].             the same shot.
+If U2 is a two-check gadget for A = {a, b, u1 , u2 } and
+B = {a, b, v1 , v2 }, backward propagation gives
+                                                                                IV. FAULT-ORDER SUPPRESSION
+    U2† (Zs1 , Zs2 , Xf )U2 = (ZA Zs1 , ZB Zs1 Zs2 , Xf ).     (28)
+                                                                           Accepted logical errors first appear at third order. This
+The analogous three-check circuit returns ZA , ZB , and
+                                                                        is a combinatorial property of the circuit and is indepen-
+ZC from three syndrome ancillas and restores Xf . A sin-
+                                                                        dent of any numerical value assigned to the physical error
+gle flag can therefore protect two or three parity measure-
+                                                                        probability. We define the fault alphabet here and post-
+ments without mixing their ideal outcomes. The prop-
+                                                                        pone the probability model to Sec. V. A fault set F is
+agation rules Zs 7→ Zd Zs through a data-to-syndrome
+                                                                        a finite set of faulty circuit locations, with one allowed
+CNOT and Zs 7→ Zf Zs through a flag-to-syndrome
+                                                                        preparation or live-measurement flip at a preparation or
+CNOT explain the local protection: the same syndrome-
+                                                                        measurement location, a nonidentity two-qubit Pauli af-
+ancilla Z component that creates a multi-data hook also
+                                                                        ter a CNOT, or a nonidentity one-qubit Pauli after a
+flips the final Xf result.
+                                                                        physical T /T † . The seven final Steane tomography mea-
+   The two constructions therefore differ not in the
+                                                                        surements are not locations in the live preparation circuit.
+flag principle but in the joint design of an equivalent
+                                                                        Let |F | denote the number of faulty locations, D(F ) the
+stabilizer-generator basis, its grouping and execution or-
+                                                                        complete source-syndrome, source-flag, bulk-parity, and
+der, and the downstream conversion circuit. In the ear-
+                                                                        final-Steane detector record, and L(F ) the induced logi-
+lier protocol, the grouped checks verify the qRM source
+                                                                        cal Pauli class after the frame update in Eq. (25).
+before a two-block teleportation. In our protocol, the
+                                                                           For fault order w, define the set of malignant accepted
+generator basis is evaluated together with the complete
+                                                                        patterns by
+detector set that follows it: the remaining source groups,
+the bulk-parity detector generated by the single-register                 Mw := {F : |F | = w, A[D(F )] = 1, L(F ) 6= I},      (29)
+gauge fix, and the final Steane error detection checks.
+Such later detectors can expose hook patterns that the lo-              where A is the acceptance indicator from Eq. (21). Be-
+cal flag record alone does not distinguish. The standard                cause a Pauli error crossing T /T † may acquire a local S or
+flag criterion constrains dangerous errors from a single                S † factor, the enumeration propagates the complete phys-
+fault inside one gadget; it is necessary here, but it does              ical Clifford frame rather than only a Pauli label, and
+not imply the suppression of accepted two-fault events.                 the four stabilizer branches of |T i are combined before
+Exhaustive propagation through the transversal T /T †                   conditional normalization. Complete stabilizer-tableau
+layer, the bulk gauge fix, the record-dependent frame,                  propagation [33, 34] over the one- and two-fault subsets
+and the destructive error detection diagnostic shows that               gives
+every accepted fault set of size at most two acts trivially                                  M1 = M2 = ∅.                      (30)
+on the logical qubit, which establishes B1 = B2 = 0 for
+this generator basis and order. Exact CNOT lists, the                   Equivalently, if Bw denotes the total model weight of ac-
+geometric conditions for the pair and triple gadgets, and               cepted logical patterns at order w, then B1 = B2 = 0.
+the complete fault-order test are given in Appendix B.                  Separate enumerations of the two-before-T , one-on-each-
+   An attempt is retained only if the logical-X verifier,               side, and two-after-T partitions all satisfy Eq. (30). The
+all ten source syndromes, and all four source flags re-                 conclusion is therefore independent of any fitted curve or
+turn their ideal values. Transversal T on odd labels                    chosen value of p: for the matched destructive-ED diag-
+and T † on even labels then implements logical T on the                 nostic, the reported generator basis and order empty the
+                                                                                                                                10
+
+first- and second-order accepted-logical fault sets com-
+pletely.                                                       TABLE I. Performance at p = 10−3 . The first two rows are
+                                                               model matched under ideal destructive error detection with
+                                                               no idle faults; the remaining rows provide literature context
+                                                               with different noise and output conventions.
+     V. NUMERICAL PERFORMANCE AND
+         RESOURCE BENCHMARKS                                                                                           Final
+                                                               Protocol                   Output error   Acceptance    code      d
+                                                               Ours                       ≤ 2.19×10−7     86.90%      Steane     3
+  Probabilities are now assigned to the fault alphabet of      Daguerre–Kim [9]            5.13×10−7      84.55%      Steane     3
+                                                                                                                      Steane/
+the previous section. Figure 6 compares conditional logi-      Gidney et al. [8]           ∼ 6×10−7        ∼ 65%       color     3
+cal infidelity and acceptance over the simulated error-rate    Itogawa et al. [36]        ∼ 1.0×10−4       ∼ 70%      surface    3
+sweep. Table I isolates the model-matched comparison at
+p = 10−3 , while Table II identifies which circuit stages
+produce the reductions to 19 qubits and 82 CNOTs.
+                                                               These conditions are correlated, so the 13.10% total re-
+                                                               jection cannot be assigned to the odd-bulk event by sub-
+                                                               traction. In particular, the three random gauge signs in
+A. Circuit-level noise model and finite-p certificate
+                                                               Eq. (24) are frame-corrected and are not rejection bits.
+
+   We adopt the uniform circuit-level model used for the
+closest published comparison [9]: preparation and live-                   B. Logical-performance benchmark
+measurement flips occur independently with probability
+p, every CNOT is followed by two-qubit depolarizing
+noise of strength p, every physical T /T † is followed by         Figure 6 is the graphical summary of the logical-
+one-qubit depolarizing noise of strength p, and idle er-       performance calculation. Panel (a) compares the con-
+rors are absent. The seven final Steane measurements           ditional destructive-ED infidelity with the Daguerre–
+are ideal destructive tomography operations in this con-       Kim polynomial and distinguishes the certified point at
+vention. They determine a logical observable but are           p = 10−3 from direct Monte Carlo estimates. Panel
+neither noisy locations nor live circuit resources.            (b) plots the corresponding complete acceptance proba-
+   Applying these probabilities to the exact fault-order       bility. Table I then reports the values at p = 10−3 and
+enumeration gives                                              separates the model-matched Daguerre–Kim comparison
+                                                               from broader literature context whose noise and output
+   IED (p) = 210.18p3 + O(p4 ),      B1 = B2 = 0.      (31)    conventions differ.
+                                                                  The upper bound in Eq. (32) lies below the value ob-
+The first two coeﬀicients vanish because the sets in           tained by evaluating the published Daguerre–Kim fit at
+Eq. (30) are empty; no cancellation in a numerical fit         the same p. The two numbers have different statistical
+is involved.                                                   meanings: ours is a one-sided certificate, whereas the ref-
+   At p = 10−3 , fault orders zero through three are eval-     erence value is a low-p extrapolation. We use the compar-
+uated exactly. Orders four, five, and six use 106 uni-         ison only as a model-matched benchmark. The Gidney
+formly weighted fixed-fault samples per order. One-sided       and Itogawa rows in Table I retain the definitions and
+Clopper–Pearson limits [35] are Bonferroni-corrected,          precision of their source papers and are included only to
+and every event of order seven or higher is conservatively     show broader published context; their idle and processing
+treated as a failure. Dividing the resulting unnormalized      conventions differ from the first two rows.
+loss bound by an acceptance lower bound gives                     The plotted sweep serves as a consistency check; it is
+                                                               not the source of the 10−3 claim. Direct tomography can-
+  IED (10−3 ) ≤ 2.19 × 10−7    (99.9% joint confidence),       not resolve a cubic signal there at practical shot counts,
+            −3                                                 and the reported low-p value comes from the exact enu-
+  PED (10        ) = 86.90%.                           (32)
+                                                               meration and the finite-p certificate. The logarithmic ab-
+The exact interval for PED and the complete finite-p con-      scissae are shown at their actual values, and the branch
+struction are summarized in Appendix C.                        counts determine the displayed estimates and standard
+   The quoted acceptance is the probability of the com-        errors.
+plete error detection event, not of the bulk parity alone.
+If dsrc ∈ F15
+           2 denotes the logical-X verifier bit, ten source-
+syndrome bits, and four source-flag bits; g(u) ∈ F2 is the                           C.    Resource benchmark
+bulk detector defined in Eq. (24); and t ∈ F32 is the final
+Steane syndrome, then                                             Table II decomposes the resource comparison stage by
+                                                               stage. The source encoder and the four grouped extrac-
+        PED (p) = Pr[dsrc = 0, g(u) = 0, t = 0],               tion gadgets are held fixed on purpose, which lets the
+                       p
+                                                               savings be attributed to the handoff: the single-register
+         Prej (p) = 1 − PED (p).                       (33)    construction drops the separately prepared Steane block
+                                                                                                                                                                                                       11
+
+                                 (a)                                                                                           (b)
+                                −1
+                           10                                                                                                                                             Monte Carlo
+                                                                                                                                                                          single block, exact to p 3
+                                                     sampling floor
+                                                                                                                             0.8
+                                −2               5
+                                                                                                                                                                          Daguerre--Kim fit
+                           10
+                                       104 I ED                                                                                                                           p = 10−3 certificate
+
+
+
+
+                                                                                                    acceptance probability
+                                             ̂
+ postselected infidelity
+
+
+
+
+                                −3               0
+                           10                                                                                                0.6
+
+
+                                −4                      6       8       10    12    14
+                           10                                         103 p
+                                                                                                                             0.4
+                                −5
+                           10
+
+                                −6                                                                                           0.2
+                           10
+
+                                −7
+                           10                                                                                                0.0
+                                            −3                                                 −2                                         −3                                   −2
+                                       10                                                 10                                         10                                   10
+                                                                       physical error rate p                                                           physical error rate p
+
+
+FIG. 6. Matched ideal-readout ED benchmark. (a) The diamond and downward arrow at p = 10−3 show the 99.9% upper
+bound of Eq. (32); it is not a Monte Carlo point. Open circles show direct four-branch Monte Carlo estimates only where
+the complete one-standard-error interval is positive and can therefore be displayed on a logarithmic axis. The inset retains
+every remaining estimate on a linear axis, including negative values of the signed estimator. No point is clipped or horizontally
+displaced. (b) All 20 Monte Carlo acceptance points are shown. The blue curve is the exact expansion through p3 and is drawn
+only in its low-p range; the orange dashed curve is the published Daguerre–Kim polynomial fit and is stopped at p = 2 × 10−2 .
+The Monte Carlo abscissae form a logarithmic grid from 5 × 10−3 to 3 × 10−2 , with 107 shots for each of four stabilizer branches
+and two bases at every point.
+
+
+and the transversal block CNOT, and replaces the 15-                                                           adding a verification layer. Exact order-two evaluation
+qubit qRM logical-X readout by eight bulk-X measure-                                                           of 200 legal decompositions, including the reported basis,
+ments.                                                                                                         found 56 with B1 = B2 = 0. Because the reported basis
+   The reductions in Table II are direct circuit counts un-                                                    was included a priori, this sample establishes nonunique-
+der nonlocal two-qubit connectivity and exclude routing                                                        ness but estimates neither prevalence nor optimality.
+and idle time; they leave the 50-CNOT source-syndrome-                                                            The result applies to destructive logical tomography
+extraction stage unchanged.                                                                                    with error detection; it says nothing about the fidelity of
+   The comparison has two diagnostic limitations. First,                                                       a retained magic state. Postselection is a powerful fault-
+assigning noise to the seven final tomography readouts                                                         tolerance primitive [13, 37], but certifying the seven-qubit
+changes the circuit being diagnosed. Repeating the cal-                                                        state while keeping it available would call for a nonde-
+culation for that 157-location diagnostic gives a cubic co-                                                    structive output check and a new fault analysis. The
+eﬀicient 423.58 and a 99.9% upper bound 4.39 × 10−7 .                                                          present comparison also omits memory faults, routing,
+Second, the advantage does not extend to minimum-                                                              leakage, coherent error, crosstalk, and correlated noise.
+weight error correction: the present leading coeﬀicient                                                        Within those boundaries, stabilizer basis choice provides
+is 183.81p2 , compared with 25.5p2 in the published fit.                                                       a circuit-level degree of freedom that can be explored in
+The demonstrated advantage is therefore specific to the                                                        other flagged preparation and code-conversion protocols.
+ideal-readout postselected diagnostic.
+
+                                                                                                                              VII.             PHYSICAL-PLATFORM FEASIBILITY
+                            VI. DISCUSSION AND LIMITATIONS
+                                                                                                                   A 19-qubit footprint is modest for all three leading
+   Specifying the stabilizer group does not specify the                                                         hardware modalities; the harder question is whether the
+noisy preparation instrument. Once checks share a flag                                                          82 CNOTs, four reused ancillas, 23 mid-circuit measure-
+circuit, the generating basis fixes which hooks appear,                                                         ments, and degree-seven verifier can be scheduled with-
+when they appear, and which later syndromes can still                                                           out erasing the resource advantage. The component
+see them. Bases that are equivalent in the ideal code thus                                                      benchmarks quoted below come from different protocols
+leave open a physical fault-filtering degree of freedom.                                                        and noise channels, so they speak to hardware compati-
+In the present circuit that freedom suppresses the postse-                                                      bility and not to the postselected infidelity in Eq. (32).
+lected logical error from quadratic to cubic order without                                                         Superconducting circuits. Local T /T † rotations can
+                                                                                                                            12
+
+
+TABLE II. Stage-by-stage resource comparison with the same conventions as Table VII of Ref. [9]. Here V is the active-qubit-
+time sum, n2 is the CNOT count, M counts live destructive measurements, and d is component depth. Seven-qubit tomography,
+routing, waiting idles, reset, and leakage are excluded in both columns. Peak width with ancilla reuse is 19 qubits here and 26
+qubits for Daguerre–Kim.
+                                                 Our protocol                                     Daguerre–Kim [9]
+ Stage                               V           n2           M            d            V           n2          M           d
+ Steane |0L ⟩ preparation             –           –            –           –            75          11            1        10
+ qRM |+L ⟩ preparation              309          32            1          20           309          32            1        20
+ two pair extractions               360          20            6          20           360          20            6        20
+ two triple extractions             532          30            8          28           532          30            8        28
+ transversal T /T †                  15           0            0           1            15           0            0         1
+ block CNOT                           –           –            –           –            22           7            0         1
+ bulk-X handoff                      15           0            8           1             –           –            –         –
+ qRM logical-X measurement            –           –            –           –            22           0          15          1
+ total                             1231          82           23          70          1335         100          31         81
+
+
+
+
+be implemented as frame-tracked Z rotations, and fast                 Trapped ions. The 98-qubit Helios QCCD processor
+measurement and reset are mature. The Willow system                provides effective all-to-all connectivity, dynamic control,
+reports simultaneous mean errors of 0.035% for one-qubit           and native mid-circuit measurement and reset. Aver-
+gates, 0.33% for CZ gates, and 0.77% for repeated mea-             aged over its operation zones, reported infidelities are
+surement, together with a 1.1 µs surface-code cycle and            2.5(1) × 10−5 for one-qubit gates, 7.9(2) × 10−4 for two-
+real-time decoding [38]. The latest scalable-device cal-           qubit gates, and 3.3(5) × 10−4 for state preparation and
+ibration result reports a best CZ fidelity of 99.92(1)%            measurement; a maximally entangling gate takes about
+on an 84-qubit processor, but a 99.25% median over                 70 µs and measurement-reset crosstalk on spectators is
+72 couplers [39], so the best-case value cannot be as-             1.3(1) × 10−5 [42]. These numbers make ions the closest
+sumed for every interaction in this circuit. The main              present match to the component-error scale used here,
+obstacle is topology rather than qubit count. On a pla-            and ion transport eliminates logical SWAP gates for the
+nar nearest-neighbor array, the seven verifier couplings           high-degree checks. The cost is time: the 82 entangling
+and the grouped-check supports require SWAP routing,               gates must be batched through a finite number of oper-
+adding two-qubit gates, idle exposure, and leakage not             ation zones, producing transport, cooling, memory, and
+present in the 82-CNOT model. A purpose-built 19-qubit             leakage exposure. The same device also reports an effec-
+patch with bus-mediated couplers, or a routing-aware re-           tive mid-circuit measurement-reset error of 2.4(5) × 10−3
+design of the check order followed by a new fault enu-             in random circuits. Even this favorable mapping still
+meration, would be needed to preserve the quoted advan-            needs a schedule-specific noise model and a repeat of the
+tage. Wall-clock time is shortest on this platform, but            accepted-fault analysis. None of these component bench-
+processor-wide entangling and readout errors should not            marks establishes a live output fidelity, which lies outside
+yet be equated with the uniform p = 10−3 benchmark.                the present claim in any case.
+   Neutral atoms. Reconfigurable tweezer arrays match
+the nonlocal check graph most naturally: data atoms
+can remain in storage while the four ancillas are moved                             VIII.    CONCLUSION
+through entangling and readout zones, avoiding coherent
+SWAP networks. A 448-atom processor has already com-                  We have shown that the choice of stabilizer-generator
+bined the same [[15, 1, 3]] and [[7, 1, 3]] code ingredients,      basis can serve as an active design variable in fault-
+programmable phase rotations, mid-circuit reuse, and               tolerant state preparation, rather than merely provid-
+transversal operations; it reports 270-ns CZ gates with            ing an algebraically equivalent description of the same
+fidelities up to 99.6%, together with nondestructive read-         code space. For the qRM-to-Steane conversion consid-
+out with 0.46(4)% bit-flip error and 0.24(2)% loss [40].           ered here, co-designing the generator basis with grouped
+Separately, a 6100-qubit tweezer array reports 12.6(1) s           flag measurements reshapes the syndrome information so
+coherence, 99.99374(8)% imaging fidelity, and approxi-             that correlated faults generated across the non-Clifford
+mately 99.95% coherent transport fidelity [41]. The qubit          layer are eﬀiciently exposed to postselection. Under the
+count, connectivity, and the odd/even pattern of 15 local          ideal-readout destructive error-detection diagnostic, all
+T /T † rotations are all within reach. The limiting opera-         accepted logical-error contributions from one- and two-
+tions are the sequential flag readouts and rearrangements;         fault events are eliminated, while the complete protocol
+current CZ and nondestructive-readout errors also exceed           requires only 19 qubits and 82 CNOT gates. The re-
+the 10−3 model point, while atom loss supplies erasure             sulting postselected infidelity scales as 210.2p3 + O(p4 ),
+information absent from our depolarizing analysis. Rout-           and exact low-order enumeration combined with finite-
+ing overhead is smallest in this geometry, though a loss-          p sampling gives a 99.9% upper bound of 2.2 × 10−7 at
+aware circuit simulation is still needed before an output          p = 10−3 .
+fidelity can be quoted.                                               The observed suppression is not an artifact of assum-
+                                                                                                                           13
+
+ing perfect final tomography. When noise is also assigned       and ca = ha ∪˙ ba for a = 1, 2, 3, with c4 = b4 . The qRM
+to the seven final readout locations, the leading behav-        code and the 15-qubit extended-Steane description share
+ior remains cubic, with coeﬀicient 423.58, and the cor-         the rank-11 stabilizer center
+responding 99.9% upper bound at p = 10−3 becomes                                S0 = hXc1 , Xc2 , Xc3 , Xc4 ,
+4.39 × 10−7 . Thus, the elimination of accepted second-
+                                                                                       Z c1 , Z c2 , Z c3 , Z c4 ,     (A4)
+order faults survives the inclusion of noisy final mea-
+surements. The advantage is, however, diagnostic de-                                   Zh1 , Zh2 , Zh3 i.
+pendent. Under minimum-weight correction, the same              Thus 15−rank S0 = 4, so S0 defines a [[15, 4, 3]] stabilizer
+circuit exhibits a leading contribution of 183.81p2 , com-      parent [17, 18]. A canonical set of three gauge pairs is
+pared with 25.5p2 in the reference construction. The gen-
+erator choice therefore improves the ability to detect and                   (Xg1 , Zg1 ) = (X1267 , Z4,7,11,14 ),
+reject dangerous faults, but does not generically improve                    (Xg2 , Zg2 ) = (X2347 , Z4,5,11,12 ),
+their correctability.                                                        (Xg3 , Zg3 ) = (X4567 , Z2,7,9,14 ).       (A5)
+   This distinction points to a broader design principle:
+stabilizer-generator optimization should be conditioned         They obey Xga Zgb = (−1)δab Zgb Xga . The two rank-14
+on the fault-tolerance task being performed. Generator          gauge choices are
+bases that are advantageous for postselected preparation
+                                                                               SqRM = hS0 , Zg1 , Zg2 , Zg3 i,
+need not be optimal for active correction, decoding, or
+preservation of a live logical output. More generally,                         SERM = hS0 , Xg1 , Xg2 , Xg3 i.          (A6)
+equivalent stabilizer descriptions provide a previously un-     Accordingly, the precise subsystem notation is
+derused degree of freedom that can be optimized jointly         [[15, 1, 3; 3]]: one of the four encoded degrees of
+with flag placement, measurement grouping, and code             freedom is protected and three are gauge. Referring
+conversion. Extending this approach to nondestructive           to a “[[15, 4, 3]] subsystem code” is shorthand for the
+verification, other code-switching pairs, and architecture-     common [[15, 4, 3]] stabilizer parent together with this
+specific noise models will determine whether generator-         protected/gauge split.
+aware fault filtering can become a reusable tool for low-
+overhead preparation of non-Clifford resource states.
+                                                                1. Seven qubits collect all logical information after
+                                                                           eight bulk measurements
+       DATA AVAILABILITY STATEMENT
+                                                                  In the direct single-register handoff used here, every
+  The numerical data supporting the findings of this            qubit in B is measured destructively in X. This is not
+study are available from the authors upon reasonable re-        a measurement of eight independent gauge operators:
+quest.                                                          only the three commuting Xga are independent gauge
+                                                                observables. Measuring all eight complementary physi-
+                                                                cal qubits instead performs the gauge fix, disentangles
+  Appendix A: Subsystem conversion and bulk-X                   and removes the bulk, and supplies an additional parity
+                 gauge fixing                                   detector in one simultaneous readout without ancillas or
+                                                                CNOTs.
+  Physical
+       Q qubits are numbered from 1 to 15, and                    The logical-information statement follows directly in
+PS = j∈S Pj . We choose the seven-point hyperplane              the X gauge. An equivalent generating set consists of
+H = {1, . . . , 7} as the retained Steane face and its com-     the six Steane stabilizers on H and the eight operators
+plement B = {8, . . . , 15} as the measured bulk. The           {Xbi , Zbi : i = 1, . . . , 4} on B. The latter have full rank
+logical representatives used throughout are                     on eight qubits and therefore fix a unique bulk state, so
+             X qRM = X1···7 ,      Z qRM = Z123 ,      (A1)                       CERM = CSt,H ⊗ |ΦiB .                 (A7)
+and, on H,                                                      The unknown logical amplitudes occur only in the Steane
+                                                                factor. Equivalently, Z qRM = Z St = Z123 is supported
+                SXSt
+                     = {X1267 , X2347 , X4567 },
+                                                                entirely on H, while X qRM = X1···7 = X St X4567 and
+                SZSt = {Z1267 , Z2347 , Z4567 },                X4567 is a Steane stabilizer. Hence measuring or dis-
+               X St = X123 ,      Z St = Z123 .        (A2)     carding B cannot reveal or erase the protected logical
+                                                                information.
+  To state the subsystem conversion precisely, define              Write the eight recorded eigenvalues as Xj = (−1)uj
+ h1 = {1, 2, 6, 7}, b1 = {8, 9, 13, 14},                        and define
+ h2 = {2, 3, 4, 7}, b2 = {9, 10, 11, 14},                                      s1 = u8 ⊕ u9 ⊕ u13 ⊕ u14 ,
+ h3 = {4, 5, 6, 7}, b3 = {11, 12, 13, 14},                                     s2 = u9 ⊕ u10 ⊕ u11 ⊕ u14 ,
+                    b4 = {8, 9, 10, 11, 12, 13, 14, 15}, (A3)                  s3 = u11 ⊕ u12 ⊕ u13 ⊕ u14 .             (A8)
+                                                                                                                                             14
+
+The retained state has Xha eigenvalue (−1)sa . A compact
+                                                                        TABLE III. Ordered grouped checks and their circuit geome-
+record-dependent frame is
+                                                                        try. Triple entries are (c, d, e, g; uA , uB , uC ); pair entries are
+                               s1 s2 s3                                 (a, b; u1 , u2 ; v1 , v2 ).
+                      F (u) = Z47 Z45 Z27 ,                    (A9)
+                                                                        group            ordered checks               geometry
+which restores the three Steane X checks and the logical-                TA              (p14 , p16 , p17 )           (9, 8, 10, 14; 15, 13, 11)
+X sign while leaving the logical-Z operator unchanged.                   TB              (p1 , p2 , p3 )              (7, 2, 6, 4; 1, 3, 5)
+If Ku projects the bulk onto the recorded X eigenstates                  PA              (p8 , p12 )                  (4, 11; 5, 12; 7, 14)
+and deletes it, and VqRM , VSt are encoding isometries for               PB              (p10 , p11 )                 (7, 14; 6, 13; 2, 9)
+the protected qubit, then, up to a global phase,
+                 
+                                    M15
+                 
+                   −7/2                                                a shared flag f starts in |+i. With Cr,s = CNOTr→s ,
+                 
+                 
+                   2     F (u)V St ,     uj = 0,
+                                     j=8                                the ordered CNOT list is
+     Ku VqRM =                                      (A10)
+                 
+                                    M15
+                 
+                                                                                 U2 = Cf,s2 Cf,s1 Cv2 ,s2 Cv1 ,s2 Cu2 ,s1 Cu1 ,s1
+                 0,                     uj = 1.
+                                           j=8                                         × Cs1 ,s2 Cb,s1 Cf,s1 Ca,s1 ,                       (B2)
+This identity proves the logical channel record by record.              where the rightmost gate acts first. Backward propaga-
+Ideally, all 128 even-parity records occur with probability             tion gives
+1/128, independently of the input logical state. The eight
+physical outcomes therefore decompose into one fixed-                      U2† (Zs1 , Zs2 , Xf )U2 = (ZA Zs1 , ZB Zs1 Zs2 , Xf ).          (B3)
+parity detector, three independent gauge/frame parities
+in Eq. (A8), and four labels that distinguish equivalent                The final Z measurements of s1 , s2 therefore return the
+measurement branches. The three gauge signs are cor-                    two requested check signs separately, and the ideal Xf
+rected by Eq. (A9); they are not postselection conditions.              result is +1.
+   Finally, let Asrc indicate that the logical-X verifier, all             For a triple A, B, C, let c lie in all three supports; let
+ten source syndromes, and all four source flags are triv-
+                   L15                                                  d, e, g lie only in A ∩ B, A ∩ C, and B ∩ C; and let
+ial. Let g(u) =       j=8 uj and let t ∈ F2 be the Steane
+                                            3                           uA , uB , uC be unique to one support, so A = {c, d, e, uA },
+syndrome. The acceptance event used for the quoted di-                  B = {c, d, g, uB }, and C = {c, e, g, uC }. The three syn-
+agnostic is                                                             drome ancillas and one shared flag use
+
+     AED = Asrc 1[g(u) = 0] 1[t = 0],                                     U3 = Cf,sC Cf,sB Cf,sA Cg,sC CuC ,sC Ce,sC Cg,sB CuB ,sB
+   PED (p) = Ep [AED ],  Prej (p) = 1 − PED (p).             (A11)             × CuA ,sA Ce,sA CsA ,sB Cd,sA CsA ,sC Cf,sA Cc,sA ,
+                                                                                                                                 (B4)
+Thus the reported PED (10−3 ) ' 86.90% and the corre-
+sponding 13.10% rejection are complementary probabili-                  again with the rightmost gate first. Its ideal observables
+ties for the full joint event, not for the bulk parity alone.           are
+The source, bulk, and conditions are correlated, so the
+odd-bulk contribution cannot be inferred by subtraction.                                    U3† ZsA U3 = ZA ZsA ,
+In particular, requiring s1 = s2 = s3 = 0 would be an                                      U3† ZsB U3 = ZB ZsA ZsB ,
+incorrect extra postselection and would reduce the ideal
+acceptance to 1/8.                                                                          U3† ZsC U3 = ZC ZsA ZsC ,
+                                                                                             U3† Xf U3 = Xf .                              (B5)
+      Appendix B: Grouped flag Z-check circuits                         The actual checks and the geometry parameters that in-
+                                                                        stantiate these two generic circuits are listed in Table III.
+   The selected ten plaquettes are measured as two triples                 The simultaneous shared-flag topologies originate in
+followed by two pairs,                                                  Ref. [27] and were adapted to qRM plaquettes in Ref. [9];
+                                                                        the particular generator basis in Table III is selected here.
+(p14 , p16 , p17 ) −→ (p1 , p2 , p3 ) −→ (p8 , p12 ) −→ (p10 , p11 ).   The reason for the flag follows from two CNOT conjuga-
+                                                               (B1)     tion rules,
+They are distinct, have rank ten over F2 , and therefore
+span the complete qRM Z-stabilizer space. The grouping                       Cd,s Zs Cd,s = Zd Zs ,           Cf,s Zs Cf,s = Zf Zs .       (B6)
+changes the physical extraction instrument but not the
+ideal encoded state. Together with the logical-X verifier,              A Zs component on a syndrome target can copy through
+their ten syndrome bits and four flag bits form the 15                  later data-to-syndrome CNOTs and create a correlated
+source-acceptance conditions.                                           data-Z hook. The same component crosses a flag-to-
+  For a pair, write A = {a, b, u1 , u2 } and B =                        syndrome CNOT and becomes Zf , which flips the fi-
+{a, b, v1 , v2 }. Syndrome ancillas s1 , s2 start in |0i and            nal Xf result. The opening and closing flag couplings
+                                                                                                                       15
+
+in Eqs. (B2) and (B4) place each single-ancilla fault in-     Normalizing the four branches separately would be in-
+terval capable of producing an uncorrectable hook in a        correct because the last two coeﬀicients in Eq. (C2) are
+nontrivial flag sector, as required by the standard flag      negative.
+criterion [28, 29].                                             Exact subset enumeration with stabilizer-tableau prop-
+   Grouping has two roles. First, one flag protects two or    agation [33, 34] gives
+three syndrome rails, so ten checks require four grouped
+gadgets rather than ten separate flag rounds; the three
+syndrome ancillas and one flag can be reset and reused.                   2837363 3
+                                                                IED (p) =         p + O(p4 )
+Second, the generator basis and group order determine                      13500                                     (C4)
+the detector signatures of the hooks. Changing the ba-                  = 210.175p3 + O(p4 ),       B1 = B2 = 0.
+sis leaves the stabilizer space unchanged but changes
+which faults are exposed by later groups, the bulk par-       Orders zero through three are evaluated exactly. At p =
+ity, and the Steane checks. The local flag criterion is       10−3 , orders four, five, and six use 106 uniformly weighted
+only a one-fault statement; it does not by itself prove       fixed-order samples each. For a sample loss ℓω , the one-
+the reported two-fault cancellation. That stronger prop-      sided construction uses
+erty was checked by complete propagation through the
+transversal layer, gauge frame, and detector:
+                                                                                 ℓω ≤ 1[ℓω > 0] ≤ 1;                 (C5)
+     |F | ≤ 2,     D(F ) = 0    =⇒     ℓ(F ) = 0,     (B7)
+which gives B1 = B2 = 0 for the basis and order in
+                                                              negative signed losses can only lower the desired upper
+Table III.
+                                                              bound. A one-sided Clopper–Pearson bound [35] is ap-
+  For scope, the fixed triple–triple–pair–pair template
+                                                              plied to the positive event rate in each stratum, with a
+admits 36 legal triples and 60 legal pairs among the 18
+                                                              Bonferroni allocation of the total 10−3 error probability.
+qRM plaquettes. Requiring ten distinct rank-ten checks
+                                                              Table IV gives the only sampled inputs required for the
+gives 71,232 ordered candidates. The reported basis was
+                                                              certificate.
+included a priori in a 200-candidate order-two evaluation,
+in which 56 bases obeyed Eq. (B7).
+                                                              TABLE IV. Fixed-fault strata for the finite-p certificate at
+   Appendix C: Low-order evaluation and finite-p               p = 10−3 . The last column is the upper contribution to
+                   certificate                                                   unnormalized loss.
+
+                                                              order       samples       positive events         loss upper
+  The matched uniform model assigns probability p to            4            106                    292       6.21 × 10−9
+each preparation or live measurement flip, one-qubit de-        5            106                    199      1.29 × 10−10
+polarizing noise after each physical T /T † , and two-qubit     6            106                    121      2.02 × 10−12
+depolarizing noise after each CNOT; idle errors are ab-
+sent. The seven final Steane measurements are ideal
+destructive tomography operations, not noisy locations.          The exact cubic contribution to unnormalized loss is
+The diagnostic therefore has                                  1.8143 × 10−7 , and all orders seven and higher are as-
+   Nloc = 30 preparations + 82 CNOTs                          signed unit loss, giving a tail below 2.60 × 10−10 . Com-
+                                                      (C1)    bining the exact term, the three simultaneous bounds,
+           + 15 T /T † + 23 measurements = 150.                                                                −7
+                                                              and the adversarial tail gives Qup
+                                                                                               ED = 1.8803 × 10    . The
+  Pauli faults crossing T /T † can acquire local S or S †     zero-fault event supplies the denominator floor PED ≥
+factors, so the calculation retains the complete physical     (1 − p)150 , hence
+Clifford frame. The target state is evaluated with the
+four-branch stabilizer decomposition                           IED (10−3 ) ≤ 2.19 × 10−7    (99.9% joint confidence).
+                     √
+                 1+ 2                                                                                            (C6)
+      |T ihT | =           (|+ih+| + |Y +ihY +|)              The accepted-weight expansion through third order, to-
+                    4 √                              (C2)
+                    1− 2                                      gether with the entire probability mass of four or more
+                  +           (|−ih−| + |Y −ihY −|).          faults, gives
+                         4
+For branch r and basis b ∈ {X, Y }, let Wr,b be the ac-
+cepted weight and Vr,b the accepted logical numerator.                  0.8689553 ≤ PED (10−3 ) ≤ 0.8689734.         (C7)
+The signed branch sums are formed before conditional
+normalization,                                                This is the interval summarized as 86.90% in the main
+           X                       X                          text and in Eq. (A11). It uses ideal tomography; the
+   Wb =        αr Wr,b ,      Vb =     αr Vr,b ,
+          r                      r
+                                                              separate diagnostic in which the seven final readouts are
+                                                              noisy is not part of the matched headline result.
+        WX + WY            WX + WY   VX + VY
+  PED =            , QED =         −    √    ,
+            2                 4        2 2
+  IED = QED /PED .                         (C3)
+                                                                                                                                          16
+
+
+
+
+ [1] B. Eastin and E. Knill, Restrictions on transversal encoded               and B. M. Terhal, Code deformation and lattice surgery are
+     quantum gate sets, Phys. Rev. Lett. 102, 110502 (2009).                   gauge fixing, New J. Phys. 21, 033028 (2019).
+ [2] S. Bravyi and A. Kitaev, Universal quantum computation with          [23] A. Kubica and M. E. Beverland, Universal transversal gates
+     ideal Clifford gates and noisy ancillas, Phys. Rev. A 71, 022316          with color codes: A simplified approach, Phys. Rev. A 91,
+     (2005).                                                                   032330 (2015).
+ [3] S. Bravyi and J. Haah, Magic-state distillation with low over-       [24] F. Butt, S. Heußen, M. Rispler, and M. Müller, Fault-tolerant
+     head, Phys. Rev. A 86, 052329 (2012).                                     code-switching protocols for near-term quantum processors,
+ [4] C. Jones, Multilevel distillation of magic states for quantum             PRX Quantum 5, 020345 (2024).
+     computing, Phys. Rev. A 87, 042305 (2013).                           [25] S. Heußen and J. Hilder, Eﬀicient fault-tolerant code switching
+ [5] D. Litinski, Magic state distillation: Not as costly as you think,        via one-way transversal CNOT gates, Quantum 9, 1846 (2025).
+     Quantum 3, 205 (2019).                                               [26] L. Daguerre, R. Blume-Kohout, N. C. Brown, D. Hayes, and
+ [6] C. Gidney and A. G. Fowler, Eﬀicient magic state factories                I. H. Kim, Experimental demonstration of high-fidelity logical
+     with a catalyzed |ccz⟩ to 2|t⟩ transformation, Quantum 3, 135             magic states from code switching, Phys. Rev. X 15, 041008
+     (2019).                                                                   (2025).
+ [7] M. E. Beverland, A. Kubica, and K. M. Svore, Cost of univer-         [27] R. Chao and B. W. Reichardt, Quantum error correction with
+     sality: A comparative study of the overhead of state distilla-            only two extra qubits, Phys. Rev. Lett. 121, 050502 (2018).
+     tion and code switching with color codes, PRX Quantum 2,             [28] C. Chamberland and M. E. Beverland, Flag fault-tolerant er-
+     020341 (2021).                                                            ror correction with arbitrary distance codes, Quantum 2, 53
+ [8] C. Gidney, N. Shutty, and C. Jones, Magic state cultiva-                  (2018).
+     tion: Growing t states as cheap as CNOT gates (2024),                [29] T. Tansuwannont, C. Chamberland, and D. Leung, Flag fault-
+     arXiv:2409.17595 [quant-ph].                                              tolerant error correction, measurement, and quantum compu-
+ [9] L. Daguerre and I. H. Kim, Code switching revisited: Low-                 tation for cyclic Calderbank–Shor–Steane codes, Phys. Rev. A
+     overhead magic state preparation using color codes, Phys. Rev.            101, 012342 (2020).
+     Research 7, 023080 (2025).                                           [30] B. Poór, B. Rodatz, and A. Kissinger, Ultra low overhead syn-
+[10] C. Chamberland and A. W. Cross, Fault-tolerant magic state                drome extraction for the Steane code, Quantum Sci. Technol.
+     preparation with flag qubits, Quantum 3, 143 (2019).                      11, 045009 (2026).
+[11] C. Chamberland and K. Noh, Very low overhead fault-tolerant          [31] D. Gottesman, Theory of fault-tolerant quantum computation,
+     magic state preparation using redundant ancilla encoding and              Phys. Rev. A 57, 127 (1998).
+     flag qubits, npj Quantum Inf. 6, 91 (2020).                  √       [32] P. Aliferis, D. Gottesman, and J. Preskill, Quantum accu-
+[12] B. Yenilen, M. Müller, and M. Rispler, Fault-tolerant | T ⟩               racy threshold for concatenated distance-3 codes, Quantum
+     state preparation and injection for more eﬀicient fine-grained            Inf. Comput. 6, 97 (2006), arXiv:quant-ph/0504218.
+     quantum circuit synthesis (2026), arXiv:2608.25797 [quant-           [33] S. Aaronson and D. Gottesman, Improved simulation of stabi-
+     ph].                                                                      lizer circuits, Phys. Rev. A 70, 052328 (2004).
+[13] H. Bombín, M. Pant, S. Roberts, and K. I. Seetharam, Fault-          [34] C. Gidney, Stim: A fast stabilizer circuit simulator, Quantum
+     tolerant postselection for low-overhead magic-state prepara-              5, 497 (2021).
+     tion, PRX Quantum 5, 010302 (2024).                                  [35] C. J. Clopper and E. S. Pearson, The use of confidence or fidu-
+[14] A. Paetznick and B. W. Reichardt, Universal fault-tolerant                cial limits illustrated in the case of the binomial, Biometrika
+     quantum computation with only transversal gates and error                 26, 404 (1934).
+     correction, Phys. Rev. Lett. 111, 090505 (2013).                     [36] T. Itogawa, Y. Takada, Y. Hirano, and K. Fujii, Eﬀicient magic
+[15] A. M. Steane, Multiple-particle interference and quantum error            state distillation by zero-level distillation, PRX Quantum 6,
+     correction, Proc. R. Soc. A 452, 2551 (1996).                             020356 (2025).
+[16] H. Bombín and M. A. Martin-Delgado, Topological computa-             [37] E. Knill, Quantum computing with realistically noisy devices,
+     tion without braiding, Phys. Rev. Lett. 98, 160502 (2007).                Nature 434, 39 (2005).
+[17] J. T. Anderson, G. Duclos-Cianci, and D. Poulin, Fault-              [38] R. Acharya et al., Quantum error correction below the surface
+     tolerant conversion between the Steane and Reed–Muller quan-              code threshold, Nature 638, 920 (2025).
+     tum codes, Phys. Rev. Lett. 113, 080501 (2014).                      [39] H. Zhang, M. Li, S. Yang, Y. Feng, Y. Li, C. Chen,
+[18] D.-X. Quan, L.-L. Zhu, C.-X. Pei, and B. C. Sanders, Fault-               P. Liu, G. Xue, and H. Yu, High-precision calibration workflow
+     tolerant conversion between adjacent Reed–Muller quantum                  achieves above 99.9% CZ gate fidelity on a scalable supercon-
+     codes based on gauge fixing, J. Phys. A: Math. Theor. 51,                 ducting processor (2026), arXiv:2607.01422 [quant-ph].
+     115305 (2018).                                                       [40] D. Bluvstein et al., A fault-tolerant neutral-atom architecture
+[19] K. R. Colladay and E. J. Mueller, Rewiring stabilizer codes,              for universal quantum computation, Nature 649, 39 (2026).
+     New J. Phys. 20, 083030 (2018).                                      [41] H. J. Manetsch, G. Nomura, E. Bataille, X. Lv, K. H. Leung,
+[20] H. Bombín, Gauge color codes: Optimal transversal gates and               and M. Endres, A tweezer array with 6100 highly coherent
+     gauge fixing in topological stabilizer codes, New J. Phys. 17,            atomic qubits, Nature 647, 60 (2025).
+     083002 (2015).                                                       [42] A. Ransford et al., A 98-qubit trapped-ion quantum computer
+[21] H. Bombín, Dimensional jump in quantum error correction,                  with all-to-all connectivity, Nature 655, 81 (2026).
+     New J. Phys. 18, 043038 (2016).
+[22] C. Vuillot, L. Lao, B. Criger, C. García Almudéver, K. Bertels,
+
