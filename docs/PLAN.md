@@ -22,9 +22,9 @@ big Steane circuits) → 1e8-shot MC at seeds 0/1000/2000 (about 1 min on hippo)
 | 4 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | Codex lane FLAG (`work/lanes/FLAG`) | active |
 | 5 | P22 | G1 | Exact-objective scheduler (idea 7) and encoder choice by full-circuit score (idea 6), on v12 and cand2 (then cand14) | scheduled circuits with --third and 3-seed MC | Codex lane SCHED (`work/lanes/SCHED`, zebra, sunfish) | active |
 | 6 | P24 | G1 | Chamberland–Cross flag-based injection (idea 10) as a full circuit or a smaller pre-stage | judge-valid grid circuit, scores, verdict | Codex lane CC (`work/lanes/CC`, jerry) | active |
-| 9 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout | preps for each candidate layout | main session | parked: P20/P15 layouts |
-| 10 | P16 | G1 | Integrate, rank by --third then MC (idea 9), submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | parked: P20/P15 |
-| 11 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used; each new best submitted at once (ties go to fewer 2q gates, then the earlier entry); final best in by 2026-10-30 10:00 | main session | active |
+| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout | preps for each candidate layout | main session | parked: P20/P15 layouts |
+| 8 | P16 | G1 | Integrate, rank by --third then MC (idea 9), submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | parked: P20/P15 |
+| 9 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used; each new best submitted at once (ties go to fewer 2q gates, then the earlier entry); final best in by 2026-10-30 10:00 | main session | active |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.

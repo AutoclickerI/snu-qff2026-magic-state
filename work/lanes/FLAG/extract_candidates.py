@@ -16,6 +16,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 
 HERE = Path(__file__).resolve().parent
 EXENC = HERE.parent / "EXENC"
@@ -66,9 +67,9 @@ def main() -> None:
     )
     cells = [1, 14, 8, 9, 2, 16, 15]
     # The native engine's input is n, k, extra, workers, alternatives,
-    # enumerate, max_class, followed by available cells.  With no helpers,
-    # n=7 and k=5 for the four Steane Z checks plus the |+_L> row.
-    request = " ".join(map(str, [7, 5, args.extra, args.workers, 1, 1, 0, *cells])) + "\n"
+    # enumerate, max_class, followed by available cells.  ``plus`` has the
+    # three Steane checks plus the extra all-X row, hence k=4.
+    request = " ".join(map(str, [7, 4, args.extra, args.workers, 1, 1, 0, *cells])) + "\n"
     with raw.open("w") as f:
         subprocess.run([str(binary)], input=request, text=True, stdout=f, check=True)
     result = json.loads(raw.read_text())
@@ -77,6 +78,13 @@ def main() -> None:
     top = result.get("top", [])
     if len(top) < args.limit:
         raise RuntimeError(f"engine returned {len(top)} candidates, expected {args.limit}")
+    # The C++ wire format intentionally contains only the fields needed by
+    # its comparator.  Enrich every retained circuit with the independent
+    # Python verifier, exactly as exenc.run() does for EXENC's top file.
+    sys.path.insert(0, str(EXENC))
+    import exenc
+    for circuit in top:
+        exenc.verify(circuit, cells, "plus", [])
     # Retain the full engine result for provenance and a compact candidate
     # list that the flag scorer can consume directly.
     out.write_text(json.dumps(top, indent=2) + "\n")
