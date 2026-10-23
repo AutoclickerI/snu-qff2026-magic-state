@@ -6,11 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board: **v13**, server 1-F = 0.000109770366545957 (bit-identical to `fast_check`), acceptance 0.6891, 115 CX,
-submitted 2026-10-24 02:01:09 KST (`work/receipts/submit_v13.txt`); mean of 100 seed-0 re-draws 1.1257e-4 (v12's 49: 1.1460e-4).
+Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v14**, server 1-F = 0.000100637651032717
+(bit-identical to `fast_check`), acceptance 0.5443, 207 CX, submitted 2026-10-24 03:01:17 KST
+(`work/receipts/submit_v14.txt`); mean of 100 seed-0 re-draws 1.0382e-4.
 
-Best competitor: Placeholder 6.286e-5, 169 CX, acceptance 0.546 (submitted 2026-10-24 01:57 KST; board at 02:12). Refresh with
-`work/submit.py board`.
+Best competitor: Placeholder 6.274e-5, 163 CX, acceptance 0.543 (submitted 2026-10-24 02:57 KST; before that 6.286e-5 with
+169 CX). Board read 2026-10-24 03:10 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -25,6 +26,7 @@ Best competitor: Placeholder 6.286e-5, 169 CX, acceptance 0.546 (submitted 2026-
 | v11: v10's cycle, ALAP priority seed 45 | server | 1.1940e-4, 115 CX (mean of 100 re-draws 1.2189e-4) | `work/submissions/v11_A1i_alap45.*`, `work/receipts/reorder_v11.txt` |
 | v12: v11 + L5-lane pre-stage gains | server | 1.1269e-4, 115 CX (3-seed 1.133e-4, 12-seed 1.1422e-4) | `work/submissions/v12_L5lns12.*` (submitted text: seed-0 re-draw `v12_L5lns12_r86.*`), `work/lanes/L5_precycle/REPORT.md`, `work/receipts/submit_v12.txt` |
 | v13: v12 + first-use `q[16]` measured instead of reset (re-draw r70) | server | 1.0977e-4, 115 CX (100 re-draws 1.1257e-4) | `work/submissions/v13_m16_r70.*`, `work/candidates/v13_m16.*`, `work/receipts/seq_v13_m16_r70.txt` |
+| v14: Steane-type round on L5 (A s7307, FT joint B+C sat6 82 CX) + first-use q27, q29 measured (re-draw r100) | server | 1.00638e-4, 207 CX (100 re-draws 1.0382e-4) | `work/submissions/v14_bcm_r100.*`, `work/candidates/v14_bcm.*`, `work/receipts/seq_v14_bcm_r100.txt`, `work/receipts/submit_v14.txt` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
@@ -33,7 +35,9 @@ Best competitor: Placeholder 6.286e-5, 169 CX, acceptance 0.546 (submitted 2026-
 | Chamberland & Cross, flag-based magic-state prep (cited in P references) | G1: flagged direct readout (lane L3) | from memory |
 | Postler et al., "Demonstration of fault-tolerant universal quantum gate operations" (cited in P) | G1: Steane-code T-state prep | from memory |
 | Bravyi & Kitaev 2005, magic state distillation (P ref 1) | background | from memory |
-| Gao, Yuan, Yao, "Extremely Low-Cost Magic State Preparation toward Fault-Tolerant Quantum Computing", arXiv:2609.12698 (2026-09) | G1: RM15 \|+_L⟩, transversal T, gauge-fix to Steane; postselected 210.2 p³ (≤ 2.2e-7 at p=1e-3), acceptance 86.9%, 19 qubits, 82 CNOT, all-to-all; the unmeasured output block's final noise is excluded, and under our judge that tail is ≥ 1.1e-5 (FINDINGS floor) | abstract checked; lanes RM_PROTO, RM_GRID |
+| Gao, Yuan, Yao, "Extremely Low-Cost Magic State Preparation toward Fault-Tolerant Quantum Computing", arXiv:2609.12698 (2026-09) | G1: RM15 \|+_L⟩, transversal T, gauge-fix to Steane; postselected 210.2 p³ (≤ 2.2e-7 at p=1e-3), acceptance 86.9%, 19 qubits, 82 CNOT, all-to-all; the unmeasured output block's final noise is excluded, and under our judge that tail is ≥ 1.1e-5 (FINDINGS floor) | paper read; reproduced exactly (RM_PROTO); under our judge grid-free best 8.52e-5, on the grid 587–700 CX (FINDINGS) |
 | Goto, Sci. Rep. 6, 19578 (2016) | G1: FT Steane \|0_L⟩ with one verification ancilla; magic state with 2 + 16 ancillas | abstract checked (nature.com/articles/srep19578) |
 | Chamberland & Noh, npj QI 6, 91 (2020), arXiv:2003.03049 | G1: redundant ancilla encoding + flags for color-code H-type magic states; 5e-8 at p=1e-4 with 64 qubits | abstract checked |
 | Weilandt, Peham, Wille, arXiv:2601.13313; Criger et al., arXiv:2607.22498; arXiv:2610.09749 | G1: automated synthesis/reduction of FT state-prep circuits (Steane-type detection, ILP flags) | titles and abstracts checked; lane LIT |
+| Daguerre & Kim, arXiv:2410.07327 | G1: two-block RM15 → Steane code switch, corrected-output fit 25.5p² (≈ 2.44e-5 at 1e-3) without idles, acceptance ≈ 0.84, 26 qubits, 100 CX | lane SEARCH summary (Eq. 23, Table VII); not reproduced (PLAN P35 parked) |
+| Weilandt et al. MQT branch `ft-stateprep-qubit-perm` (Zenodo 23183007) | G1: fault-set-guided synthesis of verified CSS state preps, a candidate generator for B+C (P33) | code saved by SEARCH (`work/lanes/SEARCH/found/`, not in git) |

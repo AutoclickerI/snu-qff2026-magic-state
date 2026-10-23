@@ -96,6 +96,14 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: GOAL G0 is now "official 1-F of 1e-5, or as close as possible, by the deadline"; work continues
   without stopping until the deadline or the floor.
 
+## R-20261024-4 — 2026-10-24 02:57 KST — acceptance is only a gate
+> "lower acceptance is fine if it pass the leaderboard submission. do not wrongly target to optimize anything. compare our budget and performance. higher performance wins. acceptance doesn't affect our rank if it pass the hard gate."
+
+- Source: this session, after the agent dismissed a scheduled v14 partly for acceptance 0.521 and briefed a lane to keep
+  exp(-A1) >= 0.52.
+- Effect: CONSTRAINTS boundary case under rule 3: rank by 1-F alone; acceptance headroom above 0.5 is budget to spend on
+  lower 1-F, with no margin kept beyond verification.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
@@ -104,3 +112,4 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 | Resubmit only when the 3-s.f. key improves | 2026-10-23: the board keeps only the best entry | `[Rr]esubmit only when` |
 | Each lane may use at most 8 CPU processes | 2026-10-23: rule 9 (~75% per host) is the limit | `at most (8\|eight) CPU` |
 | zebra is for light commands only, no heavy builds or checks | 2026-10-23: not intended (R-20261023-8) | `zebra.{0,20}light commands only` |
+| Keep acceptance (exp(-A1)) at or above a margin such as 0.52 | 2026-10-24: only the 0.5 gate counts (R-20261024-4) | `exp\(-A1\) *>= *0\.5[1-9]` |
