@@ -63,7 +63,7 @@ class DirectRound:
         self._alloc = iter(free)
         for ci in self.order:
             ch = CHECKS[ci]
-            if kind == "bare":
+            if kind in ("bare", "flagged"):
                 self.members[ci] = (next(self._alloc),)
             elif kind in ("shor", "flag2"):
                 n = 4 if kind == "shor" else 2
@@ -79,6 +79,8 @@ class DirectRound:
             verifiers = tuple(next(self._alloc) for _ in range(3))
             for ci in self.order:
                 self.flags[ci] = verifiers
+        if kind == "flagged":
+            self.flags = {ci: (next(self._alloc),) for ci in self.order if CHECKS[ci].basis == "X"}
         self.groups = []                 # (cycle bits, reference syndrome or None)
         self.verify_groups = []          # direct zero detectors, for reporting
 
@@ -100,6 +102,18 @@ class DirectRound:
             c.cx(qs[0], q)
         if ch.basis == "X":
             c.h(*qs)
+
+    def _flagged_emit(self, c, ch, a, f):
+        if ch.basis == "Z":
+            c.reset(a)
+            for d in ch.support:
+                c.cx(P(d), a)
+            b = c.measure(a)
+            return [b], []
+        c.rx(a); c.reset(f)
+        ds = [P(d) for d in ch.support]
+        c.cx(a, ds[0]); c.cx(a, f); c.cx(a, ds[1]); c.cx(a, ds[2]); c.cx(a, f); c.cx(a, ds[3])
+        return [c.mx(a)], [c.measure(f)]
 
     def _verify_cat(self, c, ch, qs, vs):
         if not self.verify:
@@ -135,6 +149,16 @@ class DirectRound:
         for ci in schedule:
             ch = CHECKS[ci]
             qs = self.members[ci]
+            if self.kind == "flagged":
+                a = qs[0]; f = self.flags.get(ci, (None,))[0]
+                self._barrier(c, used)
+                bits, extra = self._flagged_emit(c, ch, a, f)
+                self._barrier(c, used)
+                self.groups.append((tuple(bits), ch.tile if ch.basis == "X" else 3 + ch.tile))
+                c.detector(*bits)
+                for b in extra:
+                    self.groups.append(((b,), None)); c.detector(b)
+                continue
             self._cat_prep(c, ch, qs, used)
             self._barrier(c, used)
             self._verify_cat(c, ch, qs, self.flags.get(ci, ()))
@@ -215,6 +239,8 @@ def direct_loss(noisy, bits, groups, q_in=0.003):
 
 
 def evaluate(kind="shor", verify=False, order=None, q_in=0.003):
+    if order is None and kind == "flagged":
+        order = (3, 4, 5, 0, 1, 2)
     m = DirectRound(kind=kind, verify=verify, order=order)
     return m.proxy(q_in=q_in)
 
@@ -222,7 +248,7 @@ def evaluate(kind="shor", verify=False, order=None, q_in=0.003):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--kind", default="shor", choices=("bare", "shor"))
+    ap.add_argument("--kind", default="flagged", choices=("bare", "shor", "flagged"))
     ap.add_argument("--verify", action="store_true")
     args = ap.parse_args()
     print(args, evaluate(args.kind, args.verify))

@@ -27,6 +27,7 @@ def concordance(a, b):
 
 
 def main():
+    os.chdir(ROOT)
     rows = {}
     for f in glob.glob(os.path.join(ROOT, "batch_scr_*.json")) + glob.glob(os.path.join(ROOT, "batch_gen_*.json")):
         for x in json.load(open(f)):

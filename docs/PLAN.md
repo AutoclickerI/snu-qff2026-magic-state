@@ -19,7 +19,7 @@ only submissions, so the next candidate is verified before each slot.
 | 2 | P15 | G1 | Co-place pre-stage and round: every symmetry/translation of the pre-stage footprint (~48), blocks staged in cells free during the pre-stage with one-hop moves, optional block D on the released pre-stage ancilla cells; minimise round start R | per placement: feasible, R with and without D, exact score of the winners (c1 = 0) | Sonnet lane ST_LAY (`work/lanes/ST_LAY`, hippo, sunfish) | active |
 | 3 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`): A on L5 done (FINDINGS); run on B, C (and A) of every ST_LAY layout | preps for each candidate layout | main session | next |
 | 4 | P18 | G1 | Block D (\|+_L⟩) checking A's Z errors before A couples: grid-free gain, 35-cell layout feasibility, full circuit | proxy with/without D, layout or infeasibility proof, exact score | Sonnet lane ST_AV (`work/lanes/ST_AV`, owl) | active |
-| 5 | P16 | G1 | Integrate (`work/lanes/DR/merge.py`), score, submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | waiting on P14/P15 |
+| 5 | P16 | G1 | Integrate (`work/lanes/DR/merge.py`), score, submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | parked: P14/P15 |
 | 6 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used | main session | active |
 
 ## Open questions

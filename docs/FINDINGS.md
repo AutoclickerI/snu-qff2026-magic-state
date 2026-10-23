@@ -52,7 +52,7 @@ A negative closes only the recipe tested. "Leaves open" names what the result do
 | Min-total-idle pre-cycle schedule as objective | not pursued | idle total uncorrelated with score (above) | weighted idle by location | `ML/idlestats.py` |
 | Bell-pair final round pushed (BP_push: tile-0 Bell CX delayed to layer 2, joint anneal of schedule and orientation, commuting ALAP seeds) | true mean ~1.193e-4 vs v11 1.219e-4, no gain over v12 (1.142e-4) | the A1 round's global optimum is a plateau (100+ chains end at proxy 1.0980e-4, 1.0805e-4 with the delay); seed-0 selection among ALAP seeds regresses to the mean | Bell-pair rounds on other layouts; the family floor is 5.86e-5 | `work/lanes/BP_push/REPORT.md` |
 | Verified-cat direct-readout rounds placed on the grid (DRG: CP-SAT placement of the 34-, 43- and 55-qubit prototypes) | INFEASIBLE for all three | their verifier/cat interaction graphs contain odd cycles (triangles), and the nearest-neighbour grid is bipartite | cat/verifier topologies that are bipartite, with a new detector proof | `work/lanes/DRG/REPORT.md` |
-| Circuit-independent lower bound from the judge code alone (Codex AUDIT) | only 1-F >= 0 proved; best constructed circuit 1.75e-2 | a positive bound needs an architecture assumption (our model floors in "Floor, any circuit") | — | `work/lanes/AUDIT/REPORT.md` |
+| Circuit-independent lower bound from the judge code alone (Codex AUDIT) | only 1-F >= 0 proved; best constructed circuit 1.75e-2 | a positive bound needs an architecture assumption (our model floors in "Floor, any circuit") | positive bounds under stated architecture assumptions | `work/lanes/AUDIT/REPORT.md` |
 
 ## Failures
 | Symptom | Cause | Avoid / fix | Cost | Receipt |

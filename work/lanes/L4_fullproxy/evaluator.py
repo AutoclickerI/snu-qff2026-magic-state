@@ -1,11 +1,12 @@
 """Fast full-circuit loss proxies for QFF2026 schedules.
 
-The evaluator converts the complete submitted circuit (including injection, cat check,
-and final cycle) to the Clifford surrogate obtained by replacing T/T_DAG with
-S/S_DAG.  The judge's STANDARD noise is then inserted and Stim's detector error model
-is grouped by detector signature.  A fault pair with the same signature is accepted;
-the final six detectors model the lookup syndrome and the logical observable mask gives
-the output Pauli cost.
+The recommended evaluator accepts the complete submitted circuit, extracts the final
+Clifford cycle after the fourteen cultivation records, and applies the existing Stim
+detector-error-model pair calculation with a calibrated accepted pre-cycle depolarizing
+mass.  This avoids pretending that the non-Clifford cultivation stages have a valid
+ordinary detector error model.  The file also retains an experimental T-to-S surrogate
+helper for reproducibility; it is not used by :func:`evaluate` because its output
+observables are non-deterministic on the full circuit.
 
 This module intentionally imports the work-tree builders read-only.  The public entry
 point is ``evaluate(text, data_qubits)`` and accepts the same QASM text as ``tprep.check``.
@@ -69,7 +70,7 @@ def _wrapped(full_noisy: str, logical: str) -> tuple[stim.Circuit, int]:
 
 
 def _cycle_only_from_full(text: str, q_in: float):
-    """Build the existing cycle DEM wrapper from the suffix after the seven prep records.
+    """Build the existing cycle DEM wrapper from the suffix after the fourteen prep records.
 
     The cultivation port writes fourteen measurements before the final cycle.  Cutting after
     their detector lines leaves the cycle's own measurements/detectors and avoids pretending
@@ -229,38 +230,16 @@ def _cached(text: str):
 
 
 def evaluate(text, data_qubits, *, details=False):
-    """Return a fast full-circuit estimate of ``1-F``.
+    """Return the recommended calibrated full-circuit estimate of ``1-F``.
 
-    ``text`` is the OpenQASM submission and ``data_qubits`` is accepted for API
-    compatibility (the circuit's final code support is fixed by the QFF layout).
-    The default return is a float.  With ``details=True`` a dictionary includes
-    first/second-order components and timing.
+    The input is the complete submission text.  The evaluator extracts its final
+    Clifford cycle, retains the judge's schedule-dependent STANDARD noise, and feeds
+    a fixed accepted pre-cycle depolarizing mass ``q_in=0.001`` into the cycle DEM.
+    This calibration was selected once from the recorded MC schedules; it is not a
+    per-circuit fit.  The default return is a float; ``details=True`` returns the
+    measured components and runtime.
     """
-    del data_qubits
-    t0 = time.perf_counter()
-    cx, cz, nf = _cached(text)
-    ax, bx, gx, nx = _loss(cx, nf, "X")
-    az, bz, gz, nz = _loss(cz, nf, "Z")
-    # T-state convention: X logical and Y logical cost 1/2; Z logical cost 1.
-    # The separate DEMs provide the two marginal logical corrections, as in proxy2.
-    first = ax + 0.5 * az
-    second = bx + 0.5 * bz
-    value = first + second
-    if details:
-        return {
-            "estimate": value,
-            "first": first,
-            "second": second,
-            "x_first": ax,
-            "x_second": bx,
-            "z_first": az,
-            "z_second": bz,
-            "detectors": cx.num_detectors,
-            "dem_groups": (gx, gz),
-            "dem_errors": (nx, nz),
-            "seconds": time.perf_counter() - t0,
-        }
-    return value
+    return evaluate_cycle_proxy(text, data_qubits, q_in=0.001, details=details)
 
 
 def evaluate_cycle_proxy(text, data_qubits, *, q_in=3e-3, details=False):
