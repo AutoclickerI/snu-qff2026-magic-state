@@ -16,9 +16,10 @@ only submissions, so the next candidate is verified before each slot.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P14 | G1 | Steane round on the grid: B+C joint prep for L5 | exact min depth with proof status (CP-SAT: none at 6–12; light-cone bound 6) | Sonnet lane ST_BC (`work/lanes/ST_BC`, jerry, tom) | active |
-| 2 | P15 | G1 | Layouts with three independently connected block regions (parallel small preps) | layouts.json with preps | Sonnet lane ST_LAY (`work/lanes/ST_LAY`, hippo, sunfish) | active |
+| 1 | P14 | G1 | Steane round on the grid: B+C joint prep for L5 that keeps C an independent check of B (first full L5 circuit: c1 7.7e-4 from correlated B/C faults) | merged circuit with c1 = 0 and fewer than 10 layers, or a proof that none exists | Sonnet lane ST_BC (`work/lanes/ST_BC`, jerry, tom) | active |
+| 2 | P15 | G1 | Layouts with three independently connected block regions, ranked by round start (blocks on cells free during the pre-stage) and exact score | layouts with c1 = 0 and their exact 2nd-order score | Sonnet lane ST_LAY (`work/lanes/ST_LAY`, hippo, sunfish) | active |
 | 3 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`): A on L5 done (FINDINGS); run on B, C (and A) of every ST_LAY layout | preps for each candidate layout | main session | next |
+| 4 | P18 | G1 | Block D (\|+_L⟩) checking A's Z errors before A couples: grid-free gain, 35-cell layout feasibility, full circuit | proxy with/without D, layout or infeasibility proof, exact score | Sonnet lane ST_AV (`work/lanes/ST_AV`, owl) | active |
 | 5 | P16 | G1 | Integrate (`work/lanes/DR/merge.py`), score, submit the best verified candidate | official 3-seed mean below 7.6e-5 | main session | waiting on P14/P15 |
 | 6 | P2 | G1 | Hourly submission of the best verified candidate (seed-0 re-draws, R-20261023-10) | each slot with a gain used | main session | active |
 
