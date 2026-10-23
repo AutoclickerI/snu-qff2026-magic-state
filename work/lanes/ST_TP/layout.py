@@ -3,9 +3,11 @@
 Pairings may use any permutation of the Hamming code automorphism group (168): O_i ~ d_{s1(i)},
 C_{j} ~ B_{i} with j = s3(i).  Per block: in place (final cells + helpers connected, prepared
 from the cell release) or staged (stage cells + helpers connected, member i hops to a final cell
-adjacent to its stage cell).  Release: free cells 0, pre-stage ancilla cells 33, data never.
-T = round start: >= 33; an in-place block touching a late cell: 33 + P; a staged block with a
-late final cell: 36 (reset 33, two CX).
+adjacent to its stage cell).  Release: free cells 0, pre-stage ancilla cells 33, data never.  Time-expanded: block X has start
+s_X; in place its region (finals + helpers) is busy from s_X, helpers until s_X+P_X, finals to the
+end; staged: stage cells + helpers busy [s_X, h_X+3), finals from h_X (h_X >= s_X+P_X-1: reset of
+the destination overlaps the last prep step; CX at h+1, h+2).  Round start T >= end of every block.
+Cells may be reused in time (helper/stage cell of X as final cell of Y when X's use ended).
 
     python layout.py <first placement> <last placement> <seconds> <workers> <out.json> [PO PB PC]
 """
@@ -15,6 +17,7 @@ import sys
 
 from ortools.sat.python import cp_model
 
+K = 2
 R = C = 6
 N = 36
 D0 = [0, 20, 7, 4, 3, 15, 8]
@@ -88,9 +91,28 @@ def solve(pl, seconds, workers, P=(7, 5, 5), Tmax=60, log=False):
         for i in range(7):
             m.AddExactlyOne(F[(k, i, q)] for q in range(N))
             m.Add(sum(Mx[(k, i, q)] for q in range(N)) == st[k])
-    isD = [1 if q in d else 0 for q in range(N)]
+    isD0 = [1 if q in d else 0 for q in range(N)]
+    T0 = m.NewIntVar(33, Tmax, 'T0')
+    Dfin = {}
+    for j in range(7):
+        r0_, c0_ = divmod(d[j], C)
+        for q in [d[j]] + [p for p in range(N) if p not in d and 0 < abs(p // C - r0_) + abs(p % C - c0_) <= K]:
+            Dfin[(j, q)] = B()
+            dist = abs(q // C - r0_) + abs(q % C - c0_)
+            if dist:
+                m.Add(T0 >= 33 + 3 * dist).OnlyEnforceIf(Dfin[(j, q)])
+        m.AddExactlyOne(Dfin[(j, q)] for q in range(N) if (j, q) in Dfin)
+    moved = sum(1 - Dfin[(j, d[j])] for j in range(7))
+    isD = [isD0[q] if isD0[q] else sum(Dfin[(j, q)] for j in range(7) if (j, q) in Dfin) for q in range(N)]
+    for q in range(N):      # two data cannot take the same destination
+        if not isD0[q]:
+            m.Add(sum(Dfin[(j, q)] for j in range(7) if (j, q) in Dfin) <= 1)
     for q in range(N):
-        m.Add(sum(F[(k, i, q)] + Mx[(k, i, q)] for k in blocks for i in range(7)) + sum(H[(k, q)] for k in blocks) + isD[q] <= 1)
+        m.Add(sum(F[(k, i, q)] for k in blocks for i in range(7)) + isD[q] <= 1)
+        for k in blocks:     # within a block: stage cells, helpers and finals are different cells
+            m.Add(sum(Mx[(k, i, q)] for i in range(7)) + H[(k, q)] + sum(F[(k, i, q)] for i in range(7)) + isD[q] <= 1)
+        for k in blocks:
+            m.Add(sum(Mx[(k, i, q)] for i in range(7)) + H[(k, q)] + isD[q] <= 1)
     for k in blocks:     # staged: stage cell adjacent to its final cell
         for i in range(7):
             for q in range(N):
@@ -108,8 +130,8 @@ def solve(pl, seconds, workers, P=(7, 5, 5), Tmax=60, log=False):
             m.Add(p3[(i, j)] == sum(s3[n] for n, s in enumerate(AUT) if s[i] == j))
     for i in range(7):
         for j in range(7):
-            nb = nbrs(d[j])
-            m.Add(sum(F[(0, i, q)] for q in nb) == 1).OnlyEnforceIf(p1[(i, j)])
+            for q in range(N):     # O_i at q with d_j finally adjacent
+                m.AddBoolOr([Dfin[(j, p)] for p in nbrs(q) if (j, p) in Dfin] + [p1[(i, j)].Not()]).OnlyEnforceIf(F[(0, i, q)])
     for i in range(7):    # B_i ~ O_i
         for q in range(N):
             m.AddBoolOr([F[(0, i, p)] for p in nbrs(q)]).OnlyEnforceIf(F[(1, i, q)])
@@ -118,8 +140,6 @@ def solve(pl, seconds, workers, P=(7, 5, 5), Tmax=60, log=False):
             for q in range(N):
                 m.AddBoolOr([F[(1, i, p)] for p in nbrs(q)] + [p3[(i, j)].Not()]).OnlyEnforceIf(F[(2, j, q)])
     # regions and connectivity
-    hops = 0
-    late_ip, late_st = [], []
     for k in blocks:
         rg = [B() for _ in range(N)]
         r0 = [B() for _ in range(N)]
@@ -139,32 +159,61 @@ def solve(pl, seconds, workers, P=(7, 5, 5), Tmax=60, log=False):
             out = sum(f[(q, p)] for p in nbrs(q))
             inn = sum(f[(p, q)] for p in nbrs(q))
             m.Add(out - inn == 7 * r0[q] - absorb[q])
-        lt = [q for q in range(N) if rel[q]]
-        a = B()    # in place with a late region cell
-        b = B()    # staged with a late final cell
-        m.AddBoolOr([rg[q] for q in lt] + [a.Not()]).OnlyEnforceIf(st[k].Not()) if lt else None
-        m.Add(a >= 0)
-        # a >= any late region cell when in place
-        for q in lt:
-            m.Add(a >= rg[q]).OnlyEnforceIf(st[k].Not())
-            m.Add(rg[q] == 0).OnlyEnforceIf(st[k])           # stage region uses only free cells
-            m.Add(b >= sum(F[(k, i, q)] for i in range(7))).OnlyEnforceIf(st[k])
-        late_ip.append(a)
-        late_st.append(b)
-        # colour counts (checkerboard): O: 3 on colour 1 / 4 on colour 0; B: 3/4 swapped; C like O
-        col = [(q // C + q % C) % 2 for q in range(N)]
-        n1 = sum(F[(k, i, q)] for i in range(7) for q in range(N) if col[q] == 1)
-        m.Add(n1 == (3 if k != 1 else 4)) if False else None
     ncol = sum(1 for q in d if (q // C + q % C) % 2 == 1)
     for k in blocks:
         n1 = sum(F[(k, i, q)] for i in range(7) for q in range(N) if (q // C + q % C) % 2 == 1)
         m.Add(n1 == (7 - ncol if k != 1 else ncol))
+    # time
     T = m.NewIntVar(33, Tmax, "T")
+    m.Add(T >= T0)
+    s_ = [m.NewIntVar(0, Tmax, "") for _ in blocks]
+    h_ = [m.NewIntVar(0, Tmax, "") for _ in blocks]       # staged: hop reset step
+    fs = [m.NewIntVar(0, Tmax, "") for _ in blocks]       # finals busy from
+    ts = s_                                               # tmp busy from
+    te = [m.NewIntVar(0, Tmax + 3, "") for _ in blocks]   # tmp busy until (exclusive)
+    idle = []
     for k in blocks:
-        m.Add(T >= 33 + P[k]).OnlyEnforceIf(late_ip[k])
-        m.Add(T >= 36).OnlyEnforceIf(late_st[k])
+        m.Add(fs[k] == s_[k]).OnlyEnforceIf(st[k].Not())
+        m.Add(te[k] == s_[k] + P[k]).OnlyEnforceIf(st[k].Not())
+        m.Add(T >= s_[k] + P[k]).OnlyEnforceIf(st[k].Not())
+        m.Add(fs[k] == h_[k]).OnlyEnforceIf(st[k])
+        m.Add(h_[k] >= s_[k] + P[k] - 1).OnlyEnforceIf(st[k])
+        m.Add(te[k] == h_[k] + 3).OnlyEnforceIf(st[k])
+        m.Add(T >= h_[k] + 3).OnlyEnforceIf(st[k])
+        m.Add(h_[k] == s_[k]).OnlyEnforceIf(st[k].Not())
+        # idle block-steps: in place T - (s+P); staged (h-(s+P-1)) + (T-h-3)
+        iv = m.NewIntVar(0, Tmax, "")
+        m.Add(iv == T - s_[k] - P[k]).OnlyEnforceIf(st[k].Not())
+        m.Add(iv == T - s_[k] - P[k] - 2).OnlyEnforceIf(st[k])
+        idle.append(iv)
+    tmp = {(k, q): B() for k in blocks for q in range(N)}
+    fin = {(k, q): B() for k in blocks for q in range(N)}
+    for k in blocks:
+        for q in range(N):
+            m.Add(fin[(k, q)] == sum(F[(k, i, q)] for i in range(7)))
+            m.Add(tmp[(k, q)] == H[(k, q)] + sum(Mx[(k, i, q)] for i in range(7)))
+            if rel[q]:
+                m.Add(ts[k] >= rel[q]).OnlyEnforceIf(tmp[(k, q)])
+                m.Add(fs[k] >= rel[q]).OnlyEnforceIf(fin[(k, q)])
+    anymoved = B()
+    m.Add(moved >= 1).OnlyEnforceIf(anymoved)
+    m.Add(moved == 0).OnlyEnforceIf(anymoved.Not())
+    order = {}
+    for x in blocks:
+        for y in blocks:
+            if x < y:
+                order[(x, y)] = B()
+    for x in blocks:
+        for y in blocks:
+            if x == y:
+                continue
+            for q in range(N):
+                m.Add(te[x] <= fs[y]).OnlyEnforceIf([tmp[(x, q)], fin[(y, q)]])
+                if x < y:
+                    m.Add(te[x] <= ts[y]).OnlyEnforceIf([tmp[(x, q)], tmp[(y, q)], order[(x, y)]])
+                    m.Add(te[y] <= ts[x]).OnlyEnforceIf([tmp[(x, q)], tmp[(y, q)], order[(x, y)].Not()])
     nh = sum(H[(k, q)] for k in blocks for q in range(N))
-    m.Minimize(10000 * T + 7 * 20 * sum(st) + nh)
+    m.Minimize(1000 * T + 28 * sum(st) + 7 * sum(idle) + 2 * nh + 40 * moved)
     s = cp_model.CpSolver()
     s.parameters.max_time_in_seconds = seconds
     s.parameters.num_workers = workers
@@ -173,8 +222,9 @@ def solve(pl, seconds, workers, P=(7, 5, 5), Tmax=60, log=False):
     if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
         return {"status": s.StatusName(status)}
     g = lambda var: s.Value(var)
-    res = {"status": s.StatusName(status), "T": g(T), "obj": s.ObjectiveValue(), "bound": s.BestObjectiveBound(),
-           "staged": [g(x) for x in st], "d": d, "anc": anc}
+    res = {"status": s.StatusName(status), "T": g(T), "s": [g(x) for x in s_], "h": [g(x) for x in h_], "obj": s.ObjectiveValue(), "bound": s.BestObjectiveBound(),
+           "staged": [g(x) for x in st], "d0": d, "anc": anc,
+           "d": [next(q for q in range(N) if (j, q) in Dfin and g(Dfin[(j, q)])) for j in range(7)]}
     for k, nm in enumerate("obc"):
         res[nm] = [next(q for q in range(N) if g(F[(k, i, q)])) for i in range(7)]
         res[nm + "_stage"] = [next(q for q in range(N) if g(Mx[(k, i, q)])) for i in range(7)] if g(st[k]) else None
