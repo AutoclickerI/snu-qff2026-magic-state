@@ -40,8 +40,8 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 | zebra | Codex lanes, submissions, any job | this machine; credentials live only here; GPU0 is another user's |
 | hippo, tom, jerry, sunfish | anneals and MC scoring | mirrored; hippo reproduces the official v8 score bit for bit |
 | owl | MC scoring, enumeration (96 CPUs, usually idle) | native python cannot load numpy/stim (glibc 2.17); run in docker: `docker run --rm -u 1010:1012 -e HOME=/home/jihoon -v /home/jihoon:/home/jihoon -w <dir> --cpus=N fnc-build:22.04 /home/jihoon/competitions/quantumn/.venv/bin/python ...`; reproduces v11's official score bit-identically (5.3 s per 1e8 shots at 70 processes) |
-| faraday, dragon | nothing | not mirrored; other users keep them above 75% load (2026-10-23 23:32) |
-| pegasus | — | SSH from zebra timed out (2026-10-23) |
+| faraday, dragon | overflow only | not mirrored; other users often keep them above 75% load, so check `uptime` first |
+| pegasus | — | SSH from zebra times out |
 | Submission quota | one per hour | `work/submit.py`; board keeps the best entry |
 | Codex (`codex:codex-rescue`) | parallel lanes L1–L5 in `work/lanes/` | `codex-companion.mjs status`; job logs under `~/.claude/plugins/data/codex-openai-codex/state/*/jobs/`; a resume while a task runs is unsafe |
 | Prior artifacts | starting points and receipts | `work/submissions/`, `work/lanes/me_layout/res_*.json`, `alapvar/`, `work/receipts/`, lane outputs |

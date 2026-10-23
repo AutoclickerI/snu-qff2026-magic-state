@@ -19,7 +19,8 @@ dropped rules) · [reference/judge.md](docs/reference/judge.md) (how scores aris
 - Rank candidates by the 3-seed mean, submit by the seed-0 key, and report both: one seed hides 1%.
 - Wait on process exit, never on an output file. Never `pkill -f` a pattern that your own command
   line contains (FINDINGS "Failures").
-- Only the main session submits; every candidate goes into `work/submissions/` (qasm + json) first.
+- Only the main session submits, and every submitted candidate is committed in `work/submissions/` (qasm + json)
+  first (default: one lane's submission would spend the team's hourly slot).
 
 ## Commands
 

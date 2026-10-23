@@ -28,7 +28,7 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 > and find method for the fast experiment and iteration.
 
 - Source: T:2199, T:2207
-- Effect: the 2026-10-23 23:59 KST milestone (PLAN); G2 covers the fast loop.
+- Effect: CONSTRAINTS rule 12 (parallel work); G2 covers the fast loop. The 23:59 target was for that day only.
 
 ## R-20261023-6 — 2026-10-23 19:45 KST — no blocking
 > can you do basically the parallel work? instead of blocking on one experiments?
