@@ -99,12 +99,20 @@ def checks_of(q, xt, zt):
     return [(("X", k), "X") for k in xt if q in W4[k]] + [(("Z", k), "Z") for k in zt if q in W4[k]]
 
 
+XLAST = False
+ZFIRST = False
+
+
 def options(q, xt, zt, T, mode):
     cs = checks_of(q, xt, zt)
     n = len(cs)
     slots = [tuple(range(T - n, T))] if mode == "optimistic" else list(itertools.combinations(range(T), n))
     for st in slots:
         for perm in itertools.permutations(cs):
+            if XLAST and perm[-1][1] != "X":
+                continue
+            if ZFIRST and any(perm[i][1] == "X" and perm[j][1] == "Z" for i in range(len(perm)) for j in range(i + 1, len(perm))):
+                continue
             yield [(t, cid, typ) for t, (cid, typ) in zip(st, perm)]
 
 
@@ -146,6 +154,8 @@ def solve(xt, zt, mode, restarts, rng):
 if __name__ == "__main__":
     restarts = int(sys.argv[1]) if len(sys.argv) > 1 else 3
     mode = sys.argv[2] if len(sys.argv) > 2 else "optimistic"
+    XLAST = len(sys.argv) > 3 and sys.argv[3] in ("xlast", "zfirst")
+    ZFIRST = len(sys.argv) > 3 and sys.argv[3] == "zfirst"
     rng = random.Random(1)
     xt = TRIPLES[0]
     res = []
