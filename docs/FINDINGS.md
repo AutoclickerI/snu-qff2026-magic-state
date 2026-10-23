@@ -39,10 +39,8 @@ A negative closes only the recipe tested. "Leaves open" names what the result do
 | Symptom | Cause | Avoid / fix | Cost | Receipt |
 |---|---|---|---|---|
 | Shell dies with exit 144 | `pkill -f <pattern>` matched the shell running the command | kill by PID from `pgrep -f "[x]yz"` (bracket trick) | twice, 2026-10-23 | session |
+| Submission refused "Next submission allowed in 3 seconds" | the slot was timed from the clock, 2 s before 1 h after the last `submitted_at` | `submit_when_ready.sh` waits 3605 s from the server's last `submitted_at` | one retry, 2026-10-23 20:05 | `work/receipts/submit_v10.txt` |
 | A wait never ended | waited for an output file that a crashed job never wrote | wait on process exit (`while pgrep ...`), then read the log | 20 min | `ML/log_A1r9.txt` |
 | `RANDSTART=1` anneal: "no feasible start" | random schedules almost never pass Stim validity | start from a valid schedule (`BASE=`) | one run | `ML/log_A1r9.txt` |
-| `ModuleNotFoundError: tprep` | bare `python` instead of `.venv/bin/python` | always use the venv | minor | session |
-| Server rejected team name | site renamed the team | use 초정밀모델제어학회쨩 | one failed status call | session 2026-10-23 18:0x |
 | OR-Tools presolve said INFEASIBLE on a feasible model | presolve bug in 9.15 for table/product models | disable presolve for complete-objective models | earlier certificates void | `L1/infeasible_reproducer.pbtxt` |
 | T→S Clifford surrogate has random detectors | the T/T† sign pattern is not a valid S pattern | use another surrogate (T→I for X_L) | L4 time | L4 Codex log |
-| L3 lane ran its own pip-installed stim/xtim | default `python` lacked packages | re-score every L3 candidate with `.venv` | risk only | `work/lanes/L3_direct_readout/vendor/` |

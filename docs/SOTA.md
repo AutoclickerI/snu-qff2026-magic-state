@@ -6,22 +6,11 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours: **v8**, server 1-F = 0.000123064924290441 (key 0.000123), acceptance 0.6831, 115 CX, submitted
-2026-10-23 19:05 KST (`work/receipts/server_status_1949.json`). Its true mean is about 1.248e-4
-([FINDINGS](FINDINGS.md)).
+Ours on the board: **v8**, server 1-F = 0.000123064924290441, 115 CX (`work/receipts/server_status_1949.json`).
+v10 (submitted 2026-10-23 20:05:30, scoring): local official 1.21115e-4, 3-seed mean 1.2208e-4, 115 CX.
 
-Leaderboard on 2026-10-23 19:1x KST (`work/submit.py board`):
-
-| Rank | Team | 1-F | 2q | Acceptance | Submitted (KST) |
-|---|---|---|---|---|---|
-| 1 | 초정밀모델제어학회쨩 (us) | 0.0001231 | 115 | 0.683 | 10-23 19:05 |
-| 2 | Placeholder | 0.0001293 | 103 | 0.676 | 10-23 18:36 |
-| 3 | omg | 0.007938 | 9 | 1.000 | 10-23 04:20 |
-| 4 | Noah | 0.02517 | 28 | 1.000 | 10-23 12:56 |
-| 5 | lss | 0.02517 | 28 | 1.000 | 10-23 17:17 |
-
-Placeholder went from 4.22e-4 to 1.29e-4 between 16:03 and 18:36 KST. Its 103 CX would win a tie on the
-key.
+Competitors (board 2026-10-23 19:1x KST, `work/submit.py board`): Placeholder 0.0001293 with 103 CX
+(from 4.22e-4 at 16:03); the next team is at 0.00794.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
