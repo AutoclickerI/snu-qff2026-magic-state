@@ -25,6 +25,11 @@ Serves: G1, G2. Read before changing the circuit, its layout or the search code.
   `feasible`, `emit`, `proxy`, `full_circuit`, `anneal`. `run_moves.py` has the v6/A1/A2/A3 variants
   and the `BASE=` seeding mode. `alap.py`, `alap_seeds.py`, `alap_gen2.py` and `mseed.py` score.
 - `bounds.py`, `decompose.py`, `idle_decomp.py`: floors and loss splits.
+- `lanes/DR/`, the Steane-type round: `steane.py` (grid-free exact proxy), `steane_layout.py` and
+  `steane_layout2.py` (layouts), `synth.py`, `synth_joint.py`, `synth_blocks.py`, `synth_l5.py` (block CNOT
+  synthesis; `synth.dangerous_z` is the danger metric), `steane_full.py` (full-circuit assembler), `merge.py`
+  (integration, PLAN P16), `regions.py` (noise by region); direct-readout rounds: `relaxed.py`, `poc.py`,
+  `flagsched.py`.
 - `lanes/L1_cpsat_schedule/`: CP-SAT with an exact closed-form objective (`cpsat.py`,
   `ordered_objective.py`, `validity.py`).
 
