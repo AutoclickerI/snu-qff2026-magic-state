@@ -5,7 +5,6 @@
 - New final round (FINDINGS "Steane-type final round"): 3.20e-5 grid-free, data side at the floor. First grid circuit 6.05e-4
   because of the A-encoder × data-exposure cross term; fixes in progress (low-danger A, blocks prepared during the pre-stage tail,
   parallel block preps). Layout L5 (no helpers, 6 hops) needs a joint B+C prep that CP-SAT has not solved.
-- Closed this evening: BP push (1.193e-4, no gain over v12), DRG cat embedding (cat graphs not bipartite), Codex audit (no bound).
 
 ## Critical path
 edit (minutes) → exact score `lanes/EVAL/exact2.py` (2 s, 2nd order; `--third` 30 s) → official seed-0 MC
