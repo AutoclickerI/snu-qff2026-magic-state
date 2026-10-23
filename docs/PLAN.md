@@ -29,11 +29,6 @@ limit: the hourly quota, so the next candidate is verified before each slot.
 | 8 | P9 | G2 | Tell lanes that c1 = 0 is not required and that the hosts in CONSTRAINTS rule 9 are usable | lanes use them | main session | next: at each lane's next resume |
 
 ## Open questions
-- Jihoon: standing rules? (a) Codex lanes for expansion work (R-20261023-1, R-20261023-5); (b) run
-  everything parallel, never block on one experiment (R-20261023-5, R-20261023-6); (c) prefer solver- or
-  simulation-backed search (R-20261023-4). Each is carried out now either way.
-- Jihoon: does the ~75% CPU cap (R-20261023-8) apply to every host? Read as yes.
-- Jihoon: FuriosaNPUChallenge CONSTRAINTS 13 still says zebra is light-only; correct it there?
 - Jihoon: who attends the 2026-10-31 16:30 ceremony if we win (CONSTRAINTS rule 10)?
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us
   either way.

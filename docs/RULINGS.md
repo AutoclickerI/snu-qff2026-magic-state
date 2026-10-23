@@ -7,8 +7,8 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 > I'm aiming to win 1st place. and I just registered. and I want you to submit as you want. and use codex rescue subagent for expansion work.
 
 - Source: T:231
-- Effect: G0; agents choose what and when to submit. Whether the Codex clause is a standing rule is in
-  PLAN "Open questions".
+- Effect: G0; agents choose what and when to submit. The Codex clause is CONSTRAINTS rule 11
+  (R-20261023-9).
 
 ## R-20261023-3 — 2026-10-23 15:30 KST — who runs submissions
 > you run yourself.
@@ -50,7 +50,18 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Source: T:3698, T:3699; answered the agent's reading that zebra was light-only.
 - Effect: CONSTRAINTS rule 9: zebra runs heavy work; our CPU use stays ≤ ~75% of a host.
 - Confirmed: in the words.
-- Intention: inferred: the cap is per host on every host (asked in PLAN "Open questions").
+- Intention: the cap is per host on every host (confirmed R-20261023-9).
+
+## R-20261023-9 — 2026-10-23 20:11 KST — standing rules and per-host cap
+> for all questions " Questions (also listed in docs/PLAN.md):", my answer is yes. and please use question feature. not ask in text.
+
+- Source: T:4304; answered the agent's three questions: (1) make standing rules of Codex lanes for
+  expansion work, running everything in parallel, and preferring solver-backed search; (2) does the ~75%
+  CPU cap apply to every host; (3) fix FuriosaNPUChallenge CONSTRAINTS 13 (zebra light-only).
+- Effect: CONSTRAINTS rules 11–13; rule 9 cap is per host on every host; (3) relayed to the Furiosa
+  session (jihoon-a5), whose rule 13 already allows heavy zebra work. Questions go through the question
+  tool (agent memory).
+- Confirmed: in the words.
 
 ## Dropped agent rules (do not reintroduce)
 

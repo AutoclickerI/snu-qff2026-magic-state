@@ -24,13 +24,19 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
    git and the host mirrors. [external: S]
 9. **Hosts.** [hard] Ours: zebra, dragon, faraday, hippo, jerry, owl, pegasus, sunfish, tom, with
    `/hdd*/jihoon` and `/data*/jihoon`. Never Parrot; never zebra GPU0 (another user's). Our CPU use stays
-   ≤ ~75% of a host. zebra's kernel caps SSH connections. [Jihoon, R-20261023-7, R-20261023-8]
+   ≤ ~75% of each host. zebra's kernel caps SSH connections. [Jihoon, R-20261023-7, R-20261023-8,
+   R-20261023-9]
 10. **Award attendance.** [hard] "수상 팀은 10월 31일(토) 시상식에 팀원 중 최소 1명이 현장에 직접
     참석해야 합니다" (S). Jihoon's action. [external: S]
 
 ## Jihoon's rules (below G0)
 
-None confirmed (candidates in PLAN "Open questions").
+11. **Codex lanes.** [owner] Expansion work goes to parallel Codex lanes (`codex:codex-rescue`).
+    [Jihoon, R-20261023-1, R-20261023-9]
+12. **Parallel, non-blocking.** [owner] Independent work runs in parallel in the background; never block
+    on one experiment. [Jihoon, R-20261023-5, R-20261023-6, R-20261023-9]
+13. **Solver-backed search.** [owner] Prefer solver- or simulation-backed search over hand tuning.
+    [Jihoon, R-20261023-4, R-20261023-9]
 
 ## Boundary cases (what the rules allow)
 
