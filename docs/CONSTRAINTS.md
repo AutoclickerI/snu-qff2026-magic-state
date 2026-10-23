@@ -44,6 +44,7 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
 |---|---|---|---|
 | 6 | Submitting a circuit that may not beat our best | the board keeps "팀별 최고 기록" (S); it costs only the slot | allowed (text: S) |
 | G0 | Choosing among valid circuits by their seed-0 score | the official score is seed 0 (P §2.3); P warns of noise, forbids nothing | allowed (text: P §2.3) |
+| G0 | Re-drawing the seed-0 sample by reordering simultaneous gates (noise model unchanged, `work/reorder.py`) | ranking "공식 설정으로 계산한 점수를 따릅니다"; P notes third-digit differences near 1e-4 may be statistical; nothing forbids it | allowed (text: P §2.3) |
 | — | AI agents doing the work | "LLM 등 생성형 AI 도구를 사용할 수 있습니다" (S) | allowed (text: S) |
 | — | Reusing Gidney's open cultivation code | no rule restricts prior code; P cites that literature | allowed (text) |
 | 1 | Data-qubit moves and extra cat members | any cx between neighbours is allowed | allowed (text: P §1.1) |

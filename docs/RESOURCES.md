@@ -19,15 +19,20 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    another schedule; interleaved orders are reachable only this way (random starts never pass validity).
 7. ALAP screen: `alap_seeds.py <res json> <idx> <nseeds> <c1 threshold>` (gmodel results) or
    `alap_gen2.py` (gen2 schedules); scores land in `alapvar/<hash>.json`.
-8. Loss by idle window: `work/idle_decomp.py <stem> <cycle start step>`.
-9. Submit: `work/submit.py submit|status|board`. `work/submit_when_ready.sh <stem>` waits 3605 s
-   after our last server-side submission and for `receipts/seq_<name>.txt`, and submits only on PASS.
-10. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without
+8. Seed-0 re-draws of one circuit (same noise model, verified per variant): `work/reorder.py <stem> <n>
+   [procs]` → `work/reorder/`.
+9. Loss by idle window: `work/idle_decomp.py <stem> <cycle start step>`.
+10. Submit: `work/submit.py submit|status|board|wait`. `work/submit_when_ready.sh <stem>` waits out the
+   server cooldown (`submit.py wait`) and for `receipts/seq_<name>.txt`, and submits only on PASS.
+11. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without
    credentials or caches. Refresh one host at a time (SSH cap):
    `rsync -a ~/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu ~/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu <h>:~/.local/share/uv/python/`;
    `rsync -a --exclude .submit_credentials --exclude '.xtim_cache/' --exclude 'vendor/' --exclude '.git/' /home/jihoon/competitions/quantumn <h>:/home/jihoon/competitions/`.
    Run with `ssh -q <h> 'cd /home/jihoon/competitions/quantumn/work && ../.venv/bin/python ...'`
-   (`-q` hides large banners) and rsync results back.
+   (`-q` hides large banners) and rsync results back. Background jobs: `ssh -q <h> "cd <dir>; env
+   OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 nohup nice -n 5 <cmd> > <log> 2>&1 <
+   /dev/null &"`. With `&&` before `nohup`, ssh never returns; without the thread caps, screens oversubscribe
+   the host several times over.
 
 ## Inventory
 | Resource | Use for | Access and non-obvious limits |
