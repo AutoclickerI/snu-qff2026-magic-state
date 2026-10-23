@@ -1,0 +1,49 @@
+
+Starting CP-SAT solver v9.15.6755
+Parameters: max_time_in_seconds: 300 log_search_progress: true num_search_workers: 8
+
+Initial satisfaction model '': (model_fingerprint: 0x5b9041434789c9b2)
+#Variables: 1'258 (1'223 primary variables)
+  - 1'224 Booleans in [0,1]
+  - 34 in [0,35]
+#kLinear1: 1
+#kLinearN: 104 (#terms: 3'672)
+#kTable: 54
+
+Starting presolve at 0.00s
+INFEASIBLE: 'table: positive table without tuples'
+Unsat after presolving constraint #131 (warning, dump might be inconsistent): table { exprs { } }
+  8.22e-04s  0.00e+00d  [PresolveToFixPoint] 
+
+Presolve summary:
+  - 0 affine relations were detected.
+  - rule 'linear1: x in domain' was applied 1 time.
+  - rule 'linear: fixed or dup variables' was applied 4 times.
+  - rule 'presolve: iteration' was applied 1 time.
+  - rule 'table: all tuples invalid' was applied 1 time.
+  - rule 'table: only one column!' was applied 3 times.
+  - rule 'table: reduce variable domain' was applied 6 times.
+  - rule 'table: remove expressions' was applied 4 times.
+  - rule 'table: remove tuples' was applied 7 times.
+Problem closed by presolve.
+CpSolverResponse summary:
+status: INFEASIBLE
+objective: NA
+best_bound: NA
+integers: 0
+booleans: 0
+conflicts: 0
+branches: 0
+propagations: 0
+integer_propagations: 0
+restarts: 0
+lp_iterations: 0
+walltime: 0.00847694
+usertime: 0.00847697
+deterministic_time: 0
+gap_integral: 0
+
+34 54 Counter({3: 16, 2: 9, 5: 6, 4: 3})
+bip False Counter({1: 19, 0: 15})
+vmax 8
+res INFEASIBLE 0.0 0.0

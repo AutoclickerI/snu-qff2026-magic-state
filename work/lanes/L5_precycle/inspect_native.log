@@ -1,0 +1,26 @@
+[twirl_records] circuit channels: 23 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+v10_reference seconds 0.20862261299043894 score 4.380393359323659e-05 diagnosis xtim diagnosis (noiseless run, 1024 shots)
+====================================================
+reference chi : not yet cached (deduced on the fly — fine; run any compile_* to cache it)
+detectors     : 23 total — 23 deterministic, 0 gauge
+  deterministic: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+  gauge        : (none)
+expectations  : (none declared)
+suggested post-selection (advisory; not applied):
+  keep = ~dets[:, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]].any(axis=1)
+legend: deterministic detector = always 0 noiselessly (post-select on it); gauge detector = flips randomly (leave it);
+        signed beta = the target expectation <P_i> of your magic state; the declared byproduct frame is ALREADY folded into it by
+        the engine (the per-shot exps sign is deterministic) — read exps directly, do not re-apply the frame.
+[twirl_records] circuit channels: 23 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+nreset_s4_b0 seconds 2.7744354199967347 score 0.00013631797962404936 diagnosis xtim diagnosis (noiseless run, 1024 shots)
+====================================================
+reference chi : not yet cached (deduced on the fly — fine; run any compile_* to cache it)
+detectors     : 23 total — 23 deterministic, 0 gauge
+  deterministic: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+  gauge        : (none)
+expectations  : (none declared)
+suggested post-selection (advisory; not applied):
+  keep = ~dets[:, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]].any(axis=1)
+legend: deterministic detector = always 0 noiselessly (post-select on it); gauge detector = flips randomly (leave it);
+        signed beta = the target expectation <P_i> of your magic state; the declared byproduct frame is ALREADY folded into it by
+        the engine (the per-shot exps sign is deterministic) — read exps directly, do not re-apply the frame.
