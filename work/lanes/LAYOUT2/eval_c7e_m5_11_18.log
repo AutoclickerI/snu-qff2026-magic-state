@@ -1,0 +1,28 @@
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5114, floor 0.5)
+  score 1-F = 0.000108528 ± 1.2e-05   (3 significant figures: 0.000109)
+  2q+ gates = 212
+  RESULT: PASS
+circuit c7e_m5_11_18.qasm: 476 noise channels, 3764 faults, 615 (s,d) classes, rotation rank 5, 28 detectors, noiseless acceptance 1.000000
+first order : c1 p = 4.2188e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 6.11575e-05   (pairs 6.11575e-05 + same-channel normalisation 1.258e-22)
+1-F (2nd order) = 6.11575e-05
+third order: 3.61798e-05   (weight-3 sets 4.09048e-05 + pair-times-others -4.72495e-06)
+1-F (to 3rd order) = 9.73373e-05
+acceptance: first order 0.33075, second order 0.55528; exp(-A1) = 0.51209  (A1 = 0.66925)
+time: model+singles 0.5s, pairs 9.1s, triples 157.0s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '6.035e-06', 'gate': '2.489e-05', 'idle': '3.024e-05'}
+
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+MC {'seed': 0, 'score': np.float64(0.00010132960322785644), 'sem': np.float64(1.1509986243031442e-06), 'acceptance': 0.51248597, 'passed': True}
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+MC {'seed': 1000, 'score': np.float64(0.0001011040105214191), 'sem': np.float64(1.149026962770708e-06), 'acceptance': 0.51244258, 'passed': True}
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+MC {'seed': 2000, 'score': np.float64(0.00010009468020177591), 'sem': np.float64(1.1430531309540248e-06), 'acceptance': 0.51251475, 'passed': True}

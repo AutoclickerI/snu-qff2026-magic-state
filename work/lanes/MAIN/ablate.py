@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Exact 1-F (2nd + 3rd order) of a circuit with the judge's noise switched off in one region at a time.
 
-    ablate.py <circuit.qasm> --pre-end S --round-start R [--a 1,14,...] [--procs 24] [--only | --pairs]
+    ablate.py <circuit.qasm> --pre-end S --round-start R [--a 1,14,...] [--procs 24] [--only | --pairs | --wait-scale f,f,...]
 
 Regions, by the native time step an operation or idle run starts at:
   pre    step <= S;    round  step >= R;
@@ -10,6 +10,7 @@ Regions, by the native time step an operation or idle run starts at:
 Each row is the exact loss with that region noiseless (--only: with only that region noisy), so the
 difference to 'all' prices removing that region's noise. --pairs instead splits the full circuit's
 2nd-order loss by region pair (with the largest pair of each) and its weight-3 term by region.
+--wait-scale prices a shorter data wait: each wait gap of n steps keeps the noise of f*n steps.
 Data qubits come from <circuit>.json.
 """
 import argparse
@@ -48,6 +49,23 @@ def labeller(data, a_cells, pre_end, round_start):
             return "round"
         return "wait" if q in data else owner
     return op, idle
+
+
+def wait_scaled(f, op_region, idle_region):
+    def nb(text, p, noise, first_order=False):
+        prog, blocks = _orig(text, p, noise, first_order)
+        _, steps, gaps = schedule(text)
+        for i, q, first, n in gaps:
+            st = min((s for _, s in steps[i]), default=0)
+            if idle_region(q, first, op_region(prog[i].qubits, st)) != "wait":
+                continue
+            blk = blocks[i]
+            for j in range(len(blk) - 1, -1, -1):
+                if blk[j].startswith("DEPOLARIZE1(") and blk[j].split()[-1] == str(q):
+                    blk[j] = f"DEPOLARIZE1({0.75 * (1 - (1 - 4 * p / 3) ** (f * n))}) {q}"
+                    break
+        return prog, blocks
+    return nb
 
 
 def patched(keep, op_region, idle_region):
@@ -122,6 +140,7 @@ def main():
     ap.add_argument("--procs", type=int, default=24)
     ap.add_argument("--only", action="store_true")
     ap.add_argument("--pairs", action="store_true")
+    ap.add_argument("--wait-scale", default="")
     a = ap.parse_args()
     text = open(a.qasm).read()
     data = json.load(open(a.qasm.rsplit(".", 1)[0] + ".json"))["data_qubits"]
@@ -129,6 +148,15 @@ def main():
     op_region, idle_region = labeller(set(data), a_cells, a.pre_end, a.round_start)
     if a.pairs:
         return pairs(text, data, op_region, idle_region, a.procs)
+    if a.wait_scale:
+        for f in map(float, a.wait_scale.split(",")):
+            model.noise_blocks = wait_scaled(f, op_region, idle_region)
+            try:
+                c1, l2, l3, A1 = score(text, data, a.procs)
+            finally:
+                model.noise_blocks = _orig
+            print(f"wait x{f:<5.3f} 2nd {l2:.4e}  3rd {l3:.4e}  total {l2 + l3:.4e}  exp(-A1) {exact2.np.exp(-A1):.4f}", flush=True)
+        return
     rows = [("all", lambda r: True)]
     for reg in REGIONS:
         if reg == "A" and not a_cells:

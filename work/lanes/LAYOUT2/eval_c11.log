@@ -1,0 +1,28 @@
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5112, floor 0.5)
+  score 1-F = 0.000120297 ± 1.2e-05   (3 significant figures: 0.00012)
+  2q+ gates = 213
+  RESULT: PASS
+circuit c11.qasm: 478 noise channels, 3782 faults, 615 (s,d) classes, rotation rank 5, 28 detectors, noiseless acceptance 1.000000
+first order : c1 p = 4.2188e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 6.11585e-05   (pairs 6.11585e-05 + same-channel normalisation 1.258e-22)
+1-F (2nd order) = 6.11585e-05
+third order: 3.69134e-05   (weight-3 sets 4.16726e-05 + pair-times-others -4.75920e-06)
+1-F (to 3rd order) = 9.80719e-05
+acceptance: first order 0.32928, second order 0.55482; exp(-A1) = 0.51134  (A1 = 0.67072)
+time: model+singles 0.4s, pairs 5.7s, triples 97.0s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '6.035e-06', 'gate': '2.489e-05', 'idle': '3.024e-05'}
+
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+MC {'seed': 0, 'score': np.float64(0.0001026890540658422), 'sem': np.float64(1.1610110354389698e-06), 'acceptance': 0.51173906, 'passed': True}
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+MC {'seed': 1000, 'score': np.float64(0.00010067324733366516), 'sem': np.float64(1.1503936948880184e-06), 'acceptance': 0.51170496, 'passed': True}
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+MC {'seed': 2000, 'score': np.float64(0.00010115220481990161), 'sem': np.float64(1.1496755720768863e-06), 'acceptance': 0.51165469, 'passed': True}

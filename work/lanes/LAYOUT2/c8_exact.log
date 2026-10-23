@@ -1,0 +1,12 @@
+circuit c8.qasm: 474 noise channels, 3764 faults, 611 (s,d) classes, rotation rank 5, 25 detectors, noiseless acceptance 1.000000
+first order : c1 p = 4.2929e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 6.27989e-05   (pairs 6.27989e-05 + same-channel normalisation 1.327e-22)
+1-F (2nd order) = 6.27989e-05
+third order: 3.70601e-05   (weight-3 sets 4.19395e-05 + pair-times-others -4.87944e-06)
+1-F (to 3rd order) = 9.98590e-05
+acceptance: first order 0.33322, second order 0.55615; exp(-A1) = 0.51336  (A1 = 0.66678)
+time: model+singles 0.6s, pairs 8.0s, triples 255.8s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '7.552e-06', 'gate': '2.463e-05', 'idle': '3.061e-05'}

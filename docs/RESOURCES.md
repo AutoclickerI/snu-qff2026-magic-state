@@ -22,7 +22,9 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 8. Seed-0 re-draws of one circuit (same noise model, verified per variant): `work/reorder.py <stem> <n>
    [procs]` → `work/reorder/`.
 9. Loss by idle window: `work/idle_decomp.py <stem> <cycle start step>`.
-10. Submit: `work/submit.py submit|status|board|wait`. `work/submit_when_ready.sh <stem>` waits out the
+10. Promote a candidate in one step: `work/promote.sh <stem> <host:procs:first:count>...` (seed-0 re-draws spread over
+   hosts, best passing draw → `submissions/`, sequential judge, commit + push, `submit_when_ready.sh`).
+   Submit by hand: `work/submit.py submit|status|board|wait`. `work/submit_when_ready.sh <stem>` waits out the
    server cooldown (`submit.py wait`) and for `receipts/seq_<name>.txt`, and submits only on PASS.
 11. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without
    credentials or caches. Refresh one host at a time (SSH cap):

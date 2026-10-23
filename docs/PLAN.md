@@ -5,6 +5,8 @@
   1.0382e-4), rank 2. Next slot 04:01.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5, so the gap is measured against that floor. v14's round alone costs 2.87e-5.
+- New best candidate v15 (`v15_l2m`): LAYOUT2's grid-valid parity check on A (MC mean 1.00843e-4) + measure-init at all
+  sites (exact 9.63348e-5, exp(-A1) 0.501); promoted with 110 re-draws by `work/promote.sh` for the 04:01 slot.
 - v14 decomposition (FINDINGS): B+C prep noiseless −39.6%, data wait −28.8%, A −26.6%, pre-stage −18.4%. The joint
   B+C prep leaves single-fault X errors on B that C misses or sees at weight 1 (P33). The data idle 17 steps between
   the pre-stage and the round (P34). RM15 → Steane is closed on the grid (FINDINGS "Closed recipes").
@@ -21,7 +23,7 @@ single faults leave B clean (P33) and a round that starts soon after the pre-sta
 | 1 | P33 | G1 | Joint B+C prep under a stricter rule: no single fault leaves any X on B unseen by C, no single fault + one C readout flip leaves a dangerous X on B, then pairs (CEGAR copy of sat6/ft); else independent B/C encoders or a second verifier | 3-seed MC mean below v14's 1.0382e-4 (c1 not required), or per-rule solver negatives | Codex lane BC2 (`work/lanes/BC2`, jerry, owl) | active |
 | 2 | P34 | G1 | Start the round soon after the pre-stage: release-aware B+C prep on L5, co-scheduled A and moves, and layouts with B+C in cells the pre-stage never uses (CP-SAT over pre-stage symmetries) | 3-seed MC mean below v14's 1.0382e-4 (c1 not required), or the smallest R per approach with receipts | Codex lane EARLY (`work/lanes/EARLY`, tom, sunfish) | active |
 | 3 | P36 | G1 | Redesign the pre-stage (injection, encoding, logical check): decompose what each part buys in the full circuit, then compact variants that finish sooner, use fewer cells or leave the cells next to the data free | 3-seed MC mean below v14's 1.0382e-4, or measured negatives per variant | Codex lane PRE2 (`work/lanes/PRE2`, owl) | active |
-| 4 | P32 | G1 | New Steane-round layout with free cells next to A for a late X_L parity check, joint FT B+C prep (sat6, CX cap), measurement-init | 3-seed MC mean below v14's 1.0382e-4 | Codex lane LAYOUT2 (`work/lanes/LAYOUT2`, owl, tom) | active; its brief wrongly requires negligible first order: lift that at its report |
+| 4 | P37 | G1 | Cut R on LAYOUT2's parity layout (R=54, ≈15 wait steps): release-aware B+C/A/cat/moves, fewer or earlier data moves, BC2's stricter B+C rule, measure-init by exact total | 3-seed MC mean below 1.00843e-4 (LAYOUT2 best) | Codex lane L2R (`work/lanes/L2R`, owl, tom) | active |
 | 5 | P30 | G1 | Literature table: every candidate protocol's reported error, acceptance, size, output-tail treatment and our-metric estimate | ranked top 3 with citations | Codex lane LIT (`work/lanes/LIT`) | active |
 | 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7 CEGAR at depths 12–15 with CX caps) | a merged circuit below v14 by 3-seed MC | Sonnet lane ST_BC (`work/lanes/ST_BC`; ~40 sat6/sat7 jobs on jerry and hippo, `auto.sh` + `minpipe.sh` score each; minpipe picks measure-init sites by 2nd order, a proxy) | active: best `cand_best_m` = v14 |
 | 7 | P25 | G1 | Measurement-based preps: first-use measure + detector, MX-init with folded records, retained measurements (feedback 2, 8), on v12 and cand14 | variants with --third and 3-seed MC | Codex lane INIT (`work/lanes/INIT`, owl) | active |

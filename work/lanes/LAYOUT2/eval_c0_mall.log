@@ -1,0 +1,22 @@
+[twirl_records] circuit channels: 42 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  FAIL  (0.4223, floor 0.5)
+  score 1-F = 0.000136163 ± 1.5e-05   (3 significant figures: 0.000136)
+  2q+ gates = 226
+  RESULT: FAIL
+circuit c0_mall.qasm: 517 noise channels, 4027 faults, 635 (s,d) classes, rotation rank 5, 42 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1086e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 4.84473e-05   (pairs 4.84473e-05 + same-channel normalisation 8.191e-23)
+1-F (2nd order) = 4.84473e-05
+third order: 8.24422e-05   (weight-3 sets 8.61116e-05 + pair-times-others -3.66932e-06)
+1-F (to 3rd order) = 1.30890e-04
+acceptance: first order 0.13741, second order 0.50968; exp(-A1) = 0.42207  (A1 = 0.86259)
+time: model+singles 0.6s, pairs 17.5s, triples 341.0s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '3.122e-07', 'gate': '1.777e-05', 'idle': '3.036e-05'}
+
