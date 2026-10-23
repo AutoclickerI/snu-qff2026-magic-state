@@ -167,10 +167,10 @@ if __name__ == "__main__":
         lay, moves = LAYOUTS[name], MOVES[name]
     if src == "-":
         preps = spec["preps"]
-    elif src.endswith(".json"):
-        preps = json.load(open(src))
-    else:                                   # comma list of block=file
+    elif "=" in src:                        # comma list of block=file
         preps = {kv.split("=")[0]: json.load(open(kv.split("=")[1])) for kv in src.split(",")}
+    else:
+        preps = json.load(open(src))
     text, data, R, pre_end = build(preps, order, lay, moves)
     open(sys.argv[3] + ".qasm", "w").write(text)
     json.dump({"data_qubits": data, "source": f"merge.py {name} {src} {order}"}, open(sys.argv[3] + ".json", "w"))
