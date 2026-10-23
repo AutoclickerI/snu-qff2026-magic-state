@@ -1,0 +1,41 @@
+c1 != 0: the third-order term is implemented for c1 = 0 only; skipped
+circuit lanes/CC/cc_hm_best.qasm: 161 noise channels, 1327 faults, 86 (s,d) classes, rotation rank 5, 0 detectors, noiseless acceptance 1.000000
+first order : c1 p = 1.3265e-02   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.20444e-02   (pairs 1.20274e-02 + same-channel normalisation 1.697e-05)
+1-F (2nd order) = 2.53091e-02
+acceptance: first order 0.72705, second order 0.78269; exp(-A1) = 0.76113  (A1 = 0.27295)
+time: model+singles 0.3s, pairs 0.5s
+
+top 30 fault pairs by contribution to 1-F (each pair counted once):
+  1.412e-04 ( 0.56%)  n_ij=1.000  L33 idle Z@q20 t=9..51   +   L48 idle Z@q22 t=20..50
+  9.176e-05 ( 0.36%)  n_ij=1.000  L33 idle Z@q20 t=9..51   +   L62 idle Z@q15 t=30..49
+  7.060e-05 ( 0.28%)  n_ij=0.500  L33 idle X@q20 t=9..51   +   L48 idle X@q22 t=20..50
+  7.060e-05 ( 0.28%)  n_ij=0.500  L33 idle Y@q20 t=9..51   +   L48 idle Y@q22 t=20..50
+  7.060e-05 ( 0.28%)  n_ij=0.500  L48 idle Z@q22 t=20..50   +   L33 idle Y@q20 t=9..51
+  7.060e-05 ( 0.28%)  n_ij=0.500  L33 idle Z@q20 t=9..51   +   L48 idle Y@q22 t=20..50
+  6.905e-05 ( 0.27%)  n_ij=1.000  L33 idle Z@q20 t=9..51   +   L71 idle Z@q26 t=30..44
+  6.905e-05 ( 0.27%)  n_ij=1.000  L33 idle Z@q20 t=9..51   +   L36 idle Z@q28 t=7..21
+  6.905e-05 ( 0.27%)  n_ij=1.000  L33 idle Z@q20 t=9..51   +   L36 idle Y@q28 t=7..21
+  6.668e-05 ( 0.26%)  n_ij=1.000  L48 idle Z@q22 t=20..50   +   L62 idle Z@q15 t=30..49
+  5.018e-05 ( 0.20%)  n_ij=1.000  L36 idle Z@q28 t=7..21   +   L48 idle Z@q22 t=20..50
+  5.018e-05 ( 0.20%)  n_ij=1.000  L48 idle Z@q22 t=20..50   +   L71 idle Z@q26 t=30..44
+  5.018e-05 ( 0.20%)  n_ij=1.000  L48 idle Z@q22 t=20..50   +   L36 idle Y@q28 t=7..21
+  4.619e-05 ( 0.18%)  n_ij=1.000  L21 idle Z@q22 t=1..10   +   L33 idle Z@q20 t=9..51
+  4.619e-05 ( 0.18%)  n_ij=1.000  L33 idle Z@q20 t=9..51   +   L21 idle Y@q22 t=1..10
+  4.588e-05 ( 0.18%)  n_ij=0.500  L62 idle Z@q15 t=30..49   +   L33 idle Y@q20 t=9..51
+  4.588e-05 ( 0.18%)  n_ij=0.500  L33 idle X@q20 t=9..51   +   L62 idle X@q15 t=30..49
+  4.588e-05 ( 0.18%)  n_ij=0.500  L33 idle Y@q20 t=9..51   +   L62 idle Y@q15 t=30..49
+  4.588e-05 ( 0.18%)  n_ij=0.500  L33 idle Z@q20 t=9..51   +   L62 idle Y@q15 t=30..49
+  3.700e-05 ( 0.15%)  n_ij=1.000  L33 idle Z@q20 t=9..51   +   L68 idle Z@q28 t=27..34
+  3.452e-05 ( 0.14%)  n_ij=0.500  L36 idle Z@q28 t=7..21   +   L33 idle Y@q20 t=9..51
+  3.452e-05 ( 0.14%)  n_ij=0.500  L71 idle Z@q26 t=30..44   +   L33 idle Y@q20 t=9..51
+  3.452e-05 ( 0.14%)  n_ij=0.500  L36 idle Y@q28 t=7..21   +   L33 idle Y@q20 t=9..51
+  3.452e-05 ( 0.14%)  n_ij=0.500  L33 idle Y@q20 t=9..51   +   L71 idle Y@q26 t=30..44
+  3.452e-05 ( 0.14%)  n_ij=0.500  L33 idle Z@q20 t=9..51   +   L71 idle Y@q26 t=30..44
+  3.452e-05 ( 0.14%)  n_ij=0.500  L33 idle X@q20 t=9..51   +   L71 idle X@q26 t=30..44
+  3.334e-05 ( 0.13%)  n_ij=0.500  L48 idle X@q22 t=20..50   +   L62 idle X@q15 t=30..49
+  3.334e-05 ( 0.13%)  n_ij=0.500  L48 idle Y@q22 t=20..50   +   L62 idle Y@q15 t=30..49
+  3.334e-05 ( 0.13%)  n_ij=0.500  L62 idle Z@q15 t=30..49   +   L48 idle Y@q22 t=20..50
+  3.334e-05 ( 0.13%)  n_ij=0.500  L48 idle Z@q22 t=20..50   +   L62 idle Y@q15 t=30..49
+
+loss by channel kind (each pair split half/half): {'flip': '3.650e-04', 'gate': '2.626e-03', 'idle': '9.036e-03'}
