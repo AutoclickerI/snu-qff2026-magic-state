@@ -1,44 +1,34 @@
 # Plan
 
-## Status (2026-10-24 18:45 KST)
-- Board: Placeholder 5.166e-5 (195 CX); us 6.32297e-5 = v25k_r262 (rank 2; 300 re-draws mean 6.5912e-5); v27x (ST2's exchange4, MC mean 6.4768e-5) in re-draws for 20:37. In re-draws for the next slot: **v25k** = KNAP's `final_m04_l2` (v23h_c2c9 + blue XZ + q19 reset+H +
-  timing/check pack), exact 6.50501e-5, MC mean 6.6015e-5, acceptance 0.5106, 4.3 s per 1e6.
-- Loss ledger (FINDINGS): of v23h_c2c9's 6.92e-5, the round alone is 2.87e-5 (its floor class) and ≈ 4e-5 is cross-region
-  (prefix/wait residual + one later fault); the grid-free early round is 3.55e-5. LADDER: at fixed R45, separate small B and C
-  encoders alone would give 5.71e-5 and with a standard A 5.03e-5 (adjacency ignored); ST1 and ST2 target their grid realization first.
-- Floors (FINDINGS): any circuit ≥ 1.162e-5 in expectation (proved), a direct one-step final readout ≥ 2.567e-5; G0's 1e-5 is out of reach, so the gap is the measure. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
-  4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
-- Every grid layout so far hits the area wall: separate unitary B and C encoders do not fit next to the data early
-  (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; BCSYN2's feedback search found a better 82-CX prep
-  (−2.9%); BCFB continues it, BCPOL relaxes its contract; MBP's measurement-based preps and SEP2T's separate
-  blocks did not help (FINDINGS). Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS, SEP2T, BCSYN2, PRESYN, MBP (FINDINGS).
+## Status (2026-10-24 20:00 KST)
+- Board: Placeholder 5.166e-5 (195 CX, improving ~3%/h); us 6.32297e-5 = v25k_r262 (rank 2; 300 re-draws mean 6.5912e-5).
+  v27x (ST2's exchange4, MC mean 6.4768e-5) in re-draws for 20:37.
+- **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
+  tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
+  A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
+  (proved). Data hops cost ~0, so data can travel to compact blocks. The core open question is the end-state geometry.
+- Loss ledger (FINDINGS): of v23h_c2c9's 6.92e-5, the round alone is 2.87e-5 and ≈ 4e-5 is cross-region.
 
 ## Critical path
-edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
-seeds 0/1000/2000 → `work/promote.sh` (re-draws over hosts ≈ 10 min, sequential judge, commit, submit at the next slot).
-Bottleneck: the B+C prep footprint (82 CX; noiseless −26.5% on v19) and the data's waiting exposure before the round
-(cells 10 and 0 idle 13 steps against late A-encoder faults).
+Redesign: end-state geometry (ENDSTATE) → prefix embedding and data/block routing to it with the earliest R (ST1, SEPBC,
+FRESH) → full build → exact2 --third → speed gate → mc3 → `work/promote.sh`. Bottleneck: the end-state feasibility with
+small grid-native block preps; every earlier closure of it was model-bound.
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P59 | G1 | BCFB: continue BCSYN2's exact-loss feedback search for clean 82-CX B+C preps, priced inside v23h_c2c9 (depth 14–15, MX/measure-init on any B/C cell, prep timing vs hops and A, automorphisms) | a prep below v23h_c2c9's exact 6.92210e-5 confirmed by 3-seed MC, or the feedback loop converged | Codex lane BCFB (`work/lanes/BCFB`, tom, owl) | active |
-| 2 | P60 | G1 | KNAP: acceptance knapsack on fast bases (v23h_c2c9, PRESYN best) — find why blue-on-v23 is slow and a fast form of it; reviewer 3's readout copy (#1) and helper-verified inits (#2), blue X/Z/XZ variants, ACHECK/HOPS checks, detector drops and init types, with exact marginal (Δ1-F, ΔA1) per item | a circuit below v23h_c2c9's exact 6.92210e-5 with exp(-A1) ≥ 0.5002 and ≤ 20 s per 1e6 judge shots, confirmed by 3-seed MC, or the item table exhausted | Codex lane KNAP (`work/lanes/KNAP`) | done: `final_m04_l2` = v25k (FINDINGS) |
-| 3 | P61 | G1 | WALSH: all-orders model-exact 1-F and acceptance by Walsh contraction (reviewer 3 #3), validated by brute force, the exact2 low-p limit and re-draw means | `work/lanes/WALSH/allorders.py` validated and the v23h_c2c9 family scored | Codex lane WALSH (`work/lanes/WALSH`, zebra, sunfish) | active |
-| 4 | P62 | G1 | BCPOL: relax the B+C contract (reviewer 3 #4 partial clean policies, #5 joint prep+check endpoints, #6 C6, #10 boundary cache), priced in v23h_c2c9 | a prep below v23h_c2c9 by exact and MC, within the speed gate (or one that frees acceptance at equal loss), or each relaxation priced with its mechanism | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
-| 5 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`) | stopped 19:30: superseded by LNS2 on v25k; best 6.758e-5 exact on the v22 family |
-| 6 | P63 | G1 | GAP: a structurally different circuit at the leader's scale (5.612e-5 at 179 CX vs our 215): CX/depth budget by region, grid-free pricing of new architectures (smaller pre-stage footprint, no hops, fewer block cells, checks spread over the wait), grid builds of the best | a built circuit below v23h_c2c9 by exact and MC within the speed gate, or each architecture priced with its mechanism | Codex lane GAP (`work/lanes/GAP`) | done: nothing below 5.6e-5; dynamic routing not searched (FINDINGS) |
-| 7 | P64 | G3 | LADDER: matched one-change-at-a-time pricing from v23h_c2c9 to the grid-free early round (joint B+C prep → separate encoders, A encoder, hops, R, prefix), both orders | each grid constraint's share of the 6.92e-5 − 3.55e-5 gap measured | Codex lane LADDER (`work/lanes/LADDER`) | done: B+C package 36% of the gap, A 20%, timing 39% (FINDINGS) |
-| 8 | P65 | G2 | BIRD: independent bird's-eye review of floors, loss ledger, locked-in decisions and missing optimization methods, from the repo only | REPORT.md with ranked methods and first experiments | Codex lane BIRD (`work/lanes/BIRD`) | done: FINDINGS "Independent review" |
-| 9 | P66 | G1 | ST1: joint dynamic placement and instrument synthesis across the prefix-to-round boundary (BIRD's top direction) by solver loops: data wires moved during the prefix with retargeted CXs, early ancilla release, joint A/B/C/C6 roles, 1-CX block teleports, exact third-order scoring with pair/triple feedback | a judge-valid circuit below 4.8e-5 exact (or below v25k), or each family closed by mechanism | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
-| 10 | P67 | G1 | ST2: the same goal by population search over macro rewrites (window re-placement, role swaps, prep witnesses, checks, init types) with validity repair and a loss/acceptance/runtime/diversity Pareto front | as P66 | Codex lane ST2 (`work/lanes/ST2`, sunfish, zebra, tom) | active |
-| 11 | P68 | G1 | LNS2: LNS move families and a correct reviewer #1 port on v25k | v25k's local optimum certified per move family, gains MC-verified | Codex lane LNS2 (`work/lanes/LNS2`) | done: v26n (FINDINGS), in re-draws |
-| 12 | P69 | G1 | SEPBC: grid realization of LADDER's separate small B and C (and standard A) at R≈45: compact preps in the 21 cells free during the prefix, 1-CX teleports into final cells, C checks B right before coupling; or new final roles; then the blue check | a grid circuit below v25k (target ≈ 5.0–5.7e-5 before the blue check) | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
-| 13 | P70 | G2 | XTIM: the exact trigger of xtim's per-shot slow path (q19 MX init, q8 MX reuse, blue-on-v23), a fast speed predictor, and physics-preserving rewrites that avoid it (q8's −1.2% on v26n) | rule + validated `work/lanes/XTIM/speed_predict.py` | Codex lane XTIM (`work/lanes/XTIM`, zebra) | active |
-| 14 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 15 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 16 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
-
+| 1 | P71 | G1 | ENDSTATE: exhaustive SAT catalog of final geometries (D, A, B, C or C6; transversal adjacencies; grid-native preps ≤ 12–14 CX with helpers, MB preps, ≤ 1–2 moves per block qubit), data hop distance per prefix embedding, earliest R, calibrated loss | witness or certificate for small preps, ranked catalog with emitted fragments | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, zebra) | active |
+| 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
+| 3 | P72 | G1 | FRESH: independent from-scratch redesign team; every inherited choice open | a verified grid circuit below 5e-5 true, or designs closed by mechanism | Codex lane FRESH (`work/lanes/FRESH`, zebra, sunfish) | active |
+| 4 | P69 | G1 | SEPBC: separate small B and C (and standard A) on the current lineage's cells at R≈45 via compact preps + teleports or new roles; then the blue check | a grid circuit below v25k (≈ 5.0–5.7e-5 before the blue check) | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
+| 5 | P67 | G1 | ST2: composition of verified edits (exchange4, v26n's edits, BCFB/BCPOL preps) and population search on the v25k lineage; feeds the hourly slots until the redesign lands | compositions MC-verified | Codex lane ST2 (`work/lanes/ST2`, sunfish, zebra) | active |
+| 6 | P59 | G1 | BCFB: port its best clean B+C preps into v25k/v26n and re-run the exact feedback search in situ | a v25k-lineage circuit below v27x by re-draws | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
+| 7 | P62 | G1 | BCPOL: B+C contract relaxations (partial clean, joint prep+check endpoints, C6, boundary cache), priced in v23h_c2c9 and v25k | each relaxation priced with its mechanism; C6 feeds ENDSTATE | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
+| 8 | P70 | G2 | XTIM: the trigger of xtim's per-shot slow path, a fast speed predictor, physics-preserving rewrites (q8's −1.2% on v26n) | rule + validated `work/lanes/XTIM/speed_predict.py` | Codex lane XTIM (`work/lanes/XTIM`, zebra) | active |
+| 9 | P61 | G2 | WALSH: all-orders evaluator with wider scope than the reviewer's (width > 23 for blue circuits) | validated `work/lanes/WALSH/allorders.py` | Codex lane WALSH (`work/lanes/WALSH`, zebra, sunfish) | active |
+| 10 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 11 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (kept running by Jihoon's answer, no new result since 02:05) | active |
+Done today (FINDINGS): KNAP (v25k), LNS2 (v26n), LADDER, BIRD, GAP, LNS (stopped), and the closed lanes listed there.
 
 ## Parked ideas (from the earlier idea and reviewer 1–2 reviews; outcomes of the rest are in FINDINGS)
 - One flag qubit (CX f→q twice, read X) on the A encoder's window where its 8 dangerous single faults sit (inferred
