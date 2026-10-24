@@ -1,7 +1,7 @@
 # Plan
 
 ## Status (2026-10-25 06:30 KST)
-- Board: **rank 1** with v36c_h2505_r4508, **server 3.84302e-5** (05:37; key 3.84e-5); Placeholder 4.984e-5.
+- Board: **rank 1** with v36d_h2506_r53, **server 3.75483e-5** (06:37; key 3.75e-5); Placeholder 4.984e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
   `lanes/MAIN/v36e`) against the key boundary below ours and submits the best at :37.
 - **Best expected circuit: v36e** (`work/lanes/MAIN/v36e` = BFLAG `final/bflag_d3`: v36d with the B/C resource replaced
