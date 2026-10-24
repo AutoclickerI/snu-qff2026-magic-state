@@ -6,13 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v26n_r115**, server 1-F = 6.1862132457633e-5
-(bit-identical to `fast_check`), acceptance 0.5032, 219 CX, submitted 2026-10-24 20:36:52 KST, scored in 314 s
-(`work/receipts/promote_v26n.log`, `work/receipts/seq_v26n_r115.txt`; 120 re-draws of `work/lanes/MAIN/v26n` mean 6.5202e-5).
-Best true mean in hand: v30f (FRESH), 3-seed mean 5.8944e-5, in re-draws for the 21:37 slot.
+Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v30f_r454**, server 1-F = 5.62881033449198e-5
+(bit-identical to `fast_check`), acceptance 0.5276, 189 CX, submitted 2026-10-24 21:36:58 KST, scored in 226 s
+(`work/receipts/promote_v30f.log`; 385 re-draws of `work/lanes/MAIN/v30f`, mean ≈ 5.888e-5; all-orders 5.89377e-5).
 
-Best competitor: Placeholder 5.166e-5, 195 CX, acceptance 0.524 (submitted 2026-10-24 19:34 KST; 5.335e-5 at 18:34,
-5.612e-5 at 16:02, 5.727e-5 at 13:32). Board read 2026-10-24 20:43 KST; refresh with `work/submit.py board`.
+Best competitor: Placeholder 5.067e-5, 197 CX, acceptance 0.525 (submitted 2026-10-24 20:46 KST; 5.166e-5 at 19:34,
+5.335e-5 at 18:34, 5.612e-5 at 16:02, 5.727e-5 at 13:32). Board read 2026-10-24 21:41 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -37,6 +36,7 @@ Best competitor: Placeholder 5.166e-5, 195 CX, acceptance 0.524 (submitted 2026-
 | v23h_c2c9: BCSYN2's fb_s401_0035 B+C prep + HOPS hop_early + ACHECK MX checks on q2, q9 (re-draw r290) | server | 6.75337e-5, 203 CX (320 re-draws 7.0272e-5) | `work/submissions/v23h_c2c9_r290.*`, `work/lanes/MAIN/v23h_c2c9.*` |
 | v25k: v23h_c2c9 + PRESYN's blue XZ check + q19 reset+H + KNAP timing/check pack (re-draw r262) | server | 6.32297e-5, 215 CX (300 re-draws 6.5912e-5) | `work/submissions/v25k_r262.*`, `work/lanes/MAIN/v25k.*`, `work/lanes/KNAP/REPORT.md` |
 | v26n: v25k + reviewer #1 readout copy, LNS2 `safe_best` (re-draw r115) | server | 6.18621e-5, 219 CX (120 re-draws 6.5202e-5) | `work/submissions/v26n_r115.*`, `work/lanes/LNS2/REPORT.md` |
+| v30f: FRESH correlated rank-3 B/C resource (57 CX) on the older prefix (re-draw r454) | server | 5.62881e-5, 189 CX (385 re-draws ≈ 5.888e-5; all-orders 5.89377e-5) | `work/submissions/v30f_r454.*`, `work/lanes/FRESH/REPORT.md` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |

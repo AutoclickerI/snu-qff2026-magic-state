@@ -111,6 +111,15 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: CONSTRAINTS rule 9: our processes use at most ~75% of each host's cores, and we never push a host's total
   load above its core count.
 
+## R-20261024-6 — 2026-10-24 21:45 KST — ST_BC disposed
+> "is that run are far different from our current scope? if so, dispose them."
+
+- Source: this session (question-tool answer to: stop ST_BC's 35 sat6.py jobs, kept running by the
+  2026-10-24 11:20 answer "Keep ST_BC running"?).
+- Effect: checked: sat6.py synthesizes the old rank-6 joint B+C contract (two clean |0_L⟩, < 82 CX) that
+  v30f's 57-CX correlated rank-3 resource replaced, so it is out of scope. All ST_BC jobs and its collector
+  loops were killed by PID at 21:45; outputs stay in `work/lanes/ST_BC`. The hold is lifted.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |

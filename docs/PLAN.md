@@ -1,9 +1,8 @@
 # Plan
 
-## Status (2026-10-24 20:25 KST)
-- Board: Placeholder 5.166e-5 (195 CX); us 6.32297e-5 = v25k_r262 (rank 2). v26n_r115 (seed-0 6.18621e-5; 120 re-draws
-  mean 6.5202e-5) goes in at 20:37. v30f (FRESH's correlated rank-3 B/C, 189 CX, 3-seed mean 5.8944e-5, acceptance 0.5275)
-  is the new base and in re-draws for 21:37 (v29c's 189 draws: mean 6.3468e-5, min 6.11141e-5, superseded).
+## Status (2026-10-24 21:45 KST)
+- Board: Placeholder 5.067e-5 (197 CX, 20:46); us 5.62881e-5 = v30f_r454 (rank 2, 189 CX). Gap 10%. v30f all-orders
+  5.89377e-5; the next slot needs a v30f-lineage gain (COMP29, WAITPROT, SEPBC, BCPOL, ST2) or a new placement (FRESH, ENDSTATE).
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
@@ -26,11 +25,10 @@ small grid-native block preps; every earlier closure of it was model-bound.
 | 5 | P73 | G1 | COMP29: port the v23h→v29c local edits (blue XZ check, exchange, instrument, readout copy, LNS2/ST2 edits, timing feedback, known-zero detectors) onto v30f and price every combination | a v30f-lineage finalist below v30f by 3-seed mean | Codex lane COMP29 (`work/lanes/COMP29`, jerry, owl) | active |
 | 5 | P74 | G1 | WAITPROT: reviewer 4's selective Z protection of waiting data on v30f (helper \|+⟩, CX h→q twice around the wait, MX h; Fano-line triple meets every weight-3 Z logical) | priced singles/pairs/Fano triples; a finalist below v30f or the mechanism | Codex lane WAITPROT (`work/lanes/WAITPROT`, tom, zebra) | active |
 | 6 | P59 | G1 | BCFB: port its best clean B+C preps into v25k/v26n and re-run the exact feedback search in situ | a v25k-lineage circuit below v27x by re-draws | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
-| 7 | P62 | G1 | BCPOL: B+C contract relaxations (partial clean, joint prep+check endpoints, C6, boundary cache), priced in v23h_c2c9 and v25k | each relaxation priced with its mechanism; C6 feeds ENDSTATE | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
+| 7 | P62 | G1 | BCPOL: endpoint machinery on v30f's resource (boundary cache rebuilt for v30f, rank-4 endpoints, partial clean, reviewer 4's encoded-Bell endpoint via FRAME_X, C6, helper primitives) | a v30f-lineage resource below v30f by all-orders | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
 | 8 | P70 | G2 | XTIM: the trigger of xtim's per-shot slow path, a fast speed predictor, physics-preserving rewrites (q8's −1.2% on v26n) | rule + validated `work/lanes/XTIM/speed_predict.py` | Codex lane XTIM (`work/lanes/XTIM`, zebra) | active |
 | 10 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 11 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (kept running by Jihoon's answer, no new result since 02:05) | active |
-Done today (FINDINGS): KNAP (v25k), LNS2 (v26n), LADDER, BIRD, GAP, XTIM, WALSH (`work/lanes/WALSH/allorders.py`), LNS (stopped), and the closed lanes listed there.
+Done today (FINDINGS): ST_BC (disposed 21:45, R-20261024-6), BCPOL v25k pass (rank4_3: all-orders 6.1146e-5), KNAP (v25k), LNS2 (v26n), LADDER, BIRD, GAP, XTIM, WALSH (`work/lanes/WALSH/allorders.py`), LNS (stopped), and the closed lanes listed there.
 
 ## Parked ideas (from the earlier idea and reviewer 1–2 reviews; outcomes of the rest are in FINDINGS)
 - One flag qubit (CX f→q twice, read X) on the A encoder's window where its 8 dangerous single faults sit (inferred
