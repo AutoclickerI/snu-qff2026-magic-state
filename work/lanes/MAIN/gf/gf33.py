@@ -5,6 +5,7 @@ v11's pre-stage (steane_full.PREFIX, data last touched at step 32) followed by b
 cells the pre-stage never uses, scheduled to finish just before the round. Variants:
   sep    separate standard 9-CX encoders for A (|+_L>), B (|0_L>), C (|0_L>)
   ver    sep + A verified by a |+_L> block V (CX v->a, V read in X) whose cells C reuses later
+  flag   no C: B checked by one ancilla reading Z on a weight-3 logical support S (--flag-set, --enc-order)
 Round at R: CX d->a and CX b->c; R+1: read A, C, CX b->d; R+2: read B.
 
     gf33.py <variant> <R> <out stem> [--vgap k]   (exact score: lanes/EVAL/exact2.py <stem>.qasm --third)
@@ -40,7 +41,7 @@ def enc(cells, plus, t0):
     return out
 
 
-def build(variant, R, vgap):
+def build(variant, R, vgap, fset=(0, 1, 2), order=(0, 1, 2)):
     head, stmts = early_merge.prefix_steps()
     by = {}
     for s, st in stmts:
@@ -51,6 +52,24 @@ def build(variant, R, vgap):
     n = 14
     bits = {}
     extra = []
+    if variant == "flag":
+        f = C[0]
+        lay = [LAYERS0[k] for k in order]
+        ops = enc(A, True, R - 3)
+        for i, q in enumerate(B):                      # B's encoder at R-5..R-3, flag CXs at R-2..R
+            ops.append((R - 6, f"reset q[{q}];"))
+            if i in PIV:
+                ops.append((R - 6, f"h q[{q}];"))
+        for k, layer in enumerate(lay):
+            for c, t in layer:
+                ops.append((R - 5 + k, f"cx q[{B[c]}],q[{B[t]}];"))
+        ops.append((R - 3, f"reset q[{f}];"))
+        for k, i in enumerate(fset):
+            ops.append((R - 2 + k, f"cx q[{B[i]}],q[{f}];"))
+        bits[("f", 0)] = n
+        ops.append((R + 1, f"measure q[{f}] -> c[{n}];"))
+        n += 1
+        extra = ["f"]
     if variant == "ver":
         V = C                                # V lives in C's cells and is read before C is prepared
         tv = R - 3 - vgap                    # V's check step
@@ -66,8 +85,8 @@ def build(variant, R, vgap):
         by.setdefault(t, []).append(s)
     r0, r1, r2 = [], [], []
     for i in range(7):
-        r0 += [f"cx q[{d[i]}],q[{A[i]}];", f"cx q[{B[i]}],q[{C[i]}];"]
-    for k, cells in (("a", A), ("c", C)):
+        r0 += [f"cx q[{d[i]}],q[{A[i]}];"] + ([] if variant == "flag" else [f"cx q[{B[i]}],q[{C[i]}];"])
+    for k, cells in (("a", A),) + ((("c", C),) if variant != "flag" else ()):
         for i, q in enumerate(cells):
             bits[(k, i)] = n
             r1.append(f"measure q[{q}] -> c[{n}];")
@@ -87,23 +106,28 @@ def build(variant, R, vgap):
         out.append(bar)
     out = out[:-1]
     dets = list(PRE_DETECTORS)
-    for k in ["a", "b", "c"] + extra:
+    blocks = ["a", "b"] + ([] if variant == "flag" else ["c"]) + [x for x in extra if x != "f"]
+    for k in blocks:
         for S in GENS:
             dets.append(" ".join(f"c[{bits[(k, i)]}]" for i in S))
-    for k in ["c"] + extra:
+    for k in ([] if variant == "flag" else ["c"]) + [x for x in extra if x != "f"]:
         dets.append(" ".join(f"c[{bits[(k, i)]}]" for i in range(7)))
+    if variant == "flag":
+        dets.append(f"c[{bits[('f', 0)]}]")
     out += [f"// DETECTOR {x}" for x in dets]
     return "\n".join(out) + "\n"
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("variant", choices=["sep", "ver"])
+    ap.add_argument("variant", choices=["sep", "ver", "flag"])
+    ap.add_argument("--flag-set", default="0,1,2")
+    ap.add_argument("--enc-order", default="0,1,2")
     ap.add_argument("R", type=int)
     ap.add_argument("out")
     ap.add_argument("--vgap", type=int, default=2)
     a = ap.parse_args()
-    open(a.out + ".qasm", "w").write(build(a.variant, a.R, a.vgap))
+    open(a.out + ".qasm", "w").write(build(a.variant, a.R, a.vgap, tuple(map(int, a.flag_set.split(","))), tuple(map(int, a.enc_order.split(",")))))
     json.dump({"data_qubits": PRE_DATA, "grid_free": True, "variant": a.variant, "R": a.R}, open(a.out + ".json", "w"))
 
 
