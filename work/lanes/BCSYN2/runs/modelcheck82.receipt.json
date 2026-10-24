@@ -1,0 +1,62 @@
+{
+  "depth": 14,
+  "cap": 82,
+  "seed": 0,
+  "seconds": 10.0,
+  "backend": "cadical195",
+  "helpers": "",
+  "helper_x": false,
+  "hint": "work/lanes/BCSYN2/inputs/clean82.prep.json",
+  "eager": true,
+  "fixed": true,
+  "out": "work/lanes/BCSYN2/runs/modelcheck82",
+  "status": "SAT",
+  "solver_seconds": 0.000470023020170629,
+  "wall_seconds": 0.041972120001446456,
+  "iterations": 1,
+  "models": 1,
+  "cuts": 210,
+  "variables": 15407,
+  "solver_stats": {
+    "restarts": 0,
+    "conflicts": 0,
+    "decisions": 2491,
+    "propagations": 15407
+  },
+  "basis": [
+    [
+      4,
+      5,
+      7
+    ],
+    [
+      2,
+      7,
+      4
+    ]
+  ],
+  "witness_cx": 82,
+  "verification": {
+    "stim_target_pass": true,
+    "expectations": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "clean_pass": true,
+    "clean_faults": 0,
+    "cx": 82,
+    "depth": 14
+  }
+}
