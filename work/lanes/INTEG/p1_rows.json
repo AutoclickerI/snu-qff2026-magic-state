@@ -1,0 +1,1486 @@
+[
+ {
+  "name": "pd_q0",
+  "desc": {
+   "kind": "prep_delay",
+   "edit": {
+    "q": 0,
+    "old": 2,
+    "new": 3,
+    "bit": 183,
+    "lines": [
+     "reset q[0];",
+     "h q[0];"
+    ]
+   }
+  }
+ },
+ {
+  "name": "pd_q1",
+  "desc": {
+   "kind": "prep_delay",
+   "edit": {
+    "q": 1,
+    "old": 0,
+    "new": 1,
+    "bit": 184,
+    "lines": [
+     "reset q[1];",
+     "h q[1];"
+    ]
+   }
+  }
+ },
+ {
+  "name": "pd_q4",
+  "desc": {
+   "kind": "prep_delay",
+   "edit": {
+    "q": 4,
+    "old": 0,
+    "new": 4,
+    "bit": 188,
+    "lines": [
+     "reset q[4];",
+     "h q[4];"
+    ]
+   }
+  }
+ },
+ {
+  "name": "pd_q9",
+  "desc": {
+   "kind": "prep_delay",
+   "edit": {
+    "q": 9,
+    "old": 0,
+    "new": 1,
+    "bit": 186,
+    "lines": [
+     "reset q[9];",
+     "h q[9];"
+    ]
+   }
+  }
+ },
+ {
+  "name": "pd_q10",
+  "desc": {
+   "kind": "prep_delay",
+   "edit": {
+    "q": 10,
+    "old": 0,
+    "new": 2,
+    "bit": 187,
+    "lines": [
+     "reset q[10];",
+     "h q[10];"
+    ]
+   }
+  }
+ },
+ {
+  "name": "pd_q19",
+  "desc": {
+   "kind": "prep_delay",
+   "edit": {
+    "q": 19,
+    "old": 0,
+    "new": 2,
+    "bit": 182,
+    "lines": [
+     "reset q[19];",
+     "h q[19];"
+    ]
+   }
+  }
+ },
+ {
+  "name": "pd_all",
+  "desc": {
+   "kind": "prep_delay",
+   "edits": [
+    {
+     "q": 0,
+     "old": 2,
+     "new": 3,
+     "bit": 183,
+     "lines": [
+      "reset q[0];",
+      "h q[0];"
+     ]
+    },
+    {
+     "q": 1,
+     "old": 0,
+     "new": 1,
+     "bit": 184,
+     "lines": [
+      "reset q[1];",
+      "h q[1];"
+     ]
+    },
+    {
+     "q": 4,
+     "old": 0,
+     "new": 4,
+     "bit": 188,
+     "lines": [
+      "reset q[4];",
+      "h q[4];"
+     ]
+    },
+    {
+     "q": 9,
+     "old": 0,
+     "new": 1,
+     "bit": 186,
+     "lines": [
+      "reset q[9];",
+      "h q[9];"
+     ]
+    },
+    {
+     "q": 10,
+     "old": 0,
+     "new": 2,
+     "bit": 187,
+     "lines": [
+      "reset q[10];",
+      "h q[10];"
+     ]
+    },
+    {
+     "q": 19,
+     "old": 0,
+     "new": 2,
+     "bit": 182,
+     "lines": [
+      "reset q[19];",
+      "h q[19];"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "name": "detector_0",
+  "desc": {
+   "kind": "check",
+   "bit": 0,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_0",
+  "desc": {
+   "kind": "check",
+   "bit": 0,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_0",
+  "desc": {
+   "kind": "check",
+   "bit": 0,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_1",
+  "desc": {
+   "kind": "check",
+   "bit": 1,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_1",
+  "desc": {
+   "kind": "check",
+   "bit": 1,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_1",
+  "desc": {
+   "kind": "check",
+   "bit": 1,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_2",
+  "desc": {
+   "kind": "check",
+   "bit": 2,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_2",
+  "desc": {
+   "kind": "check",
+   "bit": 2,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_2",
+  "desc": {
+   "kind": "check",
+   "bit": 2,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_3",
+  "desc": {
+   "kind": "check",
+   "bit": 3,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_3",
+  "desc": {
+   "kind": "check",
+   "bit": 3,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_3",
+  "desc": {
+   "kind": "check",
+   "bit": 3,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_4",
+  "desc": {
+   "kind": "check",
+   "bit": 4,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_4",
+  "desc": {
+   "kind": "check",
+   "bit": 4,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_4",
+  "desc": {
+   "kind": "check",
+   "bit": 4,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_5",
+  "desc": {
+   "kind": "check",
+   "bit": 5,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_5",
+  "desc": {
+   "kind": "check",
+   "bit": 5,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_5",
+  "desc": {
+   "kind": "check",
+   "bit": 5,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_6",
+  "desc": {
+   "kind": "check",
+   "bit": 6,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_6",
+  "desc": {
+   "kind": "check",
+   "bit": 6,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_6",
+  "desc": {
+   "kind": "check",
+   "bit": 6,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_7",
+  "desc": {
+   "kind": "check",
+   "bit": 7,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_7",
+  "desc": {
+   "kind": "check",
+   "bit": 7,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_7",
+  "desc": {
+   "kind": "check",
+   "bit": 7,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_8",
+  "desc": {
+   "kind": "check",
+   "bit": 8,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_8",
+  "desc": {
+   "kind": "check",
+   "bit": 8,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_8",
+  "desc": {
+   "kind": "check",
+   "bit": 8,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_9",
+  "desc": {
+   "kind": "check",
+   "bit": 9,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_9",
+  "desc": {
+   "kind": "check",
+   "bit": 9,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_9",
+  "desc": {
+   "kind": "check",
+   "bit": 9,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_11",
+  "desc": {
+   "kind": "check",
+   "bit": 11,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_11",
+  "desc": {
+   "kind": "check",
+   "bit": 11,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_11",
+  "desc": {
+   "kind": "check",
+   "bit": 11,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_12",
+  "desc": {
+   "kind": "check",
+   "bit": 12,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_12",
+  "desc": {
+   "kind": "check",
+   "bit": 12,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_12",
+  "desc": {
+   "kind": "check",
+   "bit": 12,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_13",
+  "desc": {
+   "kind": "check",
+   "bit": 13,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_13",
+  "desc": {
+   "kind": "check",
+   "bit": 13,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_13",
+  "desc": {
+   "kind": "check",
+   "bit": 13,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_16",
+  "desc": {
+   "kind": "check",
+   "bit": 16,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_16",
+  "desc": {
+   "kind": "check",
+   "bit": 16,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_16",
+  "desc": {
+   "kind": "check",
+   "bit": 16,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_21",
+  "desc": {
+   "kind": "check",
+   "bit": 21,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_21",
+  "desc": {
+   "kind": "check",
+   "bit": 21,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_21",
+  "desc": {
+   "kind": "check",
+   "bit": 21,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_22",
+  "desc": {
+   "kind": "check",
+   "bit": 22,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_22",
+  "desc": {
+   "kind": "check",
+   "bit": 22,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_22",
+  "desc": {
+   "kind": "check",
+   "bit": 22,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_24",
+  "desc": {
+   "kind": "check",
+   "bit": 24,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_24",
+  "desc": {
+   "kind": "check",
+   "bit": 24,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_24",
+  "desc": {
+   "kind": "check",
+   "bit": 24,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_39",
+  "desc": {
+   "kind": "check",
+   "bit": 39,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_39",
+  "desc": {
+   "kind": "check",
+   "bit": 39,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_39",
+  "desc": {
+   "kind": "check",
+   "bit": 39,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_40",
+  "desc": {
+   "kind": "check",
+   "bit": 40,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_40",
+  "desc": {
+   "kind": "check",
+   "bit": 40,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_40",
+  "desc": {
+   "kind": "check",
+   "bit": 40,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_42",
+  "desc": {
+   "kind": "check",
+   "bit": 42,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_42",
+  "desc": {
+   "kind": "check",
+   "bit": 42,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_42",
+  "desc": {
+   "kind": "check",
+   "bit": 42,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_43",
+  "desc": {
+   "kind": "check",
+   "bit": 43,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_43",
+  "desc": {
+   "kind": "check",
+   "bit": 43,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_43",
+  "desc": {
+   "kind": "check",
+   "bit": 43,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_45",
+  "desc": {
+   "kind": "check",
+   "bit": 45,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_45",
+  "desc": {
+   "kind": "check",
+   "bit": 45,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_45",
+  "desc": {
+   "kind": "check",
+   "bit": 45,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_46",
+  "desc": {
+   "kind": "check",
+   "bit": 46,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_46",
+  "desc": {
+   "kind": "check",
+   "bit": 46,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_46",
+  "desc": {
+   "kind": "check",
+   "bit": 46,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_54",
+  "desc": {
+   "kind": "check",
+   "bit": 54,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_54",
+  "desc": {
+   "kind": "check",
+   "bit": 54,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_54",
+  "desc": {
+   "kind": "check",
+   "bit": 54,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_55",
+  "desc": {
+   "kind": "check",
+   "bit": 55,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_55",
+  "desc": {
+   "kind": "check",
+   "bit": 55,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_55",
+  "desc": {
+   "kind": "check",
+   "bit": 55,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_56",
+  "desc": {
+   "kind": "check",
+   "bit": 56,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_56",
+  "desc": {
+   "kind": "check",
+   "bit": 56,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_56",
+  "desc": {
+   "kind": "check",
+   "bit": 56,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_57",
+  "desc": {
+   "kind": "check",
+   "bit": 57,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_57",
+  "desc": {
+   "kind": "check",
+   "bit": 57,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_57",
+  "desc": {
+   "kind": "check",
+   "bit": 57,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_64",
+  "desc": {
+   "kind": "check",
+   "bit": 64,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_64",
+  "desc": {
+   "kind": "check",
+   "bit": 64,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_64",
+  "desc": {
+   "kind": "check",
+   "bit": 64,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_67",
+  "desc": {
+   "kind": "check",
+   "bit": 67,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_67",
+  "desc": {
+   "kind": "check",
+   "bit": 67,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_67",
+  "desc": {
+   "kind": "check",
+   "bit": 67,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_181",
+  "desc": {
+   "kind": "check",
+   "bit": 181,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_181",
+  "desc": {
+   "kind": "check",
+   "bit": 181,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_181",
+  "desc": {
+   "kind": "check",
+   "bit": 181,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_182",
+  "desc": {
+   "kind": "check",
+   "bit": 182,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_182",
+  "desc": {
+   "kind": "check",
+   "bit": 182,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_182",
+  "desc": {
+   "kind": "check",
+   "bit": 182,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_183",
+  "desc": {
+   "kind": "check",
+   "bit": 183,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_183",
+  "desc": {
+   "kind": "check",
+   "bit": 183,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_183",
+  "desc": {
+   "kind": "check",
+   "bit": 183,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_184",
+  "desc": {
+   "kind": "check",
+   "bit": 184,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_184",
+  "desc": {
+   "kind": "check",
+   "bit": 184,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_184",
+  "desc": {
+   "kind": "check",
+   "bit": 184,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_185",
+  "desc": {
+   "kind": "check",
+   "bit": 185,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_185",
+  "desc": {
+   "kind": "check",
+   "bit": 185,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_185",
+  "desc": {
+   "kind": "check",
+   "bit": 185,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_186",
+  "desc": {
+   "kind": "check",
+   "bit": 186,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_186",
+  "desc": {
+   "kind": "check",
+   "bit": 186,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_186",
+  "desc": {
+   "kind": "check",
+   "bit": 186,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_187",
+  "desc": {
+   "kind": "check",
+   "bit": 187,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_187",
+  "desc": {
+   "kind": "check",
+   "bit": 187,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_187",
+  "desc": {
+   "kind": "check",
+   "bit": 187,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_188",
+  "desc": {
+   "kind": "check",
+   "bit": 188,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_188",
+  "desc": {
+   "kind": "check",
+   "bit": 188,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_188",
+  "desc": {
+   "kind": "check",
+   "bit": 188,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_257",
+  "desc": {
+   "kind": "check",
+   "bit": 257,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_257",
+  "desc": {
+   "kind": "check",
+   "bit": 257,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_257",
+  "desc": {
+   "kind": "check",
+   "bit": 257,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_258",
+  "desc": {
+   "kind": "check",
+   "bit": 258,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_258",
+  "desc": {
+   "kind": "check",
+   "bit": 258,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_258",
+  "desc": {
+   "kind": "check",
+   "bit": 258,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_259",
+  "desc": {
+   "kind": "check",
+   "bit": 259,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_259",
+  "desc": {
+   "kind": "check",
+   "bit": 259,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_259",
+  "desc": {
+   "kind": "check",
+   "bit": 259,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_261",
+  "desc": {
+   "kind": "check",
+   "bit": 261,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_261",
+  "desc": {
+   "kind": "check",
+   "bit": 261,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_261",
+  "desc": {
+   "kind": "check",
+   "bit": 261,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_263",
+  "desc": {
+   "kind": "check",
+   "bit": 263,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_263",
+  "desc": {
+   "kind": "check",
+   "bit": 263,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_263",
+  "desc": {
+   "kind": "check",
+   "bit": 263,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_264",
+  "desc": {
+   "kind": "check",
+   "bit": 264,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_264",
+  "desc": {
+   "kind": "check",
+   "bit": 264,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_264",
+  "desc": {
+   "kind": "check",
+   "bit": 264,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_269",
+  "desc": {
+   "kind": "check",
+   "bit": 269,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_269",
+  "desc": {
+   "kind": "check",
+   "bit": 269,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_269",
+  "desc": {
+   "kind": "check",
+   "bit": 269,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_270",
+  "desc": {
+   "kind": "check",
+   "bit": 270,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_270",
+  "desc": {
+   "kind": "check",
+   "bit": 270,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_270",
+  "desc": {
+   "kind": "check",
+   "bit": 270,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_271",
+  "desc": {
+   "kind": "check",
+   "bit": 271,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_271",
+  "desc": {
+   "kind": "check",
+   "bit": 271,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_271",
+  "desc": {
+   "kind": "check",
+   "bit": 271,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_273",
+  "desc": {
+   "kind": "check",
+   "bit": 273,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_273",
+  "desc": {
+   "kind": "check",
+   "bit": 273,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_273",
+  "desc": {
+   "kind": "check",
+   "bit": 273,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_276",
+  "desc": {
+   "kind": "check",
+   "bit": 276,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_276",
+  "desc": {
+   "kind": "check",
+   "bit": 276,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_276",
+  "desc": {
+   "kind": "check",
+   "bit": 276,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_277",
+  "desc": {
+   "kind": "check",
+   "bit": 277,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_277",
+  "desc": {
+   "kind": "check",
+   "bit": 277,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_277",
+  "desc": {
+   "kind": "check",
+   "bit": 277,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_278",
+  "desc": {
+   "kind": "check",
+   "bit": 278,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_278",
+  "desc": {
+   "kind": "check",
+   "bit": 278,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_278",
+  "desc": {
+   "kind": "check",
+   "bit": 278,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_279",
+  "desc": {
+   "kind": "check",
+   "bit": 279,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_279",
+  "desc": {
+   "kind": "check",
+   "bit": 279,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_279",
+  "desc": {
+   "kind": "check",
+   "bit": 279,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_280",
+  "desc": {
+   "kind": "check",
+   "bit": 280,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_280",
+  "desc": {
+   "kind": "check",
+   "bit": 280,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_280",
+  "desc": {
+   "kind": "check",
+   "bit": 280,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_283",
+  "desc": {
+   "kind": "check",
+   "bit": 283,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_283",
+  "desc": {
+   "kind": "check",
+   "bit": 283,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_283",
+  "desc": {
+   "kind": "check",
+   "bit": 283,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_284",
+  "desc": {
+   "kind": "check",
+   "bit": 284,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_284",
+  "desc": {
+   "kind": "check",
+   "bit": 284,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_284",
+  "desc": {
+   "kind": "check",
+   "bit": 284,
+   "mode": "reset"
+  }
+ },
+ {
+  "name": "detector_285",
+  "desc": {
+   "kind": "check",
+   "bit": 285,
+   "mode": "detector"
+  }
+ },
+ {
+  "name": "omit_285",
+  "desc": {
+   "kind": "check",
+   "bit": 285,
+   "mode": "omit"
+  }
+ },
+ {
+  "name": "reset_285",
+  "desc": {
+   "kind": "check",
+   "bit": 285,
+   "mode": "reset"
+  }
+ }
+]

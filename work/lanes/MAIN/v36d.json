@@ -1,0 +1,414 @@
+{
+ "data_qubits": [
+  0,
+  20,
+  7,
+  10,
+  3,
+  22,
+  21
+ ],
+ "cx": 282,
+ "native_depth": 47,
+ "R": 44,
+ "source": "INTEG integ_g1_j8 (v36c + acceptance trades + 34 pair/echo/guard gadgets)",
+ "integ": {
+  "kind": "joint",
+  "base": "G1",
+  "gadgets": [
+   {
+    "kind": "echo",
+    "q": 15,
+    "h": 21,
+    "axis": "X",
+    "t1": 14,
+    "t2": 17,
+    "rst": 19
+   },
+   {
+    "kind": "echo",
+    "q": 13,
+    "h": 12,
+    "axis": "X",
+    "t1": 28,
+    "t2": 30,
+    "rst": 37
+   },
+   {
+    "kind": "echo",
+    "q": 20,
+    "h": 26,
+    "axis": "X",
+    "t1": 11,
+    "t2": 13
+   },
+   {
+    "kind": "echo",
+    "q": 6,
+    "h": 12,
+    "axis": "Z",
+    "t1": 19,
+    "t2": 24,
+    "rst": 37
+   },
+   {
+    "kind": "echo",
+    "q": 21,
+    "h": 22,
+    "axis": "X",
+    "t1": 21,
+    "t2": 30,
+    "rst": 34
+   },
+   {
+    "kind": "echo",
+    "q": 15,
+    "h": 16,
+    "axis": "X",
+    "t1": 21,
+    "t2": 28
+   },
+   {
+    "kind": "echo",
+    "q": 15,
+    "h": 21,
+    "axis": "X",
+    "t1": 4,
+    "t2": 11,
+    "rst": 19
+   },
+   {
+    "kind": "echo",
+    "q": 19,
+    "h": 25,
+    "axis": "X",
+    "t1": 19,
+    "t2": 30,
+    "rst": 32
+   },
+   {
+    "kind": "echo",
+    "q": 0,
+    "h": 6,
+    "axis": "X",
+    "t1": 7,
+    "t2": 10
+   },
+   {
+    "kind": "pair",
+    "a": 1,
+    "b": 7,
+    "t": 35,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pguard",
+    "q": 16,
+    "d": 10
+   },
+   {
+    "kind": "pairR",
+    "a": 14,
+    "b": 20,
+    "t": 40
+   },
+   {
+    "kind": "pairR",
+    "a": 14,
+    "b": 15,
+    "t": 26
+   },
+   {
+    "kind": "pairR",
+    "a": 13,
+    "b": 14,
+    "t": 21
+   },
+   {
+    "kind": "pair",
+    "a": 14,
+    "b": 15,
+    "t": 23,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pairR",
+    "a": 10,
+    "b": 11,
+    "t": 30
+   },
+   {
+    "kind": "pair",
+    "a": 14,
+    "b": 20,
+    "t": 19,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 26,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 20,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 22,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 24,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 0,
+    "b": 6,
+    "t": 35,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 0,
+    "b": 6,
+    "t": 37,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 4,
+    "b": 5,
+    "t": 14,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "dead",
+     "dead"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 9,
+    "b": 10,
+    "t": 26,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 9,
+    "b": 10,
+    "t": 24,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 15,
+    "b": 16,
+    "t": 15,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "dead",
+     "dead"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 9,
+    "b": 10,
+    "t": 21,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 6,
+    "b": 7,
+    "t": 21,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 0,
+    "b": 6,
+    "t": 15,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 4,
+    "b": 10,
+    "t": 10,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 20,
+    "b": 21,
+    "t": 26,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 20,
+    "b": 21,
+    "t": 24,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 20,
+    "b": 21,
+    "t": 22,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   }
+  ],
+  "extensions": [
+   "ext_pre_13_h12_6",
+   "ext_pre_15_h16_10"
+  ]
+ },
+ "allorders": 4.0286189316763174e-05,
+ "allorders_acceptance": 0.5059573012011737
+}
