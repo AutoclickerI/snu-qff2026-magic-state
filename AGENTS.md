@@ -16,9 +16,9 @@ dropped rules) · [reference/judge.md](docs/reference/judge.md) (how scores aris
 - Use idle capacity, caches and other lanes' outputs (RESOURCES); fix the critical path (PLAN).
 - Take the widest reading the rules allow (CONSTRAINTS "Boundary cases"); ask Jihoon when unclear.
 - No conservative or incremental steps, fallbacks or ritual checks; delete stale docs when you touch them.
-- Rank candidates by the all-orders expectation where its scope covers them (reviewer 3's
-  `work/lanes/MAIN/spec/reviewer3/quantumn_optimization_audit/audit/fresh_exact_walsh.py 72 <stem>`, v22/v23 family,
-  matches our re-draw means within 0.1%); otherwise by the 3-seed mean (one seed hides 1%), and when that and the exact
+- Rank candidates by the all-orders expectation where its scope covers them (`work/lanes/WALSH/allorders.py <qasm>
+  --json <json> --procs 4`, width ≤ 26, reproduces reviewer 3's values and our re-draw means within 0.1%;
+  `work/lanes/BCPOL/allorders_general.py` for five-projector blue circuits); otherwise by the 3-seed mean (one seed hides 1%), and when that and the exact
   third order disagree within noise, by ≥ 100 seed-0 re-draws. Submit by the seed-0 key and report the numbers used.
 - Wait on process exit, never on an output file. Never `pkill -f` a pattern that your own command
   line contains (FINDINGS "Failures").
