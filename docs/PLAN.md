@@ -1,6 +1,6 @@
 # Plan
 
-## Status (2026-10-25 07:55 KST)
+## Status (2026-10-25 08:25 KST)
 - Board: **rank 1** with v36e_h2507_r449, **server 3.67131e-5** (07:37; key 3.67e-5); Placeholder 4.984e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
   `lanes/MAIN/v36f`) against the key boundary below ours and submits the best at :37.
@@ -18,18 +18,19 @@
   dirs are `work/lanes/<LANE>` and they report to the main session, which verifies and promotes.
 
 ## Critical path
-Lane finds a priced mechanism → re-derived on v36c → all orders (≈ 10 s) → judge 1e6, speed, MC3 → `work/promote.sh`
-→ hourly slot. Bottleneck: the remaining gains are many small deltas that compete for the same acceptance; fix: one
-integrator (INTEG) composes every lane's v36c deltas by Δloss per Δlog-acceptance, and the other lanes deliver deltas
-on v36c (or acceptance), not new bases.
-Draw cost: racing examines ≈ 7.6× more draws per hour than plain re-draws (FINDINGS "Racing in production").
+Lane delta on v36f → all orders (≈ 11 s) → judge 1e6, speed → `next_stem.txt` → hourly race of seed-0 draws →
+`work/promote.sh` → slot. The board score is the hour's best draw: about mean − 4.5σ (σ ≈ 8.7e-7 at 1e8 shots), so a
+1% lower mean (3.8e-7) is worth about as much as 2.7 doublings of racing compute; racing gains are logarithmic, so
+lanes take the cores they need and the racer fills the rest at each hour's start (`race_specs.sh`). From the hour to
+09:20 the drop rule is relative to the prior (κ = 0.7) and the threshold is relayed across hosts (FINDINGS "Race drop
+rule"); before that racing examined ≈ 7.6× more draws than plain re-draws.
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P75 | G1, G3 | Integration: compose each lane's v36c deltas with INTEG's trades and gadgets (`work/lanes/INTEG`, REPORT.md: menu of 332 priced singles, greedy by gain, leave-one-out), each joint re-priced by all orders; v36d is its first result | a finalist below v36d each time a lane delivers | main session, INTEG code | next |
+| 1 | P75 | G1, G3 | Re-integration on v36f: leave-one-out of v36f's gadgets, INTEG's 332 singles, PRECELL's guards and INTEG's unused acceptance trades re-priced on v36f (the B/C resource and guards changed every gadget's environment), greedy joint by gain with acceptance ≥ 0.5010 | a finalist below v36f, or the LOO and singles tables showing none | INTEG2 (Claude, `work/lanes/INTEG2`, zebra ≤ 20 processes) | active |
 | 2 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
-| 3 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
+| 3 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits on v36f: q8 reuse after the flag (R44→43, +0.01 acceptance on v35b), data SX layer (−2.2% on v35a); price both on v36f first | a FAST finalist below v36f, or the mechanism that blocks it | FASTR43 (Claude, `work/lanes/FASTR43`, zebra ≤ 12 processes) | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair

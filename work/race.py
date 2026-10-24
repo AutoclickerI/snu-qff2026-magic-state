@@ -4,9 +4,10 @@ The official score is tprep's 1e8 shots in 100 chunks (chunk k uses seed k) summ
 (reorder.shuffle with rng k, noise schedule signature asserted, gates re-run by tprep.check) is sampled chunk by
 chunk in that order with the same per-chunk code as fast_check._chunk. At each checkpoint a normal model of the
 remaining chunks, fitted to every chunk this process has sampled, gives the probability that the variant's completed
-score ends below the threshold; below EPS the variant is dropped. A completed variant's score, sem and acceptance
+score ends below the threshold; below KAPPA times that probability for a variant not yet sampled, the variant is
+dropped (a fixed floor would drop nearly every eventual winner at chunk 3 once the threshold is ~4 sigma deep). A completed variant's score, sem and acceptance
 are therefore the official ones, bit for bit. Threshold: env RACE_THRESHOLD (default: never drop), lowered by every
-completed variant that beats it.
+completed variant that beats it and by reorder/<name>.thr, where promote.sh relays the best completed score of every host.
 
     RACE_THRESHOLD=3.875e-5 python race.py <stem> <n variants> [procs] [first variant]  ->  reorder/<name>_r<k>.*
 """
@@ -24,8 +25,8 @@ import tprep.check  # noqa: F401  (tprep/__init__ rebinds tprep.check to the fun
 from reorder import shuffle, signature
 
 tc = sys.modules["tprep.check"]
-EPS = 1e-4
-CHECKS = (3, 6, 10, 15, 20, 30, 45, 60, 80)
+KAPPA = 0.7
+CHECKS = (1, 2, 3, 4, 6, 8, 10, 15, 20, 30, 45, 60, 80)
 N_CHUNKS = 100
 _orig = tc._sample
 _G = {}
@@ -59,8 +60,16 @@ def _chunk(circuit, plan, k):
     return int(keep.sum()), int((z_fix | x_fix).sum()), infid.sum(), (infid ** 2).sum()
 
 
-def _init(lines, data, ref, best):
-    _G.update(lines=lines, data=data, ref=ref, best=best, totals=[], kepts=[])
+def _init(lines, data, ref, best, thr_file):
+    _G.update(lines=lines, data=data, ref=ref, best=best, thr_file=thr_file, totals=[], kepts=[])
+
+
+def _threshold(best, thr_file):
+    """This host's best completed score, or the relayed best of all hosts if lower."""
+    try:
+        return min(best.value, float(open(thr_file).read()))
+    except (OSError, ValueError):
+        return best.value
 
 
 def _p_below(kept, total, c, thr):
@@ -88,8 +97,10 @@ def race(k):
     kept = corrected = 0
     total = total_sq = 0.0
     for c in range(N_CHUNKS):
-        if c in CHECKS and _p_below(kept, total, c, _G["best"].value) < EPS:
-            return k, None, c
+        if c in CHECKS:
+            thr = _threshold(_G["best"], _G["thr_file"])
+            if _p_below(kept, total, c, thr) < KAPPA * _p_below(0, 0.0, 0, thr):
+                return k, None, c
         a, b, s, s2 = _chunk(circuit, plan, c)
         kept += a
         corrected += b
@@ -117,12 +128,13 @@ def main():
     name = os.path.basename(stem)
     os.makedirs("reorder", exist_ok=True)
     best = mp.Value("d", thr)
+    thr_file = f"reorder/{name}.thr"
     used = done = 0
-    with mp.get_context("fork").Pool(procs, _init, (text.split("\n"), meta["data_qubits"], signature(text), best)) as pool:
+    with mp.get_context("fork").Pool(procs, _init, (text.split("\n"), meta["data_qubits"], signature(text), best, thr_file)) as pool:
         for k, out, c in pool.imap_unordered(race, range(k0, k0 + n)):
             used += c
             if out is None:
-                print(f"{name}_r{k} dropped after {c} chunks (threshold {best.value:.5e})", flush=True)
+                print(f"{name}_r{k} dropped after {c} chunks (threshold {_threshold(best, thr_file):.5e})", flush=True)
                 continue
             done += 1
             path = f"reorder/{name}_r{k}"

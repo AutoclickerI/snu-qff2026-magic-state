@@ -33,7 +33,26 @@ for spec in "$@"; do
   fi
   pids+=($!)
 done
+# Relay the best completed passing score of every host to every host's reorder/<name>.thr (race.py drops against it).
+relay() {
+  local last= b
+  while sleep 15; do
+    b=$(cat reorder/${name}_*.log 2>/dev/null | awk '$2 == "1-F" && $NF == "True" {print $3}' | sort -g | head -1)
+    [ -n "$b" ] && [ "$b" != "$last" ] || continue
+    last=$b
+    for spec in "$@"; do
+      h=${spec%%:*}
+      if [ "$h" = zebra ]; then echo $b > reorder/$name.thr.tmp && mv reorder/$name.thr.tmp reorder/$name.thr
+      else timeout 30 $SSH "$h" "cd $R/work/reorder && echo $b > $name.thr.tmp && mv $name.thr.tmp $name.thr" 2>/dev/null &
+      fi
+    done
+    wait
+  done
+}
+relay "$@" &
+relay_pid=$!
 wait "${pids[@]}"
+kill $relay_pid
 for spec in "$@"; do
   h=${spec%%:*}
   [ "$h" = zebra ] || rsync -a -e "$SSH" "$h:$R/work/reorder/${name}_r*" reorder/

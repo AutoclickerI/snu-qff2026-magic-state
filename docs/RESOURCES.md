@@ -12,14 +12,16 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 3. Ranking evaluators (all orders, exact 2nd/3rd order, 3-seed MC, speed): `docs/reference/circuit.md` "Evaluators".
 4. Sequential judge plus fault scan (~5 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
 5. Seed-0 re-draws of one circuit (same noise model, verified per variant): `RACE_THRESHOLD=<x> work/race.py <stem> <n> [procs]
-   [first]` → `work/reorder/` (gitignored); it drops a variant once it cannot end below x (`work/reorder.py` holds the
+   [first]` → `work/reorder/` (gitignored); it drops a variant once its chance of ending below x (or below `reorder/<name>.thr`) falls under 0.7× a fresh variant's (`work/reorder.py` holds the
    variant generator and runs every variant to the end).
 6. Promote in one step: `work/promote.sh <stem> <host:procs:first:count>...` (speed gate ≤ 20 s per 1e6, re-draws over
    hosts with non-overlapping variant ranges, best passing draw → `submissions/`, sequential judge, commit + push,
    `submit_when_ready.sh`). Stop the draws in time for a slot with `work/receipts/cut_redraws.sh <stem name> "<time,
    e.g. 02:20>" <hosts incl. zebra>`; the slot is at :37 each hour. Hourly loop: `work/receipts/draw_loop.sh <pid of the running cut>`
    races an hour-named copy of the stem in `work/receipts/next_stem.txt` until HH:20 and promotes it; variant k of a stem is
-   the same circuit every hour, so `work/receipts/offset_<stem>.txt` carries the next unused k. By hand: `work/submit.py submit|status|board|wait`.
+   the same circuit every hour, so `work/receipts/offset_<stem>.txt` carries the next unused k; `work/receipts/race_specs.sh`
+   sizes each host's processes from its free cores at the start of the hour (cap 75%, zebra 16). `race.py` changes reach
+   the hosts only by rsync (promote.sh copies the stem, not the code). By hand: `work/submit.py submit|status|board|wait`.
 7. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without credentials or caches.
    Refresh one host at a time (zebra caps SSH connections):
    `rsync -a ~/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu ~/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu <h>:~/.local/share/uv/python/`;
