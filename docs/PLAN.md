@@ -1,7 +1,8 @@
 # Plan
 
 ## Status (2026-10-24 18:45 KST)
-- Board: Placeholder 5.335e-5 (187 CX); us 6.75337e-5 = v23h_c2c9_r290 (rank 2). In re-draws for the next slot: **v25k** = KNAP's `final_m04_l2` (v23h_c2c9 + blue XZ + q19 reset+H +
+- Board: Placeholder 5.335e-5 (187 CX); us 6.75337e-5 = v23h_c2c9_r290 (rank 2); v25k_r262 (seed-0 6.32297e-5, 300 re-draws mean
+  6.5912e-5) submitted 19:36, scoring; v27x (ST2's exchange4, MC mean 6.4768e-5) in re-draws for 20:37. In re-draws for the next slot: **v25k** = KNAP's `final_m04_l2` (v23h_c2c9 + blue XZ + q19 reset+H +
   timing/check pack), exact 6.50501e-5, MC mean 6.6015e-5, acceptance 0.5106, 4.3 s per 1e6.
 - Loss ledger (FINDINGS): of v23h_c2c9's 6.92e-5, the round alone is 2.87e-5 (its floor class) and ≈ 4e-5 is cross-region
   (prefix/wait residual + one later fault); the grid-free early round is 3.55e-5. LADDER: at fixed R45, separate small B and C

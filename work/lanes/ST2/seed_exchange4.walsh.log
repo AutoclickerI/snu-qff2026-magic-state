@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/WALSH/allorders.py", line 553, in <module>
+    f"(build {build_seconds:.1f}s, elimination {result['seconds']:.1f}s)")
+               ^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/WALSH/allorders.py", line 533, in main
+    jf = Path(a.json) if a.json else qasm.with_suffix(".json")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/WALSH/allorders.py", line 233, in __init__
+    raise ValueError(
+ValueError: channel-factor elimination width 26 exceeds limit 23
