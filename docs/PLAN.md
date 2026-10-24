@@ -1,9 +1,9 @@
 # Plan
 
-## Status (2026-10-24 15:20 KST)
-- Board: Placeholder 5.621e-5 (177 CX); us 7.49754e-5 = v18, rank 2. v20 (TREP2: 19-CX encoder + q10 \|+⟩ reuse +
-  third-order-checked timing, round 45; exact 7.3100e-5, MC 7.282e-5) is in promotion for the 15:45 slot; v19_r203
-  (7.29285e-5 seed 0) is committed as the fallback if v20's best draw is worse.
+## Status (2026-10-24 15:50 KST)
+- Board: Placeholder 5.621e-5 (177 CX); us 7.14115e-5 = v20 (290 re-draws mean 7.430e-5), rank 2. v21d (v20 + ACHECK's A
+  init edits; exact 7.2542e-5, −0.76%; 3-seed MC 7.344e-5, within noise of v20's 7.282e-5) is in re-draws for 16:45; it is
+  submitted only if its re-draw mean beats v20's 7.430e-5.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
