@@ -20,13 +20,14 @@ Bottleneck: the data wait before the round. v17a idles the data at 33–49; v18 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P51 | G1 | BCSYN: smaller, cleaner FT joint B+C prep (reverse-endpoint + clean CEGAR, MX-init, X-measured helpers, new footprints), priced in situ in v18 | 3-seed MC below v18's 7.636e-5, or SAT/UNSAT per (CX cap, depth) with in-situ prices | Codex lane BCSYN (`work/lanes/BCSYN`, owl, tom) | active |
-| 2 | P47 | G1 | TREP2: on v18, split the encoder and ALAP-schedule gains, exact-objective schedule search under the acceptance budget, the 15 untested 15-T forms, a schedule-aware encoder, re-encoding and measure-init re-applied | 3-seed MC below v18's 7.636e-5, or every lever measured | Codex lane TREP2 (`work/lanes/TREP2`, jerry, hippo) | active |
-| 3 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
-| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
-| 7 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
+| 1 | P53 | G1 | SEP2T: settle whether separate small A/B/C blocks + teleports/hops beat the joint B+C prep on the grid with the ALAP pre-stage (long CP-SAT on FREELAY's 2-teleport models, constructive/LNS builds, C teleported in) | 3-seed MC below v19's 7.537e-5, or a built separate-block circuit with its loss breakdown | Codex lane SEP2T (`work/lanes/SEP2T`, sunfish, hippo) | active |
+| 2 | P51 | G1 | BCSYN: smaller, cleaner FT joint B+C prep (reverse-endpoint + clean CEGAR, MX-init, X-measured helpers, new footprints), priced in situ in v18 | 3-seed MC below v18's 7.636e-5, or SAT/UNSAT per (CX cap, depth) with in-situ prices | Codex lane BCSYN (`work/lanes/BCSYN`, owl, tom) | active |
+| 3 | P47 | G1 | TREP2: on v18, split the encoder and ALAP-schedule gains, exact-objective schedule search under the acceptance budget, the 15 untested 15-T forms, a schedule-aware encoder, re-encoding and measure-init re-applied | 3-seed MC below v18's 7.636e-5, or every lever measured | Codex lane TREP2 (`work/lanes/TREP2`, jerry, hippo) | active |
+| 4 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
+| 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 8 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.

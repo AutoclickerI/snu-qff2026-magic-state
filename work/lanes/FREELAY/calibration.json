@@ -1,0 +1,86 @@
+{
+ "note": "In-sample nonnegative fit; too few circuits for out-of-family validation. Applied to search proxies only, never final ranking.",
+ "floor": 2.865e-05,
+ "weights": {
+  "pre_exposure": 0.0,
+  "data_wait": 5.53968253968255e-08,
+  "data_exposure": 1.1095082809744253e-07,
+  "a_exposure": 2.861853174603181e-07,
+  "bc_exposure": 0.0,
+  "cx": 0.0
+ },
+ "rows": [
+  {
+   "name": "joint_exactA_alap",
+   "features": {
+    "R": 45,
+    "pre_end": 44,
+    "pre_exposure": 3747,
+    "data_exposure": 288,
+    "data_wait": 45,
+    "a_exposure": 61,
+    "bc_exposure": 206,
+    "cx": 204,
+    "data_hops": 6,
+    "block_teleports": 0
+   },
+   "exact": 8.0554e-05,
+   "predicted": 8.0554e-05,
+   "residual": 0.0
+  },
+  {
+   "name": "joint_reuse2_alap",
+   "features": {
+    "R": 45,
+    "pre_end": 44,
+    "pre_exposure": 3720,
+    "data_exposure": 288,
+    "data_wait": 43,
+    "a_exposure": 41,
+    "bc_exposure": 206,
+    "cx": 203,
+    "data_hops": 6,
+    "block_teleports": 0
+   },
+   "exact": 7.47521e-05,
+   "predicted": 7.471949999999998e-05,
+   "residual": -3.260000000001727e-08
+  },
+  {
+   "name": "joint_reuse_alap",
+   "features": {
+    "R": 45,
+    "pre_end": 44,
+    "pre_exposure": 3721,
+    "data_exposure": 288,
+    "data_wait": 43,
+    "a_exposure": 41,
+    "bc_exposure": 206,
+    "cx": 203,
+    "data_hops": 6,
+    "block_teleports": 0
+   },
+   "exact": 7.46869e-05,
+   "predicted": 7.471949999999998e-05,
+   "residual": 3.2599999999976615e-08
+  },
+  {
+   "name": "joint_reuse_idle",
+   "features": {
+    "R": 45,
+    "pre_end": 30,
+    "pre_exposure": 3897,
+    "data_exposure": 288,
+    "data_wait": 106,
+    "a_exposure": 41,
+    "bc_exposure": 206,
+    "cx": 203,
+    "data_hops": 6,
+    "block_teleports": 0
+   },
+   "exact": 7.82095e-05,
+   "predicted": 7.820949999999999e-05,
+   "residual": -1.3552527156068805e-20
+  }
+ ]
+}
