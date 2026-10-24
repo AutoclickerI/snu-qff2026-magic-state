@@ -49,6 +49,8 @@ Code of removed lanes: `git show b2a5243:work/lanes/<LANE>/<file>` (ENDSTATE, ST
   A synthesis and critical path on a fixed exterior: `work/lanes/SEPBC/` (`exenc.py`, `v30/CRITICAL_PATH.md`).
 - Population search with all-orders fitness and acceptance knapsack: `work/lanes/ST2/pop36_*.py`, `knapsack_select.py`,
   scorer `sparse_budget.py`; region ledger `ledger.py`.
-- Gadget library and acceptance trades on v36c: `work/lanes/INTEG/` (in progress).
+- Gadget library, acceptance trades and joint builder: `work/lanes/INTEG/` (`lib.py`, `gadgets.py`, `joint.py`, `ev.py`).
+- A-region class table (prices any A-encoder change with v36c's surroundings fixed in microseconds): `work/lanes/AENC/`
+  (`table_v36c.json`, `evalx.py`, `bmodel.py`); placement/timing CP-SAT model calibrated on v36c: `work/lanes/EARLY/layout.py`.
 - Stationary 7-cell encoder library and end-state witnesses: ENDSTATE (git); prefix/round co-design with CP-SAT and
   exact-gradient retiming: ST1 (git, `redesign.py`, `gradient_retime.py`); B/C boundary cache: BCPOL (git).

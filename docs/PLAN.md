@@ -11,7 +11,8 @@
   3.041e-5, of which 2.274e-5 is a floor for every circuit whose outputs end on a CX with a measured partner (TERM) and
   0.768e-5 are leaks that every template tried on this grid keeps; A, B, C preparation 0.456e-5; prefix and data wait
   0.618e-5. Earlier round (R42 floor) and placement changes are closed (EARLY); what remains is B/C and A preparation
-  and the masking terms (IDEAS bounds −9.04%, −8.95%, A −5.9%), and late data idles without a free neighbour.
+  and the masking terms (IDEAS bounds −9.04%, −8.95%; the A encoder is optimal, AENC), and late data idles without a
+  free neighbour.
 - **Codex is down** (429, ~6-day retry, from 2026-10-25 02:26 KST). Workers are Claude subagents (R-20261025-1); their
   dirs are `work/lanes/<LANE>` and they report to the main session, which verifies and promotes.
 
@@ -27,11 +28,10 @@ Draw cost: racing examines ≈ 7.6× more draws per hour than plain re-draws (FI
 |---|---|---|---|---|---|---|
 | 1 | P75 | G1, G3 | Integration: compose each lane's v36c deltas with INTEG's trades and gadgets (`work/lanes/INTEG`, REPORT.md: menu of 332 priced singles, greedy by gain, leave-one-out), each joint re-priced by all orders; v36d is its first result | a finalist below v36d each time a lane delivers | main session, INTEG code | next |
 | 2 | P73 | G1 | B/C side on v36c (outside the prefix cap): IDEAS' bounds −9.04% (third-order masking by B/C Z flips) and −8.95% (correlated B/C X escaping C's check); mid-preparation B flag (ideal meter first), resource re-synthesis by in-situ loss with the masking objective, B/C acceptance trades | v36c deltas or a finalist below v36c | BFLAG (Claude, `work/lanes/BFLAG`) | active |
-| 3 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03): Pareto by flag-blind vs flag-detected danger and X-side masking (IDEAS bound −4.03%), no c1/p30 pruning, against v36c's releases | v36c encoder deltas | AENC (Claude, `work/lanes/AENC`) | active |
-| 4 | P82 | G1 | Prefix change that releases a cultivation guard/helper cell next to q7, q3 or q20 by ≈ tick 33 (A, B/C untouched) for a gadget on their late idles (residual 1.24/1.07/1.05e-6; FINDINGS "Freeing neighbours") | a priced bound, then a finalist below v36d or a closure | PRECELL (Claude, `work/lanes/PRECELL`) | active |
-| 5 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
-| 6 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
-| 7 | P81 | G2 | Delete the untracked bulk of BCFB, COMP29, FRESH, SEPBC, WAITPROT, ST2 and their stale tracked files (essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: AENC and BFLAG read BCFB, SEPBC and FRESH outputs |
+| 3 | P82 | G1 | Prefix change that releases a cultivation guard/helper cell next to q7, q3 or q20 by ≈ tick 33 (A, B/C untouched) for a gadget on their late idles (residual 1.24/1.07/1.05e-6; FINDINGS "Freeing neighbours") | a priced bound, then a finalist below v36d or a closure | PRECELL (Claude, `work/lanes/PRECELL`) | active |
+| 4 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 5 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
+| 6 | P81 | G2 | Delete FRESH's untracked bulk (BCFB, COMP29, SEPBC, WAITPROT, ST2 done on every host 2026-10-25 06:00; essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: BFLAG reads FRESH outputs |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair
