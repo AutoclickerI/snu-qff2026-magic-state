@@ -11,8 +11,9 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    gives the server's 4.17026091090155e-5.
 3. Ranking evaluators (all orders, exact 2nd/3rd order, 3-seed MC, speed): `docs/reference/circuit.md` "Evaluators".
 4. Sequential judge plus fault scan (~5 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
-5. Seed-0 re-draws of one circuit (same noise model, verified per variant): `work/reorder.py <stem> <n> [procs] [first]`
-   → `work/reorder/` (gitignored).
+5. Seed-0 re-draws of one circuit (same noise model, verified per variant): `RACE_THRESHOLD=<x> work/race.py <stem> <n> [procs]
+   [first]` → `work/reorder/` (gitignored); it drops a variant once it cannot end below x (`work/reorder.py` holds the
+   variant generator and runs every variant to the end).
 6. Promote in one step: `work/promote.sh <stem> <host:procs:first:count>...` (speed gate ≤ 20 s per 1e6, re-draws over
    hosts with non-overlapping variant ranges, best passing draw → `submissions/`, sequential judge, commit + push,
    `submit_when_ready.sh`). Stop the draws in time for a slot with `work/receipts/cut_redraws.sh <stem name> "<time,

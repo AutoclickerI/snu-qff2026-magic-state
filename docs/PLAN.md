@@ -13,6 +13,10 @@
   readout 1.6e-6. Proved floor 1.162e-5; any Steane-type round ≈ 2.884e-5 on the data side (ARCH).
 - Free acceptance: SEPBC's prep-reset delays and initial-check trades raise v36a's acceptance 0.50083 → 0.51692 at
   unchanged loss; every lane now spends it on v36b.
+- **Codex is down from 2026-10-25 02:26 KST**: the Hermes proxy answers every model with 429 and a ~6-day retry; all
+  Codex lanes were cancelled at 03:50 (their threads are resumable). Running instead: Claude subagents INTEG (P75 on
+  v36c, `work/lanes/INTEG`), TERM (P77) and IDEAS (P79), and ST2's population script itself (`pop36b/zebra2.log`).
+  CONSTRAINTS rule 11 (Codex only) conflicts; awaiting Jihoon.
 
 ## Critical path
 Lanes find priced mechanisms → re-derive each on the incumbent → all orders → judge 1e6, speed, MC3 → `work/promote.sh`
@@ -33,7 +37,7 @@ mechanism lanes rebased on v36b at 02:25 and publish v36b deltas with acceptance
 | 8 | P67 | G1 | Population search with all-orders fitness under the acceptance floor on v36b (g05 → v36c, −0.34%) | a finalist below v36c | ST2 (`work/lanes/ST2`, on v36b) | active |
 | 9 | P74 | G1 | Acceptance-efficient waiting-data protection re-placed on v36b (v35a menu: terminal_joint −2.3% at acceptance 0.515) | `WAITPROT/menu_v36b.json` for P75, finalists | WAITPROT (`work/lanes/WAITPROT`, on v36b) | active |
 | 10 | P62 | G1, G2 | B/C boundary cache rebuilt on v36b's exterior, wide B/C search with acceptance | v36b deltas for P75 | BCPOL (`work/lanes/BCPOL`, on v36b) | active |
-| 11 | P78 | G1 | Racing re-draws: chunk-by-chunk seed-0 sampling, prune draws that cannot beat the threshold, bit-identical completed scores; launcher for promote | more draws per CPU-hour, adopted into `work/` | DRAW (`work/lanes/DRAW`) | active |
+| 11 | P78 | G1 | Racing re-draws: `work/race.py` (chunk by chunk, drops a draw once P(below the board key) < 1e-4; bit-identical to fast_check on the same host), used by promote and the hourly loop from 04:20 | measured draws per CPU-hour in production | main session | active |
 | 12 | P79 | G1 | Fresh-eyes structural review that builds: list v36b's design assumptions tick by tick, break each with an optimistic ideal-noise or ideal-meter screen, build ideas bounded above 0.5% that no active lane owns | ranked idea table with bounds, finalists | IDEAS (`work/lanes/IDEAS`) | active |
 | 13 | P2 | G1 | Hourly submission of the best verified candidate (`work/receipts/draw_loop.sh` runs `work/promote.sh` on `receipts/next_stem.txt` each hour; keep that file on the best all-orders stem; R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
