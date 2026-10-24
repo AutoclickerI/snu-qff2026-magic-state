@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v32p_r13**, server 1-F = 4.93404871449858e-5
-(= local seed-0), acceptance 0.50101, 205 CX, submitted 2026-10-24 23:37:10 KST, scored in 216 s
-(`work/receipts/promote_v32p.log`; best of 128 re-draws of `work/lanes/MAIN/v32p`; all-orders 5.14432e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v35a_r188**, server 1-F = 4.17026091090155e-5
+(= local seed-0), acceptance 0.50129, 206 CX, submitted 2026-10-25 00:37:19 KST, scored in 233 s
+(`work/receipts/promote_v35a.log`; best of 271 re-draws of `work/lanes/MAIN/v35a`; all-orders 4.39353e-5).
 
 Best competitor: Placeholder 5.058e-5, 199 CX, acceptance 0.525 (submitted 2026-10-24 21:58 KST; 5.067e-5 at 20:46,
-5.166e-5 at 19:34, 5.335e-5 at 18:34). Board read 2026-10-24 23:48 KST; refresh with `work/submit.py board`.
+5.166e-5 at 19:34, 5.335e-5 at 18:34). Board read 2026-10-25 00:42 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -39,6 +39,7 @@ Best competitor: Placeholder 5.058e-5, 199 CX, acceptance 0.525 (submitted 2026-
 | v30f: FRESH correlated rank-3 B/C resource (57 CX) on the older prefix (re-draw r454) | server | 5.62881e-5, 189 CX (385 re-draws ≈ 5.888e-5; all-orders 5.89377e-5) | `work/submissions/v30f_r454.*`, `work/lanes/FRESH/REPORT.md` |
 | v30g: v30f + exact-loss timing feedback + measured-Z inits on q5, q12 (COMP29/ST2; re-draw r146) | server | 5.48190e-5, 194 CX (all-orders 5.68689e-5) | `work/submissions/v30g_r146.*`, `work/lanes/COMP29/REPORT.md` |
 | v32p: v31s (SEPBC R45) + ST2's eight echoed parity checks on waiting data + q16 watch (re-draw r13) | server | 4.93405e-5, 205 CX (all-orders 5.14432e-5) | `work/submissions/v32p_r13.*`, `work/lanes/ST2/REPORT.md` |
+| v35a: SEPBC R44 guard5_timing_1 (reoriented A, five storage guards, v30g edits) + reviewer 6's A partial decoder rebuilt by FRESH (re-draw r188) | server | 4.17026e-5, 206 CX (all-orders 4.39353e-5) | `work/submissions/v35a_r188.*`, `work/lanes/FRESH/REPORT.md`, `work/lanes/SEPBC/REPORT.md` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |

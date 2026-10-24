@@ -1,8 +1,7 @@
 # Plan
 
 ## Status (2026-10-25 00:30 KST)
-- Board: **rank 1**, v32p_r13 4.93405e-5 (server); Placeholder 5.058e-5. **v35a_r188** (seed-0 4.17026e-5, best of 271
-  re-draws; all-orders 4.39353e-5) passed the sequential judge and is queued for 00:37. **v35b** (ST2's knapsack on v35a:
+- Board: **rank 1**, v35a_r188 4.17026e-5 (server, 00:37 slot; best of 271 re-draws, all-orders 4.39353e-5); Placeholder 5.058e-5. **v35b** (ST2's knapsack on v35a:
   +2 echoes funded by init changes, all-orders 4.37602e-5, acceptance 0.50169) is in re-draws for 01:37 (cut 01:20).
   The board keeps each team's best, so every hourly slot gets the best-expected candidate's best draw.
 - Acceptance is the binding budget. ENDSTATE's R38 circuit (5.614e-5, acc ≈ 0.587) has 0.086 of headroom.
