@@ -1,0 +1,43 @@
+{
+  "source_commit": "42afa8ff01c3999444336f5bb2fe473c1475d6f4",
+  "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522",
+  "baseline": {
+    "acceptance": 0.5027278379249299,
+    "loss": 4.1151559437773416e-05,
+    "channels": 552,
+    "conditioned_width": 11,
+    "conditional_loss_kernel_omission_bound": 1.1753492176688352e-14
+  },
+  "baseline_qasm_sha256": "49ea05888f6f56f87eee49665f8275e3f0c30e199c67db7958f5318cc07bd3f8",
+  "basis_validation": {
+    "baseline_file": "/workspace/scratch/a4b592a94a64/quantumn_review10/work/lanes/MAIN/sparse/v36c_canonical_sparse_result.json",
+    "baseline_sha256": "1936f19422b4d3616a3ef08f98885f1594a568ea60a82ce7bb60aefe7b9c9440",
+    "evaluated_file": "/workspace/scratch/a4b592a94a64/audit/review10/search/portable_eval.json",
+    "evaluated_sha256": "fe7a81d67c768a78d274b3ed962045d63b149244710c470f792a8ec3a230962e",
+    "source_qasm_sha256": "49ea05888f6f56f87eee49665f8275e3f0c30e199c67db7958f5318cc07bd3f8",
+    "moments_compared": 73,
+    "max_absolute_moment_difference": 1.6653345369377348e-16,
+    "acceptance_absolute_difference": 0.0,
+    "loss_absolute_difference": 1.1041921500407059e-16,
+    "tolerance": 1e-12,
+    "passed": true
+  },
+  "phase_formula": {
+    "q": "p/3",
+    "r": "1-2*q",
+    "A": "(1+7*r**8)/8",
+    "N": "(1+7*r**8-8*r**7)/16",
+    "A_at_p001": "204076667088229302440916007/205031250000000000000000000",
+    "N_at_p001": "318088062369314928007/410062500000000000000000000",
+    "L_at_p001": "318088062369314928007/408153334176458604881832014",
+    "L_float": 7.793347150063819e-07
+  },
+  "physical_gain_status": "No improved complete physical circuit is claimed.",
+  "implemented_evaluator": "audit/review10/search/evaluate_basis.py",
+  "physical_fragments": [
+    "audit/review10/physical/phase14_min_cx.qasm.inc",
+    "audit/review10/physical/phase14_min_depth.qasm.inc"
+  ],
+  "full_report": "REPORT_KO.md",
+  "task_file": "TASKS.json"
+}

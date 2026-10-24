@@ -5,7 +5,7 @@ for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'): os.enviro
 os.environ['PYTHONDONTWRITEBYTECODE']='1';sys.dont_write_bytecode=True
 OUT=Path(__file__).resolve().parent;ROOT=OUT.parents[2]
 os.environ['XTIM_TWIRL_CACHE_DIR']=str(OUT/'.xtim_cache')
-sys.path[:0]=[str(ROOT/'work/lanes/TREP2'),str(ROOT/'work/lanes/SCHED'),str(ROOT/'work/lanes/EVAL')]
+sys.path[:0]=[str(OUT),str(ROOT/'work/lanes/EVAL'),str(ROOT/'work')]
 import schedule as S
 from util import native_times
 import exact2,fast_third

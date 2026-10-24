@@ -1,0 +1,209 @@
+{
+  "common": {
+    "physical_gate": "A new physical finalist must pass the pinned official format, class and ideal correctness checks and have absolute noisy acceptance >=0.5; preserve the project's current safety margin if it still applies.",
+    "baseline_loss": 4.1151559437773416e-05,
+    "baseline_acceptance": 0.5027278379249299,
+    "source_commit": "42afa8ff01c3999444336f5bb2fe473c1475d6f4",
+    "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522",
+    "latest_reviewed_commit": "e31cec14e20f5d9fec9da759ef0d61cd4a5358ab"
+  },
+  "tasks": [
+    {
+      "id": "M01",
+      "title": "Synthesize the rank-four fourteen-T phase family",
+      "priority": 1,
+      "kind": "physical architecture",
+      "status": "algebra, isolated noise and routed fragments verified; full circuit unbuilt",
+      "depends_on": [],
+      "evidence": [
+        "audit/review10/physical/phase_family_certificate.json",
+        "audit/review10/physical/phase_sign_certificate.json",
+        "audit/review10/physical/phase_route_certificate.json",
+        "audit/review10/physical/phase_fragment_verification.json"
+      ],
+      "first_experiment": "Start with the historical f14_1 all-TDG support fitting the seven encoded data coordinate rows, or map a current rank-four support correctly. Jointly synthesize encoder, parity network, helper preparation, outgoing measurements and releases on the current incumbent. Do not append the fragment to the unchanged old scaffolding.",
+      "success": "Exact accepted ideal T_L; legal native schedule and processability; full-noise L below the current incumbent at A>=0.5. Prefer >=0.5% gains for investment but do not discard a smaller exact gain.",
+      "stop": "No physical reduction in routed gate/time/exposure cost, or full-noise finalists lose. Close implementations, not the entire family based on phase-only pair protection.",
+      "guarantee": "Exact phase identity on the specified occupied subspace, rank-four support, isolated phase-noise formula, and the emitted fragment's restoration/adjacency. No full-circuit improvement guarantee.",
+      "hazards": [
+        "Historical target coordinate 25 differs from current extracted target 31.",
+        "Rank-four phase support does not by itself prove removal of the fifth physical preparation or its measurement records. Verify the complete Clifford exterior and accepted-output contract before removing them; it also does not automatically remove a physical qubit.",
+        "Phase-only penalty is not additive to full conditional loss.",
+        "Do not blindly delete c54 or retain the old rank==5 assertion."
+      ]
+    },
+    {
+      "id": "M02",
+      "title": "Reuse an optimized identity-detector basis",
+      "priority": 1,
+      "kind": "exact evaluator optimization",
+      "status": "implemented and measured on exact pinned v36c",
+      "depends_on": [],
+      "evidence": [
+        "audit/review10/search/evaluate_basis.py",
+        "audit/review10/search/basis_width_probe.json",
+        "audit/review10/search/portable_eval.json",
+        "audit/review10/search/portable_eval_validation.json"
+      ],
+      "first_experiment": "Integrate the supplied CLI without modifying the pinned reference evaluator. Reuse saved XORs only after its semantic checks. Test twenty real neighboring candidates including planning/model-build time.",
+      "success": "All 73 moments agree within 1e-12 and workload throughput improves. Saved v36c witness width 11->9, work 5636->1911, peak 4698112->1174528.",
+      "stop": "Fallback to original coordinates when basis is incompatible or planning/cost is worse. Do not repeat the 19.6s search per evaluation.",
+      "guarantee": "Invertible identity-projector row transform preserves the accepted expectation. Observed timing is not a universal speedup or a physical score gain."
+    },
+    {
+      "id": "M03",
+      "title": "Cache full factor environments for local replacements",
+      "priority": 2,
+      "kind": "exact evaluator extension",
+      "status": "identity derived; not implemented",
+      "depends_on": [
+        "M02"
+      ],
+      "first_experiment": "Preserve selected full gradient tensors before adjoint_ablation.py collapses them to scalar. Evaluate twenty actual local changes; compare semantic kernel, coordinates, full independent-channel factors and unchanged exterior. Include a retiming edit that must invalidate the cache.",
+      "success": "Full 73-moment agreement<=1e-12; end-to-end throughput>=2x is the proposed investment gate.",
+      "stop": "Changed cones/boundary width are too broad or hashing/preparation dominates.",
+      "guarantee": "Z'=Z+<E,F'-F> is exact for a single factor replacement with all other factors/kernel fixed. Multi-factor replacements need the joint boundary environment.",
+      "hazards": [
+        "QASM textual locality is insufficient.",
+        "Keep positive-factor/zero-division guard.",
+        "Do not use stale boundaries after detector/frame/schedule changes."
+      ]
+    },
+    {
+      "id": "M04",
+      "title": "Compute exact finite-p mixed-channel counterfactuals",
+      "priority": 2,
+      "kind": "search diagnostic",
+      "status": "exact extension derived; not implemented",
+      "depends_on": [
+        "M02"
+      ],
+      "first_experiment": "Choose five editable channels from waits, flag-blind A preparation and B/C paths; run the existing adjoint after making each selected factor perfect. Obtain all partners, then validate twelve pairs by full contraction.",
+      "success": "Exact A,N pair interventions and a physically actionable target differing from the single-channel ranking.",
+      "stop": "Only immutable terminal channels dominate and the result changes no synthesis/edit choice.",
+      "guarantee": "Z_-ij=Z-g_i-g_j+H_ij and H_ij=g_j(base)-g_j(i-perfect) hold by multiaffinity of unnormalized moments.",
+      "hazards": [
+        "Compute ratio after separate A,N interventions.",
+        "Counterfactual noise removal is not physical gate deletion.",
+        "No additive gains or guarantees for larger bundles."
+      ]
+    },
+    {
+      "id": "M05",
+      "title": "Optimize affine syndrome coarsening and logical frames",
+      "priority": 3,
+      "kind": "physical acceptance policy",
+      "status": "three losing no-frame controls and one c43 control evaluated",
+      "depends_on": [
+        "M03"
+      ],
+      "evidence": [
+        "audit/review10/physical/coarsen_results.json",
+        "audit/review10/physical/coarsen_official_receipts.json"
+      ],
+      "first_experiment": "Use exact joint sector A and N and four logical-Pauli choices for a bounded small syndrome subspace. Compare an unrestricted oracle only as a screen, then fit a realizable affine frame and acceptance subspace. Jointly price any funded physical check.",
+      "success": "A valid affine policy directly reduces L or funds a fully repriced winning physical combination.",
+      "stop": "Best exact oracle in the declared sector set has no value, or legal affine implementation loses. The three shipped coarsenings are rejected controls.",
+      "guarantee": "The pivot row construction accepts exactly{0,delta}; it does not guarantee better conditional loss.",
+      "hazards": [
+        "Single-fault harmlessness failed badly on the tested cases.",
+        "No free nonlinear lookup or conditional S.",
+        "Keep absolute noisy acceptance, not A/A0."
+      ]
+    },
+    {
+      "id": "M06",
+      "title": "Factorize the magic-sign kernel beyond the internal T-count cap",
+      "priority": 3,
+      "kind": "evaluator scope extension",
+      "status": "design; not implemented",
+      "depends_on": [],
+      "first_experiment": "Represent rotation, detector and noise tensors without explicitly enumerating all 2^n sign strings. Match v36c, then verify a legal >20-T small-rank identity-pair control before attaching a substantive new resource candidate.",
+      "success": "Correct A,N for a useful >20-T low-width legal family within a defined compute budget.",
+      "stop": "Contraction width makes it slower or infeasible; retain current sparse path where best.",
+      "guarantee": "Removing an implementation cap broadens supported inputs; it does not remove official class/MAX_RANK 22/runtime restrictions.",
+      "hazards": [
+        "Keep official conversion/scheduling semantics.",
+        "Common frontend adapter should reuse existing judge-backed EVAL model.",
+        "No speedup guarantee from T count or rank alone."
+      ]
+    },
+    {
+      "id": "M07",
+      "title": "Prove and search a larger accepted B/C instrument contract",
+      "priority": 3,
+      "kind": "physical architecture",
+      "status": "contract refinement of existing BCPOL/TERM; unpriced",
+      "depends_on": [
+        "M04"
+      ],
+      "first_experiment": "Define the exterior-composed accepted instrument, including retained records, legal frame and allowed success probability. Relax C measurement/acceptance and branch frames without requiring equality of the entire original raw B/C Choi matrix. Include Choi positivity and trace constraints; exhibit a genuinely distinct feasible instrument or feasible family, rather than inferring freedom from linear nullity alone. Separately validate a branch-splitting identity against full A,N.",
+      "success": "A genuinely distinct feasible legal instrument reduces resources or exposure and its complete circuit beats the incumbent.",
+      "stop": "Constraints still force the original pure resource, or byproducts need forbidden corrections.",
+      "guarantee": "Accepted-output rules permit intermediate freedom when the full exterior-relevant instrument is preserved.",
+      "hazards": [
+        "Tracing out postselectedC does not by itself free its preparation.",
+        "CommonGL(3,2) is the same resource state.",
+        "Preserve earlier records and quantum correlations."
+      ]
+    },
+    {
+      "id": "M08",
+      "title": "Search rank-adaptive final stabilizer extraction",
+      "priority": 3,
+      "kind": "physical terminal family",
+      "status": "2825 subspaces enumerated; physical networks unbuilt",
+      "depends_on": [
+        "M04"
+      ],
+      "evidence": [
+        "audit/review10/factorization/phase_subgroup_verification.json"
+      ],
+      "first_experiment": "Construct a clear incoming boundary without the replaced extraction; compute syndrome-sector probability and decoded-loss numerator with previous acceptance. Screen all 2825 subspaces and synthesize small rank 2-5 networks from promising cost/quality fronts.",
+      "success": "Full legal circuit has lower L and A>=0.5; ideal accepted T_L is correct before the judge's final correction.",
+      "stop": "Useful subgroups cannot be built cheaply or actual noisy finalists lose. Do not turn a perfect-meter heuristic into a universal impossibility proof.",
+      "guarantee": "Complete enumeration of subspaces of F2^6, not cheap realization or performance.",
+      "hazards": [
+        "Plain no-A/no-B and all 128 ordering masks have historical negative evidence.",
+        "This changes physical extraction, unlike M05's policy-only edits."
+      ]
+    },
+    {
+      "id": "M09",
+      "title": "Price measurement-created graph resources with byproducts",
+      "priority": 4,
+      "kind": "physical resource compiler",
+      "status": "extension of parked star-to-triangle witness; unpriced",
+      "depends_on": [
+        "M06"
+      ],
+      "first_experiment": "Reproduce every branch/byproduct of the existing small witness, then build one specific verifier resource previously blocked by static odd-cycle embedding. Price preparation, measurement, local Clifford and latency jointly.",
+      "success": "One complete resource instrument improves actual native cost/noise and embeds in a winning full circuit.",
+      "stop": "Unsupported byproducts, acceptance collapse or extra noise/time erase routing savings.",
+      "guarantee": "Measurements can create non-bipartite endpoint graph states on a bipartite physical graph; no free resource or performance claim.",
+      "hazards": [
+        "T propagation of physical X byproducts can require forbidden conditional Clifford.",
+        "Only specific MX/RX folding is free.",
+        "Graph equality is not fault-tolerant instrument equality."
+      ]
+    },
+    {
+      "id": "M10",
+      "title": "Use semantic-noise coupling and an exact-baseline control variate",
+      "priority": 4,
+      "kind": "research estimator",
+      "status": "derived; no benchmark",
+      "depends_on": [],
+      "first_experiment": "Couple semantic independent fault sites on known-answer candidate pairs without forcing measurement outcomes. Set tau=L_base and fit beta on an independent pilot; estimate R=E[Y_tau-beta*X_tau] with acceptance checked separately. Compare variance per CPU against independent MC.",
+      "success": "Correct marginals and expected residual, with useful variance per CPU reduction on known answers before unsupported candidates.",
+      "stop": "Weak correlation, pilot coefficient instability or bookkeeping cost erases the benefit.",
+      "guarantee": "For fixed beta and exact centering, the residual estimate is unbiased for N_c-tau*A_c. Population-optimal variance is Var(Y)*(1-rho^2), not an observed guarantee.",
+      "hazards": [
+        "The same integer seed does not guarantee semantic coupling.",
+        "Include baseline numericalerror.",
+        "Does not replace official seed 0 scoring.",
+        "Pilotbeta can increase variance."
+      ]
+    }
+  ]
+}

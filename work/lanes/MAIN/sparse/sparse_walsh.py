@@ -156,6 +156,29 @@ def compile_channels(m, groups, nd, kernel_scope):
         compiled.append((scope, 1 - m.chans[fs[0]['chan']]['p'], terms))
     return compiled
 
+BASIS = ROOT/'basis_v36c.json'   # reviewer 9's saved detector-row XORs for the v36c family (32 operations)
+
+def compile_best(m, eng, groups, nd, kernel_scope):
+    """compile_channels and its min-fill plan, in reviewer 9's saved detector basis when it applies and is cheaper.
+    The XORs act only among zero-reference identity detector rows outside the kernel scope, so the accepted event and
+    every moment are unchanged; only the contraction coordinates move (v36c: width 11 -> 9, 20.7 s -> 7.9 s)."""
+    compiled = compile_channels(m, groups, nd, kernel_scope)
+    elim = minfill([set(scope) for scope, _, _ in compiled])
+    ops = json.loads(BASIS.read_text())['elementary_row_xors']
+    touched = {i for pair in ops for i in pair}
+    if any(i >= nd or tuple(eng.projs[i]) != (0, 0, 1) or int(eng.v[i]) or i in kernel_scope for i in touched):
+        return compiled, elim
+    rows = [1 << i for i in range(nd)]
+    for target, source in ops:
+        rows[target] ^= rows[source]
+    moved = {c: [dict(f, d=sum(((f['d'] & r).bit_count() & 1) << i for i, r in enumerate(rows))) for f in fs]
+             for c, fs in groups.items()}
+    alt = compile_channels(m, moved, nd, kernel_scope)
+    alt_elim = minfill([set(scope) for scope, _, _ in alt])
+    if (alt_elim['work_entries'], alt_elim['width']) < (elim['work_entries'], elim['width']):
+        return alt, alt_elim
+    return compiled, elim
+
 def factors_for(compiled, states, emask):
     outer_cache = {0: np.ones(len(states))}
     factors = []
@@ -212,8 +235,7 @@ def run(stem, nkeys=72, canonicalize=False, procs=1):
     prepared model and return rows in key order, so the result equals the serial run."""
     start = time.perf_counter()
     m, eng, groups, nd, ks, psi, where, dense_elim = prepare(stem,canonicalize)
-    compiled = compile_channels(m, groups, nd, ks)
-    elim = minfill([set(scope) for scope, _, _ in compiled])
+    compiled, elim = compile_best(m, eng, groups, nd, ks)
     keys = [None] + eng.keys[:nkeys]
     _CTX.update(eng=eng, ks=ks, psi=psi, where=where, compiled=compiled, elim=elim)
     if procs > 1:
