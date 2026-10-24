@@ -6,9 +6,10 @@
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. A round alone costs ≈ 2.87e-5 on our circuits.
 - Measured levers (FINDINGS): v16 with its data wait noiseless 5.66e-5 (−32.8%, below the leader); half the wait
-  −18.7%; the wait cost is cubic. Clean B+C rule −18.4% (BC2); EARLY's R 47 on L5 ties v16 (COMBO5 8.559e-5). The
-  round's start R (50 now; pre-stage ends at 32) is the lever: LAYOUT3 (B+C during the pre-stage, R ≥ 38–39) and R0
-  (all blocks during the pre-stage, moved in after step 32, staggered round, target R 35–37).
+  −18.7%; the wait cost is cubic. Clean B+C rule −18.4% (BC2); L5 is exhausted at R 47 (COMBO5 ties v16). The
+  round's start R (50 now; pre-stage ends at 32) and small separate block preps are the levers: grid-free, separate
+  9-CX blocks give 3.55e-5 at R 33, 4.12e-5 at R 39, 5.79e-5 at R 50 (FINDINGS). Lanes: R0 (star round, all blocks
+  during the pre-stage, moved in after step 32), TP2 (teleport chain: one partner per data qubit), LAYOUT3 (R ≥ 38–39).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
@@ -19,12 +20,12 @@ Bottleneck: the data wait before the round (R − 32 = 15–22 steps on every la
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P41 | G1 | Round at R 35–37: A, B, C prepared during the pre-stage in the 21 never-used cells, block qubits (and data) moved into released cells from step 33, staggered round (each qubit A before B), time-expanded CP-SAT | 3-seed MC mean below v16's 8.554e-5, or the smallest R with the binding constraint | Codex lane R0 (`work/lanes/R0`, owl, dragon) | active |
-| 2 | P40 | G1 | New layouts with B+C prepared in parallel with the pre-stage (CP-SAT over pre-stage symmetries/translations), A in released cells, parity cat if it fits; R_lb 39 found | 3-seed MC mean below 8.46431e-5, or the smallest R per approach | Codex lane LAYOUT3 (`work/lanes/LAYOUT3`, tom, hippo, jerry) | active |
-| 3 | P38 | G1 | Stack BC2's clean B+C rule with EARLY's release-aware merge on L5 + measure-init | 3-seed MC mean below 8.46431e-5 | Codex lane COMBO5 (`work/lanes/COMBO5`, zebra, sunfish) | active: best R 47, mean 8.559e-5 (ties v16) |
+| 2 | P42 | G1 | Teleport round right after the pre-stage: output block O, B, C prepared during the pre-stage in never-used cells, O moved next to the data (one partner per data qubit), data read in Z, B checks O | 3-seed MC mean below v16's 8.554e-5, or the smallest round start with the binding constraint | Codex lane TP2 (`work/lanes/TP2`, zebra, sunfish) | active |
+| 3 | P40 | G1 | New layouts with B+C prepared in parallel with the pre-stage (CP-SAT over pre-stage symmetries/translations), A in released cells, parity cat if it fits; R_lb 39 found | 3-seed MC mean below 8.46431e-5, or the smallest R per approach | Codex lane LAYOUT3 (`work/lanes/LAYOUT3`, tom, hippo, jerry) | active |
 | 4 | P39 | G1 | Clean B+C rule on LAYOUT2's parity layout, earliest R, data-move variants, measure-init | 3-seed MC mean below 8.46431e-5 | Codex lane COMBO2 (`work/lanes/COMBO2`, owl) | active |
 | 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
 | 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P38–P41 | parked: used inside P38–P41 |
+| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
 | 8 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
 
 ## Idea review (2026-10-24)

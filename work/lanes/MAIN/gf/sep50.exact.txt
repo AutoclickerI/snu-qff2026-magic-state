@@ -1,0 +1,15 @@
+circuit sep50.qasm: 345 noise channels, 2417 faults, 537 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 4.02062e-05   (pairs 4.02062e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 4.02062e-05
+third order: 1.77272e-05   (weight-3 sets 2.09867e-05 + pair-times-others -3.25958e-06)
+1-F (to 3rd order) = 5.79333e-05
+acceptance: first order 0.48600, second order 0.61754; exp(-A1) = 0.59810  (A1 = 0.51400)
+time: model+singles 0.3s, pairs 4.0s, triples 225.9s
+
+top 3 fault pairs by contribution to 1-F (each pair counted once):
+  9.326e-07 ( 2.32%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L189 idle X@q20 t=33..49
+  9.326e-07 ( 2.32%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L189 idle Y@q20 t=33..49
+  3.738e-07 ( 0.93%)  n_ij=1.000  L186 idle Z@q15 t=33..49   +   L279 gate2 IZ@q17,5 t=48
+
+loss by channel kind (each pair split half/half): {'flip': '8.538e-07', 'gate': '1.609e-05', 'idle': '2.326e-05'}

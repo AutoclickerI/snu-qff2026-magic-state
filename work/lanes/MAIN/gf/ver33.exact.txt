@@ -1,0 +1,24 @@
+circuit ver33.qasm: 392 noise channels, 2722 faults, 606 (s,d) classes, rotation rank 5, 28 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 3.25618e-05   (pairs 3.25618e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 3.25618e-05
+third order: 4.46308e-06   (weight-3 sets 6.91063e-06 + pair-times-others -2.44755e-06)
+1-F (to 3rd order) = 3.70249e-05
+acceptance: first order 0.50442, second order 0.62722; exp(-A1) = 0.60922  (A1 = 0.49558)
+time: model+singles 0.4s, pairs 2.2s, triples 58.4s
+
+top 12 fault pairs by contribution to 1-F (each pair counted once):
+  2.765e-07 ( 0.85%)  n_ij=0.125  L177 idle X@q7 t=25..28   +   L208 idle Y@q11 t=29..33
+  2.765e-07 ( 0.85%)  n_ij=0.125  L177 idle X@q7 t=25..28   +   L208 idle X@q11 t=29..33
+  1.663e-07 ( 0.51%)  n_ij=0.125  L177 idle X@q7 t=25..28   +   L155 flip X@q11 t=23
+  1.663e-07 ( 0.51%)  n_ij=0.125  L177 idle X@q7 t=25..28   +   L166 flip X@q30 t=23
+  1.663e-07 ( 0.51%)  n_ij=0.125  L177 idle X@q7 t=25..28   +   L320 flip X@q11 t=35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L333 idle Y@q0 t=36..36   +   L334 idle Z@q20 t=36..36
+  1.111e-07 ( 0.34%)  n_ij=1.000  L333 idle Y@q0 t=36..36   +   L335 idle Z@q7 t=36..36
+  1.111e-07 ( 0.34%)  n_ij=1.000  L333 idle Y@q0 t=36..36   +   L336 idle Z@q4 t=36..36
+  1.111e-07 ( 0.34%)  n_ij=1.000  L333 idle Z@q0 t=36..36   +   L334 idle Y@q20 t=36..36
+  1.111e-07 ( 0.34%)  n_ij=1.000  L333 idle Z@q0 t=36..36   +   L334 idle Z@q20 t=36..36
+  1.111e-07 ( 0.34%)  n_ij=1.000  L333 idle Z@q0 t=36..36   +   L335 idle Y@q7 t=36..36
+  1.111e-07 ( 0.34%)  n_ij=1.000  L333 idle Z@q0 t=36..36   +   L335 idle Z@q7 t=36..36
+
+loss by channel kind (each pair split half/half): {'flip': '4.578e-07', 'gate': '1.171e-05', 'idle': '2.039e-05'}
