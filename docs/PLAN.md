@@ -1,8 +1,8 @@
 # Plan
 
-## Status (2026-10-24 21:45 KST)
-- Board: Placeholder 5.067e-5 (197 CX, 20:46); us 5.62881e-5 = v30f_r454 (rank 2, 189 CX). Gap 10%. v30f all-orders
-  5.89377e-5; the next slot needs a v30f-lineage gain (COMP29, WAITPROT, SEPBC, BCPOL, ST2) or a new placement (FRESH, ENDSTATE).
+## Status (2026-10-24 22:10 KST)
+- Board: Placeholder 5.067e-5 (197 CX, 20:46); us 5.62881e-5 = v30f_r454 (rank 2). v30g (COMP29/ST2: timing feedback +
+  measured-Z inits on q5, q12; all-orders 5.68689e-5, −3.5% vs v30f) in re-draws for 22:37 (cut 22:27).
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
@@ -21,7 +21,7 @@ small grid-native block preps; every earlier closure of it was model-bound.
 | 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
 | 3 | P72 | G1 | FRESH: delivered v30f (correlated rank-3 B/C); local early-round attempts stop at R44–45 (FINDINGS). Now a global joint re-synthesis of the cultivation prefix placement/schedule with the end-state (earliest R, then exposure); ST1 does local relayout macros | a verified grid circuit below 5e-5 true, or designs closed by mechanism | Codex lane FRESH (`work/lanes/FRESH`, zebra, sunfish) | active |
 | 4 | P69 | G1 | SEPBC: delivered v28s, the q5 detectors on v29c and the ENDSTATE emitter (FINDINGS). Now v30f's round-start critical path: which chain forces R48, then shorten it (shallower in-place resource with reviewer 4's helper primitives, early layers on early-free cells, prefix-tail reorder, earlier A) | each R step ≈ 1.4e-6; a v30f-lineage circuit with earlier R below v30f | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
-| 6 | P67 | G1 | ST2: macro-rewrite population search on v30f (init/check forms, commuting schedule, transfer phase, readout edge, timing, idle-slot detectors), seeded with COMP29's finalists | a v30f-lineage finalist below COMP29's best by 3-seed mean | Codex lane ST2 (`work/lanes/ST2`, zebra, sunfish, tom) | active |
+| 6 | P67 | G1 | ST2: delivered v30g; now a v30g loss ledger (prefix ops/idles, data wait, resource, A, round, cross terms; top five mechanisms) and population search aimed at its largest terms | ledger in ST2/REPORT.md; a finalist below v30g by all-orders | Codex lane ST2 (`work/lanes/ST2`, zebra, sunfish) | active |
 | 5 | P73 | G1 | COMP29: port the v23h→v29c local edits (blue XZ check, exchange, instrument, readout copy, LNS2/ST2 edits, timing feedback, known-zero detectors) onto v30f and price every combination | a v30f-lineage finalist below v30f by 3-seed mean | Codex lane COMP29 (`work/lanes/COMP29`, jerry, owl) | active |
 | 5 | P74 | G1 | WAITPROT: reviewer 4's selective Z protection of waiting data on v30f (helper \|+⟩, CX h→q twice around the wait, MX h; Fano-line triple meets every weight-3 Z logical) | priced singles/pairs/Fano triples; a finalist below v30f or the mechanism | Codex lane WAITPROT (`work/lanes/WAITPROT`, tom, zebra) | active |
 | 6 | P59 | G1 | BCFB: the A side of v30f (A's loss share and exposure, every library A encoder with exact feedback, just-in-time A, ACHECK-style checks and flags) | a v30f-lineage circuit below v30f by all-orders | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
