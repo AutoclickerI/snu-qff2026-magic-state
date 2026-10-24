@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/aaZ0m5DAG8b00cJOZaiqGumdJyY</id>
+  <title>arXiv Query: search_query=all:"magic state" AND all:"postselection" AND submittedDate:"202501010000 TO 202610232359"&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-23T17:59:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22magic+state%22+AND+(all:%22postselection%22+AND+submittedDate:%22202501010000+TO+202610232359%22)&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>15</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.31115v1</id>
+    <title>The limits of magic-state distillation</title>
+    <updated>2026-10-22T11:27:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.31115v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.31115v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Magic-state factories are a major cost of fault-tolerant quantum computing, yet how few noisy inputs they need is known only for restricted protocols. We show that, for tolerating input faults, any stabilizer protocol, however adaptive, postselected or multistage, is no better than a projection onto one stabilizer code, and that for rational targets a fault pattern is harmful exactly when its complement is. Searches over all codes show that quadratic distillation of one T state needs exactly nine inputs and that the eight-input CCZ factory is optimal. At order $d$, one T state needs $n\geq2d$.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-22T11:27:47Z</published>
+    <arxiv:comment>5 pages, 10 pages of Supplemental Material, 1 figure, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Llorenç Balada Gaggioli</name>
+    </author>
+    <author>
+      <name>Jakub Mareček</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10731v1</id>
+    <title>Single-shot magic state factories for quantum LDPC codes</title>
+    <updated>2026-10-07T18:06:31Z</updated>
+    <link href="https://arxiv.org/abs/2610.10731v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10731v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum low-density parity-check (qLDPC) codes can substantially reduce the qubit overhead of fault-tolerant quantum computation, but any useful architecture based on such codes also requires an efficient mechanism to implement non-Clifford gates in a fault-tolerant manner. We introduce a space-time-efficient magic state factory for high-rate qLDPC codes by combining the transversal non-Clifford gates of recently developed tricycle codes with single-shot four-dimensional balanced product quadcycle codes. The key ingredient is an efficient "escape" mechanism that teleports postselected logical magic states from tricycle codes to larger distance quadcycle codes. Under a standard circuit-level noise model at physical error rate $10^{-3}$, our factories produce $\mathrm{CCZ}$ states at logical error rates as low as $10^{-9}$ with 10-40 times lower space-time cost than state-of-the-art magic state generation methods. The resulting states are directly encoded in high-rate blocks suitable for computation. We identify the quadcycle codes by an AI-assisted search and show that they can serve as excellent memories capable of single-shot error correction. Finally, we present a concrete implementation of the entire factory with highly efficient atom transport on reconfigurable neutral-atom quantum computers. Together, these results provide an end-to-end, practical protocol for producing and utilizing high-fidelity magic states within a high-rate qLDPC architecture, with the lowest space-time cost to date.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-07T18:06:31Z</published>
+    <arxiv:comment>17 main text pages, 6 main figures, Supplementary Information appended. Atom movement animation included in ancillary files</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Varun Menon</name>
+    </author>
+    <author>
+      <name>Rohan Mehta</name>
+    </author>
+    <author>
+      <name>Andi Gu</name>
+    </author>
+    <author>
+      <name>Andrei C. Diaconu</name>
+    </author>
+    <author>
+      <name>Daniel Bochen Tan</name>
+    </author>
+    <author>
+      <name>Xiao Xiao</name>
+    </author>
+    <author>
+      <name>Michael J. Gullans</name>
+    </author>
+    <author>
+      <name>Qian Xu</name>
+    </author>
+    <author>
+      <name>Hengyun Zhou</name>
+    </author>
+    <author>
+      <name>Mikhail D. Lukin</name>
+    </author>
+    <author>
+      <name>J. Pablo Bonilla Ataides</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06828v1</id>
+    <title>The practical cost of magic state cultivation</title>
+    <updated>2026-10-05T17:57:51Z</updated>
+    <link href="https://arxiv.org/abs/2610.06828v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06828v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Magic state cultivation is a promising method for preparing high-fidelity non-Clifford resource states - a central component of fault-tolerant quantum computing - with low spacetime overhead. In benchmarking cultivation, existing resource estimates assume access to noiseless transversal measurement of the output magic state to allow for postselection during the final escape stage of the cultivation process. However, such measurements would destroy the magic state and are therefore unavailable during computation. We develop an open-boundary postselection method, Caliper, that uses only nondestructive mid-circuit syndrome information and substantially outperforms existing methods operating under these constraints. In some regimes, our postselection method uniquely recovers the resource efficiency of prior estimates. However, in other cases, we observe a tradeoff. At spacetime costs reported in previous works, the achievable logical error rates can be orders of magnitude higher, and recovering the reported logical error rate requires substantially larger codes and longer escape stages. Our results highlight how practical considerations involving mid-circuit postselection can impact the design and performance of magic state cultivation protocols.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T17:57:51Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Rohan Mehta</name>
+    </author>
+    <author>
+      <name>Varun Menon</name>
+    </author>
+    <author>
+      <name>Hengyun Zhou</name>
+    </author>
+    <author>
+      <name>Mikhail D. Lukin</name>
+    </author>
+    <author>
+      <name>J. Pablo Bonilla Ataides</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.29018v1</id>
+    <title>Decoder Model Compatibility Provides Information beyond the Logical Gap under Drifting and Correlated Quantum Noise</title>
+    <updated>2026-09-24T04:33:06Z</updated>
+    <link href="https://arxiv.org/abs/2609.29018v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.29018v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum error-correcting decoders provide both corrections and confidence estimates for the logical-error risk of individual measurement records. Such confidence can guide postselection, but it depends on the accuracy of the decoder noise model. When the physical device drifts away from that model, confidence measures such as the logical gap can become miscalibrated. We show that this mismatch can itself provide useful information. On IBM quantum hardware, syndrome statistics drift across consecutive acquisition windows, and the resulting detector histories differ substantially from those predicted by the stationary detector error model used for decoding. We observe a similar hardware-model mismatch in independent Google surface-code memory data. We exploit this effect by assigning additional rejection weight to detector histories that are unlikely under the assumed model. For minimum-weight perfect matching (MWPM), the minimum weight $W$ provides an inexpensive proxy for syndrome surprisal. On held-out IBM repetition-code memories, likelihood-aware postselection reduces the retained logical-error probability (LEP) by $10.6\%$ at $d=7$ and $28.8\%$ at $d=9$, both at $15\%$ rejection. On Google ten-round $d=5$ XZZX surface-code memory data, it reduces retained LEP by $75.4\%$ at $90\%$ rejection. Applied to Google's magic-state cultivation experiment with the Tesseract decoder, it reduces tomography infidelity by $34.7\%$ with $30\%$ additional grafting-stage rejection, or increases accepted yield by $30.4\%$ at a target fidelity of $97.0\%$. Burst-noise simulations show that the advantage persists as code distance and syndrome-extraction volume increase. The method reuses quantities already produced during logical-gap decoding and requires only an additional fitting step.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-24T04:33:06Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Aaron C. Hoyt</name>
+    </author>
+    <author>
+      <name>Chunshu Wu</name>
+    </author>
+    <author>
+      <name>Shuwen Kan</name>
+    </author>
+    <author>
+      <name>Sean Garner</name>
+    </author>
+    <author>
+      <name>Avimita Chatterjee</name>
+    </author>
+    <author>
+      <name>Drew Rebar</name>
+    </author>
+    <author>
+      <name>Norman M. Tubman</name>
+    </author>
+    <author>
+      <name>Katherine Klymko</name>
+    </author>
+    <author>
+      <name>Chenxu Liu</name>
+    </author>
+    <author>
+      <name>Ang Li</name>
+    </author>
+    <author>
+      <name>Samuel Stein</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.12698v1</id>
+    <title>Extremely Low-Cost Magic State Preparation toward Fault-Tolerant Quantum Computing</title>
+    <updated>2026-09-11T10:45:47Z</updated>
+    <link href="https://arxiv.org/abs/2609.12698v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.12698v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fault-tolerant preparation of non-Clifford resource states is a major contributor to the overhead of quantum computation, motivating protocols that achieve high output fidelity with minimal qubit and circuit costs. We introduce a low-cost magic-state preparation protocol in which the choice of stabilizer generators is co-designed with the flag gadgets, allowing the syndrome-extraction circuit itself to filter correlated faults across a non-Clifford layer. The protocol prepares a logical plus state in the 15-qubit quantum Reed-Muller code, applies a transversal T gate, and gauge-fixes the same register into the seven-qubit Steane code. By reorganizing equivalent Z-type stabilizer generators into jointly flagged measurement groups, the protocol eliminates all accepted logical-error contributions arising from one or two circuit faults under destructive error detection. Under a uniform circuit-level depolarizing noise model, the postselected infidelity is $210.2p^3+O(p^4)$. At $p=10^{-3}$, exact low-order enumeration combined with stratified sampling bounds the infidelity by $2.2\times10^{-7}$ at 99.9% joint confidence, while retaining an acceptance probability of 86.9%. The complete circuit requires only 19 qubits and 82 CNOT gates. These results demonstrate that stabilizer-generator design can substantially reduce the cost of postselected magic-state preparation, although corrected operation and the fidelity of an unmeasured output block require separate analysis.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-11T10:45:47Z</published>
+    <arxiv:comment>16 pages, 6 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Jianshuo Gao</name>
+    </author>
+    <author>
+      <name>Xiao Yuan</name>
+    </author>
+    <author>
+      <name>Yuan Yao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.06688v3</id>
+    <title>Conditional Error Exponents of Probabilistic Quantum Resource Distillation</title>
+    <updated>2026-10-10T15:38:11Z</updated>
+    <link href="https://arxiv.org/abs/2609.06688v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.06688v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum resource distillation converts imperfect resource states into highly resourceful targets and is a central task in quantum information processing. When distillation is probabilistic, unfavorable outcomes may be discarded and the quality of the output is evaluated conditioned on success, leading to a notion of reliability that differs from the deterministic setting. Here we study the conditional error exponents of probabilistic quantum resource distillation under approximately resource-nongenerating instruments and derive its general connection to the postselected composite quantum hypothesis testing against the corresponding set of free states. This reduction leads naturally to scale-invariant projective distinguishability measures and provides finite-blocklength bounds for a broad class of resource theories. We apply the framework to entanglement, coherence, and magic. For entanglement and magic, we obtain exact zero-rate asymptotic characterizations of the conditional error exponent in terms of regularized projective distinguishability, while for coherence we derive general finite-blocklength and asymptotic bounds. For representative entangled and magic states, the resulting quantities can be evaluated analytically and reveal regimes in which postselection yields a strictly larger conditional error exponent than deterministic distillation. Furthermore, we also show that the conditional error exponents for probabilistic entanglement distillation under a strictly positive success probability constraint are smaller than those with no constraints on the success probability.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-06T15:56:59Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Xian Shi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.27358v1</id>
+    <title>Cultivating logical catalysts for fault-tolerant dyadic phase rotations</title>
+    <updated>2026-06-25T17:58:01Z</updated>
+    <link href="https://arxiv.org/abs/2606.27358v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.27358v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a surface-code cultivation protocol for reusable logical catalyst states that implement exact fine dyadic phase gates $Z^{2^{-b}}$ by phase kickback. The catalyst is an eigenstate of a high-period Clifford circuit $U$, with a direct construction supported on $O(2^b)$ logical qubits. Once cultivated, each invocation implements the target phase through a controlled-$U$ gadget, removing Clifford+$T$ synthesis approximation error from the online gate and making the online non-Clifford depth independent of the target logical accuracy. As a concrete demonstration, we construct a catalyst for $\sqrt{T}=Z^{1/8}$, where $U$ is a nine-qubit brickwork Clifford circuit and controlled-$U$ consists of eight controlled-CNOTs. Starting from nine distance-three rotated-surface-code blocks, we cultivate the catalyst through logical-$U$ checks, syndrome extraction and postselection, code growth, and complementary-gap decoding. Due to the intrinsic fault tolerance of the phase read-out, a \emph{single} verification round already reaches the leading error-corrected scaling, in contrast to the repeated logical checks required when cultivating single-qubit magic states. A hybrid tensor-network and stabilizer simulation shows that, at physical error rate $p=10^{-3}$, the postselected catalyst can be grown to distance-seven rotated-surface-code blocks with logical leakage rate $\sim 10^{-6}$ using around seven expected attempts, and can be suppressed further with stronger postselection. Compared with existing protocols, our approach trades offline, phase-specific catalyst cultivation for exactness, reusability, and constant-depth online implementation of fixed fine dyadic phases in codes with restricted transversal gate sets.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T17:58:01Z</published>
+    <arxiv:comment>17 pages, 6 figures and 3 tables</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Yichen Xu</name>
+    </author>
+    <author>
+      <name>Xiao Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.26522v1</id>
+    <title>A Resource Comparison of Logical T-State Preparation</title>
+    <updated>2026-05-26T04:09:50Z</updated>
+    <link href="https://arxiv.org/abs/2605.26522v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.26522v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Logical T state preparation is a major overhead source in fault tolerant architectures built from stabilizer operations. Existing protocols, however, are reported under different code families, noise models, postselection rules, and cost conventions, making direct comparison difficult. We compare three representative preparation routes: magic state distillation, magic state cultivation, and code switching, using currently available results. Rather than reducing heterogeneous data to a single cost metric, we retain source native cost units and record output error, single attempt cost, expected cost per accepted output, footprint, latency, and reporting completeness for each configuration. Within the current dataset, distillation reaches the lowest output error regime; code switching achieves the lowest reported single attempt cost and the smallest explicit footprint among the compatible rows; and recent RP2 cultivation results add low cost cultivation points with output errors between 1e-6 and 1e-9. As a simple algorithm level case study, we also examine the reported preparation routes under an error budget motivated by Shor factoring algorithm, in order to relate single state preparation costs to full workload requirements. The resulting comparison clarifies the trade offs currently supported across the literature, while remaining bounded by the conventions and coverage of the underlying papers.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-26T04:09:50Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Jianshuo Gao</name>
+    </author>
+    <author>
+      <name>Xiao Yuan</name>
+    </author>
+    <author>
+      <name>Yuan Yao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.03616v2</id>
+    <title>Reducing Postselection Overhead in Magic-State Cultivation by In-Patch Multiplexing</title>
+    <updated>2026-05-28T11:47:04Z</updated>
+    <link href="https://arxiv.org/abs/2605.03616v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.03616v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fault-tolerant quantum computing requires high-fidelity logical magic states for implementing non-Clifford operations. Magic-state cultivation provides a lower-overhead route to logical magic-state preparation, but its efficiency is limited by postselection loss during the early injection-and-cultivation stages. In this work, we propose an in-patch multiplexing scheme that uses early-stage idle resources within a single logical patch to create multiple local cultivation opportunities. A candidate that passes the early stages is forwarded to the standard escape pathway, while the escape stage and the decoder-based acceptance procedure are kept identical to those of the single-site baseline. Under a uniform depolarizing noise model with idle noise, the proposed protocol substantially reduces the injection-and-cultivation discard rate and the expected number of attempts required to obtain an accepted early-stage candidate. At a physical error rate of \(p=2\times10^{-3}\), the injection-and-cultivation expected attempts are reduced by \(45.46\%\) for \(d_1=3\) and by \(72.91\%\) for \(d_1=5\), relative to the single-site MSC baseline. In the direct full-cycle evaluation including escape, the expected attempts per kept logical output are further reduced by \(49.04\%\) for \(d_1=3\) and by \(78.69\%\) for \(d_1=5\) at the same physical error rate. The full-cycle cost curves are shifted toward smaller expected attempts, while the final logical-error behavior remains governed by the escape-stage gap threshold. These results show that in-patch multiplexing can reduce postselection overhead while preserving the standard magic-state cultivation framework.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-05T10:42:57Z</published>
+    <arxiv:comment>21 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Dongmin Kim</name>
+    </author>
+    <author>
+      <name>Jeonggeun Seo</name>
+    </author>
+    <author>
+      <name>Aniket Patra</name>
+    </author>
+    <author>
+      <name>Youngsun Han</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.10729v2</id>
+    <title>Entanglement boosting: Low-volume logical Bell pair preparation for distributed fault-tolerant quantum computation</title>
+    <updated>2026-05-04T02:08:59Z</updated>
+    <link href="https://arxiv.org/abs/2511.10729v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.10729v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Distributed architecture is a promising route to scaling fault-tolerant quantum computing (FTQC) beyond the inherent limitations of single processors. For practical implementation of distributed FTQC, logical Bell pair preparation must be designed not only for efficient Bell pair consumption but also for the spacetime volume of the protocol; however, entanglement distillation protocols have primarily focused on minimizing the consumption of Bell pairs, often resulting in protocols that require a substantial number of local operations. To resolve this issue, we introduce a metric for characterizing the practical cost of preparing high-fidelity logical Bell pairs, link-limited volume (LLV), which is a circuit-volume metric incorporating both the cost of physical Bell pairs and the spacetime volume of local operations. Guided by this metric, we propose entanglement boosting protocol, which achieves efficient preparation of logical Bell pairs encoded in rotated surface code with LLV reduced by orders of magnitude compared to prior state-of-the-art methods. In this protocol, paralleling recent advances in magic state cultivation, we employ soft-information decoders and postselection to suppress the logical error rates of Bell pairs to practical levels in the order of $10^{-10}$ from 86 noisy physical Bell pairs at 1% error, while all local operations are implementable within a spatial region of a single surface code patch with 2D local connectivity. We also present a pipelined implementation of entanglement distillation using high-rate quantum error-correcting codes, enabling arbitrarily low logical error rates while also maintaining physically efficient implementations. These results pave the way for the practical implementation of distributed FTQC, reinforcing the benefits of fast interconnect technologies and serving as a guiding principle for the efficient design of protocols and devices.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-13T19:00:01Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <arxiv:journal_ref>PRX Quantum 7, 033014 (2026)</arxiv:journal_ref>
+    <author>
+      <name>Shinichi Sunami</name>
+    </author>
+    <author>
+      <name>Yutaka Hirano</name>
+    </author>
+    <author>
+      <name>Toshihide Hinokuma</name>
+    </author>
+    <author>
+      <name>Hayata Yamasaki</name>
+    </author>
+    <arxiv:doi>10.1103/tz8f-6xwk</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/tz8f-6xwk" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.08290v2</id>
+    <title>Theory and Architecture of Syndrome-Resolved Logical Gates</title>
+    <updated>2026-06-25T05:49:44Z</updated>
+    <link href="https://arxiv.org/abs/2510.08290v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.08290v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a general framework for weak transversal gates, namely syndrome-resolved implementation of logical unitaries realized by local physical unitaries, and demonstrate its wide impact in three applications: partial fault-tolerant architecture, short-depth state preparation, and magic state distillation. Our theoretical contribution is to prove a sufficient condition for a general Calderbank-Shor-Steane code to admit weak transversal gates, and to present an efficient algorithm to determine the physical multiqubit Pauli rotations. To demonstrate the practicality of weak transversal gates in the near future, we propose a partially fault-tolerant Clifford+$φ$ architecture that implements in-place Pauli rotations via a repeat-until-success strategy. Numerical simulations indicate that a rotation of 0.001 attains a logical error of $9.6\times10^{-5}$ on a surface code with $d=7$ at a physical error rate of $p=10^{-4}$, while avoiding the spacetime overheads of magic state factories, small angle synthesis, and routing. Resource estimates on surface and [[144,12,12]] bivariate bicycle codes for a Trotter-like circuit with $N=108$ logical qubits indicate runtime reductions of factors of 778 and 45, respectively, relative to the conventional method, due to the natural parallelism of rotation gates. Looking further ahead, we consider state-preparation tasks allowing postselection. We show that weak transversal gadgets prepare high-level equatorial magic states with a substantially improved cost-accuracy tradeoff, achieving up to a $10^3$-fold reduction in spacetime cost for a magic state at the 11th level of the Clifford hierarchy. Furthermore, we integrate weak transversal gates into magic state distillation pipelines, reducing the logical error rate of level-2 distillation of the $\sqrt{T}$ state by up to a factor of 94 with a small increase in spacetime cost.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-09T14:42:35Z</published>
+    <arxiv:comment>36 pages, 14 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Nobuyuki Yoshioka</name>
+    </author>
+    <author>
+      <name>Alireza Seif</name>
+    </author>
+    <author>
+      <name>Peter Groszkowski</name>
+    </author>
+    <author>
+      <name>Andrew Cross</name>
+    </author>
+    <author>
+      <name>Ali Javadi-Abhari</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.07269v2</id>
+    <title>Transversal dimension jump for product qLDPC codes</title>
+    <updated>2026-03-02T03:45:17Z</updated>
+    <link href="https://arxiv.org/abs/2510.07269v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.07269v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce transversal dimension jump, a code-switching protocol for lifted product (LP) quantum low-density parity-check (qLDPC) codes across different chain-complex dimensions, enabling universal fault-tolerant quantum computation with low overhead. The construction leverages the product structure of LP codes to implement one-way transversal CNOTs between a 3D code and its 2D component codes, enabling teleportation-based switching with geometrically nonlocal gates. Combined with constant-depth CCZ gates in 3D LP codes and low-overhead transversal Clifford gates in 2D LP codes, this yields universal, high-rate quantum logical computation with high thresholds and low space-time costs. Beyond asymptotic schemes, we identify explicit 3D-2D LP code pairs supporting cup-product CCZ gates, including bivariate tricycle-bicycle families such as the $[[81,3,5]]$-$[[54,2,6]]$ pair, where the 3D tricycle codes admit depth-2 CCZ, weight-6 stabilizers, and pseudo-thresholds $\gtrsim 0.4\%$. As a byproduct, we show that the 3D codes enable highly efficient magic-state preparation: a single round of stabilizer measurements followed by depth-2 CCZ and postselection produces states with error $&lt;10^{-9}$ and success probability $\sim 35\%$. Our results establish a native integration of qLDPC codes with complementary transversal gates-covering nearly all practically relevant families known so far-and open a broad design space for scalable, low-overhead universal quantum computation.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-08T17:35:07Z</published>
+    <arxiv:comment>Updated Table I to include code instances with higher rates and distances</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Christine Li</name>
+    </author>
+    <author>
+      <name>John Preskill</name>
+    </author>
+    <author>
+      <name>Qian Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.01319v2</id>
+    <title>A robust phase of continuous transversal gates in quantum stabilizer codes</title>
+    <updated>2026-02-02T09:55:27Z</updated>
+    <link href="https://arxiv.org/abs/2510.01319v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.01319v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A quantum error correcting code protects encoded logical information against errors. Transversal gates are a naturally fault-tolerant way to manipulate logical qubits but cannot be universal themselves. Protocols such as magic state distillation are needed to achieve universality via measurements and postselection. A phase is a region of parameter space with smoothly varying large-scale statistical properties except at its boundaries. Here, we find a phase of continuously tunable logical unitaries for the surface code implemented by transversal operations and decoding that is robust against dephasing errors. The logical unitaries in this phase have an infidelity that is exponentially suppressed in the code distance compared to their rotation angles. We exploit this to design a simple fault-tolerant protocol for continuous-angle logical rotations. This lowers the overhead for applications requiring many small-angle rotations such as quantum simulation.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-01T18:00:02Z</published>
+    <arxiv:comment>9 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Eric Huang</name>
+    </author>
+    <author>
+      <name>Pierre-Gabriel Rozon</name>
+    </author>
+    <author>
+      <name>Arpit Dua</name>
+    </author>
+    <author>
+      <name>Sarang Gopalakrishnan</name>
+    </author>
+    <author>
+      <name>Michael J. Gullans</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.05232v2</id>
+    <title>Cultivating T states on the surface code with only two-qubit gates</title>
+    <updated>2025-09-16T14:12:27Z</updated>
+    <link href="https://arxiv.org/abs/2509.05232v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.05232v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>High-fidelity T magic states are a key requirement for fault-tolerant quantum computing in 2D. It has generally been assumed that preparing high-fidelity T states requires noisy injection of T states followed by lengthy distillation routines. This assumption has been recently challenged by the introduction of cultivation, in which careful state injection and postselection alone are used to prepare T states close to the fidelity required for quantum algorithms. Cultivation was originally proposed for the color code, but can also be done on the $RP^2$ code, a code similar to the surface code.
+  In this work, we demonstrate how to cultivate T states directly on the surface code. Besides its simplicity compared to color or $RP^2$ cultivation, surface code cultivation offers a number of advantages, including: (1) It is more directly compatible with neutral atom architectures than ${RP}^2$ cultivation (2) Cultivated surface code states can be used in transversal CNOT gates with other surface codes, unlike color code states (3) Surface code cultivation can be done at any distance, unlike color and ${RP}^2$ cultivation which requires odd distances. Under a standard depolarizing error model, our $d=3,\ (4),\ (5)$ cultivation circuit reaches an error rate of $1\cdot 10^{-6},\ (1\cdot10^{-8}),\ (2\cdot10^{-9})$ and an acceptance rate of $34\%,\ (6\%),\ (1\%)$, meeting or exceeding the fidelity of color and $RP^2$ cultivation with comparable acceptance rates.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-05T16:48:56Z</published>
+    <arxiv:comment>12 pages, 7 figures. See also work by Puri and AWS groups, released in the same posting</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Jahan Claes</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.02935v1</id>
+    <title>Magic State Injection with Erasure Qubits</title>
+    <updated>2025-04-03T18:00:01Z</updated>
+    <link href="https://arxiv.org/abs/2504.02935v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.02935v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Erasure qubits constitute a promising approach for tackling the daunting resources required for fault-tolerant quantum computing. By heralding erasure errors, both the error-correction threshold and the sub-threshold scaling of the logical error rate are significantly improved. While previous research has focused primarily on fault-tolerant quantum memories, we extend this investigation to magic state injection--a critical yet resource-intensive component of fault-tolerant quantum computation. We show that, after postselecting on erasures, the logical error rate of the injected magic state is set by the residual Pauli error, while the space-time overhead is only marginally increased as compared to non-erasure qubits with a similar noise strength. These conclusions hold both for injection into the surface code, and for injection and cultivation on the color code. For the former, we show that most of the gains can be achieved by using just three strategically placed erasure qubits in the surface code patch, independent of the patch size. For the latter, in contrast, it is beneficial to have all the qubits in the cultivation patch be erasure qubits. Our results for cultivation suggest that algorithmically relevant logical error rates may be within reach without magic state distillation for erasure rates $\lesssim 4\times 10^{-3}$ and residual Pauli error rates $\sim 10^{-4}$.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-03T18:00:01Z</published>
+    <arxiv:comment>13 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <arxiv:journal_ref>PRX Quantum 6, 040323, 2025</arxiv:journal_ref>
+    <author>
+      <name>Shoham Jacoby</name>
+    </author>
+    <author>
+      <name>Yotam Vaknin</name>
+    </author>
+    <author>
+      <name>Alex Retzker</name>
+    </author>
+    <author>
+      <name>Arne L. Grimsmo</name>
+    </author>
+    <arxiv:doi>10.1103/5q1v-ry3y</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/5q1v-ry3y" title="doi"/>
+  </entry>
+</feed>

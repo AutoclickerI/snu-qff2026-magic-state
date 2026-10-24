@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/L2R/bc0_m.qasm: 492 noise channels, 3796 faults, 622 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 4.2929e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 6.26102e-05   (pairs 6.26102e-05 + same-channel normalisation 1.327e-22)
+1-F (2nd order) = 6.26102e-05
+third order: 3.57329e-05   (weight-3 sets 4.07439e-05 + pair-times-others -5.01105e-06)
+1-F (to 3rd order) = 9.83431e-05
+acceptance: first order 0.31755, second order 0.55098; exp(-A1) = 0.50538  (A1 = 0.68245)
+time: model+singles 0.6s, pairs 7.2s, triples 127.2s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '7.344e-06', 'gate': '2.473e-05', 'idle': '3.053e-05'}

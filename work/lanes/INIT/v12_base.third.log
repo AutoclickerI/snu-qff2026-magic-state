@@ -1,0 +1,12 @@
+circuit work/lanes/INIT/v12_base.qasm: 281 noise channels, 2115 faults, 486 (s,d) classes, rotation rank 5, 23 detectors, noiseless acceptance 1.000000
+first order : c1 p = 1.4243e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.12195e-04   (pairs 1.12195e-04 + same-channel normalisation 7.173e-23)
+1-F (2nd order) = 1.12195e-04
+third order: 2.11834e-06   (weight-3 sets 8.13940e-06 + pair-times-others -6.02107e-06)
+1-F (to 3rd order) = 1.14313e-04
+acceptance: first order 0.62970, second order 0.69819; exp(-A1) = 0.69052  (A1 = 0.37030)
+time: model+singles 0.5s, pairs 6.8s, triples 125.6s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '6.280e-06', 'gate': '3.911e-05', 'idle': '6.681e-05'}

@@ -8,6 +8,7 @@ R=/home/jihoon/competitions/quantumn
 cd $R/work
 PY=$R/.venv/bin/python
 ENV="OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1"
+SSH="ssh -q -o ControlMaster=no -o ControlPath=none"
 stem=$1; shift
 name=$(basename "$stem"); dir=$(dirname "$stem")
 pids=()
@@ -18,20 +19,20 @@ for spec in "$@"; do
   if [ "$h" = zebra ]; then
     env $ENV nice -n 5 $run > "$log" 2>&1 &
   else
-    ssh -q "$h" "mkdir -p $R/work/$dir $R/work/reorder" && rsync -a "$stem.qasm" "$stem.json" "$h:$R/work/$dir/"
+    $SSH "$h" "mkdir -p $R/work/$dir $R/work/reorder" 2>/dev/null && rsync -a -e "$SSH" "$stem.qasm" "$stem.json" "$h:$R/work/$dir/"
     if [ "$h" = owl ]; then
       run="docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -v /home/jihoon:/home/jihoon -w $R/work --cpus=$procs fnc-build:22.04 $run"
     else
       run="env $ENV nice -n 5 $run"
     fi
-    ssh -q "$h" "cd $R/work; $run" > "$log" 2>&1 &
+    $SSH "$h" "cd $R/work; $run" > "$log" 2>&1 &
   fi
   pids+=($!)
 done
 wait "${pids[@]}"
 for spec in "$@"; do
   h=${spec%%:*}
-  [ "$h" = zebra ] || rsync -a "$h:$R/work/reorder/${name}_r*" reorder/
+  [ "$h" = zebra ] || rsync -a -e "$SSH" "$h:$R/work/reorder/${name}_r*" reorder/
 done
 best=$(cat reorder/${name}_*.log | awk '$2 == "1-F" && $NF == "True" {print $3, $1}' | sort -g | head -1)
 echo "best re-draw: $best ($(cat reorder/${name}_*.log | awk '$2 == "1-F" && $NF == "True"' | wc -l) passing draws)"

@@ -1,0 +1,3122 @@
+{
+  "stem": "dk_PA_PB",
+  "p": 0.001,
+  "noiseless": {
+    "errors": [],
+    "acceptance": 0.9999999999999999,
+    "detector_values": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 5
+  },
+  "exact2": {
+    "N1": 0.0008325014800007779,
+    "A1": 0.5766351895077126,
+    "A2": 0.16615016210684086,
+    "pair": 0.0012967567272198306,
+    "same": 1.8091981702345217e-06,
+    "loss1": 0.0008325014800007779,
+    "loss2": 0.0012985659253900651,
+    "loss": 0.002131067405390843,
+    "t3bc": 0.0,
+    "acc1": 0.42336481049228736,
+    "acc2": 0.5895149725991282
+  },
+  "channels": [
+    {
+      "kind": "flip",
+      "line": 6,
+      "qubits": [
+        0
+      ],
+      "steps": "0",
+      "ins": "instruction 1 (reset q[0])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 6.811632543889658e-06
+    },
+    {
+      "kind": "idle",
+      "line": 6,
+      "qubits": [
+        0
+      ],
+      "steps": "1..5",
+      "ins": "instruction 1 (reset q[0])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 2.2644974644784037e-05
+    },
+    {
+      "kind": "flip",
+      "line": 7,
+      "qubits": [
+        1
+      ],
+      "steps": "0",
+      "ins": "instruction 2 (reset q[1])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 7.554818241820328e-07
+    },
+    {
+      "kind": "idle",
+      "line": 7,
+      "qubits": [
+        1
+      ],
+      "steps": "1..1",
+      "ins": "instruction 2 (reset q[1])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 5.036545494546747e-07
+    },
+    {
+      "kind": "flip",
+      "line": 8,
+      "qubits": [
+        2
+      ],
+      "steps": "0",
+      "ins": "instruction 3 (reset q[2])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 7.0655374746107266e-06
+    },
+    {
+      "kind": "idle",
+      "line": 8,
+      "qubits": [
+        2
+      ],
+      "steps": "1..1",
+      "ins": "instruction 3 (reset q[2])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 4.7103583164070356e-06
+    },
+    {
+      "kind": "flip",
+      "line": 9,
+      "qubits": [
+        3
+      ],
+      "steps": "0",
+      "ins": "instruction 4 (reset q[3])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 4.973191358352484e-07
+    },
+    {
+      "kind": "flip",
+      "line": 10,
+      "qubits": [
+        4
+      ],
+      "steps": "0",
+      "ins": "instruction 5 (reset q[4])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 10,
+      "qubits": [
+        4
+      ],
+      "steps": "1..3",
+      "ins": "instruction 5 (reset q[4])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 11,
+      "qubits": [
+        5
+      ],
+      "steps": "0",
+      "ins": "instruction 6 (reset q[5])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 11,
+      "qubits": [
+        5
+      ],
+      "steps": "1..5",
+      "ins": "instruction 6 (reset q[5])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 12,
+      "qubits": [
+        6
+      ],
+      "steps": "0",
+      "ins": "instruction 7 (reset q[6])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.7499999999999985e-08
+    },
+    {
+      "kind": "flip",
+      "line": 14,
+      "qubits": [
+        7
+      ],
+      "steps": "0",
+      "ins": "instruction 9 (reset q[7])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 6.1093099655594015e-06
+    },
+    {
+      "kind": "idle",
+      "line": 14,
+      "qubits": [
+        7
+      ],
+      "steps": "1..2",
+      "ins": "instruction 9 (reset q[7])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 8.140316122998516e-06
+    },
+    {
+      "kind": "flip",
+      "line": 15,
+      "qubits": [
+        8
+      ],
+      "steps": "0",
+      "ins": "instruction 10 (reset q[8])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 4.166666666666666e-09
+    },
+    {
+      "kind": "idle",
+      "line": 15,
+      "qubits": [
+        8
+      ],
+      "steps": "1..6",
+      "ins": "instruction 10 (reset q[8])",
+      "prob": 0.0059800355200188005,
+      "loss2_attribution": 1.6611209777829998e-08
+    },
+    {
+      "kind": "flip",
+      "line": 17,
+      "qubits": [
+        9
+      ],
+      "steps": "0",
+      "ins": "instruction 12 (reset q[9])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": -1.6672033101820293e-07
+    },
+    {
+      "kind": "idle",
+      "line": 17,
+      "qubits": [
+        9
+      ],
+      "steps": "1..1",
+      "ins": "instruction 12 (reset q[9])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": -1.1809133178990881e-07
+    },
+    {
+      "kind": "flip",
+      "line": 18,
+      "qubits": [
+        10
+      ],
+      "steps": "0",
+      "ins": "instruction 13 (reset q[10])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.2458407333372444e-07
+    },
+    {
+      "kind": "flip",
+      "line": 20,
+      "qubits": [
+        11
+      ],
+      "steps": "0",
+      "ins": "instruction 15 (reset q[11])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": -6.870089936129009e-07
+    },
+    {
+      "kind": "flip",
+      "line": 21,
+      "qubits": [
+        12
+      ],
+      "steps": "0",
+      "ins": "instruction 16 (reset q[12])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.6666666666666657e-08
+    },
+    {
+      "kind": "idle",
+      "line": 21,
+      "qubits": [
+        12
+      ],
+      "steps": "1..1",
+      "ins": "instruction 16 (reset q[12])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 1.1111111111110807e-08
+    },
+    {
+      "kind": "flip",
+      "line": 23,
+      "qubits": [
+        13
+      ],
+      "steps": "0",
+      "ins": "instruction 18 (reset q[13])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.749999999999942e-08
+    },
+    {
+      "kind": "idle",
+      "line": 23,
+      "qubits": [
+        13
+      ],
+      "steps": "1..2",
+      "ins": "instruction 18 (reset q[13])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 4.9966666666664745e-08
+    },
+    {
+      "kind": "flip",
+      "line": 25,
+      "qubits": [
+        14
+      ],
+      "steps": "0",
+      "ins": "instruction 20 (reset q[14])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.7876425913572976e-07
+    },
+    {
+      "kind": "idle",
+      "line": 25,
+      "qubits": [
+        14
+      ],
+      "steps": "1..2",
+      "ins": "instruction 20 (reset q[14])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 3.714378883950661e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 26,
+      "qubits": [
+        6,
+        3
+      ],
+      "steps": "1",
+      "ins": "instruction 21 (cx q[6], q[3])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.4372954733384414e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 27,
+      "qubits": [
+        10,
+        11
+      ],
+      "steps": "1",
+      "ins": "instruction 22 (cx q[10], q[11])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.6902045456649424e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 28,
+      "qubits": [
+        6,
+        1
+      ],
+      "steps": "2",
+      "ins": "instruction 23 (cx q[6], q[1])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.781512391134154e-07
+    },
+    {
+      "kind": "idle",
+      "line": 28,
+      "qubits": [
+        1
+      ],
+      "steps": "3..7",
+      "ins": "instruction 23 (cx q[6], q[1])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 1.3527464589974003e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 29,
+      "qubits": [
+        10,
+        9
+      ],
+      "steps": "2",
+      "ins": "instruction 24 (cx q[10], q[9])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.358108354085447e-07
+    },
+    {
+      "kind": "idle",
+      "line": 29,
+      "qubits": [
+        9
+      ],
+      "steps": "3..8",
+      "ins": "instruction 24 (cx q[10], q[9])",
+      "prob": 0.0059800355200188005,
+      "loss2_attribution": 8.872933843192072e-07
+    },
+    {
+      "kind": "idle",
+      "line": 29,
+      "qubits": [
+        10
+      ],
+      "steps": "3..3",
+      "ins": "instruction 24 (cx q[10], q[9])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 2.5120427179301814e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 30,
+      "qubits": [
+        12,
+        11
+      ],
+      "steps": "2",
+      "ins": "instruction 25 (cx q[12], q[11])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 7.439337115347868e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 31,
+      "qubits": [
+        13,
+        6
+      ],
+      "steps": "3",
+      "ins": "instruction 26 (cx q[13], q[6])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.5555555555555474e-08
+    },
+    {
+      "kind": "idle",
+      "line": 31,
+      "qubits": [
+        6
+      ],
+      "steps": "4..6",
+      "ins": "instruction 26 (cx q[13], q[6])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 2.9127795061727644e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 32,
+      "qubits": [
+        13,
+        10
+      ],
+      "steps": "4",
+      "ins": "instruction 27 (cx q[13], q[10])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.752430163649183e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 33,
+      "qubits": [
+        12,
+        7
+      ],
+      "steps": "3",
+      "ins": "instruction 28 (cx q[12], q[7])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.598124522668456e-06
+    },
+    {
+      "kind": "idle",
+      "line": 33,
+      "qubits": [
+        7
+      ],
+      "steps": "4..4",
+      "ins": "instruction 28 (cx q[12], q[7])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 3.4609786130771543e-06
+    },
+    {
+      "kind": "idle",
+      "line": 33,
+      "qubits": [
+        12
+      ],
+      "steps": "4..8",
+      "ins": "instruction 28 (cx q[12], q[7])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 2.2605886447674692e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 34,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "2",
+      "ins": "instruction 29 (cx q[3], q[2])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.0269919925039074e-06
+    },
+    {
+      "kind": "idle",
+      "line": 34,
+      "qubits": [
+        2
+      ],
+      "steps": "3..10",
+      "ins": "instruction 29 (cx q[3], q[2])",
+      "prob": 0.007962766056472975,
+      "loss2_attribution": 1.9113171070127392e-05
+    },
+    {
+      "kind": "idle",
+      "line": 34,
+      "qubits": [
+        3
+      ],
+      "steps": "3..5",
+      "ins": "instruction 29 (cx q[3], q[2])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 3.745002222222126e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 35,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "5",
+      "ins": "instruction 30 (cx q[13], q[7])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 7.656811075769403e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 36,
+      "qubits": [
+        7,
+        0
+      ],
+      "steps": "6",
+      "ins": "instruction 31 (cx q[7], q[0])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.8577909858627747e-06
+    },
+    {
+      "kind": "idle",
+      "line": 36,
+      "qubits": [
+        0
+      ],
+      "steps": "7..8",
+      "ins": "instruction 31 (cx q[7], q[0])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 4.693235722615229e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 37,
+      "qubits": [
+        11,
+        14
+      ],
+      "steps": "3",
+      "ins": "instruction 32 (cx q[11], q[14])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.0922090472637165e-06
+    },
+    {
+      "kind": "idle",
+      "line": 37,
+      "qubits": [
+        14
+      ],
+      "steps": "4..4",
+      "ins": "instruction 32 (cx q[11], q[14])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 1.0958808637857352e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 38,
+      "qubits": [
+        8,
+        7
+      ],
+      "steps": "7",
+      "ins": "instruction 33 (cx q[8], q[7])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 9.615854843580342e-07
+    },
+    {
+      "kind": "idle",
+      "line": 38,
+      "qubits": [
+        7
+      ],
+      "steps": "8..12",
+      "ins": "instruction 33 (cx q[8], q[7])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 5.668909017519219e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 39,
+      "qubits": [
+        10,
+        14
+      ],
+      "steps": "5",
+      "ins": "instruction 34 (cx q[10], q[14])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.7612527230440522e-06
+    },
+    {
+      "kind": "idle",
+      "line": 39,
+      "qubits": [
+        14
+      ],
+      "steps": "6..9",
+      "ins": "instruction 34 (cx q[10], q[14])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 5.483655062104646e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 40,
+      "qubits": [
+        13,
+        5
+      ],
+      "steps": "6",
+      "ins": "instruction 35 (cx q[13], q[5])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 6.111111111111032e-09
+    },
+    {
+      "kind": "idle",
+      "line": 40,
+      "qubits": [
+        13
+      ],
+      "steps": "7..15",
+      "ins": "instruction 35 (cx q[13], q[5])",
+      "prob": 0.008952149035064333,
+      "loss2_attribution": 1.1190186293830244e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 41,
+      "qubits": [
+        8,
+        1
+      ],
+      "steps": "8",
+      "ins": "instruction 36 (cx q[8], q[1])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 7.689587588273317e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 42,
+      "qubits": [
+        10,
+        3
+      ],
+      "steps": "6",
+      "ins": "instruction 37 (cx q[10], q[3])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 8.865208837431262e-07
+    },
+    {
+      "kind": "idle",
+      "line": 42,
+      "qubits": [
+        3
+      ],
+      "steps": "7..10",
+      "ins": "instruction 37 (cx q[10], q[3])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 1.1088908635390605e-08
+    },
+    {
+      "kind": "idle",
+      "line": 42,
+      "qubits": [
+        10
+      ],
+      "steps": "7..20",
+      "ins": "instruction 37 (cx q[10], q[3])",
+      "prob": 0.01387931141135132,
+      "loss2_attribution": 6.554119277582536e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 43,
+      "qubits": [
+        6,
+        5
+      ],
+      "steps": "7",
+      "ins": "instruction 38 (cx q[6], q[5])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 7.777777777777737e-09
+    },
+    {
+      "kind": "idle",
+      "line": 43,
+      "qubits": [
+        6
+      ],
+      "steps": "8..22",
+      "ins": "instruction 38 (cx q[6], q[5])",
+      "prob": 0.014860805662802817,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 44,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "9",
+      "ins": "instruction 39 (cx q[8], q[9])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.794465638504221e-07
+    },
+    {
+      "kind": "idle",
+      "line": 44,
+      "qubits": [
+        8
+      ],
+      "steps": "10..32",
+      "ins": "instruction 39 (cx q[8], q[9])",
+      "prob": 0.022665794227404362,
+      "loss2_attribution": 1.918200567107795e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 45,
+      "qubits": [
+        1,
+        0
+      ],
+      "steps": "9",
+      "ins": "instruction 40 (cx q[1], q[0])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.0502542859651928e-06
+    },
+    {
+      "kind": "idle",
+      "line": 45,
+      "qubits": [
+        0
+      ],
+      "steps": "10..36",
+      "ins": "instruction 40 (cx q[1], q[0])",
+      "prob": 0.02653715865390352,
+      "loss2_attribution": 0.00012069186816351346
+    },
+    {
+      "kind": "gate2",
+      "line": 46,
+      "qubits": [
+        11,
+        4
+      ],
+      "steps": "4",
+      "ins": "instruction 41 (cx q[11], q[4])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 9.320822158684287e-07
+    },
+    {
+      "kind": "idle",
+      "line": 46,
+      "qubits": [
+        4
+      ],
+      "steps": "5..7",
+      "ins": "instruction 41 (cx q[11], q[4])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 2.4966681481480833e-08
+    },
+    {
+      "kind": "idle",
+      "line": 46,
+      "qubits": [
+        11
+      ],
+      "steps": "5..14",
+      "ins": "instruction 41 (cx q[11], q[4])",
+      "prob": 0.009940212836350881,
+      "loss2_attribution": 8.283510696959062e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 47,
+      "qubits": [
+        5,
+        4
+      ],
+      "steps": "8",
+      "ins": "instruction 42 (cx q[5], q[4])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.611111111111103e-08
+    },
+    {
+      "kind": "idle",
+      "line": 47,
+      "qubits": [
+        4
+      ],
+      "steps": "9..22",
+      "ins": "instruction 42 (cx q[5], q[4])",
+      "prob": 0.01387931141135132,
+      "loss2_attribution": 8.289033204001426e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 48,
+      "qubits": [
+        9,
+        14
+      ],
+      "steps": "10",
+      "ins": "instruction 43 (cx q[9], q[14])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.70003355860589e-06
+    },
+    {
+      "kind": "idle",
+      "line": 48,
+      "qubits": [
+        14
+      ],
+      "steps": "11..36",
+      "ins": "instruction 43 (cx q[9], q[14])",
+      "prob": 0.025571253658781934,
+      "loss2_attribution": 2.312828970478417e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 49,
+      "qubits": [
+        9,
+        2
+      ],
+      "steps": "11",
+      "ins": "instruction 44 (cx q[9], q[2])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.336749548875392e-06
+    },
+    {
+      "kind": "idle",
+      "line": 49,
+      "qubits": [
+        2
+      ],
+      "steps": "12..36",
+      "ins": "instruction 44 (cx q[9], q[2])",
+      "prob": 0.024604059070876455,
+      "loss2_attribution": 0.0001226498170221008
+    },
+    {
+      "kind": "idle",
+      "line": 49,
+      "qubits": [
+        9
+      ],
+      "steps": "12..13",
+      "ins": "instruction 44 (cx q[9], q[2])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 1.3854979394411813e-10
+    },
+    {
+      "kind": "gate2",
+      "line": 50,
+      "qubits": [
+        12,
+        5
+      ],
+      "steps": "9",
+      "ins": "instruction 45 (cx q[12], q[5])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 9.340982558531858e-07
+    },
+    {
+      "kind": "idle",
+      "line": 50,
+      "qubits": [
+        5
+      ],
+      "steps": "10..11",
+      "ins": "instruction 45 (cx q[12], q[5])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 2.220740740740689e-08
+    },
+    {
+      "kind": "idle",
+      "line": 50,
+      "qubits": [
+        12
+      ],
+      "steps": "10..32",
+      "ins": "instruction 45 (cx q[12], q[5])",
+      "prob": 0.022665794227404362,
+      "loss2_attribution": 1.2592107904113528e-07
+    },
+    {
+      "kind": "flip",
+      "line": 52,
+      "qubits": [
+        15
+      ],
+      "steps": "0",
+      "ins": "instruction 46 (reset q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.7499999999999985e-08
+    },
+    {
+      "kind": "idle",
+      "line": 52,
+      "qubits": [
+        15
+      ],
+      "steps": "1..9",
+      "ins": "instruction 46 (reset q[15])",
+      "prob": 0.008952149035064333,
+      "loss2_attribution": 2.238037258766082e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 54,
+      "qubits": [
+        15,
+        1
+      ],
+      "steps": "10",
+      "ins": "instruction 48 (cx q[15], q[1])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.6055654222274433e-08
+    },
+    {
+      "kind": "idle",
+      "line": 54,
+      "qubits": [
+        1
+      ],
+      "steps": "11..31",
+      "ins": "instruction 48 (cx q[15], q[1])",
+      "prob": 0.020722350321862065,
+      "loss2_attribution": 2.8781042113697294e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 55,
+      "qubits": [
+        15,
+        3
+      ],
+      "steps": "11",
+      "ins": "instruction 49 (cx q[15], q[3])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.1100004938271344e-08
+    },
+    {
+      "kind": "idle",
+      "line": 55,
+      "qubits": [
+        3
+      ],
+      "steps": "12..18",
+      "ins": "instruction 49 (cx q[15], q[3])",
+      "prob": 0.006972062139325413,
+      "loss2_attribution": 1.4525129456927813e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 56,
+      "qubits": [
+        15,
+        5
+      ],
+      "steps": "12",
+      "ins": "instruction 50 (cx q[15], q[5])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.0266671604938047e-08
+    },
+    {
+      "kind": "idle",
+      "line": 56,
+      "qubits": [
+        5
+      ],
+      "steps": "13..31",
+      "ins": "instruction 50 (cx q[15], q[5])",
+      "prob": 0.018773713515746804,
+      "loss2_attribution": 1.0429840842081551e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 57,
+      "qubits": [
+        15,
+        7
+      ],
+      "steps": "13",
+      "ins": "instruction 51 (cx q[15], q[7])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.55000986667188e-08
+    },
+    {
+      "kind": "idle",
+      "line": 57,
+      "qubits": [
+        7
+      ],
+      "steps": "14..36",
+      "ins": "instruction 51 (cx q[15], q[7])",
+      "prob": 0.022665794227404362,
+      "loss2_attribution": 3.148026976028382e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 58,
+      "qubits": [
+        15,
+        9
+      ],
+      "steps": "14",
+      "ins": "instruction 52 (cx q[15], q[9])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.105565422227429e-08
+    },
+    {
+      "kind": "idle",
+      "line": 58,
+      "qubits": [
+        9
+      ],
+      "steps": "15..36",
+      "ins": "instruction 52 (cx q[15], q[9])",
+      "prob": 0.021694720521432953,
+      "loss2_attribution": 3.730297370169716e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 59,
+      "qubits": [
+        15,
+        11
+      ],
+      "steps": "15",
+      "ins": "instruction 53 (cx q[15], q[11])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.7222222222222136e-08
+    },
+    {
+      "kind": "idle",
+      "line": 59,
+      "qubits": [
+        11
+      ],
+      "steps": "16..23",
+      "ins": "instruction 53 (cx q[15], q[11])",
+      "prob": 0.007962766056472975,
+      "loss2_attribution": 4.7555408392824396e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 60,
+      "qubits": [
+        15,
+        13
+      ],
+      "steps": "16",
+      "ins": "instruction 54 (cx q[15], q[13])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 9.99999999999992e-09
+    },
+    {
+      "kind": "idle",
+      "line": 60,
+      "qubits": [
+        13
+      ],
+      "steps": "17..23",
+      "ins": "instruction 54 (cx q[15], q[13])",
+      "prob": 0.006972062139325413,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 62,
+      "qubits": [
+        15
+      ],
+      "steps": "17",
+      "ins": "instruction 56 (measure q[15])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 3.7499999999999985e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 62,
+      "qubits": [
+        15
+      ],
+      "steps": "17",
+      "ins": "instruction 56 (measure q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 64,
+      "qubits": [
+        15
+      ],
+      "steps": "18",
+      "ins": "instruction 57 (reset q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 9.583333333333331e-08
+    },
+    {
+      "kind": "flip",
+      "line": 65,
+      "qubits": [
+        16
+      ],
+      "steps": "0",
+      "ins": "instruction 58 (reset q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 65,
+      "qubits": [
+        16
+      ],
+      "steps": "1..21",
+      "ins": "instruction 58 (reset q[16])",
+      "prob": 0.020722350321862065,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 66,
+      "qubits": [
+        18
+      ],
+      "steps": "0",
+      "ins": "instruction 59 (reset q[18])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 66,
+      "qubits": [
+        18
+      ],
+      "steps": "1..19",
+      "ins": "instruction 59 (reset q[18])",
+      "prob": 0.018773713515746804,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 68,
+      "qubits": [
+        3,
+        15
+      ],
+      "steps": "19",
+      "ins": "instruction 61 (cx q[3], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.0011011610272957e-06
+    },
+    {
+      "kind": "idle",
+      "line": 68,
+      "qubits": [
+        3
+      ],
+      "steps": "20..36",
+      "ins": "instruction 61 (cx q[3], q[15])",
+      "prob": 0.01681986993357873,
+      "loss2_attribution": 8.307105032971922e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 69,
+      "qubits": [
+        18,
+        15
+      ],
+      "steps": "20",
+      "ins": "instruction 62 (cx q[18], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.3888888888888806e-08
+    },
+    {
+      "kind": "idle",
+      "line": 69,
+      "qubits": [
+        18
+      ],
+      "steps": "21..24",
+      "ins": "instruction 62 (cx q[18], q[15])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 1.2752244930699196e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 70,
+      "qubits": [
+        10,
+        15
+      ],
+      "steps": "21",
+      "ins": "instruction 63 (cx q[10], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.88888888888888e-08
+    },
+    {
+      "kind": "idle",
+      "line": 70,
+      "qubits": [
+        10
+      ],
+      "steps": "22..36",
+      "ins": "instruction 63 (cx q[10], q[15])",
+      "prob": 0.014860805662802817,
+      "loss2_attribution": 4.5408017303008046e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 71,
+      "qubits": [
+        15,
+        16
+      ],
+      "steps": "22",
+      "ins": "instruction 64 (cx q[15], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.2777777777777772e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 72,
+      "qubits": [
+        4,
+        15
+      ],
+      "steps": "23",
+      "ins": "instruction 65 (cx q[4], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.0783473188383261e-06
+    },
+    {
+      "kind": "idle",
+      "line": 72,
+      "qubits": [
+        4
+      ],
+      "steps": "24..36",
+      "ins": "instruction 65 (cx q[4], q[15])",
+      "prob": 0.012896506753689613,
+      "loss2_attribution": 6.953456740110776e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 73,
+      "qubits": [
+        11,
+        15
+      ],
+      "steps": "24",
+      "ins": "instruction 66 (cx q[11], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.388888888888873e-08
+    },
+    {
+      "kind": "idle",
+      "line": 73,
+      "qubits": [
+        11
+      ],
+      "steps": "25..36",
+      "ins": "instruction 66 (cx q[11], q[15])",
+      "prob": 0.011912389940276685,
+      "loss2_attribution": 1.4228687984219275e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 74,
+      "qubits": [
+        6,
+        16
+      ],
+      "steps": "23",
+      "ins": "instruction 67 (cx q[6], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 74,
+      "qubits": [
+        6
+      ],
+      "steps": "24..27",
+      "ins": "instruction 67 (cx q[6], q[16])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 75,
+      "qubits": [
+        13,
+        16
+      ],
+      "steps": "24",
+      "ins": "instruction 68 (cx q[13], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 75,
+      "qubits": [
+        13
+      ],
+      "steps": "25..29",
+      "ins": "instruction 68 (cx q[13], q[16])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 75,
+      "qubits": [
+        16
+      ],
+      "steps": "25..25",
+      "ins": "instruction 68 (cx q[13], q[16])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 76,
+      "qubits": [
+        18,
+        15
+      ],
+      "steps": "25",
+      "ins": "instruction 69 (cx q[18], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.2777777777777772e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 77,
+      "qubits": [
+        18,
+        16
+      ],
+      "steps": "26",
+      "ins": "instruction 70 (cx q[18], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 78,
+      "qubits": [
+        15
+      ],
+      "steps": "26",
+      "ins": "instruction 71 (measure q[15])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 78,
+      "qubits": [
+        15
+      ],
+      "steps": "26",
+      "ins": "instruction 71 (measure q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 79,
+      "qubits": [
+        16
+      ],
+      "steps": "27",
+      "ins": "instruction 72 (measure q[16])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 79,
+      "qubits": [
+        16
+      ],
+      "steps": "27",
+      "ins": "instruction 72 (measure q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 81,
+      "qubits": [
+        18
+      ],
+      "steps": "27",
+      "ins": "instruction 74 (measure q[18])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 81,
+      "qubits": [
+        18
+      ],
+      "steps": "27",
+      "ins": "instruction 74 (measure q[18])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 83,
+      "qubits": [
+        15
+      ],
+      "steps": "27",
+      "ins": "instruction 75 (reset q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 84,
+      "qubits": [
+        16
+      ],
+      "steps": "28",
+      "ins": "instruction 76 (reset q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.3722259234574033e-07
+    },
+    {
+      "kind": "idle",
+      "line": 84,
+      "qubits": [
+        16
+      ],
+      "steps": "29..30",
+      "ins": "instruction 76 (reset q[16])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 3.1608592526778355e-07
+    },
+    {
+      "kind": "flip",
+      "line": 85,
+      "qubits": [
+        18
+      ],
+      "steps": "28",
+      "ins": "instruction 77 (reset q[18])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 87,
+      "qubits": [
+        6,
+        15
+      ],
+      "steps": "28",
+      "ins": "instruction 79 (cx q[6], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.155417524699051e-06
+    },
+    {
+      "kind": "idle",
+      "line": 87,
+      "qubits": [
+        6
+      ],
+      "steps": "29..36",
+      "ins": "instruction 79 (cx q[6], q[15])",
+      "prob": 0.007962766056472975,
+      "loss2_attribution": 4.290771375800144e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 88,
+      "qubits": [
+        18,
+        15
+      ],
+      "steps": "29",
+      "ins": "instruction 80 (cx q[18], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 88,
+      "qubits": [
+        18
+      ],
+      "steps": "30..33",
+      "ins": "instruction 80 (cx q[18], q[15])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 89,
+      "qubits": [
+        13,
+        15
+      ],
+      "steps": "30",
+      "ins": "instruction 81 (cx q[13], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "idle",
+      "line": 89,
+      "qubits": [
+        13
+      ],
+      "steps": "31..36",
+      "ins": "instruction 81 (cx q[13], q[15])",
+      "prob": 0.0059800355200188005,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 90,
+      "qubits": [
+        15,
+        16
+      ],
+      "steps": "31",
+      "ins": "instruction 82 (cx q[15], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.162967897943205e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 91,
+      "qubits": [
+        5,
+        15
+      ],
+      "steps": "32",
+      "ins": "instruction 83 (cx q[5], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.0953905592687528e-06
+    },
+    {
+      "kind": "idle",
+      "line": 91,
+      "qubits": [
+        5
+      ],
+      "steps": "33..36",
+      "ins": "instruction 83 (cx q[5], q[15])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 2.184185667997038e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 92,
+      "qubits": [
+        12,
+        15
+      ],
+      "steps": "33",
+      "ins": "instruction 84 (cx q[12], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.222222222222221e-09
+    },
+    {
+      "kind": "idle",
+      "line": 92,
+      "qubits": [
+        12
+      ],
+      "steps": "34..36",
+      "ins": "instruction 84 (cx q[12], q[15])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 3.328890864197444e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 93,
+      "qubits": [
+        1,
+        16
+      ],
+      "steps": "32",
+      "ins": "instruction 85 (cx q[1], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.1216834773004145e-06
+    },
+    {
+      "kind": "idle",
+      "line": 93,
+      "qubits": [
+        1
+      ],
+      "steps": "33..36",
+      "ins": "instruction 85 (cx q[1], q[16])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 2.1735334741764636e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 94,
+      "qubits": [
+        8,
+        16
+      ],
+      "steps": "33",
+      "ins": "instruction 86 (cx q[8], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.3851901201654255e-08
+    },
+    {
+      "kind": "idle",
+      "line": 94,
+      "qubits": [
+        8
+      ],
+      "steps": "34..36",
+      "ins": "instruction 86 (cx q[8], q[16])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 8.322227160493615e-09
+    },
+    {
+      "kind": "idle",
+      "line": 94,
+      "qubits": [
+        16
+      ],
+      "steps": "34..34",
+      "ins": "instruction 86 (cx q[8], q[16])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 7.907419744857794e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 95,
+      "qubits": [
+        18,
+        15
+      ],
+      "steps": "34",
+      "ins": "instruction 87 (cx q[18], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.162967897943205e-08
+    },
+    {
+      "kind": "gate2",
+      "line": 96,
+      "qubits": [
+        18,
+        16
+      ],
+      "steps": "35",
+      "ins": "instruction 88 (cx q[18], q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 6.325935795886411e-08
+    },
+    {
+      "kind": "flip",
+      "line": 97,
+      "qubits": [
+        15
+      ],
+      "steps": "35",
+      "ins": "instruction 89 (measure q[15])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 97,
+      "qubits": [
+        15
+      ],
+      "steps": "35",
+      "ins": "instruction 89 (measure q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 98,
+      "qubits": [
+        16
+      ],
+      "steps": "36",
+      "ins": "instruction 90 (measure q[16])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 2.3722259234574033e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 98,
+      "qubits": [
+        16
+      ],
+      "steps": "36",
+      "ins": "instruction 90 (measure q[16])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 100,
+      "qubits": [
+        18
+      ],
+      "steps": "36",
+      "ins": "instruction 92 (measure q[18])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 100,
+      "qubits": [
+        18
+      ],
+      "steps": "36",
+      "ins": "instruction 92 (measure q[18])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 103,
+      "qubits": [
+        0
+      ],
+      "steps": "37",
+      "ins": "instruction 94 (t q[0])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 4.54803280703755e-06
+    },
+    {
+      "kind": "idle",
+      "line": 103,
+      "qubits": [
+        0
+      ],
+      "steps": "38..41",
+      "ins": "instruction 94 (t q[0])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 1.8155779296479467e-05
+    },
+    {
+      "kind": "gate1",
+      "line": 104,
+      "qubits": [
+        1
+      ],
+      "steps": "37",
+      "ins": "instruction 95 (tdg q[1])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.444713436049358e-06
+    },
+    {
+      "kind": "idle",
+      "line": 104,
+      "qubits": [
+        1
+      ],
+      "steps": "38..41",
+      "ins": "instruction 95 (tdg q[1])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 2.173533474176461e-05
+    },
+    {
+      "kind": "gate1",
+      "line": 105,
+      "qubits": [
+        2
+      ],
+      "steps": "37",
+      "ins": "instruction 96 (t q[2])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 4.9849423897408775e-06
+    },
+    {
+      "kind": "idle",
+      "line": 105,
+      "qubits": [
+        2
+      ],
+      "steps": "38..40",
+      "ins": "instruction 96 (t q[2])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 1.49348962617831e-05
+    },
+    {
+      "kind": "gate1",
+      "line": 106,
+      "qubits": [
+        3
+      ],
+      "steps": "37",
+      "ins": "instruction 97 (tdg q[3])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 4.938864013679343e-06
+    },
+    {
+      "kind": "idle",
+      "line": 106,
+      "qubits": [
+        3
+      ],
+      "steps": "38..39",
+      "ins": "instruction 97 (tdg q[3])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 9.871142875340213e-06
+    },
+    {
+      "kind": "gate1",
+      "line": 107,
+      "qubits": [
+        4
+      ],
+      "steps": "37",
+      "ins": "instruction 98 (t q[4])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.391736594191629e-06
+    },
+    {
+      "kind": "idle",
+      "line": 107,
+      "qubits": [
+        4
+      ],
+      "steps": "38..42",
+      "ins": "instruction 98 (t q[4])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 2.6886888938911413e-05
+    },
+    {
+      "kind": "gate1",
+      "line": 108,
+      "qubits": [
+        5
+      ],
+      "steps": "37",
+      "ins": "instruction 99 (tdg q[5])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.471397240788213e-06
+    },
+    {
+      "kind": "idle",
+      "line": 108,
+      "qubits": [
+        5
+      ],
+      "steps": "38..44",
+      "ins": "instruction 99 (tdg q[5])",
+      "prob": 0.006972062139325413,
+      "loss2_attribution": 3.814692155170904e-05
+    },
+    {
+      "kind": "gate1",
+      "line": 109,
+      "qubits": [
+        6
+      ],
+      "steps": "37",
+      "ins": "instruction 100 (t q[6])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.388543811747621e-06
+    },
+    {
+      "kind": "idle",
+      "line": 109,
+      "qubits": [
+        6
+      ],
+      "steps": "38..43",
+      "ins": "instruction 100 (t q[6])",
+      "prob": 0.0059800355200188005,
+      "loss2_attribution": 3.222368339542826e-05
+    },
+    {
+      "kind": "gate1",
+      "line": 110,
+      "qubits": [
+        7
+      ],
+      "steps": "37",
+      "ins": "instruction 101 (tdg q[7])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.3888888888888884e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 111,
+      "qubits": [
+        8
+      ],
+      "steps": "37",
+      "ins": "instruction 102 (t q[8])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.7777777777777776e-09
+    },
+    {
+      "kind": "gate1",
+      "line": 112,
+      "qubits": [
+        9
+      ],
+      "steps": "37",
+      "ins": "instruction 103 (tdg q[9])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.7194493777803815e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 113,
+      "qubits": [
+        10
+      ],
+      "steps": "37",
+      "ins": "instruction 104 (t q[10])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.055555555555517e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 114,
+      "qubits": [
+        11
+      ],
+      "steps": "37",
+      "ins": "instruction 105 (tdg q[11])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.194444444444436e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 115,
+      "qubits": [
+        12
+      ],
+      "steps": "37",
+      "ins": "instruction 106 (t q[12])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.1111111111111104e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 116,
+      "qubits": [
+        13
+      ],
+      "steps": "37",
+      "ins": "instruction 107 (tdg q[13])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 117,
+      "qubits": [
+        14
+      ],
+      "steps": "37",
+      "ins": "instruction 108 (t q[14])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 9.044644432926042e-07
+    },
+    {
+      "kind": "flip",
+      "line": 119,
+      "qubits": [
+        19
+      ],
+      "steps": "37",
+      "ins": "instruction 109 (reset q[19])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.083333333333332e-08
+    },
+    {
+      "kind": "idle",
+      "line": 119,
+      "qubits": [
+        19
+      ],
+      "steps": "38..39",
+      "ins": "instruction 109 (reset q[19])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 2.7759259259258607e-08
+    },
+    {
+      "kind": "flip",
+      "line": 121,
+      "qubits": [
+        20
+      ],
+      "steps": "37",
+      "ins": "instruction 111 (reset q[20])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.2163333333333195e-06
+    },
+    {
+      "kind": "idle",
+      "line": 121,
+      "qubits": [
+        20
+      ],
+      "steps": "38..38",
+      "ins": "instruction 111 (reset q[20])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 8.108888888888576e-07
+    },
+    {
+      "kind": "flip",
+      "line": 122,
+      "qubits": [
+        21
+      ],
+      "steps": "37",
+      "ins": "instruction 112 (reset q[21])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 3.0791740666705706e-07
+    },
+    {
+      "kind": "flip",
+      "line": 124,
+      "qubits": [
+        22
+      ],
+      "steps": "37",
+      "ins": "instruction 114 (reset q[22])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.4691592041038033e-05
+    },
+    {
+      "kind": "flip",
+      "line": 125,
+      "qubits": [
+        23
+      ],
+      "steps": "37",
+      "ins": "instruction 115 (reset q[23])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.791666666666655e-07
+    },
+    {
+      "kind": "idle",
+      "line": 125,
+      "qubits": [
+        23
+      ],
+      "steps": "38..38",
+      "ins": "instruction 115 (reset q[23])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 1.1944444444444045e-07
+    },
+    {
+      "kind": "flip",
+      "line": 127,
+      "qubits": [
+        24
+      ],
+      "steps": "37",
+      "ins": "instruction 117 (reset q[24])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 8.826669629629503e-07
+    },
+    {
+      "kind": "idle",
+      "line": 127,
+      "qubits": [
+        24
+      ],
+      "steps": "38..39",
+      "ins": "instruction 117 (reset q[24])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 1.1761046910946064e-06
+    },
+    {
+      "kind": "flip",
+      "line": 128,
+      "qubits": [
+        25
+      ],
+      "steps": "37",
+      "ins": "instruction 118 (reset q[25])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 8.996666666666551e-07
+    },
+    {
+      "kind": "idle",
+      "line": 128,
+      "qubits": [
+        25
+      ],
+      "steps": "38..40",
+      "ins": "instruction 118 (reset q[25])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 1.7969352884937582e-06
+    },
+    {
+      "kind": "flip",
+      "line": 129,
+      "qubits": [
+        15
+      ],
+      "steps": "37",
+      "ins": "instruction 119 (reset q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 6.666666666666598e-07
+    },
+    {
+      "kind": "idle",
+      "line": 129,
+      "qubits": [
+        15
+      ],
+      "steps": "38..39",
+      "ins": "instruction 119 (reset q[15])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 8.88296296296267e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 130,
+      "qubits": [
+        21,
+        22
+      ],
+      "steps": "38",
+      "ins": "instruction 120 (cx q[21], q[22])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 4.968123889096922e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 131,
+      "qubits": [
+        21,
+        20
+      ],
+      "steps": "39",
+      "ins": "instruction 121 (cx q[21], q[20])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.8972027247953674e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 132,
+      "qubits": [
+        23,
+        22
+      ],
+      "steps": "39",
+      "ins": "instruction 122 (cx q[23], q[22])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.7866529577294045e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 133,
+      "qubits": [
+        19,
+        20
+      ],
+      "steps": "40",
+      "ins": "instruction 123 (cx q[19], q[20])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.376630616296793e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 134,
+      "qubits": [
+        23,
+        24
+      ],
+      "steps": "40",
+      "ins": "instruction 124 (cx q[23], q[24])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.5824477692699668e-06
+    },
+    {
+      "kind": "idle",
+      "line": 134,
+      "qubits": [
+        23
+      ],
+      "steps": "41..41",
+      "ins": "instruction 124 (cx q[23], q[24])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 6.040555555555334e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 135,
+      "qubits": [
+        20,
+        25
+      ],
+      "steps": "41",
+      "ins": "instruction 125 (cx q[20], q[25])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.4622409299752975e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 136,
+      "qubits": [
+        23,
+        25
+      ],
+      "steps": "42",
+      "ins": "instruction 126 (cx q[23], q[25])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.4048407399159528e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 137,
+      "qubits": [
+        19,
+        24
+      ],
+      "steps": "41",
+      "ins": "instruction 127 (cx q[19], q[24])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.3044877069975336e-06
+    },
+    {
+      "kind": "idle",
+      "line": 137,
+      "qubits": [
+        24
+      ],
+      "steps": "42..43",
+      "ins": "instruction 127 (cx q[19], q[24])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 6.102597529547097e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 138,
+      "qubits": [
+        21,
+        15
+      ],
+      "steps": "40",
+      "ins": "instruction 128 (cx q[21], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.3138436620691886e-06
+    },
+    {
+      "kind": "idle",
+      "line": 138,
+      "qubits": [
+        15
+      ],
+      "steps": "41..42",
+      "ins": "instruction 128 (cx q[21], q[15])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 6.93704381893573e-07
+    },
+    {
+      "kind": "gate2",
+      "line": 139,
+      "qubits": [
+        25,
+        15
+      ],
+      "steps": "43",
+      "ins": "instruction 129 (cx q[25], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 1.5722562548380515e-06
+    },
+    {
+      "kind": "gate2",
+      "line": 140,
+      "qubits": [
+        24,
+        15
+      ],
+      "steps": "44",
+      "ins": "instruction 130 (cx q[24], q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 2.3995811580436776e-06
+    },
+    {
+      "kind": "flip",
+      "line": 141,
+      "qubits": [
+        15
+      ],
+      "steps": "45",
+      "ins": "instruction 131 (measure q[15])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 6.6666666666666e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 141,
+      "qubits": [
+        15
+      ],
+      "steps": "45",
+      "ins": "instruction 131 (measure q[15])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate2",
+      "line": 143,
+      "qubits": [
+        0,
+        19
+      ],
+      "steps": "42",
+      "ins": "instruction 132 (cx q[0], q[19])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.195319279350013e-06
+    },
+    {
+      "kind": "idle",
+      "line": 143,
+      "qubits": [
+        19
+      ],
+      "steps": "43..46",
+      "ins": "instruction 132 (cx q[0], q[19])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 5.179393419517892e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 144,
+      "qubits": [
+        1,
+        20
+      ],
+      "steps": "42",
+      "ins": "instruction 133 (cx q[1], q[20])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.9126637825594494e-06
+    },
+    {
+      "kind": "idle",
+      "line": 144,
+      "qubits": [
+        20
+      ],
+      "steps": "43..46",
+      "ins": "instruction 133 (cx q[1], q[20])",
+      "prob": 0.0039920071087406195,
+      "loss2_attribution": 5.895304508574925e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 145,
+      "qubits": [
+        2,
+        21
+      ],
+      "steps": "41",
+      "ins": "instruction 134 (cx q[2], q[21])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.478535123922343e-06
+    },
+    {
+      "kind": "idle",
+      "line": 145,
+      "qubits": [
+        21
+      ],
+      "steps": "42..46",
+      "ins": "instruction 134 (cx q[2], q[21])",
+      "prob": 0.0049866844325955895,
+      "loss2_attribution": 6.57533301786672e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 146,
+      "qubits": [
+        3,
+        22
+      ],
+      "steps": "40",
+      "ins": "instruction 135 (cx q[3], q[22])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.375449017244897e-06
+    },
+    {
+      "kind": "idle",
+      "line": 146,
+      "qubits": [
+        22
+      ],
+      "steps": "41..46",
+      "ins": "instruction 135 (cx q[3], q[22])",
+      "prob": 0.0059800355200188005,
+      "loss2_attribution": 7.986510385460148e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 147,
+      "qubits": [
+        4,
+        23
+      ],
+      "steps": "43",
+      "ins": "instruction 136 (cx q[4], q[23])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 5.936682664470788e-06
+    },
+    {
+      "kind": "idle",
+      "line": 147,
+      "qubits": [
+        23
+      ],
+      "steps": "44..46",
+      "ins": "instruction 136 (cx q[4], q[23])",
+      "prob": 0.0029960017777777015,
+      "loss2_attribution": 4.365020128041304e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 148,
+      "qubits": [
+        5,
+        24
+      ],
+      "steps": "45",
+      "ins": "instruction 137 (cx q[5], q[24])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 6.133477966933241e-06
+    },
+    {
+      "kind": "idle",
+      "line": 148,
+      "qubits": [
+        24
+      ],
+      "steps": "46..46",
+      "ins": "instruction 137 (cx q[5], q[24])",
+      "prob": 0.0009999999999999731,
+      "loss2_attribution": 1.5278139361777152e-05
+    },
+    {
+      "kind": "gate2",
+      "line": 149,
+      "qubits": [
+        6,
+        25
+      ],
+      "steps": "44",
+      "ins": "instruction 138 (cx q[6], q[25])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 6.000617445922992e-06
+    },
+    {
+      "kind": "idle",
+      "line": 149,
+      "qubits": [
+        25
+      ],
+      "steps": "45..46",
+      "ins": "instruction 138 (cx q[6], q[25])",
+      "prob": 0.001998666666666621,
+      "loss2_attribution": 2.996087776405374e-05
+    },
+    {
+      "kind": "flip",
+      "line": 152,
+      "qubits": [
+        0
+      ],
+      "steps": "43",
+      "ins": "instruction 140 (measure q[0])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 2.083333333333332e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 152,
+      "qubits": [
+        0
+      ],
+      "steps": "43",
+      "ins": "instruction 140 (measure q[0])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 154,
+      "qubits": [
+        1
+      ],
+      "steps": "43",
+      "ins": "instruction 142 (measure q[1])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 4.166666666666664e-09
+    },
+    {
+      "kind": "gate1",
+      "line": 154,
+      "qubits": [
+        1
+      ],
+      "steps": "43",
+      "ins": "instruction 142 (measure q[1])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 156,
+      "qubits": [
+        2
+      ],
+      "steps": "42",
+      "ins": "instruction 144 (measure q[2])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 3.0791740666705717e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 156,
+      "qubits": [
+        2
+      ],
+      "steps": "42",
+      "ins": "instruction 144 (measure q[2])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 158,
+      "qubits": [
+        3
+      ],
+      "steps": "41",
+      "ins": "instruction 146 (measure q[3])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 6.249999999999943e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 158,
+      "qubits": [
+        3
+      ],
+      "steps": "41",
+      "ins": "instruction 146 (measure q[3])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 160,
+      "qubits": [
+        4
+      ],
+      "steps": "44",
+      "ins": "instruction 148 (measure q[4])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 1.791666666666655e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 160,
+      "qubits": [
+        4
+      ],
+      "steps": "44",
+      "ins": "instruction 148 (measure q[4])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 162,
+      "qubits": [
+        5
+      ],
+      "steps": "46",
+      "ins": "instruction 150 (measure q[5])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 1.6666666666666654e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 162,
+      "qubits": [
+        5
+      ],
+      "steps": "46",
+      "ins": "instruction 150 (measure q[5])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 164,
+      "qubits": [
+        6
+      ],
+      "steps": "45",
+      "ins": "instruction 152 (measure q[6])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 164,
+      "qubits": [
+        6
+      ],
+      "steps": "45",
+      "ins": "instruction 152 (measure q[6])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 166,
+      "qubits": [
+        7
+      ],
+      "steps": "38",
+      "ins": "instruction 154 (measure q[7])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 2.0833333333333325e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 166,
+      "qubits": [
+        7
+      ],
+      "steps": "38",
+      "ins": "instruction 154 (measure q[7])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 168,
+      "qubits": [
+        8
+      ],
+      "steps": "38",
+      "ins": "instruction 156 (measure q[8])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 4.166666666666666e-09
+    },
+    {
+      "kind": "gate1",
+      "line": 168,
+      "qubits": [
+        8
+      ],
+      "steps": "38",
+      "ins": "instruction 156 (measure q[8])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 170,
+      "qubits": [
+        9
+      ],
+      "steps": "38",
+      "ins": "instruction 158 (measure q[9])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 2.5791740666705717e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 170,
+      "qubits": [
+        9
+      ],
+      "steps": "38",
+      "ins": "instruction 158 (measure q[9])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 172,
+      "qubits": [
+        10
+      ],
+      "steps": "38",
+      "ins": "instruction 160 (measure q[10])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 4.583333333333276e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 172,
+      "qubits": [
+        10
+      ],
+      "steps": "38",
+      "ins": "instruction 160 (measure q[10])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 174,
+      "qubits": [
+        11
+      ],
+      "steps": "38",
+      "ins": "instruction 162 (measure q[11])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 1.7916666666666547e-07
+    },
+    {
+      "kind": "gate1",
+      "line": 174,
+      "qubits": [
+        11
+      ],
+      "steps": "38",
+      "ins": "instruction 162 (measure q[11])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 176,
+      "qubits": [
+        12
+      ],
+      "steps": "38",
+      "ins": "instruction 164 (measure q[12])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 1.6666666666666657e-08
+    },
+    {
+      "kind": "gate1",
+      "line": 176,
+      "qubits": [
+        12
+      ],
+      "steps": "38",
+      "ins": "instruction 164 (measure q[12])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 178,
+      "qubits": [
+        13
+      ],
+      "steps": "38",
+      "ins": "instruction 166 (measure q[13])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "gate1",
+      "line": 178,
+      "qubits": [
+        13
+      ],
+      "steps": "38",
+      "ins": "instruction 166 (measure q[13])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    },
+    {
+      "kind": "flip",
+      "line": 180,
+      "qubits": [
+        14
+      ],
+      "steps": "38",
+      "ins": "instruction 168 (measure q[14])",
+      "when": "before",
+      "prob": 0.001,
+      "loss2_attribution": 1.3566966649389058e-06
+    },
+    {
+      "kind": "gate1",
+      "line": 180,
+      "qubits": [
+        14
+      ],
+      "steps": "38",
+      "ins": "instruction 168 (measure q[14])",
+      "when": "after",
+      "prob": 0.001,
+      "loss2_attribution": 0.0
+    }
+  ],
+  "bad_singles": [
+    {
+      "label": "L17 flip X@q9 t=0",
+      "loss": 0.00012499999999999998
+    },
+    {
+      "label": "L17 idle X@q9 t=1..1",
+      "loss": 4.166666666666554e-05
+    },
+    {
+      "label": "L17 idle Y@q9 t=1..1",
+      "loss": 4.166666666666554e-05
+    },
+    {
+      "label": "L20 flip X@q11 t=0",
+      "loss": 0.00012499999999999992
+    },
+    {
+      "label": "L27 gate2 IX@q10,11 t=1",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L27 gate2 XI@q10,11 t=1",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L27 gate2 YZ@q10,11 t=1",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L27 gate2 ZY@q10,11 t=1",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L29 gate2 IX@q10,9 t=2",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L29 gate2 XI@q10,9 t=2",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L29 gate2 XX@q10,9 t=2",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L29 gate2 YY@q10,9 t=2",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L29 gate2 YZ@q10,9 t=2",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L29 gate2 ZY@q10,9 t=2",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L29 idle X@q9 t=3..8",
+      "loss": 0.00024916814666744996
+    },
+    {
+      "label": "L29 idle X@q10 t=3..3",
+      "loss": 4.166666666666554e-05
+    },
+    {
+      "label": "L30 gate2 IX@q12,11 t=2",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L30 gate2 XI@q12,11 t=2",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L32 gate2 IX@q13,10 t=4",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L32 gate2 IY@q13,10 t=4",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L33 gate2 XX@q12,7 t=3",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L33 gate2 YY@q12,7 t=3",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L37 gate2 XX@q11,14 t=3",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L37 gate2 YY@q11,14 t=3",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L39 gate2 XX@q10,14 t=5",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L39 gate2 YX@q10,14 t=5",
+      "loss": 8.333333333333329e-06
+    },
+    {
+      "label": "L44 gate2 IX@q8,9 t=9",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L48 gate2 XX@q9,14 t=10",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L48 gate2 XY@q9,14 t=10",
+      "loss": 8.333333333333332e-06
+    },
+    {
+      "label": "L48 gate2 XZ@q9,14 t=10",
+      "loss": 1.666666666666666e-05
+    }
+  ],
+  "seconds": 0.5181186199188232
+}

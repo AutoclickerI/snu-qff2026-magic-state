@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/L2R/rel2_noncat.qasm: 510 noise channels, 3844 faults, 626 (s,d) classes, rotation rank 5, 39 detectors, noiseless acceptance 1.000000
+first order : c1 p = 6.0668e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.12668e-04   (pairs 1.12668e-04 + same-channel normalisation 1.258e-22)
+1-F (2nd order) = 1.12668e-04
+third order: 3.88880e-05   (weight-3 sets 4.90826e-05 + pair-times-others -1.01946e-05)
+1-F (to 3rd order) = 1.51556e-04
+acceptance: first order 0.30275, second order 0.54648; exp(-A1) = 0.49795  (A1 = 0.69725)
+time: model+singles 0.5s, pairs 5.9s, triples 125.4s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '6.826e-06', 'gate': '3.201e-05', 'idle': '7.383e-05'}

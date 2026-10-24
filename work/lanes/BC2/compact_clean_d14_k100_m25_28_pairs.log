@@ -1,0 +1,20 @@
+2nd order 5.8395e-05 by region pair:
+  roundxround    2.884e-05  49.4%   e.g. L394 idle Y@q0 t=52..52 + L395 idle Z@q20 t=52..52
+  prepxprep      8.719e-06  14.9%   e.g. L215 gate1 X@q28 t=35 + L287 idle X@q12 t=43..43
+  Axwait         5.458e-06   9.3%   e.g. L191 idle Z@q0 t=33..49 + L337 gate2 IZ@q8,14 t=47
+  prexwait       3.080e-06   5.3%   e.g. L155 idle X@q7 t=25..28 + L189 idle X@q20 t=33..49
+  prepxround     3.029e-06   5.2%   e.g. L284 idle X@q4 t=43..44 + L390 flip X@q17 t=51
+  Axprep         3.004e-06   5.1%   e.g. L223 flip Z@q26 t=35 + L337 gate2 IZ@q8,14 t=47
+  Axpre          2.009e-06   3.4%   e.g. L143 idle X@q0 t=23..30 + L337 gate2 XZ@q8,14 t=47
+  AxA            1.727e-06   3.0%   e.g. L305 idle Z@q9 t=45..49 + L336 gate2 IZ@q1,2 t=47
+  Axround        1.484e-06   2.5%   e.g. L337 gate2 IZ@q8,14 t=47 + L403 flip Z@q6 t=52
+  prexround      4.212e-07   0.7%   e.g. L155 idle X@q7 t=25..28 + L381 flip X@q14 t=51
+  prexpre        3.406e-07   0.6%   e.g. L155 idle X@q7 t=25..28 + L189 gate1 X@q20 t=32
+  Axmoves        2.844e-07   0.5%   e.g. L207 gate2 IZ@q4,10 t=34 + L336 gate2 IZ@q1,2 t=47
+weight-3 term 3.0182e-05 by region (each triple split in thirds; kept triples cover 2.9462e-05):
+  wait     9.385e-06  31.9%
+  pre      5.436e-06  18.4%
+  A        5.129e-06  17.4%
+  round    5.078e-06  17.2%
+  prep     3.754e-06  12.7%
+  moves    6.810e-07   2.3%

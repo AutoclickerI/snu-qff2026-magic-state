@@ -1,0 +1,944 @@
+                                              Code switching revisited: Low-overhead magic state preparation using color
+                                                                                codes
+
+                                                                                  Lucas Daguerre1 and Isaac H. Kim2
+                                                        1
+                                                            Department of Physics and Astronomy, University of California, Davis, CA, 95616, USA
+                                                             2
+                                                               Department of Computer Science, University of California, Davis, CA, 95616, USA
+                                                                                          (Dated: April 25, 2025)
+                                                       We propose a protocol to prepare a high-fidelity magic state on a two-dimensional (2D) color
+                                                    code using a three-dimensional (3D) color code. Our method modifies the known code switching
+                                                    protocol with (i) a recently discovered transversal gate between the 2D and the 3D code and (ii) a
+                                                    judicious use of flag-based postselection. We numerically demonstrate that these modifications lead
+arXiv:2410.07327v3 [quant-ph] 23 Apr 2025
+
+
+
+
+                                                    to a significant improvement in the fidelity of the magic state. For instance, subjected to a uniform
+                                                    circuit-level noise of 10−3 (excluding idling noise), our code switching protocol yields a magic state
+                                                    encoded in the distance-3 2D color code with a logical infidelity of 4.6 × 10−5 ± 1.6 × 10−5 (quantified
+                                                    by an error-corrected logical state tomography) with an 84% of acceptance rate. Used in conjunction
+                                                    with a postselection approach, extrapolation from a polynomial fit suggests a fidelity improvement to
+                                                    5.1×10−7 for the same code. Our protocol is aimed for architectures that allow nonlocal connectivity
+                                                    and should be readily implementable in near-term devices. Finally, we also present a simulation
+                                                    technique akin to an extended stabilizer simulator which effectively incorporates the non-Clifford
+                                                    T -gate, that permits to simulate the protocol without resorting to a resource intensive state-vector
+                                                    simulation.
+
+
+                                                             I.   INTRODUCTION                            of qubits, which make them attractive quantum er-
+                                                                                                          ror correction protocols to implement and test in the
+                                               An essential step towards building a large-scale           near term; see Ref. [26] for a recent experiment, for
+                                            fault-tolerant quantum computer is quantum error              instance. These methods, together with recent effi-
+                                            correction [1]. In principle, the overhead associated         cient magic state distillation protocols [17, 27] are
+                                            with fault-tolerance is merely polylogarithmic in the         expected to further reduce the overhead in magic
+                                            size of the computation [2], and can be even brought          state distillation. In particular, Ref. [25] reported a
+                                            down to a constant [3]. However, the practical over-          scheme that can reach an error rate as low as 2×10−9
+                                            head needed for large-scale fault-tolerant quantum            (with the post-selection success probability of 1%)
+                                            computation remains daunting.                                 under the same physical error rate. This is a level
+                                                                                                          of error that is sufficient to run some quantum al-
+                                               It has been often stated in the literature that the
+                                                                                                          gorithms that have low resource requirement, e.g.,
+                                            most costly part of quantum computation is magic
+                                                                                                          Ref. [28], obviating the need for magic state distilla-
+                                            state distillation [4]. Traditional methods for magic
+                                                                                                          tion entirely for such applications.
+                                            state distillation relied on multi-level distillation of
+                                            various protocols [4–15]. Such analysis often led to             However, it should be noted that there are im-
+                                            an enormous overhead in preparing a magic state,              portant quantum algorithms requiring a number of
+                                            motivating novel alternative methods. One of the              T -gates that is still larger than the distillation-free
+                                            important recent insights in reducing the overhead            methods can tolerate. For instance, the number of
+                                            is that the size of the codes used at a lower level of        Toffoli gates used in quantum chemistry applications
+                                            distillation need not be as large [16, 17].                   such as FeMoCo ranges between 5.3 × 109 [29] and
+                                               Even more recently, there has been a line of works         1.0 × 1010 [30]. Depending on the specifics of how
+                                            that aim to prepare a higher-fidelity magic state be-         the Toffoli gate is being used, each Toffoli can be
+                                            fore the distillation steps. An initial work in this di-      converted to Clifford gates and between four and
+                                            rection is due to Li, who pointed out that the quality        seven T gates [31]. Other applications in quantum
+                                            of the magic state can be improved by a judicious             chemistry tend to require even more T gates [32–
+                                            postselection [18]. Chamberland and Noh then used             34]. Even with the most recent method [25], a com-
+                                            the flag-based methods [19–21] to prepare a magic             pletely distillation-free approach cannot yet reach an
+                                            state while detecting error with a small code [22].           error rate required for these applications. Therefore,
+                                            While this work required a relatively challenging             an outstanding question is whether it is possible to
+                                            physical error rate of 10−4 , recent improvements in          bring down the cost of T gates even further, so that
+                                            this direction led to protocols that can achieve sub-         its cost is comparable to other Clifford gates in this
+                                            stantial reduction in error even at a realistic phys-         regime.
+                                            ical error rate of 10−3 [23–25]. These protocols all             This paper introduces a different protocol that
+                                            boast a rather modest requirement on the number               aims to achieve a similar goal. Unlike the recent
+                                                                                                                    2
+
+protocols that aim to measure a transversal Clifford           In this framework, a non-Clifford logical-T gate can
+gate [24, 25], our approach aims to exploit a code             be mimicked by introducing appropriate Clifford er-
+with a non-Clifford transversal gate. Such an ap-              rors, which can be simulated easily using the existing
+proach was proposed in Refs. [35, 36] and studied              simulators [50]. We provide more details in Sec. V
+in detail in Ref. [37]. However, in light of the re-           and Appendix A.
+cent works that improved the fidelity using postse-              The rest of this paper is organized as follows. In
+lection [24, 25], it is natural to ask whether post-           Sec. II, we compare our protocol to the other related
+selection can also improve the fidelity of transversal-        protocols in the literature. In Sec. III, we review as-
+gate-based approaches.                                         pects of color codes. In Sec. IV, we describe our pro-
+   To that end, we use the three-dimensional(3D)               tocol. In Sec. V we describe our simulation method
+color code [35], and focus on its simplest instance,           and present the result. We end with a discussion
+which is the 15-qubit quantum Reed-Muller code                 in Sec. VI. Finally, Appendix A provides additional
+(qRM). We will aim to use the transversal gate of              details about the simulation methods.
+the 3D color code, which is then converted to the 2D
+color code [36, 38]. While a careful study has sug-
+gested that preparation of magic state using 3D color            II.   COMPARISON WITH PRIOR WORK
+code using this approach is more costly than the mul-
+tilevel distillation method [37], a more recent work
+                                                                  A comparison of the infidelity of magic states pre-
+exploited postselection and flag qubits [19–21] to im-
+                                                               pared in our protocol with some recent results in the
+prove the performance [23]. Our approach is similar
+                                                               literature can be found in Tables I and II.
+in spirit, though we use the flag qubits in a differ-
+                                                                  A common feature of all these protocols is that
+ent way and also uses a transversal gate between 3D
+                                                               they rely on some degree of postselection. However,
+color code and 2D color code (that was recently dis-
+                                                               there is also a difference in the overall approach. Our
+covered in Ref. [39]1 , which also appeared in Ref. [40]
+                                                               protocol (similar to Ref. [23]) uses a transversal non-
+during the preparation of our manuscript.) Overall,
+                                                               Clifford gate, whereas Refs. [24, 25, 51] use the mea-
+our approach yields a high quality magic state on par
+                                                               surement of logical Clifford operators.
+with these prior results, which we discuss further in
+Sec. II.                                                          For our work, an important caveat is that the logi-
+   Although our protocol has a logical infidelity lower        cal error rate estimate for the magic state was based
+than what was reported in Refs. [24, 25] for simi-             on an “ungrown” patch of fixed distance d = 3. In
+lar setups (in terms of the code being used and the            order to assess the quality of the magic state that
+physical error rate), they are incomparable. Ref-              will be used in practice, one needs to estimate the
+erences [24, 25] focused on quantum computing ar-              fidelity after converting this state to a magic state
+chitectures equipped with nearest-neighbor gates on            encoded in a larger-distance code [25]. We instead
+a two-dimensional grid, targeting superconducting              focus on estimating the fidelity for the d = 3 code;
+qubit-based quantum computers [41]. Our approach               the error analysis related to the patch growth is left
+uses gates that would require nonlocal connectivity.           for future work.
+As such, our scheme, as it stands, cannot be used                 Nonetheless, we can compare our protocols to the
+directly on these devices.                                     other protocols in the literature that studied the
+   We emphasize, however, that our protocol is                 quality of the magic state on an ungrown patch.
+aimed at other types of quantum computers, such                There are two types of works in the literature, de-
+as the ones based on photons [42–44], ions [45–47],            pending on how one quantifies the quality of the
+and neutral atoms [48, 49]. Non-local gates can be             magic state. In the first approach, one performs a
+accommodated in these architectures, making them               logical state tomography at the final step, by per-
+promising candidates to implement our protocol.                forming noiseless measurement on all the qubits fol-
+   Lastly, we remark that we introduce a simula-               lowed by an error correction. In the second ap-
+tion method for Clifford+T circuits that may be of             proach, one instead post-selects on observing a triv-
+an independent interest. The main strength of our              ial syndrome.
+method is that it is directly applicable to existing              In the first approach, our numerical simulation re-
+stabilizer circuit simulators, such as Stim [50]. The          ports an infidelity on par with other state-of-the-art
+key ingredient relies on keeping track of the Pauli            results in the literature, using similar error models
+error frame associated to a logical stabilizer state.          (no idling errors were included in our simulations);
+                                                               see Tables I and II. For the second approach, we
+                                                               were unable to directly simulate at a physical er-
+                                                               ror rate used in the literature; the infidelity result-
+1 We would like to thank the anonymous referees for pointing
+                                                               ing from the second approach is too low. Instead,
+  out this reference.                                          we fitted the logical error rate with a polynomial at
+                                                                                                                     3
+
+                                               Uniform depolarizing noise
+                                                                   Acceptance
+                          Method               Infidelity                     Final code Distance
+                                                                      rate
+                        Our protocol
+                                         4.6 × 10−5 ± 1.6 × 10−5       84%     Steane code        3
+                      (error correction)
+                       Butt et al [23]            10−4                 94%     Steane code        3
+                                    (∗)
+                     Our protocol
+                                             ≈ 5.1 × 10−7            ≈ 84%     Steane code        3
+                     (postselection)
+                   Gidney et al [25]            6 × 10−7               65%    Steane code         3
+                   Itogawa et al [24]             10−4                 70%    Surface code        3
+
+TABLE I. Infidelity of magic states |T̄ ⟩ under a uniform depolarizing error model with strength p = 10−3 , for some
+state-of-the-art protocols, prepared in the final stage on distance d = 3 codes. Note that our error model does
+not include idling errors. The label “error correction/postselection” implies that the infidelity of the magic states
+is quantified via state tomography, where the final state in the postprocessing stage is either error corrected or
+postselected if syndromes are trivial, respectively. The first two rows use error correction, while the last three rows
+use postselection. (∗) These results are extrapolated from the data points of Figs. 8 and 9, following the polynomial
+fits of (23) and (24), therefore the approximate symbol ≈ is utilized.
+
+                                           Multiparameter depolarizing noise
+                                                                   Acceptance
+                           Method              Infidelity                     Final code Distance
+                                                                      rate
+                         Our protocol
+                                          9 × 10−5 ± 2 × 10−5         71%    Steane code      3
+                       (error correction)
+                        Butt et al [23] 1.6 × 10−4 ± 2 × 10−5         82%    Steane code      3
+                       Postler et al [51]   10−4 ± 3 × 10−5           85%    Steane code      3
+
+TABLE II. Infidelity of magic states |T̄ ⟩ (|H̄⟩ states for Ref. [51]) under a multiparameter depolarizing error model
+with initialization and measurement error pi = pm = 10−3 , single-qubit error p1 = 10−4 , and two-qubit error
+p2 = 3 × 10−3 , for some state-of-the-art protocols, prepared in the final stage on the Steane code [[7, 1, 3]]. Note
+that our error model does not include idling errors and that Ref. [51] uses the single-qubit depolarizing noise model
+for initialization and measurement errors. The infidelity of these magic states are quantified via state tomography,
+where the final state in the post-processing stage is error corrected. The numerical values for the protocol [51] were
+obtained from Ref. [23].
+
+
+higher physical error rate and extrapolated. Need-            the two codes is relatively new, having recently ap-
+less to say, the result obtained this way cannot be           peared in Refs. [39] and [40] (the later gate is equiv-
+directly compared to the results obtained from exact          alent to ours up to a transversal unitary).
+diagonalization [24, 25]. Nonetheless, it can serve as           The two-dimensional color code we consider is a
+a proxy to understand how well our method would               CSS code with parameters [[7, 1, 3]], also known as
+work.                                                         the Steane code [52]. The Steane code stabilizer
+                                                              group is generated by mutually commuting Z-type
+                                                              and X-type 2-cells (henceforth referred to as plaque-
+               III.     COLOR CODES                           ttes) stabilizers, described in Table III.
+
+  In this section, we provide a brief review of the
+                                                                             Steane: Z(X)-type stabilizers
+two- and three-dimensional color codes [35, 38] that
+are relevant to this paper. This section will intro-                         p1 Z1 Z2 Z6 Z7 p4 X1 X2 X6 X7
+duce a convention for the qubit labels we use, which                         p2 Z2 Z3 Z4 Z7 p5 X2 X3 X4 X7
+shall be used throughout this paper; see Figs. 1                             p3 Z4 Z5 Z6 Z7 p6 X4 X5 X6 X7
+and 2.
+  Most of the results in this section are well known,         TABLE III. Z-type and X-type plaquette stabilizer gen-
+but the discussion about a transversal gate between           erators for the [[7, 1, 3]] Steane code.
+                                                                                                                        4
+
+                                                             of a family of codes known as quantum Reed-Muller
+                                                             codes (qRM).
+                                                                The stabilizer group is generated by Z-type 2-cells
+                                                             (plaquettes) and X-type 3-cells. In total there are
+                                                             eighteen plaquettes (Table IV) and four 3-cells (Ta-
+                                                             ble V). Since the qRM encodes a single logical qubit
+                                                             and 15 = 1 + 10 + 4, there are only ten independent
+                                                             Z-type stabilizers, meaning that there are eight in-
+                                                             dependent constraints (Table VI). Those are given
+                                                             by multiplying plaquettes around a cylinder, yield-
+                                                             ing a total of three constraints per 3-cell. In a given
+                                                             3-cell, two such constraints give rise to the third one,
+FIG. 1. Pictorial representation of the [[7, 1, 3]] Steane   thus, two constraints per 3-cell give the net result of
+code including labels for the physical qubits.               eight independent ones.
+
+                                                                             qRM: Z-type stabilizers
+                                                                        p1 Z1 Z2 Z6 Z7 p10 Z6 Z7 Z13 Z14
+                                                                        p2 Z2 Z3 Z4 Z7 p11 Z2 Z7 Z9 Z14
+                                                                        p3 Z4 Z5 Z6 Z7 p12 Z4 Z7 Z11 Z14
+                                                                        p4 Z1 Z6 Z8 Z13 p13 Z8 Z12 Z13 Z15
+                                                                        p5 Z1 Z2 Z8 Z9 p14 Z8 Z9 Z10 Z15
+                                                                        p6 Z2 Z3 Z9 Z10 p15 Z10 Z11 Z12 Z15
+                                                                        p7 Z3 Z4 Z10 Z11 p16 Z8 Z9 Z13 Z14
+                                                                        p8 Z4 Z5 Z11 Z12 p17 Z9 Z10 Z11 Z14
+                                                                        p9 Z5 Z6 Z12 Z13 p18 Z11 Z12 Z13 Z14
+
+                                                             TABLE IV. Z-type plaquette stabilizers for the [[15, 1, 3]]
+                                                             qRM code. Only ten of them are independent due to
+                                                             the constraints of Table VI. In the simulations, we de-
+                                                             cided to measure the set of ten independent stabilizers
+FIG. 2. Pictorial representation of the [[15, 1, 3]] qRM     {p1 , p2 , p3 , p7 , p8 , p9 , p13 , p16 , p17 , p18 }.
+code including labels for the physical qubits.
+
+
+                                                                             qRM: X-type stabilizers
+  The Steane code encodes a single logical qubit and
+has minimum weight-3 transversal logical Z̄ and X̄                        c1 X1 X2 X6 X7 X8 X9 X13 X14
+operators                                                                 c2 X4 X5 X6 X7 X11 X12 X13 X14
+                                                                          c3 X2 X3 X4 X7 X9 X10 X11 X14
+                     Z̄ = Z1 Z2 Z3 ,                  (1)                 c4 X8 X9 X10 X11 X12 X13 X14 X15
+
+                                                             TABLE V. X-type 3-cell stabilizers for the [[15, 1, 3]]
+                    X̄ = X1 X2 X3 .                   (2)    qRM code.
+
+Given that the distance d = 3, the Steane code is
+capable of correcting arbitrary weight-1 errors, and                      qRM: Independent constraints
+detecting arbitrary weight-2 errors. Unfortunately,
+                                                                          Γ1 p4 p5 p10 p11 Γ5 p6 p7 p11 p12
+the Steane code does not support any transversal
+logical non-Clifford gate like the T gate. This is                        Γ2 p1 p5 p10 p16 Γ6 p2 p6 p12 p17
+because the Steane code supports the full Clifford                        Γ3 p8 p9 p10 p12 Γ7 p13 p15 p16 p17
+group transversally, however the no-go Eastin-Knill                       Γ4 p3 p8 p10 p18 Γ8 p14 p15 p16 p18
+theorem [53] states that no stabilizer quantum code
+exists that contains a transversal universal gate set.       TABLE VI. Independent set of constraints Γi = I (iden-
+  The three dimensional color code we consider is            tity) with i = 1, 2, . . . , 8 for the [[15, 1, 3]] qRM code.
+a CSS code with parameters [[15, 1, 3]]. It is the
+smallest color code in three dimensions that admits a          The minimum weight logical-Z operator Z̄ has
+transversal T -gate and represents a specific instance       weight-3, and a representative lies at the edge of the
+                                                                                                                               5
+
+tetrahedron
+                                                                      qRM: |+̄⟩          T̄     •     MX̄    •
+                       Z̄ = Z1 Z2 Z3 .                      (3)
+                                                                     Steane: |0̄⟩                            Z̄        |T̄ ⟩
+The minimum weight logical-X operator X̄ has
+weight-7, and a representative lies at the face of a
+boundary of the tetrahedron                                        FIG. 3. Protocol at the logical level. A qRM (quantum
+                                                                   Reed-Muller) and a Steane codeblock are prepared in
+               X̄ = X1 X2 X3 X4 X5 X6 X7 .                  (4)    the |+̄⟩ and the |0̄⟩ state, respectively. The transversal
+                                                                   logical T̄ gate native to the qRM code is applied, creating
+Hence, the distance d = min{dx , dz } = 3, where                   a logical magic state |T̄ ⟩ = T̄ |+̄⟩. The magic state is
+dx = 7 is the distance for X-type logical operators,               then teleported to the Steane code block by applying a
+and dz = 3 is the distance for Z-type logical opera-               logical CNOT gate, measuring the logical X̄ operator
+tors. In addition, the [[15, 1, 3]] qRM code is capable            and applying a logical Z̄ correction in the case where
+of correcting arbitrary weight-1 Z-errors (phase flip)             X̄ = −1. At the end of the protocol, the logical magic
+and up to weight-3 X-errors (bit flip).                            state |T̄ ⟩ is prepared in the Steane code block.
+    The qRM code also admits a transversal T gate
+T̄ , consisting of single-qubit T /T † gates applied to
+odd- and even labeled qubits, respectively,                        the |+̄⟩ state of the qRM code that uses parallel
+                                                                   flagged syndrome extraction circuits with only a few
+ T̄ = T1 T2† T3 T4† T5 T6† T7 T8† T9 T10
+                                       †      †
+                                         T11 T12      †
+                                                 T13 T14 T15 ,     extra ancillas and the utilization of a recently dis-
+                                                            (5)    covered CNOT gate.
+where the single-qubit T gate is defined as                           For completeness, we first describe the standard
+                                       !                           methods we employ. For the logical T̄ gate of the
+                               1 0                                 qRM code, we apply the standard transversal gate
+                     Tj =            π    .                 (6)    (5) [4, 35]. For the logical-X measurement necessary
+                               0 ei 4
+                                                                   for the teleportation, we first measure all the qubits
+Note that since the S gate S̄ = T̄ 2 , the qRM code                of the qRM code in the X basis. Then, we compute
+trivially supports a transversal logical S̄ gate in                the X syndrome (see Table V) in postprocessing.
+terms of single-qubit S/S † gates, respectively,                   At this point, we have a choice to either apply er-
+                                                                   ror correction, or instead postselect on measuring a
+  S̄ = S1 S2† S3 S4† S5 S6† S7 S8† S9 S10
+                                       †       †
+                                          S11 S12      †
+                                                  S13 S14 S15 .    trivial syndrome. We opt for the latter, since that
+                                                             (7)   yields a lower logical infidelity. After post-selecting
+Even though the [[15, 1, 3]] qRM supports a transver-              for a trivial X syndrome, we extract the value of
+sal non-Clifford gate, it does not support a transver-             the logical-X operator X̄, and we apply a logical-
+sal Haddamard gate H̄, as this would violate Eastin-               Z correction on the Steane code in the case where
+Knill theorem [53]. Notably, both color codes de-                  X̄ = −1. The |0̄⟩ state preparation of the Steane
+scribed in this section achieve optimality between                 code follows the known protocol of Refs. [51, 56, 57];
+dimensionality and the Clifford hierarchy of the na-               see Fig. 4. The logical-Z correction on the Steane
+tive transversal gates, saturating the bound proved                code uses the standard weight-3 logical operator (1).
+for topological codes by the Bravyi-König theorem                    Lastly, since the final magic state is encoded in
+[54].                                                              the Steane code, an additional round of flag-based
+                                                                   error correction could be used to detect further er-
+                                                                   rors as in Refs. [20, 51], at the expense of increasing
+                   IV.     PROTOCOL                                the overhead cost of the protocol. Given the depth
+                                                                   of syndrome extraction circuits of Sec. IV A, we de-
+                                                                   cided not to incorporate this variation.
+   Our protocol aims to prepare a magic state en-
+coded in the Steane code. At the logical level,
+our approach uses the standard one-bit teleportation
+protocol [55] to teleport the magic state |T̄ ⟩ encoded                  A.    Preparation of |+̄⟩ for qRM code
+in the qRM code to the Steane code, see Fig. 3.
+   We now describe each of the components in Fig. 3.                  The most involved part of our protocol is the
+By strategically combining various existing fault-                 preparation of the |+̄⟩ for the qRM code. At a high
+tolerant constructions from the literature [20, 21,                level, our approach prepares the logical |+̄⟩ state
+35, 38], we succeed in giving an overall improvement               using the encoding method of Ref. [23], followed
+compared to other known methods. Our main con-                     by an adapted version of flag-based error detec-
+tribution is a novel protocol for the preparation of               tion [19–21, 58]. Our adapted flag-based error detec-
+                                                                                                                                  6
+
+                                                                   this effect, one must measure the Z-type syndromes.
+         1 |+⟩          •               •                          Such measurements should be chosen carefully. If
+          2 |0⟩              •                                     we were to measure each Z-type syndrome using the
+         3 |+⟩    • •                       •                      standard approach (i.e., using a single ancilla and
+          4 |0⟩                                                    four CNOTs), a single fault can propagate to weight-
+         5 |+⟩      •   •           •                              2 errors in the data block.
+          6 |0⟩                                     •                  We can avoid this problem by using the paral-
+         7 |0⟩                                  •                  lel flag-based syndrome-extraction circuits for the
+                                                                   Steane code [20], adapted to the qRM code. In
+                            8 |0⟩                       MZ         that paper, the authors introduced two types of syn-
+                                                                   drome extraction circuits, one extracting two syn-
+                                                                   dromes at once and the other extracting three syn-
+FIG. 4. Preparation of the logical zero state |0̄⟩ in the          dromes at once; see Figs. 6 and 7. In the qRM
+Steane code. A non-fault-tolerant initialization involves
+                                                                   code, there are ten independent Z-type stabilizers,
+preparing the physical qubits either in the zero |0⟩ or
+plus |+⟩ state, followed by a series of CNOT gates. A              see Table IV, which we can organize as follows.
+final verification step measures the logical Z̄ operator           First, we can measure (Z8 Z12 Z13 Z15 , Z5 Z6 Z12 Z13 )
+and uses an ancilla qubit acting as a flag, detecting all          and (Z3 Z4 Z10 Z11 , Z4 Z5 Z11 Z15 ) using Fig. 6. Then
+weight-2 X errors originating from a single X error.               we can measure (Z1 Z2 Z6 Z7 , Z2 Z3 Z4 Z7 , Z4 Z5 Z6 Z7 )
+                                                                   and (Z8 Z9 Z13 Z14 , Z9 Z10 Z11 Z14 , Z11 Z12 Z13 Z14 ) us-
+                                                                   ing Fig. 7. The advantage of using this new scheme
+tion scheme employs a scheme inspired by Ref. [20],                is that instead of employing ten ancilla qubits to flag
+which is appropriately modified to the qRM code.                   each syndrome extraction circuit individually, we re-
+   The first step of this protocol is described in Fig. 5.         duce the number to four. Moreover, the number of
+The final verification step measures the logical X̄                time steps needed to run a full syndrome extraction
+operator and uses an ancilla qubit acting as a flag,               cycle is also reduced, which is desirable for exper-
+detecting all uncorrectable weight-2 Z errors origi-               imental demonstrations. Flags and syndromes are
+nating from a single Z error.                                      postselected to be +1. We remark that there are
+                                                                   other sets of stabilizers one may choose to measure.
+                                                                   2
+                                                                     . We leave such studies for future work.
+  1 |0⟩
+  2 |0⟩                    •
+                                                                           1                       •
+  3 |0⟩                                                                    2                   •
+  4 |0⟩        •                                                           3
+                                                                           4                           •
+  5 |0⟩                                                                    5                               •
+  6 |0⟩                      •                                             6           •
+ 7 |+⟩ • •               •                                                 7   •
+  8 |0⟩          •
+ 9 |+⟩             • • •                                               8 |0⟩               •                         MZ Z1 Z2 Z6 Z7
+ 10 |0⟩                      ••
+                                                                       9 |0⟩                                         MZ Z4 Z5 Z6 Z7
+11 |+⟩ • •         •   •
+ 12 |0⟩          •         •                                         10 |+⟩        •                           • •   MX Flag
+13 |+⟩   •   •                  •
+14 |+⟩     •• •      •
+ 15 |0⟩                                                            FIG. 6. Simultaneous flagged syndrome extraction cir-
+                                                                   cuit for two Z-type stabilizers in the Steane code. An
+                                    16 |+⟩      • • • • • • • MX
+                                                                   additional qubit prepared in the plus state |+⟩ acts as a
+                                                                   flag and detects higher weight data Z errors originating
+                                                                   from arbitrary single-qubit ancilla Z errors.
+FIG. 5. Preparation of the logical plus state |+̄⟩ in the
+qRM code. A non-fault-tolerant initialization involves
+preparing the physical qubits either in the zero |0⟩ or
+plus |+⟩ state, followed by a series of CNOT gates.                2 It turns out that four is the minimum number of Z-type sta-
+
+                                                                     bilizers needed to detect all propagated weight-2 or higher
+                                                                     X errors after the initialization of Fig. 5 For instance, a
+   At this point, the state prepared may have addi-
+                                                                     set of plaquette stabilizers that satisfy this condition is
+tional X errors. If we do not correct them, they will                {p2 , p3 , p8 , p13 }. In an experiment, this reduction can de-
+propagate through the transversal T gate to a XS                     crease the space-time cost of the protocol (see Sec. IV C).
+error, which will lead to an error in the final mea-                 We thank an anonymous referee for suggesting to inspect
+surement MX̄ of the qRM code. In order to mitigate                   this property.
+                                                                                                                                               7
+
+                                                                                                 C.     Space-time Cost
+     1                         •
+     2                     •               •
+     3                                         •                                   In this section, we summarize the overall space-
+     4                                 •           •
+     5                             •                                            time cost of our protocol. The majority of the cost
+     6             •                                                            comes from |+̄⟩ state preparation (Fig. 5) and the
+     7 •
+                                                                                syndrome extraction circuits (Figs. 6 and 7). Over-
+  8 |0⟩        •       •                                       MZ Z1 Z2 Z6 Z7   all, we estimate the total space-time volume to be
+                                                                                at most ≈ 1.3 × 103 ; see Table VII for a breakdown.
+  9 |0⟩                                                        MZ Z4 Z5 Z6 Z7
+                                                                                   It is interesting to note that the overall space-time
+ 10 |0⟩                                                        MZ Z2 Z3 Z4 Z7   cost is significantly smaller than methods based on
+                                                                                magic state distillation. For instance, consider a re-
+11 |+⟩     •                                           • • •   MX Flag
+                                                                                cent distillation protocol based on 2D color codes,
+                                                                                studied in Ref. [27]. In Fig. 14 of Ref. [27], the
+FIG. 7. Simultaneous flagged syndrome extraction cir-                           authors report an overall space-time cost needed
+cuit for three Z-type stabilizers in the Steane code. An                        to achieve a target infidelity. At a physical error
+additional qubit prepared in the plus state |+⟩ acts as a                       rate of 10−3 , for an infidelity of order 10−6 , there
+flag and detects higher weight data Z-errors originating                        is no distillation-based protocol with a space-time
+from arbitrary single qubit ancilla Z-errors.                                   cost less than 106 . On the other hand, our pro-
+                                                                                tocol achieves an infidelity of 5.1 × 10−7 (with a
+                                                                                postselection approach) using a space-time volume
+                                                                                of ≈ 1.3 × 103 , which is a significant improvement.
+                                                                                   Furthermore, we note that our estimate of 1.3 ×
+           B.          Transversal CNOT gate                                    103 is likely an overestimate. For instance, the cir-
+                                                                                cuits of Fig. 7 could be implemented in parallel in
+  The logical CNOT gate in Fig. 3 can be imple-                                 our protocol. So, the space-time cost of the most
+mented using a transversal gate. With respect to                                resource-intensive individual part of the protocol in
+the convention described in Figs. 1 and 2, we can                               principle can be at least halved.
+apply the following operation:
+                                                                                                  V.     SIMULATION
+                                       7
+                                       O
+                    CNOT =                     CNOTi ,                   (8)
+                                       i=1
+                                                                                   The protocol described in Sec. IV uses 22 data
+                                                                                qubits and 16 ancilla qubits. If the ancilla qubits
+where CNOTi is the CNOT gate whose control and                                  are reused, it is possible to reduce the ancilla qubit
+target is the i’th qubit of the qRM and Steane code,                            requirements to four, which is bottlenecked by the
+respectively. The qubits belonging to the qRM code                              flag circuit in Fig. 7. Even so, an exact mixed state
+that participate in the CNOT gate span the bottom                               simulation of 26 qubits is challenging.
+face of the tetrahedron of Fig. 2. In addition, the                                As such, we resort to a Monte Carlo sampling-
+other orientation of the CNOT gate not used in this                             based approach. We keep track of the Pauli errors,
+protocol is not available via the transversal method                            which after passing through T̄ , become Clifford er-
+of (8).                                                                         rors. Thus, by studying an ensemble of circuits, each
+                                                                                suffering from a random Clifford error, we can simu-
+   This gate preserves the stabilizer group and satis-
+                                                                                late the performance of our protocol. This is a simu-
+fies the following relations:
+                                                                                lation technique akin to an extended stabilizer simu-
+                                                                                lator, which effectively incorporates the non-Clifford
+           CNOTX̄qRM CNOT = X̄qRM X̄S                                           T gate.
+                                                                         (9)
+                   CNOTZ̄S CNOT = Z̄qRM Z̄S                                        To incorporate the stochastic Clifford errors into
+                                                                                the simulation, we first initialize the noisy logical
+up to stabilizers, where X̄qRM and Z̄qRM are logical                            plus state |+̄⟩ in the qRM code as in Fig. 3 and
+X and Z operators of the qRM code, (4) and (3);                                 extract the Pauli error frame P ,
+similarly, X̄S and Z̄S are logical X and Z operators                                               |+̄⟩ = P |+̄⟩noiseless ,                (10)
+of the Steane code, (2) and (1). Thus, Eq. (8) is
+                                                                                where |+̄⟩noiseless is the noiseless plus state. Since
+a logical CNOT from the qRM code to the Steane
+                                                                                the T gate has to be applied to the noisy plus state,
+code. A generalization of this construction to the
+entire 3D and 2D color code family is discussed in                                T̄ |+̄⟩ = (T̄ P T̄ † )T̄ |+̄⟩noiseless = C(P )|T̄ ⟩noiseless .
+Ref. [40].                                                                                                                                   (11)
+                                                                                                                             8
+
+                                   Protocol            Volume 2-qubit gates Measurements Depth
+                       |0̄⟩ State preparation (Fig. 4)    75       11             1       10
+                      |+̄⟩ State preparation (Fig. 5) 309          32             1       20
+                       Syndrome extraction (Fig. 6)      360       20             6       20
+                       Syndrome extraction (Fig. 7)      532       30             8       28
+                              Transversal T gate          15       −             −         1
+                           Transversal CNOT gate          22        7            −         1
+                           Logical-X measurement          22       −             15        1
+                                    Total               1335      100            31       81
+
+TABLE VII. Summary of the total space-time cost estimate of the protocol, together with the number of 2-qubit
+CNOT gates, single-qubit destructive measurements, and circuit depth. The space-time cost (volume) is defined as
+the number of qubits times the number of time steps. For the syndrome extraction circuits, the estimates contemplate
+two uses for each type of circuit (see Sec. IV A).
+
+
+The state |T̄ ⟩noiseless = T̄ |+̄⟩noiseless is a noiseless       In our simulation, the state ρ̄ is chosen to be the
+magic state in the qRM code and C(P ) = T̄ P T̄ † is           (normalized) postselected state that we obtain at the
+                                        N15      ai bi
+the Clifford error frame. If P ∼            i=1 Xi Zi for
+                                                               very end of the protocol. Because the postselection
+ai , bi ∈ {0, 1}, then the Clifford error frame becomes        probability is identical for every stabilizer state ap-
+                            !               !                  pearing in Eq. (13), we can estimate Eq. (14) by
+                    O
+                         ai
+                                 O †a                          taking the expectation value of the logical X and Y
+        C(P ) ∼         Si           Si   i
+                                              P,      (12)     operator of the Steane code only for the post-selected
+                  i odd         i even                         events. Indeed, by combining (13) and (14), the fi-
+                                                               delity can be conveniently written as
+up to a global phase. The ordering of the gates
+appearing in (12) is important, with the Pauli er-                                                   1 1
+ror frame P (10) acting first, followed by the phase                          ⟨T̄ |ρ̄|T̄ ⟩Steane =    + ∆,            (15)
+                                                                                                     2 8
+gates. We discuss the significance of the appropriate
+ordering in the last paragraph of Appendix A.                  where
+    After updating the Pauli errors to Clifford er-                                                               
+rors, we effectively have an ensemble of encoded                ∆ = ⟨X̄⟩|+̄⟩ − ⟨X̄⟩|−̄⟩ + ⟨X̄⟩|Ȳ+ ⟩ − ⟨X̄⟩|Ȳ− ⟩
+|T̄ ⟩noiseless states of the qRM code followed by a
+                                                                                                                       
+                                                                     + ⟨Ȳ ⟩|+̄⟩ − ⟨Ȳ ⟩|−̄⟩ + ⟨Ȳ ⟩|Ȳ+ ⟩ − ⟨Ȳ ⟩|Ȳ− ⟩ .
+stochastic Clifford noise. Note that for a magic state
+|T̄ ⟩, the density matrix |T̄ ⟩⟨T̄ | can be written as a                                                              (16)
+linear combination of pure stabilizer states:
+                                                               A proof of (15) and (16) can be found in Appendix A.
+                             √
+                     1         2                               We stress that the described simulation method is
+        |T̄ ⟩⟨T̄ | = I +         (|+̄⟩⟨+̄| − |−̄⟩⟨−̄|)         well suited for our protocol because we only em-
+                     2
+                     √        4                         (13)   ploy once a logical transversal T gate, thus, it is
+                       2
+                   +     (|Ȳ+ ⟩⟨Ȳ+ | − |Ȳ− ⟩⟨Ȳ− |).        applied in a single layer at the physical level. How-
+                      4                                        ever, in a more general scenario where two or more
+All these states can be implemented by applying                non-Clifford gates act on some subset of qubits (as in
+logical transversal gates to the logical plus state            Refs. [22, 57]), it is unclear if our proposed method
+in the qRM code: |−̄⟩ = Z̄|+̄⟩, |Ȳ+ ⟩ = S̄|+̄⟩ and            is applicable. This is because Pauli errors become
+|Ȳ− ⟩ = S̄ † |+̄⟩. For each of the stabilizer states ap-      Clifford errors after the first non-Clifford gate, and
+pearing in Eq. (13), we can estimate the fidelity be-          subsequently non-Clifford errors after the remaining
+tween the logical noiseless magic state in the Steane          non-Clifford gates.
+code |T̄ ⟩Steane (after teleportation) and the given              We quantify the quality of the magic state us-
+noisy final state ρ̄ using the following relation:             ing two different methods. In the first approach,
+                                                               we compute the fidelity using Eqs. (15) and (16) as-
+                             √
+                          1    2                               suming that at the final step we perform logical mea-
+      ⟨T̄ |ρ̄|T̄ ⟩Steane = +     (⟨X̄⟩ρ̄ + ⟨Ȳ ⟩ρ̄ ), (14)     surement. That is, we measure all the qubits in the
+                          2   4
+                                                               X-, or Y - basis and obtain the syndrome informa-
+where ⟨X̄⟩ρ̄ and ⟨Ȳ ⟩ρ̄ are the expectation values of         tion from the measurement outcomes (recall that in
+the logical X and Y operators evaluated with respect           the Steane code, since the stabilizer generators have
+to the code state ρ̄, i.e., ⟨O⟩ρ̄ = Tr(Oρ̄).                   weight-4, it is possible to get the Z syndrome by
+                                                                                                                   9
+
+multiplying the X and Y syndromes, respectively).             Here, D1 and D2 are a single- and two-qubit depo-
+From the syndrome information, a correction is de-            larizing noise model, respectively.
+duced using a look-up table, after which we obtain               Regarding idling errors, we do not consider them
+the logical measurement outcome. This approach                in our simulations. Given the depths of the different
+roughly quantifies the quality of the magic state en-         circuits present in our protocol, their contribution
+coded in the Steane code.                                     might not be entirely insignificant in a experimental
+   In the second approach, in the last step we post-          demonstration, which we ultimately expect to give
+select on measuring a trivial syndrome. This can              a conclusive assessment of the protocol. We plan to
+be used as a proxy for the lowest error rate one can          study this effect in more detail in a future work.
+achieve if one were to later enlarge the code to a               In order to compare our findings with other state-
+larger one whilst post-selecting [24, 25]. However,           of-the-art results in the literature, some simulations
+as pointed out in Ref. [25], the logical error rate ob-       are done with the multiparameter depolarizing er-
+tained after such enlargement process is often higher         ror model too, see Table II. This model is defined
+than the one obtained prior to that stage. How the            similarly as the uniform counterpart, with the only
+logical error rate changes under such a process is be-        difference that each type of error can be tuned inde-
+yond the scope of this paper, and we leave it for a           pendently, and they are parametrized by pi initial-
+future work.                                                  ization error, pm measurement error, and p1 and p2
+                                                              single- and two-qubit error gate.
+
+                   A.   Noise model
+                                                                           B.    Simulation Methods
+   We use the noise model in which every operation
+is followed or preceded by a noisy process; we use the           Our simulations are done using the stabilizer
+uniform depolarizing noise model of strength p. For           simulator package Stim [50] for Python. Specifi-
+state preparation, we assume that there is a proba-           cally, using Pauli frames obtained from the func-
+bility p of flipping the initial state. Hence, we model       tions FlipSimulator() and peek pauli flips(),
+the preparation of a |0⟩ state as perfect |0⟩ followed        we generated random instances of Clifford errors,
+by a bit flip X applied with probability p. Similarly,        each of which are later incorporated to the full cir-
+the preparation of a |+⟩ state is modeled as a perfect        cuit using again Stim. For a given simulation, we
+|+⟩ state followed by a phase flip Z with probability         run Ntot Monte Carlo shots, and postselected Npost
+p.                                                            of them. Hence, the acceptance rate of the protocol
+   For measurements, we follow a similar recipe as            is given by
+for state preparation. We model a Z-type measure-                                             Npost
+ment as a bit flip X applied with probability p, fol-                             paccept =         .           (19)
+                                                                                              Ntot
+lowed by a perfect Z-type measurement. Similarly,
+we model an X-type measurement as a phase flip                For later reference, the postselection rejection prob-
+Z applied with probability p, followed by a perfect           abilities are defined as the complement of the accep-
+X-type measurement.                                           tance rate (19), in other words ,
+   For single- and two-qubit gates, we model them
+as perfect gates followed by the depolarizing error                             preject = 1 − paccept .         (20)
+model. For 1-qubit gates, the depolarizing error
+                                                              Similarly, the infidelity of the magic state quantifies
+model leaves the state unaltered with probability
+                                                              the logical failure and is defined as the complement
+1 − p, and applies a Pauli error P ∈ {X, Y, Z} (de-
+                                                              of the infidelity (15) and (16),
+noted as P1 ) with probability p3 . For 2-qubit gates,
+the depolarizing error model leaves the state unal-                         pfail = 1 − ⟨T̄ |ρ̄|T̄ ⟩Steane .    (21)
+tered with probability 1−p, and applies a Pauli error
+P ⊗ Q with P, Q ∈ {I, X, Y, Z} (denoted as P2 ) and              The total number of shots Ntot ranges from 107
+                                    p
+P ⊗Q ̸= I ⊗I with probability 15      . Specifically, these   up to 3 × 108 . To compute the uncertainty of the
+channels can be written as follows                            fidelity, we define first the uncertainty of the expec-
+                                X       p                     tation values ⟨P̄ ⟩ρ̄ for P = X, Y , which is given by
+       D1 (ρ) = (1 − p)ρ +                P ρP ,       (17)
+                                        3                                               s
+                            P ∈ P1 /{I}                                                   Var(⟨P̄ ⟩ρ̄ )
+                                                                               σP,ρ̄ =                  .        (22)
+                                                                                             Npost
+                                 X          p
+      D2 (ρ) = (1 − p)ρ +                      P ρP . (18)    We observe that at low error rates, the major con-
+                                            15                tribution to the variance comes from the intrinsic
+                            P ∈ P2 /{I⊗I}
+                                                                                                                                                10
+
+probabilistic nature of the measurement of an eigen-
+state of a Pauli P in another basis P ′ . More pre-                                 100
+cisely, this occurs when computing in (15) and (16)                                              Error corrected fit
+the expected values ⟨X̄⟩|Ȳ± ⟩ and ⟨Ȳ ⟩|±̄⟩ . In a noise-                   10 1                Post-selected fit
+less scenario, we can model the measurement out-                                                 Error corrected data
+comes as a Bernoulli distribution that returns +1                            10 2                Post-selected data
+
+
+
+
+                                                             Infidelity
+and −1 with even probability 1/2, which has       p vari-
+ance 1, thus, yielding an error of σP,ρ̄ ≳ 1/ Npost                          10 3
+for the aforementioned four expected values. Finally,
+taking into account normalization factors in (15) and                        10 4
+(16), this implies that the propagated fidelity
+                                              p      error                   10 5
+is roughly given by σ⟨T̄ |ρ̄|T̄ ⟩Steane ≳ 1/(4 Npost ).
+                                                                             10 6
+                     C.    Results                                                        10 3                   10 2                   10 1
+                                                                                                        Physical error p
+   As we stated before in Sec. V, we consider two                FIG. 8. Infidelity of magic states |T̄ ⟩ as a function of
+approaches. The first approach performs error cor-               physical error rate for a uniform depolarizing error model
+rection when measuring the logical X and Y used                  (excluding idling errors) of strength p. The polynomial
+in Eqs. (15) and (16). The second approach uses                  fits with their respective parameters are explicitly given
+postselection on measuring trivial syndrome at this              in Eq. (23).
+step.
+   The results of the simulation for both approaches
+are plotted in Figs. 8 and 9. In the first and the
+second approach, our circuit can detect all faults of
+weight 1 and 2, respectively; this difference comes                                 100                                 Error corrected fit
+from the final logical measurement stage. We have                                                                       Post-selected fit
+                                                                                     80                                 Error corrected data
+                                                              Acceptance rate (%)
+
+
+
+fitted the logical infidelity and the postselection
+probability to a polynomial. From the fitted polyno-
+                                                                                                                        Post-selected data
+mial for the infidelity we obtained at leading order,                                60
+           
+           
+           
+           25.5p2 − 1266.7p3 + 165884.4p4                                           40
+                   −4339823.2p5 + 39742917.9p6
+           
+           
+           
+           
+   pfail ≈                     (error correction),                                   20
+           
+           508.5p3 + 4477.1p4
+           
+           
+                                                                                      0
+           
+           
+                              (postselection).
+                                                                                          10 3                   10 2                   10 1
+                                                   (23)                                                 Physical error p
+   In addition, at leading order the polynomial fits
+for the rejection rates yield,                                   FIG. 9. Acceptance rate of magic states |T̄ ⟩ as a func-
+                                                                tion of physical error rate for a uniform depolarizing error
+            
+             164.6p − 12362.8p2 + 477206.9p3                    model (excluding idling errors) of strength p. The poly-
+            
+                           −7518868.5p4                          nomial fits with their respective parameters are explicitly
+            
+            
+            
+                                                                 given in Eq. (24). A plot of the difference between accep-
+            
+            
+                                (error correction),
+  preject ≈                                                      tance rates in logarithmic scale can be found in Fig. 10.
+                                2
+            
+            
+             166.4p − 12352.7p   + 462706.3p3
+                           −7014618.5p4
+            
+            
+            
+            
+            
+                                 (postselection).
+            
+                                                                 number of accepted shots with non trivial syndrome
+                                                   (24)          in the final decoding since
+   The acceptance rate plots in Fig. 9 suggest a small
+difference between the error-corrected and the post-                                                                 EC      ED
+                                                                                                                    Npost   Npost
+selected simulation results. Hence, in Fig. 10 we                                          pEC        ED
+                                                                                            accept − paccept =            −       ,            (25)
+show a plot in logarithmic scale of the difference                                                                  Ntot    Ntot
+between the acceptance rate using error correction
+pEC                                           ED
+  accept and postselection/error-detection paccept , re-         Moreover, in Fig. 10 we also show a plot of the dif-
+spectively. Their difference gives an estimate of the            ference of the weighted infidelities, which are defined
+                                                                                                                              11
+
+   as the infidelity times the acceptance rate                                            VI.   DISCUSSION
+                       α  α              α
+       α     α          Nfail    Npost     Nfail
+      pfail paccept =    α              =        ,                 (26)
+                       Npost     Ntot      Ntot
+                                                                             In this paper, we introduced a method for prepar-
+          α
+   where Nfail indicates the number of shots with a log-                  ing a high-fidelity magic state using color codes.
+   ical failure and α = EC, ED (standing from error-                      Our approach employs a judicious use of flag-based
+   correction and error-detection/postselection, respec-                  post-selection and a transversal gate (that was re-
+   tively). The difference between the weighted infideli-                 cently discovered in Ref. [39], which also appeared in
+   ties gives an estimate of the number of logical failures               Ref. [40] during the preparation of our manuscript.)
+   with non-trivial syndrome in the final decoding                        An important question at this point is whether one
+                                                                          can achieve an even higher-fidelity magic state by
+                                                  ED
+                                                 Nfail  N EC              using a similar protocol, with a flag-based postselec-
+             pEC    EC        ED ED
+              fail paccept − pfail paccept =           − fail .    (27)   tion approach on a larger 3D color code. There are
+                                                 Ntot   Ntot
+                                                                          several problems that need to be solved for such a
+                                                                          study. First of all, we need to generalize our syn-
+                                                                          drome extraction circuit to the higher distance of
+                                                                          the 3D codes. Secondly, a better simulation method
+             10 2                                                         must be developed. The infidelity of the magic state
+                                                                          produced this way is expected to be multiple orders
+                                                                          of magnitude lower than what is reported in this
+                                                                          manuscript. Simulation of such a low error rate will
+Difference
+
+
+
+
+                                                                          be extremely challenging using a Monte Carlo ap-
+             10 3                                                         proach. (For instance, Ref. [25] reported weeks of
+                                                                          performing a Monte Carlo simulation and it is not
+                                                                          even clear if that will be enough for this study.) And,
+                                                                          a naive density matrix simulation of the full circuit
+             10 4          Weighted Infidelity                            is likely out of reach for classical computers. Per-
+                           Accepance Rate                                 haps a tensor network calculation can be useful for
+                    10 3                 10 2               10 1          this purpose. We leave these studies for future work.
+                                Physical error p
+                                                                             Another important future research direction is an
+   FIG. 10. Plot of the difference between acceptance rates               end-to-end analysis of the fidelity of the magic state.
+   (25) (in red) and weighted infidelities (27) (in blue) for
+                                                                          In order to use our high-fidelity magic state, one
+   the error-correction and postselection analysis, as a func-
+   tion of physical error rate for a uniform depolarizing er-             must convert the given state on the original 2D color
+   ror model (excluding idling errors) of strength p. Note                code to a larger 2D lattice, employing postselection
+   that the vertical axis is in logarithmic scale and that the            in this process. It was found in a recent study that
+   acceptance rate is not expressed in percent.                           there is a non-negligible difference between the log-
+                                                                          ical error rate obtained before and after this pro-
+      A complementary check of the previous results,                      cess [25]. The ratio between the two should depend
+   which is corroborated in Fig. 10, is that the differ-                  on the details about the effective error model in-
+   ence of weighted infidelities (27) is always smaller                   duced on the 2D color code patch which is influenced
+   than the difference of acceptance rates (25).                          by the protocol. As such, it is not completely clear
+      It is worth pointing out that for p ∈ [10−3 , 10−2 ]                if the ratio reported in Ref. [25] would remain the
+   the leading and sub-leading terms of the polynomial                    same whether their growing process is applied to our
+   fits (23) have the same order of magnitude. Hence,                     setup. Understanding this would require yet another
+   even though the polynomial interpolates the data                       challenging large-scale simulation.
+   points in that regime, extrapolation for even lower
+   probabilities p ≪ 10−3 might lead to unreliable re-                       Lastly, we note that our approach should be read-
+   sults. A similar note should be addressed in relation                  ily implementable in platforms that allow all-to-all
+   to our reported result of 5.1 × 10−7 in Table I for the                connectivities such as the ion trap [59, 60] and neu-
+   infidelity of the post-selected state when p = 10−3 .                  tral atom-based quantum computers [49]. Optimiz-
+   Notwithstanding, the extrapolation was done from a                     ing our protocol for these platforms and experimen-
+   nearby error rate p = 5 × 10−3 , and roughly twenty                    tally demonstrating a substantial improvement in
+   data points with different error rates were simulated                  the magic state infidelity will be an important exper-
+   in order to account for a robust interpolating fitting                 imental outcome that we anticipate to be achievable
+   polynomial.                                                            in the near term.
+                                                                                                                               12
+
+             ACKNOWLEDGEMENTS                                  respect to the respective noisy stabilizer state pre-
+                                                               pared on the qRM code subject to the linear map E
+  LD was supported by funds from the University                (a process which has an associated circuit that we
+of California, Davis, and by the Dean’s Summer                 present in Fig. 11). Equations (15) and (16) follow
+Graduate Support Award 2024 from the College of                directly from (A2) and its analogous expression for
+Letters and Science of the University of California,           ⟨Ȳ ⟩ρ̄ .
+Davis. IK acknowledges support from NSF under                     Finally, we discuss the importance of the ordering
+award number QCIS-FF-2013562. We thank Craig                   of the gates appearing in the Clifford error frame
+Gidney for helpful discussions and Sascha Heußen               C(P ) (12). In an earlier attempt, we implemented
+for providing comments on the final manuscript.                an incorrect ordering, which led to a higher logi-
+                                                               cal error rate than the correct one. Specifically, al-
+                                                               though C(X̄) = S̄ X̄, we instead incorrectly imple-
+                                                               mented X̄ S̄. (Note that in the second case a logical-
+   Appendix A: Simulation Methods: further                     X operator propagates to a logical error of the final
+                   details                                     state.) This led us to manually update the Pauli
+                                                               error frame to the minimum-weight one, which is
+                                                               equivalent up to stabilizers and a logical-X opera-
+   In this section we elaborate on the simulation              tor, before applying the Clifford error. Ultimately,
+methods.                                                       we employed the correct ordering together with the
+   To begin with, we give additional details about             minimum-weight update of the Pauli error frame,
+the derivation of (15) and (16) from (13) and (14).            even though the latter has no effect on the outcome
+Notice that the final noisy state produced by the pro-         of the experiment. (We have confirmed the correct-
+tocol ρ̄ can be interpreted as the result of an effective      ness by comparing the simulations with and with-
+linear map E acting on the noisy magic state |T̄ ⟩⟨T̄ |        out the Pauli frame update.) Thus, the result of our
+prepared on the qRM code (11), i.e., ρ̄ = E(|T̄ ⟩⟨T̄ |).       simulation is correct, and the method described in
+Expressing the noisy magic state using (13) leads to           Sec. V can be used as is.
+                     √ 
+               1       2                               
+  E(|T̄ ⟩⟨T̄ |) =I+        E(|+̄⟩⟨+̄|) − E(|−̄⟩⟨−̄|)
+               2
+               √      4                                        qRM: |+̄⟩noiseless      Q̄    C(P )     •     MX̄      •
+                 2                                  
+             +      E(|Ȳ+ ⟩⟨Ȳ+ |) − E(|Ȳ− ⟩⟨Ȳ− |) .        Steane:         |0̄⟩                                  Z̄
+                4
+                                                     (A1)
+  Therefore, the expected value ⟨X̄⟩ρ̄ = Tr(X̄ ρ̄) ap-         FIG. 11. Diagram of logical circuits utilized for the nu-
+pearing in (14) can be written as                              merical simulations. C(P ) represents the Clifford error
+                                                               (12) for a Pauli frame P (10), and Q̄ ∈ {I, Z̄, S̄, S̄ † } rep-
+                                                               resents the Pauli rotations which produces the stabilizer
+         √                                                    states |+̄⟩, |−̄⟩ = Z̄|+̄⟩, |Ȳ+ ⟩ = S̄|+̄⟩ and |Ȳ− ⟩ = S̄ † |+̄⟩.
+           2                                              
+⟨X̄⟩ρ̄ =     ⟨X̄⟩|+̄⟩ − ⟨X̄⟩|−̄⟩ + ⟨X̄⟩|Ȳ+ ⟩ − ⟨X̄⟩|Ȳ− ⟩ ,   At the end of each circuit, after an ideal round of error
+          4                                                    correction (or post-selection), the expected value ⟨M̄ ⟩ρ̄′Q
+                                                       (A2)
+and similarly for ⟨Ȳ ⟩ρ̄ . The lower index label in-          with M̄ ∈ {X̄, Ȳ } of the final noisy stabilizer state ρ̄′Q is
+dicates that the expected value is computed with               computed.
+
+
+
+
+ [1] P. W. Shor, Scheme for reducing decoherence in                 Physical Review A—Atomic, Molecular, and Opti-
+     quantum computer memory, Phys. Rev. A 52,                      cal Physics 71, 022316 (2005).
+     R2493 (1995).                                              [5] A. M. Meier, B. Eastin, and E. Knill, Magic-state
+ [2] D. Aharonov and M. Ben-Or, Fault-tolerant quan-                distillation with the four-qubit code, arXiv preprint
+     tum computation with constant error, in Proceed-               arXiv:1204.4221 (2012).
+     ings of the twenty-ninth annual ACM symposium on           [6] S. Bravyi and J. Haah, Magic-state distillation with
+     Theory of computing (1997) pp. 176–188.                        low overhead, Physical Review A—Atomic, Molec-
+ [3] D. Gottesman, Fault-tolerant quantum computa-                  ular, and Optical Physics 86, 052329 (2012).
+     tion with constant overhead, Quantum Info. Com-            [7] C. Jones, Low-overhead constructions for the fault-
+     put. 14, 1338–1372 (2014).                                     tolerant toffoli gate, Physical Review A 87, 022328
+ [4] S. Bravyi and A. Kitaev, Universal quantum com-                (2013).
+     putation with ideal clifford gates and noisy ancillas,     [8] A. G. Fowler, S. J. Devitt, and C. Jones, Surface
+                                                                                                                       13
+
+     code implementation of block code state distillation,         S. D. Bartlett, Low-overhead magic state distillation
+     Scientific reports 3, 1939 (2013).                            with color codes (2024), arXiv:2409.07707 [quant-
+ [9] C. Jones, Multilevel distillation of magic states for         ph].
+     quantum computing, Physical Review A—Atomic,             [28] E. T. Campbell, Early fault-tolerant simulations of
+     Molecular, and Optical Physics 87, 042305 (2013).             the hubbard model, Quantum Science and Technol-
+[10] G. Duclos-Cianci and K. M. Svore, Distillation of             ogy 7, 015007 (2021).
+     nonstabilizer states for universal quantum compu-        [29] J. Lee, D. W. Berry, C. Gidney, W. J. Huggins,
+     tation, Physical Review A—Atomic, Molecular, and              J. R. McClean, N. Wiebe, and R. Babbush, Even
+     Optical Physics 88, 042325 (2013).                            more efficient quantum computations of chemistry
+[11] G. Duclos-Cianci and D. Poulin, Reducing the                  through tensor hypercontraction, PRX Quantum 2,
+     quantum-computing overhead with complex gate                  030305 (2021).
+     distillation, Physical Review A 91, 042315 (2015).       [30] V. von Burg, G. H. Low, T. Häner, D. S. Steiger,
+[12] E. T. Campbell and M. Howard, Unified framework               M. Reiher, M. Roetteler, and M. Troyer, Quantum
+     for magic state distillation and multiqubit gate syn-         computing enhanced computational catalysis, Phys-
+     thesis with reduced resource cost, Physical Review            ical Review Research 3, 033055 (2021).
+     A 95, 022316 (2017).                                     [31] C. Gidney, Halving the cost of quantum addition,
+[13] J. O’Gorman and E. T. Campbell, Quantum compu-                Quantum 2, 74 (2018).
+     tation with realistic magic-state factories, Physical    [32] I. H. Kim, Y.-H. Liu, S. Pallister, W. Pol,
+     Review A 95, 032338 (2017).                                   S. Roberts, and E. Lee, Fault-tolerant resource esti-
+[14] J. Haah and M. B. Hastings, Codes and protocols for           mate for quantum chemical simulations: Case study
+     distilling t, controlled-s, and toffoli gates, Quantum        on li-ion battery electrolyte molecules, Physical Re-
+     2, 71 (2018).                                                 view Research 4, 023019 (2022).
+[15] C. Gidney and A. G. Fowler, Efficient magic state        [33] A. Delgado, P. A. M. Casares, R. dos Reis, M. S.
+     factories with a catalyzed |CCZ⟩ to 2|T ⟩ transfor-           Zini, R. Campos, N. Cruz-Hernández, A.-C. Voigt,
+     mation, Quantum 3, 135 (2019).                                A. Lowe, S. Jahangiri, M. A. Martin-Delgado, J. E.
+[16] A. G. Fowler and S. J. Devitt, A bridge                       Mueller, and J. M. Arrazola, Simulating key prop-
+     to lower overhead quantum computation (2013),                 erties of lithium-ion batteries with a fault-tolerant
+     arXiv:1209.0510 [quant-ph].                                   quantum computer, Phys. Rev. A 106, 032428
+[17] D. Litinski, Magic State Distillation: Not as Costly          (2022).
+     as You Think, Quantum 3, 205 (2019).                     [34] Y. Su, D. W. Berry, N. Wiebe, N. Rubin, and
+[18] Y. Li, A magic state’s fidelity can be superior to the        R. Babbush, Fault-tolerant quantum simulations of
+     operations that created it, New Journal of Physics            chemistry in first quantization, PRX Quantum 2,
+     17, 023037 (2015).                                            040332 (2021).
+[19] T. J. Yoder and I. H. Kim, The surface code with a       [35] H. Bombin and M. A. Martin-Delgado, Topological
+     twist, Quantum 1, 2 (2017).                                   computation without braiding, Phys. Rev. Lett. 98,
+[20] R. Chao and B. W. Reichardt, Quantum error cor-               160502 (2007).
+     rection with only two extra qubits, Physical review      [36] H. Bombı́n, Dimensional jump in quantum error cor-
+     letters 121, 050502 (2018).                                   rection, New Journal of Physics 18, 043038 (2016).
+[21] R. Chao and B. W. Reichardt, Fault-tolerant quan-        [37] M. E. Beverland, A. Kubica, and K. M. Svore, Cost
+     tum computation with few qubits, npj Quantum In-              of universality: A comparative study of the over-
+     formation 4, 42 (2018).                                       head of state distillation and code switching with
+[22] C. Chamberland and K. Noh, Very low overhead                  color codes, PRX Quantum 2, 020341 (2021).
+     fault-tolerant magic state preparation using redun-      [38] H. Bombin and M. A. Martin-Delgado, Topological
+     dant ancilla encoding and flag qubits, npj Quantum            quantum distillation, Phys. Rev. Lett. 97, 180501
+     Information 6, 91 (2020).                                     (2006).
+[23] F. Butt, S. Heußen, M. Rispler, and M. Müller,          [39] M. Sullivan, Code conversion with the quantum go-
+     Fault-tolerant code-switching protocols for near-             lay code for a universal transversal gate set, Physical
+     term quantum processors, PRX Quantum 5, 020345                Review A 109, 042416 (2024).
+     (2024).                                                  [40] S. Heußen and J. Hilder, Efficient fault-tolerant code
+[24] T. Itogawa, Y. Takada, Y. Hirano, and K. Fujii,               switching via one-way transversal cnot gates (2024),
+     Even more efficient magic state distillation by zero-         arXiv:2409.13465 [quant-ph].
+     level distillation, arXiv preprint arXiv:2403.03991      [41] M. Kjaergaard, M. E. Schwartz, J. Braumüller,
+     (2024).                                                       P. Krantz, J. I.-J. Wang, S. Gustavsson, and W. D.
+[25] C. Gidney, N. Shutty, and C. Jones, Magic state               Oliver, Superconducting qubits: Current state of
+     cultivation: growing t states as cheap as cnot gates          play, Annual Review of Condensed Matter Physics
+     (2024), arXiv:2409.17595 [quant-ph].                          11, 369 (2020).
+[26] I. Pogorelov, F. Butt, L. Postler, C. D. Marciniak,      [42] E. Knill, R. Laflamme, and G. J. Milburn, A scheme
+     P. Schindler, M. Müller, and T. Monz, Experi-                for efficient quantum computation with linear op-
+     mental fault-tolerant code switching, arXiv preprint          tics, nature 409, 46 (2001).
+     arXiv:2403.13732 (2024).                                 [43] S. Bartolucci, P. Birchall, H. Bombin, H. Ca-
+[27] S.-H. Lee, F. Thomsen, N. Fazio, B. J. Brown, and             ble, C. Dawson, M. Gimeno-Segovia, E. Johnston,
+                                                                                                                       14
+
+     K. Kieling, N. Nickerson, M. Pant, et al., Fusion-           tum error correction, Proceedings of the Royal So-
+     based quantum computation, Nature Communica-                 ciety of London. Series A: Mathematical, Physical
+     tions 14, 912 (2023).                                        and Engineering Sciences 452, 2551 (1996).
+[44] J. E. Bourassa, R. N. Alexander, M. Vasmer,             [53] B. Eastin and E. Knill, Restrictions on transversal
+     A. Patil, I. Tzitrin, T. Matsuura, D. Su, B. Q. Bara-        encoded quantum gate sets, Physical review letters
+     giola, S. Guha, G. Dauphinais, K. K. Sabapathy,              102, 110502 (2009).
+     N. C. Menicucci, and I. Dhand, Blueprint for a Scal-    [54] S. Bravyi and R. König, Classification of topologi-
+     able Photonic Fault-Tolerant Quantum Computer,               cally protected gates for local stabilizer codes, Phys-
+     Quantum 5, 392 (2021).                                       ical review letters 110, 170503 (2013).
+[45] J. I. Cirac and P. Zoller, Quantum computations         [55] X. Zhou, D. W. Leung, and I. L. Chuang, Method-
+     with cold trapped ions, Phys. Rev. Lett. 74, 4091            ology for quantum logic gate construction, Physical
+     (1995).                                                      Review A 62, 052316 (2000).
+[46] C. Monroe and J. Kim, Scaling the ion trap quan-        [56] A. Paetznick and B. W. Reichardt, Fault-tolerant
+     tum processor, Science 339, 1164 (2013).                     ancilla preparation and noise threshold lower
+[47] C. D. Bruzewicz, J. Chiaverini, R. McConnell,                boudds for the 23-qubit golay code, Quantum Info.
+     and J. M. Sage, Trapped-ion quantum computing:               Comput. 12, 1034–1080 (2012).
+     Progress and challenges, Applied Physics Reviews 6      [57] H. Goto, Minimizing resource overheads for fault-
+     (2019).                                                      tolerant preparation of encoded states of the steane
+[48] D. Bluvstein, H. Levine, G. Semeghini, T. T. Wang,           code, Scientific reports 6, 19578 (2016).
+     S. Ebadi, M. Kalinowski, A. Keesling, N. Maskara,       [58] B. W. Reichardt, Fault-tolerant quantum error cor-
+     H. Pichler, M. Greiner, et al., A quantum proces-            rection for steane’s seven-qubit color code with few
+     sor based on coherent transport of entangled atom            or no extra qubits, Quantum Science and Technol-
+     arrays, Nature 604, 451 (2022).                              ogy 6, 015007 (2020).
+[49] D. Bluvstein, S. J. Evered, A. A. Geim, S. H. Li,       [59] M. DeCross, R. Haghshenas, M. Liu, Y. Alex-
+     H. Zhou, T. Manovitz, S. Ebadi, M. Cain, M. Kali-            eev, C. H. Baldwin, J. P. Bartolotta, M. Bohn,
+     nowski, D. Hangleiter, et al., Logical quantum pro-          E. Chertkov, J. Colina, D. DelVento, et al.,
+     cessor based on reconfigurable atom arrays, Nature           The computational power of random quantum
+     626, 58 (2024).                                              circuits in arbitrary geometries, arXiv preprint
+[50] C. Gidney, Stim: a fast stabilizer circuit simulator,        arXiv:2406.02501 (2024).
+     Quantum 5, 497 (2021).                                  [60] C. Löschnauer, J. M. Toba, A. Hughes, S. King,
+[51] L. Postler, S. Heuβen, I. Pogorelov, M. Rispler,             M. Weber, R. Srinivas, R. Matt, R. Nourshargh,
+     T. Feldker, M. Meth, C. D. Marciniak, R. Stricker,           D. Allcock, C. Ballance, et al., Scalable, high-fidelity
+     M. Ringbauer, R. Blatt, et al., Demonstration of             all-electronic control of trapped-ion qubits, arXiv
+     fault-tolerant universal quantum gate operations,            preprint arXiv:2407.07694 (2024).
+     Nature 605, 675 (2022).
+[52] A. Steane, Multiple-particle interference and quan-
+

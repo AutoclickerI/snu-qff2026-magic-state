@@ -1,0 +1,269 @@
+{
+  "definition": "noise at final two data CX operations (entire two-qubit channels), and data idles starting at either; all other noise rest",
+  "shots": 100000000,
+  "seed": 0,
+  "tail_channels": [
+    {
+      "channel": 255,
+      "kind": "gate2",
+      "line": 247,
+      "qubits": [
+        23,
+        0
+      ],
+      "steps": "32",
+      "ins": "instruction 243 (cx q[23], q[0])",
+      "when": "after"
+    },
+    {
+      "channel": 257,
+      "kind": "gate2",
+      "line": 248,
+      "qubits": [
+        21,
+        1
+      ],
+      "steps": "32",
+      "ins": "instruction 244 (cx q[21], q[1])",
+      "when": "after"
+    },
+    {
+      "channel": 259,
+      "kind": "gate2",
+      "line": 249,
+      "qubits": [
+        22,
+        2
+      ],
+      "steps": "32",
+      "ins": "instruction 245 (cx q[22], q[2])",
+      "when": "after"
+    },
+    {
+      "channel": 261,
+      "kind": "gate2",
+      "line": 250,
+      "qubits": [
+        19,
+        3
+      ],
+      "steps": "32",
+      "ins": "instruction 246 (cx q[19], q[3])",
+      "when": "after"
+    },
+    {
+      "channel": 263,
+      "kind": "gate2",
+      "line": 251,
+      "qubits": [
+        24,
+        4
+      ],
+      "steps": "32",
+      "ins": "instruction 247 (cx q[24], q[4])",
+      "when": "after"
+    },
+    {
+      "channel": 265,
+      "kind": "gate2",
+      "line": 252,
+      "qubits": [
+        20,
+        5
+      ],
+      "steps": "32",
+      "ins": "instruction 248 (cx q[20], q[5])",
+      "when": "after"
+    },
+    {
+      "channel": 267,
+      "kind": "gate2",
+      "line": 253,
+      "qubits": [
+        25,
+        6
+      ],
+      "steps": "32",
+      "ins": "instruction 249 (cx q[25], q[6])",
+      "when": "after"
+    },
+    {
+      "channel": 269,
+      "kind": "gate2",
+      "line": 255,
+      "qubits": [
+        7,
+        23
+      ],
+      "steps": "33",
+      "ins": "instruction 251 (cx q[7], q[23])",
+      "when": "after"
+    },
+    {
+      "channel": 270,
+      "kind": "idle",
+      "line": 255,
+      "qubits": [
+        23
+      ],
+      "steps": "34..34",
+      "ins": "instruction 251 (cx q[7], q[23])"
+    },
+    {
+      "channel": 271,
+      "kind": "gate2",
+      "line": 256,
+      "qubits": [
+        8,
+        21
+      ],
+      "steps": "33",
+      "ins": "instruction 252 (cx q[8], q[21])",
+      "when": "after"
+    },
+    {
+      "channel": 272,
+      "kind": "idle",
+      "line": 256,
+      "qubits": [
+        21
+      ],
+      "steps": "34..34",
+      "ins": "instruction 252 (cx q[8], q[21])"
+    },
+    {
+      "channel": 273,
+      "kind": "gate2",
+      "line": 257,
+      "qubits": [
+        9,
+        22
+      ],
+      "steps": "33",
+      "ins": "instruction 253 (cx q[9], q[22])",
+      "when": "after"
+    },
+    {
+      "channel": 274,
+      "kind": "idle",
+      "line": 257,
+      "qubits": [
+        22
+      ],
+      "steps": "34..34",
+      "ins": "instruction 253 (cx q[9], q[22])"
+    },
+    {
+      "channel": 275,
+      "kind": "gate2",
+      "line": 258,
+      "qubits": [
+        10,
+        19
+      ],
+      "steps": "33",
+      "ins": "instruction 254 (cx q[10], q[19])",
+      "when": "after"
+    },
+    {
+      "channel": 276,
+      "kind": "idle",
+      "line": 258,
+      "qubits": [
+        19
+      ],
+      "steps": "34..34",
+      "ins": "instruction 254 (cx q[10], q[19])"
+    },
+    {
+      "channel": 277,
+      "kind": "gate2",
+      "line": 259,
+      "qubits": [
+        11,
+        24
+      ],
+      "steps": "33",
+      "ins": "instruction 255 (cx q[11], q[24])",
+      "when": "after"
+    },
+    {
+      "channel": 278,
+      "kind": "idle",
+      "line": 259,
+      "qubits": [
+        24
+      ],
+      "steps": "34..34",
+      "ins": "instruction 255 (cx q[11], q[24])"
+    },
+    {
+      "channel": 279,
+      "kind": "gate2",
+      "line": 260,
+      "qubits": [
+        12,
+        20
+      ],
+      "steps": "33",
+      "ins": "instruction 256 (cx q[12], q[20])",
+      "when": "after"
+    },
+    {
+      "channel": 280,
+      "kind": "idle",
+      "line": 260,
+      "qubits": [
+        20
+      ],
+      "steps": "34..34",
+      "ins": "instruction 256 (cx q[12], q[20])"
+    },
+    {
+      "channel": 281,
+      "kind": "gate2",
+      "line": 261,
+      "qubits": [
+        13,
+        25
+      ],
+      "steps": "33",
+      "ins": "instruction 257 (cx q[13], q[25])",
+      "when": "after"
+    },
+    {
+      "channel": 282,
+      "kind": "idle",
+      "line": 261,
+      "qubits": [
+        25
+      ],
+      "steps": "34..34",
+      "ins": "instruction 257 (cx q[13], q[25])"
+    }
+  ],
+  "tail_exact2": {
+    "loss1": 2.886579864025358e-19,
+    "loss2": 2.566666666666574e-05,
+    "loss": 2.566666666666603e-05,
+    "A1": 0.009333333333333336,
+    "acc2": 0.9907079822222222
+  },
+  "tail": {
+    "loss": 2.588038712900518e-05,
+    "sem": 4.496461176501983e-07,
+    "acceptance": 0.99071161
+  },
+  "rest_exact2": {
+    "loss1": -3.9457869522794484e-18,
+    "loss2": 3.434360862332166e-05,
+    "loss": 3.434360862331772e-05,
+    "A1": 0.4756033005186445,
+    "acc2": 0.6372276326134921
+  },
+  "rest": {
+    "loss": 6.093435052818008e-05,
+    "sem": 8.944144613567895e-07,
+    "acceptance": 0.62132442
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "protocol": "Daguerre-Kim two-block RM15-to-Steane switch",
+  "source": "arXiv:2410.07327v3 Figs. 3-7, Tables IV-VII",
+  "variant": "dk_TA_TB_PA",
+  "kept_checks": [
+    "TA",
+    "TB",
+    "PA"
+  ],
+  "status": "verified grid-free",
+  "data_qubits": [
+    23,
+    21,
+    22,
+    19,
+    24,
+    20,
+    25
+  ],
+  "steane_qubits": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "measurements": 28,
+  "cx": 90,
+  "stages": {
+    "rm15_encoder": 0,
+    "rm15_logical_X_verifier": 46,
+    "TA": 58,
+    "TB": 84,
+    "PA": 110,
+    "transversal_T": 129,
+    "steane_zero_encoder": 146,
+    "transversal_rm_to_steane": 170,
+    "rm15_X_measurement": 178
+  },
+  "frame_z_records": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "detector_count": 17,
+  "noiseless": {
+    "errors": [],
+    "acceptance": 0.9999999999999999,
+    "detector_values": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 5
+  }
+}

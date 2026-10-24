@@ -1,0 +1,30 @@
+sites [14, 2, 9, 20, 27, 23, 16, 29, 25, 28, 21, 22]
+sites [14, 2, 9, 20, 23, 27, 28, 29, 25, 16, 21, 22]
+BUILT compact_robust_d15_k82_m27_29 {'data_qubits': [0, 20, 7, 10, 3, 22, 21], 'prep_cx': 82, 'depth': 15, 'round_start': 49, 'rule': 'robust', 'minit_requested': [27, 29]}
+BUILT compact_clean_d16_k100_m27_29 {'data_qubits': [0, 20, 7, 10, 3, 22, 21], 'prep_cx': 90, 'depth': 16, 'round_start': 50, 'rule': 'clean', 'minit_requested': [27, 29]}
+[twirl_records] circuit channels: 26 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+[twirl_records] circuit channels: 26 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+compact_clean_d16_k100_m27_29 p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5302, floor 0.5)
+  score 1-F = 8.77013e-05 ± 1.1e-05   (3 significant figures: 8.77e-05)
+  2q+ gates = 215
+  RESULT: PASS
+compact_robust_d15_k82_m27_29 p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5451, floor 0.5)
+  score 1-F = 0.000111913 ± 1.2e-05   (3 significant figures: 0.000112)
+  2q+ gates = 207
+  RESULT: PASS
+compact_robust_d15_k82_m27_29 {'c1': 4.3298697960380564e-19, 'second': 9.004145425718454e-05, 'third': 2.7716759371509586e-05, 'total': 0.00011775821362869455, 'exp_minus_A1': 0.5446968419739224}
+compact_clean_d16_k100_m27_29 {'c1': 3.182639337258733e-19, 'second': 6.519358340222374e-05, 'third': 2.9861999697930554e-05, 'total': 9.505558310015462e-05, 'exp_minus_A1': 0.5301856839049913}
+[twirl_records] circuit channels: 26 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+compact_clean_d16_k100_m27_29 MC 0 9.48137804750466e-05 0.53040813
+[twirl_records] circuit channels: 26 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+compact_clean_d16_k100_m27_29 MC 1000 9.601505292818006e-05 0.53043766
+[twirl_records] circuit channels: 26 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+compact_clean_d16_k100_m27_29 MC 2000 9.635717650283775e-05 0.53042235
