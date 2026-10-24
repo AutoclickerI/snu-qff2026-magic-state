@@ -1,0 +1,10 @@
+Exact noisy sampler controls, 100000 shots, p=1e-3 STANDARD, sampler-only, zebra, OMP/BLAS/MKL=1.
+case             seconds_per_1e6
+before_same      0.06789
+ after_same      0.06846
+before_other     0.06157
+ after_other     0.06293
+no_mx            0.04113
+mx_after_tdg    0.06502
+mx_before_tdg   0.06581
+These are Bell/MX/T and Bell/MX/T_DAG controls; changing only the MX position did not reproduce the large path.

@@ -2,7 +2,9 @@
 # Usage: submit_when_ready.sh <stem>
 # Waits for the server's cooldown (`submit.py wait`, +5 s) and for the stem's
 # receipts/seq_<name>.txt, then submits only if the sequential judge printed RESULT: PASS. Prints DONE.
+# Concurrent callers queue on a lock, so each one takes its own slot.
 cd /home/jihoon/competitions/quantumn/work
+exec 9>receipts/.submit.lock; flock 9
 PY=/home/jihoon/competitions/quantumn/.venv/bin/python
 stem=$1; rec=receipts/seq_$(basename $stem).txt
 w=$(timeout 60 $PY submit.py wait)
