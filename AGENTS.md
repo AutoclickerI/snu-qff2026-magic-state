@@ -17,7 +17,7 @@ dropped rules) · [reference/judge.md](docs/reference/judge.md) (how scores aris
 - Take the widest reading the rules allow (CONSTRAINTS "Boundary cases"); ask Jihoon when unclear.
 - No conservative or incremental steps, fallbacks or ritual checks; delete stale docs when you touch them.
 - Rank candidates by the all-orders expectation where its scope covers them (`cd work/lanes/MAIN/sparse;
-  ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical`, stem without suffix, e.g. ../v30f: ~1 min, reproduces reviewer 4's
+  ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`, stem without suffix, e.g. ../v30f, last arg = processes: ~11 s with 16, reproduces reviewer 4's
   v29c 6.343913669754646e-5 and our re-draw means; needs barriers over all used qubits, no FRAME/POSTSELECT lines);
   otherwise by the 3-seed mean (one seed hides 1%), and when that and the exact
   third order disagree within noise, by ≥ 100 seed-0 re-draws. Submit by the seed-0 key and report the numbers used.

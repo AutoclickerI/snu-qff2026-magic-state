@@ -194,24 +194,35 @@ def contract_selector(factors, order, batch_size):
         result *= a.reshape(-1)
     return result, peak_elements
 
-def run(stem, nkeys=72, canonicalize=False):
+_CTX = {}
+
+def _row(key):
+    eng, ks, psi, where, compiled, elim = (_CTX[k] for k in ('eng', 'ks', 'psi', 'where', 'compiled', 'elim'))
+    t = time.perf_counter()
+    states,weights,omission_bound=sparse_kernel(eng,ks,psi,where,key)
+    emask = 0 if key is None else emask_for(key)
+    factors = factors_for(compiled, states, emask)
+    vec, peak = contract_selector(factors, elim['order'], len(states))
+    value = float(np.dot(weights, vec) / (1 << len(ks)))
+    return dict(key=key, value=value, kernel_nonzero=len(states), peak_bucket_elements=peak,
+                absolute_kernel_omission_bound=omission_bound, seconds=time.perf_counter()-t)
+
+def run(stem, nkeys=72, canonicalize=False, procs=1):
+    """Each acceptance/observable key is an independent contraction; procs > 1 forks workers that share the
+    prepared model and return rows in key order, so the result equals the serial run."""
     start = time.perf_counter()
     m, eng, groups, nd, ks, psi, where, dense_elim = prepare(stem,canonicalize)
     compiled = compile_channels(m, groups, nd, ks)
     elim = minfill([set(scope) for scope, _, _ in compiled])
     keys = [None] + eng.keys[:nkeys]
-    rows = []
-    for key in keys:
-        t = time.perf_counter()
-        states,weights,omission_bound=sparse_kernel(eng,ks,psi,where,key)
-        emask = 0 if key is None else emask_for(key)
-        factors = factors_for(compiled, states, emask)
-        vec, peak = contract_selector(factors, elim['order'], len(states))
-        value = float(np.dot(weights, vec) / (1 << len(ks)))
-        row = dict(key=key, value=value, kernel_nonzero=len(states), peak_bucket_elements=peak,
-                   absolute_kernel_omission_bound=omission_bound,
-                   seconds=time.perf_counter()-t)
-        rows.append(row)
+    _CTX.update(eng=eng, ks=ks, psi=psi, where=where, compiled=compiled, elim=elim)
+    if procs > 1:
+        import multiprocessing as mp
+        with mp.get_context('fork').Pool(procs) as pool:
+            rows = list(pool.imap(_row, keys))
+    else:
+        rows = [_row(key) for key in keys]
+    for row in rows:
         print(json.dumps(row), flush=True)
     out = dict(source=str(stem), method='sparse kernel cutset conditioning',
                channels=len(m.chans), dense_width=dense_elim['width'], conditioned_width=elim['width'],
@@ -233,4 +244,5 @@ def run(stem, nkeys=72, canonicalize=False):
 if __name__ == '__main__':
     stem = Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'examples/v29c'
     nkeys = int(sys.argv[2]) if len(sys.argv)>2 else 72
-    run(stem,nkeys,len(sys.argv)>3 and sys.argv[3]=='canonical')
+    procs = int(sys.argv[4]) if len(sys.argv)>4 else 1
+    run(stem,nkeys,len(sys.argv)>3 and sys.argv[3]=='canonical',procs)
