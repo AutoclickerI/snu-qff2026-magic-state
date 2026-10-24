@@ -1,0 +1,12 @@
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+{"name": "v17a_alap", "R": 49, "CX": 209, "depth": 52, "c1": 3.1826e-19, "second": 5.62262e-05, "third": 1.92576e-05, "total": 7.54837e-05, "exp_minus_A1": 0.51797, "check": {"passed": true, "acceptance": 0.517631, "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5176, floor 0.5)\n  score 1-F = 9.4662e-05 \u00b1 1.2e-05   (3 significant figures: 9.47e-05)\n  2q+ gates = 209\n  RESULT: PASS"}}
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/TREP2/evaluate.py", line 34, in <module>
+    for stem in a.stems:evaluate(stem,a.procs,a.mc,a.check)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/TREP2/evaluate.py", line 29, in evaluate
+    with stem.with_suffix('.mc.log').open('w') as log:subprocess.run([sys.executable,str(ROOT/'work/lanes/MAIN/spec/mc3.py'),str(stem),'--procs',str(procs)],stdout=log,stderr=subprocess.STDOUT,check=True,cwd=OUT)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/jihoon/competitions/quantumn/.venv/bin/python', '/home/jihoon/competitions/quantumn/work/lanes/MAIN/spec/mc3.py', '/home/jihoon/competitions/quantumn/work/lanes/TREP2/v17a_alap', '--procs', '4']' returned non-zero exit status 2.

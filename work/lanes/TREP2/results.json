@@ -1,0 +1,2647 @@
+{
+  "complete": true,
+  "best": "reuse19_tuned",
+  "forms_priced": [
+    "f00_0",
+    "f02_0",
+    "f04_0",
+    "f06_0",
+    "f09_0",
+    "f11_0",
+    "f13_0",
+    "f15_0",
+    "f17_0",
+    "f19_0",
+    "f21_0",
+    "f23_0",
+    "f24_0",
+    "f26_0",
+    "f28_0",
+    "f30_0"
+  ],
+  "variants": [
+    {
+      "name": "encoder19",
+      "encoder": "19 CX",
+      "schedule": "original placement",
+      "R": 47,
+      "R_last": 47,
+      "B_data_range": [
+        48,
+        48
+      ],
+      "CX": 203,
+      "depth": 50,
+      "sha256": "bc821d3c16b93b0488628c776a9805b1a027334ec9e0cda86d698855c5fe0e7e",
+      "c1": 2.5165e-19,
+      "second": 5.70772e-05,
+      "third": 2.58108e-05,
+      "total": 8.28881e-05,
+      "exp_minus_A1": 0.5525,
+      "mc": {
+        "0": 8.395208e-05,
+        "acc0": 0.55258,
+        "sem0": 1.1e-06,
+        "1000": 8.440232e-05,
+        "acc1000": 0.55265,
+        "sem1000": 1.1e-06,
+        "2000": 8.548979e-05,
+        "acc2000": 0.55264,
+        "sem2000": 1.1e-06,
+        "mean": 8.461473e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "encoder19_reuse10_alap_two_moves",
+      "encoder": "19 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 45,
+      "R_last": 45,
+      "B_data_range": [
+        46,
+        46
+      ],
+      "CX": 203,
+      "depth": 48,
+      "sha256": "58f4c44cb457a080575980dbd6916c9d36b2f067a1d3706385b1d861e3eb290a",
+      "c1": 2.9236e-19,
+      "second": 5.46507e-05,
+      "third": 1.90441e-05,
+      "total": 7.36948e-05,
+      "exp_minus_A1": 0.53494,
+      "mc": {
+        "0": 7.510407e-05,
+        "acc0": 0.53499,
+        "sem0": 1e-06,
+        "1000": 7.326227e-05,
+        "acc1000": 0.535,
+        "sem1000": 1e-06,
+        "2000": 7.373959e-05,
+        "acc2000": 0.53492,
+        "sem2000": 1e-06,
+        "mean": 7.403531e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.534895,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5349, floor 0.5)\n  score 1-F = 6.63682e-05 \u00b1 9.7e-06   (3 significant figures: 6.64e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "f00_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 76,
+      "R_last": 76,
+      "B_data_range": [
+        77,
+        77
+      ],
+      "CX": 233,
+      "depth": 79,
+      "sha256": "e63d7115db109e9fb7c5b8eced1fea64e7db900aa6e228f9891b480470e09ac8",
+      "c1": 1.9799e-19,
+      "second": 0.000483006,
+      "third": 8.00874e-05,
+      "total": 0.000563093,
+      "exp_minus_A1": 0.35402,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.35328,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3533, floor 0.5)\n  score 1-F = 0.000593014 \u00b1 3.8e-05   (3 significant figures: 0.000593)\n  2q+ gates = 233\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f02_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 74,
+      "R_last": 74,
+      "B_data_range": [
+        75,
+        75
+      ],
+      "CX": 239,
+      "depth": 77,
+      "sha256": "cfc217246f0e441f7c9bcc6b3d725b2a7c2c3e1cfca4cdcf0a35f31549aebe52",
+      "c1": 1.6838e-19,
+      "second": 0.000593561,
+      "third": 8.43647e-05,
+      "total": 0.000677926,
+      "exp_minus_A1": 0.36441,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.363862,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3639, floor 0.5)\n  score 1-F = 0.0006857 \u00b1 4.1e-05   (3 significant figures: 0.000686)\n  2q+ gates = 239\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f04_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 74,
+      "R_last": 74,
+      "B_data_range": [
+        75,
+        75
+      ],
+      "CX": 241,
+      "depth": 77,
+      "sha256": "eebebf939a6b506087957d924ec87df1929a4a87f11f254a14f2bac801021ad7",
+      "c1": 2.5168e-19,
+      "second": 0.000376476,
+      "third": 7.33541e-05,
+      "total": 0.00044983,
+      "exp_minus_A1": 0.36968,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.368921,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3689, floor 0.5)\n  score 1-F = 0.000496041 \u00b1 3.4e-05   (3 significant figures: 0.000496)\n  2q+ gates = 241\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f06_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 72,
+      "R_last": 72,
+      "B_data_range": [
+        73,
+        73
+      ],
+      "CX": 241,
+      "depth": 75,
+      "sha256": "b21268774a0ea7bfb3a51437b73368656a1c20ca19e958b02e8ab66c45acf70e",
+      "c1": -2.4055e-20,
+      "second": 0.00042428,
+      "third": 7.58484e-05,
+      "total": 0.000500128,
+      "exp_minus_A1": 0.38095,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.380874,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3809, floor 0.5)\n  score 1-F = 0.000496227 \u00b1 3.5e-05   (3 significant figures: 0.000496)\n  2q+ gates = 241\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f09_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 77,
+      "R_last": 77,
+      "B_data_range": [
+        78,
+        78
+      ],
+      "CX": 239,
+      "depth": 80,
+      "sha256": "108438666608d81deb943c80b9e4ded6061d852c57e3080f4237801a0e9851d6",
+      "c1": 1.1287e-19,
+      "second": 0.000336857,
+      "third": 6.99106e-05,
+      "total": 0.000406767,
+      "exp_minus_A1": 0.35494,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.355279,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3553, floor 0.5)\n  score 1-F = 0.000420796 \u00b1 3.3e-05   (3 significant figures: 0.000421)\n  2q+ gates = 239\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f11_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 70,
+      "R_last": 70,
+      "B_data_range": [
+        71,
+        71
+      ],
+      "CX": 243,
+      "depth": 73,
+      "sha256": "8b46c617be839f1482667bd8e69fb92c253c37d18eeeaa40b9152d0ed4694537",
+      "c1": 2.8496e-19,
+      "second": 0.000318975,
+      "third": 6.23508e-05,
+      "total": 0.000381325,
+      "exp_minus_A1": 0.39163,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.39143,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3914, floor 0.5)\n  score 1-F = 0.000374269 \u00b1 2.8e-05   (3 significant figures: 0.000374)\n  2q+ gates = 243\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f13_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 73,
+      "R_last": 73,
+      "B_data_range": [
+        74,
+        74
+      ],
+      "CX": 241,
+      "depth": 76,
+      "sha256": "bb834161266f423c536426cc5402a892f095c0fa80878b090f4b9d0e43e42619",
+      "c1": 3.4047e-19,
+      "second": 0.000298695,
+      "third": 8.08542e-05,
+      "total": 0.000379549,
+      "exp_minus_A1": 0.36724,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.367776,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3678, floor 0.5)\n  score 1-F = 0.000395621 \u00b1 3.1e-05   (3 significant figures: 0.000396)\n  2q+ gates = 241\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f15_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 67,
+      "R_last": 67,
+      "B_data_range": [
+        68,
+        68
+      ],
+      "CX": 237,
+      "depth": 70,
+      "sha256": "3c91c5b0721b602c9c042e034f2f7536d363a750faca01932c39f2afbd94469b",
+      "c1": 9.2519e-21,
+      "second": 0.00024271,
+      "third": 6.03082e-05,
+      "total": 0.000303019,
+      "exp_minus_A1": 0.40328,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.403309,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.4033, floor 0.5)\n  score 1-F = 0.000246709 \u00b1 2.3e-05   (3 significant figures: 0.000247)\n  2q+ gates = 237\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f17_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 69,
+      "R_last": 69,
+      "B_data_range": [
+        70,
+        70
+      ],
+      "CX": 233,
+      "depth": 72,
+      "sha256": "6a06e5bd4f605870e89c7e87ad0a988d8e9f71996efa845d05bbdd108b1cf93a",
+      "c1": 8.8078e-19,
+      "second": 0.000167818,
+      "third": 5.90401e-05,
+      "total": 0.000226858,
+      "exp_minus_A1": 0.39357,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.39289,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3929, floor 0.5)\n  score 1-F = 0.000223981 \u00b1 2.1e-05   (3 significant figures: 0.000224)\n  2q+ gates = 233\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f19_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 74,
+      "R_last": 74,
+      "B_data_range": [
+        75,
+        75
+      ],
+      "CX": 239,
+      "depth": 77,
+      "sha256": "826f038392035103cde2c627e90d7e4e8da977d7d34fbba16a9b28e548385a48",
+      "c1": 2.5905e-20,
+      "second": 0.00043237,
+      "third": 6.77597e-05,
+      "total": 0.00050013,
+      "exp_minus_A1": 0.36511,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.364457,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3645, floor 0.5)\n  score 1-F = 0.000508976 \u00b1 3.4e-05   (3 significant figures: 0.000509)\n  2q+ gates = 239\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f21_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 67,
+      "R_last": 67,
+      "B_data_range": [
+        68,
+        68
+      ],
+      "CX": 243,
+      "depth": 70,
+      "sha256": "83c03e56992216431484615e5cc4f1a80ef7bd118ac490112c608c47625471bd",
+      "c1": 3.1826e-19,
+      "second": 0.00026421,
+      "third": 5.14475e-05,
+      "total": 0.000315657,
+      "exp_minus_A1": 0.40323,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.403372,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.4034, floor 0.5)\n  score 1-F = 0.000314846 \u00b1 2.6e-05   (3 significant figures: 0.000315)\n  2q+ gates = 243\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f23_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 74,
+      "R_last": 74,
+      "B_data_range": [
+        75,
+        75
+      ],
+      "CX": 243,
+      "depth": 77,
+      "sha256": "cea7c3de23f673ceee8178963f342e76cc63992f8390f2c48d7dc6c9b72dbf01",
+      "c1": 5.9212e-20,
+      "second": 0.000405614,
+      "third": 7.77538e-05,
+      "total": 0.000483367,
+      "exp_minus_A1": 0.37027,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.370141,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3701, floor 0.5)\n  score 1-F = 0.000451179 \u00b1 3.3e-05   (3 significant figures: 0.000451)\n  2q+ gates = 243\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f24_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 76,
+      "R_last": 76,
+      "B_data_range": [
+        77,
+        77
+      ],
+      "CX": 243,
+      "depth": 79,
+      "sha256": "3c77e10840f3d7bee0db80abc1a6c8747bc3fc42a2e3e0691867d7b670baa3df",
+      "c1": 1.0547e-18,
+      "second": 0.000377406,
+      "third": 7.63732e-05,
+      "total": 0.000453779,
+      "exp_minus_A1": 0.35781,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.358311,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3583, floor 0.5)\n  score 1-F = 0.00046468 \u00b1 3.2e-05   (3 significant figures: 0.000465)\n  2q+ gates = 243\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f26_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 75,
+      "R_last": 75,
+      "B_data_range": [
+        76,
+        76
+      ],
+      "CX": 243,
+      "depth": 78,
+      "sha256": "078e740e310e5c2d697ec5b6f027042abd3ed72b2b448edc4b2cf11a8aa22221",
+      "c1": -1.8504e-20,
+      "second": 0.000347357,
+      "third": 8.86754e-05,
+      "total": 0.000436032,
+      "exp_minus_A1": 0.36087,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.360267,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3603, floor 0.5)\n  score 1-F = 0.000424685 \u00b1 3.3e-05   (3 significant figures: 0.000425)\n  2q+ gates = 243\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f28_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 72,
+      "R_last": 72,
+      "B_data_range": [
+        73,
+        73
+      ],
+      "CX": 245,
+      "depth": 75,
+      "sha256": "8f10a9288c0a5a2a770632c62d709a73fb6953be9534bd78b98e29a7b0e577c4",
+      "c1": 2.72e-19,
+      "second": 0.00026124,
+      "third": 6.5966e-05,
+      "total": 0.000327206,
+      "exp_minus_A1": 0.37964,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.379843,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3798, floor 0.5)\n  score 1-F = 0.000334349 \u00b1 2.8e-05   (3 significant figures: 0.000334)\n  2q+ gates = 245\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "f30_0_parity",
+      "encoder": "19-CX + parity network",
+      "schedule": "ALAP / parity synthesis",
+      "R": 78,
+      "R_last": 78,
+      "B_data_range": [
+        79,
+        79
+      ],
+      "CX": 247,
+      "depth": 81,
+      "sha256": "42f3b4bccb589f5354d4aff95bc7e46f6cda6ab397d9af23163eab145ba5ce45",
+      "c1": 3.1826e-19,
+      "second": 0.000658519,
+      "third": 9.72567e-05,
+      "total": 0.000755776,
+      "exp_minus_A1": 0.3538,
+      "mc": {},
+      "check": {
+        "passed": false,
+        "acceptance": 0.353856,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  FAIL  (0.3539, floor 0.5)\n  score 1-F = 0.000801173 \u00b1 4.6e-05   (3 significant figures: 0.000801)\n  2q+ gates = 247\n  RESULT: FAIL"
+      }
+    },
+    {
+      "name": "init_state_d5_s1",
+      "encoder": "11-CX resource",
+      "schedule": "original placement",
+      "R": 49,
+      "R_last": 49,
+      "B_data_range": [
+        50,
+        50
+      ],
+      "CX": 208,
+      "depth": 52,
+      "sha256": "847ae3d84d613ed974956d6453f1b2b970714b8084dec7f2eac9ad1f28cd5cac",
+      "c1": 3.1826e-19,
+      "second": 5.70772e-05,
+      "third": 2.5334e-05,
+      "total": 8.24112e-05,
+      "exp_minus_A1": 0.54576,
+      "mc": {
+        "0": 8.417347e-05,
+        "acc0": 0.54596,
+        "sem0": 1.1e-06,
+        "1000": 8.228549e-05,
+        "acc1000": 0.54597,
+        "sem1000": 1.1e-06,
+        "2000": 8.439325e-05,
+        "acc2000": 0.54596,
+        "sem2000": 1.1e-06,
+        "mean": 8.36174e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "init_state_d5_s1_alap",
+      "encoder": "11-CX resource",
+      "schedule": "prefix ALAP",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 208,
+      "depth": 51,
+      "sha256": "db2579a6131fe3587e2ec6053fa802f4120b02531dca8ebb416092bb03e1b621",
+      "c1": 3.1826e-19,
+      "second": 5.62262e-05,
+      "third": 1.93369e-05,
+      "total": 7.5563e-05,
+      "exp_minus_A1": 0.5216,
+      "mc": {
+        "0": 7.708103e-05,
+        "acc0": 0.52166,
+        "sem0": 1.1e-06,
+        "1000": 7.517887e-05,
+        "acc1000": 0.52169,
+        "sem1000": 1.1e-06,
+        "2000": 7.800643e-05,
+        "acc2000": 0.52162,
+        "sem2000": 1.1e-06,
+        "mean": 7.675544e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.522204,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5222, floor 0.5)\n  score 1-F = 6.98961e-05 \u00b1 1e-05   (3 significant figures: 6.99e-05)\n  2q+ gates = 208\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "init_state_d5_s1_alap_two_moves",
+      "encoder": "11-CX resource",
+      "schedule": "prefix ALAP + two CX advances",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 208,
+      "depth": 51,
+      "sha256": "2a79614b887e9723cdfe1920068733cceed755d42a82de720fd016f442ccd312",
+      "c1": 3.1826e-19,
+      "second": 5.523e-05,
+      "third": 1.93428e-05,
+      "total": 7.45728e-05,
+      "exp_minus_A1": 0.52159,
+      "mc": {
+        "0": 7.623794e-05,
+        "acc0": 0.52166,
+        "sem0": 1.1e-06,
+        "1000": 7.577204e-05,
+        "acc1000": 0.52163,
+        "sem1000": 1.1e-06,
+        "2000": 7.49619e-05,
+        "acc2000": 0.5216,
+        "sem2000": 1.1e-06,
+        "mean": 7.56573e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.52104,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5210, floor 0.5)\n  score 1-F = 6.62137e-05 \u00b1 1e-05   (3 significant figures: 6.62e-05)\n  2q+ gates = 208\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "init_state_d5_s1_reuse10_alap_two_moves",
+      "encoder": "11-CX resource",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 47,
+      "R_last": 47,
+      "B_data_range": [
+        48,
+        48
+      ],
+      "CX": 208,
+      "depth": 50,
+      "sha256": "a4cfa218b5ab598d5d51001b5277e8ca3e375703ac315a197d0c96bfa4d16fae",
+      "c1": 3.1826e-19,
+      "second": 5.46507e-05,
+      "third": 1.85498e-05,
+      "total": 7.32005e-05,
+      "exp_minus_A1": 0.52869,
+      "mc": {
+        "0": 7.523493e-05,
+        "acc0": 0.52881,
+        "sem0": 1e-06,
+        "1000": 7.46557e-05,
+        "acc1000": 0.52876,
+        "sem1000": 1e-06,
+        "2000": 7.531305e-05,
+        "acc2000": 0.52866,
+        "sem2000": 1.1e-06,
+        "mean": 7.506789e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.52819,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5282, floor 0.5)\n  score 1-F = 7.6677e-05 \u00b1 1.1e-05   (3 significant figures: 7.67e-05)\n  2q+ gates = 208\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "c61d8ded114b7ef398fa46870ef97a76b8a28ad126f52216da36cebaf492b464",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95335e-05,
+      "total": 7.57597e-05,
+      "exp_minus_A1": 0.53442,
+      "mc": {
+        "0": 7.870956e-05,
+        "acc0": 0.53443,
+        "sem0": 1.1e-06,
+        "1000": 7.66443e-05,
+        "acc1000": 0.53435,
+        "sem1000": 1.1e-06,
+        "2000": 7.693205e-05,
+        "acc2000": 0.5345,
+        "sem2000": 1.1e-06,
+        "mean": 7.742864e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.534332,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5343, floor 0.5)\n  score 1-F = 6.83096e-05 \u00b1 9.8e-06   (3 significant figures: 6.83e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_re_17-16",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 204,
+      "depth": 47,
+      "sha256": "a9d208403fde8c6ad8ef399420b54c462adcde79a98d36a38e1d00bda2f92f83",
+      "c1": 2.9236e-19,
+      "second": 5.76373e-05,
+      "third": 1.957e-05,
+      "total": 7.72073e-05,
+      "exp_minus_A1": 0.53413,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.532909,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5329, floor 0.5)\n  score 1-F = 8.72569e-05 \u00b1 1.1e-05   (3 significant figures: 8.73e-05)\n  2q+ gates = 204\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_re_17-16_19-25_14-15",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 206,
+      "depth": 47,
+      "sha256": "bed8203aa0eaee383df9a9a114cfbd17a69f757850cd227f3960a1a455f18ebc",
+      "c1": 2.9236e-19,
+      "second": 5.6114e-05,
+      "third": 1.96613e-05,
+      "total": 7.57753e-05,
+      "exp_minus_A1": 0.53399,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.533372,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5334, floor 0.5)\n  score 1-F = 0.000104055 \u00b1 1.2e-05   (3 significant figures: 0.000104)\n  2q+ gates = 206\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_re_17-16_19-25_14-8",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 206,
+      "depth": 47,
+      "sha256": "431691ed3901ad7338dc8ae68dbb6ac6f07bf911b7aca6b12b26f1d584dc3d74",
+      "c1": 2.9236e-19,
+      "second": 5.6069e-05,
+      "third": 1.96593e-05,
+      "total": 7.57283e-05,
+      "exp_minus_A1": 0.53399,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.533376,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5334, floor 0.5)\n  score 1-F = 0.000105929 \u00b1 1.2e-05   (3 significant figures: 0.000106)\n  2q+ gates = 206\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_re_19-25",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 204,
+      "depth": 47,
+      "sha256": "bf28d331f3d54bfc9eb8bec8b83603480c911ba620930f5e4f972c6d5fcac66b",
+      "c1": 2.9236e-19,
+      "second": 5.75325e-05,
+      "third": 1.96305e-05,
+      "total": 7.7163e-05,
+      "exp_minus_A1": 0.53413,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.53298,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5330, floor 0.5)\n  score 1-F = 9.19359e-05 \u00b1 1.1e-05   (3 significant figures: 9.19e-05)\n  2q+ gates = 204\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_re_none",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 203,
+      "depth": 47,
+      "sha256": "3ac8bbf56904369daee1562e2b1d32404d72b4f7f56c0470959aa443c27a530f",
+      "c1": 2.9236e-19,
+      "second": 5.89436e-05,
+      "third": 1.96676e-05,
+      "total": 7.86112e-05,
+      "exp_minus_A1": 0.53385,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.533446,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5334, floor 0.5)\n  score 1-F = 9.74794e-05 \u00b1 1.2e-05   (3 significant figures: 9.75e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_14",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "9ce73334b9469c6301bf85742c9965cb7942f4bdbf6e3466e47509ad963d16d6",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95335e-05,
+      "total": 7.57597e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.534504,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5345, floor 0.5)\n  score 1-F = 8.32548e-05 \u00b1 1.1e-05   (3 significant figures: 8.33e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_16",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "d9270277b087ee3ae6c1f67bd4d7de32f897a3ebd84e11c724c9be1219422a80",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.96005e-05,
+      "total": 7.58267e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.535668,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5357, floor 0.5)\n  score 1-F = 7.18729e-05 \u00b1 1e-05   (3 significant figures: 7.19e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_2",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "666c94acc3dc7ccc8a55b381e1cf2237120c6832a39cecb369f7413f6e2a3c2f",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95335e-05,
+      "total": 7.57597e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.534773,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5348, floor 0.5)\n  score 1-F = 7.8538e-05 \u00b1 1.1e-05   (3 significant figures: 7.85e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_20",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "d109d00a2df12b0a3446d1cf3b4cff0e86e0411e561db3e0b058dd29135d20d7",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95335e-05,
+      "total": 7.57597e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.53561,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5356, floor 0.5)\n  score 1-F = 8.02823e-05 \u00b1 1.1e-05   (3 significant figures: 8.03e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_21",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "2fe48399be1a5dff05f7f7977fb554fa39e6be174ff82f8ebd80dde35499635a",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.96005e-05,
+      "total": 7.58266e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.535047,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5350, floor 0.5)\n  score 1-F = 7.19563e-05 \u00b1 9.9e-06   (3 significant figures: 7.2e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_22",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "04267b674df0740bc2e058a127aa04b3935407bd659f3bb1ea688d7d8c718ce4",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.96005e-05,
+      "total": 7.58267e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.535683,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5357, floor 0.5)\n  score 1-F = 8.49383e-05 \u00b1 1.1e-05   (3 significant figures: 8.49e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_23",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "a96f1a0550c6480a102156d7cd17ad23834b5262bdd3fe93231be9ca3672b5b7",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95386e-05,
+      "total": 7.57648e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.535247,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5352, floor 0.5)\n  score 1-F = 9.06124e-05 \u00b1 1.1e-05   (3 significant figures: 9.06e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_25",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "656451639bac392487d47b20cae1b1f81e4fd1603092a47f9192f0f4c0232975",
+      "c1": 2.9236e-19,
+      "second": 5.63484e-05,
+      "third": 1.9544e-05,
+      "total": 7.58924e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.534441,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5344, floor 0.5)\n  score 1-F = 7.48446e-05 \u00b1 1e-05   (3 significant figures: 7.48e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_27",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "3681b328b3dc779b9f09fc58bb7dd394b80fafca697090f092bf9ca1b93b0a3d",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95463e-05,
+      "total": 7.57725e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.535704,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5357, floor 0.5)\n  score 1-F = 9.42685e-05 \u00b1 1.1e-05   (3 significant figures: 9.43e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_28",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "e3b003b19b1d6be28915d11c080e088ca15886f941b4d6a60f641f672c9a733c",
+      "c1": 2.9236e-19,
+      "second": 5.65928e-05,
+      "third": 1.95463e-05,
+      "total": 7.61391e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.534417,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5344, floor 0.5)\n  score 1-F = 8.42039e-05 \u00b1 1.1e-05   (3 significant figures: 8.42e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_29",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "96d9a1b430fb6456f1be0fbcf1c5054572a59f399bc1d45bc91e0cb5fe1ce191",
+      "c1": 2.9236e-19,
+      "second": 5.63817e-05,
+      "third": 1.95465e-05,
+      "total": 7.59282e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.534965,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5350, floor 0.5)\n  score 1-F = 6.26209e-05 \u00b1 9.8e-06   (3 significant figures: 6.26e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_8",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "5d474419b00f3a174b6c485f64d85e21a4d305dbdfb7b20d6a8fb4b9f806cc2a",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95337e-05,
+      "total": 7.57598e-05,
+      "exp_minus_A1": 0.53531,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.534902,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5349, floor 0.5)\n  score 1-F = 8.50623e-05 \u00b1 1.1e-05   (3 significant figures: 8.51e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_reset_8_14_2_20_16_28_29_23_27_25_21_22",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + readout/init",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "67c164ead5b9d31a20c7e8d10f17051e8aaa94938c4c124aa6f80de6577993d7",
+      "c1": 2.9236e-19,
+      "second": 5.68706e-05,
+      "third": 1.97913e-05,
+      "total": 7.66619e-05,
+      "exp_minus_A1": 0.54521,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.545014,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5450, floor 0.5)\n  score 1-F = 6.33011e-05 \u00b1 9e-06   (3 significant figures: 6.33e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_third_best",
+      "encoder": "21 CX",
+      "schedule": "exact third-order search",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "b9f09c0db09dd0fb16d375e8724ba860c567912bafbd4011170f57d7440c9b06",
+      "c1": 2.9236e-19,
+      "second": 5.523e-05,
+      "third": 1.95402e-05,
+      "total": 7.47703e-05,
+      "exp_minus_A1": 0.53442,
+      "mc": {
+        "0": 7.672299e-05,
+        "acc0": 0.53452,
+        "sem0": 1.1e-06,
+        "1000": 7.736582e-05,
+        "acc1000": 0.53454,
+        "sem1000": 1.1e-06,
+        "2000": 7.398618e-05,
+        "acc2000": 0.53442,
+        "sem2000": 1e-06,
+        "mean": 7.6025e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.53373,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5337, floor 0.5)\n  score 1-F = 6.55762e-05 \u00b1 9.7e-06   (3 significant figures: 6.56e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_reuse10_alap_two_moves",
+      "encoder": "21 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 43,
+      "R_last": 43,
+      "B_data_range": [
+        44,
+        44
+      ],
+      "CX": 205,
+      "depth": 46,
+      "sha256": "788b489f48e5e94d9825c58a1c16e62c16209636ed8ee67ef98ecfde4474632a",
+      "c1": 2.9236e-19,
+      "second": 5.46507e-05,
+      "third": 1.87464e-05,
+      "total": 7.3397e-05,
+      "exp_minus_A1": 0.54169,
+      "mc": {
+        "0": 7.347458e-05,
+        "acc0": 0.54175,
+        "sem0": 1e-06,
+        "1000": 7.504156e-05,
+        "acc1000": 0.54177,
+        "sem1000": 1e-06,
+        "2000": 7.436663e-05,
+        "acc2000": 0.54178,
+        "sem2000": 1e-06,
+        "mean": 7.429426e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.540839,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5408, floor 0.5)\n  score 1-F = 7.11857e-05 \u00b1 1e-05   (3 significant figures: 7.12e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21b_compact_alap",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "00108ea940c70c13ec29ee6b780a089950ae36ba7a8c55b42f0ce91d4f20ad82",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95335e-05,
+      "total": 7.57597e-05,
+      "exp_minus_A1": 0.53442,
+      "mc": {},
+      "check": {
+        "passed": true,
+        "acceptance": 0.533759,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5338, floor 0.5)\n  score 1-F = 5.52684e-05 \u00b1 8.3e-06   (3 significant figures: 5.53e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21b_compact_alap_two_moves",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + two CX advances",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "648a5169fbfc2dd2ba8a61bfa369456593adc13269c03c60ab78b53607b070c5",
+      "c1": 2.9236e-19,
+      "second": 5.523e-05,
+      "third": 1.95402e-05,
+      "total": 7.47703e-05,
+      "exp_minus_A1": 0.53442,
+      "mc": {
+        "0": 7.692168e-05,
+        "acc0": 0.53444,
+        "sem0": 1.1e-06,
+        "1000": 7.565311e-05,
+        "acc1000": 0.53448,
+        "sem1000": 1e-06,
+        "2000": 7.829985e-05,
+        "acc2000": 0.53448,
+        "sem2000": 1.1e-06,
+        "mean": 7.695821e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.535324,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5353, floor 0.5)\n  score 1-F = 7.93912e-05 \u00b1 1.1e-05   (3 significant figures: 7.94e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint_d7_s0",
+      "encoder": "21 CX",
+      "schedule": "joint synthesis / whole ALAP",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "2303b56297947ebb48973fdabd07a54c44466fc41ecbcdc62eee85a80992d0a2",
+      "c1": 2.9236e-19,
+      "second": 5.66145e-05,
+      "third": 2.02634e-05,
+      "total": 7.68779e-05,
+      "exp_minus_A1": 0.53087,
+      "mc": {
+        "0": 7.938531e-05,
+        "acc0": 0.53095,
+        "sem0": 1.1e-06,
+        "1000": 7.911024e-05,
+        "acc1000": 0.53097,
+        "sem1000": 1.1e-06,
+        "2000": 8.053883e-05,
+        "acc2000": 0.53092,
+        "sem2000": 1.1e-06,
+        "mean": 7.967813e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.531123,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5311, floor 0.5)\n  score 1-F = 8.09605e-05 \u00b1 1.1e-05   (3 significant figures: 8.1e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "reuse19_tuned",
+      "encoder": "19 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 45,
+      "R_last": 45,
+      "B_data_range": [
+        46,
+        46
+      ],
+      "CX": 203,
+      "depth": 48,
+      "sha256": "c2a65ea7cfb3fd2f97d9c60afcb6f9e963b6ac6bb8dd8c275370697a351542a4",
+      "c1": 2.9236e-19,
+      "second": 5.44088e-05,
+      "third": 1.86914e-05,
+      "total": 7.31002e-05,
+      "exp_minus_A1": 0.53992,
+      "mc": {
+        "0": 7.260949e-05,
+        "acc0": 0.54001,
+        "sem0": 1e-06,
+        "1000": 7.20588e-05,
+        "acc1000": 0.54005,
+        "sem1000": 1e-06,
+        "2000": 7.378347e-05,
+        "acc2000": 0.53989,
+        "sem2000": 1e-06,
+        "mean": 7.281725e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.540164,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5402, floor 0.5)\n  score 1-F = 8.23824e-05 \u00b1 1.1e-05   (3 significant figures: 8.24e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "reuse21_tuned",
+      "encoder": "21 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 43,
+      "R_last": 43,
+      "B_data_range": [
+        44,
+        44
+      ],
+      "CX": 205,
+      "depth": 46,
+      "sha256": "38b65f43927d51c2f5eb77e5760b97b347ae7c8c7e5e5fa7b9df52a90a0811df",
+      "c1": 2.9236e-19,
+      "second": 5.44532e-05,
+      "third": 1.89187e-05,
+      "total": 7.3372e-05,
+      "exp_minus_A1": 0.5417,
+      "mc": {
+        "0": 7.381354e-05,
+        "acc0": 0.54184,
+        "sem0": 1e-06,
+        "1000": 7.593021e-05,
+        "acc1000": 0.54181,
+        "sem1000": 1e-06,
+        "2000": 7.420375e-05,
+        "acc2000": 0.54175,
+        "sem2000": 1e-06,
+        "mean": 7.464917e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.542027,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5420, floor 0.5)\n  score 1-F = 7.84094e-05 \u00b1 1e-05   (3 significant figures: 7.84e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "reuse25_tuned",
+      "encoder": "25 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 209,
+      "depth": 51,
+      "sha256": "7ef6f28e851dd5decab04de976aef4cff9b6b52208c7b0eb838421fcd8922699",
+      "c1": 3.1826e-19,
+      "second": 5.44088e-05,
+      "third": 1.86474e-05,
+      "total": 7.30562e-05,
+      "exp_minus_A1": 0.52571,
+      "mc": {
+        "0": 7.411782e-05,
+        "acc0": 0.52578,
+        "sem0": 1e-06,
+        "1000": 7.43686e-05,
+        "acc1000": 0.52576,
+        "sem1000": 1e-06,
+        "2000": 7.391015e-05,
+        "acc2000": 0.52577,
+        "sem2000": 1e-06,
+        "mean": 7.413219e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.525131,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5251, floor 0.5)\n  score 1-F = 8.85493e-05 \u00b1 1.1e-05   (3 significant figures: 8.85e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v17a",
+      "encoder": "25 CX",
+      "schedule": "original placement",
+      "R": 50,
+      "R_last": 50,
+      "B_data_range": [
+        51,
+        51
+      ],
+      "CX": 209,
+      "depth": 53,
+      "sha256": "2b990de2563bf8a87343cdcb68c1012739b7726686ae0587b706fc3b4a053e1b",
+      "c1": 3.1826e-19,
+      "second": 5.70772e-05,
+      "third": 2.53769e-05,
+      "total": 8.24541e-05,
+      "exp_minus_A1": 0.54287,
+      "mc": {
+        "0": 8.393188e-05,
+        "acc0": 0.543,
+        "sem0": 1.1e-06,
+        "1000": 8.355687e-05,
+        "acc1000": 0.54298,
+        "sem1000": 1.1e-06,
+        "2000": 8.293009e-05,
+        "acc2000": 0.54305,
+        "sem2000": 1.1e-06,
+        "mean": 8.347295e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "v17a_alap",
+      "encoder": "25 CX",
+      "schedule": "prefix ALAP",
+      "R": 49,
+      "R_last": 49,
+      "B_data_range": [
+        50,
+        50
+      ],
+      "CX": 209,
+      "depth": 52,
+      "sha256": "1feb8e711fff7d59c6043e71668dc095f243591293ef8222f65978cf1c828c05",
+      "c1": 3.1826e-19,
+      "second": 5.62262e-05,
+      "third": 1.92576e-05,
+      "total": 7.54837e-05,
+      "exp_minus_A1": 0.51797,
+      "mc": {
+        "0": 7.584194e-05,
+        "acc0": 0.51792,
+        "sem0": 1.1e-06,
+        "1000": 7.64e-05,
+        "acc1000": 0.518,
+        "sem1000": 1.1e-06,
+        "2000": 7.711316e-05,
+        "acc2000": 0.51801,
+        "sem2000": 1.1e-06,
+        "mean": 7.64517e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.517631,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5176, floor 0.5)\n  score 1-F = 9.4662e-05 \u00b1 1.2e-05   (3 significant figures: 9.47e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v17a_alap_third_best",
+      "encoder": "25 CX",
+      "schedule": "exact third-order search",
+      "R": 49,
+      "R_last": 49,
+      "B_data_range": [
+        50,
+        50
+      ],
+      "CX": 209,
+      "depth": 52,
+      "sha256": "e097fc317a127b04d5dfc62cee310af1bbdafaf7e56e698bdbaedb00452add7e",
+      "c1": 3.1826e-19,
+      "second": 5.523e-05,
+      "third": 1.92635e-05,
+      "total": 7.44935e-05,
+      "exp_minus_A1": 0.51797,
+      "mc": {
+        "0": 7.591178e-05,
+        "acc0": 0.51804,
+        "sem0": 1.1e-06,
+        "1000": 7.495802e-05,
+        "acc1000": 0.51796,
+        "sem1000": 1.1e-06,
+        "2000": 7.62686e-05,
+        "acc2000": 0.51797,
+        "sem2000": 1.1e-06,
+        "mean": 7.57128e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.517782,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5178, floor 0.5)\n  score 1-F = 6.18021e-05 \u00b1 9.7e-06   (3 significant figures: 6.18e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v17a_reuse10_alap_two_moves",
+      "encoder": "25 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 209,
+      "depth": 51,
+      "sha256": "f5717d2f6204460eda4e64d52f94fb7408bc1c2cbf7925f7c0a637c030e46e32",
+      "c1": 3.1826e-19,
+      "second": 5.46507e-05,
+      "third": 1.84763e-05,
+      "total": 7.31269e-05,
+      "exp_minus_A1": 0.52502,
+      "mc": {
+        "0": 7.398446e-05,
+        "acc0": 0.52511,
+        "sem0": 1e-06,
+        "1000": 7.424615e-05,
+        "acc1000": 0.52508,
+        "sem1000": 1e-06,
+        "2000": 7.220754e-05,
+        "acc2000": 0.52508,
+        "sem2000": 1e-06,
+        "mean": 7.347938e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.523935,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5239, floor 0.5)\n  score 1-F = 7.25281e-05 \u00b1 9.9e-06   (3 significant figures: 7.25e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18",
+      "encoder": "19 CX",
+      "schedule": "prefix ALAP",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "7fec05e9d4104a773d0d1f1c2e07d2e522fac6cb97b3c2f9a4194fadb1e357bf",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.98379e-05,
+      "total": 7.6064e-05,
+      "exp_minus_A1": 0.52776,
+      "mc": {
+        "0": 7.742218e-05,
+        "acc0": 0.52782,
+        "sem0": 1.1e-06,
+        "1000": 7.508943e-05,
+        "acc1000": 0.52777,
+        "sem1000": 1e-06,
+        "2000": 7.65709e-05,
+        "acc2000": 0.52775,
+        "sem2000": 1.1e-06,
+        "mean": 7.636083e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "v18_quad0_s0",
+      "encoder": "19 CX",
+      "schedule": "exact quadratic search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "bd0856d586d99b612c73021f46352be9822f3a0746b657592b8bd59df9470072",
+      "c1": 3.1826e-19,
+      "second": 5.4761e-05,
+      "third": 2.69499e-05,
+      "total": 8.17109e-05,
+      "exp_minus_A1": 0.51119,
+      "mc": {
+        "0": 8.301884e-05,
+        "acc0": 0.51157,
+        "sem0": 1.1e-06,
+        "1000": 8.409437e-05,
+        "acc1000": 0.51163,
+        "sem1000": 1.1e-06,
+        "2000": 8.283084e-05,
+        "acc2000": 0.51158,
+        "sem2000": 1.1e-06,
+        "mean": 8.331468e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.511348,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5113, floor 0.5)\n  score 1-F = 7.43134e-05 \u00b1 1.1e-05   (3 significant figures: 7.43e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18_quad3_s0",
+      "encoder": "19 CX",
+      "schedule": "exact quadratic search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "3df75216b3ad00f198fc33ecf7ffbdbb4ecdbf0a810e933af6d0377afdc2ea78",
+      "c1": 1.3175e-18,
+      "second": 5.4747e-05,
+      "third": 2.73561e-05,
+      "total": 8.21031e-05,
+      "exp_minus_A1": 0.50641,
+      "mc": {
+        "0": 8.56367e-05,
+        "acc0": 0.50679,
+        "sem0": 1.1e-06,
+        "1000": 8.44881e-05,
+        "acc1000": 0.50676,
+        "sem1000": 1.1e-06,
+        "2000": 8.392264e-05,
+        "acc2000": 0.50678,
+        "sem2000": 1.1e-06,
+        "mean": 8.468248e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.506025,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5060, floor 0.5)\n  score 1-F = 8.89284e-05 \u00b1 1.1e-05   (3 significant figures: 8.89e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18_third_best",
+      "encoder": "19 CX",
+      "schedule": "exact third-order search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "b296a859067331300246b6810dad210433b3ffeff6370eb580ac4a2643aa65a3",
+      "c1": 2.9236e-19,
+      "second": 5.523e-05,
+      "third": 1.98447e-05,
+      "total": 7.50747e-05,
+      "exp_minus_A1": 0.52776,
+      "mc": {
+        "0": 7.611146e-05,
+        "acc0": 0.52784,
+        "sem0": 1.1e-06,
+        "1000": 7.606477e-05,
+        "acc1000": 0.52784,
+        "sem1000": 1.1e-06,
+        "2000": 7.619169e-05,
+        "acc2000": 0.52781,
+        "sem2000": 1.1e-06,
+        "mean": 7.612264e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.527457,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5275, floor 0.5)\n  score 1-F = 7.96273e-05 \u00b1 1e-05   (3 significant figures: 7.96e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18_tight_quad0_s0",
+      "encoder": "19 CX",
+      "schedule": "exact quadratic search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "c13e16f17a46b641710e003218e3fb23d757ec98e3eaafbf8f8ad793091ae059",
+      "c1": 2.7941e-19,
+      "second": 5.47666e-05,
+      "third": 2.38743e-05,
+      "total": 7.8641e-05,
+      "exp_minus_A1": 0.52811,
+      "mc": {
+        "0": 8.10533e-05,
+        "acc0": 0.52842,
+        "sem0": 1.1e-06,
+        "1000": 7.970311e-05,
+        "acc1000": 0.52846,
+        "sem1000": 1.1e-06,
+        "2000": 7.973484e-05,
+        "acc2000": 0.52838,
+        "sem2000": 1.1e-06,
+        "mean": 8.016375e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.528171,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5282, floor 0.5)\n  score 1-F = 6.53198e-05 \u00b1 9.3e-06   (3 significant figures: 6.53e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18_whole_alap0_s0",
+      "encoder": "19 CX",
+      "schedule": "alap0",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "975a0c7d7009563aeed40bd1a721e13abff12f4baf19a0835857f430903a6a9d",
+      "c1": 2.9236e-19,
+      "second": 5.66145e-05,
+      "third": 2.05687e-05,
+      "total": 7.71831e-05,
+      "exp_minus_A1": 0.52425,
+      "mc": {},
+      "check": null
+    },
+    {
+      "name": "v18_whole_asap0_s0",
+      "encoder": "19 CX",
+      "schedule": "asap0",
+      "R": 37,
+      "R_last": 46,
+      "B_data_range": [
+        45,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "8467d98690e120a13691852a59d03d46d96a9400a9cbddde0b690827a9d8d9e8",
+      "c1": 6.5368e-19,
+      "second": 0.000354609,
+      "third": 0.000139751,
+      "total": 0.00049436,
+      "exp_minus_A1": 0.36271,
+      "mc": {},
+      "check": null
+    },
+    {
+      "name": "v18_whole_data0_s0",
+      "encoder": "19 CX",
+      "schedule": "data0",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "3946ec32773d19e68a00d11b667618b1b9db59c9cdbbcb4ef1681a7bdc8416bf",
+      "c1": 3.0531e-19,
+      "second": 9.27672e-05,
+      "third": 5.2768e-05,
+      "total": 0.000145535,
+      "exp_minus_A1": 0.42098,
+      "mc": {},
+      "check": null
+    },
+    {
+      "name": "v18_whole_priority0_s0",
+      "encoder": "19 CX",
+      "schedule": "priority0",
+      "R": 37,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "6dbe98452024009d8f985b86d560f393776bc9519ff7ee8b09d38ea5993af4d1",
+      "c1": -4.0708e-20,
+      "second": 8.55724e-05,
+      "third": 6.96662e-05,
+      "total": 0.000155239,
+      "exp_minus_A1": 0.44518,
+      "mc": {},
+      "check": null
+    }
+  ],
+  "finalists": [
+    {
+      "name": "reuse19_tuned",
+      "encoder": "19 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 45,
+      "R_last": 45,
+      "B_data_range": [
+        46,
+        46
+      ],
+      "CX": 203,
+      "depth": 48,
+      "sha256": "c2a65ea7cfb3fd2f97d9c60afcb6f9e963b6ac6bb8dd8c275370697a351542a4",
+      "c1": 2.9236e-19,
+      "second": 5.44088e-05,
+      "third": 1.86914e-05,
+      "total": 7.31002e-05,
+      "exp_minus_A1": 0.53992,
+      "mc": {
+        "0": 7.260949e-05,
+        "acc0": 0.54001,
+        "sem0": 1e-06,
+        "1000": 7.20588e-05,
+        "acc1000": 0.54005,
+        "sem1000": 1e-06,
+        "2000": 7.378347e-05,
+        "acc2000": 0.53989,
+        "sem2000": 1e-06,
+        "mean": 7.281725e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.540164,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5402, floor 0.5)\n  score 1-F = 8.23824e-05 \u00b1 1.1e-05   (3 significant figures: 8.24e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v17a_reuse10_alap_two_moves",
+      "encoder": "25 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 209,
+      "depth": 51,
+      "sha256": "f5717d2f6204460eda4e64d52f94fb7408bc1c2cbf7925f7c0a637c030e46e32",
+      "c1": 3.1826e-19,
+      "second": 5.46507e-05,
+      "third": 1.84763e-05,
+      "total": 7.31269e-05,
+      "exp_minus_A1": 0.52502,
+      "mc": {
+        "0": 7.398446e-05,
+        "acc0": 0.52511,
+        "sem0": 1e-06,
+        "1000": 7.424615e-05,
+        "acc1000": 0.52508,
+        "sem1000": 1e-06,
+        "2000": 7.220754e-05,
+        "acc2000": 0.52508,
+        "sem2000": 1e-06,
+        "mean": 7.347938e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.523935,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5239, floor 0.5)\n  score 1-F = 7.25281e-05 \u00b1 9.9e-06   (3 significant figures: 7.25e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "encoder19_reuse10_alap_two_moves",
+      "encoder": "19 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 45,
+      "R_last": 45,
+      "B_data_range": [
+        46,
+        46
+      ],
+      "CX": 203,
+      "depth": 48,
+      "sha256": "58f4c44cb457a080575980dbd6916c9d36b2f067a1d3706385b1d861e3eb290a",
+      "c1": 2.9236e-19,
+      "second": 5.46507e-05,
+      "third": 1.90441e-05,
+      "total": 7.36948e-05,
+      "exp_minus_A1": 0.53494,
+      "mc": {
+        "0": 7.510407e-05,
+        "acc0": 0.53499,
+        "sem0": 1e-06,
+        "1000": 7.326227e-05,
+        "acc1000": 0.535,
+        "sem1000": 1e-06,
+        "2000": 7.373959e-05,
+        "acc2000": 0.53492,
+        "sem2000": 1e-06,
+        "mean": 7.403531e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.534895,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5349, floor 0.5)\n  score 1-F = 6.63682e-05 \u00b1 9.7e-06   (3 significant figures: 6.64e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "reuse25_tuned",
+      "encoder": "25 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 209,
+      "depth": 51,
+      "sha256": "7ef6f28e851dd5decab04de976aef4cff9b6b52208c7b0eb838421fcd8922699",
+      "c1": 3.1826e-19,
+      "second": 5.44088e-05,
+      "third": 1.86474e-05,
+      "total": 7.30562e-05,
+      "exp_minus_A1": 0.52571,
+      "mc": {
+        "0": 7.411782e-05,
+        "acc0": 0.52578,
+        "sem0": 1e-06,
+        "1000": 7.43686e-05,
+        "acc1000": 0.52576,
+        "sem1000": 1e-06,
+        "2000": 7.391015e-05,
+        "acc2000": 0.52577,
+        "sem2000": 1e-06,
+        "mean": 7.413219e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.525131,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5251, floor 0.5)\n  score 1-F = 8.85493e-05 \u00b1 1.1e-05   (3 significant figures: 8.85e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_reuse10_alap_two_moves",
+      "encoder": "21 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 43,
+      "R_last": 43,
+      "B_data_range": [
+        44,
+        44
+      ],
+      "CX": 205,
+      "depth": 46,
+      "sha256": "788b489f48e5e94d9825c58a1c16e62c16209636ed8ee67ef98ecfde4474632a",
+      "c1": 2.9236e-19,
+      "second": 5.46507e-05,
+      "third": 1.87464e-05,
+      "total": 7.3397e-05,
+      "exp_minus_A1": 0.54169,
+      "mc": {
+        "0": 7.347458e-05,
+        "acc0": 0.54175,
+        "sem0": 1e-06,
+        "1000": 7.504156e-05,
+        "acc1000": 0.54177,
+        "sem1000": 1e-06,
+        "2000": 7.436663e-05,
+        "acc2000": 0.54178,
+        "sem2000": 1e-06,
+        "mean": 7.429426e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.540839,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5408, floor 0.5)\n  score 1-F = 7.11857e-05 \u00b1 1e-05   (3 significant figures: 7.12e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "reuse21_tuned",
+      "encoder": "21 CX",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 43,
+      "R_last": 43,
+      "B_data_range": [
+        44,
+        44
+      ],
+      "CX": 205,
+      "depth": 46,
+      "sha256": "38b65f43927d51c2f5eb77e5760b97b347ae7c8c7e5e5fa7b9df52a90a0811df",
+      "c1": 2.9236e-19,
+      "second": 5.44532e-05,
+      "third": 1.89187e-05,
+      "total": 7.3372e-05,
+      "exp_minus_A1": 0.5417,
+      "mc": {
+        "0": 7.381354e-05,
+        "acc0": 0.54184,
+        "sem0": 1e-06,
+        "1000": 7.593021e-05,
+        "acc1000": 0.54181,
+        "sem1000": 1e-06,
+        "2000": 7.420375e-05,
+        "acc2000": 0.54175,
+        "sem2000": 1e-06,
+        "mean": 7.464917e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.542027,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5420, floor 0.5)\n  score 1-F = 7.84094e-05 \u00b1 1e-05   (3 significant figures: 7.84e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "init_state_d5_s1_reuse10_alap_two_moves",
+      "encoder": "11-CX resource",
+      "schedule": "q10 reuse + optimized ALAP",
+      "R": 47,
+      "R_last": 47,
+      "B_data_range": [
+        48,
+        48
+      ],
+      "CX": 208,
+      "depth": 50,
+      "sha256": "a4cfa218b5ab598d5d51001b5277e8ca3e375703ac315a197d0c96bfa4d16fae",
+      "c1": 3.1826e-19,
+      "second": 5.46507e-05,
+      "third": 1.85498e-05,
+      "total": 7.32005e-05,
+      "exp_minus_A1": 0.52869,
+      "mc": {
+        "0": 7.523493e-05,
+        "acc0": 0.52881,
+        "sem0": 1e-06,
+        "1000": 7.46557e-05,
+        "acc1000": 0.52876,
+        "sem1000": 1e-06,
+        "2000": 7.531305e-05,
+        "acc2000": 0.52866,
+        "sem2000": 1.1e-06,
+        "mean": 7.506789e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.52819,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5282, floor 0.5)\n  score 1-F = 7.6677e-05 \u00b1 1.1e-05   (3 significant figures: 7.67e-05)\n  2q+ gates = 208\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "init_state_d5_s1_alap_two_moves",
+      "encoder": "11-CX resource",
+      "schedule": "prefix ALAP + two CX advances",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 208,
+      "depth": 51,
+      "sha256": "2a79614b887e9723cdfe1920068733cceed755d42a82de720fd016f442ccd312",
+      "c1": 3.1826e-19,
+      "second": 5.523e-05,
+      "third": 1.93428e-05,
+      "total": 7.45728e-05,
+      "exp_minus_A1": 0.52159,
+      "mc": {
+        "0": 7.623794e-05,
+        "acc0": 0.52166,
+        "sem0": 1.1e-06,
+        "1000": 7.577204e-05,
+        "acc1000": 0.52163,
+        "sem1000": 1.1e-06,
+        "2000": 7.49619e-05,
+        "acc2000": 0.5216,
+        "sem2000": 1.1e-06,
+        "mean": 7.56573e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.52104,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5210, floor 0.5)\n  score 1-F = 6.62137e-05 \u00b1 1e-05   (3 significant figures: 6.62e-05)\n  2q+ gates = 208\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v17a_alap_third_best",
+      "encoder": "25 CX",
+      "schedule": "exact third-order search",
+      "R": 49,
+      "R_last": 49,
+      "B_data_range": [
+        50,
+        50
+      ],
+      "CX": 209,
+      "depth": 52,
+      "sha256": "e097fc317a127b04d5dfc62cee310af1bbdafaf7e56e698bdbaedb00452add7e",
+      "c1": 3.1826e-19,
+      "second": 5.523e-05,
+      "third": 1.92635e-05,
+      "total": 7.44935e-05,
+      "exp_minus_A1": 0.51797,
+      "mc": {
+        "0": 7.591178e-05,
+        "acc0": 0.51804,
+        "sem0": 1.1e-06,
+        "1000": 7.495802e-05,
+        "acc1000": 0.51796,
+        "sem1000": 1.1e-06,
+        "2000": 7.62686e-05,
+        "acc2000": 0.51797,
+        "sem2000": 1.1e-06,
+        "mean": 7.57128e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.517782,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5178, floor 0.5)\n  score 1-F = 6.18021e-05 \u00b1 9.7e-06   (3 significant figures: 6.18e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap_third_best",
+      "encoder": "21 CX",
+      "schedule": "exact third-order search",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "b9f09c0db09dd0fb16d375e8724ba860c567912bafbd4011170f57d7440c9b06",
+      "c1": 2.9236e-19,
+      "second": 5.523e-05,
+      "third": 1.95402e-05,
+      "total": 7.47703e-05,
+      "exp_minus_A1": 0.53442,
+      "mc": {
+        "0": 7.672299e-05,
+        "acc0": 0.53452,
+        "sem0": 1.1e-06,
+        "1000": 7.736582e-05,
+        "acc1000": 0.53454,
+        "sem1000": 1.1e-06,
+        "2000": 7.398618e-05,
+        "acc2000": 0.53442,
+        "sem2000": 1e-06,
+        "mean": 7.6025e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.53373,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5337, floor 0.5)\n  score 1-F = 6.55762e-05 \u00b1 9.7e-06   (3 significant figures: 6.56e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18_third_best",
+      "encoder": "19 CX",
+      "schedule": "exact third-order search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "b296a859067331300246b6810dad210433b3ffeff6370eb580ac4a2643aa65a3",
+      "c1": 2.9236e-19,
+      "second": 5.523e-05,
+      "third": 1.98447e-05,
+      "total": 7.50747e-05,
+      "exp_minus_A1": 0.52776,
+      "mc": {
+        "0": 7.611146e-05,
+        "acc0": 0.52784,
+        "sem0": 1.1e-06,
+        "1000": 7.606477e-05,
+        "acc1000": 0.52784,
+        "sem1000": 1.1e-06,
+        "2000": 7.619169e-05,
+        "acc2000": 0.52781,
+        "sem2000": 1.1e-06,
+        "mean": 7.612264e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.527457,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5275, floor 0.5)\n  score 1-F = 7.96273e-05 \u00b1 1e-05   (3 significant figures: 7.96e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18",
+      "encoder": "19 CX",
+      "schedule": "prefix ALAP",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "7fec05e9d4104a773d0d1f1c2e07d2e522fac6cb97b3c2f9a4194fadb1e357bf",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.98379e-05,
+      "total": 7.6064e-05,
+      "exp_minus_A1": 0.52776,
+      "mc": {
+        "0": 7.742218e-05,
+        "acc0": 0.52782,
+        "sem0": 1.1e-06,
+        "1000": 7.508943e-05,
+        "acc1000": 0.52777,
+        "sem1000": 1e-06,
+        "2000": 7.65709e-05,
+        "acc2000": 0.52775,
+        "sem2000": 1.1e-06,
+        "mean": 7.636083e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "v17a_alap",
+      "encoder": "25 CX",
+      "schedule": "prefix ALAP",
+      "R": 49,
+      "R_last": 49,
+      "B_data_range": [
+        50,
+        50
+      ],
+      "CX": 209,
+      "depth": 52,
+      "sha256": "1feb8e711fff7d59c6043e71668dc095f243591293ef8222f65978cf1c828c05",
+      "c1": 3.1826e-19,
+      "second": 5.62262e-05,
+      "third": 1.92576e-05,
+      "total": 7.54837e-05,
+      "exp_minus_A1": 0.51797,
+      "mc": {
+        "0": 7.584194e-05,
+        "acc0": 0.51792,
+        "sem0": 1.1e-06,
+        "1000": 7.64e-05,
+        "acc1000": 0.518,
+        "sem1000": 1.1e-06,
+        "2000": 7.711316e-05,
+        "acc2000": 0.51801,
+        "sem2000": 1.1e-06,
+        "mean": 7.64517e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.517631,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5176, floor 0.5)\n  score 1-F = 9.4662e-05 \u00b1 1.2e-05   (3 significant figures: 9.47e-05)\n  2q+ gates = 209\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "init_state_d5_s1_alap",
+      "encoder": "11-CX resource",
+      "schedule": "prefix ALAP",
+      "R": 48,
+      "R_last": 48,
+      "B_data_range": [
+        49,
+        49
+      ],
+      "CX": 208,
+      "depth": 51,
+      "sha256": "db2579a6131fe3587e2ec6053fa802f4120b02531dca8ebb416092bb03e1b621",
+      "c1": 3.1826e-19,
+      "second": 5.62262e-05,
+      "third": 1.93369e-05,
+      "total": 7.5563e-05,
+      "exp_minus_A1": 0.5216,
+      "mc": {
+        "0": 7.708103e-05,
+        "acc0": 0.52166,
+        "sem0": 1.1e-06,
+        "1000": 7.517887e-05,
+        "acc1000": 0.52169,
+        "sem1000": 1.1e-06,
+        "2000": 7.800643e-05,
+        "acc2000": 0.52162,
+        "sem2000": 1.1e-06,
+        "mean": 7.675544e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.522204,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5222, floor 0.5)\n  score 1-F = 6.98961e-05 \u00b1 1e-05   (3 significant figures: 6.99e-05)\n  2q+ gates = 208\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21b_compact_alap_two_moves",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP + two CX advances",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "648a5169fbfc2dd2ba8a61bfa369456593adc13269c03c60ab78b53607b070c5",
+      "c1": 2.9236e-19,
+      "second": 5.523e-05,
+      "third": 1.95402e-05,
+      "total": 7.47703e-05,
+      "exp_minus_A1": 0.53442,
+      "mc": {
+        "0": 7.692168e-05,
+        "acc0": 0.53444,
+        "sem0": 1.1e-06,
+        "1000": 7.565311e-05,
+        "acc1000": 0.53448,
+        "sem1000": 1e-06,
+        "2000": 7.829985e-05,
+        "acc2000": 0.53448,
+        "sem2000": 1.1e-06,
+        "mean": 7.695821e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.535324,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5353, floor 0.5)\n  score 1-F = 7.93912e-05 \u00b1 1.1e-05   (3 significant figures: 7.94e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint21_compact_alap",
+      "encoder": "21 CX",
+      "schedule": "prefix ALAP",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "c61d8ded114b7ef398fa46870ef97a76b8a28ad126f52216da36cebaf492b464",
+      "c1": 2.9236e-19,
+      "second": 5.62262e-05,
+      "third": 1.95335e-05,
+      "total": 7.57597e-05,
+      "exp_minus_A1": 0.53442,
+      "mc": {
+        "0": 7.870956e-05,
+        "acc0": 0.53443,
+        "sem0": 1.1e-06,
+        "1000": 7.66443e-05,
+        "acc1000": 0.53435,
+        "sem1000": 1.1e-06,
+        "2000": 7.693205e-05,
+        "acc2000": 0.5345,
+        "sem2000": 1.1e-06,
+        "mean": 7.742864e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.534332,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5343, floor 0.5)\n  score 1-F = 6.83096e-05 \u00b1 9.8e-06   (3 significant figures: 6.83e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "joint_d7_s0",
+      "encoder": "21 CX",
+      "schedule": "joint synthesis / whole ALAP",
+      "R": 44,
+      "R_last": 44,
+      "B_data_range": [
+        45,
+        45
+      ],
+      "CX": 205,
+      "depth": 47,
+      "sha256": "2303b56297947ebb48973fdabd07a54c44466fc41ecbcdc62eee85a80992d0a2",
+      "c1": 2.9236e-19,
+      "second": 5.66145e-05,
+      "third": 2.02634e-05,
+      "total": 7.68779e-05,
+      "exp_minus_A1": 0.53087,
+      "mc": {
+        "0": 7.938531e-05,
+        "acc0": 0.53095,
+        "sem0": 1.1e-06,
+        "1000": 7.911024e-05,
+        "acc1000": 0.53097,
+        "sem1000": 1.1e-06,
+        "2000": 8.053883e-05,
+        "acc2000": 0.53092,
+        "sem2000": 1.1e-06,
+        "mean": 7.967813e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.531123,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5311, floor 0.5)\n  score 1-F = 8.09605e-05 \u00b1 1.1e-05   (3 significant figures: 8.1e-05)\n  2q+ gates = 205\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18_tight_quad0_s0",
+      "encoder": "19 CX",
+      "schedule": "exact quadratic search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "c13e16f17a46b641710e003218e3fb23d757ec98e3eaafbf8f8ad793091ae059",
+      "c1": 2.7941e-19,
+      "second": 5.47666e-05,
+      "third": 2.38743e-05,
+      "total": 7.8641e-05,
+      "exp_minus_A1": 0.52811,
+      "mc": {
+        "0": 8.10533e-05,
+        "acc0": 0.52842,
+        "sem0": 1.1e-06,
+        "1000": 7.970311e-05,
+        "acc1000": 0.52846,
+        "sem1000": 1.1e-06,
+        "2000": 7.973484e-05,
+        "acc2000": 0.52838,
+        "sem2000": 1.1e-06,
+        "mean": 8.016375e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.528171,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5282, floor 0.5)\n  score 1-F = 6.53198e-05 \u00b1 9.3e-06   (3 significant figures: 6.53e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v18_quad0_s0",
+      "encoder": "19 CX",
+      "schedule": "exact quadratic search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "bd0856d586d99b612c73021f46352be9822f3a0746b657592b8bd59df9470072",
+      "c1": 3.1826e-19,
+      "second": 5.4761e-05,
+      "third": 2.69499e-05,
+      "total": 8.17109e-05,
+      "exp_minus_A1": 0.51119,
+      "mc": {
+        "0": 8.301884e-05,
+        "acc0": 0.51157,
+        "sem0": 1.1e-06,
+        "1000": 8.409437e-05,
+        "acc1000": 0.51163,
+        "sem1000": 1.1e-06,
+        "2000": 8.283084e-05,
+        "acc2000": 0.51158,
+        "sem2000": 1.1e-06,
+        "mean": 8.331468e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.511348,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5113, floor 0.5)\n  score 1-F = 7.43134e-05 \u00b1 1.1e-05   (3 significant figures: 7.43e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    },
+    {
+      "name": "v17a",
+      "encoder": "25 CX",
+      "schedule": "original placement",
+      "R": 50,
+      "R_last": 50,
+      "B_data_range": [
+        51,
+        51
+      ],
+      "CX": 209,
+      "depth": 53,
+      "sha256": "2b990de2563bf8a87343cdcb68c1012739b7726686ae0587b706fc3b4a053e1b",
+      "c1": 3.1826e-19,
+      "second": 5.70772e-05,
+      "third": 2.53769e-05,
+      "total": 8.24541e-05,
+      "exp_minus_A1": 0.54287,
+      "mc": {
+        "0": 8.393188e-05,
+        "acc0": 0.543,
+        "sem0": 1.1e-06,
+        "1000": 8.355687e-05,
+        "acc1000": 0.54298,
+        "sem1000": 1.1e-06,
+        "2000": 8.293009e-05,
+        "acc2000": 0.54305,
+        "sem2000": 1.1e-06,
+        "mean": 8.347295e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "init_state_d5_s1",
+      "encoder": "11-CX resource",
+      "schedule": "original placement",
+      "R": 49,
+      "R_last": 49,
+      "B_data_range": [
+        50,
+        50
+      ],
+      "CX": 208,
+      "depth": 52,
+      "sha256": "847ae3d84d613ed974956d6453f1b2b970714b8084dec7f2eac9ad1f28cd5cac",
+      "c1": 3.1826e-19,
+      "second": 5.70772e-05,
+      "third": 2.5334e-05,
+      "total": 8.24112e-05,
+      "exp_minus_A1": 0.54576,
+      "mc": {
+        "0": 8.417347e-05,
+        "acc0": 0.54596,
+        "sem0": 1.1e-06,
+        "1000": 8.228549e-05,
+        "acc1000": 0.54597,
+        "sem1000": 1.1e-06,
+        "2000": 8.439325e-05,
+        "acc2000": 0.54596,
+        "sem2000": 1.1e-06,
+        "mean": 8.36174e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "encoder19",
+      "encoder": "19 CX",
+      "schedule": "original placement",
+      "R": 47,
+      "R_last": 47,
+      "B_data_range": [
+        48,
+        48
+      ],
+      "CX": 203,
+      "depth": 50,
+      "sha256": "bc821d3c16b93b0488628c776a9805b1a027334ec9e0cda86d698855c5fe0e7e",
+      "c1": 2.5165e-19,
+      "second": 5.70772e-05,
+      "third": 2.58108e-05,
+      "total": 8.28881e-05,
+      "exp_minus_A1": 0.5525,
+      "mc": {
+        "0": 8.395208e-05,
+        "acc0": 0.55258,
+        "sem0": 1.1e-06,
+        "1000": 8.440232e-05,
+        "acc1000": 0.55265,
+        "sem1000": 1.1e-06,
+        "2000": 8.548979e-05,
+        "acc2000": 0.55264,
+        "sem2000": 1.1e-06,
+        "mean": 8.461473e-05,
+        "judge_check_pass": true
+      }
+    },
+    {
+      "name": "v18_quad3_s0",
+      "encoder": "19 CX",
+      "schedule": "exact quadratic search",
+      "R": 46,
+      "R_last": 46,
+      "B_data_range": [
+        47,
+        47
+      ],
+      "CX": 203,
+      "depth": 49,
+      "sha256": "3df75216b3ad00f198fc33ecf7ffbdbb4ecdbf0a810e933af6d0377afdc2ea78",
+      "c1": 1.3175e-18,
+      "second": 5.4747e-05,
+      "third": 2.73561e-05,
+      "total": 8.21031e-05,
+      "exp_minus_A1": 0.50641,
+      "mc": {
+        "0": 8.56367e-05,
+        "acc0": 0.50679,
+        "sem0": 1.1e-06,
+        "1000": 8.44881e-05,
+        "acc1000": 0.50676,
+        "sem1000": 1.1e-06,
+        "2000": 8.392264e-05,
+        "acc2000": 0.50678,
+        "sem2000": 1.1e-06,
+        "mean": 8.468248e-05,
+        "judge_check_pass": true
+      },
+      "check": {
+        "passed": true,
+        "acceptance": 0.506025,
+        "repr": "p=0.001  shots=1,000,000  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (0.5060, floor 0.5)\n  score 1-F = 8.89284e-05 \u00b1 1.1e-05   (3 significant figures: 8.89e-05)\n  2q+ gates = 203\n  RESULT: PASS"
+      }
+    }
+  ]
+}

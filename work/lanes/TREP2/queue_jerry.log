@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/TREP2/queue.py", line 22, in <module>
+    with concurrent.futures.ThreadPoolExecutor(max_workers=a.cores//a.procs)as pool:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 154, in __init__
+    self._work_queue = queue.SimpleQueue()
+                       ^^^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'SimpleQueue'
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/TREP2/queue.py", line 22, in <module>
+    with concurrent.futures.ThreadPoolExecutor(max_workers=a.cores//a.procs)as pool:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 154, in __init__
+    self._work_queue = queue.SimpleQueue()
+                       ^^^^^^^^^^^^^^^^^
+AttributeError: module 'queue' has no attribute 'SimpleQueue'

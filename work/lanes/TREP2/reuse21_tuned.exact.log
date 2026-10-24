@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/TREP2/reuse21_tuned.qasm: 454 noise channels, 3622 faults, 562 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.9236e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.44532e-05   (pairs 5.44532e-05 + same-channel normalisation 6.859e-23)
+1-F (2nd order) = 5.44532e-05
+third order: 1.89187e-05   (weight-3 sets 2.31469e-05 + pair-times-others -4.22817e-06)
+1-F (to 3rd order) = 7.33720e-05
+acceptance: first order 0.38695, second order 0.57493; exp(-A1) = 0.54170  (A1 = 0.61305)
+time: model+singles 0.6s, pairs 6.8s, triples 6.6s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '1.500e-06', 'gate': '2.783e-05', 'idle': '2.512e-05'}

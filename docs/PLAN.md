@@ -1,9 +1,9 @@
 # Plan
 
-## Status (2026-10-24 14:50 KST)
-- Board: Placeholder 5.621e-5 (177 CX, acc 0.532); us 7.49754e-5 = v18 (280 re-draws mean 7.730e-5), rank 2. v19
-  (FREELAY: v18 + |+⟩ reuse on cells 10, 9 + CP-SAT timing, round at 45; exact 7.4752e-5, MC 7.537e-5) is in promotion
-  for the 15:45 slot.
+## Status (2026-10-24 15:20 KST)
+- Board: Placeholder 5.621e-5 (177 CX); us 7.49754e-5 = v18, rank 2. v20 (TREP2: 19-CX encoder + q10 |+⟩ reuse +
+  third-order-checked timing, round 45; exact 7.3100e-5, MC 7.282e-5) is in promotion for the 15:45 slot; v19_r203
+  (7.29285e-5 seed 0) is committed as the fallback if v20's best draw is worse.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
@@ -24,11 +24,10 @@ Bottleneck: the data wait before the round. v17a idles the data at 33–49; v18 
 | 1 | P53 | G1 | SEP2T: settle whether separate small A/B/C blocks + teleports/hops beat the joint B+C prep on the grid with the ALAP pre-stage (long CP-SAT on FREELAY's 2-teleport models, constructive/LNS builds, C teleported in) | 3-seed MC below v19's 7.537e-5, or a built separate-block circuit with its loss breakdown | Codex lane SEP2T (`work/lanes/SEP2T`, sunfish, hippo) | active |
 | 2 | P54 | G1 | ACHECK: cut block A's share of v19 (−26% if noiseless): pair analysis, a parity/flag check of a logical-X rep under code relabellings or a new A placement, in-situ encoder choice, A init and timing | 3-seed MC below v19's 7.537e-5, or A's mechanism quantified and each fix priced | Codex lane ACHECK (`work/lanes/ACHECK`, owl) | active |
 | 3 | P51 | G1 | BCSYN: smaller, cleaner FT joint B+C prep (reverse-endpoint + clean CEGAR, MX-init, X-measured helpers, new footprints), priced in situ in v18 | 3-seed MC below v18's 7.636e-5, or SAT/UNSAT per (CX cap, depth) with in-situ prices | Codex lane BCSYN (`work/lanes/BCSYN`, owl, tom) | active |
-| 4 | P47 | G1 | TREP2: on v18, split the encoder and ALAP-schedule gains, exact-objective schedule search under the acceptance budget, the 15 untested 15-T forms, a schedule-aware encoder, re-encoding and measure-init re-applied | 3-seed MC below v18's 7.636e-5, or every lever measured | Codex lane TREP2 (`work/lanes/TREP2`, jerry, hippo) | active |
-| 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
-| 8 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: inside P54 |
+| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 7 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: inside P54 |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.

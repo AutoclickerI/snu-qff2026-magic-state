@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/TREP2/joint21_compact_alap_reset_8_14_2_20_16_28_29_23_27_25_21_22.qasm: 432 noise channels, 3578 faults, 550 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.9236e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.68706e-05   (pairs 5.68706e-05 + same-channel normalisation 6.859e-23)
+1-F (2nd order) = 5.68706e-05
+third order: 1.97913e-05   (weight-3 sets 2.40474e-05 + pair-times-others -4.25607e-06)
+1-F (to 3rd order) = 7.66619e-05
+acceptance: first order 0.39342, second order 0.57742; exp(-A1) = 0.54521  (A1 = 0.60658)
+time: model+singles 0.5s, pairs 7.5s, triples 7.8s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '2.550e-06', 'gate': '2.772e-05', 'idle': '2.660e-05'}

@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/TREP2/f06_0_parity.qasm: 566 noise channels, 4360 faults, 780 (s,d) classes, rotation rank 5, 44 detectors, noiseless acceptance 1.000000
+first order : c1 p = -2.4055e-20   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 4.24280e-04   (pairs 4.24280e-04 + same-channel normalisation -3.039e-23)
+1-F (2nd order) = 4.24280e-04
+third order: 7.58484e-05   (weight-3 sets 1.27676e-04 + pair-times-others -5.18274e-05)
+1-F (to 3rd order) = 5.00128e-04
+acceptance: first order 0.03492, second order 0.50005; exp(-A1) = 0.38095  (A1 = 0.96508)
+time: model+singles 0.6s, pairs 37.1s, triples 39.4s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '2.599e-05', 'gate': '1.161e-04', 'idle': '2.822e-04'}

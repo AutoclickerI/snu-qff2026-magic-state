@@ -1,0 +1,60 @@
+{
+  "base": "v18",
+  "optimized": "v18_cont_third_best",
+  "target": "encoder19_reuse10_alap",
+  "changes": [
+    {
+      "operation": [
+        "cx q[10],q[4];"
+      ],
+      "old": 14,
+      "requested": 12,
+      "actual": 12
+    },
+    {
+      "operation": [
+        "cx q[9],q[3];"
+      ],
+      "old": 28,
+      "requested": 26,
+      "actual": 27
+    },
+    {
+      "operation": [
+        "h q[13];",
+        "measure q[13] -> c[6];"
+      ],
+      "old": 29,
+      "requested": 15,
+      "actual": 16
+    },
+    {
+      "operation": [
+        "cx q[8],q[14];"
+      ],
+      "old": 29,
+      "requested": 28,
+      "actual": 28
+    },
+    {
+      "operation": [
+        "h q[2];",
+        "measure q[2] -> c[10];"
+      ],
+      "old": 39,
+      "requested": 38,
+      "actual": 38
+    },
+    {
+      "operation": [
+        "cx q[12],q[6];"
+      ],
+      "old": 39,
+      "requested": 38,
+      "actual": 38
+    }
+  ],
+  "unavailable": [],
+  "projection_distance": 2,
+  "c1": 2.9235872981795294e-19
+}
