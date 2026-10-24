@@ -43,8 +43,8 @@ Bottleneck: the B+C prep footprint (82 CX; noiseless −26.5% on v19) and the da
 The reviewer's zip (QASMs, scripts) is behind a chatgpt.com library link we cannot fetch; lanes re-derive.
 | # | Claim | Check | Item |
 |---|---|---|---|
-| 1 | Copy the last C readouts onto fresh helpers, detect disagreement (+3 CX, same depth) | readout error p → 2.7e-4 conditional (formula checked); reviewer: −0.65% third order on v23h_c2c9, acceptance −0.0055; not yet reproduced here | P60 |
-| 2 | Helper-verified init, helper measured in the same tick as the qubit's first op | init error → 2.7e-4 (vs 2p/3, p); reviewer: 6 positions −1.83% on v22, with #1 −2.46% all orders at acceptance −0.011; about 3%/pp, the best loss-per-acceptance item known (blue XZ 1.2%/pp) | P60 |
+| 1 | Copy the last C readouts onto fresh helpers, detect disagreement (+3 CX, same depth) | **reproduced** by exact2: v23h_c2c9 + copy4 6.87707e-5 (−0.65%), exp(-A1) 0.535, 3.6 s per 1e6 | P60 |
+| 2 | Helper-verified init, helper measured in the same tick as the qubit's first op | **reproduced** on v22 by exact2: init6 7.00021e-5 (−1.83%), copy4 + init6 6.95552e-5 (−2.46%), exp(-A1) 0.523, 2.7 s per 1e6; port to v23's MX-init prep pending | P60 |
 | 3 | All-orders Walsh-contraction evaluator (~4 min) | reviewer's values match our re-draw means: v22 7.2365e-5 vs 7.2405±0.006e-5, v23h_c2c9 7.0262e-5 vs 7.0298±0.007e-5 | P61 |
 | 4 | 128 partial clean policies between base and clean | valid: BCSYN2's `Model.cut` forces s_B = 0 when d = 0 | P62 |
 | 5 | Synthesize prep + B→C check as one; C's endpoint uniform over U ⊆ S (16 endpoints) | valid relaxation, unpriced | P62 |
