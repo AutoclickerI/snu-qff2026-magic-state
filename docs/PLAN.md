@@ -1,8 +1,8 @@
 # Plan
 
 ## Status (2026-10-25 01:20 KST)
-- Board: **rank 1**, v35a_r188 4.17026e-5 (server; all-orders 4.39353e-5); Placeholder 5.058e-5, Inae 1.45e-4.
-  01:37 slot: v35b_r1007 (seed-0 4.12926e-5, best of 606 re-draws; all-orders 4.37602e-5). 02:37 slot: **v36a** in re-draws
+- Board: **rank 1**, v35b_r1007 4.12926e-5 (server, 01:37 slot; all-orders 4.37602e-5); Placeholder 4.984e-5, Inae 1.45e-4.
+  02:37 slot: **v36a** in re-draws
   (cut 02:20). 03:37 slot: **v36b** (FRESH: v36a + timing, echoes and reset trades, all-orders 4.12933e-5, acceptance
   0.50144, 211 CX), re-draws 02:20–03:20 (`work/receipts/chain_v36b.sh`). Every slot gets the best-expected circuit's best draw.
 - **Incumbent v36a** (`work/lanes/MAIN/v36a`, SEPBC `checked16_timing_0`): guard5 lineage (R44, five storage guards) + a
@@ -27,7 +27,7 @@ as deltas with their acceptance cost.
 | 4 | P71 | G1 | R38 base's acceptance headroom (0.087): A decoder for its A placement, echoes, guards, mz inits, knapsack | a finalist below v36a | ENDSTATE (`work/lanes/ENDSTATE`) | active |
 | 5 | P72 | G1, G2 | xtim slow path: established (FRESH) — the circuit-wide `has_general` flag is set when any noise atom needs the PPR retry, and then every noisy shot takes the general path. Now: a static atom-count speed predictor, and FAST realizations of SLOW-but-better edits on v36b (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer; source reuse) | FAST finalists below v36b | FRESH (`work/lanes/FRESH`) | active |
 | 6 | P73 | G1 | Acceptance-only check removal (q16's c43 type), readout edges, a second independent A flag; then reviewer 7's M10 joint-record oracle | priced deltas for P75 | COMP29 (`work/lanes/COMP29`, on v35b) | active |
-| 7 | P67 | G1 | Population search with all-orders fitness under the acceptance floor | priced deltas for P75 | ST2 (`work/lanes/ST2`, on v35b) | active |
+| 7 | P67 | G1 | Population search with all-orders fitness under the acceptance floor, now on v36b (v35b round: −0.475%, and +0.0038 acceptance at −0.45%) | a finalist below v36b | ST2 (`work/lanes/ST2`, on v36b) | active |
 | 8 | P74 | G1 | Acceptance-efficient waiting-data protection (gain per acceptance) | menu `WAITPROT/menu_v35a.json` for P75 | WAITPROT (`work/lanes/WAITPROT`, on v35a) | active |
 | 9 | P62 | G1, G2 | B/C boundary cache with acceptance (0.035 s per variant) for a wide B/C search | priced deltas for P75 | BCPOL (`work/lanes/BCPOL`, on v35a) | active |
 | 10 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
