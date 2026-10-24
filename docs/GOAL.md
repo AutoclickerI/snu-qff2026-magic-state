@@ -5,8 +5,8 @@ The measure is the official 1-F (`tprep.check(..., shots=10**8, seed=0)`) of our
 submissions close, 2026-10-30 12:00 KST; the target is 1e-5 and the score is the remaining gap. Every admissible
 circuit has true expected 1-F ≥ 1.162e-5 (proved; FINDINGS "Floor, any circuit"), so 1e-5 is out of reach in
 expectation and "as close as possible" is the operative reading. A one-step final readout costs ≥ 2.567e-5;
-the best known complete design (grid-free) gives 3.55e-5. Rank 1 (R-20261023-1)
-follows from any entry below the leader (5.612e-5 on 2026-10-24); ties go to fewer 2-qubit gates, then the
+the grid-free reference design gives 3.55e-5; our grid incumbent's all-orders expectation is in PLAN "Status".
+Rank 1 (R-20261023-1) holds while our key stays below every other team's; ties go to fewer 2-qubit gates, then the
 earlier submission.
 
 ## Subgoals (ranked)
@@ -29,6 +29,6 @@ earlier submission.
   logistics.
 
 ## Terms
-- **True mean**: mean of the official score over seeds 0, 1000 and 2000 (1e8 shots each), or the mean of
-  seed-0 re-draws (`work/reorder.py`), which is tighter for a submitted circuit. The board shows one MC
-  draw (seed 0, ±1.2e-6).
+- **True mean**: the expected official 1-F of a circuit. Computed exactly by the all-orders evaluator
+  (`docs/reference/circuit.md`); estimated by the 3-seed MC mean or the mean of seed-0 re-draws. The board shows
+  one MC draw (seed 0, ±0.8e-6 near 4e-5); a submission is the best seed-0 re-draw of the best true-mean circuit.

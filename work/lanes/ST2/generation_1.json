@@ -2,22 +2,357 @@
   "front": [
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
       "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 44,
+          "old": 6,
+          "new": 1,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "612c62b4d6a8",
+      "fingerprint": "6ed90c1d1350",
+      "candidate_index": 0,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.0012666666666666668)",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[3]"
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 8,
+          "old": 1,
+          "new": 2,
+          "op": [
+            "reset q[0];",
+            "h q[0];"
+          ]
+        },
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 3,
+          "line": "// DETECTOR c[4]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "0b31cbada1e1",
+      "candidate_index": 1,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 10,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[10];",
+            "h q[10];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "015239774186",
+      "candidate_index": 2,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13, #40, #58 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            1,
+            2
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 6,
+          "q": 13,
+          "bit": 181
+        },
+        {
+          "family": "idle_detector",
+          "move": "idle_parity_watch",
+          "unit": 64,
+          "q": 19,
+          "basis": "MEASURE",
+          "time": 36
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "6b8126e06890",
+      "candidate_index": 3,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 46,
+          "q": 2
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 18,
+          "old": 3,
+          "new": 0,
+          "op": [
+            "reset q[3];",
+            "h q[3];"
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            35,
+            29
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "680cfa159139",
+      "candidate_index": 4,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #55, #56, #57, #58, #59 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "remove_edge",
+          "edge": [
+            19,
+            25
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "d2a7c4b652a2",
+      "candidate_index": 5,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #17, #19, #59 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 14,
+          "old": 2,
+          "new": 0,
+          "op": [
+            "reset q[15];",
+            "h q[15];"
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 25,
+          "q": 0,
+          "bit": 183
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "9a1234c2a03b",
+      "candidate_index": 6,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [],
+      "generation": 1,
+      "kind": "parent",
+      "fingerprint": "612c62b4d6a8",
+      "candidate_index": 7,
+      "seconds": 0.45190039899898693
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 46,
+          "q": 2
+        },
         {
           "family": "commute",
           "move": "swap",
           "units": [
-            71,
-            79
+            69,
+            82
           ],
           "old": [
             12,
@@ -25,154 +360,189 @@
           ],
           "ops": [
             [
-              "cx q[15],q[14];"
+              "cx q[3],q[9];"
             ],
             [
-              "cx q[20],q[14];"
+              "cx q[15],q[9];"
             ]
           ]
         },
         {
+          "family": "idle_detector",
+          "move": "idle_parity_watch",
+          "unit": 84,
+          "q": 13,
+          "basis": "MX",
+          "time": 36
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "144ce8a264b7",
+      "candidate_index": 8,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 47,
+          "q": 1
+        },
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 2,
+          "line": "// DETECTOR c[2]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "3e7097d3f2de",
+      "candidate_index": 9,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
           "family": "timing",
           "move": "single",
-          "unit": 68,
-          "old": 12,
-          "new": 10,
+          "unit": 44,
+          "old": 6,
+          "new": 0,
           "op": [
-            "cx q[10],q[4];"
+            "measure q[20] -> c[42];"
           ]
         },
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 1,
+          "line": "// DETECTOR c[1]"
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 5,
+          "old": 1,
+          "new": 0,
+          "op": [
+            "measure q[14] -> c[41];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "7bd38ee6870b",
+      "candidate_index": 10,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
         {
           "family": "init",
           "move": "check_rx",
-          "unit": 7,
-          "q": 9
+          "unit": 9,
+          "q": 10
         }
       ],
       "generation": 1,
-      "kind": "parent",
-      "parent": "c02e07bae418",
-      "fingerprint": "46dfdbe75c60",
-      "candidate_index": 0
+      "kind": "child",
+      "fingerprint": "fb7b4038a05a",
+      "candidate_index": 11,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
       "moves": [
         {
-          "family": "timing",
-          "move": "single",
-          "unit": 24,
-          "old": 3,
-          "new": 0,
-          "op": [
-            "reset q[0];",
-            "h q[0];"
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            8,
+            2
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            34,
+            28
           ]
         },
         {
           "family": "commute",
           "move": "swap",
           "units": [
-            74,
-            77
-          ],
-          "old": [
-            12,
-            13
-          ],
-          "ops": [
-            [
-              "cx q[3],q[2];"
-            ],
-            [
-              "cx q[8],q[2];"
-            ]
-          ]
-        },
-        {
-          "family": "commute",
-          "move": "swap",
-          "units": [
-            60,
-            67
-          ],
-          "old": [
-            10,
-            11
-          ],
-          "ops": [
-            [
-              "cx q[1],q[0];"
-            ],
-            [
-              "cx q[1],q[7];"
-            ]
-          ]
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "4d3317ae3c01",
-      "candidate_index": 1
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
-      "moves": [
-        {
-          "family": "timing",
-          "move": "single",
-          "unit": 89,
-          "old": 15,
-          "new": 0,
-          "op": [
-            "reset q[6];",
-            "h q[6];"
-          ]
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "a735c3c5bd70",
-      "candidate_index": 2
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
-      "moves": [
-        {
-          "family": "commute",
-          "move": "swap",
-          "units": [
-            50,
-            55
+            49,
+            54
           ],
           "old": [
             7,
@@ -186,89 +556,1414 @@
               "cx q[14],q[8];"
             ]
           ]
-        },
-        {
-          "family": "timing",
-          "move": "single",
-          "unit": 75,
-          "old": 13,
-          "new": 14,
-          "op": [
-            "cx q[4],q[10];"
-          ]
-        },
-        {
-          "family": "timing",
-          "move": "single",
-          "unit": 139,
-          "old": 32,
-          "new": 0,
-          "op": [
-            "measure q[16] -> c[43];"
-          ]
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "7557a3ed869e",
-      "candidate_index": 3
+      "fingerprint": "ff6577b6179b",
+      "candidate_index": 12,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 2,
+          "line": "// DETECTOR c[2]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "d324d98476b7",
+      "candidate_index": 13,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 17,
+          "old": 3,
+          "new": 0,
+          "op": [
+            "reset q[3];",
+            "h q[3];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "612c62b4d6a8",
+      "fingerprint": "91822b35d241",
+      "candidate_index": 14,
+      "seconds": 0.49900357401929796
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
       "moves": [
         {
           "family": "init",
           "move": "check_rx",
-          "unit": 89,
-          "q": 6
-        },
-        {
-          "family": "init",
-          "move": "watch_before_reset",
-          "axis": "Z",
-          "unit": 93,
-          "q": 2
-        },
-        {
-          "family": "init",
-          "move": "measure_to_reset",
-          "unit": 3,
-          "q": 8
+          "unit": 1,
+          "q": 13
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "107ba5c5dc72",
-      "candidate_index": 4
+      "parent": "91822b35d241",
+      "fingerprint": "8e4b0edc982a",
+      "candidate_index": 15,
+      "seconds": 0.49900357401929796
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            2,
+            1
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "91822b35d241",
+      "fingerprint": "3285b7fa105e",
+      "candidate_index": 16,
+      "seconds": 0.49900357401929796
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13, #39, #54 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            29,
+            35
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 7,
+          "q": 13,
+          "bit": 181
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "91822b35d241",
+      "fingerprint": "f401c5a2b518",
+      "candidate_index": 17,
+      "seconds": 0.49900357401929796
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.0023333333333333157)",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
       "moves": [
         {
           "family": "commute",
           "move": "swap",
           "units": [
-            13,
+            49,
+            53
+          ],
+          "old": [
+            7,
+            8
+          ],
+          "ops": [
+            [
+              "cx q[9],q[8];"
+            ],
+            [
+              "cx q[9],q[3];"
+            ]
+          ]
+        },
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[0]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "91822b35d241",
+      "fingerprint": "8b6332f9c41a",
+      "candidate_index": 18,
+      "seconds": 0.49900357401929796
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13, #39, #62 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            54,
+            58
+          ],
+          "old": [
+            8,
+            9
+          ],
+          "ops": [
+            [
+              "cx q[14],q[8];"
+            ],
+            [
+              "cx q[2],q[8];"
+            ]
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 19,
+          "q": 19,
+          "bit": 182
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            22,
+            25
+          ],
+          "old": [
+            3,
+            4
+          ],
+          "ops": [
+            [
+              "cx q[13],q[7];"
+            ],
+            [
+              "cx q[1],q[7];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "91822b35d241",
+      "fingerprint": "6b81dd2f8413",
+      "candidate_index": 19,
+      "seconds": 0.49900357401929796
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 30,
+          "q": 4
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 43,
+          "q": 9
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 45,
+          "old": 6,
+          "new": 5,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "91822b35d241",
+      "fingerprint": "531b3ed9ecdb",
+      "candidate_index": 20,
+      "seconds": 0.49900357401929796
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1166778171448213e-05,
+      "total": 5.622009990311281e-05,
+      "A1": 0.6794944306963929,
+      "exp_minus_A1": 0.5068731871222608,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.3012252820190042,
+      "triples": 21202,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            63,
+            66
+          ],
+          "old": [
+            10,
+            11
+          ],
+          "ops": [
+            [
+              "cx q[13],q[7];"
+            ],
+            [
+              "cx q[1],q[7];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "612c62b4d6a8",
+      "fingerprint": "05e6a0a8fea0",
+      "candidate_index": 21,
+      "seconds": 0.43278055399423465
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1166778171448213e-05,
+      "total": 5.622009990311281e-05,
+      "A1": 0.6794944306963929,
+      "exp_minus_A1": 0.5068731871222608,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.3012252820190042,
+      "triples": 21202,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 13,
+          "q": 15
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "05e6a0a8fea0",
+      "fingerprint": "fcba3857e538",
+      "candidate_index": 22,
+      "seconds": 0.43278055399423465
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1166778171448213e-05,
+      "total": 5.622009990311281e-05,
+      "A1": 0.6794944306963929,
+      "exp_minus_A1": 0.5068731871222608,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.3012252820190042,
+      "triples": 21202,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 3,
+          "old": 1,
+          "new": 0,
+          "op": [
+            "reset q[9];",
+            "h q[9];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "05e6a0a8fea0",
+      "fingerprint": "fde2e72d17a7",
+      "candidate_index": 23,
+      "seconds": 0.43278055399423465
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1166778171448213e-05,
+      "total": 5.622009990311281e-05,
+      "A1": 0.6794944306963929,
+      "exp_minus_A1": 0.5068731871222608,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.3012252820190042,
+      "triples": 21202,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            54,
+            58
+          ],
+          "old": [
+            8,
+            9
+          ],
+          "ops": [
+            [
+              "cx q[14],q[8];"
+            ],
+            [
+              "cx q[2],q[8];"
+            ]
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 8,
+          "old": 1,
+          "new": 2,
+          "op": [
+            "reset q[0];",
+            "h q[0];"
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 2,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "reset q[1];",
+            "h q[1];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "05e6a0a8fea0",
+      "fingerprint": "c48199626b99",
+      "candidate_index": 24,
+      "seconds": 0.43278055399423465
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.001166666666666658)",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1166778171448213e-05,
+      "total": 5.622009990311281e-05,
+      "A1": 0.6794944306963929,
+      "exp_minus_A1": 0.5068731871222608,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.3012252820190042,
+      "triples": 21202,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "XZ",
+          "line": "// DETECTOR c[0]"
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 2,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "reset q[1];",
+            "h q[1];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "05e6a0a8fea0",
+      "fingerprint": "ab3e2faa6a14",
+      "candidate_index": 25,
+      "seconds": 0.43278055399423465
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #11 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1166778171448213e-05,
+      "total": 5.622009990311281e-05,
+      "A1": 0.6794944306963929,
+      "exp_minus_A1": 0.5068731871222608,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.3012252820190042,
+      "triples": 21202,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            20,
+            26
+          ],
+          "old": [
+            3,
+            4
+          ],
+          "ops": [
+            [
+              "cx q[1],q[2];"
+            ],
+            [
+              "cx q[3],q[2];"
+            ]
+          ]
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 38,
+          "q": 14
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "05e6a0a8fea0",
+      "fingerprint": "636c58a8819d",
+      "candidate_index": 26,
+      "seconds": 0.43278055399423465
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.0017328888888888648)",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1166778171448213e-05,
+      "total": 5.622009990311281e-05,
+      "A1": 0.6794944306963929,
+      "exp_minus_A1": 0.5068731871222608,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.3012252820190042,
+      "triples": 21202,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[7]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "05e6a0a8fea0",
+      "fingerprint": "5a7367e3ef0b",
+      "candidate_index": 27,
+      "seconds": 0.43278055399423465
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5119988398331876e-05,
+      "third": 1.1155770407796595e-05,
+      "total": 5.627575880612847e-05,
+      "A1": 0.6774948751408371,
+      "exp_minus_A1": 0.507887722191122,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2657877840101719,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 16,
+          "old": 2,
+          "new": 0,
+          "op": [
+            "reset q[19];",
+            "h q[19];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "2bdd6c920ce2",
+      "fingerprint": "9a3f999fbb89",
+      "candidate_index": 28,
+      "seconds": 0.4495426380308345
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5119988398331876e-05,
+      "third": 1.1155770407796595e-05,
+      "total": 5.627575880612847e-05,
+      "A1": 0.6774948751408371,
+      "exp_minus_A1": 0.507887722191122,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2657877840101719,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            2,
+            8
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 44,
+          "old": 6,
+          "new": 4,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 46,
+          "q": 2
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "9a3f999fbb89",
+      "fingerprint": "855e9f62d253",
+      "candidate_index": 29,
+      "seconds": 0.4495426380308345
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5119988398331876e-05,
+      "third": 1.1155770407796595e-05,
+      "total": 5.627575880612847e-05,
+      "A1": 0.6774948751408371,
+      "exp_minus_A1": 0.507887722191122,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2657877840101719,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 4,
+          "line": "// DETECTOR c[4]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "9a3f999fbb89",
+      "fingerprint": "148deb919ee5",
+      "candidate_index": 30,
+      "seconds": 0.4495426380308345
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5119988398331876e-05,
+      "third": 1.1155770407796595e-05,
+      "total": 5.627575880612847e-05,
+      "A1": 0.6774948751408371,
+      "exp_minus_A1": 0.507887722191122,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2657877840101719,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            68,
+            71
+          ],
+          "old": [
+            11,
+            12
+          ],
+          "ops": [
+            [
+              "cx q[8],q[14];"
+            ],
+            [
+              "cx q[15],q[14];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "9a3f999fbb89",
+      "fingerprint": "a7b3d95c720f",
+      "candidate_index": 31,
+      "seconds": 0.4495426380308345
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5119988398331876e-05,
+      "third": 1.1155770407796595e-05,
+      "total": 5.627575880612847e-05,
+      "A1": 0.6774948751408371,
+      "exp_minus_A1": 0.507887722191122,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2657877840101719,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 41,
+          "q": 14
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "9a3f999fbb89",
+      "fingerprint": "67e2c0926f3f",
+      "candidate_index": 32,
+      "seconds": 0.4495426380308345
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.0019999999999999914)",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5119988398331876e-05,
+      "third": 1.1155770407796595e-05,
+      "total": 5.627575880612847e-05,
+      "A1": 0.6774948751408371,
+      "exp_minus_A1": 0.507887722191122,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2657877840101719,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[0]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "9a3f999fbb89",
+      "fingerprint": "a77e3b5e50e5",
+      "candidate_index": 33,
+      "seconds": 0.4495426380308345
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5119988398331876e-05,
+      "third": 1.1155770407796595e-05,
+      "total": 5.627575880612847e-05,
+      "A1": 0.6774948751408371,
+      "exp_minus_A1": 0.507887722191122,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2657877840101719,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 11,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "h q[1];",
+            "measure q[1] -> c[184];",
+            "h q[1];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "9a3f999fbb89",
+      "fingerprint": "9f485c4f6ce3",
+      "candidate_index": 34,
+      "seconds": 0.4495426380308345
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398331984e-05,
+      "third": 1.1155770407796894e-05,
+      "total": 5.627575880612888e-05,
+      "A1": 0.6761624306963929,
+      "exp_minus_A1": 0.5085649054192823,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.29605207999702543,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [],
+      "generation": 1,
+      "kind": "parent",
+      "fingerprint": "2bdd6c920ce2",
+      "candidate_index": 35,
+      "seconds": 0.4122266009799205
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398331984e-05,
+      "third": 1.1155770407796894e-05,
+      "total": 5.627575880612888e-05,
+      "A1": 0.6761624306963929,
+      "exp_minus_A1": 0.5085649054192823,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.29605207999702543,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 13,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[15];",
+            "h q[15];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "c54e08fd0a76",
+      "candidate_index": 36,
+      "seconds": 0.4122266009799205,
+      "parent": "2bdd6c920ce2"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398331984e-05,
+      "third": 1.1155770407796894e-05,
+      "total": 5.627575880612888e-05,
+      "A1": 0.6761624306963929,
+      "exp_minus_A1": 0.5085649054192823,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.29605207999702543,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 47,
+          "q": 1
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "6fc852f52ccc",
+      "candidate_index": 37,
+      "seconds": 0.4122266009799205,
+      "parent": "2bdd6c920ce2"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398331984e-05,
+      "third": 1.1155770407796894e-05,
+      "total": 5.627575880612888e-05,
+      "A1": 0.6761624306963929,
+      "exp_minus_A1": 0.5085649054192823,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.29605207999702543,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            70,
+            77
+          ],
+          "old": [
+            12,
+            13
+          ],
+          "ops": [
+            [
+              "cx q[8],q[9];"
+            ],
+            [
+              "cx q[8],q[2];"
+            ]
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 24,
+          "old": 4,
+          "new": 3,
+          "op": [
+            "h q[0];",
+            "measure q[0] -> c[183];",
+            "h q[0];"
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            28,
+            29
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "71fe8fd8b5a3",
+      "candidate_index": 38,
+      "seconds": 0.4122266009799205,
+      "parent": "2bdd6c920ce2"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398331984e-05,
+      "third": 1.1155770407796894e-05,
+      "total": 5.627575880612888e-05,
+      "A1": 0.6761624306963929,
+      "exp_minus_A1": 0.5085649054192823,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.29605207999702543,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            2,
+            8
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "296dfdc5f045",
+      "candidate_index": 39,
+      "seconds": 0.4122266009799205,
+      "parent": "2bdd6c920ce2"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #11 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398331984e-05,
+      "third": 1.1155770407796894e-05,
+      "total": 5.627575880612888e-05,
+      "A1": 0.6761624306963929,
+      "exp_minus_A1": 0.5085649054192823,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.29605207999702543,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 0,
+          "line": "// DETECTOR c[0]"
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 41,
+          "q": 14
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 16,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[19];",
+            "h q[19];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "2a9bab2c5197",
+      "candidate_index": 40,
+      "seconds": 0.4122266009799205,
+      "parent": "2bdd6c920ce2"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398331984e-05,
+      "third": 1.1155770407796894e-05,
+      "total": 5.627575880612888e-05,
+      "A1": 0.6761624306963929,
+      "exp_minus_A1": 0.5085649054192823,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.29605207999702543,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 11,
+          "old": 2,
+          "new": 0,
+          "op": [
+            "measure q[2] -> c[39];"
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 13,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[15];",
+            "h q[15];"
+          ]
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            67,
+            70
+          ],
+          "old": [
+            11,
+            12
+          ],
+          "ops": [
+            [
+              "cx q[3],q[9];"
+            ],
+            [
+              "cx q[8],q[9];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "6399ea1460db",
+      "candidate_index": 41,
+      "seconds": 0.4122266009799205,
+      "parent": "2bdd6c920ce2"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.511998839833173e-05,
+      "third": 1.1155770407797254e-05,
+      "total": 5.627575880612899e-05,
+      "A1": 0.6778290973630596,
+      "exp_minus_A1": 0.5077180031914822,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16966,
+      "pair_seconds": 0.27305154502391815,
+      "triples": 21358,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 30,
+          "q": 4
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "2bdd6c920ce2",
+      "fingerprint": "346fab5d7e83",
+      "candidate_index": 42,
+      "seconds": 0.42933964100666344
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12, #17, #22, #41, #44, #49, #58, #59, #60 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.511998839833173e-05,
+      "third": 1.1155770407797254e-05,
+      "total": 5.627575880612899e-05,
+      "A1": 0.6778290973630596,
+      "exp_minus_A1": 0.5077180031914822,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16966,
+      "pair_seconds": 0.27305154502391815,
+      "triples": 21358,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "init",
+          "move": "reset_to_measure",
+          "unit": 42,
+          "q": 14
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "346fab5d7e83",
+      "fingerprint": "32a892d0f129",
+      "candidate_index": 43,
+      "seconds": 0.42933964100666344
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.511998839833173e-05,
+      "third": 1.1155770407797254e-05,
+      "total": 5.627575880612899e-05,
+      "A1": 0.6778290973630596,
+      "exp_minus_A1": 0.5077180031914822,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16966,
+      "pair_seconds": 0.27305154502391815,
+      "triples": 21358,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "remove_edge",
+          "edge": [
+            17,
+            16
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 3,
+          "old": 1,
+          "new": 0,
+          "op": [
+            "reset q[9];",
+            "h q[9];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "346fab5d7e83",
+      "fingerprint": "b3486bdb2306",
+      "candidate_index": 44,
+      "seconds": 0.42933964100666344
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.511998839833173e-05,
+      "third": 1.1155770407797254e-05,
+      "total": 5.627575880612899e-05,
+      "A1": 0.6778290973630596,
+      "exp_minus_A1": 0.5077180031914822,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16966,
+      "pair_seconds": 0.27305154502391815,
+      "triples": 21358,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            15,
+            22
+          ],
+          "old": [
+            2,
+            3
+          ],
+          "ops": [
+            [
+              "cx q[13],q[14];"
+            ],
+            [
+              "cx q[13],q[7];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "346fab5d7e83",
+      "fingerprint": "ff3440c38cf1",
+      "candidate_index": 45,
+      "seconds": 0.42933964100666344
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.511998839833173e-05,
+      "third": 1.1155770407797254e-05,
+      "total": 5.627575880612899e-05,
+      "A1": 0.6778290973630596,
+      "exp_minus_A1": 0.5077180031914822,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16966,
+      "pair_seconds": 0.27305154502391815,
+      "triples": 21358,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            14,
             21
           ],
           "old": [
@@ -287,78 +1982,425 @@
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "98ab9ab33f2f",
-      "candidate_index": 5
+      "parent": "346fab5d7e83",
+      "fingerprint": "590033f58699",
+      "candidate_index": 46,
+      "seconds": 0.42933964100666344
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.511998839833173e-05,
+      "third": 1.1155770407797254e-05,
+      "total": 5.627575880612899e-05,
+      "A1": 0.6778290973630596,
+      "exp_minus_A1": 0.5077180031914822,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 16966,
+      "pair_seconds": 0.27305154502391815,
+      "triples": 21358,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
       "moves": [
         {
           "family": "init",
-          "move": "measure_to_reset",
-          "unit": 85,
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 48,
+          "q": 1
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 47,
+          "q": 2
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 17,
+          "old": 3,
+          "new": 1,
+          "op": [
+            "reset q[3];",
+            "h q[3];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "346fab5d7e83",
+      "fingerprint": "85d7b6beceba",
+      "candidate_index": 47,
+      "seconds": 0.42933964100666344
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.511998839833173e-05,
+      "third": 1.1155770407797254e-05,
+      "total": 5.627575880612899e-05,
+      "A1": 0.6778290973630596,
+      "exp_minus_A1": 0.5077180031914822,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16966,
+      "pair_seconds": 0.27305154502391815,
+      "triples": 21358,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            29,
+            28
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "346fab5d7e83",
+      "fingerprint": "8921f11080e2",
+      "candidate_index": 48,
+      "seconds": 0.42933964100666344
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398333726e-05,
+      "third": 1.1269143612976563e-05,
+      "total": 5.638913201131029e-05,
+      "A1": 0.6769624306963928,
+      "exp_minus_A1": 0.5081582161923278,
+      "cx": 195,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16915,
+      "pair_seconds": 0.27862323296722025,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            2,
+            1
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "2bdd6c920ce2",
+      "fingerprint": "2cd1f18622c2",
+      "candidate_index": 49,
+      "seconds": 0.450673176033888
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398333726e-05,
+      "third": 1.1269143612976563e-05,
+      "total": 5.638913201131029e-05,
+      "A1": 0.6769624306963928,
+      "exp_minus_A1": 0.5081582161923278,
+      "cx": 195,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16915,
+      "pair_seconds": 0.27862323296722025,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 30,
+          "old": 4,
+          "new": 3,
+          "op": [
+            "reset q[4];",
+            "h q[4];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "2cd1f18622c2",
+      "fingerprint": "181d7aac22f0",
+      "candidate_index": 50,
+      "seconds": 0.450673176033888
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398333726e-05,
+      "third": 1.1269143612976563e-05,
+      "total": 5.638913201131029e-05,
+      "A1": 0.6769624306963928,
+      "exp_minus_A1": 0.5081582161923278,
+      "cx": 195,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16915,
+      "pair_seconds": 0.27862323296722025,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 41,
+          "q": 14
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 51,
           "q": 10
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "67000c28d9c9",
-      "candidate_index": 6
+      "parent": "2cd1f18622c2",
+      "fingerprint": "5d7620745e8c",
+      "candidate_index": 51,
+      "seconds": 0.450673176033888
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398333726e-05,
+      "third": 1.1269143612976563e-05,
+      "total": 5.638913201131029e-05,
+      "A1": 0.6769624306963928,
+      "exp_minus_A1": 0.5081582161923278,
+      "cx": 195,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
+      "nchars": 16915,
+      "pair_seconds": 0.27862323296722025,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
       "moves": [
         {
-          "family": "init",
-          "move": "measure_to_reset",
-          "unit": 64,
-          "q": 19
+          "family": "timing",
+          "move": "single",
+          "unit": 30,
+          "old": 4,
+          "new": 2,
+          "op": [
+            "reset q[4];",
+            "h q[4];"
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 3,
+          "old": 1,
+          "new": 0,
+          "op": [
+            "reset q[9];",
+            "h q[9];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "2cd1f18622c2",
+      "fingerprint": "390f6b992684",
+      "candidate_index": 52,
+      "seconds": 0.450673176033888
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.0015333333333333245)",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398333726e-05,
+      "third": 1.1269143612976563e-05,
+      "total": 5.638913201131029e-05,
+      "A1": 0.6769624306963928,
+      "exp_minus_A1": 0.5081582161923278,
+      "cx": 195,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16915,
+      "pair_seconds": 0.27862323296722025,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[6]"
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            26,
+            33
+          ],
+          "old": [
+            4,
+            5
+          ],
+          "ops": [
+            [
+              "cx q[3],q[2];"
+            ],
+            [
+              "cx q[8],q[2];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "2cd1f18622c2",
+      "fingerprint": "9c120f42a2a6",
+      "candidate_index": 53,
+      "seconds": 0.450673176033888
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398333726e-05,
+      "third": 1.1269143612976563e-05,
+      "total": 5.638913201131029e-05,
+      "A1": 0.6769624306963928,
+      "exp_minus_A1": 0.5081582161923278,
+      "cx": 195,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16915,
+      "pair_seconds": 0.27862323296722025,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "idle_detector",
+          "move": "idle_parity_watch",
+          "unit": 44,
+          "q": 20,
+          "basis": "MEASURE",
+          "time": 7
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "2cd1f18622c2",
+      "fingerprint": "3ec1e6b6dfa9",
+      "candidate_index": 54,
+      "seconds": 0.450673176033888
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.0017328888888888648)",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5119988398333726e-05,
+      "third": 1.1269143612976563e-05,
+      "total": 5.638913201131029e-05,
+      "A1": 0.6769624306963928,
+      "exp_minus_A1": 0.5081582161923278,
+      "cx": 195,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16915,
+      "pair_seconds": 0.27862323296722025,
+      "triples": 21351,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_best_r2",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[7]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "2cd1f18622c2",
+      "fingerprint": "a6c1e8d20178",
+      "candidate_index": 55,
+      "seconds": 0.450673176033888
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653334e-05,
+      "third": 1.1807665694449906e-05,
+      "total": 5.733378236710324e-05,
+      "A1": 0.6633678186837064,
+      "exp_minus_A1": 0.5151136007392759,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.2852632299764082,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 46,
+          "old": 7,
+          "new": 1,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
         }
       ],
       "generation": 1,
       "kind": "parent",
-      "parent": "880ef4f70f14",
-      "fingerprint": "c56d2141566a",
-      "candidate_index": 7
+      "parent": "9af6b69e6334",
+      "fingerprint": "8a31c10560f3",
+      "candidate_index": 56
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653334e-05,
+      "third": 1.1807665694449906e-05,
+      "total": 5.733378236710324e-05,
+      "A1": 0.6633678186837064,
+      "exp_minus_A1": 0.5151136007392759,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
+      "nchars": 16949,
+      "pair_seconds": 0.2852632299764082,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
       "moves": [
         {
           "family": "commute",
           "move": "swap",
           "units": [
-            19,
-            26
+            20,
+            27
           ],
           "old": [
             3,
@@ -376,162 +2418,1165 @@
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "0edc15353220",
-      "candidate_index": 8
+      "parent": "8a31c10560f3",
+      "fingerprint": "7281d9aa3900",
+      "candidate_index": 57
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653334e-05,
+      "third": 1.1807665694449906e-05,
+      "total": 5.733378236710324e-05,
+      "A1": 0.6633678186837064,
+      "exp_minus_A1": 0.5151136007392759,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
+      "nchars": 16949,
+      "pair_seconds": 0.2852632299764082,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
       "moves": [
         {
           "family": "init",
-          "move": "watch_before_reset",
-          "axis": "X",
-          "unit": 90,
+          "move": "check_rx",
+          "unit": 43,
           "q": 9
-        },
-        {
-          "family": "readout",
-          "move": "add_edge",
-          "edge": [
-            8,
-            14
-          ]
-        },
-        {
-          "family": "readout",
-          "move": "remove_edge",
-          "edge": [
-            19,
-            25
-          ]
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "b32906c0d19f",
-      "candidate_index": 9
+      "parent": "8a31c10560f3",
+      "fingerprint": "8e5deadcac7b",
+      "candidate_index": 58
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653334e-05,
+      "third": 1.1807665694449906e-05,
+      "total": 5.733378236710324e-05,
+      "A1": 0.6633678186837064,
+      "exp_minus_A1": 0.5151136007392759,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
-      "moves": [
-        {
-          "family": "init",
-          "move": "measure_to_reset",
-          "unit": 2,
-          "q": 8
-        },
-        {
-          "family": "timing",
-          "move": "single",
-          "unit": 63,
-          "old": 10,
-          "new": 9,
-          "op": [
-            "cx q[13],q[7];"
-          ]
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "b74abaeb348e",
-      "candidate_index": 10
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
+      "nchars": 16949,
+      "pair_seconds": 0.2852632299764082,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
       "moves": [
         {
           "family": "commute",
           "move": "swap",
           "units": [
-            71,
-            77
+            27,
+            34
           ],
           "old": [
-            12,
-            13
+            4,
+            5
           ],
           "ops": [
             [
-              "cx q[15],q[14];"
+              "cx q[3],q[2];"
             ],
             [
-              "cx q[15],q[9];"
+              "cx q[8],q[2];"
             ]
           ]
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "73d6153d6fe7",
-      "candidate_index": 11
+      "parent": "8a31c10560f3",
+      "fingerprint": "5d7475fc19e5",
+      "candidate_index": 59
     },
     {
       "ok": true,
-      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #36, #51, #52, #53 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653334e-05,
+      "third": 1.1807665694449906e-05,
+      "total": 5.733378236710324e-05,
+      "A1": 0.6633678186837064,
+      "exp_minus_A1": 0.5151136007392759,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
+      "nchars": 16949,
+      "pair_seconds": 0.2852632299764082,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
       "moves": [
         {
-          "family": "phase",
-          "move": "tdg_mask",
-          "mask": 7
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 50,
+          "q": 10
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            28,
+            29
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            16,
+            17
+          ]
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "6dfec3f63ca1",
-      "candidate_index": 12
+      "parent": "8a31c10560f3",
+      "fingerprint": "9bec10210f5b",
+      "candidate_index": 60
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
+      "error": "AssertionError(0.0014000000000000002)",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653334e-05,
+      "third": 1.1807665694449906e-05,
+      "total": 5.733378236710324e-05,
+      "A1": 0.6633678186837064,
+      "exp_minus_A1": 0.5151136007392759,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
+      "nchars": 16949,
+      "pair_seconds": 0.2852632299764082,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 3,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "reset q[1];",
+            "h q[1];"
+          ]
+        },
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[4]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "8a31c10560f3",
+      "fingerprint": "e4e14263bab6",
+      "candidate_index": 61
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #18 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653334e-05,
+      "third": 1.1807665694449906e-05,
+      "total": 5.733378236710324e-05,
+      "A1": 0.6633678186837064,
+      "exp_minus_A1": 0.5151136007392759,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.2852632299764082,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 3,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "reset q[1];",
+            "h q[1];"
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 18,
+          "q": 10,
+          "bit": 187
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "8a31c10560f3",
+      "fingerprint": "0090fc44bf3a",
+      "candidate_index": 62
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5526116672653774e-05,
+      "third": 1.180766569444962e-05,
+      "total": 5.7333782367103396e-05,
+      "A1": 0.6593811283370271,
+      "exp_minus_A1": 0.5171712981345895,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.29746090102707967,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [],
+      "generation": 1,
+      "kind": "parent",
+      "fingerprint": "9af6b69e6334",
+      "candidate_index": 63
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5526116672653774e-05,
+      "third": 1.180766569444962e-05,
+      "total": 5.7333782367103396e-05,
+      "A1": 0.6593811283370271,
+      "exp_minus_A1": 0.5171712981345895,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.29746090102707967,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            29,
+            35
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "e3227ffab970",
+      "candidate_index": 64,
+      "parent": "9af6b69e6334"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12, #38, #56 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5526116672653774e-05,
+      "third": 1.180766569444962e-05,
+      "total": 5.7333782367103396e-05,
+      "A1": 0.6593811283370271,
+      "exp_minus_A1": 0.5171712981345895,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.29746090102707967,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 3,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "reset q[1];",
+            "h q[1];"
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 18,
+          "q": 19,
+          "bit": 182
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 46,
+          "old": 7,
+          "new": 6,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "91cfa0022f3b",
+      "candidate_index": 65,
+      "parent": "9af6b69e6334"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #18 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5526116672653774e-05,
+      "third": 1.180766569444962e-05,
+      "total": 5.7333782367103396e-05,
+      "A1": 0.6593811283370271,
+      "exp_minus_A1": 0.5171712981345895,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.29746090102707967,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 31,
+          "q": 4,
+          "bit": 188
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "98d1e508b7bc",
+      "candidate_index": 66,
+      "parent": "9af6b69e6334"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5526116672653774e-05,
+      "third": 1.180766569444962e-05,
+      "total": 5.7333782367103396e-05,
+      "A1": 0.6593811283370271,
+      "exp_minus_A1": 0.5171712981345895,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.29746090102707967,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            55,
+            61
+          ],
+          "old": [
+            9,
+            10
+          ],
+          "ops": [
+            [
+              "cx q[9],q[10];"
+            ],
+            [
+              "cx q[9],q[15];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "e5a5f8ba04e3",
+      "candidate_index": 67,
+      "parent": "9af6b69e6334"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5526116672653774e-05,
+      "third": 1.180766569444962e-05,
+      "total": 5.7333782367103396e-05,
+      "A1": 0.6593811283370271,
+      "exp_minus_A1": 0.5171712981345895,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.29746090102707967,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 47,
+          "q": 1
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            21,
+            25
+          ],
+          "old": [
+            3,
+            4
+          ],
+          "ops": [
+            [
+              "cx q[13],q[7];"
+            ],
+            [
+              "cx q[1],q[7];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "4394c10631e8",
+      "candidate_index": 68,
+      "parent": "9af6b69e6334"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.5526116672653774e-05,
+      "third": 1.180766569444962e-05,
+      "total": 5.7333782367103396e-05,
+      "A1": 0.6593811283370271,
+      "exp_minus_A1": 0.5171712981345895,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16949,
+      "pair_seconds": 0.29746090102707967,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 23,
+          "old": 3,
+          "new": 2,
+          "op": [
+            "reset q[0];",
+            "h q[0];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "82099cb4bdeb",
+      "candidate_index": 69,
+      "parent": "9af6b69e6334"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265385e-05,
+      "third": 1.1807665694449655e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.664046906114805,
+      "exp_minus_A1": 0.5147639123153712,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17085,
+      "pair_seconds": 0.32136405602796003,
+      "triples": 21386,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "idle_detector",
+          "move": "idle_parity_watch",
+          "unit": 84,
+          "q": 13,
+          "basis": "MX",
+          "time": 15
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 47,
+          "old": 7,
+          "new": 5,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "64eab233d3bd",
+      "fingerprint": "870fe7d4f344",
+      "candidate_index": 70
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265385e-05,
+      "third": 1.1807665694449655e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.664046906114805,
+      "exp_minus_A1": 0.5147639123153712,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17085,
+      "pair_seconds": 0.32136405602796003,
+      "triples": 21386,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 8,
+          "q": 19
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "870fe7d4f344",
+      "fingerprint": "ad95d5d1d552",
+      "candidate_index": 71
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265385e-05,
+      "third": 1.1807665694449655e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.664046906114805,
+      "exp_minus_A1": 0.5147639123153712,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17085,
+      "pair_seconds": 0.32136405602796003,
+      "triples": 21386,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            8,
+            2
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "870fe7d4f344",
+      "fingerprint": "515be2cab004",
+      "candidate_index": 72
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265385e-05,
+      "third": 1.1807665694449655e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.664046906114805,
+      "exp_minus_A1": 0.5147639123153712,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17085,
+      "pair_seconds": 0.32136405602796003,
+      "triples": 21386,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            54,
+            62
+          ],
+          "old": [
+            8,
+            10
+          ],
+          "ops": [
+            [
+              "cx q[9],q[3];"
+            ],
+            [
+              "cx q[9],q[15];"
+            ]
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            14,
+            15
+          ]
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            20,
+            26
+          ],
+          "old": [
+            3,
+            4
+          ],
+          "ops": [
+            [
+              "cx q[1],q[2];"
+            ],
+            [
+              "cx q[1],q[7];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "870fe7d4f344",
+      "fingerprint": "6799c9a93dcc",
+      "candidate_index": 73
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265385e-05,
+      "third": 1.1807665694449655e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.664046906114805,
+      "exp_minus_A1": 0.5147639123153712,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17085,
+      "pair_seconds": 0.32136405602796003,
+      "triples": 21386,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 38,
+          "old": 5,
+          "new": 2,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "870fe7d4f344",
+      "fingerprint": "622b5b762f66",
+      "candidate_index": 74
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265385e-05,
+      "third": 1.1807665694449655e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.664046906114805,
+      "exp_minus_A1": 0.5147639123153712,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17085,
+      "pair_seconds": 0.32136405602796003,
+      "triples": 21386,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[0]"
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 51,
+          "q": 10
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "870fe7d4f344",
+      "fingerprint": "ce736c46fb67",
+      "candidate_index": 75
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265385e-05,
+      "third": 1.1807665694449655e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.664046906114805,
+      "exp_minus_A1": 0.5147639123153712,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17085,
+      "pair_seconds": 0.32136405602796003,
+      "triples": 21386,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 4,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "reset q[9];",
+            "h q[9];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "870fe7d4f344",
+      "fingerprint": "06d38463bf22",
+      "candidate_index": 76
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265389e-05,
+      "third": 1.1807665694449614e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.6620451295222124,
+      "exp_minus_A1": 0.5157953867119711,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.27344094595173374,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 47,
+          "old": 7,
+          "new": 4,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "5e387213be6b",
+      "fingerprint": "d4f486e5b325",
+      "candidate_index": 77
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #14, #18, #23, #42, #46, #51, #60, #61, #62 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265389e-05,
+      "third": 1.1807665694449614e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.6620451295222124,
+      "exp_minus_A1": 0.5157953867119711,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.27344094595173374,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 24,
+          "q": 0
+        },
+        {
+          "family": "idle_detector",
+          "move": "idle_parity_watch",
+          "unit": 85,
+          "q": 13,
+          "basis": "MX",
+          "time": 36
+        },
+        {
+          "family": "init",
+          "move": "reset_to_measure",
+          "unit": 44,
+          "q": 14
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "d4f486e5b325",
+      "fingerprint": "520aef72b69e",
+      "candidate_index": 78
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265389e-05,
+      "third": 1.1807665694449614e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.6620451295222124,
+      "exp_minus_A1": 0.5157953867119711,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.27344094595173374,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            2,
+            1
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "d4f486e5b325",
+      "fingerprint": "b85c63ea3bb6",
+      "candidate_index": 79
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265389e-05,
+      "third": 1.1807665694449614e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.6620451295222124,
+      "exp_minus_A1": 0.5157953867119711,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.27344094595173374,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 45,
+          "q": 13
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "d4f486e5b325",
+      "fingerprint": "62295046d3c9",
+      "candidate_index": 80
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13, #14, #15 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265389e-05,
+      "third": 1.1807665694449614e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.6620451295222124,
+      "exp_minus_A1": 0.5157953867119711,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.27344094595173374,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 47,
+          "q": 2
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 44,
+          "q": 9
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 52,
+          "q": 2
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "d4f486e5b325",
+      "fingerprint": "c1fdc680f1ba",
+      "candidate_index": 81
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265389e-05,
+      "third": 1.1807665694449614e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.6620451295222124,
+      "exp_minus_A1": 0.5157953867119711,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.27344094595173374,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 4,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "reset q[9];",
+            "h q[9];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "d4f486e5b325",
+      "fingerprint": "3f8cc9943cff",
+      "candidate_index": 82
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265389e-05,
+      "third": 1.1807665694449614e-05,
+      "total": 5.7333782367103504e-05,
+      "A1": 0.6620451295222124,
+      "exp_minus_A1": 0.5157953867119711,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.27344094595173374,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 32,
+          "old": 4,
+          "new": 3,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 15,
+          "old": 2,
+          "new": 0,
+          "op": [
+            "reset q[10];",
+            "h q[10];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "d4f486e5b325",
+      "fingerprint": "5e02eb1d0765",
+      "candidate_index": 83
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265386e-05,
+      "third": 1.1807665694449674e-05,
+      "total": 5.733378236710354e-05,
+      "A1": 0.658381128337027,
+      "exp_minus_A1": 0.51768872810459,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2747681890032254,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0df",
+      "moves": [],
+      "generation": 1,
+      "kind": "parent",
+      "fingerprint": "1359b6da9f24",
+      "candidate_index": 84
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265386e-05,
+      "third": 1.1807665694449674e-05,
+      "total": 5.733378236710354e-05,
+      "A1": 0.658381128337027,
+      "exp_minus_A1": 0.51768872810459,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2747681890032254,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 23,
+          "old": 3,
+          "new": 0,
+          "op": [
+            "reset q[0];",
+            "h q[0];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "e067a7363cac",
+      "candidate_index": 85,
+      "parent": "1359b6da9f24"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265386e-05,
+      "third": 1.1807665694449674e-05,
+      "total": 5.733378236710354e-05,
+      "A1": 0.658381128337027,
+      "exp_minus_A1": 0.51768872810459,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2747681890032254,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0df",
+      "moves": [
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            13,
+            21
+          ],
+          "old": [
+            2,
+            3
+          ],
+          "ops": [
+            [
+              "cx q[13],q[14];"
+            ],
+            [
+              "cx q[13],q[7];"
+            ]
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            25,
+            19
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "d8210e068365",
+      "candidate_index": 86,
+      "parent": "1359b6da9f24"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265386e-05,
+      "third": 1.1807665694449674e-05,
+      "total": 5.733378236710354e-05,
+      "A1": 0.658381128337027,
+      "exp_minus_A1": 0.51768872810459,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2747681890032254,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0df",
       "moves": [
         {
           "family": "commute",
@@ -554,128 +3599,848 @@
           ]
         },
         {
-          "family": "timing",
-          "move": "single",
-          "unit": 74,
-          "old": 13,
-          "new": 14,
-          "op": [
-            "cx q[4],q[10];"
-          ]
+          "family": "init",
+          "move": "check_rx",
+          "unit": 42,
+          "q": 9
         },
         {
-          "family": "init",
-          "move": "watch_before_reset",
-          "axis": "X",
-          "unit": 45,
-          "q": 2
+          "family": "timing",
+          "move": "single",
+          "unit": 11,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[15];",
+            "h q[15];"
+          ]
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "7f74ef89eb68",
-      "candidate_index": 13
-    }
-  ],
-  "selected": [
+      "fingerprint": "4c75c2ca8bcd",
+      "candidate_index": 87,
+      "parent": "1359b6da9f24"
+    },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265386e-05,
+      "third": 1.1807665694449674e-05,
+      "total": 5.733378236710354e-05,
+      "A1": 0.658381128337027,
+      "exp_minus_A1": 0.51768872810459,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 16907,
+      "pair_seconds": 0.2747681890032254,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 23,
+          "old": 3,
+          "new": 1,
+          "op": [
+            "reset q[0];",
+            "h q[0];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "3bef5ab99ad9",
+      "candidate_index": 88,
+      "parent": "1359b6da9f24"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265386e-05,
+      "third": 1.1807665694449674e-05,
+      "total": 5.733378236710354e-05,
+      "A1": 0.658381128337027,
+      "exp_minus_A1": 0.51768872810459,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2747681890032254,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0df",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 15,
+          "q": 19
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "bbcc6b6a8c8c",
+      "candidate_index": 89,
+      "parent": "1359b6da9f24"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265386e-05,
+      "third": 1.1807665694449674e-05,
+      "total": 5.733378236710354e-05,
+      "A1": 0.658381128337027,
+      "exp_minus_A1": 0.51768872810459,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16907,
+      "pair_seconds": 0.2747681890032254,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0df",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 10,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "h q[9];",
+            "measure q[9] -> c[186];",
+            "h q[9];"
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            14,
+            15
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "b637e8303f7b",
+      "candidate_index": 90,
+      "parent": "1359b6da9f24"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265369e-05,
+      "third": 1.1807665694449923e-05,
+      "total": 5.733378236710362e-05,
+      "A1": 0.6600477950036937,
+      "exp_minus_A1": 0.5168266321705866,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.34893261798424646,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [],
+      "generation": 1,
+      "kind": "parent",
+      "fingerprint": "5e387213be6b",
+      "candidate_index": 91
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265369e-05,
+      "third": 1.1807665694449923e-05,
+      "total": 5.733378236710362e-05,
+      "A1": 0.6600477950036937,
+      "exp_minus_A1": 0.5168266321705866,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.34893261798424646,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
       "moves": [
         {
           "family": "commute",
           "move": "swap",
           "units": [
-            71,
-            79
+            54,
+            62
           ],
           "old": [
-            12,
-            14
+            8,
+            10
           ],
           "ops": [
             [
-              "cx q[15],q[14];"
+              "cx q[9],q[3];"
             ],
             [
-              "cx q[20],q[14];"
+              "cx q[9],q[15];"
             ]
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            35,
+            29
+          ]
+        },
+        {
+          "family": "init",
+          "move": "measure_to_reset",
+          "unit": 5,
+          "q": 8
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "8f35369d67f6",
+      "candidate_index": 92,
+      "parent": "5e387213be6b"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265369e-05,
+      "third": 1.1807665694449923e-05,
+      "total": 5.733378236710362e-05,
+      "A1": 0.6600477950036937,
+      "exp_minus_A1": 0.5168266321705866,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.34893261798424646,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 11,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "h q[9];",
+            "measure q[9] -> c[186];",
+            "h q[9];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "bdec4ad870ca",
+      "candidate_index": 93,
+      "parent": "5e387213be6b"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265369e-05,
+      "third": 1.1807665694449923e-05,
+      "total": 5.733378236710362e-05,
+      "A1": 0.6600477950036937,
+      "exp_minus_A1": 0.5168266321705866,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.34893261798424646,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 47,
+          "old": 7,
+          "new": 2,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "cdeeabc7985b",
+      "candidate_index": 94,
+      "parent": "5e387213be6b"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265369e-05,
+      "third": 1.1807665694449923e-05,
+      "total": 5.733378236710362e-05,
+      "A1": 0.6600477950036937,
+      "exp_minus_A1": 0.5168266321705866,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.34893261798424646,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 2,
+          "old": 0,
+          "new": 1,
+          "op": [
+            "measure q[14] -> c[41];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "d22b3350aaa8",
+      "candidate_index": 95,
+      "parent": "5e387213be6b"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265369e-05,
+      "third": 1.1807665694449923e-05,
+      "total": 5.733378236710362e-05,
+      "A1": 0.6600477950036937,
+      "exp_minus_A1": 0.5168266321705866,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.34893261798424646,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 31,
+          "old": 4,
+          "new": 2,
+          "op": [
+            "reset q[4];",
+            "h q[4];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "839398062abc",
+      "candidate_index": 96,
+      "parent": "5e387213be6b"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #19 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265369e-05,
+      "third": 1.1807665694449923e-05,
+      "total": 5.733378236710362e-05,
+      "A1": 0.6600477950036937,
+      "exp_minus_A1": 0.5168266321705866,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.34893261798424646,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 32,
+          "q": 4,
+          "bit": 188
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "10ffc05fd8bc",
+      "candidate_index": 97,
+      "parent": "5e387213be6b"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265379e-05,
+      "third": 1.1807665694449841e-05,
+      "total": 5.733378236710363e-05,
+      "A1": 0.6610477950036939,
+      "exp_minus_A1": 0.5163100638656157,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17009,
+      "pair_seconds": 0.24842046695994213,
+      "triples": 21379,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [],
+      "generation": 1,
+      "kind": "parent",
+      "fingerprint": "64eab233d3bd",
+      "candidate_index": 98
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265379e-05,
+      "third": 1.1807665694449841e-05,
+      "total": 5.733378236710363e-05,
+      "A1": 0.6610477950036939,
+      "exp_minus_A1": 0.5163100638656157,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17009,
+      "pair_seconds": 0.24842046695994213,
+      "triples": 21379,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 60,
+          "old": 10,
+          "new": 9,
+          "op": [
+            "cx q[1],q[0];"
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            31,
+            25
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "ffc16b942947",
+      "candidate_index": 99,
+      "parent": "64eab233d3bd"
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265379e-05,
+      "third": 1.1807665694449841e-05,
+      "total": 5.733378236710363e-05,
+      "A1": 0.6610477950036939,
+      "exp_minus_A1": 0.5163100638656157,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17009,
+      "pair_seconds": 0.24842046695994213,
+      "triples": 21379,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 15,
+          "q": 10
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            70,
+            72
+          ],
+          "old": [
+            11,
+            12
+          ],
+          "ops": [
+            [
+              "cx q[8],q[14];"
+            ],
+            [
+              "cx q[8],q[9];"
+            ]
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "2d33a8ea367a",
+      "candidate_index": 100,
+      "parent": "64eab233d3bd"
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265379e-05,
+      "third": 1.1807665694449841e-05,
+      "total": 5.733378236710363e-05,
+      "A1": 0.6610477950036939,
+      "exp_minus_A1": 0.5163100638656157,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17009,
+      "pair_seconds": 0.24842046695994213,
+      "triples": 21379,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 44,
+          "q": 13
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 48,
+          "old": 7,
+          "new": 2,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "1676ce9f5843",
+      "candidate_index": 101,
+      "parent": "64eab233d3bd"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265379e-05,
+      "third": 1.1807665694449841e-05,
+      "total": 5.733378236710363e-05,
+      "A1": 0.6610477950036939,
+      "exp_minus_A1": 0.5163100638656157,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17009,
+      "pair_seconds": 0.24842046695994213,
+      "triples": 21379,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 15,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[10];",
+            "h q[10];"
           ]
         },
         {
           "family": "timing",
           "move": "single",
-          "unit": 68,
-          "old": 12,
-          "new": 10,
+          "unit": 47,
+          "old": 7,
+          "new": 4,
           "op": [
-            "cx q[10],q[4];"
+            "measure q[20] -> c[42];"
           ]
-        },
-        {
-          "family": "init",
-          "move": "check_rx",
-          "unit": 7,
-          "q": 9
         }
       ],
       "generation": 1,
-      "kind": "parent",
-      "parent": "c02e07bae418",
-      "fingerprint": "46dfdbe75c60",
-      "candidate_index": 0
+      "kind": "child",
+      "fingerprint": "a93a37746ca2",
+      "candidate_index": 102,
+      "parent": "64eab233d3bd"
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265379e-05,
+      "third": 1.1807665694449841e-05,
+      "total": 5.733378236710363e-05,
+      "A1": 0.6610477950036939,
+      "exp_minus_A1": 0.5163100638656157,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 17009,
+      "pair_seconds": 0.24842046695994213,
+      "triples": 21379,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 31,
+          "old": 4,
+          "new": 2,
+          "op": [
+            "reset q[4];",
+            "h q[4];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "d2be721c4724",
+      "candidate_index": 103,
+      "parent": "64eab233d3bd"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.552611667265379e-05,
+      "third": 1.1807665694449841e-05,
+      "total": 5.733378236710363e-05,
+      "A1": 0.6610477950036939,
+      "exp_minus_A1": 0.5163100638656157,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 17009,
+      "pair_seconds": 0.24842046695994213,
+      "triples": 21379,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c1ff",
       "moves": [
         {
           "family": "timing",
           "move": "single",
           "unit": 24,
           "old": 3,
-          "new": 0,
+          "new": 2,
           "op": [
             "reset q[0];",
             "h q[0];"
           ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "6c6e8886f5d8",
+      "candidate_index": 104,
+      "parent": "64eab233d3bd"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653896e-05,
+      "third": 1.1807665694450023e-05,
+      "total": 5.733378236710392e-05,
+      "A1": 0.6607144616703604,
+      "exp_minus_A1": 0.5164821959073175,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.33195386198349297,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 8,
+          "old": 1,
+          "new": 0,
+          "op": [
+            "reset q[19];",
+            "h q[19];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "5e387213be6b",
+      "fingerprint": "135e5613f4ca",
+      "candidate_index": 105
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #18, #20, #58 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653896e-05,
+      "third": 1.1807665694450023e-05,
+      "total": 5.733378236710392e-05,
+      "A1": 0.6607144616703604,
+      "exp_minus_A1": 0.5164821959073175,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.33195386198349297,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 25,
+          "q": 0,
+          "bit": 183
         },
         {
-          "family": "commute",
-          "move": "swap",
-          "units": [
-            74,
-            77
-          ],
-          "old": [
-            12,
-            13
-          ],
-          "ops": [
-            [
-              "cx q[3],q[2];"
-            ],
-            [
-              "cx q[8],q[2];"
-            ]
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            34,
+            35
           ]
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 47,
+          "old": 7,
+          "new": 1,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "135e5613f4ca",
+      "fingerprint": "47c49dbc7741",
+      "candidate_index": 106
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653896e-05,
+      "third": 1.1807665694450023e-05,
+      "total": 5.733378236710392e-05,
+      "A1": 0.6607144616703604,
+      "exp_minus_A1": 0.5164821959073175,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.33195386198349297,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 6,
+          "old": 1,
+          "new": 0,
+          "op": [
+            "measure q[8] -> c[40];"
+          ]
+        },
+        {
+          "family": "init",
+          "move": "measure_to_reset",
+          "unit": 10,
+          "q": 2
+        },
+        {
+          "family": "init",
+          "move": "measure_to_reset",
+          "unit": 6,
+          "q": 8
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "135e5613f4ca",
+      "fingerprint": "cfdf3be6b5e7",
+      "candidate_index": 107
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653896e-05,
+      "third": 1.1807665694450023e-05,
+      "total": 5.733378236710392e-05,
+      "A1": 0.6607144616703604,
+      "exp_minus_A1": 0.5164821959073175,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.33195386198349297,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 12,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[15];",
+            "h q[15];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "135e5613f4ca",
+      "fingerprint": "e24dd846a824",
+      "candidate_index": 108
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653896e-05,
+      "third": 1.1807665694450023e-05,
+      "total": 5.733378236710392e-05,
+      "A1": 0.6607144616703604,
+      "exp_minus_A1": 0.5164821959073175,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.33195386198349297,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "measure_to_reset",
+          "unit": 47,
+          "q": 20
         },
         {
           "family": "commute",
@@ -696,62 +4461,668 @@
               "cx q[1],q[7];"
             ]
           ]
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "4d3317ae3c01",
-      "candidate_index": 1
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
-      "moves": [
+        },
         {
-          "family": "timing",
-          "move": "single",
-          "unit": 89,
-          "old": 15,
-          "new": 0,
-          "op": [
-            "reset q[6];",
-            "h q[6];"
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            60,
+            67
+          ],
+          "old": [
+            10,
+            11
+          ],
+          "ops": [
+            [
+              "cx q[1],q[7];"
+            ],
+            [
+              "cx q[1],q[0];"
+            ]
           ]
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "a735c3c5bd70",
-      "candidate_index": 2
+      "parent": "135e5613f4ca",
+      "fingerprint": "cb6c3c37bc96",
+      "candidate_index": 109
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653896e-05,
+      "third": 1.1807665694450023e-05,
+      "total": 5.733378236710392e-05,
+      "A1": 0.6607144616703604,
+      "exp_minus_A1": 0.5164821959073175,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
+      "nchars": 16967,
+      "pair_seconds": 0.33195386198349297,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
       "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 4,
+          "q": 9
+        },
         {
           "family": "commute",
           "move": "swap",
           "units": [
-            50,
-            55
+            36,
+            41
+          ],
+          "old": [
+            5,
+            6
+          ],
+          "ops": [
+            [
+              "cx q[9],q[10];"
+            ],
+            [
+              "cx q[4],q[10];"
+            ]
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            34,
+            28
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "135e5613f4ca",
+      "fingerprint": "8694a41c15b9",
+      "candidate_index": 110
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5526116672653896e-05,
+      "third": 1.1807665694450023e-05,
+      "total": 5.733378236710392e-05,
+      "A1": 0.6607144616703604,
+      "exp_minus_A1": 0.5164821959073175,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16967,
+      "pair_seconds": 0.33195386198349297,
+      "triples": 21372,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_c0ff",
+      "moves": [
+        {
+          "family": "init",
+          "move": "measure_to_reset",
+          "unit": 2,
+          "q": 14
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "135e5613f4ca",
+      "fingerprint": "de9844428394",
+      "candidate_index": 111
+    }
+  ],
+  "selected": [
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 44,
+          "old": 6,
+          "new": 1,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "parent",
+      "parent": "612c62b4d6a8",
+      "fingerprint": "6ed90c1d1350",
+      "candidate_index": 0,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "AssertionError(0.0012666666666666668)",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_frame",
+          "axis": "Z",
+          "line": "// DETECTOR c[3]"
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 8,
+          "old": 1,
+          "new": 2,
+          "op": [
+            "reset q[0];",
+            "h q[0];"
+          ]
+        },
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 3,
+          "line": "// DETECTOR c[4]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "0b31cbada1e1",
+      "candidate_index": 1,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 10,
+          "old": 2,
+          "new": 1,
+          "op": [
+            "reset q[10];",
+            "h q[10];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "015239774186",
+      "candidate_index": 2,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #13, #40, #58 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            1,
+            2
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 6,
+          "q": 13,
+          "bit": 181
+        },
+        {
+          "family": "idle_detector",
+          "move": "idle_parity_watch",
+          "unit": 64,
+          "q": 19,
+          "basis": "MEASURE",
+          "time": 36
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "6b8126e06890",
+      "candidate_index": 3,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 46,
+          "q": 2
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 18,
+          "old": 3,
+          "new": 0,
+          "op": [
+            "reset q[3];",
+            "h q[3];"
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            35,
+            29
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "680cfa159139",
+      "candidate_index": 4,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #55, #56, #57, #58, #59 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "remove_edge",
+          "edge": [
+            19,
+            25
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "d2a7c4b652a2",
+      "candidate_index": 5,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #17, #19, #59 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731662874e-05,
+      "third": 1.1150936485506523e-05,
+      "total": 5.62042582171694e-05,
+      "A1": 0.6828157877097387,
+      "exp_minus_A1": 0.5051924729782441,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2985162670374848,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 14,
+          "old": 2,
+          "new": 0,
+          "op": [
+            "reset q[15];",
+            "h q[15];"
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "mx_to_rx_remove_record",
+          "unit": 25,
+          "q": 0,
+          "bit": 183
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "parent": "6ed90c1d1350",
+      "fingerprint": "9a1234c2a03b",
+      "candidate_index": 6,
+      "seconds": 0.49168195197125897
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [],
+      "generation": 1,
+      "kind": "parent",
+      "fingerprint": "612c62b4d6a8",
+      "candidate_index": 7,
+      "seconds": 0.45190039899898693
+    },
+    {
+      "ok": true,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 46,
+          "q": 2
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            69,
+            82
+          ],
+          "old": [
+            12,
+            14
+          ],
+          "ops": [
+            [
+              "cx q[3],q[9];"
+            ],
+            [
+              "cx q[15],q[9];"
+            ]
+          ]
+        },
+        {
+          "family": "idle_detector",
+          "move": "idle_parity_watch",
+          "unit": 84,
+          "q": 13,
+          "basis": "MX",
+          "time": 36
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "144ce8a264b7",
+      "candidate_index": 8,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "error": "ValueError(\"circuit fails the judge's correctness check: detector(s) #12 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)\")",
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "Z",
+          "unit": 47,
+          "q": 1
+        },
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 2,
+          "line": "// DETECTOR c[2]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "3e7097d3f2de",
+      "candidate_index": 9,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 44,
+          "old": 6,
+          "new": 0,
+          "op": [
+            "measure q[20] -> c[42];"
+          ]
+        },
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 1,
+          "line": "// DETECTOR c[1]"
+        },
+        {
+          "family": "timing",
+          "move": "single",
+          "unit": 5,
+          "old": 1,
+          "new": 0,
+          "op": [
+            "measure q[14] -> c[41];"
+          ]
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "7bd38ee6870b",
+      "candidate_index": 10,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 9,
+          "q": 10
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "fb7b4038a05a",
+      "candidate_index": 11,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            8,
+            2
+          ]
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            34,
+            28
+          ]
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            49,
+            54
           ],
           "old": [
             7,
@@ -765,242 +5136,114 @@
               "cx q[14],q[8];"
             ]
           ]
-        },
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "ff6577b6179b",
+      "candidate_index": 12,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.405483220021123e-19,
+      "second": 4.5053321731664595e-05,
+      "third": 1.1150936485507104e-05,
+      "total": 5.6204258217171704e-05,
+      "A1": 0.6794957640297262,
+      "exp_minus_A1": 0.5068725112917952,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.2762368390103802,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
+        {
+          "family": "detector",
+          "move": "drop_detector",
+          "index": 2,
+          "line": "// DETECTOR c[2]"
+        }
+      ],
+      "generation": 1,
+      "kind": "child",
+      "fingerprint": "d324d98476b7",
+      "candidate_index": 13,
+      "seconds": 0.45190039899898693,
+      "parent": "612c62b4d6a8"
+    },
+    {
+      "ok": true,
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
+      "R": 48,
+      "native_depth": 51,
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
+      "moves": [
         {
           "family": "timing",
           "move": "single",
-          "unit": 75,
-          "old": 13,
-          "new": 14,
-          "op": [
-            "cx q[4],q[10];"
-          ]
-        },
-        {
-          "family": "timing",
-          "move": "single",
-          "unit": 139,
-          "old": 32,
+          "unit": 17,
+          "old": 3,
           "new": 0,
           "op": [
-            "measure q[16] -> c[43];"
+            "reset q[3];",
+            "h q[3];"
           ]
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "7557a3ed869e",
-      "candidate_index": 3
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
-      "moves": [
-        {
-          "family": "init",
-          "move": "check_rx",
-          "unit": 89,
-          "q": 6
-        },
-        {
-          "family": "init",
-          "move": "watch_before_reset",
-          "axis": "Z",
-          "unit": 93,
-          "q": 2
-        },
-        {
-          "family": "init",
-          "move": "measure_to_reset",
-          "unit": 3,
-          "q": 8
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "107ba5c5dc72",
-      "candidate_index": 4
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
-      "moves": [
-        {
-          "family": "commute",
-          "move": "swap",
-          "units": [
-            13,
-            21
-          ],
-          "old": [
-            2,
-            3
-          ],
-          "ops": [
-            [
-              "cx q[7],q[8];"
-            ],
-            [
-              "cx q[9],q[8];"
-            ]
-          ]
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "98ab9ab33f2f",
-      "candidate_index": 5
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.0439009532074744e-05,
-      "A1": 0.6734506890932281,
-      "exp_minus_A1": 0.5099458735994001,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15777,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4",
-      "moves": [
-        {
-          "family": "init",
-          "move": "measure_to_reset",
-          "unit": 85,
-          "q": 10
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "46dfdbe75c60",
-      "fingerprint": "67000c28d9c9",
-      "candidate_index": 6
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
-      "moves": [
-        {
-          "family": "init",
-          "move": "measure_to_reset",
-          "unit": 64,
-          "q": 19
         }
       ],
       "generation": 1,
       "kind": "parent",
-      "parent": "880ef4f70f14",
-      "fingerprint": "c56d2141566a",
-      "candidate_index": 7
+      "parent": "612c62b4d6a8",
+      "fingerprint": "91822b35d241",
+      "candidate_index": 14,
+      "seconds": 0.49900357401929796
     },
     {
       "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
+      "error": "OverflowError('Python int too large to convert to C long')",
+      "third_screen": true,
+      "c1": 2.4054832200211233e-19,
+      "second": 4.505332173166536e-05,
+      "third": 1.115093648550722e-05,
+      "total": 5.620425821717258e-05,
+      "A1": 0.6814930985482446,
+      "exp_minus_A1": 0.5058611277004131,
+      "cx": 194,
       "R": 48,
       "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
-      "moves": [
-        {
-          "family": "commute",
-          "move": "swap",
-          "units": [
-            19,
-            26
-          ],
-          "old": [
-            3,
-            4
-          ],
-          "ops": [
-            [
-              "cx q[1],q[2];"
-            ],
-            [
-              "cx q[3],q[2];"
-            ]
-          ]
-        }
-      ],
-      "generation": 1,
-      "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "0edc15353220",
-      "candidate_index": 8
-    },
-    {
-      "ok": true,
-      "c1": 2.6645352591003264e-19,
-      "second": 5.046291840046419e-05,
-      "A1": 0.6635980818612992,
-      "exp_minus_A1": 0.5149950026996531,
-      "cx": 214,
-      "R": 48,
-      "native_depth": 51,
-      "nchars": 15691,
-      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/seed_exchange4_alap",
+      "nchars": 16965,
+      "pair_seconds": 0.261166297015734,
+      "triples": 21365,
+      "seed": "/home/jihoon/competitions/quantumn/work/lanes/ST2/comp29_f_timing_mz_5_12",
       "moves": [
         {
           "family": "init",
-          "move": "watch_before_reset",
-          "axis": "X",
-          "unit": 90,
-          "q": 9
-        },
-        {
-          "family": "readout",
-          "move": "add_edge",
-          "edge": [
-            8,
-            14
-          ]
-        },
-        {
-          "family": "readout",
-          "move": "remove_edge",
-          "edge": [
-            19,
-            25
-          ]
+          "move": "check_rx",
+          "unit": 1,
+          "q": 13
         }
       ],
       "generation": 1,
       "kind": "child",
-      "parent": "c56d2141566a",
-      "fingerprint": "b32906c0d19f",
-      "candidate_index": 9
+      "parent": "91822b35d241",
+      "fingerprint": "8e4b0edc982a",
+      "candidate_index": 15,
+      "seconds": 0.49900357401929796
     }
   ],
-  "evaluated": 69
+  "evaluated": 112
 }

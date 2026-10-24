@@ -14,6 +14,7 @@ Best competitor: Placeholder 5.058e-5, 199 CX, acceptance 0.525 (submitted 2026-
 5.166e-5 at 19:34, 5.335e-5 at 18:34). Board read 2026-10-25 00:42 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
+Evidence under `work/candidates/` and lanes removed on 2026-10-25 resolves with `git show a58eca7:<path>`.
 | Method | Conditions | Result | Evidence |
 |---|---|---|---|
 | v4: Gidney d3 injection + double cat check + superdense cycle, permuted | official | 1.534e-4, 111 CX | `work/submissions/v4_perm_lazy.*` |
@@ -53,4 +54,4 @@ Best competitor: Placeholder 5.058e-5, 199 CX, acceptance 0.525 (submitted 2026-
 | Chamberland & Noh, npj QI 6, 91 (2020), arXiv:2003.03049 | G1: redundant ancilla encoding + flags for color-code H-type magic states; 5e-8 at p=1e-4 with 64 qubits | abstract checked |
 | Weilandt, Peham, Wille, arXiv:2601.13313; Criger et al., arXiv:2607.22498; arXiv:2610.09749 | G1: automated synthesis/reduction of FT state-prep circuits (Steane-type detection, ILP flags) | titles and abstracts checked; lane LIT |
 | Daguerre & Kim, arXiv:2410.07327 | G1: two-block RM15 → Steane code switch, corrected-output fit 25.5p² (≈ 2.44e-5 at 1e-3) without idles, acceptance ≈ 0.84, 26 qubits, 100 CX | lane SEARCH summary (Eq. 23, Table VII); not reproduced (PLAN P35 parked) |
-| Weilandt et al. MQT branch `ft-stateprep-qubit-perm` (Zenodo 23183007) | G1: fault-set-guided synthesis of verified CSS state preps, a candidate generator for B+C (P33) | code saved by SEARCH (`work/lanes/SEARCH/found/`, not in git) |
+| Weilandt et al. MQT branch `ft-stateprep-qubit-perm` (Zenodo 23183007) | G1: fault-set-guided synthesis of verified CSS state preps, a candidate generator for B+C (P33) | code on Zenodo 23183007 (the SEARCH lane's copy was removed in the 2026-10-25 cleanup) |

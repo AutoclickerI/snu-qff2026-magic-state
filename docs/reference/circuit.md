@@ -1,39 +1,38 @@
 # Our circuit and its search tools
 Serves: G1, G2. Read before changing the circuit, its layout or the search code.
 
-## Structure
-1. **Injection** and **double-cat check**: Gidney's d=3 cultivation stages, ported from
-   `upstream/magic-state-cultivation` by `work/cultiv_port.py` (`make_chunk_d3_init_unitary`,
-   `make_chunk_d3_double_cat_check`, T gates swapped in with `s_to="Tswap"`).
-2. **Final superdense cycle**: one Bell pair per plaquette, at (1,0)-(2,0), (1,2)-(2,2) and (3,1)-(4,1).
-   Each pair measures both X and Z stabilizers of its plaquette, then unbells and is measured.
-   Post-unbell single CNOTs are hook-safe and allowed.
-3. **Extras**: X-only cat members attached to a Bell parent that do one data CNOT and an MX. An extra
-   must be a common neighbour of a parent and a data qubit, so plaquette 0 can have none.
-4. **A1 layout**: d1 moves (2,3)→(1,3) by a 2-CNOT hop; (2,3) becomes d1's X extra (parent (2,2)), and
-   (4,2) serves d5 (parent (4,1)). Data in several plaquettes cannot move.
-5. **ALAP pre-cycle**: stages 1–2 are rescheduled as late as possible with commuting gates reordered
-   (`alap.py`, greedy priority seed s). Commuting variants raise acceptance to ~0.68.
+## Structure of the incumbent (`work/lanes/MAIN/v36a`, PLAN "Status")
+Roles (physical qubits, code order): data D = [0,20,7,10,3,22,21] (the JSON `data_qubits`), A = [1,14,8,9,2,16,15],
+B = [6,26,13,11,4,23,27], C = [12,25,19,17,5,29,28]. 207 CX, 47 native ticks, round R44.
+1. **Prefix**: Gidney's d=3 cultivation stages (injection, double-cat check with T/T† layers) plus PRESYN's blue XZ
+   stabilizer check, then coherent two-CX data hops into D. Source checks c54–c57 and blue outputs c64/c67 are detectors.
+2. **Waiting data**: five storage guards (helper reset, CX data→helper, measured) on the data runs before the round;
+   echoed parity checks (helper prepared, CX twice around a window, measured) are the alternative gadget (ST2,
+   WAITPROT). Measured-Z inits replace resets where the record can be a detector.
+3. **A**: Steane |+_L⟩ by a 12-CX encoder at ticks 37–43 synthesized against the actual cell releases (X pivots
+   14, 8, 9, 16). Data controls onto A (D→A) at 43–44, before B. **A partial decoder**: CX9→15 (44), CX8→9 (45), MX8 (46)
+   reads X8·X9·X15, a logical-X representative that commutes with D→A, as a deterministic flag (record c16).
+4. **B/C**: correlated rank-three resource Σ_x |x⟩_B|x⟩_C (57 CX, FRESH); transversal B→C leaves B = |0_L⟩ and C as
+   seven literal-zero detectors. B controls onto the data in the round and is read in X; terminal readout edges
+   (14→15 instrument, copies) re-express detector rows.
+5. **Detectors and output**: `// DETECTOR c[..] ...` lines carry every parity; the judge then decodes the six data
+   stabilizers ideally (judge.md).
 
-## Code map (`work/`)
-- `qcirc.py`: QASM builder (`Circ`), `rescheduled(lazy_init=True)` emits a fixed layer schedule.
-- `lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`: exact score of a whole submission, no sampling (faults as bit signatures through the T-rotation frame, 2nd order in 2 s, 3rd order in ~30 s); loss by fault pair and per-channel sensitivity. Matches v12's 12-seed MC mean to −0.08% at 3rd order; below acceptance ~0.5 the series converges slowly (st_L2_v0: −6% at 3rd order), so rank such circuits with MC.
-- `proxy2.py`: exact second-order loss of the cycle alone via Stim DEM; `joint_loss` prices Y_L at ½.
-- `gen2_cycle.py`: v6-era cycle model and annealer (gen2 json format). `batch_score.make(spec)` builds
-  full circuits from gen2 files.
-- `lanes/me_layout/gmodel.py`: generalized cycle with moves, Bell pairs and extras (`GModel`), with
-  `feasible`, `emit`, `proxy`, `full_circuit`, `anneal`. `run_moves.py` has the v6/A1/A2/A3 variants
-  and the `BASE=` seeding mode. `alap.py`, `alap_seeds.py`, `alap_gen2.py` and `mseed.py` score.
-- `bounds.py`, `decompose.py`, `idle_decomp.py`: floors and loss splits.
-- `lanes/DR/`, the Steane-type round: `steane.py` (grid-free exact proxy), `steane_layout.py` and
-  `steane_layout2.py` (layouts), `synth.py`, `synth_joint.py`, `synth_blocks.py`, `synth_l5.py` (block CNOT
-  synthesis; `synth.dangerous_z` is the danger metric), `steane_full.py` (full-circuit assembler), `merge.py`
-  (integration, PLAN P16), `regions.py` (noise by region); direct-readout rounds: `relaxed.py`, `poc.py`,
-  `flagsched.py`.
-- `lanes/L1_cpsat_schedule/`: CP-SAT with an exact closed-form objective (`cpsat.py`,
-  `ordered_objective.py`, `validity.py`).
+Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes and timing are design variables.
 
-## Validity
-A cycle schedule is valid if a noiseless Stim run reports every stabilizer and preserves both logical
-bases (`cycle_interleave.stim_cycle`). Parity rules (even count of X-before-Z on shared data, within
-and across tiles) give no false negatives but 2–4% false positives, so Stim stays the oracle.
+## Evaluators (rank by these, in this order)
+- **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
+  ~11–35 s. Scope: barriers over all used qubits, no FRAME/POSTSELECT, ≤ 20 T rotations, ideal acceptance ≈ 1.
+- **Exact 2nd + 3rd order with sensitivities**: `work/lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`
+  (loss by fault pair, per-channel gradients). Converges slowly below acceptance ≈ 0.5; use all orders to rank.
+- **3-seed official MC**: `work/lanes/MAIN/spec/mc3.py <stem>`; one seed hides ≈ 1%.
+- **Speed**: `work/lanes/XTIM/speed_predict.py <stem>` (seconds per 1e6 shots; > 20 s is refused by promote.sh).
+
+## Search machinery in the lanes
+- Resource synthesis (CNOT circuits for B/C, clean/FT contracts): `work/lanes/FRESH/{synth,sat_core,ft}.py`.
+- A-encoder enumeration (all rank-four states, 11–13 CX paths): `work/lanes/EXENC/exact.cpp`, `exenc.py`.
+- B/C boundary cache (B/C variants in 0.035 s against a fixed exterior): `work/lanes/BCPOL/cache*.py`, `boundary_api.py`.
+- Critical path, timing and A synthesis on a fixed exterior: `work/lanes/SEPBC/` (`exenc.py`, plan JSONs per candidate).
+- In-place B∪C regions and end-state enumeration: `work/lanes/ENDSTATE/`; full prefix/round co-design with CP-SAT and
+  exact-gradient retiming: `work/lanes/ST1/{redesign,gradient_retime}.py`.
+- Population search and acceptance knapsack: `work/lanes/ST2/pop35_*.py`, `knapsack_select.py`; region ledger `ledger.py`.

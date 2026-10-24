@@ -1,54 +1,44 @@
 # Resources
 Everything usable for G0. Binding usage rules are in CONSTRAINTS (rules 6, 8, 9). Capacity, usage and
-free space are measured when needed (`nproc`, `uptime`, `free -g`, `df -h`, `nvidia-smi`), not written
-here.
+free space are measured when needed (`nproc`, `uptime`, `free -g`, `df -h`), not written here.
 
 ## Setup
 From the repo root `/home/jihoon/competitions/quantumn`:
-1. Python is `.venv/bin/python` (stim, xtim 3.1.3+qff2, qiskit, OR-Tools). The judge `tprep` is
-   installed editable from `upstream/snu-qff2026-problem` (keep it unmodified; `git pull` for organizer
-   updates). Sanity: `work/baseline.py` gives 1-F = 0.0251615 at 1e6 shots.
-2. Official score, bit-identical to the server, ~10 s at 20 processes: `cd work &&
-   ../.venv/bin/python fast_check.py <qasm> <json> [shots] [procs]`, or `fast_check.check(text,
-   data_qubits, shots=10**8, seed=0, procs=20)`.
-3. True mean: `work/indep_seeds.py <stem>...`, or `work/lanes/me_layout/mseed.py <hash>...` for
-   `alapvar/` candidates (~30 s each).
-4. Sequential judge plus fault scan (~2 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
-5. Cycle proxy (~0.2 s): `GModel.proxy` in `work/lanes/me_layout/gmodel.py`; variants in `run_moves.py`.
-6. Anneal: `run_moves.py <variant> <steps> <lmax> <chains> <seed0>`. `BASE=<gen2 json>:<idx>` seeds from
-   another schedule; interleaved orders are reachable only this way (random starts never pass validity).
-7. ALAP screen: `alap_seeds.py <res json> <idx> <nseeds> <c1 threshold>` (gmodel results) or
-   `alap_gen2.py` (gen2 schedules); scores land in `alapvar/<hash>.json`.
-8. Seed-0 re-draws of one circuit (same noise model, verified per variant): `work/reorder.py <stem> <n>
-   [procs]` → `work/reorder/`.
-9. Loss by idle window: `work/idle_decomp.py <stem> <cycle start step>`.
-10. Promote a candidate in one step: `work/promote.sh <stem> <host:procs:first:count>...` (seed-0 re-draws spread over
-   hosts, best passing draw → `submissions/`, sequential judge, commit + push, `submit_when_ready.sh`).
-   Submit by hand: `work/submit.py submit|status|board|wait`. `work/submit_when_ready.sh <stem>` waits out the
-   server cooldown (`submit.py wait`) and for `receipts/seq_<name>.txt`, and submits only on PASS.
-11. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without
-   credentials or caches. Refresh one host at a time (SSH cap):
+1. Python is `.venv/bin/python` (stim, xtim 3.1.3+qff2, qiskit, OR-Tools). The judge `tprep` is installed editable from
+   `upstream/snu-qff2026-problem` (keep it unmodified; `git pull` for organizer updates).
+2. Official score, bit-identical to the server, ~10 s at 20 processes: `cd work && ../.venv/bin/python fast_check.py
+   <qasm> <json> [shots] [procs]`. Sanity: `fast_check.py submissions/v35a_r188.qasm submissions/v35a_r188.json`
+   gives the server's 4.17026091090155e-5.
+3. Ranking evaluators (all orders, exact 2nd/3rd order, 3-seed MC, speed): `docs/reference/circuit.md` "Evaluators".
+4. Sequential judge plus fault scan (~5 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
+5. Seed-0 re-draws of one circuit (same noise model, verified per variant): `work/reorder.py <stem> <n> [procs] [first]`
+   → `work/reorder/` (gitignored).
+6. Promote in one step: `work/promote.sh <stem> <host:procs:first:count>...` (speed gate ≤ 20 s per 1e6, re-draws over
+   hosts with non-overlapping variant ranges, best passing draw → `submissions/`, sequential judge, commit + push,
+   `submit_when_ready.sh`). Stop the draws in time for a slot with `work/receipts/cut_redraws.sh <stem name> "<time,
+   e.g. 02:20>" <hosts incl. zebra>`; the slot is at :37 each hour. By hand: `work/submit.py submit|status|board|wait`.
+7. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without credentials or caches.
+   Refresh one host at a time (zebra caps SSH connections):
    `rsync -a ~/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu ~/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu <h>:~/.local/share/uv/python/`;
    `rsync -a --exclude .submit_credentials --exclude '.xtim_cache/' --exclude 'vendor/' --exclude '.git/' /home/jihoon/competitions/quantumn <h>:/home/jihoon/competitions/`.
-   Run with `ssh -q <h> 'cd /home/jihoon/competitions/quantumn/work && ../.venv/bin/python ...'`
-   (`-q` hides large banners) and rsync results back. Background jobs: `ssh -q <h> "cd <dir>; env
-   OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 nohup nice -n 5 <cmd> > <log> 2>&1 <
-   /dev/null &"`. With `&&` before `nohup`, ssh never returns; without the thread caps, screens oversubscribe
-   the host several times over.
+   Run with `ssh -q -o ControlMaster=no -o ControlPath=none <h> 'cd /home/jihoon/competitions/quantumn/work && ../.venv/bin/python ...'`
+   and rsync results back. Background jobs: `ssh -q <h> "cd <dir>; env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+   MKL_NUM_THREADS=1 nohup nice -n 5 <cmd> > <log> 2>&1 < /dev/null &"`. With `&&` before `nohup`, ssh never returns;
+   without the thread caps, screens oversubscribe the host several times over.
 
 ## Inventory
 | Resource | Use for | Access and non-obvious limits |
 |---|---|---|
-| zebra | Codex lanes, submissions, any job | this machine; credentials live only here; GPU0 is another user's |
-| hippo, tom, jerry, sunfish | anneals and MC scoring | mirrored; hippo reproduces the official v8 score bit for bit |
-| owl | MC scoring, enumeration (96 CPUs, usually idle) | native python cannot load numpy/stim (glibc 2.17); run in docker: `docker run --rm -u 1010:1012 -e HOME=/home/jihoon -v /home/jihoon:/home/jihoon -w <dir> --cpus=N fnc-build:22.04 /home/jihoon/competitions/quantumn/.venv/bin/python ...`; reproduces v11's official score bit-identically (5.3 s per 1e8 shots at 70 processes) |
-| faraday, dragon | not for judge work | not mirrored. dragon cannot run xtim (glibc 2.27 < 2.28, Python 3.6, disk 96% full). faraday runs Jihoon's other projects above its core count |
+| zebra (64 cores) | Codex lanes, submissions, any job | this machine; credentials live only here; GPU0 is another user's |
+| owl (96) | re-draws, enumeration, lanes | native python cannot load numpy/stim (glibc 2.17); run in docker: `docker run --rm -u 1010:1012 -e HOME=/home/jihoon -v /home/jihoon:/home/jihoon -w <dir> --cpus=N fnc-build:22.04 /home/jihoon/competitions/quantumn/.venv/bin/python ...`; bit-identical official scores |
+| hippo (48), tom (64), jerry (64), sunfish (32) | re-draws, lanes, MC | mirrored; tom carries other users' load at times |
+| faraday, dragon | not for judge work | not mirrored; dragon cannot run xtim (glibc 2.27); faraday runs Jihoon's other projects |
 | pegasus | — | SSH from zebra times out |
-| Submission quota | one per hour | `work/submit.py`; board keeps the best entry |
-| Codex (`codex:codex-rescue`) | parallel lanes L1–L5 in `work/lanes/` | `codex-companion.mjs status`; job logs under `~/.claude/plugins/data/codex-openai-codex/state/*/jobs/`; a resume while a task runs is unsafe; briefs forbid `spawn_agent` (FINDINGS "Failures") |
-| Prior artifacts | starting points and receipts | `work/submissions/`, `work/lanes/me_layout/res_*.json`, `alapvar/`, `work/receipts/`, lane outputs |
+| Submission quota | one per hour (slot :37) | `work/submit.py`; the board keeps each team's best entry, so every slot is used |
+| Codex lanes | parallel research workers, one dir each under `work/lanes/` | started with `codex-companion.mjs task --background --write` (resume: `CODEX_RESUME_THREAD_ID=<thread>`); job records under `~/.claude/plugins/data/codex-openai-codex/state/*/jobs/`; a cancelled thread can stay locked ("already has an active writer"): start a fresh thread that reads the lane's REPORT.md; briefs forbid `spawn_agent` |
+| Reviewer bundles | independent audits with circuits and certificates | `work/lanes/MAIN/spec/reviewer{3,4,6,7}/` |
 | Upstream | judge and cultivation code | `upstream/snu-qff2026-problem` (76fe47c), `upstream/magic-state-cultivation` (871e68f); not in git |
 
 ## Consumers
 - `/home/jihoon/.claude/projects/-home-jihoon-competitions-quantumn/memory/*.md`
-- Codex lane briefs (delegation prompts, no file); lane outputs are `work/lanes/L*/REPORT.md`
+- Codex lane briefs (delegation prompts, no file); lane outputs are `work/lanes/<LANE>/REPORT.md`.

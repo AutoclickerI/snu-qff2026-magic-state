@@ -12,5 +12,5 @@ Our circuits for the SNU Qiskit Fall Fest 2026 main hackathon: prepare the Stean
 Quick check of a circuit at the official setting (bit-identical to the server, ~10 s):
 
 ```
-cd work && ../.venv/bin/python fast_check.py submissions/v10_A1i_alap.qasm submissions/v10_A1i_alap.json
+cd work && ../.venv/bin/python fast_check.py submissions/v35a_r188.qasm submissions/v35a_r188.json
 ```

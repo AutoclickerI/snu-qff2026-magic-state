@@ -1,29 +1,31 @@
-# ST2
+**New gated finalist `pop35b/owl/g01_3f69baf115032a`: all-orders 4.356408955156e-05, acceptance 0.501410578; judge PASS, acceptance 0.501274, 3.052s/1e6; XTIM FAST 5.723s/1e6; MC3 pending.**
 
-**Status: VERIFIED IMPROVEMENT — exchange candidate passes every local gate; separate-block construction remains open.**
+**New gated finalist `pop35b/zebra/g07_616bb71515a2c9`: all-orders 4.356443124442e-05, acceptance 0.502346533; judge PASS, acceptance 0.502228, 2.316s/1e6; XTIM FAST 3.906s/1e6; MC3 pending.**
 
-The population is seeded from the verified v25k/final_m04_l2 family, v23/v22 controls, LNS and BCFB/BCPOL finalists, plus ST1's moving-boundary exchange candidate. Each mutation rewrites a native operation window (initialization/check, commuting schedule, transfer phase, readout edge, or timing), then applies the LNS precedence retimer and nearest-neighbour repair. Second-order exact loss is used only to screen a diverse population; retained candidates are rescored with exact third order and the unchanged judge gates.
+**New gated finalist `pop35b/focused/q7x_q10z_q7Z_mx1`: all-orders 4.356453830409e-05, acceptance 0.502174687; judge PASS, acceptance 0.501859, 4.825s/1e6 on owl; XTIM FAST 8.428s/1e6; MC3 mean 4.427135000e-05.**
 
-## Best verified circuit
+**New gated finalist `pop35b/zebra/g06_37a21f3383e778`: all-orders 4.356487327656e-05, acceptance 0.505458412; judge PASS, acceptance 0.506071, 2.297s/1e6; XTIM FAST 3.657s/1e6; MC3 pending.**
 
-`seed_exchange4` (`seed_exchange4.qasm`/`seed_exchange4.json`) is v25k with a fused q4/q10 terminal cat/data exchange and its detector-frame repair. It has **214 CX**, native depth 51 and R48. Unmodified `EVAL/exact2.py --third` gives **5.04834243469e-5 + 1.40934821880e-5 = 6.45769065349e-5**, with `|c1|=2.66e-19` and `exp(-A1)=0.510800572`. This is 4.73196e-7 below v25k (0.73%). The all-orders Walsh evaluator was attempted and rejected its documented width limit (26 > 23), so no all-orders value is claimed.
+**New gated finalist `pop35b/focused/timing_q7Z_mx1`: all-orders 4.356487327656e-05, acceptance 0.505458412; judge PASS, acceptance 0.504633, 3.311s/1e6 on owl; XTIM FAST 5.080s/1e6; MC3 mean 4.381423333e-05.**
 
-The unchanged judge at 1e6 shots passes format, class, correctness and acceptance: **1-F=6.85604e-5, acceptance=0.510499, 214 CX**. The final zebra `fast_check` run is **3.5 s/1e6**, under 20 s. The three 1e8-shot MC runs (sunfish, same `fast_check` implementation) are **6.455819e-5 / 6.428290e-5 / 6.546180e-5**, mean **6.476763e-5**, with seed-0 acceptance 0.51078. Receipts: `seed_exchange4.exact.log`, `seed_exchange4.mc3.log`, `seed_exchange4.walsh.log`.
+**New gated finalist `pop35b/zebra/g05_73d5e7aa671fbd`: all-orders 4.363804971309e-05, acceptance 0.505121053; judge PASS, acceptance 0.504951, 2.274s/1e6; XTIM FAST 3.465s/1e6; MC3 pending.**
 
-This result is immediately verified and supersedes v25k for ST2. It retains the known blue-XZ/q19 speed repair and adds the moving-boundary exchange; relative to v25k, only the terminal cat/data window and its detector/frame map change.
+**New gated finalist `pop35b/zebra/g04_d784e9a3567d39`: all-orders 4.364671126165e-05, acceptance 0.501113807; judge PASS, acceptance 0.501215, 2.333s/1e6; XTIM FAST 5.628s/1e6; MC3 pending.**
 
-## Separate-block target
+**New gated finalist `pop35b/zebra/g03_b21170e18b01f2`: all-orders 4.366739265078e-05, acceptance 0.505119834; judge PASS, acceptance 0.504949, 2.637s/1e6; XTIM FAST 4.762s/1e6; MC3 pending.**
 
-I read LADDER's complete report and built a ST2 copy of its standard 9-CX template with the FREELAY native teleport/retiming model. The model was run across all eight board symmetries and four translations with 2–6 block moves per wire and 3–6 data moves. The separate endpoint/round constraints were infeasible in the completed bounded runs; no physical separate-B/C QASM was emitted. This does not refute a different moving-prefix or instrument construction. The LADDER `f01_sepBC` result remains a grid-free price only. A shortest-path SWAP routing of that counterfactual was emitted as `routed_f01_sepBC`, but its 391 CX circuit fails acceptance (0.0185), so it is retained only as a negative control.
+**New gated finalist `pop35b/zebra/g02_5fb503eed352e4`: all-orders 4.366859487214e-05, acceptance 0.506466592; judge PASS, acceptance 0.506634, 2.237s/1e6; XTIM FAST 3.536s/1e6; MC3 pending.**
 
-## Population method and statistics
+**New gated finalist `pop35b/zebra/g01_f5d93c77813b4b`: all-orders 4.367949260671e-05, acceptance 0.503648105; judge PASS, acceptance 0.503847, 2.317s/1e6; XTIM FAST 4.025s/1e6; MC3 pending.**
 
-The evolutionary search used seeds from v25k, v23/v22, LNS, BCFB, BCPOL and ST1, and mutations over whole native windows: timing retiming, initialization/check replacement, commuting swaps, phase placement and readout edges. Each mutation used LNS's precedence repair and nearest-neighbour assertions. Two generations evaluated **90** candidates (**88** exact-valid, 87 with `exp(-A1)≥0.5002`); the second-order Pareto front's best was 5.04390095321e-5 with acceptance proxy 0.509946, and the high-acceptance survivor was 5.04629184005e-5 at 0.514995. The verified exchange seed was then independently third-order priced and MC-ranked. The compressed trace is `population.jsonl.xz`; per-generation fronts are `generation_0.json` and `generation_1.json`.
+**New gated finalist `pop35b/zebra/g00_ecc15c15da6170`: all-orders 4.367982703404e-05, acceptance 0.506941465; judge PASS, acceptance 0.507010, 2.778s/1e6; XTIM FAST 3.609s/1e6; MC3 pending.**
 
-The exact/MC verified candidate is independent of the separate-block relaxation. No ST2 submission, commit, push or credential access occurred.
+**New gated finalist `pop35b/seed0/FRESH_feedback_i009_t00`: all-orders 4.375872298118e-05, acceptance 0.507722961; judge PASS, acceptance 0.507393, 2.263s/1e6; XTIM FAST 3.366s/1e6; MC3 pending.**
 
-## Verified versus inferred
+# ST2 — v35b population (active)
 
-Verified: exact2 third-order arithmetic with `|c1|<1e-12`; unchanged `tprep.check` at 1e6 shots; seed-0 acceptance; zebra speed; all three 1e8 MC seeds; nearest-neighbour and format assertions from the repair; and the 90-candidate population receipts. The Walsh all-orders result is a documented width rejection, not a score. The separate-block result is only a completed bounded solver screen plus a negative SWAP-routed control.
+Base: all-orders 4.376021340833061e-5, acceptance 0.5016883498058476. Exact acceptance floor 0.5005. The population uses all-orders fitness; no single-fault or truncated-order performance filter. Generations continue while improving.
 
-Inferred: the exchange candidate's improvement is a local macro effect, and a different dynamic separate-block embedding may still exist. No global optimum, physical separate-B/C construction, server runtime, or all-orders score is claimed.
+Current work: [STATUS.md](pop35b/STATUS.md). Seed receipts, generation summaries, rejected proposals and full candidate artifacts are under `pop35b/`. FRESH timing and WAITPROT gadgets are imported as native patches, then repriced on v35b.
+
+Prior completed knapsack: [REPORT_before_population.md](pop35b/REPORT_before_population.md).

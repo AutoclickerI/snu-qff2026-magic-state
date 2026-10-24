@@ -67,6 +67,34 @@ def init_moves(base):
     c['tail'][j]='// DETECTOR '+' '.join(f'c[{b}]'for b in sorted(bs^ex))
   yield c,dict(family='init',move='mx_init_pivots',units=subset)
 
+def extra_init_moves(base):
+ # Known-state parity watches in otherwise idle windows.  These are kept as a
+ # separate macro family so the population can price them without conflating
+ # them with the expensive random-MX pivot replacement.
+ for i,u in enumerate(base['u']):
+  q=u.qs[0];t=base['t'][i]
+  if u.name=='RX':
+   c=clone(base);b=bit(c);c['u'][i]=Unit([f'h q[{q}];',f'measure q[{q}] -> c[{b}];',f'h q[{q}];']);adddet(c,b)
+   yield c,dict(family='init',move='rx_to_postselected_mx',unit=i,q=q)
+  if u.name=='MX' and t<base['meta']['R']:
+   b=int(re.findall(r'c\[(\d+)\]',' '.join(u.lines))[0]);c=clone(base);c['u'][i]=Unit([f'reset q[{q}];']);delbit(c,b)
+   yield c,dict(family='init',move='mx_to_rx_remove_record',unit=i,q=q,bit=b)
+  prev=[j for j,v in enumerate(base['u'][:i])if q in v.qs]
+  if u.name=='RESET' and prev and base['u'][prev[-1]].name=='MEASURE':
+   c=clone(base);del c['u'][i];del c['t'][i]
+   yield c,dict(family='init',move='reuse_z_measurement',unit=i,q=q)
+  if u.name not in ('MX','MEASURE'):continue
+  following=[j for j in range(i+1,len(base['u']))if q in base['u'][j].qs]
+  if not following:continue
+  end=base['t'][following[0]]
+  if end<=t+1:continue
+  oldbit=int(re.findall(r'c\[(\d+)\]',' '.join(u.lines))[0])
+  for when in sorted({t+1,end-1}):
+   c=clone(base);b=bit(c);lines=[f'measure q[{q}] -> c[{b}];']
+   if u.name=='MX':lines=[f'h q[{q}];']+lines+[f'h q[{q}];']
+   c['u'].insert(i+1,Unit(lines));c['t'].insert(i+1,when);c['tail'].append(f'// DETECTOR c[{oldbit}] c[{b}]')
+   yield c,dict(family='init',move='idle_parity_watch',unit=i,q=q,basis=u.name,time=when)
+
 def phase_moves(base):
  # Enumerate all final Tdag relocation masks through the existing transfers.
  for mask in range(8):

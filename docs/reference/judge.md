@@ -21,7 +21,7 @@ Serves: G1, G2. Read before reasoning about scores, noise, validity or evaluator
   does not run `fault_scan`; c1 is our diagnostic. c1 ≈ 3.7e-17 is roundoff (FINDINGS).
 - **Board.** Key = 1-F at 3 s.f., then fewer 2q gates, then earlier submission; best entry per team.
 - **Measure, then reuse without reset.** The judge charges X_ERROR(p) before `measure` (state and record flip together) and DEPOLARIZE1(p) after it, so a measured qubit reused at once is a known |m⟩ with 2p/3 harmful error, one step earlier than `reset` (X_ERROR p). Waiting before the reuse is charged; waiting before a reset is not. The X^m offset must land only where a detector can XOR the record in (never on the output), or correctness fails.
-- **Frame.** v12 and st_L2_v0 use none (auto frame empty), so record choice for the frame is no lever.
+- **Frame and selection.** Affine logical frames (`FRAME_X`/`FRAME_Z` on record parities, both or neither) and `POSTSELECT` are legal; our circuits use none. A frame on a parity that is already a detector changes nothing on accepted shots. A nonlinear accept rule can be computed with legal gates (reviewer 7's 8-CX/7-T AND witness), at full noise cost.
 - **No other levers in the code** (read 2026-10-23): noise follows problem.md §1.5 for every operation; the only free operations are `barrier` and the `h` folded into MX/RX; the sign-only correction equals the §2.2 lookup; comments cannot inject Stim text; MPP and every 2q gate but `cx` are rejected.
 - **Spec freedoms checked 2026-10-24** (problem.md §1.2–2.2 and `tprep/{qasm,noise,check}.py`):
   - A block qubit can move in 1 CX: CX f→a (f fresh |+⟩), then measure a in Z, leaves X^m on A, which only flips A's
