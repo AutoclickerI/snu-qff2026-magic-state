@@ -1,10 +1,9 @@
 # Plan
 
-## Status (2026-10-24 23:50 KST)
-- Board: **rank 1**, v32p_r13 4.93405e-5 (server); Placeholder 5.058e-5. v34m (v32p echoes + reviewer 6's A partial decoder,
-  all-orders 4.66293e-5, acceptance 0.5012) in re-draws for 00:37 (cut 00:20). Acceptance is the binding budget.
-- New bases: SEPBC guard5_timing_1 (v31s + v30g edits + wait guards, R44, all-orders 4.914e-5 without the decoder, acc 0.5010);
-  ENDSTATE region2_k56_A2_safe_dest (R38, 5.614e-5, acc ≈ 0.587: 0.086 of acceptance headroom to spend).
+## Status (2026-10-25 00:05 KST)
+- Board: **rank 1**, v32p_r13 4.93405e-5 (server); Placeholder 5.058e-5. **v35a** (SEPBC R44 guard5_timing_1 + A decoder,
+  all-orders 4.39353e-5, acceptance 0.50124) replaced v34m (4.66293e-5) in the re-draws for 00:37 (cut 00:20).
+- Acceptance is the binding budget: v35a has ≈ 0.0007 over 0.5005. ENDSTATE's R38 circuit (5.614e-5, acc ≈ 0.587) has 0.086.
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
@@ -21,9 +20,9 @@ small grid-native block preps; every earlier closure of it was model-bound.
 |---|---|---|---|---|---|---|
 | 1 | P71 | G1 | ENDSTATE: delivered in-place joint B∪C regions (R38 region2_k56_A2_safe_dest 5.614e-5, acc ≈ 0.587; separate moved blocks closed). Now spend its acceptance headroom: A partial decoder for its A placement, echoed checks, wait guards, mz inits, knapsack | a finalist below v34m | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, hippo, tom) | active |
 | 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
-| 3 | P72 | G1 | FRESH: global CP-SAT found no R<55 independent-resource placement (FINDINGS). Now port the A partial decoder (re-derived per schedule) and echo checks onto SEPBC's R44 finalists | a finalist below v34m | Codex lane FRESH (`work/lanes/FRESH`, sunfish, zebra) | active |
+| 3 | P72 | G1 | FRESH: delivered v35a (A decoder re-derived on SEPBC's R44 schedule). Now acceptance-free gains on v35a (reviewer 6's SX/SX† rewrite made FAST, all-orders timing feedback) and integration of other lanes' finalists onto v35a | a finalist below v35a | Codex lane FRESH (`work/lanes/FRESH`, sunfish, zebra) | active |
 | 4 | P69 | G1 | SEPBC: delivered v31s (R45) and guard5_timing_0 (R44, reoriented A + five storage guards + retiming, 4.9143e-5, MC3 4.9016e-5, acc 0.5007; R43 by source-check removal loses). Now R ≤ 43 by other mechanisms, kept compatible with the A partial decoder | R ≤ 43 finalists | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
-| 6 | P67 | G1 | ST2: delivered v32p (echoes). Now an acceptance knapsack on v34m (echoes, q16 watch, mz inits, known-zero, blue-check parts, A flag), new echo windows, v30g edits, SEPBC seeds | a finalist below v34m | Codex lane ST2 (`work/lanes/ST2`, zebra, owl) | active |
+| 6 | P67 | G1 | ST2: delivered v32p (echoes). Now the acceptance knapsack on v35a (guards vs echoes vs mz inits, known-zero, blue-check parts) | a finalist below v35a | Codex lane ST2 (`work/lanes/ST2`, zebra, owl; new thread) | active |
 | 5 | P73 | G1 | COMP29: dual of the A decoder for B and C on v34m (a logical-Z representative of B commuting with B→data read as a flag; same for C, blue-check cells, echo helpers) | a finalist below v34m | Codex lane COMP29 (`work/lanes/COMP29`, jerry, tom) | active |
 | 5 | P74 | G1 | WAITPROT: reviewer 4's selective Z protection of waiting data on v30f (helper \|+⟩, CX h→q twice around the wait, MX h; Fano-line triple meets every weight-3 Z logical) | priced singles/pairs/Fano triples; a finalist below v30f or the mechanism | Codex lane WAITPROT (`work/lanes/WAITPROT`, tom, zebra) | active |
 | 6 | P59 | G1 | BCFB: extend the A partial decoder on v34m (other logical-X representatives, stabilizer flags, fuller A readout decoders, flag-qubit choice) and combine with earlier A results | a finalist below v34m | Codex lane BCFB (`work/lanes/BCFB`, owl; new thread) | active |
