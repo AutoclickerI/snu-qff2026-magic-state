@@ -34,7 +34,8 @@ mechanism lanes rebased on v36b at 02:25 and publish v36b deltas with acceptance
 | 9 | P74 | G1 | Acceptance-efficient waiting-data protection re-placed on v36b (v35a menu: terminal_joint −2.3% at acceptance 0.515) | `WAITPROT/menu_v36b.json` for P75, finalists | WAITPROT (`work/lanes/WAITPROT`, on v36b) | active |
 | 10 | P62 | G1, G2 | B/C boundary cache rebuilt on v36b's exterior, wide B/C search with acceptance | v36b deltas for P75 | BCPOL (`work/lanes/BCPOL`, on v36b) | active |
 | 11 | P78 | G1 | Racing re-draws: chunk-by-chunk seed-0 sampling, prune draws that cannot beat the threshold, bit-identical completed scores; launcher for promote | more draws per CPU-hour, adopted into `work/` | DRAW (`work/lanes/DRAW`) | active |
-| 12 | P2 | G1 | Hourly submission of the best verified candidate (`work/receipts/draw_loop.sh` runs `work/promote.sh` on `receipts/next_stem.txt` each hour; keep that file on the best all-orders stem; R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 12 | P79 | G1 | Fresh-eyes structural review that builds: list v36b's design assumptions tick by tick, break each with an optimistic ideal-noise or ideal-meter screen, build ideas bounded above 0.5% that no active lane owns | ranked idea table with bounds, finalists | IDEAS (`work/lanes/IDEAS`) | active |
+| 13 | P2 | G1 | Hourly submission of the best verified candidate (`work/receipts/draw_loop.sh` runs `work/promote.sh` on `receipts/next_stem.txt` each hour; keep that file on the best all-orders stem; R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; evidence in FINDINGS and `work/lanes/MAIN/spec/`)
 - Reviewer 8 (`work/lanes/MAIN/spec/reviewer8/`): error-path-weighted CEGAR targets for the synthesizers; detector-basis reduction (112 → 85 record terms, official PASS) and frame gauges for speed only. (Mid-preparation B flags are in P73, N − L0·A in P75.)
