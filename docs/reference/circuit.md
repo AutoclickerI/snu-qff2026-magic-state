@@ -37,11 +37,13 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Region counterfactuals**: `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python region.py ../<stem> <spec.json> 16`, spec =
   `{"name", "units": [[time, [qubits]], ...]}`: the named ops' noise channels made perfect (example: `T14/spec_prefix.json`).
 - **Per-channel counterfactuals** (which noise matters, all orders): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python adjoint_ablation.py ../<stem> 72`
-  (~2 min; each channel made perfect in turn, values overlap, not additive; reviewer 8's tool).
+  (one process, 2–25 min with host load; each channel made perfect in turn, values overlap, not additive; reviewer 8's
+  tool; `v36c_adjoint_72.json`, `v36f_adjoint_72.json`). Single Pauli components: `work/lanes/IDEAS/abl.py`.
 - **Speed**: `work/lanes/XTIM/speed_predict.py <stem>` (seconds per 1e6 shots; > 20 s is refused by promote.sh).
 
 ## Search machinery in the lanes
-Code of removed lanes: `git show b2a5243:work/lanes/<LANE>/<file>` (ENDSTATE, ST1, BCPOL, LNS) or `e438fb6^` (older).
+Code of removed lanes: `git show b2a5243:work/lanes/<LANE>/<file>` (ENDSTATE, ST1, BCPOL, LNS) or `e438fb6^` (older);
+for BCFB, COMP29, WAITPROT, `git log --oneline -1 -- work/lanes/<LANE>` names the removing commit (use its `^`).
 - Floors and Steane-round mechanics: `work/lanes/DR/{relaxed,steane,synth}.py` (`synth.dangerous_z`).
 - Exact 2nd/3rd order with sensitivities: `work/lanes/EVAL/exact2.py`; xtim speed: `work/lanes/XTIM/speed_predict.py`;
   slow-path atom check: `work/lanes/FRESH/general_atoms.py`.
@@ -52,6 +54,9 @@ Code of removed lanes: `git show b2a5243:work/lanes/<LANE>/<file>` (ENDSTATE, ST
 - Population search with all-orders fitness and acceptance knapsack: `work/lanes/ST2/pop36_*.py`, `knapsack_select.py`,
   scorer `sparse_budget.py`; region ledger `ledger.py`.
 - Gadget library, acceptance trades and joint builder: `work/lanes/INTEG/` (`lib.py`, `gadgets.py`, `joint.py`, `ev.py`).
+- Continuous guards and phantom-gadget bounds: `work/lanes/PRECELL/` (`guards.py`, `joint_g.py`, `phantom.py`, `redit.py`).
+- B/C resource synthesis by proxy-scored windowed LNS (Z-weighted CP-SAT start, `proxy.py` J = X2 + 1.1e-4·RZ +
+  3e-5·acc1): `work/lanes/BFLAG/` (`synth_bc.py`, `lns3.py`, `pipe.sh`, `mkcand.py`); guard bound `sparse/idlebound.py`.
 - A-region class table (prices any A-encoder change with v36c's surroundings fixed in microseconds): `work/lanes/AENC/`
   (`table_v36c.json`, `evalx.py`, `bmodel.py`); placement/timing CP-SAT model calibrated on v36c: `work/lanes/EARLY/layout.py`.
 - Stationary 7-cell encoder library and end-state witnesses: ENDSTATE (git); prefix/round co-design with CP-SAT and
