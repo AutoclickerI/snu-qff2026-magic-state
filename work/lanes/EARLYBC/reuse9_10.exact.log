@@ -1,0 +1,17 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/EARLYBC/reuse9_10.qasm: 459 noise channels, 3687 faults, 590 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.67240e-05   (pairs 5.67240e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.67240e-05
+third order: 2.46318e-05   (weight-3 sets 2.82618e-05 + pair-times-others -3.63004e-06)
+1-F (to 3rd order) = 8.13558e-05
+acceptance: first order 0.39468, second order 0.57813; exp(-A1) = 0.54590  (A1 = 0.60532)
+time: model+singles 0.3s, pairs 3.4s, triples 64.4s
+
+top 5 fault pairs by contribution to 1-F (each pair counted once):
+  8.783e-07 ( 1.55%)  n_ij=0.125  L158 idle X@q7 t=25..28   +   L189 idle X@q20 t=33..48
+  8.783e-07 ( 1.55%)  n_ij=0.125  L158 idle X@q7 t=25..28   +   L189 idle Y@q20 t=33..48
+  3.520e-07 ( 0.62%)  n_ij=1.000  L191 idle Z@q0 t=33..48   +   L336 gate2 IZ@q8,14 t=46
+  3.520e-07 ( 0.62%)  n_ij=1.000  L191 idle Z@q0 t=33..48   +   L346 gate2 ZI@q14,15 t=47
+  3.520e-07 ( 0.62%)  n_ij=1.000  L191 idle Z@q0 t=33..48   +   L355 gate2 ZZ@q8,14 t=48
+
+loss by channel kind (each pair split half/half): {'flip': '1.479e-06', 'gate': '2.859e-05', 'idle': '2.665e-05'}

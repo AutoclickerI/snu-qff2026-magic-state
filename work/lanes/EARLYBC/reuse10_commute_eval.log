@@ -1,0 +1,17 @@
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+reuse10_commute check p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5477, floor 0.5)
+  score 1-F = 9.03758e-05 ± 1.1e-05   (3 significant figures: 9.04e-05)
+  2q+ gates = 209
+  RESULT: PASS
+reuse10_commute exact circuit /home/jihoon/competitions/quantumn/work/lanes/EARLYBC/reuse10_commute.qasm: 466 noise channels, 3706 faults, 586 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.72761e-05   (pairs 5.72761e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.72761e-05
+third order: 2.28278e-05   (weight-3 sets 2.66127e-05 + pair-times-others -3.78490e-06)
+1-F (to 3rd order) = 8.01039e-05
+acceptance: first order 0.39843, second order 0.57969; exp(-A1) = 0.54795  (A1 = 0.60157)
+

@@ -1,0 +1,17 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/EARLYBC/commute.qasm: 468 noise channels, 3710 faults, 588 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.76805e-05   (pairs 5.76805e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.76805e-05
+third order: 2.46240e-05   (weight-3 sets 2.84635e-05 + pair-times-others -3.83948e-06)
+1-F (to 3rd order) = 8.23045e-05
+acceptance: first order 0.39119, second order 0.57683; exp(-A1) = 0.54400  (A1 = 0.60881)
+time: model+singles 0.7s, pairs 6.9s, triples 113.9s
+
+top 5 fault pairs by contribution to 1-F (each pair counted once):
+  8.783e-07 ( 1.52%)  n_ij=0.125  L158 idle X@q7 t=25..28   +   L189 idle X@q20 t=33..48
+  8.783e-07 ( 1.52%)  n_ij=0.125  L158 idle X@q7 t=25..28   +   L189 idle Y@q20 t=33..48
+  3.520e-07 ( 0.61%)  n_ij=1.000  L191 idle Z@q0 t=33..48   +   L314 gate2 IZ@q9,8 t=44
+  3.520e-07 ( 0.61%)  n_ij=1.000  L191 idle Z@q0 t=33..48   +   L314 gate2 XY@q9,8 t=44
+  3.520e-07 ( 0.61%)  n_ij=1.000  L191 idle Z@q0 t=33..48   +   L324 gate2 ZZ@q14,8 t=45
+
+loss by channel kind (each pair split half/half): {'flip': '1.479e-06', 'gate': '2.891e-05', 'idle': '2.729e-05'}

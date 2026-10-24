@@ -1,0 +1,68 @@
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+fixed_alap check p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5426, floor 0.5)
+  score 1-F = 9.8601e-05 ± 1.2e-05   (3 significant figures: 9.86e-05)
+  2q+ gates = 209
+  RESULT: PASS
+fixed_alap exact circuit /home/jihoon/competitions/quantumn/work/lanes/EARLYBC/fixed_alap.qasm: 461 noise channels, 3689 faults, 590 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.70772e-05   (pairs 5.70772e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.70772e-05
+third order: 2.53769e-05   (weight-3 sets 2.90379e-05 + pair-times-others -3.66105e-06)
+1-F (to 3rd order) = 8.24541e-05
+acceptance: first order 0.38911, second order 0.57592; exp(-A1) = 0.54287  (A1 = 0.61089)
+
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+cancel_alap check p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5404, floor 0.5)
+  score 1-F = 7.67897e-05 ± 1e-05   (3 significant figures: 7.68e-05)
+  2q+ gates = 205
+  RESULT: PASS
+cancel_alap exact circuit /home/jihoon/competitions/quantumn/work/lanes/EARLYBC/cancel_alap.qasm: 457 noise channels, 3629 faults, 590 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.73262e-05   (pairs 5.73262e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.73262e-05
+third order: 2.56537e-05   (weight-3 sets 2.93859e-05 + pair-times-others -3.73220e-06)
+1-F (to 3rd order) = 8.29799e-05
+acceptance: first order 0.38620, second order 0.57479; exp(-A1) = 0.54129  (A1 = 0.61380)
+
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+commute check p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5439, floor 0.5)
+  score 1-F = 0.000110323 ± 1.2e-05   (3 significant figures: 0.00011)
+  2q+ gates = 209
+  RESULT: PASS
+commute exact circuit /home/jihoon/competitions/quantumn/work/lanes/EARLYBC/commute.qasm: 468 noise channels, 3710 faults, 588 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.76805e-05   (pairs 5.76805e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.76805e-05
+third order: 2.46240e-05   (weight-3 sets 2.84635e-05 + pair-times-others -3.83948e-06)
+1-F (to 3rd order) = 8.23045e-05
+acceptance: first order 0.39119, second order 0.57683; exp(-A1) = 0.54400  (A1 = 0.60881)
+
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+cancel_commute check p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5424, floor 0.5)
+  score 1-F = 0.000113392 ± 1.3e-05   (3 significant figures: 0.000113)
+  2q+ gates = 205
+  RESULT: PASS
+cancel_commute exact circuit /home/jihoon/competitions/quantumn/work/lanes/EARLYBC/cancel_commute.qasm: 464 noise channels, 3650 faults, 586 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.81410e-05   (pairs 5.81410e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.81410e-05
+third order: 2.49046e-05   (weight-3 sets 2.88318e-05 + pair-times-others -3.92721e-06)
+1-F (to 3rd order) = 8.30456e-05
+acceptance: first order 0.38829, second order 0.57569; exp(-A1) = 0.54242  (A1 = 0.61171)
+

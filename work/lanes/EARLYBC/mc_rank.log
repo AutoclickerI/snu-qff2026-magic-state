@@ -1,0 +1,32 @@
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+commute check p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5439, floor 0.5)
+  score 1-F = 0.000110323 ± 1.2e-05   (3 significant figures: 0.00011)
+  2q+ gates = 209
+  RESULT: PASS
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+commute {'seed': 0, 'score': np.float64(8.514890152312712e-05), 'acceptance': 0.54422311, 'sem': np.float64(1.0908058688358922e-06), 'passed': True}
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+commute {'seed': 1000, 'score': np.float64(8.471856595291203e-05), 'acceptance': 0.54421365, 'sem': np.float64(1.0893154321616678e-06), 'passed': True}
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+commute {'seed': 2000, 'score': np.float64(8.368157939964373e-05), 'acceptance': 0.54426554, 'sem': np.float64(1.080422007973533e-06), 'passed': True}
+commute MEAN 8.451634895856096e-05
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+cancel_commute check p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5424, floor 0.5)
+  score 1-F = 0.000113392 ± 1.3e-05   (3 significant figures: 0.000113)
+  2q+ gates = 205
+  RESULT: PASS
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+cancel_commute {'seed': 0, 'score': np.float64(8.487588410843504e-05), 'acceptance': 0.54261585, 'sem': np.float64(1.0866784893876744e-06), 'passed': True}
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+cancel_commute {'seed': 1000, 'score': np.float64(8.426959097073718e-05), 'acceptance': 0.54266313, 'sem': np.float64(1.088185154684212e-06), 'passed': True}
+[twirl_records] circuit channels: 36 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+cancel_commute {'seed': 2000, 'score': np.float64(8.436442801350865e-05), 'acceptance': 0.54264577, 'sem': np.float64(1.0843902510945173e-06), 'passed': True}
+cancel_commute MEAN 8.450330103089363e-05
