@@ -1,0 +1,42 @@
+circuit work/lanes/BUDGET/timing/base.qasm: 461 noise channels, 3689 faults, 590 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.70772e-05   (pairs 5.70772e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.70772e-05
+third order: 2.53769e-05   (weight-3 sets 2.90379e-05 + pair-times-others -3.66105e-06)
+1-F (to 3rd order) = 8.24541e-05
+acceptance: first order 0.38911, second order 0.57592; exp(-A1) = 0.54287  (A1 = 0.61089)
+time: model+singles 0.4s, pairs 25.2s, triples 558.7s
+
+top 30 fault pairs by contribution to 1-F (each pair counted once):
+  9.326e-07 ( 1.63%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L189 idle X@q20 t=33..49
+  9.326e-07 ( 1.63%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L189 idle Y@q20 t=33..49
+  3.738e-07 ( 0.65%)  n_ij=1.000  L191 idle Z@q0 t=33..49   +   L337 gate2 IZ@q8,14 t=47
+  3.738e-07 ( 0.65%)  n_ij=1.000  L191 idle Z@q0 t=33..49   +   L347 gate2 ZI@q14,15 t=48
+  3.738e-07 ( 0.65%)  n_ij=1.000  L191 idle Z@q0 t=33..49   +   L356 gate2 ZZ@q8,14 t=49
+  3.738e-07 ( 0.65%)  n_ij=1.000  L189 idle Z@q20 t=33..49   +   L317 gate2 IZ@q14,8 t=45
+  3.738e-07 ( 0.65%)  n_ij=1.000  L189 idle Z@q20 t=33..49   +   L328 gate2 YY@q2,8 t=46
+  3.738e-07 ( 0.65%)  n_ij=1.000  L189 idle Z@q20 t=33..49   +   L328 gate2 ZZ@q2,8 t=46
+  3.738e-07 ( 0.65%)  n_ij=1.000  L191 idle Y@q0 t=33..49   +   L337 gate2 XZ@q8,14 t=47
+  3.738e-07 ( 0.65%)  n_ij=1.000  L191 idle Y@q0 t=33..49   +   L356 gate2 YY@q8,14 t=49
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Z@q10 t=36..49   +   L336 gate2 IZ@q1,2 t=47
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Z@q10 t=36..49   +   L336 gate2 XY@q1,2 t=47
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Z@q10 t=36..49   +   L346 gate2 ZI@q2,8 t=48
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Z@q10 t=36..49   +   L355 gate2 ZZ@q1,2 t=49
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Y@q10 t=36..49   +   L336 gate2 IY@q1,2 t=47
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Y@q10 t=36..49   +   L336 gate2 XZ@q1,2 t=47
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Y@q10 t=36..49   +   L346 gate2 YX@q2,8 t=48
+  3.084e-07 ( 0.54%)  n_ij=1.000  L209 idle Y@q10 t=36..49   +   L355 gate2 YY@q1,2 t=49
+  1.663e-07 ( 0.29%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L381 flip X@q14 t=51
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Y@q0 t=52..52   +   L393 idle Z@q20 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Y@q0 t=52..52   +   L394 idle Z@q7 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Y@q0 t=52..52   +   L395 idle Z@q10 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L393 idle Y@q20 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L393 idle Z@q20 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L394 idle Y@q7 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L394 idle Z@q7 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L395 idle Y@q10 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L396 idle Y@q3 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L397 idle Y@q22 t=52..52
+  1.111e-07 ( 0.19%)  n_ij=1.000  L392 idle Z@q0 t=52..52   +   L398 idle Y@q21 t=52..52
+
+loss by channel kind (each pair split half/half): {'flip': '1.479e-06', 'gate': '2.862e-05', 'idle': '2.697e-05'}

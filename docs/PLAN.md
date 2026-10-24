@@ -24,11 +24,10 @@ Bottleneck: the data wait before the round. v17a idles the data at 33–49; v18 
 | 1 | P53 | G1 | SEP2T: settle whether separate small A/B/C blocks + teleports/hops beat the joint B+C prep on the grid with the ALAP pre-stage (long CP-SAT on FREELAY's 2-teleport models, constructive/LNS builds, C teleported in) | 3-seed MC below v19's 7.537e-5, or a built separate-block circuit with its loss breakdown | Codex lane SEP2T (`work/lanes/SEP2T`, sunfish, hippo) | active |
 | 2 | P51 | G1 | BCSYN: smaller, cleaner FT joint B+C prep (reverse-endpoint + clean CEGAR, MX-init, X-measured helpers, new footprints), priced in situ in v18 | 3-seed MC below v18's 7.636e-5, or SAT/UNSAT per (CX cap, depth) with in-situ prices | Codex lane BCSYN (`work/lanes/BCSYN`, owl, tom) | active |
 | 3 | P47 | G1 | TREP2: on v18, split the encoder and ALAP-schedule gains, exact-objective schedule search under the acceptance budget, the 15 untested 15-T forms, a schedule-aware encoder, re-encoding and measure-init re-applied | 3-seed MC below v18's 7.636e-5, or every lever measured | Codex lane TREP2 (`work/lanes/TREP2`, jerry, hippo) | active |
-| 4 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
-| 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
-| 8 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
+| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 7 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.
@@ -68,9 +67,9 @@ Checked against the code and the judge before acting. "Verified" means read in t
 | # | Claim | Check | Item |
 |---|---|---|---|
 | 1 | Re-encode the last A/C readouts with two CX | measured exactly as predicted (−1.2954e-6 2nd order); v17 | done (FINDINGS) |
-| 2 | Evaluators and searches assume c1 = 0 | valid tooling gap; exact2 refuses c1 ≠ 0 candidates for `--third` | P49 |
-| 3 | Choose all init sites jointly under the acceptance budget | valid; small expected gain | P49 |
-| 4 | Detectors and logical frame chosen jointly | mostly buys acceptance, which is budget | P49 |
+| 2 | Evaluators and searches assume c1 = 0 | valid tooling gap; partial detector sets scored by BUDGET, none better | closed (FINDINGS) |
+| 3 | Choose all init sites jointly under the acceptance budget | all 4096 masks: none beats all-measure-init | closed (FINDINGS) |
+| 4 | Detectors and logical frame chosen jointly | 139 variants, none better | closed (FINDINGS) |
 | 5 | C → 4 ancillas reading Z_056, Z_146, Z_245, Z_3456 (12 CX, 6 layers) | equivalence verified; costs +55% grid-free (checker faults, B exposure) | closed (FINDINGS) |
 | 6 | Reverse-endpoint B+C synthesis (≤ 6 nonzero rows) | valid; 66 CX in 3.8 s without the FT predicate | P51 |
 | 7, 8 | A + cat check as one synthesis; dual helper for A | apply to the closed COMBO2 parity branch | closed with COMBO2 |
