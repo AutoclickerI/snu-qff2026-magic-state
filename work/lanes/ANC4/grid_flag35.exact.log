@@ -1,0 +1,22 @@
+circuit work/lanes/ANC4/grid_flag35.qasm: 470 noise channels, 3430 faults, 672 (s,d) classes, rotation rank 5, 42 detectors, noiseless acceptance 1.000000
+first order : c1 p = 6.0290e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.71691e-04   (pairs 1.71691e-04 + same-channel normalisation 6.005e-22)
+1-F (2nd order) = 1.71691e-04
+third order: 2.85390e-05   (weight-3 sets 4.03166e-05 + pair-times-others -1.17776e-05)
+1-F (to 3rd order) = 2.00230e-04
+acceptance: first order 0.32545, second order 0.55378; exp(-A1) = 0.50939  (A1 = 0.67455)
+time: model+singles 0.3s, pairs 9.6s, triples 203.4s
+
+top 10 fault pairs by contribution to 1-F (each pair counted once):
+  3.642e-06 ( 2.12%)  n_ij=1.000  L242 idle Z@q2 t=33..43   +   L282 flip Z@q21 t=36
+  3.637e-06 ( 2.12%)  n_ij=1.000  L242 idle Z@q2 t=33..43   +   L293 idle Z@q21 t=38..40
+  3.637e-06 ( 2.12%)  n_ij=1.000  L242 idle Z@q2 t=33..43   +   L305 idle Z@q16 t=40..42
+  2.324e-06 ( 1.35%)  n_ij=1.000  L181 idle Z@q1 t=25..31   +   L282 flip Z@q21 t=36
+  2.324e-06 ( 1.35%)  n_ij=1.000  L257 idle Z@q1 t=33..39   +   L282 flip Z@q21 t=36
+  2.321e-06 ( 1.35%)  n_ij=1.000  L181 idle Z@q1 t=25..31   +   L293 idle Z@q21 t=38..40
+  2.321e-06 ( 1.35%)  n_ij=1.000  L181 idle Z@q1 t=25..31   +   L305 idle Z@q16 t=40..42
+  2.321e-06 ( 1.35%)  n_ij=1.000  L257 idle Z@q1 t=33..39   +   L293 idle Z@q21 t=38..40
+  2.321e-06 ( 1.35%)  n_ij=1.000  L257 idle Z@q1 t=33..39   +   L305 idle Z@q16 t=40..42
+  1.662e-06 ( 0.97%)  n_ij=1.000  L282 flip Z@q21 t=36   +   L318 idle Y@q1 t=41..45
+
+loss by channel kind (each pair split half/half): {'flip': '1.654e-05', 'gate': '4.063e-05', 'idle': '1.145e-04'}

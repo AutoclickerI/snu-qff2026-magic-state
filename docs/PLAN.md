@@ -8,7 +8,7 @@
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
 - Every grid layout so far hits the area wall: separate B and C blocks do not fit next to the data early (R0, LAYOUT3,
   TP2, R1), so the 82-CX joint B+C prep stays. Closed this afternoon: ARCH (the round's data-side cost is structural), REVSAT (fixed-L5 placement
-  UNSAT for separate blocks), EARLYBC (zero-CX tweaks −2.7% on v17a, to port). Open: ANC4, BCSYN (suffix block preps), TREP2
+  UNSAT for separate blocks), EARLYBC (zero-CX tweaks −2.7% on v17a, to port). ANC4 closed (4-ancilla checker costs more than C). Open: BCSYN (suffix block preps), TREP2
   (v18 schedule and forms), BUDGET (local choices). R1 and PRE3 closed: R1's round never moved
   (data round CXs still at 50–51); only 12 free cells touch the data at step 33, A and B need 14 (FINDINGS).
 
@@ -20,14 +20,13 @@ Bottleneck: the data wait before the round. v17a idles the data at 33–49; v18 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P45 | G1 | ANC4: C replaced by ancillas measuring B's four Z-parities (reviewer 2 #5), B from a small separate encoder, earliest round on v17's prefix | 3-seed MC below v17's, or grid-free table + binding constraint | Codex lane ANC4 (`work/lanes/ANC4`, sunfish) | active |
-| 2 | P51 | G1 | BCSYN: smaller, cleaner FT joint B+C prep (reverse-endpoint + clean CEGAR, MX-init, X-measured helpers, new footprints), priced in situ in v18 | 3-seed MC below v18's 7.636e-5, or SAT/UNSAT per (CX cap, depth) with in-situ prices | Codex lane BCSYN (`work/lanes/BCSYN`, owl, tom) | active |
-| 3 | P47 | G1 | TREP2: on v18, split the encoder and ALAP-schedule gains, exact-objective schedule search under the acceptance budget, the 15 untested 15-T forms, a schedule-aware encoder, re-encoding and measure-init re-applied | 3-seed MC below v18's 7.636e-5, or every lever measured | Codex lane TREP2 (`work/lanes/TREP2`, jerry, hippo) | active |
-| 4 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
-| 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
-| 8 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
+| 1 | P51 | G1 | BCSYN: smaller, cleaner FT joint B+C prep (reverse-endpoint + clean CEGAR, MX-init, X-measured helpers, new footprints), priced in situ in v18 | 3-seed MC below v18's 7.636e-5, or SAT/UNSAT per (CX cap, depth) with in-situ prices | Codex lane BCSYN (`work/lanes/BCSYN`, owl, tom) | active |
+| 2 | P47 | G1 | TREP2: on v18, split the encoder and ALAP-schedule gains, exact-objective schedule search under the acceptance budget, the 15 untested 15-T forms, a schedule-aware encoder, re-encoding and measure-init re-applied | 3-seed MC below v18's 7.636e-5, or every lever measured | Codex lane TREP2 (`work/lanes/TREP2`, jerry, hippo) | active |
+| 3 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
+| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 7 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.
@@ -70,10 +69,10 @@ Checked against the code and the judge before acting. "Verified" means read in t
 | 2 | Evaluators and searches assume c1 = 0 | valid tooling gap; exact2 refuses c1 ≠ 0 candidates for `--third` | P49 |
 | 3 | Choose all init sites jointly under the acceptance budget | valid; small expected gain | P49 |
 | 4 | Detectors and logical frame chosen jointly | mostly buys acceptance, which is budget | P49 |
-| 5 | C → 4 ancillas reading Z_056, Z_146, Z_245, Z_3456 (12 CX, 6 layers) | parities hand-checked; early-checked B qubits are exposed | P45 |
-| 6 | Reverse-endpoint B+C synthesis (≤ 6 nonzero rows) | valid reformulation, speed unknown | P46 |
+| 5 | C → 4 ancillas reading Z_056, Z_146, Z_245, Z_3456 (12 CX, 6 layers) | equivalence verified; costs +55% grid-free (checker faults, B exposure) | closed (FINDINGS) |
+| 6 | Reverse-endpoint B+C synthesis (≤ 6 nonzero rows) | valid; 66 CX in 3.8 s without the FT predicate | P51 |
 | 7, 8 | A + cat check as one synthesis; dual helper for A | apply to the closed COMBO2 parity branch | closed with COMBO2 |
-| 9 | 16 protected 15-T forms of the pre-stage | not yet reproduced | P47 |
+| 9 | 16 protected 15-T forms of the pre-stage | reproduced; re-synthesised encoder + ALAP gave v18 (−8.5%) | P47 |
 | 10 | Integrate the final data idle analytically in MC | variance reduction only; ranking already uses exact2, and seed-0 draws cannot be variance-reduced | dropped |
 
 ## Open questions

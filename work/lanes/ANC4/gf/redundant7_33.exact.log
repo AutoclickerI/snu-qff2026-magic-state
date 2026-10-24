@@ -1,0 +1,22 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/ANC4/gf/redundant7_33.qasm: 326 noise channels, 2420 faults, 607 (s,d) classes, rotation rank 5, 27 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 3.29529e-05   (pairs 3.29529e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 3.29529e-05
+third order: 1.81234e-06   (weight-3 sets 3.90029e-06 + pair-times-others -2.08796e-06)
+1-F (to 3rd order) = 3.47653e-05
+acceptance: first order 0.60121, second order 0.68058; exp(-A1) = 0.67113  (A1 = 0.39879)
+time: model+singles 0.3s, pairs 4.0s, triples 148.6s
+
+top 10 fault pairs by contribution to 1-F (each pair counted once):
+  1.663e-07 ( 0.50%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L184 flip X@q11 t=29
+  1.663e-07 ( 0.50%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L281 flip X@q11 t=34
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Y@q0 t=35..35   +   L295 idle Z@q20 t=35..35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Y@q0 t=35..35   +   L296 idle Z@q7 t=35..35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Y@q0 t=35..35   +   L297 idle Z@q4 t=35..35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Z@q0 t=35..35   +   L295 idle Y@q20 t=35..35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Z@q0 t=35..35   +   L295 idle Z@q20 t=35..35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Z@q0 t=35..35   +   L296 idle Y@q7 t=35..35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Z@q0 t=35..35   +   L296 idle Z@q7 t=35..35
+  1.111e-07 ( 0.34%)  n_ij=1.000  L294 idle Z@q0 t=35..35   +   L297 idle Y@q4 t=35..35
+
+loss by channel kind (each pair split half/half): {'flip': '7.205e-07', 'gate': '1.334e-05', 'idle': '1.890e-05'}

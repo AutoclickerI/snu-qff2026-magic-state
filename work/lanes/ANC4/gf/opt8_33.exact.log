@@ -1,0 +1,22 @@
+circuit work/lanes/ANC4/gf/opt8_33.qasm: 330 noise channels, 2396 faults, 557 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 4.3291e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 4.80529e-05   (pairs 4.80529e-05 + same-channel normalisation 2.390e-22)
+1-F (2nd order) = 4.80529e-05
+third order: 3.15978e-06   (weight-3 sets 6.19177e-06 + pair-times-others -3.03198e-06)
+1-F (to 3rd order) = 5.12127e-05
+acceptance: first order 0.56115, second order 0.65734; exp(-A1) = 0.64478  (A1 = 0.43885)
+time: model+singles 0.2s, pairs 3.7s, triples 116.3s
+
+top 10 fault pairs by contribution to 1-F (each pair counted once):
+  1.932e-06 ( 4.02%)  n_ij=0.500  L175 idle X@q22 t=26..32   +   L186 idle X@q27 t=27..31
+  8.842e-07 ( 1.84%)  n_ij=0.500  L171 idle X@q24 t=25..32   +   L190 idle X@q28 t=28..29
+  3.873e-07 ( 0.81%)  n_ij=0.500  L176 idle X@q23 t=26..32   +   L217 idle X@q26 t=31..31
+  3.873e-07 ( 0.81%)  n_ij=0.500  L177 idle X@q25 t=26..32   +   L218 idle X@q28 t=31..31
+  3.331e-07 ( 0.69%)  n_ij=0.500  L153 flip X@q24 t=22   +   L190 idle X@q28 t=28..29
+  1.664e-07 ( 0.35%)  n_ij=0.500  L185 idle X@q26 t=27..29   +   L284 idle X@q0 t=35..35
+  1.664e-07 ( 0.35%)  n_ij=0.500  L185 idle X@q26 t=27..29   +   L284 idle Y@q0 t=35..35
+  1.664e-07 ( 0.35%)  n_ij=0.500  L185 idle X@q26 t=27..29   +   L285 idle X@q20 t=35..35
+  1.664e-07 ( 0.35%)  n_ij=0.500  L185 idle X@q26 t=27..29   +   L285 idle Y@q20 t=35..35
+  1.664e-07 ( 0.35%)  n_ij=0.500  L185 idle X@q26 t=27..29   +   L286 idle X@q7 t=35..35
+
+loss by channel kind (each pair split half/half): {'flip': '9.704e-07', 'gate': '1.683e-05', 'idle': '3.025e-05'}

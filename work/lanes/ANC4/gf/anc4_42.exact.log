@@ -1,0 +1,22 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/ANC4/gf/anc4_42.qasm: 327 noise channels, 2327 faults, 558 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 5.5454e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.60168e-05   (pairs 5.60168e-05 + same-channel normalisation 8.086e-22)
+1-F (2nd order) = 5.60168e-05
+third order: 9.65885e-06   (weight-3 sets 1.32222e-05 + pair-times-others -3.56337e-06)
+1-F (to 3rd order) = 6.56757e-05
+acceptance: first order 0.51682, second order 0.63348; exp(-A1) = 0.61682  (A1 = 0.48318)
+time: model+singles 0.2s, pairs 4.9s, triples 136.0s
+
+top 10 fault pairs by contribution to 1-F (each pair counted once):
+  1.382e-06 ( 2.47%)  n_ij=0.500  L232 idle X@q27 t=38..42   +   L233 idle X@q28 t=38..42
+  8.300e-07 ( 1.48%)  n_ij=0.500  L232 idle X@q27 t=38..42   +   L252 idle X@q26 t=40..42
+  8.300e-07 ( 1.48%)  n_ij=0.500  L233 idle X@q28 t=38..42   +   L252 idle X@q26 t=40..42
+  4.963e-07 ( 0.89%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L189 idle X@q20 t=33..41
+  4.963e-07 ( 0.89%)  n_ij=0.125  L155 idle X@q7 t=25..28   +   L189 idle Y@q20 t=33..41
+  2.770e-07 ( 0.49%)  n_ij=0.500  L232 idle X@q27 t=38..42   +   L288 idle X@q0 t=44..44
+  2.770e-07 ( 0.49%)  n_ij=0.500  L232 idle X@q27 t=38..42   +   L288 idle Y@q0 t=44..44
+  2.770e-07 ( 0.49%)  n_ij=0.500  L232 idle X@q27 t=38..42   +   L289 idle X@q20 t=44..44
+  2.770e-07 ( 0.49%)  n_ij=0.500  L232 idle X@q27 t=38..42   +   L289 idle Y@q20 t=44..44
+  2.770e-07 ( 0.49%)  n_ij=0.500  L232 idle X@q27 t=38..42   +   L290 idle X@q7 t=44..44
+
+loss by channel kind (each pair split half/half): {'flip': '7.205e-07', 'gate': '1.846e-05', 'idle': '3.683e-05'}
