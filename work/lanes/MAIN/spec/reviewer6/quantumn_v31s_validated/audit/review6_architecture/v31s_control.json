@@ -1,0 +1,71 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "source_commit": "abf26aa98bede59bb07f7da838dd1b3a3fdf76f0",
+  "source_qasm": "quantumn_review6/work/lanes/MAIN/v31s.qasm",
+  "source_qasm_sha256": "ed2e0d6a50af7bb4992cd02e74a578c57aac229c46dd1438d44ef3b6ba1bd979",
+  "R": 45,
+  "native_depth": 48,
+  "CX": 189,
+  "cx": 189,
+  "method": "Port the exact two-CX destructive A decoder to pinned v30g and v31s.\nNo inherited official verdicts. All current readout edges/bit IDs are preserved.\nOnly q10 TDG must move earlier for the R45 v31s port; every change is priced.\n",
+  "variant": "unmodified_control",
+  "changes": [],
+  "official_class_tested": false,
+  "official_runtime_tested": false,
+  "independent_verification": {
+    "ideal_acceptance": 1.0,
+    "ideal_loss": 0.0,
+    "output_stabilizers": [
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994
+    ],
+    "first_order_loss": 2.6645352591003764e-19,
+    "harmful_single_fault_count": 0,
+    "harmful_single_examples": [],
+    "all_CX_nearest_neighbor": true,
+    "all_layers_disjoint": true,
+    "native_schedule_matches": true,
+    "qasm_sha256": "ed2e0d6a50af7bb4992cd02e74a578c57aac229c46dd1438d44ef3b6ba1bd979",
+    "A_detector_rows": [
+      [
+        14,
+        16,
+        18,
+        20
+      ],
+      [
+        15,
+        16,
+        19,
+        20,
+        24
+      ],
+      [
+        17,
+        18,
+        19,
+        20,
+        24
+      ]
+    ],
+    "additional_flag": null
+  },
+  "independent_all_orders": {
+    "loss": 5.557789120876857e-05,
+    "acceptance": 0.536401612217895,
+    "conditional_loss_kernel_omission_bound": 1.1585619414499233e-14,
+    "scope": "Independent full-circuit all-orders expectation, STANDARD p=.001; excludes official runtime/class verification."
+  }
+}

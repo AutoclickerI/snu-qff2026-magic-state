@@ -1,0 +1,93 @@
+{
+  "source_commit": "abf26aa98bede59bb07f7da838dd1b3a3fdf76f0",
+  "scope": "Exact binary Pauli and detector parity certificate; complements independent numeric and official validation.",
+  "cases": [
+    {
+      "source": "v30g",
+      "source_sha256": "cde014add878607cef7db9192de221bf4c6ba76626dd5b8679e8d2d89d3941e5",
+      "candidate_sha256": "5c464b87371d27a6906ce2b9dfc996806b1c299f271584c57e1ea56e8fc5ab54",
+      "all_detector_row_transformations_exact": true,
+      "existing_terminal_CX_commute_with_inserted_decoder": true,
+      "rewritten_A_detector_rows": [
+        [
+          14,
+          15,
+          17,
+          18,
+          20
+        ],
+        [
+          17,
+          19,
+          20,
+          24
+        ],
+        [
+          15,
+          18,
+          19,
+          20,
+          24
+        ]
+      ],
+      "additional_detector": [
+        16
+      ],
+      "pulled_back_X_flag": [
+        8,
+        9,
+        15
+      ],
+      "logical_code_indices": [
+        2,
+        3,
+        6
+      ],
+      "arbitrary_input_flag_determinism": "X_A flag commutes with every D->A CX and is +1 on ideal |+L>; no assumption about the data state is required.",
+      "all_old_readout_edges_preserved": true
+    },
+    {
+      "source": "v31s",
+      "source_sha256": "ed2e0d6a50af7bb4992cd02e74a578c57aac229c46dd1438d44ef3b6ba1bd979",
+      "candidate_sha256": "017b77391a55e896c1f8c51f700dbd3e68515e22d2da35c50d177bb1933464e0",
+      "all_detector_row_transformations_exact": true,
+      "existing_terminal_CX_commute_with_inserted_decoder": true,
+      "rewritten_A_detector_rows": [
+        [
+          14,
+          17,
+          18,
+          20
+        ],
+        [
+          15,
+          17,
+          19,
+          20,
+          24
+        ],
+        [
+          18,
+          19,
+          20,
+          24
+        ]
+      ],
+      "additional_detector": [
+        16
+      ],
+      "pulled_back_X_flag": [
+        8,
+        9,
+        15
+      ],
+      "logical_code_indices": [
+        2,
+        3,
+        6
+      ],
+      "arbitrary_input_flag_determinism": "X_A flag commutes with every D->A CX and is +1 on ideal |+L>; no assumption about the data state is required.",
+      "all_old_readout_edges_preserved": true
+    }
+  ]
+}

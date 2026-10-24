@@ -1,0 +1,46 @@
+{
+  "name": "v31s_a_decode_sx",
+  "input_SX_ticks": {
+    "0": 44,
+    "20": 44,
+    "7": 44,
+    "10": 43,
+    "3": 44,
+    "22": 44,
+    "21": 43
+  },
+  "retimings": [
+    {
+      "gate": "TDG",
+      "qubit": 20,
+      "old_tick": 44,
+      "new_tick": 43,
+      "reason": "Free gauge input slot by crossing depolarizing idle only"
+    },
+    {
+      "gate": "TDG",
+      "qubit": 10,
+      "old_tick": 43,
+      "new_tick": 42,
+      "reason": "Free gauge input slot by crossing depolarizing idle only"
+    }
+  ],
+  "output_tick": 47,
+  "native_depth": 48,
+  "physical_gauge_noise_channels": 14,
+  "nearest_neighbor_CX": true,
+  "qasm_sha256": "fceda5a0e22c8394195f327390197af95c16ecbe22c6beb84a4f549f32f1c0c3",
+  "ideal_acceptance": 1.0,
+  "ideal_loss": 0.0,
+  "stabilizers": [
+    0.9999999999999994,
+    0.9999999999999994,
+    0.9999999999999994,
+    0.9999999999999994,
+    0.9999999999999994,
+    0.9999999999999994
+  ],
+  "first_order_loss": 2.960594732333751e-19,
+  "channels": 501,
+  "rank": 5
+}

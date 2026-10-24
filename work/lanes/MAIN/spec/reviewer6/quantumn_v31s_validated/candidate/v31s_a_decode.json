@@ -1,0 +1,122 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "source_commit": "abf26aa98bede59bb07f7da838dd1b3a3fdf76f0",
+  "source_qasm": "quantumn_review6/work/lanes/MAIN/v31s.qasm",
+  "source_qasm_sha256": "ed2e0d6a50af7bb4992cd02e74a578c57aac229c46dd1438d44ef3b6ba1bd979",
+  "R": 45,
+  "native_depth": 48,
+  "CX": 191,
+  "cx": 191,
+  "method": "Port the exact two-CX destructive A decoder to pinned v30g and v31s.\nNo inherited official verdicts. All current readout edges/bit IDs are preserved.\nOnly q10 TDG must move earlier for the R45 v31s port; every change is priced.\n",
+  "variant": "two_CX_A_decoder",
+  "changes": [
+    {
+      "kind": "CX",
+      "qubits": [
+        10,
+        9
+      ],
+      "old": 45,
+      "new": 44
+    },
+    {
+      "kind": "CX",
+      "qubits": [
+        21,
+        15
+      ],
+      "old": 45,
+      "new": 44
+    },
+    {
+      "kind": "TDG",
+      "qubits": [
+        10
+      ],
+      "old": 44,
+      "new": 43
+    }
+  ],
+  "official_class_tested": true,
+  "official_runtime_tested": true,
+  "independent_verification": {
+    "ideal_acceptance": 1.0,
+    "ideal_loss": 0.0,
+    "output_stabilizers": [
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994
+    ],
+    "first_order_loss": 2.9605947323337507e-19,
+    "harmful_single_fault_count": 0,
+    "harmful_single_examples": [],
+    "all_CX_nearest_neighbor": true,
+    "all_layers_disjoint": true,
+    "native_schedule_matches": true,
+    "qasm_sha256": "017b77391a55e896c1f8c51f700dbd3e68515e22d2da35c50d177bb1933464e0",
+    "A_detector_rows": [
+      [
+        14,
+        17,
+        18,
+        20
+      ],
+      [
+        15,
+        17,
+        19,
+        20,
+        24
+      ],
+      [
+        18,
+        19,
+        20,
+        24
+      ]
+    ],
+    "additional_flag": [
+      16
+    ]
+  },
+  "independent_all_orders": {
+    "loss": 4.9485457947061475e-05,
+    "acceptance": 0.5366494669060742,
+    "conditional_loss_kernel_omission_bound": 1.1580290715512342e-14,
+    "scope": "Independent full-circuit all-orders expectation, STANDARD p=.001; excludes official runtime/class verification."
+  },
+  "official_format_tested": true,
+  "official_correctness_tested": true,
+  "official_acceptance_tested": true,
+  "qasm_sha256": "017b77391a55e896c1f8c51f700dbd3e68515e22d2da35c50d177bb1933464e0",
+  "official_validation_receipt": "audit/review6_validation/v31s_a_decode.official_100000000_0.json",
+  "official_validation": {
+    "shots": 100000000,
+    "seed": 0,
+    "gates": {
+      "format_ok": true,
+      "class_ok": true,
+      "correct_ok": true,
+      "acceptance_ok": true,
+      "passed": true
+    },
+    "score": 4.9859049185305465e-05,
+    "sem": 8.360255733379658e-07,
+    "acceptance": 0.53661272,
+    "seconds": 244.82450943499862,
+    "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522"
+  },
+  "metadata_note": "Consolidated final metadata. Original lane metadata records its earlier independent-only scope.",
+  "recommendation": "Best fast candidate validated in this review; no remote submission performed."
+}

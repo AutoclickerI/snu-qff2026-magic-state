@@ -1,0 +1,92 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "source_commit": "abf26aa98bede59bb07f7da838dd1b3a3fdf76f0",
+  "source_qasm": "quantumn_review6/work/lanes/MAIN/v30g.qasm",
+  "source_qasm_sha256": "cde014add878607cef7db9192de221bf4c6ba76626dd5b8679e8d2d89d3941e5",
+  "R": 48,
+  "native_depth": 51,
+  "CX": 196,
+  "cx": 196,
+  "method": "Port the exact two-CX destructive A decoder to pinned v30g and v31s.\nNo inherited official verdicts. All current readout edges/bit IDs are preserved.\nOnly q10 TDG must move earlier for the R45 v31s port; every change is priced.\n",
+  "variant": "two_CX_A_decoder",
+  "changes": [
+    {
+      "kind": "CX",
+      "qubits": [
+        10,
+        9
+      ],
+      "old": 48,
+      "new": 47
+    },
+    {
+      "kind": "CX",
+      "qubits": [
+        21,
+        15
+      ],
+      "old": 48,
+      "new": 47
+    }
+  ],
+  "official_class_tested": false,
+  "official_runtime_tested": false,
+  "independent_verification": {
+    "ideal_acceptance": 1.0,
+    "ideal_loss": 0.0,
+    "output_stabilizers": [
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994
+    ],
+    "first_order_loss": 2.701542693254548e-19,
+    "harmful_single_fault_count": 0,
+    "harmful_single_examples": [],
+    "all_CX_nearest_neighbor": true,
+    "all_layers_disjoint": true,
+    "native_schedule_matches": true,
+    "qasm_sha256": "5c464b87371d27a6906ce2b9dfc996806b1c299f271584c57e1ea56e8fc5ab54",
+    "A_detector_rows": [
+      [
+        14,
+        15,
+        17,
+        18,
+        20
+      ],
+      [
+        17,
+        19,
+        20,
+        24
+      ],
+      [
+        15,
+        18,
+        19,
+        20,
+        24
+      ]
+    ],
+    "additional_flag": [
+      16
+    ]
+  },
+  "independent_all_orders": {
+    "loss": 5.1144744725460265e-05,
+    "acceptance": 0.5051799685022416,
+    "conditional_loss_kernel_omission_bound": 1.1425094043808251e-14,
+    "scope": "Independent full-circuit all-orders expectation, STANDARD p=.001; excludes official runtime/class verification."
+  }
+}

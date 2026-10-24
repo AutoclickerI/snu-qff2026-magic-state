@@ -1,0 +1,239 @@
+Review 6 — actual official judge validation and runtime
+=====================================================
+
+Outcome
+-------
+
+The selected original v31s A-only decoder has now completed the actual
+official score settings: p=0.001, 100,000,000 shots, seed 0, with the official
+1,000,000-shot chunks and chunk seeds 0 through 99 unchanged.
+
+    ALL FOUR GATES: PASS
+    Score 1-F:     4.9859049185305465e-5
+    SEM:           8.360255733379658e-7
+    Acceptance:    0.53661272
+    Native depth:  48
+    CX count:      191
+    Total check:   244.82450943499862 seconds
+
+The circuit was selected before this final seed-0 run. Its independently
+computed all-orders loss is 4.9485457947061475e-5 and acceptance is
+0.5366494669060742. The official estimate differs by 0.447 score SEM and
+-0.737 acceptance standard deviations, consistent with those expectations.
+See v31s_a_decode.official_100000000_0.json and
+v31s_a_decode.validated.json. No server submission was performed.
+
+The review-5 A-decoder + SX candidate passes all four official validity
+gates at 1,000,000 shots, seed 0. Its previous official class/correctness
+gap is closed. Its runtime is poor: 163.306 seconds for the official check.
+
+The fresh v31s A-only decoder candidate also passes all four gates at
+1,000,000 shots and takes 2.669 seconds in the same local environment.
+The unmodified v31s baseline takes 2.790 seconds. Thus the A-only decoder
+has no observed judge-runtime regression.
+
+Fresh v31s A+SX and two terminal operation reorderings pass all four gates
+in bounded 10,000-shot checks, but retain a slow noisy-sampling path.
+Class diagnosis, exact correctness, automatic zero-frame extraction, and
+the noiseless cross-engine check are fast. Terminal reordering does not
+restore the fast sampling path.
+
+These are local runs of the actual official judge, not server submissions.
+The final selected-circuit run uses the complete official score settings.
+The shorter scores below are validation receipts, not precise estimates
+for ranking close candidates.
+
+
+Official source and environment
+-------------------------------
+
+Repository: SNUQuantums/snu-qff2026-problem
+Pinned official commit: 76fe47c0324f1c1f8b72a7d55af200e88043b522
+tprep version: 3.0.3
+Python: CPython 3.12.14, Linux x86_64
+qiskit: 2.5.2
+stim: 1.16.0
+xtim: 3.1.3+qff2
+numpy: 2.3.5
+scipy: 1.18.1
+
+All packages were installed only into audit/review6_validation/venv.
+The xtim wheel is the official CPython 3.12 manylinux x86_64 release asset,
+with its GitHub-published SHA-256 enforced during installation:
+295dc76f88f9f9d9ccdd524329763e956c85874a62941c41f3084aa122bd80e2.
+
+The fetched official source files are unmodified and stored under official/.
+official_provenance.json, official_source_hashes.json, and
+requirements.lock.txt retain source, wheel, and dependency provenance.
+The check/qasm/noise hashes match the previously inspected upstream_judge
+snapshot. No global installation, remote computation, push, or submission
+was performed.
+
+All runs used OPENBLAS_NUM_THREADS=1, OMP_NUM_THREADS=1,
+MKL_NUM_THREADS=1. Timings are observed on this local machine; they do not
+establish a wall-clock promise on the competition host.
+
+
+Million-shot receipts
+---------------------
+
+Candidate                    Depth  CX   Check time  Acceptance   Score 1-F       SEM
+review5 a_decode_gauge_sx       51   191   163.3061 s  0.526624     4.36744243e-5   6.71331e-6
+v31s                           48   189     2.7900 s  0.535960     5.03768938e-5   8.65114e-6
+v31s_a_decode                  48   191     2.6692 s  0.536051     5.13010889e-5   8.39443e-6
+v31s_a_decode_reset3           48   191     2.3585 s  0.535818     5.13233971e-5   8.99873e-6
+
+All four: format PASS, class PASS, exact correctness PASS, acceptance PASS.
+All have an automatically found zero logical X/Z frame. The review-5
+candidate's exact noiseless acceptance is 0.9999999999999997.
+
+The apparent ordering of these million-shot Monte Carlo point estimates
+does not supersede the all-orders evaluator. Their uncertainties are much
+larger than the small differences between the fresh candidates.
+
+The review-5 SX timing is on its depth-51 circuit, while the fast comparison
+circuits have depth 48. Do not present their large-shot time ratio as a
+perfectly matched SX ablation. The fresh matched comparison below directly
+establishes the SX slowdown at the same depth and sample count.
+
+
+Fresh matched short-run timing
+-----------------------------
+
+All rows use 10,000 shots, seed 0, depth 48, same local dependency versions.
+
+Candidate                         Noisy sampling  Entire check
+v31s                                  0.16873 s      0.36538 s
+v31s_a_decode                         0.25333 s      0.53924 s
+v31s_a_decode_sx                      1.64452 s      2.01614 s
+v31s_a_decode_sx_order_c_b_a8          1.48868 s      1.74924 s
+v31s_a_decode_sx_order_b_c_a8          1.55021 s      1.81860 s
+v31s_a_decode_reset3                  0.11205 s      0.31816 s
+v31s_a_decode_sx_reset3               1.37547 s      1.63201 s
+v31s_a_decode_sx_bellflip             1.45774 s      1.70458 s
+
+All rows pass the official format, class, exact correctness, and acceptance
+gates. The original A+SX variant's noisy sampling is 9.75 times the baseline
+and 6.49 times A-only at this sample count. The fast sampler amortizes setup:
+at one million shots, baseline and A-only sampling take 2.64249 and 2.51785
+seconds, respectively. Do not linearly extrapolate the short-run ratios.
+
+For original A+SX, stage times were:
+  diagnose:                 0.11678 s
+  auto_frame:               0.10060 s
+  exact.verify:             0.01956 s
+  noiseless 64-shot sample:  0.10439 s
+  noisy 10,000-shot sample:  1.64452 s
+
+Thus the slow behavior is noisy sampling, not validity analysis or missing
+frame declarations. Adding explicit zero frames would not resolve the
+dominant cost.
+
+The two reorder probes change only disjoint operations in the final native
+time step: C/B measurement order, A8 measured last among ancillas, and all
+SX-dagger gates placed last. The tail lane certifies unchanged per-wire
+native noisy streams. Both remain much slower than A-only. Their roughly
+6-10 percent time variation does not establish removal of the slow path.
+
+No further million-shot SX runs were launched. The three fast million-shot
+checks were capped at 60 seconds each and completed in under 3 seconds.
+
+Additional bounded controls replaced first-use MX preparations on pivots
+26,17,28 at time 33 with RX and removed their carried measurement parities.
+Both reset3 circuits pass official validity. A-only reset3 stays fast, but
+the combined A+SX reset3 circuit remains slow. Separate all-orders pricing
+by the tail lane finds both reset3 variants physically worse: A-only rises
+from 4.94854579470615e-5 to 4.96160527277099e-5, and A+SX rises from
+4.90979399123452e-5 to 4.93221815040179e-5. The original fast A-only circuit
+therefore remains the chosen candidate.
+
+The final Bell-flip control changes CX8->9 with MX8/M9 into CX9->8 with
+M8/MX9 and swaps their detector record roles. It passes the official check
+but still samples slowly. The bounded workaround search is closed. These
+controls establish slow behavior of this combined A+SX family; they do not
+prove that every circuit containing SX gates must be slow.
+
+
+Native SX handling
+------------------
+
+The actual official Qiskit parser accepts sx and sxdg without expansion
+into H/S/H. Native conversion contains seven SQRT_X and seven SQRT_X_DAG
+instructions, preserving depth 48 for the fresh circuit. The official noise
+generator attaches one DEPOLARIZE1(0.001) to each native SX instruction.
+The forward gates occupy native times 43 and 44, and inverse gates occupy
+time 47. See native_sx_noise_audit.json.
+
+The fresh A+SX circuit contains 191 CX, 58 detectors, 35 M, 33 MX, 13 R,
+25 RX, 8 T, and 7 T_DAG instructions. The official exact verifier and xtim's
+noiseless cross-engine check both pass on the actual parsed circuit, so the
+independent model's SX convention is not being relied upon for ideal
+correctness validation.
+
+
+Exact candidate hashes
+----------------------
+
+review5 a_decode_gauge_sx:
+22106829e88b8357fc9b8774b233196e3bb2753d10c1deb22300f209d162a9c9
+
+v31s:
+ed2e0d6a50af7bb4992cd02e74a578c57aac229c46dd1438d44ef3b6ba1bd979
+
+v31s_a_decode:
+017b77391a55e896c1f8c51f700dbd3e68515e22d2da35c50d177bb1933464e0
+
+v31s_a_decode_sx:
+fceda5a0e22c8394195f327390197af95c16ecbe22c6beb84a4f549f32f1c0c3
+
+v31s_a_decode_sx_order_c_b_a8:
+239c0085847e63854ed9f175364b62e363443870eaf99e2eff6c75adb14cd6b9
+
+v31s_a_decode_sx_order_b_c_a8:
+2e2e8f62d9bad88476a50a12a269df9dd561b5bd6d85ac3bacd41a5a008dd6d3
+
+v31s_a_decode_reset3:
+1f2ecdae95c76532bec7c79f38b6d538485a673fd9016e05d71950cc0a873c20
+
+v31s_a_decode_sx_reset3:
+8e47a3cf845936380adcbff7ee370f650d997b45afc9973e3093725af3725bb4
+
+v31s_a_decode_sx_bellflip:
+2ae3f3100030fd5ef3c332f534ea6fe738f7f996d3d0f7c66abd22c1a4de9e59
+
+
+Reproduction and recommended use
+-------------------------------
+
+Run from the workspace root, substituting the desired existing stem:
+
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+audit/review6_validation/venv/bin/python \
+audit/review6_validation/run_official.py 1000000 0 \
+audit/review6_architecture/v31s_a_decode
+
+For the final official-setting score, replace 1000000 with 100000000 and
+keep seed 0. The selected QASM is also copied here as v31s_a_decode.qasm,
+with adjacent v31s_a_decode.json metadata and the detailed
+v31s_a_decode.validated.json receipt summary.
+
+run_official.py calls the unmodified official tprep.check. Later runs add
+transparent timing wrappers around the official functions without changing
+their inputs, outputs, or exceptions. The first review-5 million-shot run
+predates these wrappers and has total time only.
+
+summary.json combines the local receipts. Each *.official_<shots>_<seed>.json
+contains the exact QASM hash, versions, full Report fields, all validity
+gate booleans, native counts, timings, and peak memory. Fixed QASM snapshots
+and actual official native text are retained beside them.
+
+Practical recommendation: prioritize the officially validated A-only
+candidate. Keep SX as a physically slightly better, but significantly more
+expensive-to-sample variant unless the slow sampling behavior is resolved.
+The tail and parent lanes own the independent all-orders physical-loss
+comparison; the official low-shot estimates here should not re-rank it.
+
+All 13 completed official receipts pass their requested validity gates.
+The final 100,000,000-shot run completed within its 330-second local bound,
+using one process. Peak resident memory was 1,191,736 KiB. All scoped jobs
+are finished and optional tests have stopped.

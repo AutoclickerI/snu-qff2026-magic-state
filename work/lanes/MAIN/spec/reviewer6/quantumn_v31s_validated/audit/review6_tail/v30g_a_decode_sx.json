@@ -1,0 +1,37 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "native_depth": 51,
+  "CX": 196,
+  "review_status": "Independent-model candidate; official judge class/speed not yet run",
+  "scope": "Port the physical SX/SXDG round gauge to pinned review-6 circuit inputs.\n\nEvery inserted gate receives native D1(p); gates occupy prior data idle slots.\nOnly a conflicting terminal single-qubit T/Tdg is retimed, across idle noise.\nNo source/frame/ancilla conjugation, full-frame update, or new tick is used.\n",
+  "source_commit": "abf26aa98bede59bb07f7da838dd1b3a3fdf76f0",
+  "input": "v30g_a_decode",
+  "input_qasm_sha256": "5c464b87371d27a6906ce2b9dfc996806b1c299f271584c57e1ea56e8fc5ab54",
+  "input_SX_ticks": {
+    "0": 47,
+    "20": 47,
+    "7": 47,
+    "10": 46,
+    "3": 47,
+    "22": 47,
+    "21": 46
+  },
+  "output_SXDG_tick": 50,
+  "retimings": [
+    {
+      "gate": "TDG",
+      "qubit": 20,
+      "old_tick": 47,
+      "new_tick": 46,
+      "reason": "Free gauge input slot by crossing depolarizing idle only"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "source_commit": "abf26aa98bede59bb07f7da838dd1b3a3fdf76f0",
+  "source_qasm": "quantumn_review6/work/lanes/MAIN/v31s.qasm",
+  "source_qasm_sha256": "ed2e0d6a50af7bb4992cd02e74a578c57aac229c46dd1438d44ef3b6ba1bd979",
+  "R": 45,
+  "native_depth": 48,
+  "CX": 191,
+  "cx": 191,
+  "method": "Two bounded timing refinements: earliest D10->A9 after A9's encoder ends.",
+  "variant": "two_CX_A_decoder",
+  "changes": [
+    {
+      "kind": "CX",
+      "qubits": [
+        10,
+        9
+      ],
+      "old": 45,
+      "new": 44
+    },
+    {
+      "kind": "CX",
+      "qubits": [
+        21,
+        15
+      ],
+      "old": 45,
+      "new": 44
+    },
+    {
+      "kind": "TDG",
+      "qubits": [
+        10
+      ],
+      "old": 44,
+      "new": 43
+    }
+  ],
+  "official_class_tested": false,
+  "official_runtime_tested": false,
+  "parent": "/workspace/scratch/a4b592a94a64/audit/review6_architecture/v31s_a_decode",
+  "timing_refinement": [
+    {
+      "kind": "CX",
+      "qubits": [
+        10,
+        9
+      ],
+      "old": 44,
+      "new": 41
+    },
+    {
+      "kind": "TDG",
+      "qubits": [
+        10
+      ],
+      "old": 43,
+      "new": 40
+    }
+  ],
+  "independent_verification": {
+    "ideal_acceptance": 1.0,
+    "ideal_loss": 0.0,
+    "output_stabilizers": [
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994
+    ],
+    "first_order_loss": 3.515706244646329e-19,
+    "harmful_single_fault_count": 0,
+    "all_CX_nearest_neighbor": true,
+    "all_layers_disjoint": true,
+    "native_schedule_matches": true,
+    "qasm_sha256": "99f8a1a6ea6bf26ee8da7709abdb6dea16f8183fa64448e1012b0cbde50976e5"
+  },
+  "independent_all_orders": {
+    "loss": 5.3247605099882554e-05,
+    "acceptance": 0.5371799712951251,
+    "conditional_loss_kernel_omission_bound": 1.1568840646910357e-14,
+    "scope": "Independent full-circuit all-orders expectation, STANDARD p=.001; excludes official runtime/class verification."
+  }
+}
