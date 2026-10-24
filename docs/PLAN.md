@@ -64,6 +64,20 @@ The reviewer's zip (QASMs, scripts) is behind a chatgpt.com library link we cann
 | 9 | Sparse Walsh + detector basis change: v29c all-orders 6.34391e-5 in 28 s (v23: 261 s → 19 s) | **reproduced exactly**; adopted as `work/lanes/MAIN/sparse/sparse_walsh.py` (AGENTS ranking); v30f 5.89377e-5 | done |
 | 10 | Graph-resource + measurement-branch synthesis | no legal witness yet | parked |
 
+## Reviewer 5 review (2026-10-24 22:00, on commit 706fffc; text only)
+| # | Claim | Check | Item |
+|---|---|---|---|
+| 1 | Global prefix–end-state co-synthesis is the largest lever (~1.4e-6 per R tick) | agrees with FRESH's sweep (R42–45 slope); linear extrapolation past a few ticks is unproved | P72, P71, P69 |
+| 2 | Port the v23h→v29c local edits onto v30f (1–4%) | premise came from our stale FINDINGS line; v30f already had them, and the remaining timing/mz edits gave v30g (−3.5%) | done |
+| 3 | XTIM slow path as an early hard filter in generators | lanes gate finalists; promote.sh refuses > 20 s | in place |
+| 4 | Waiting-data protection as a minimum-cost hitting set over the leading logical triples, costed in acceptance and R | refines P74; acceptance is now the binding budget (v30g 0.505 vs v30f 0.5275) | P74, P73, P67: price each detector by Δ(1-F)/ΔA1 |
+| 5 | B/C endpoint as one instrument contract | P62 | P62 |
+| 6 | Sparse Walsh keys in parallel (2–4×) | **done**: fork pool, identical values, v30g 47 s → 11 s at 16 processes | done |
+| 7 | Fault-equivalent rewrite grammar (Jeon–Lee–Kim, arXiv 2610.09749; Rodatz–Poór–Kissinger 2506.17181) for ST2 | papers exist; we price every candidate exactly, so the gain is fewer wasted (c1 ≠ 0) moves | P67 option |
+| 8 | Contraction order / factor cache | secondary after 6 | parked |
+| 9 | fast_check bit extraction (5–20% on FAST circuits) | unprofiled; would add re-draws per slot; must stay bit-identical | parked |
+| 10 | ILP/SMT checker and cat synthesis (Criger et al.; SpiderCat 2603.05391; SpiderCSS 2610.03714) | Steane-type round's data side is minimal under our metric (ARCH); low-overhead syndrome-extraction results (2511.13700) optimize a different metric | references for P59, P62 |
+
 ## Open questions
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us
   either way.
