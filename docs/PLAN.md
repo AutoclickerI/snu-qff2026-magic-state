@@ -16,7 +16,7 @@
 - **Codex is down from 2026-10-25 02:26 KST**: the Hermes proxy answers every model with 429 and a ~6-day retry; all
   Codex lanes were cancelled at 03:50 (their threads are resumable). Running instead: Claude subagents INTEG (P75 on
   v36c, `work/lanes/INTEG`), TERM (P77) and IDEAS (P79), and ST2's population script itself (`pop36b/zebra2.log`).
-  CONSTRAINTS rule 11 (Codex only) conflicts; awaiting Jihoon.
+  CONSTRAINTS rule 11 (Codex only) is suspended while Codex is down (R-20261025-1).
 
 ## Critical path
 Lanes find priced mechanisms → re-derive each on the incumbent → all orders → judge 1e6, speed, MC3 → `work/promote.sh`

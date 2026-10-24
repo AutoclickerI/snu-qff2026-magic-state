@@ -36,7 +36,8 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
 
 11. **Codex lanes only.** [owner] Expansion work goes to parallel Codex lanes (`codex:codex-rescue`); new
     workers are never Sonnet or another model, and a failed Codex job is relaunched on Codex.
-    [Jihoon, R-20261023-1, R-20261023-9, R-20261024-2]
+    Suspended while Codex does not answer (429 since 2026-10-25 02:26 KST): new workers are Claude subagents until
+    a one-line Codex test succeeds again. [Jihoon, R-20261023-1, R-20261023-9, R-20261024-2, R-20261025-1]
 12. **Parallel, non-blocking.** [owner] Independent work runs in parallel in the background; never block
     on one experiment. [Jihoon, R-20261023-5, R-20261023-6, R-20261023-9]
 13. **Solver-backed search.** [owner] Prefer solver- or simulation-backed search over hand tuning.

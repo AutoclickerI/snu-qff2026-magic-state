@@ -120,6 +120,14 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
   v30f's 57-CX correlated rank-3 resource replaced, so it is out of scope. All ST_BC jobs and its collector
   loops were killed by PID at 21:45; outputs stay in `work/lanes/ST_BC`. The hold is lifted.
 
+## R-20261025-1 — 2026-10-25 03:58 KST — Claude workers while Codex is down
+> Q: "Should Claude subagents continue while Codex is down? ..." A: "Keep Claude (Recommended)" — option text: "Rule 11 is suspended while Codex is down. I keep the three subagents and add Claude lanes where they pay off (e.g. the earlier round, the mid-preparation B flag). I switch back to Codex when it answers again."
+> Q: "Can you restore Codex capacity? ..." A: "No, go without it" — "Proceed on Claude and scripts until the deadline."
+
+- Source: this session, question-tool answers after the Hermes proxy returned 429 with a ~6-day retry on every model.
+- Effect: CONSTRAINTS rule 11 is suspended while Codex does not answer; new workers are Claude subagents.
+
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
