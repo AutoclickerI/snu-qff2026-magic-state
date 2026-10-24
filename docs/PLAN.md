@@ -20,7 +20,7 @@ Lane finds a priced mechanism → re-derived on v36c → all orders (≈ 10 s) �
 → hourly slot. Bottleneck: the remaining gains are many small deltas that compete for the same acceptance; fix: one
 integrator (INTEG) composes every lane's v36c deltas by Δloss per Δlog-acceptance, and the other lanes deliver deltas
 on v36c (or acceptance), not new bases.
-Draw cost: racing (P78) cuts the full-run cost per useful draw ≈ 5.8×.
+Draw cost: racing examines ≈ 7.6× more draws per hour than plain re-draws (FINDINGS "Racing in production").
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
@@ -29,10 +29,9 @@ Draw cost: racing (P78) cuts the full-run cost per useful draw ≈ 5.8×.
 | 2 | P73 | G1 | B/C side on v36c (outside the prefix cap): IDEAS' bounds −9.04% (third-order masking by B/C Z flips) and −8.95% (correlated B/C X escaping C's check); mid-preparation B flag (ideal meter first), resource re-synthesis by in-situ loss with the masking objective, B/C acceptance trades | v36c deltas or a finalist below v36c | BFLAG (Claude, `work/lanes/BFLAG`) | active |
 | 3 | P76 | G1 | Earlier round and suffix placement (incl. freeing a neighbour of cells 10/21 at tick 44 for TERM's −1.5e-6 \|+⟩ CX): below R44 needs the prefix, data placement, A encoder and flag co-synthesized (FINDINGS "Earlier round"); with v36c's suffix the data sit in place from ~tick 35 and prefix/wait gains are capped at 6.18e-6, so the suffix placement must change too; ENDSTATE's R38 geometry reached 4.986e-5 without the v36 gadgets, and the A decoder did not help there | a circuit below v36c with R ≤ 42 | EARLY (Claude, `work/lanes/EARLY`) | active |
 | 4 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03): Pareto by flag-blind vs flag-detected danger and X-side masking (IDEAS bound −4.03%), no c1/p30 pruning, against v36c's releases | v36c encoder deltas | AENC (Claude, `work/lanes/AENC`) | active |
-| 5 | P78 | G1 | Racing re-draws (`work/race.py`) in the hourly loop | draws per CPU-hour measured in production | main session | active |
-| 6 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
-| 7 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
-| 8 | P81 | G2 | Delete the untracked bulk of BCFB, COMP29, FRESH, SEPBC, WAITPROT, ST2 and their stale tracked files (essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: AENC and BFLAG read BCFB, SEPBC and FRESH outputs |
+| 5 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 6 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
+| 7 | P81 | G2 | Delete the untracked bulk of BCFB, COMP29, FRESH, SEPBC, WAITPROT, ST2 and their stale tracked files (essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: AENC and BFLAG read BCFB, SEPBC and FRESH outputs |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair
