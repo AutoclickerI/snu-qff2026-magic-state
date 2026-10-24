@@ -1,9 +1,9 @@
 # Plan
 
-## Status (2026-10-24 22:35 KST)
-- Board: Placeholder 5.067e-5 (197 CX, 20:46); us 5.62881e-5 = v30f_r454. v30g_r146 (seed-0 5.48190e-5, best of 170) goes in
-  at 22:37. v31s (SEPBC: R48 → R45 on v30f, all-orders 5.55779e-5, acceptance 0.5364) in re-draws for 23:37 (cut 23:18);
-  SEPBC composes v31s with v30g's edits (finalist wanted by 23:05).
+## Status (2026-10-24 23:15 KST)
+- Board: Placeholder 5.058e-5 (199 CX, 21:58); us 5.48190e-5 = v30g_r146 (rank 2). v32p (ST2: v31s R45 + eight echoed
+  parity checks on waiting data; all-orders 5.14432e-5, MC3 5.0898e-5, acceptance 0.50096) in re-draws for 23:37 (cut 23:22).
+  v31s's 310 draws (mean 5.5581e-5, min 5.32139e-5) were stopped unused. Acceptance is now the binding budget.
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
