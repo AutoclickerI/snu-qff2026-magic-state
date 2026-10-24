@@ -1,0 +1,12 @@
+circuit enc_361.qasm: 460 noise channels, 3634 faults, 567 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.9236e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.66467e-05   (pairs 5.66467e-05 + same-channel normalisation 6.859e-23)
+1-F (2nd order) = 5.66467e-05
+third order: 2.62334e-05   (weight-3 sets 3.05270e-05 + pair-times-others -4.29357e-06)
+1-F (to 3rd order) = 8.28801e-05
+acceptance: first order 0.36744, second order 0.56781; exp(-A1) = 0.53123  (A1 = 0.63256)
+time: model+singles 0.5s, pairs 2.0s, triples 23.3s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '1.271e-06', 'gate': '2.862e-05', 'idle': '2.676e-05'}

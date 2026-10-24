@@ -1,0 +1,12 @@
+circuit layout2_alap.qasm: 482 noise channels, 3706 faults, 597 (s,d) classes, rotation rank 5, 32 detectors, noiseless acceptance 1.000000
+first order : c1 p = 4.0893e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 6.50646e-05   (pairs 6.50646e-05 + same-channel normalisation 1.167e-22)
+1-F (2nd order) = 6.50646e-05
+third order: 3.27526e-05   (weight-3 sets 3.83580e-05 + pair-times-others -5.60543e-06)
+1-F (to 3rd order) = 9.78172e-05
+acceptance: first order 0.30759, second order 0.54761; exp(-A1) = 0.50037  (A1 = 0.69241)
+time: model+singles 0.4s, pairs 1.8s, triples 20.0s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '6.513e-06', 'gate': '2.531e-05', 'idle': '3.324e-05'}

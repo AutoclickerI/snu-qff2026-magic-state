@@ -1,0 +1,6 @@
+p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: FAIL
+    - detector(s) #25, #32 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)
+  RESULT: FAIL
