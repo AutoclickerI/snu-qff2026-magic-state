@@ -16,7 +16,8 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 6. Promote in one step: `work/promote.sh <stem> <host:procs:first:count>...` (speed gate ≤ 20 s per 1e6, re-draws over
    hosts with non-overlapping variant ranges, best passing draw → `submissions/`, sequential judge, commit + push,
    `submit_when_ready.sh`). Stop the draws in time for a slot with `work/receipts/cut_redraws.sh <stem name> "<time,
-   e.g. 02:20>" <hosts incl. zebra>`; the slot is at :37 each hour. By hand: `work/submit.py submit|status|board|wait`.
+   e.g. 02:20>" <hosts incl. zebra>`; the slot is at :37 each hour. Hourly loop: `work/receipts/draw_loop.sh <pid of the running cut>`
+   re-draws an hour-named copy of the stem in `work/receipts/next_stem.txt` until HH:20 and promotes it. By hand: `work/submit.py submit|status|board|wait`.
 7. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without credentials or caches.
    Refresh one host at a time (zebra caps SSH connections):
    `rsync -a ~/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu ~/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu <h>:~/.local/share/uv/python/`;
