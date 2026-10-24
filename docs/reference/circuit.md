@@ -20,7 +20,7 @@ B = [6,26,13,11,4,23,27], C = [12,25,19,17,5,29,28]. 207 CX, 47 native ticks, ro
 
 Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes and timing are design variables.
 
-## Evaluators (rank by these, in this order)
+## Evaluators (rank by all orders; the others diagnose, confirm or gate)
 - **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
   ~11–35 s. Scope: barriers over all used qubits, no FRAME/POSTSELECT, ≤ 20 T rotations, ideal acceptance ≈ 1.
 - **Exact 2nd + 3rd order with sensitivities**: `work/lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`
