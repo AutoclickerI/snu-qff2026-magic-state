@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v16**, server 1-F = 8.2879205986073e-5
-(bit-identical to `fast_check`), acceptance 0.5332, 207 CX, submitted 2026-10-24 11:35:26 KST
-(`work/receipts/submit_v16.txt`); mean of 245 seed-0 re-draws 8.584e-5.
+Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v17**, server 1-F = 7.92665761750324e-5
+(bit-identical to `fast_check`), acceptance 0.5430, 209 CX, submitted 2026-10-24 13:45:23 KST
+(`work/receipts/submit_v17_status.txt`; re-draw r37 of `work/lanes/MAIN/v17`, 3-seed MC 8.306e-5).
 
-Best competitor: Placeholder 5.879e-5, 169 CX, acceptance 0.535 (submitted 2026-10-24 09:51 KST; 6.274e-5 at 02:57).
-Board read 2026-10-24 11:45 KST; refresh with `work/submit.py board`.
+Best competitor: Placeholder 5.727e-5, 166 CX, acceptance 0.528 (submitted 2026-10-24 13:32 KST; 5.879e-5 at 09:51).
+Board read 2026-10-24 14:05 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -29,6 +29,7 @@ Board read 2026-10-24 11:45 KST; refresh with `work/submit.py board`.
 | v14: Steane-type round on L5 (A s7307, FT joint B+C sat6 82 CX) + first-use q27, q29 measured (re-draw r100) | server | 1.00638e-4, 207 CX (100 re-draws 1.0382e-4) | `work/submissions/v14_bcm_r100.*`, `work/candidates/v14_bcm.*`, `work/receipts/seq_v14_bcm_r100.txt`, `work/receipts/submit_v14.txt` |
 | v15: LAYOUT2 parity check on A (cat 27–28–29, R=54) + measure-init at all 13 sites (re-draw r33) | server | 9.66371e-5, 212 CX (110 re-draws 9.871e-5) | `work/submissions/v15_l2m_r33.*`, `work/candidates/v15_l2m.*`, `work/receipts/seq_v15_l2m_r33.txt` |
 | v16: L5 with BC2's clean B+C prep (82 CX, R=50) + measure-init at all sites (re-draw r147) | server | 8.28792e-5, 207 CX (245 re-draws 8.584e-5) | `work/submissions/v16_bc2m_r147.*`, `work/candidates/v16_bc2m.*`, `work/receipts/seq_v16_bc2m_r147.txt`, `work/receipts/submit_v16.txt` |
+| v17: v16 + q19/q13 released early + readout re-encoding CX 17→16, 19→25 (re-draw r37) | server | 7.92666e-5, 209 CX (3-seed 8.306e-5) | `work/submissions/v17_r37.*`, `work/receipts/seq_v17_r37.txt` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |

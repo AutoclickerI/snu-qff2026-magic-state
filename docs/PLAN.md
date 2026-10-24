@@ -1,9 +1,8 @@
 # Plan
 
-## Status (2026-10-24 14:00 KST)
-- Board (11:45): Placeholder 5.879e-5 (169 CX, acc 0.535); us 8.28792e-5 = v16 (exact 8.42e-5, 3-seed MC 8.554e-5), rank 2.
-  v17 (= `lanes/MAIN/spec/v16e_re`: v16 with q19/q13 released early + readout re-encoding CX 17→16, 19→25; exact
-  8.2464e-5, 3-seed MC 8.306e-5) is in promotion (`work/promote.sh`, re-draws over 4 hosts), submitted at the next slot.
+## Status (2026-10-24 14:05 KST)
+- Board: Placeholder 5.727e-5 (166 CX, acc 0.528); us 7.92666e-5 = v17 (3-seed MC 8.306e-5), rank 2. v18 (TREP's
+  19-CX injection encoder + ALAP pre-stage, round at 46; exact 7.6064e-5, MC 7.636e-5) is in promotion for the 14:45 slot.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
