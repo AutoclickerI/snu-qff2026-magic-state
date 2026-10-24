@@ -11,6 +11,10 @@ ENV="OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1"
 SSH="ssh -q -o ControlMaster=no -o ControlPath=none"
 stem=$1; shift
 name=$(basename "$stem"); dir=$(dirname "$stem")
+# Server time limit (CONSTRAINTS rule 5): refuse a candidate whose single-process 1e6-shot judge run exceeds 20 s.
+s=$(date +%s.%N); env $ENV $PY fast_check.py "$stem.qasm" "$stem.json" 1000000 1 > /dev/null 2>&1; e=$(date +%s.%N)
+secs=$(python3 -c "print(round($e - $s, 1))"); echo "judge speed: $secs s per 1e6 shots, 1 process"
+python3 -c "import sys; sys.exit(0 if $secs <= 20 else 1)" || { echo "too slow for the server's 1-hour limit; not promoted"; exit 1; }
 pids=()
 for spec in "$@"; do
   IFS=: read -r h procs first count <<< "$spec"

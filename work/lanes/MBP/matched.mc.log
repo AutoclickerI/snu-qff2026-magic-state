@@ -1,0 +1,14 @@
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+matched_ref check {'passed': True, 'format': True, 'correct': True, 'acceptance': 0.602356, 'score': np.float64(5.22946563161981e-05), 'errors': []}
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+matched_ref {"seed": 0, "score": 5.103432692372568e-05, "sem": 8.203318278485418e-07, "acceptance": 0.60302549, "passed": true}
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+matched_ref {"seed": 1000, "score": 5.199279831342671e-05, "sem": 8.259568926536078e-07, "acceptance": 0.60306429, "passed": true}
+[twirl_records] circuit channels: 28 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+matched_ref {"seed": 2000, "score": 5.3201989429354895e-05, "sem": 8.371847123135503e-07, "acceptance": 0.60298497, "passed": true}
+matched_ref mean 5.2076371555502424e-05
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/MBP/mc.py", line 10, in <module>
+    assert os.getloadavg()[0]<os.cpu_count()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

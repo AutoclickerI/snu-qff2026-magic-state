@@ -1,16 +1,17 @@
 # Plan
 
-## Status (2026-10-24 17:20 KST)
-- Board: Placeholder 5.612e-5 (179 CX); us 6.95468e-5 = v22_r155 (rank 2). In re-draws for 17:45: **v24** = v23h_c2c9 +
-  PRESYN's blue XZ stabilizer check (P23), exact 6.58848e-5, exp(-A1) 0.50068 (just above the 0.5 gate). v23h_c2c9
-  (BCSYN2 prep + HOPS hop_early + ACHECK q2/q9 checks) exact 6.92210e-5. Lanes BCFB, LNS, MBP still use older bases;
-  their edits port (`lanes/MAIN/merge_hops.py`, `port_acheck.py`, `lanes/P23/port23.py`).
+## Status (2026-10-24 18:10 KST)
+- Board: Placeholder 5.612e-5 (179 CX); us 6.95468e-5 = v22_r155 (rank 2). Submitted 18:01:47, scoring: **v23h_c2c9_r290**
+  (seed-0 6.75337e-5, best of 320 re-draws, mean ≈7.03e-5) = BCSYN2 prep + HOPS hop_early + ACHECK q2/q9 checks, exact
+  6.92210e-5, exp(-A1) 0.54086, 4.2 s per 1e6 judge shots. v24 (+ PRESYN's blue XZ, exact 6.58848e-5) is unsubmittable:
+  116 s per 1e6, about 2.5 h on the server (CONSTRAINTS rule 5; FINDINGS "Failures"). KNAP looks for a fast form of that gain.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
 - Every grid layout so far hits the area wall: separate unitary B and C encoders do not fit next to the data early
   (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; BCSYN2's feedback search found a better 82-CX prep
-  (−2.9%); BCFB continues it, MBP tries measurement-based preps; SEP2T's separate blocks lose to idle exposure. Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS, SEP2T, BCSYN2, PRESYN (FINDINGS).
+  (−2.9%); BCFB continues it, BCPOL relaxes its contract; MBP's measurement-based preps and SEP2T's separate
+  blocks did not help (FINDINGS). Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS, SEP2T, BCSYN2, PRESYN, MBP (FINDINGS).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
@@ -22,11 +23,13 @@ Bottleneck: the B+C prep footprint (82 CX; noiseless −26.5% on v19) and the da
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P59 | G1 | BCFB: continue BCSYN2's exact-loss feedback search for clean 82-CX B+C preps, priced inside v23h_c2c9 (depth 14–15, MX/measure-init on any B/C cell, prep timing vs hops and A, automorphisms) | a prep below v23h_c2c9's exact 6.92210e-5 confirmed by 3-seed MC, or the feedback loop converged | Codex lane BCFB (`work/lanes/BCFB`, tom, owl) | active |
-| 2 | P56 | G1 | MBP: measurement-based block preps (B, C from \|0⟩^7, A from \|+⟩^7, stabilizers measured by ancillas, frames folded into detectors), priced grid-free then embedded with time-multiplexed ancilla cells | a circuit below v22h_c2c9's exact 7.1306e-5 and its 3-seed MC, or each variant priced with its mechanism | Codex lane MBP (`work/lanes/MBP`, sunfish, zebra) | active |
-| 3 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`, zebra, jerry) | active |
-| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 2 | P60 | G1 | KNAP: acceptance knapsack on fast bases (v23h_c2c9, PRESYN best) — find why blue-on-v23 is slow and a fast form of it; reviewer 3's readout copy (#1) and helper-verified inits (#2), blue X/Z/XZ variants, ACHECK/HOPS checks, detector drops and init types, with exact marginal (Δ1-F, ΔA1) per item | a circuit below v23h_c2c9's exact 6.92210e-5 with exp(-A1) ≥ 0.5002 and ≤ 20 s per 1e6 judge shots, confirmed by 3-seed MC, or the item table exhausted | Codex lane KNAP (`work/lanes/KNAP`, owl, sunfish) | active |
+| 3 | P61 | G1 | WALSH: all-orders model-exact 1-F and acceptance by Walsh contraction (reviewer 3 #3), validated by brute force, the exact2 low-p limit and re-draw means | `work/lanes/WALSH/allorders.py` validated and the v23h_c2c9 family scored | Codex lane WALSH (`work/lanes/WALSH`, zebra, sunfish) | active |
+| 4 | P62 | G1 | BCPOL: relax the B+C contract (reviewer 3 #4 partial clean policies, #5 joint prep+check endpoints, #6 C6, #10 boundary cache), priced in v23h_c2c9 | a prep below v23h_c2c9 by exact and MC, within the speed gate (or one that frees acceptance at equal loss), or each relaxation priced with its mechanism | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
+| 5 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`, zebra, jerry) | active |
+| 6 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 7 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 8 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
 
 
 ## Idea review (2026-10-24)
@@ -75,6 +78,21 @@ Checked against the code and the judge before acting. "Verified" means read in t
 | 7, 8 | A + cat check as one synthesis; dual helper for A | apply to the closed COMBO2 parity branch | closed with COMBO2 |
 | 9 | 16 protected 15-T forms of the pre-stage | reproduced; re-synthesised encoder + ALAP gave v18 (−8.5%) | P47 |
 | 10 | Integrate the final data idle analytically in MC | variance reduction only; ranking already uses exact2, and seed-0 draws cannot be variance-reduced | dropped |
+
+## Reviewer 3 review (2026-10-24, on commit a9cae1c; text in `work/lanes/MAIN/spec/reviewer3.md`)
+The reviewer's zip (QASMs, scripts) is behind a chatgpt.com library link we cannot fetch; lanes re-derive.
+| # | Claim | Check | Item |
+|---|---|---|---|
+| 1 | Copy the last C readouts onto fresh helpers, detect disagreement (+3 CX, same depth) | readout error p → 2.7e-4 conditional (formula checked); reviewer: −0.65% third order on v23h_c2c9, acceptance −0.0055; not yet reproduced here | P60 |
+| 2 | Helper-verified init, helper measured in the same tick as the qubit's first op | init error → 2.7e-4 (vs 2p/3, p); reviewer: 6 positions −1.83% on v22, with #1 −2.46% all orders at acceptance −0.011; about 3%/pp, the best loss-per-acceptance item known (blue XZ 1.2%/pp) | P60 |
+| 3 | All-orders Walsh-contraction evaluator (~4 min) | reviewer's values match our re-draw means: v22 7.2365e-5 vs 7.2405±0.006e-5, v23h_c2c9 7.0262e-5 vs 7.0298±0.007e-5 | P61 |
+| 4 | 128 partial clean policies between base and clean | valid: BCSYN2's `Model.cut` forces s_B = 0 when d = 0 | P62 |
+| 5 | Synthesize prep + B→C check as one; C's endpoint uniform over U ⊆ S (16 endpoints) | valid relaxation, unpriced | P62 |
+| 6 | C6: drop one C qubit (W_i = S + e_i), 6-CX C6 encoder | frees one cell on an area-bound grid; unpriced | P62 |
+| 7 | A as 3 direct Z checks or a 4-qubit GHZ meter | reviewer measured +28% grid-free standalone | parked: only with a layout that uses the freed cells |
+| 8 | Move data during the prefix (time-indexed placement) | outside HOPS/FREELAY's bounded models | parked (placement lane) |
+| 9 | Live data as a 4-CX bridge (CX a→b through h) | identity correct; adds correlated data errors | parked |
+| 10 | B/C boundary cache (2^11 classes) to price preps fast | accelerator for 4–6 | P62 |
 
 ## Open questions
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us
