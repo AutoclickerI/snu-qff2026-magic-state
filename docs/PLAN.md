@@ -18,7 +18,7 @@ small grid-native block preps; every earlier closure of it was model-bound.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P71 | G1 | ENDSTATE: encoder library and end-state witness done (FINDINGS); now time-indexed prefix-compatible end-states (prefix symmetries, preps on cells free at that time, just in time), earliest R then least exposure, complete circuits priced | complete circuits with loss split; below 5e-5 or the mechanism that stops it | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, zebra) | active |
+| 1 | P71 | G1 | ENDSTATE: separate moved blocks closed (exposure; best 2.08e-4 at R56). Now in-place joint B∪C regions on cells free during the prefix (time-indexed, 48 embeddings), A on released cells, resource synthesized in place with FRESH's synthesizer and reviewer 4's helper primitives | complete circuits below v30f, or the binding constraint on R | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, zebra, hippo) | active |
 | 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
 | 3 | P72 | G1 | FRESH: delivered v30f (correlated rank-3 B/C); local early-round attempts stop at R44–45 (FINDINGS). Now a global joint re-synthesis of the cultivation prefix placement/schedule with the end-state (earliest R, then exposure); ST1 does local relayout macros | a verified grid circuit below 5e-5 true, or designs closed by mechanism | Codex lane FRESH (`work/lanes/FRESH`, zebra, sunfish) | active |
 | 4 | P69 | G1 | SEPBC: delivered v28s; stationary separate B/C proved impossible (FINDINGS). Now (a) its free q5 detector on v29c, (b) the reusable emitter that attaches ENDSTATE end-states to the real prefix, priced with a loss split | (a) priced; (b) every ENDSTATE end-state priced | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
@@ -52,7 +52,7 @@ The reviewer's zip (QASMs, scripts) is behind a chatgpt.com library link we cann
 | 9 | Live data as a 4-CX bridge (CX a→b through h) | identity correct; adds correlated data errors | parked |
 | 10 | B/C boundary cache (2^11 classes) to price preps fast | accelerator for 4–6 | P62 |
 
-## Reviewer 4 review (2026-10-24 21:10, on commit 57e99b9; zip not yet in the repo)
+## Reviewer 4 review (2026-10-24 21:10, on commit 57e99b9; bundle in `work/lanes/MAIN/spec/reviewer4/`)
 | # | Claim | Check | Item |
 |---|---|---|---|
 | 1 | Measured-helper remote CX (CX B→h, CX h→C, MX h = Z_B^m CX(B,C)); pipelined B→h at R, h→C at R+1 lets C finish 2 ticks later; +1.18e-6 at R34 grid-relaxed | identity standard; obstruction re-checked (FINDINGS) | geometry lanes (ENDSTATE, FRESH, ST1) at their next turn |
@@ -63,7 +63,7 @@ The reviewer's zip (QASMs, scripts) is behind a chatgpt.com library link we cann
 | 6 | Selective Z protection of waiting data (Fano line) | targets v30f's wait-driven cubic term | P74 |
 | 7 | Allow c1 ≠ 0 under a budget | one harmful 2q Pauli costs ≥ p/15 × 1/2 = 3.3e-5, above the whole non-round loss; no gain possible | rejected |
 | 8 | Exact rational timing L(z) = P4/Q4 per CX shift | refinement of ST1's exact timing loop | COMP29/ST2 timing |
-| 9 | Sparse Walsh + detector basis change: v29c all-orders 6.34391e-5 in 28 s (v23: 261 s → 19 s) | our dense run died on v29c/v30f (FINDINGS Failures) | needs the zip |
+| 9 | Sparse Walsh + detector basis change: v29c all-orders 6.34391e-5 in 28 s (v23: 261 s → 19 s) | **reproduced exactly**; adopted as `work/lanes/MAIN/sparse/sparse_walsh.py` (AGENTS ranking); v30f 5.89377e-5 | done |
 | 10 | Graph-resource + measurement-branch synthesis | no legal witness yet | parked |
 
 ## Open questions
