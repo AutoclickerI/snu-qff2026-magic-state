@@ -23,3 +23,17 @@ Serves: G1, G2. Read before reasoning about scores, noise, validity or evaluator
 - **Measure, then reuse without reset.** The judge charges X_ERROR(p) before `measure` (state and record flip together) and DEPOLARIZE1(p) after it, so a measured qubit reused at once is a known |m⟩ with 2p/3 harmful error, one step earlier than `reset` (X_ERROR p). Waiting before the reuse is charged; waiting before a reset is not. The X^m offset must land only where a detector can XOR the record in (never on the output), or correctness fails.
 - **Frame.** v12 and st_L2_v0 use none (auto frame empty), so record choice for the frame is no lever.
 - **No other levers in the code** (read 2026-10-23): noise follows problem.md §1.5 for every operation; the only free operations are `barrier` and the `h` folded into MX/RX; the sign-only correction equals the §2.2 lookup; comments cannot inject Stim text; MPP and every 2q gate but `cx` are rejected.
+- **Spec freedoms checked 2026-10-24** (problem.md §1.2–2.2 and `tprep/{qasm,noise,check}.py`):
+  - A block qubit can move in 1 CX: CX f→a (f fresh |+⟩), then measure a in Z, leaves X^m on A, which only flips A's
+    Z readout. For B or C, CX x→f (f fresh |0⟩), then measure x in X, leaves Z^m, which only flips B's X readout.
+    XOR m into those detectors. The data and output cannot move this way: the noiseless correctness check rejects
+    any run that needs a correction, and only logical X_L/Z_L frames are allowed. The whole data block can be
+    teleported into a |+_L⟩ block (FRAME_X).
+  - A may couple to a data qubit before the final T_DAG layer: Z-type stabilizers commute with T^7 and with the
+    cat's controlled X^7. B must come after it.
+  - Measuring a fresh qubit prepares |0⟩ with 2p/3 error (in use). Measuring it in X prepares |±⟩ with 2p/3 error,
+    but the Z^m offset must stay off the data (B and C qubits only).
+  - The final data idle step (while B is measured) is irreducible. Any final-step gate on the output costs at least
+    as much: a dummy CX partner's preparation error propagates onto the output.
+  - POSTSELECT on a noiselessly random bit halves acceptance; a biased outcome (logical H_XY on \|+_L⟩: 0.854) is
+    affordable but worth ≤ 1% (FINDINGS).

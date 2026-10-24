@@ -1,6 +1,6 @@
 # Plan
 
-## Status (2026-10-24 12:00 KST)
+## Status (2026-10-24 13:30 KST)
 - Board (11:45): Placeholder 5.879e-5 (169 CX, acc 0.535); us 8.28792e-5 = v16 (server, bit-identical; BC2 clean B+C
   prep + measure-init; 245-draw mean 8.584e-5, exact 8.42e-5), rank 2. Re-draw means run ≈ 2% above exact 3rd order.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
@@ -8,8 +8,8 @@
 - Measured levers (FINDINGS): v16 with its data wait noiseless 5.66e-5 (−32.8%, below the leader); half the wait
   −18.7%; the wait cost is cubic. Clean B+C rule −18.4% (BC2); L5 is exhausted at R 47 (COMBO5 ties v16). The
   round's start R (50 now; pre-stage ends at 32) and small separate block preps are the levers: grid-free, separate
-  9-CX blocks give 3.55e-5 at R 33, 4.12e-5 at R 39, 5.79e-5 at R 50 (FINDINGS). Lanes: R0 (star round, all blocks
-  during the pre-stage, moved in after step 32), TP2 (teleport chain: one partner per data qubit), LAYOUT3 (R ≥ 38–39).
+  9-CX blocks give 3.55e-5 at R 33, 4.12e-5 at R 39, 5.79e-5 at R 50 (FINDINGS). Lanes: R1 (star round, B and C just in
+  time; R0's early-checked B failed), TP2 (teleport chain: one partner per data qubit), LAYOUT3 (R ≥ 38–39).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
@@ -19,7 +19,7 @@ Bottleneck: the data wait before the round (R − 32 = 15–22 steps on every la
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P41 | G1 | Round at R 35–37: A, B, C prepared during the pre-stage in the 21 never-used cells, block qubits (and data) moved into released cells from step 33, staggered round (each qubit A before B), time-expanded CP-SAT | 3-seed MC mean below v16's 8.554e-5, or the smallest R with the binding constraint | Codex lane R0 (`work/lanes/R0`, owl, dragon) | active |
+| 1 | P43 | G1 | Star round right after the pre-stage with corrected rules: A early (idle allowed), B and C just in time with B's check immediately before coupling, small separate exact encoders, 1-CX teleport moves for block qubits, early-released cells 13/19 (v16e prefix), A before T_DAG, staggering | 3-seed MC mean below v16's 8.554e-5, or best exact total with its dominant pairs | Codex lane R1 (`work/lanes/R1`, owl) | active |
 | 2 | P42 | G1 | Teleport round right after the pre-stage: output block O, B, C prepared during the pre-stage in never-used cells, O moved next to the data (one partner per data qubit), data read in Z, B checks O | 3-seed MC mean below v16's 8.554e-5, or the smallest round start with the binding constraint | Codex lane TP2 (`work/lanes/TP2`, zebra, sunfish) | active |
 | 3 | P40 | G1 | New layouts with B+C prepared in parallel with the pre-stage (CP-SAT over pre-stage symmetries/translations), A in released cells, parity cat if it fits; R_lb 39 found | 3-seed MC mean below 8.46431e-5, or the smallest R per approach | Codex lane LAYOUT3 (`work/lanes/LAYOUT3`, tom, hippo, jerry) | active |
 | 4 | P39 | G1 | Clean B+C rule on LAYOUT2's parity layout, earliest R, data-move variants, measure-init | 3-seed MC mean below 8.46431e-5 | Codex lane COMBO2 (`work/lanes/COMBO2`, owl) | active |
