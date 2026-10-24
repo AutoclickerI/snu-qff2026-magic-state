@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v20**, server 1-F = 7.14114500888319e-5
-(bit-identical to `fast_check`), acceptance 0.5400, 203 CX, submitted 2026-10-24 15:45:42 KST
-(`work/receipts/submit_v20_status.txt`; re-draw r126 of `work/lanes/MAIN/v20`, 290 re-draws mean 7.430e-5).
+Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v22**, server 1-F = 6.95468419569434e-5
+(bit-identical to `fast_check`), 203 CX, submitted 2026-10-24 16:45:49 KST (`work/receipts/submit_v22_status.txt`;
+re-draw r155 of `work/lanes/MAIN/v22` = v22h_c2c9, 380 re-draws mean 7.2405e-5).
 
 Best competitor: Placeholder 5.612e-5, 179 CX, acceptance 0.533 (submitted 2026-10-24 16:02 KST; 5.621e-5 at 14:33, 5.727e-5 at 13:32).
-Board read 2026-10-24 15:50 KST; refresh with `work/submit.py board`.
+Board read 2026-10-24 16:50 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -32,6 +32,7 @@ Board read 2026-10-24 15:50 KST; refresh with `work/submit.py board`.
 | v17: v16 + q19/q13 released early + readout re-encoding CX 17→16, 19→25 (re-draw r37) | server | 7.92666e-5, 209 CX (3-seed 8.306e-5) | `work/submissions/v17_r37.*`, `work/receipts/seq_v17_r37.txt` |
 | v18: TREP's 19-CX injection encoder, pre-stage ALAP and interleaved with the suffix, round at 46 (re-draw r174) | server | 7.49754e-5, 203 CX (280 re-draws 7.730e-5) | `work/submissions/v18_r174.*`, `work/receipts/seq_v18_r174.txt`, `work/lanes/TREP/REPORT.md` |
 | v20: v18 + q10 \|+⟩ reuse + third-order-checked timing, round at 45 (TREP2 reuse19_tuned, re-draw r126) | server | 7.14115e-5, 203 CX (290 re-draws 7.430e-5) | `work/submissions/v20_r126.*`, `work/receipts/seq_v20_r126.txt`, `work/lanes/TREP2/REPORT.md` |
+| v22: v20 + HOPS hop_early (earlier final pre-stage CXs and transfer chain, watched sources) + MX checks after the RX init of q2, q9 (re-draw r155) | server | 6.95468e-5, 203 CX (380 re-draws 7.2405e-5) | `work/submissions/v22_r155.*`, `work/lanes/MAIN/v22h_c2c9.*` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
