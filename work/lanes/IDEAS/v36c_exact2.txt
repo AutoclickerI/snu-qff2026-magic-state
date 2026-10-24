@@ -1,0 +1,70 @@
+circuit v36c.qasm: 552 noise channels, 3932 faults, 739 (s,d) classes, rotation rank 5, 72 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.0901e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 3.50015e-05   (pairs 3.50015e-05 + same-channel normalisation 7.920e-23)
+1-F (2nd order) = 3.50015e-05
+acceptance: first order 0.31263, second order 0.54852; exp(-A1) = 0.50290  (A1 = 0.68737)
+time: model+singles 2.8s, pairs 16.6s
+
+top 60 fault pairs by contribution to 1-F (each pair counted once):
+  1.667e-07 ( 0.48%)  n_ij=0.500  L324 flip X@q4 t=36   +   L397 idle X@q17 t=42..42
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Y@q0 t=46..46   +   L444 idle Z@q20 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Y@q0 t=46..46   +   L445 idle Z@q7 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Y@q0 t=46..46   +   L446 idle Z@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L444 idle Y@q20 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L444 idle Z@q20 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L445 idle Y@q7 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L445 idle Z@q7 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L446 idle Y@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L447 idle Y@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L448 idle Y@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L449 idle Y@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Y@q20 t=46..46   +   L445 idle Z@q7 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Y@q20 t=46..46   +   L446 idle Z@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L445 idle Y@q7 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L445 idle Z@q7 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L446 idle Y@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L447 idle Y@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L448 idle Y@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L449 idle Y@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Y@q7 t=46..46   +   L446 idle Z@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Z@q7 t=46..46   +   L446 idle Y@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Z@q7 t=46..46   +   L447 idle Y@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Z@q7 t=46..46   +   L448 idle Y@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Z@q7 t=46..46   +   L449 idle Y@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Z@q10 t=46..46   +   L447 idle Y@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Z@q10 t=46..46   +   L448 idle Y@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Z@q10 t=46..46   +   L449 idle Y@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Y@q0 t=46..46   +   L447 idle Z@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Y@q0 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Y@q0 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L446 idle Z@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L447 idle Z@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Y@q20 t=46..46   +   L447 idle Z@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Y@q20 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Y@q20 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L446 idle Z@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Y@q7 t=46..46   +   L447 idle Z@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Y@q7 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Y@q7 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Z@q7 t=46..46   +   L446 idle Z@q10 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Z@q7 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Y@q10 t=46..46   +   L447 idle Z@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Y@q10 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Y@q10 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Z@q10 t=46..46   +   L447 idle Z@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Z@q10 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L446 idle Z@q10 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L447 idle Y@q3 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L447 idle Y@q3 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L447 idle Z@q3 t=46..46   +   L448 idle Y@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L447 idle Z@q3 t=46..46   +   L449 idle Y@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L448 idle Y@q22 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L448 idle Z@q22 t=46..46   +   L449 idle Y@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L448 idle Z@q22 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L443 idle Z@q0 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L447 idle Z@q3 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L444 idle Z@q20 t=46..46   +   L449 idle Z@q21 t=46..46
+  1.111e-07 ( 0.32%)  n_ij=1.000  L445 idle Z@q7 t=46..46   +   L447 idle Z@q3 t=46..46
+
+loss by channel kind (each pair split half/half): {'flip': '2.333e-07', 'idle': '2.058e-05', 'gate': '1.419e-05'}

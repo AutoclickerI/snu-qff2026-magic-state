@@ -1,0 +1,36 @@
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/data2/jihoon/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/data2/jihoon/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+           ^^^^^^^^^^^^^^^^
+  File "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/IDEAS/../EVAL/exact2.py", line 159, in _triple_chunk
+    A, N = ev.e.batch_n(S, D)
+           ^^^^^^^^^^^^^^^^^^
+  File "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/EVAL/engine.py", line 174, in batch_n
+    A, E = batch_tables(self, S, D)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/EVAL/engine.py", line 154, in batch_tables
+    D = np.asarray(D, dtype=np.int64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to C long
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/IDEAS/triples.py", line 19, in <module>
+    T3a, big3 = exact2.third_order(ev, procs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/IDEAS/../EVAL/exact2.py", line 200, in third_order
+    res = pool.map(_triple_chunk, parts, chunksize=1)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/jihoon/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/jihoon/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+OverflowError: Python int too large to convert to C long
