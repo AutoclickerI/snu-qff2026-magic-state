@@ -2,10 +2,10 @@
 
 ## G0 — Official 1-F of 1e-5, or as close to it as possible, by the deadline (R-20261024-3)
 The measure is the official 1-F (`tprep.check(..., shots=10**8, seed=0)`) of our best board entry when
-submissions close, 2026-10-30 12:00 KST; the target is 1e-5 and the score is the remaining gap. Under the
-judge's noise no circuit goes below 1.116e-5 and a one-step final readout costs ≥ 2.567e-5 (FINDINGS
-"Floor, any circuit"), so "as close as possible" is the operative reading. Rank 1 (R-20261023-1) follows
-from any entry below the leader (6.29e-5 on 2026-10-24); ties go to fewer 2-qubit gates, then the
+submissions close, 2026-10-30 12:00 KST; the target is 1e-5 and the score is the remaining gap. A one-step final
+readout costs ≥ 2.567e-5 and the best known complete design (grid-free) 3.55e-5; no universal floor is proved
+(FINDINGS "Floor, any circuit"), so "as close as possible" is the operative reading. Rank 1 (R-20261023-1)
+follows from any entry below the leader (5.612e-5 on 2026-10-24); ties go to fewer 2-qubit gates, then the
 earlier submission.
 
 ## Subgoals (ranked)

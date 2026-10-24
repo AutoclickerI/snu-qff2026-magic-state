@@ -7,8 +7,7 @@
 - Loss ledger (FINDINGS): of v23h_c2c9's 6.92e-5, the round alone is 2.87e-5 (its floor class) and ≈ 4e-5 is cross-region
   (prefix/wait residual + one later fault); the grid-free early round is 3.55e-5. LADDER prices each grid constraint;
   BIRD reviews the method independently; a spacetime co-design lane follows LADDER.
-- Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
-  targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
+- Floors (FINDINGS): 2.567e-5 for a direct one-step final readout; no universal floor is proved (BIRD); G0 targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
 - Every grid layout so far hits the area wall: separate unitary B and C encoders do not fit next to the data early
   (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; BCSYN2's feedback search found a better 82-CX prep
@@ -31,10 +30,13 @@ Bottleneck: the B+C prep footprint (82 CX; noiseless −26.5% on v19) and the da
 | 5 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`, zebra, jerry) | active |
 | 6 | P63 | G1 | GAP: a structurally different circuit at the leader's scale (5.612e-5 at 179 CX vs our 215): CX/depth budget by region, grid-free pricing of new architectures (smaller pre-stage footprint, no hops, fewer block cells, checks spread over the wait), grid builds of the best | a built circuit below v23h_c2c9 by exact and MC within the speed gate, or each architecture priced with its mechanism | Codex lane GAP (`work/lanes/GAP`) | done: nothing below 5.6e-5; dynamic routing not searched (FINDINGS) |
 | 7 | P64 | G3 | LADDER: matched one-change-at-a-time pricing from v23h_c2c9 to the grid-free early round (joint B+C prep → separate encoders, A encoder, hops, R, prefix), both orders | each grid constraint's share of the 6.92e-5 − 3.55e-5 gap measured | Codex lane LADDER (`work/lanes/LADDER`, zebra, sunfish) | active |
-| 8 | P65 | G2 | BIRD: independent bird's-eye review of floors, loss ledger, locked-in decisions and missing optimization methods, from the repo only | REPORT.md with ranked methods and first experiments | Codex lane BIRD (`work/lanes/BIRD`, zebra) | active |
-| 9 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 10 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 11 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 8 | P65 | G2 | BIRD: independent bird's-eye review of floors, loss ledger, locked-in decisions and missing optimization methods, from the repo only | REPORT.md with ranked methods and first experiments | Codex lane BIRD (`work/lanes/BIRD`) | done: FINDINGS "Independent review" |
+| 9 | P66 | G1 | ST1: joint dynamic placement and instrument synthesis across the prefix-to-round boundary (BIRD's top direction) by solver loops: data wires moved during the prefix with retargeted CXs, early ancilla release, joint A/B/C/C6 roles, 1-CX block teleports, exact third-order scoring with pair/triple feedback | a judge-valid circuit below 4.8e-5 exact (or below v25k), or each family closed by mechanism | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
+| 10 | P67 | G1 | ST2: the same goal by population search over macro rewrites (window re-placement, role swaps, prep witnesses, checks, init types) with validity repair and a loss/acceptance/runtime/diversity Pareto front | as P66 | Codex lane ST2 (`work/lanes/ST2`, sunfish, zebra, tom) | active |
+| 11 | P68 | G1 | LNS2: LNS move families and a correct reviewer #1 port on v25k | v25k's local optimum certified per move family, gains MC-verified | Codex lane LNS2 (`work/lanes/LNS2`, jerry, owl, sunfish) | active |
+| 12 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 13 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 14 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
 
 
 ## Parked ideas (from the earlier idea and reviewer 1–2 reviews; outcomes of the rest are in FINDINGS)
