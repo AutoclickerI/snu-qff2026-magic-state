@@ -1,0 +1,71 @@
+Exact2 zero-acceptance class pruning; original _triple_chunk SHA256 1e02fc72496a3fc2a6496c31161b1104117a53c894b9605427b9f69864cdea9e
+circuit /home/jihoon/competitions/quantumn/work/lanes/LADDER/order210/f05_R39.qasm: 345 noise channels, 2361 faults, 517 (s,d) classes, rotation rank 5, 28 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.9236e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 3.68147e-05   (pairs 3.68147e-05 + same-channel normalisation 6.859e-23)
+1-F (2nd order) = 3.68147e-05
+third order: 7.35467e-06   (weight-3 sets 1.03245e-05 + pair-times-others -2.96987e-06)
+1-F (to 3rd order) = 4.41694e-05
+acceptance: first order 0.56234, second order 0.65812; exp(-A1) = 0.64554  (A1 = 0.43766)
+time: model+singles 0.2s, pairs 2.3s, triples 15.5s
+
+top 40 fault pairs by contribution to 1-F (each pair counted once):
+  4.142e-07 ( 1.13%)  n_ij=0.125  L145 idle X@q7 t=22..26   +   L192 idle X@q20 t=33..38
+  4.142e-07 ( 1.13%)  n_ij=0.125  L145 idle X@q7 t=22..26   +   L192 idle Y@q20 t=33..38
+  2.078e-07 ( 0.56%)  n_ij=0.125  L145 idle X@q7 t=22..26   +   L221 flip X@q11 t=35
+  2.078e-07 ( 0.56%)  n_ij=0.125  L145 idle X@q7 t=22..26   +   L278 flip X@q11 t=40
+  1.329e-07 ( 0.36%)  n_ij=1.000  L191 idle Z@q3 t=33..38   +   L249 gate2 IZ@q12,11 t=37
+  1.329e-07 ( 0.36%)  n_ij=1.000  L191 idle Z@q3 t=33..38   +   L249 gate2 XY@q12,11 t=37
+  1.329e-07 ( 0.36%)  n_ij=1.000  L191 idle Z@q3 t=33..38   +   L259 gate2 ZZ@q21,11 t=38
+  1.329e-07 ( 0.36%)  n_ij=1.000  L192 idle Z@q20 t=33..38   +   L248 gate2 IZ@q17,5 t=37
+  1.329e-07 ( 0.36%)  n_ij=1.000  L192 idle Z@q20 t=33..38   +   L250 gate2 IZ@q21,16 t=37
+  1.329e-07 ( 0.36%)  n_ij=1.000  L192 idle Z@q20 t=33..38   +   L258 gate2 ZZ@q12,5 t=38
+  1.329e-07 ( 0.36%)  n_ij=1.000  L192 idle Z@q20 t=33..38   +   L260 gate2 ZZ@q18,16 t=38
+  1.329e-07 ( 0.36%)  n_ij=1.000  L191 idle Y@q3 t=33..38   +   L259 gate2 YY@q21,11 t=38
+  1.329e-07 ( 0.36%)  n_ij=1.000  L192 idle Y@q20 t=33..38   +   L258 gate2 YY@q12,5 t=38
+  1.329e-07 ( 0.36%)  n_ij=1.000  L192 idle Y@q20 t=33..38   +   L260 gate2 YY@q18,16 t=38
+  1.214e-07 ( 0.33%)  n_ij=0.500  L135 idle X@q20 t=20..30   +   L258 gate2 YY@q12,5 t=38
+  1.214e-07 ( 0.33%)  n_ij=0.500  L135 idle X@q20 t=20..30   +   L260 gate2 YY@q18,16 t=38
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Y@q0 t=41..41   +   L290 idle Z@q20 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Y@q0 t=41..41   +   L291 idle Z@q7 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Y@q0 t=41..41   +   L292 idle Z@q4 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L290 idle Y@q20 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L290 idle Z@q20 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L291 idle Y@q7 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L291 idle Z@q7 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L292 idle Y@q4 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L293 idle Y@q3 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L294 idle Y@q15 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L289 idle Z@q0 t=41..41   +   L295 idle Y@q8 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Y@q20 t=41..41   +   L291 idle Z@q7 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Y@q20 t=41..41   +   L292 idle Z@q4 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Z@q20 t=41..41   +   L291 idle Y@q7 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Z@q20 t=41..41   +   L291 idle Z@q7 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Z@q20 t=41..41   +   L292 idle Y@q4 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Z@q20 t=41..41   +   L293 idle Y@q3 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Z@q20 t=41..41   +   L294 idle Y@q15 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L290 idle Z@q20 t=41..41   +   L295 idle Y@q8 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L291 idle Y@q7 t=41..41   +   L292 idle Z@q4 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L291 idle Z@q7 t=41..41   +   L292 idle Y@q4 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L291 idle Z@q7 t=41..41   +   L293 idle Y@q3 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L291 idle Z@q7 t=41..41   +   L294 idle Y@q15 t=41..41
+  1.111e-07 ( 0.30%)  n_ij=1.000  L291 idle Z@q7 t=41..41   +   L295 idle Y@q8 t=41..41
+
+loss by channel kind (each pair split half/half): {'flip': '9.203e-07', 'gate': '1.481e-05', 'idle': '2.108e-05'}
+
+PROVENANCE PAIRS {"round x round": 2.8839999999999314e-05, "A x data_cell_idle": 2.5637656613248394e-06, "A x round": 1.0177777777777776e-06, "data_cell_idle x data_cell_idle": 8.283486120568453e-07, "A x BC": 8.088888888888872e-07, "data_cell_idle x prefix": 7.58944154944681e-07, "A x prefix": 7.482310105035219e-07, "A x A": 4.133333333333314e-07, "data_cell_idle x round": 3.185937276380515e-07, "prefix x prefix": 1.6848310677353166e-07, "prefix x round": 1.6611111111111135e-07, "BC x BC": 9.777777777777772e-08, "BC x round": 8.444444444444442e-08}
+TRIPLES retained 1.01691630856395e-05 of full weight3 1.0324538546357738e-05
+TRIPLE 1.9708927258017715e-08 L165 idle Z@q4 t=29..38 L174 idle Z@q15 t=30..38 L192 idle Z@q20 t=33..38
+TRIPLE 1.7530715403076472e-08 L165 idle Z@q4 t=29..38 L180 idle Z@q8 t=31..38 L193 idle Z@q7 t=33..38
+TRIPLE 1.578815057216132e-08 L174 idle Z@q15 t=30..38 L194 idle Z@q0 t=33..38 L180 idle Z@q8 t=31..38
+TRIPLE 1.3165563330410496e-08 L165 idle Z@q4 t=29..38 L191 idle Z@q3 t=33..38 L194 idle Z@q0 t=33..38
+TRIPLE 1.1856897533763463e-08 L191 idle Z@q3 t=33..38 L174 idle Z@q15 t=30..38 L193 idle Z@q7 t=33..38
+TRIPLE 1.0546484519764405e-08 L191 idle Z@q3 t=33..38 L180 idle Z@q8 t=31..38 L192 idle Z@q20 t=33..38
+TRIPLE 9.887362972363625e-09 L165 idle Z@q4 t=29..38 L174 idle Z@q15 t=30..38 L304 flip Z@q23 t=41
+TRIPLE 9.887362972363625e-09 L165 idle Z@q4 t=29..38 L174 idle Z@q15 t=30..38 L212 flip Z@q30 t=35
+TRIPLE 9.887362972363625e-09 L165 idle Z@q4 t=29..38 L174 idle Z@q15 t=30..38 L202 flip Z@q23 t=35
+TRIPLE 9.854463629008857e-09 L165 idle Y@q4 t=29..38 L174 idle Y@q15 t=30..38 L192 idle Y@q20 t=33..38
+TRIPLE 9.854463629008857e-09 L165 idle X@q4 t=29..38 L174 idle X@q15 t=30..38 L192 idle X@q20 t=33..38
+TRIPLE 9.23432195567989e-09 L134 idle Z@q3 t=20..26 L146 idle Z@q15 t=22..27 L193 idle Z@q7 t=33..38
+TRIPLE 9.003234332066556e-09 L135 idle X@q20 t=20..30 L165 idle X@q4 t=29..38 L174 idle X@q15 t=30..38
+TRIPLE 9.003234332066546e-09 L135 idle X@q20 t=20..30 L165 idle Y@q4 t=29..38 L174 idle Y@q15 t=30..38
+TRIPLE 8.794621040823529e-09 L165 idle Z@q4 t=29..38 L180 idle Z@q8 t=31..38 L306 flip Z@q24 t=41

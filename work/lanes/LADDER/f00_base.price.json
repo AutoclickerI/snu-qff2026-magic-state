@@ -1,0 +1,463 @@
+{
+  "status": "PASS",
+  "second": 5.249231433528793e-05,
+  "third": 1.672872548749673e-05,
+  "total": 6.922103982278496e-05,
+  "weight3": 2.203619148819888e-05,
+  "pair_times_others": -5.307466000702148e-06,
+  "c1": 2.92358729817953e-19,
+  "A0": 0.9999999999999997,
+  "exp_minus_A1": 0.54085957771236,
+  "A1": 0.6145955944329589,
+  "CX": 203,
+  "R": 45,
+  "pair_classes": {
+    "round x round": 2.8839999999999314e-05,
+    "BC x BC": 6.846712631730289e-06,
+    "A x data_cell_idle": 5.221707922551471e-06,
+    "A x BC": 2.6792005924345357e-06,
+    "A x A": 1.6376327880169929e-06,
+    "A x round": 1.4844444444444477e-06,
+    "BC x round": 1.4799999999999869e-06,
+    "A x prefix": 1.3676688371374031e-06,
+    "data_cell_idle x prefix": 9.87958490324569e-07,
+    "data_cell_idle x data_cell_idle": 9.657631592573094e-07,
+    "data_cell_idle x round": 3.185937276380515e-07,
+    "A x hop": 2.8444444444444454e-07,
+    "prefix x prefix": 2.1207618619859308e-07,
+    "prefix x round": 1.6611111111111135e-07
+  },
+  "pair_class_examples": {
+    "round x round": [
+      1.1111111111110514e-07,
+      "L390 idle Y@q0 t=47..47",
+      "L391 idle Z@q20 t=47..47"
+    ],
+    "A x prefix": [
+      7.746735710361571e-08,
+      "L141 idle X@q6 t=21..27",
+      "L332 gate2 XZ@q8,14 t=42"
+    ],
+    "A x data_cell_idle": [
+      3.084291424744738e-07,
+      "L182 idle Z@q10 t=31..44",
+      "L331 gate2 IZ@q1,2 t=42"
+    ],
+    "prefix x prefix": [
+      1.0429840842081556e-07,
+      "L137 idle X@q1 t=20..38",
+      "L162 gate2 XY@q9,3 t=27"
+    ],
+    "data_cell_idle x prefix": [
+      8.800550697362444e-08,
+      "L142 gate2 XI@q8,14 t=20",
+      "L162 idle Y@q3 t=28..43"
+    ],
+    "data_cell_idle x data_cell_idle": [
+      9.657631592573094e-07,
+      "L145 idle X@q7 t=22..26",
+      "L256 idle Y@q20 t=37..43"
+    ],
+    "prefix x round": [
+      8.333333333333334e-09,
+      "L141 gate2 XI@q7,6 t=20",
+      "L379 flip X@q14 t=46"
+    ],
+    "data_cell_idle x round": [
+      2.0777851802481623e-07,
+      "L145 idle X@q7 t=22..26",
+      "L379 flip X@q14 t=46"
+    ],
+    "A x hop": [
+      4.444444444444445e-09,
+      "L173 gate2 YX@q10,4 t=29",
+      "L331 gate2 IZ@q1,2 t=42"
+    ],
+    "A x BC": [
+      8.871126908312488e-08,
+      "L257 idle Z@q6 t=37..40",
+      "L312 gate2 IZ@q14,8 t=40"
+    ],
+    "A x A": [
+      1.1081520961323533e-07,
+      "L296 idle Z@q9 t=40..44",
+      "L331 gate2 IZ@q1,2 t=42"
+    ],
+    "A x round": [
+      6.666666666666667e-08,
+      "L331 gate2 IZ@q1,2 t=42",
+      "L409 flip Z@q11 t=47"
+    ],
+    "BC x BC": [
+      5.555555555555405e-08,
+      "L193 gate1 X@q25 t=30",
+      "L338 idle X@q26 t=43..43"
+    ],
+    "BC x round": [
+      3.333333333333333e-08,
+      "L328 gate2 XI@q28,29 t=41",
+      "L401 flip X@q25 t=47"
+    ]
+  },
+  "triple_classes_kept": {
+    "data_cell_idle x data_cell_idle x prefix": 1.6896513986195108e-06,
+    "data_cell_idle x data_cell_idle x data_cell_idle": 1.36637118806734e-06,
+    "prefix x round x round": 1.2823901658488003e-06,
+    "data_cell_idle x data_cell_idle x round": 1.0957286886785704e-06,
+    "BC x data_cell_idle x data_cell_idle": 1.0918728507763612e-06,
+    "A x data_cell_idle x data_cell_idle": 1.078971562699477e-06,
+    "A x data_cell_idle x prefix": 9.925163238287729e-07,
+    "A x BC x data_cell_idle": 9.70248494394808e-07,
+    "A x data_cell_idle x round": 9.696832359233653e-07,
+    "BC x data_cell_idle x round": 8.076849042236361e-07,
+    "BC x round x round": 7.92651064090465e-07,
+    "round x round x round": 7.887007407399335e-07,
+    "data_cell_idle x prefix x prefix": 7.745179030981959e-07,
+    "data_cell_idle x prefix x round": 7.662538138059597e-07,
+    "BC x data_cell_idle x prefix": 6.071961862611054e-07,
+    "data_cell_idle x round x round": 5.82139561644211e-07,
+    "BC x BC x round": 5.045853189527574e-07,
+    "BC x BC x BC": 3.700852336388563e-07,
+    "A x BC x round": 3.4877282215091484e-07,
+    "A x BC x prefix": 2.8640221833956754e-07,
+    "A x prefix x round": 2.809029467981099e-07,
+    "BC x BC x prefix": 2.703095655372134e-07,
+    "BC x prefix x prefix": 2.6800803729798704e-07,
+    "A x round x round": 2.4417447389044224e-07,
+    "hop x round x round": 2.390942152344518e-07,
+    "data_cell_idle x data_cell_idle x hop": 2.37454190056624e-07,
+    "A x prefix x prefix": 2.3464657087188333e-07,
+    "A x A x data_cell_idle": 2.3210280693828384e-07,
+    "prefix x prefix x round": 2.1492263558213048e-07,
+    "A x A x BC": 2.062147073036688e-07,
+    "data_cell_idle x hop x prefix": 1.8079746215853512e-07,
+    "BC x prefix x round": 1.6776599679326333e-07,
+    "BC x data_cell_idle x hop": 1.6655941055320972e-07,
+    "A x data_cell_idle x hop": 1.5026612650446332e-07,
+    "A x A x round": 1.4323701546330394e-07,
+    "data_cell_idle x hop x round": 1.3019926850234436e-07,
+    "A x A x prefix": 1.2070453068359064e-07,
+    "prefix x prefix x prefix": 1.0695379395363356e-07,
+    "A x BC x BC": 1.045677494033285e-07,
+    "A x BC x hop": 8.157753942081309e-08,
+    "BC x BC x data_cell_idle": 7.785255026013763e-08,
+    "A x hop x round": 6.244990674526475e-08,
+    "A x hop x prefix": 5.644302660828469e-08,
+    "BC x BC x hop": 4.779770207531315e-08,
+    "hop x prefix x prefix": 3.301138216791166e-08,
+    "hop x prefix x round": 3.126603463832829e-08,
+    "BC x hop x round": 2.6407384155341948e-08,
+    "BC x hop x prefix": 2.3891548561583487e-08,
+    "A x A x A": 2.296215005628607e-08,
+    "A x A x hop": 2.0999791854327634e-08,
+    "data_cell_idle x hop x hop": 8.855120422252842e-09,
+    "hop x hop x prefix": 3.44001364201533e-09,
+    "A x hop x hop": 2.866696005460937e-09,
+    "BC x hop x hop": 2.1794142601867315e-09,
+    "hop x hop x round": 1.70666666666666e-09
+  },
+  "triple_kept": 2.136901210684925e-05,
+  "top_triples": [
+    [
+      1.1301977293148346e-07,
+      "L182 idle Z@q10 t=31..44",
+      "L162 idle Z@q3 t=28..43",
+      "L172 idle Z@q0 t=30..43"
+    ],
+    [
+      4.060676538981441e-08,
+      "L296 idle Z@q9 t=40..44",
+      "L162 idle Z@q3 t=28..43",
+      "L172 idle Z@q0 t=30..43"
+    ],
+    [
+      3.8218769932906956e-08,
+      "L137 idle X@q1 t=20..38",
+      "L135 idle X@q20 t=20..35",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      3.257195271871335e-08,
+      "L162 idle Z@q3 t=28..43",
+      "L263 idle Z@q21 t=37..44",
+      "L256 idle Z@q20 t=37..43"
+    ],
+    [
+      2.853838296949623e-08,
+      "L215 idle Z@q16 t=32..38",
+      "L172 idle Z@q0 t=30..43",
+      "L263 idle Z@q21 t=37..44"
+    ],
+    [
+      2.4987721353115594e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L215 idle Z@q16 t=32..38",
+      "L256 idle Z@q20 t=37..43"
+    ],
+    [
+      2.442911674401568e-08,
+      "L409 flip Z@q11 t=47",
+      "L162 idle Z@q3 t=28..43",
+      "L172 idle Z@q0 t=30..43"
+    ],
+    [
+      2.442911674401568e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L162 idle Z@q3 t=28..43",
+      "L403 flip Z@q6 t=47"
+    ],
+    [
+      2.442911674401568e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L162 idle Z@q3 t=28..43",
+      "L320 flip Z@q1 t=41"
+    ],
+    [
+      2.4396559064869997e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L162 idle Z@q3 t=28..43",
+      "L329 idle Z@q6 t=42..44"
+    ],
+    [
+      2.140392058369633e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L411 flip Z@q4 t=47",
+      "L172 idle Z@q0 t=30..43"
+    ],
+    [
+      2.137539470672231e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L238 idle Z@q4 t=35..37",
+      "L172 idle Z@q0 t=30..43"
+    ],
+    [
+      2.0800235720035398e-08,
+      "L135 idle X@q20 t=20..35",
+      "L136 idle X@q2 t=20..28",
+      "L162 idle Y@q3 t=28..43"
+    ],
+    [
+      2.0235884986631567e-08,
+      "L164 idle X@q7 t=29..38",
+      "L135 idle X@q20 t=20..35",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.9211368722963962e-08,
+      "L137 idle X@q1 t=20..38",
+      "L182 idle X@q10 t=31..44",
+      "L263 idle X@q21 t=37..44"
+    ],
+    [
+      1.921136872296396e-08,
+      "L137 idle X@q1 t=20..38",
+      "L182 idle Y@q10 t=31..44",
+      "L263 idle Y@q21 t=37..44"
+    ],
+    [
+      1.8649785988747362e-08,
+      "L162 idle Z@q3 t=28..43",
+      "L263 idle Z@q21 t=37..44",
+      "L257 idle Z@q6 t=37..40"
+    ],
+    [
+      1.6821146768353766e-08,
+      "L172 idle X@q0 t=30..43",
+      "L137 idle X@q1 t=20..38",
+      "L256 idle Y@q20 t=37..43"
+    ],
+    [
+      1.682114676835376e-08,
+      "L137 idle X@q1 t=20..38",
+      "L256 idle X@q20 t=37..43",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.682114676835376e-08,
+      "L137 idle X@q1 t=20..38",
+      "L169 idle X@q14 t=29..35",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.682114676835376e-08,
+      "L137 idle X@q1 t=20..38",
+      "L142 idle X@q14 t=21..27",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.6466926561161304e-08,
+      "L137 idle X@q1 t=20..38",
+      "L146 idle X@q15 t=22..27",
+      "L162 idle Y@q3 t=28..43"
+    ],
+    [
+      1.6340277153240362e-08,
+      "L308 idle Z@q22 t=41..44",
+      "L172 idle Z@q0 t=30..43",
+      "L263 idle Z@q21 t=37..44"
+    ],
+    [
+      1.6340277153240362e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L263 idle Z@q21 t=37..44",
+      "L294 idle Z@q7 t=40..43"
+    ],
+    [
+      1.632943450510731e-08,
+      "L162 idle Z@q3 t=28..43",
+      "L215 idle Z@q16 t=32..38",
+      "L294 idle Z@q7 t=40..43"
+    ],
+    [
+      1.4307267961687834e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L308 idle Z@q22 t=41..44",
+      "L256 idle Z@q20 t=37..43"
+    ],
+    [
+      1.4307267961687834e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L215 idle Z@q16 t=32..38",
+      "L257 idle Z@q6 t=37..40"
+    ],
+    [
+      1.4307267961687834e-08,
+      "L172 idle Z@q0 t=30..43",
+      "L256 idle Z@q20 t=37..43",
+      "L294 idle Z@q7 t=40..43"
+    ],
+    [
+      1.419344332900935e-08,
+      "L135 idle X@q20 t=20..35",
+      "L182 idle X@q10 t=31..44",
+      "L215 idle X@q16 t=32..38"
+    ],
+    [
+      1.4193443329009349e-08,
+      "L172 idle X@q0 t=30..43",
+      "L138 idle X@q4 t=20..26",
+      "L162 idle Y@q3 t=28..43"
+    ],
+    [
+      1.4193443329009349e-08,
+      "L162 idle X@q3 t=28..43",
+      "L138 idle X@q4 t=20..26",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.4193443329009336e-08,
+      "L135 idle X@q20 t=20..35",
+      "L182 idle Y@q10 t=31..44",
+      "L215 idle Y@q16 t=32..38"
+    ],
+    [
+      1.412747161643544e-08,
+      "L172 idle X@q0 t=30..43",
+      "L162 idle X@q3 t=28..43",
+      "L182 idle X@q10 t=31..44"
+    ],
+    [
+      1.4127471616435433e-08,
+      "L162 idle Y@q3 t=28..43",
+      "L182 idle X@q10 t=31..44",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.4127471616435431e-08,
+      "L172 idle X@q0 t=30..43",
+      "L162 idle Y@q3 t=28..43",
+      "L182 idle X@q10 t=31..44"
+    ],
+    [
+      1.4127471616435431e-08,
+      "L162 idle X@q3 t=28..43",
+      "L182 idle X@q10 t=31..44",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.4127471616435426e-08,
+      "L172 idle X@q0 t=30..43",
+      "L162 idle X@q3 t=28..43",
+      "L182 idle Y@q10 t=31..44"
+    ],
+    [
+      1.4127471616435421e-08,
+      "L172 idle X@q0 t=30..43",
+      "L162 idle Y@q3 t=28..43",
+      "L182 idle Y@q10 t=31..44"
+    ],
+    [
+      1.4127471616435418e-08,
+      "L162 idle Y@q3 t=28..43",
+      "L182 idle Y@q10 t=31..44",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.4127471616435418e-08,
+      "L162 idle X@q3 t=28..43",
+      "L182 idle Y@q10 t=31..44",
+      "L172 idle Y@q0 t=30..43"
+    ],
+    [
+      1.4015345274245451e-08,
+      "L162 idle Z@q3 t=28..43",
+      "L263 idle Z@q21 t=37..44",
+      "L405 flip Z@q26 t=47"
+    ],
+    [
+      1.2279745532614034e-08,
+      "L413 flip Z@q23 t=47",
+      "L172 idle Z@q0 t=30..43",
+      "L263 idle Z@q21 t=37..44"
+    ],
+    [
+      1.2279745532614034e-08,
+      "L283 flip Z@q15 t=38",
+      "L172 idle Z@q0 t=30..43",
+      "L263 idle Z@q21 t=37..44"
+    ],
+    [
+      1.2279745532614034e-08,
+      "L182 idle Z@q10 t=31..44",
+      "L263 idle Z@q21 t=37..44",
+      "L407 flip Z@q13 t=47"
+    ],
+    [
+      1.2271597264458914e-08,
+      "L162 idle Z@q3 t=28..43",
+      "L415 flip Z@q27 t=47",
+      "L256 idle Z@q20 t=37..43"
+    ],
+    [
+      1.2271597264458914e-08,
+      "L162 idle Z@q3 t=28..43",
+      "L215 idle Z@q16 t=32..38",
+      "L407 flip Z@q13 t=47"
+    ],
+    [
+      1.0849631393660932e-08,
+      "L133 idle X@q0 t=20..28",
+      "L137 idle X@q1 t=20..38",
+      "L256 idle Y@q20 t=37..43"
+    ],
+    [
+      1.0799201857483995e-08,
+      "L137 idle X@q1 t=20..38",
+      "L136 idle X@q2 t=20..28",
+      "L182 idle X@q10 t=31..44"
+    ],
+    [
+      1.0799201857483985e-08,
+      "L137 idle X@q1 t=20..38",
+      "L136 idle X@q2 t=20..28",
+      "L182 idle Y@q10 t=31..44"
+    ],
+    [
+      1.0751935734554412e-08,
+      "L215 idle Z@q16 t=32..38",
+      "L172 idle Z@q0 t=30..43",
+      "L415 flip Z@q27 t=47"
+    ]
+  ],
+  "seconds": 913.6181211089715
+}

@@ -1,0 +1,2052 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    4,
+    3,
+    15,
+    8
+  ],
+  "R": 37,
+  "CX": 125,
+  "native_depth": 40,
+  "note": "Matched reverse hops comparison at feasible R=37",
+  "units": [
+    {
+      "lines": [
+        "reset q[7];",
+        "h q[7];"
+      ],
+      "t": 0,
+      "tag": "prefix",
+      "source_i": 0
+    },
+    {
+      "lines": [
+        "measure q[13] -> c[41];"
+      ],
+      "t": 0,
+      "tag": "prefix",
+      "source_i": 1
+    },
+    {
+      "lines": [
+        "reset q[1];",
+        "h q[1];"
+      ],
+      "t": 1,
+      "tag": "prefix",
+      "source_i": 2
+    },
+    {
+      "lines": [
+        "reset q[19];",
+        "h q[19];"
+      ],
+      "t": 1,
+      "tag": "prefix",
+      "source_i": 3
+    },
+    {
+      "lines": [
+        "t q[7];"
+      ],
+      "t": 1,
+      "tag": "prefix",
+      "source_i": 4
+    },
+    {
+      "lines": [
+        "reset q[3];",
+        "h q[3];"
+      ],
+      "t": 2,
+      "tag": "prefix",
+      "source_i": 5
+    },
+    {
+      "lines": [
+        "measure q[9] -> c[40];"
+      ],
+      "t": 2,
+      "tag": "prefix",
+      "source_i": 6
+    },
+    {
+      "lines": [
+        "cx q[1],q[7];"
+      ],
+      "t": 2,
+      "tag": "prefix",
+      "source_i": 7
+    },
+    {
+      "lines": [
+        "cx q[19],q[13];"
+      ],
+      "t": 2,
+      "tag": "prefix",
+      "source_i": 8
+    },
+    {
+      "lines": [
+        "measure q[2] -> c[39];"
+      ],
+      "t": 3,
+      "tag": "prefix",
+      "source_i": 9
+    },
+    {
+      "lines": [
+        "reset q[4];",
+        "h q[4];"
+      ],
+      "t": 3,
+      "tag": "prefix",
+      "source_i": 10
+    },
+    {
+      "lines": [
+        "cx q[3],q[9];"
+      ],
+      "t": 3,
+      "tag": "prefix",
+      "source_i": 11
+    },
+    {
+      "lines": [
+        "reset q[8];",
+        "h q[8];"
+      ],
+      "t": 3,
+      "tag": "prefix",
+      "source_i": 12
+    },
+    {
+      "lines": [
+        "cx q[7],q[13];"
+      ],
+      "t": 3,
+      "tag": "prefix",
+      "source_i": 13
+    },
+    {
+      "lines": [
+        "cx q[1],q[2];"
+      ],
+      "t": 4,
+      "tag": "prefix",
+      "source_i": 14
+    },
+    {
+      "lines": [
+        "cx q[4],q[3];"
+      ],
+      "t": 4,
+      "tag": "prefix",
+      "source_i": 15
+    },
+    {
+      "lines": [
+        "cx q[8],q[7];"
+      ],
+      "t": 4,
+      "tag": "prefix",
+      "source_i": 16
+    },
+    {
+      "lines": [
+        "reset q[0];",
+        "h q[0];"
+      ],
+      "t": 5,
+      "tag": "prefix",
+      "source_i": 17
+    },
+    {
+      "lines": [
+        "cx q[2],q[3];"
+      ],
+      "t": 5,
+      "tag": "prefix",
+      "source_i": 18
+    },
+    {
+      "lines": [
+        "reset q[15];",
+        "h q[15];"
+      ],
+      "t": 5,
+      "tag": "prefix",
+      "source_i": 19
+    },
+    {
+      "lines": [
+        "cx q[9],q[8];"
+      ],
+      "t": 5,
+      "tag": "prefix",
+      "source_i": 20
+    },
+    {
+      "lines": [
+        "cx q[0],q[1];"
+      ],
+      "t": 6,
+      "tag": "prefix",
+      "source_i": 21
+    },
+    {
+      "lines": [
+        "cx q[3],q[2];"
+      ],
+      "t": 6,
+      "tag": "prefix",
+      "source_i": 22
+    },
+    {
+      "lines": [
+        "cx q[15],q[9];"
+      ],
+      "t": 6,
+      "tag": "prefix",
+      "source_i": 23
+    },
+    {
+      "lines": [
+        "cx q[13],q[19];"
+      ],
+      "t": 7,
+      "tag": "prefix",
+      "source_i": 24
+    },
+    {
+      "lines": [
+        "cx q[7],q[1];"
+      ],
+      "t": 7,
+      "tag": "prefix",
+      "source_i": 25
+    },
+    {
+      "lines": [
+        "cx q[3],q[4];"
+      ],
+      "t": 7,
+      "tag": "prefix",
+      "source_i": 26
+    },
+    {
+      "lines": [
+        "cx q[8],q[2];"
+      ],
+      "t": 7,
+      "tag": "prefix",
+      "source_i": 27
+    },
+    {
+      "lines": [
+        "cx q[9],q[15];"
+      ],
+      "t": 7,
+      "tag": "prefix",
+      "source_i": 28
+    },
+    {
+      "lines": [
+        "cx q[1],q[0];"
+      ],
+      "t": 8,
+      "tag": "prefix",
+      "source_i": 29
+    },
+    {
+      "lines": [
+        "cx q[2],q[3];"
+      ],
+      "t": 8,
+      "tag": "prefix",
+      "source_i": 30
+    },
+    {
+      "lines": [
+        "reset q[14];"
+      ],
+      "t": 8,
+      "tag": "prefix",
+      "source_i": 31
+    },
+    {
+      "lines": [
+        "reset q[9];",
+        "h q[9];"
+      ],
+      "t": 8,
+      "tag": "prefix",
+      "source_i": 32
+    },
+    {
+      "lines": [
+        "reset q[13];",
+        "h q[13];"
+      ],
+      "t": 8,
+      "tag": "prefix",
+      "source_i": 33
+    },
+    {
+      "lines": [
+        "reset q[2];"
+      ],
+      "t": 9,
+      "tag": "prefix",
+      "source_i": 34
+    },
+    {
+      "lines": [
+        "measure q[20] -> c[42];"
+      ],
+      "t": 9,
+      "tag": "prefix",
+      "source_i": 35
+    },
+    {
+      "lines": [
+        "reset q[1];",
+        "h q[1];"
+      ],
+      "t": 9,
+      "tag": "prefix",
+      "source_i": 36
+    },
+    {
+      "lines": [
+        "cx q[13],q[14];"
+      ],
+      "t": 9,
+      "tag": "prefix",
+      "source_i": 37
+    },
+    {
+      "lines": [
+        "cx q[9],q[8];"
+      ],
+      "t": 9,
+      "tag": "prefix",
+      "source_i": 38
+    },
+    {
+      "lines": [
+        "reset q[10];"
+      ],
+      "t": 10,
+      "tag": "prefix",
+      "source_i": 39
+    },
+    {
+      "lines": [
+        "cx q[1],q[2];"
+      ],
+      "t": 10,
+      "tag": "prefix",
+      "source_i": 40
+    },
+    {
+      "lines": [
+        "cx q[19],q[20];"
+      ],
+      "t": 10,
+      "tag": "prefix",
+      "source_i": 41
+    },
+    {
+      "lines": [
+        "cx q[9],q[3];"
+      ],
+      "t": 10,
+      "tag": "prefix",
+      "source_i": 42
+    },
+    {
+      "lines": [
+        "cx q[14],q[8];"
+      ],
+      "t": 10,
+      "tag": "prefix",
+      "source_i": 43
+    },
+    {
+      "lines": [
+        "cx q[9],q[10];"
+      ],
+      "t": 11,
+      "tag": "prefix",
+      "source_i": 44
+    },
+    {
+      "lines": [
+        "cx q[14],q[15];"
+      ],
+      "t": 11,
+      "tag": "prefix",
+      "source_i": 45
+    },
+    {
+      "lines": [
+        "cx q[20],q[19];"
+      ],
+      "t": 11,
+      "tag": "prefix",
+      "source_i": 46
+    },
+    {
+      "lines": [
+        "cx q[2],q[8];"
+      ],
+      "t": 11,
+      "tag": "prefix",
+      "source_i": 47
+    },
+    {
+      "lines": [
+        "cx q[1],q[0];"
+      ],
+      "t": 12,
+      "tag": "prefix",
+      "source_i": 48
+    },
+    {
+      "lines": [
+        "cx q[2],q[3];"
+      ],
+      "t": 12,
+      "tag": "prefix",
+      "source_i": 49
+    },
+    {
+      "lines": [
+        "cx q[9],q[15];"
+      ],
+      "t": 12,
+      "tag": "prefix",
+      "source_i": 50
+    },
+    {
+      "lines": [
+        "cx q[14],q[20];"
+      ],
+      "t": 12,
+      "tag": "prefix",
+      "source_i": 51
+    },
+    {
+      "lines": [
+        "cx q[13],q[7];"
+      ],
+      "t": 12,
+      "tag": "prefix",
+      "source_i": 52
+    },
+    {
+      "lines": [
+        "cx q[10],q[4];"
+      ],
+      "t": 12,
+      "tag": "prefix",
+      "source_i": 53
+    },
+    {
+      "lines": [
+        "measure q[19] -> c[3];"
+      ],
+      "t": 12,
+      "tag": "prefix",
+      "source_i": 54
+    },
+    {
+      "lines": [
+        "cx q[1],q[7];"
+      ],
+      "t": 13,
+      "tag": "prefix",
+      "source_i": 55
+    },
+    {
+      "lines": [
+        "cx q[3],q[9];"
+      ],
+      "t": 13,
+      "tag": "prefix",
+      "source_i": 56
+    },
+    {
+      "lines": [
+        "cx q[8],q[14];"
+      ],
+      "t": 13,
+      "tag": "prefix",
+      "source_i": 57
+    },
+    {
+      "lines": [
+        "cx q[7],q[13];"
+      ],
+      "t": 14,
+      "tag": "prefix",
+      "source_i": 58
+    },
+    {
+      "lines": [
+        "cx q[8],q[9];"
+      ],
+      "t": 14,
+      "tag": "prefix",
+      "source_i": 59
+    },
+    {
+      "lines": [
+        "cx q[15],q[14];"
+      ],
+      "t": 14,
+      "tag": "prefix",
+      "source_i": 60
+    },
+    {
+      "lines": [
+        "cx q[0],q[1];"
+      ],
+      "t": 14,
+      "tag": "prefix",
+      "source_i": 61
+    },
+    {
+      "lines": [
+        "cx q[3],q[2];"
+      ],
+      "t": 14,
+      "tag": "prefix",
+      "source_i": 62
+    },
+    {
+      "lines": [
+        "cx q[4],q[10];"
+      ],
+      "t": 15,
+      "tag": "prefix",
+      "source_i": 63
+    },
+    {
+      "lines": [
+        "cx q[7],q[1];"
+      ],
+      "t": 15,
+      "tag": "prefix",
+      "source_i": 64
+    },
+    {
+      "lines": [
+        "cx q[8],q[2];"
+      ],
+      "t": 15,
+      "tag": "prefix",
+      "source_i": 65
+    },
+    {
+      "lines": [
+        "cx q[15],q[9];"
+      ],
+      "t": 15,
+      "tag": "prefix",
+      "source_i": 66
+    },
+    {
+      "lines": [
+        "cx q[13],q[14];"
+      ],
+      "t": 15,
+      "tag": "prefix",
+      "source_i": 67
+    },
+    {
+      "lines": [
+        "cx q[20],q[14];"
+      ],
+      "t": 16,
+      "tag": "prefix",
+      "source_i": 68
+    },
+    {
+      "lines": [
+        "cx q[1],q[2];"
+      ],
+      "t": 16,
+      "tag": "prefix",
+      "source_i": 69
+    },
+    {
+      "lines": [
+        "cx q[9],q[10];"
+      ],
+      "t": 16,
+      "tag": "prefix",
+      "source_i": 70
+    },
+    {
+      "lines": [
+        "h q[13];",
+        "measure q[13] -> c[6];"
+      ],
+      "t": 16,
+      "tag": "prefix",
+      "source_i": 71
+    },
+    {
+      "lines": [
+        "measure q[2] -> c[0];"
+      ],
+      "t": 17,
+      "tag": "prefix",
+      "source_i": 72
+    },
+    {
+      "lines": [
+        "measure q[10] -> c[1];"
+      ],
+      "t": 17,
+      "tag": "prefix",
+      "source_i": 73
+    },
+    {
+      "lines": [
+        "measure q[14] -> c[2];"
+      ],
+      "t": 17,
+      "tag": "prefix",
+      "source_i": 74
+    },
+    {
+      "lines": [
+        "h q[1];",
+        "measure q[1] -> c[4];"
+      ],
+      "t": 17,
+      "tag": "prefix",
+      "source_i": 75
+    },
+    {
+      "lines": [
+        "h q[9];",
+        "measure q[9] -> c[5];"
+      ],
+      "t": 17,
+      "tag": "prefix",
+      "source_i": 76
+    },
+    {
+      "lines": [
+        "reset q[10];",
+        "h q[10];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 77
+    },
+    {
+      "lines": [
+        "reset q[9];",
+        "h q[9];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 78
+    },
+    {
+      "lines": [
+        "reset q[2];",
+        "h q[2];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 79
+    },
+    {
+      "lines": [
+        "reset q[1];",
+        "h q[1];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 80
+    },
+    {
+      "lines": [
+        "reset q[14];",
+        "h q[14];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 81
+    },
+    {
+      "lines": [
+        "reset q[6];",
+        "h q[6];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 82
+    },
+    {
+      "lines": [
+        "t q[0];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 83
+    },
+    {
+      "lines": [
+        "t q[7];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 84
+    },
+    {
+      "lines": [
+        "t q[8];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 85
+    },
+    {
+      "lines": [
+        "t q[20];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 86
+    },
+    {
+      "lines": [
+        "t q[3];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 87
+    },
+    {
+      "lines": [
+        "t q[4];"
+      ],
+      "t": 18,
+      "tag": "prefix",
+      "source_i": 88
+    },
+    {
+      "lines": [
+        "cx q[6],q[0];"
+      ],
+      "t": 19,
+      "tag": "prefix",
+      "source_i": 89
+    },
+    {
+      "lines": [
+        "cx q[9],q[3];"
+      ],
+      "t": 19,
+      "tag": "prefix",
+      "source_i": 90
+    },
+    {
+      "lines": [
+        "cx q[14],q[20];"
+      ],
+      "t": 19,
+      "tag": "prefix",
+      "source_i": 91
+    },
+    {
+      "lines": [
+        "cx q[2],q[8];"
+      ],
+      "t": 19,
+      "tag": "prefix",
+      "source_i": 92
+    },
+    {
+      "lines": [
+        "cx q[1],q[7];"
+      ],
+      "t": 19,
+      "tag": "prefix",
+      "source_i": 93
+    },
+    {
+      "lines": [
+        "cx q[10],q[4];"
+      ],
+      "t": 19,
+      "tag": "prefix",
+      "source_i": 94
+    },
+    {
+      "lines": [
+        "t q[15];"
+      ],
+      "t": 20,
+      "tag": "prefix",
+      "source_i": 95
+    },
+    {
+      "lines": [
+        "cx q[7],q[6];"
+      ],
+      "t": 20,
+      "tag": "prefix",
+      "source_i": 96
+    },
+    {
+      "lines": [
+        "cx q[8],q[14];"
+      ],
+      "t": 20,
+      "tag": "prefix",
+      "source_i": 97
+    },
+    {
+      "lines": [
+        "cx q[9],q[10];"
+      ],
+      "t": 20,
+      "tag": "prefix",
+      "source_i": 98
+    },
+    {
+      "lines": [
+        "cx q[8],q[7];"
+      ],
+      "t": 21,
+      "tag": "prefix",
+      "source_i": 99
+    },
+    {
+      "lines": [
+        "cx q[9],q[15];"
+      ],
+      "t": 21,
+      "tag": "prefix",
+      "source_i": 100
+    },
+    {
+      "lines": [
+        "cx q[8],q[9];"
+      ],
+      "t": 22,
+      "tag": "prefix",
+      "source_i": 101
+    },
+    {
+      "lines": [
+        "h q[8];",
+        "measure q[8] -> c[7];"
+      ],
+      "t": 23,
+      "tag": "prefix",
+      "source_i": 102
+    },
+    {
+      "lines": [
+        "reset q[8];",
+        "h q[8];"
+      ],
+      "t": 24,
+      "tag": "prefix",
+      "source_i": 103
+    },
+    {
+      "lines": [
+        "cx q[8],q[9];"
+      ],
+      "t": 25,
+      "tag": "prefix",
+      "source_i": 104
+    },
+    {
+      "lines": [
+        "cx q[9],q[10];"
+      ],
+      "t": 26,
+      "tag": "prefix",
+      "source_i": 105
+    },
+    {
+      "lines": [
+        "cx q[8],q[7];"
+      ],
+      "t": 27,
+      "tag": "prefix",
+      "source_i": 106
+    },
+    {
+      "lines": [
+        "cx q[10],q[4];"
+      ],
+      "t": 27,
+      "tag": "prefix",
+      "source_i": 107
+    },
+    {
+      "lines": [
+        "cx q[9],q[3];"
+      ],
+      "t": 27,
+      "tag": "prefix",
+      "source_i": 108
+    },
+    {
+      "lines": [
+        "cx q[7],q[6];"
+      ],
+      "t": 28,
+      "tag": "prefix",
+      "source_i": 109
+    },
+    {
+      "lines": [
+        "tdg q[4];"
+      ],
+      "t": 28,
+      "tag": "prefix",
+      "source_i": 110
+    },
+    {
+      "lines": [
+        "h q[10];",
+        "measure q[10] -> c[8];",
+        "h q[10];"
+      ],
+      "t": 28,
+      "tag": "prefix",
+      "source_i": 111
+    },
+    {
+      "lines": [
+        "cx q[8],q[14];"
+      ],
+      "t": 28,
+      "tag": "prefix",
+      "source_i": 112
+    },
+    {
+      "lines": [
+        "cx q[9],q[15];"
+      ],
+      "t": 28,
+      "tag": "prefix",
+      "source_i": 113
+    },
+    {
+      "lines": [
+        "cx q[6],q[0];"
+      ],
+      "t": 29,
+      "tag": "prefix",
+      "source_i": 114
+    },
+    {
+      "lines": [
+        "cx q[2],q[8];"
+      ],
+      "t": 29,
+      "tag": "prefix",
+      "source_i": 116
+    },
+    {
+      "lines": [
+        "tdg q[15];"
+      ],
+      "t": 29,
+      "tag": "prefix",
+      "source_i": 117
+    },
+    {
+      "lines": [
+        "h q[9];",
+        "measure q[9] -> c[9];"
+      ],
+      "t": 29,
+      "tag": "prefix",
+      "source_i": 118
+    },
+    {
+      "lines": [
+        "h q[6];",
+        "measure q[6] -> c[13];"
+      ],
+      "t": 30,
+      "tag": "prefix",
+      "source_i": 120
+    },
+    {
+      "lines": [
+        "tdg q[8];"
+      ],
+      "t": 30,
+      "tag": "prefix",
+      "source_i": 132
+    },
+    {
+      "lines": [
+        "cx q[14],q[20];"
+      ],
+      "t": 31,
+      "tag": "prefix",
+      "source_i": 177
+    },
+    {
+      "lines": [
+        "cx q[1],q[7];"
+      ],
+      "t": 31,
+      "tag": "prefix",
+      "source_i": 206
+    },
+    {
+      "lines": [
+        "h q[14];",
+        "measure q[14] -> c[12];"
+      ],
+      "t": 32,
+      "tag": "prefix",
+      "source_i": 186
+    },
+    {
+      "lines": [
+        "h q[2];",
+        "measure q[2] -> c[10];"
+      ],
+      "t": 32,
+      "tag": "prefix",
+      "source_i": 200
+    },
+    {
+      "lines": [
+        "h q[1];",
+        "measure q[1] -> c[11];"
+      ],
+      "t": 32,
+      "tag": "prefix",
+      "source_i": 216
+    },
+    {
+      "lines": [
+        "tdg q[3];"
+      ],
+      "t": 32,
+      "tag": "prefix",
+      "source_i": 252
+    },
+    {
+      "lines": [
+        "tdg q[20];"
+      ],
+      "t": 32,
+      "tag": "prefix",
+      "source_i": 253
+    },
+    {
+      "lines": [
+        "tdg q[7];"
+      ],
+      "t": 32,
+      "tag": "prefix",
+      "source_i": 254
+    },
+    {
+      "lines": [
+        "tdg q[0];"
+      ],
+      "t": 32,
+      "tag": "prefix",
+      "source_i": 255
+    },
+    {
+      "t": 33,
+      "tag": "A",
+      "lines": [
+        "reset q[1];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "A",
+      "lines": [
+        "reset q[2];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "A",
+      "lines": [
+        "reset q[5];",
+        "h q[5];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "A",
+      "lines": [
+        "reset q[6];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "A",
+      "lines": [
+        "reset q[11];",
+        "h q[11];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "A",
+      "lines": [
+        "reset q[12];",
+        "h q[12];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "A",
+      "lines": [
+        "reset q[13];",
+        "h q[13];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[14];",
+        "h q[14];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[17];",
+        "h q[17];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[18];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[19];",
+        "h q[19];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[23];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[24];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[25];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[26];",
+        "h q[26];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[27];",
+        "h q[27];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[28];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[29];",
+        "h q[29];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[30];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[31];"
+      ]
+    },
+    {
+      "t": 33,
+      "tag": "BC",
+      "lines": [
+        "reset q[32];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "A",
+      "lines": [
+        "cx q[13],q[1];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "A",
+      "lines": [
+        "cx q[12],q[2];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "A",
+      "lines": [
+        "cx q[11],q[6];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "BC",
+      "lines": [
+        "cx q[14],q[18];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "BC",
+      "lines": [
+        "cx q[17],q[25];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "BC",
+      "lines": [
+        "cx q[19],q[24];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "BC",
+      "lines": [
+        "cx q[26],q[28];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "BC",
+      "lines": [
+        "cx q[27],q[32];"
+      ]
+    },
+    {
+      "t": 34,
+      "tag": "BC",
+      "lines": [
+        "cx q[29],q[31];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "A",
+      "lines": [
+        "cx q[11],q[1];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "A",
+      "lines": [
+        "cx q[5],q[2];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "A",
+      "lines": [
+        "cx q[13],q[6];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "BC",
+      "lines": [
+        "cx q[14],q[23];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "BC",
+      "lines": [
+        "cx q[17],q[18];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "BC",
+      "lines": [
+        "cx q[19],q[25];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "BC",
+      "lines": [
+        "cx q[26],q[30];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "BC",
+      "lines": [
+        "cx q[27],q[28];"
+      ]
+    },
+    {
+      "t": 35,
+      "tag": "BC",
+      "lines": [
+        "cx q[29],q[32];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "A",
+      "lines": [
+        "cx q[5],q[1];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "A",
+      "lines": [
+        "cx q[13],q[2];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "A",
+      "lines": [
+        "cx q[12],q[6];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "BC",
+      "lines": [
+        "cx q[14],q[25];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "BC",
+      "lines": [
+        "cx q[17],q[24];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "BC",
+      "lines": [
+        "cx q[19],q[23];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "BC",
+      "lines": [
+        "cx q[26],q[32];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "BC",
+      "lines": [
+        "cx q[27],q[31];"
+      ]
+    },
+    {
+      "t": 36,
+      "tag": "BC",
+      "lines": [
+        "cx q[29],q[30];"
+      ]
+    },
+    {
+      "lines": [
+        "cx q[0],q[1];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 264
+    },
+    {
+      "lines": [
+        "cx q[14],q[26];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 265
+    },
+    {
+      "lines": [
+        "cx q[20],q[2];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 266
+    },
+    {
+      "lines": [
+        "cx q[17],q[27];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 267
+    },
+    {
+      "lines": [
+        "cx q[7],q[5];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 268
+    },
+    {
+      "lines": [
+        "cx q[18],q[28];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 269
+    },
+    {
+      "lines": [
+        "cx q[4],q[6];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 270
+    },
+    {
+      "lines": [
+        "cx q[19],q[29];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 271
+    },
+    {
+      "lines": [
+        "cx q[3],q[11];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 272
+    },
+    {
+      "lines": [
+        "cx q[23],q[30];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 273
+    },
+    {
+      "lines": [
+        "cx q[15],q[12];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 274
+    },
+    {
+      "lines": [
+        "cx q[24],q[31];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 275
+    },
+    {
+      "lines": [
+        "cx q[8],q[13];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 276
+    },
+    {
+      "lines": [
+        "cx q[25],q[32];"
+      ],
+      "t": 37,
+      "tag": "round",
+      "source_i": 277
+    },
+    {
+      "lines": [
+        "measure q[1] -> c[14];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 278
+    },
+    {
+      "lines": [
+        "measure q[2] -> c[15];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 279
+    },
+    {
+      "lines": [
+        "measure q[5] -> c[16];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 280
+    },
+    {
+      "lines": [
+        "measure q[6] -> c[17];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 281
+    },
+    {
+      "lines": [
+        "measure q[11] -> c[18];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 282
+    },
+    {
+      "lines": [
+        "measure q[13] -> c[20];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 283
+    },
+    {
+      "lines": [
+        "measure q[26] -> c[21];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 284
+    },
+    {
+      "lines": [
+        "cx q[28],q[27];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 285
+    },
+    {
+      "lines": [
+        "cx q[29],q[12];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 286
+    },
+    {
+      "lines": [
+        "measure q[30] -> c[25];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 287
+    },
+    {
+      "lines": [
+        "measure q[31] -> c[26];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 288
+    },
+    {
+      "lines": [
+        "measure q[32] -> c[27];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 289
+    },
+    {
+      "lines": [
+        "cx q[14],q[0];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 290
+    },
+    {
+      "lines": [
+        "cx q[17],q[20];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 291
+    },
+    {
+      "lines": [
+        "cx q[18],q[7];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 292
+    },
+    {
+      "lines": [
+        "cx q[19],q[4];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 293
+    },
+    {
+      "lines": [
+        "cx q[23],q[3];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 294
+    },
+    {
+      "lines": [
+        "cx q[24],q[15];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 295
+    },
+    {
+      "lines": [
+        "cx q[25],q[8];"
+      ],
+      "t": 38,
+      "tag": "round",
+      "source_i": 296
+    },
+    {
+      "lines": [
+        "measure q[29] -> c[24];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 297
+    },
+    {
+      "lines": [
+        "measure q[12] -> c[19];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 298
+    },
+    {
+      "lines": [
+        "measure q[28] -> c[23];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 299
+    },
+    {
+      "lines": [
+        "measure q[27] -> c[22];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 300
+    },
+    {
+      "lines": [
+        "h q[14];",
+        "measure q[14] -> c[28];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 301
+    },
+    {
+      "lines": [
+        "h q[17];",
+        "measure q[17] -> c[29];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 302
+    },
+    {
+      "lines": [
+        "h q[18];",
+        "measure q[18] -> c[30];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 303
+    },
+    {
+      "lines": [
+        "h q[19];",
+        "measure q[19] -> c[31];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 304
+    },
+    {
+      "lines": [
+        "h q[23];",
+        "measure q[23] -> c[32];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 305
+    },
+    {
+      "lines": [
+        "h q[24];",
+        "measure q[24] -> c[33];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 306
+    },
+    {
+      "lines": [
+        "h q[25];",
+        "measure q[25] -> c[34];"
+      ],
+      "t": 39,
+      "tag": "round",
+      "source_i": 307
+    }
+  ],
+  "line_tags": {
+    "5": "prefix",
+    "6": "prefix",
+    "7": "prefix",
+    "9": "prefix",
+    "10": "prefix",
+    "11": "prefix",
+    "12": "prefix",
+    "13": "prefix",
+    "15": "prefix",
+    "16": "prefix",
+    "17": "prefix",
+    "18": "prefix",
+    "19": "prefix",
+    "21": "prefix",
+    "22": "prefix",
+    "23": "prefix",
+    "24": "prefix",
+    "25": "prefix",
+    "26": "prefix",
+    "27": "prefix",
+    "29": "prefix",
+    "30": "prefix",
+    "31": "prefix",
+    "33": "prefix",
+    "34": "prefix",
+    "35": "prefix",
+    "36": "prefix",
+    "37": "prefix",
+    "38": "prefix",
+    "40": "prefix",
+    "41": "prefix",
+    "42": "prefix",
+    "44": "prefix",
+    "45": "prefix",
+    "46": "prefix",
+    "47": "prefix",
+    "48": "prefix",
+    "50": "prefix",
+    "51": "prefix",
+    "52": "prefix",
+    "53": "prefix",
+    "54": "prefix",
+    "55": "prefix",
+    "56": "prefix",
+    "58": "prefix",
+    "59": "prefix",
+    "60": "prefix",
+    "61": "prefix",
+    "62": "prefix",
+    "63": "prefix",
+    "65": "prefix",
+    "66": "prefix",
+    "67": "prefix",
+    "68": "prefix",
+    "69": "prefix",
+    "71": "prefix",
+    "72": "prefix",
+    "73": "prefix",
+    "74": "prefix",
+    "76": "prefix",
+    "77": "prefix",
+    "78": "prefix",
+    "79": "prefix",
+    "80": "prefix",
+    "81": "prefix",
+    "82": "prefix",
+    "84": "prefix",
+    "85": "prefix",
+    "86": "prefix",
+    "88": "prefix",
+    "89": "prefix",
+    "90": "prefix",
+    "91": "prefix",
+    "92": "prefix",
+    "94": "prefix",
+    "95": "prefix",
+    "96": "prefix",
+    "97": "prefix",
+    "98": "prefix",
+    "100": "prefix",
+    "101": "prefix",
+    "102": "prefix",
+    "103": "prefix",
+    "104": "prefix",
+    "106": "prefix",
+    "107": "prefix",
+    "108": "prefix",
+    "109": "prefix",
+    "110": "prefix",
+    "111": "prefix",
+    "112": "prefix",
+    "114": "prefix",
+    "115": "prefix",
+    "116": "prefix",
+    "117": "prefix",
+    "118": "prefix",
+    "119": "prefix",
+    "120": "prefix",
+    "121": "prefix",
+    "122": "prefix",
+    "123": "prefix",
+    "124": "prefix",
+    "125": "prefix",
+    "126": "prefix",
+    "127": "prefix",
+    "128": "prefix",
+    "129": "prefix",
+    "130": "prefix",
+    "131": "prefix",
+    "133": "prefix",
+    "134": "prefix",
+    "135": "prefix",
+    "136": "prefix",
+    "137": "prefix",
+    "138": "prefix",
+    "140": "prefix",
+    "141": "prefix",
+    "142": "prefix",
+    "143": "prefix",
+    "145": "prefix",
+    "146": "prefix",
+    "148": "prefix",
+    "150": "prefix",
+    "151": "prefix",
+    "153": "prefix",
+    "154": "prefix",
+    "156": "prefix",
+    "158": "prefix",
+    "160": "prefix",
+    "161": "prefix",
+    "162": "prefix",
+    "164": "prefix",
+    "165": "prefix",
+    "166": "prefix",
+    "167": "prefix",
+    "168": "prefix",
+    "169": "prefix",
+    "170": "prefix",
+    "172": "prefix",
+    "173": "prefix",
+    "174": "prefix",
+    "175": "prefix",
+    "176": "prefix",
+    "178": "prefix",
+    "179": "prefix",
+    "180": "prefix",
+    "182": "prefix",
+    "183": "prefix",
+    "185": "prefix",
+    "186": "prefix",
+    "187": "prefix",
+    "188": "prefix",
+    "189": "prefix",
+    "190": "prefix",
+    "191": "prefix",
+    "192": "prefix",
+    "193": "prefix",
+    "194": "prefix",
+    "196": "A",
+    "197": "A",
+    "198": "A",
+    "199": "A",
+    "200": "A",
+    "201": "A",
+    "202": "A",
+    "203": "A",
+    "204": "A",
+    "205": "A",
+    "206": "A",
+    "207": "BC",
+    "208": "BC",
+    "209": "BC",
+    "210": "BC",
+    "211": "BC",
+    "212": "BC",
+    "213": "BC",
+    "214": "BC",
+    "215": "BC",
+    "216": "BC",
+    "217": "BC",
+    "218": "BC",
+    "219": "BC",
+    "220": "BC",
+    "221": "BC",
+    "222": "BC",
+    "223": "BC",
+    "224": "BC",
+    "225": "BC",
+    "226": "BC",
+    "228": "A",
+    "229": "A",
+    "230": "A",
+    "231": "BC",
+    "232": "BC",
+    "233": "BC",
+    "234": "BC",
+    "235": "BC",
+    "236": "BC",
+    "238": "A",
+    "239": "A",
+    "240": "A",
+    "241": "BC",
+    "242": "BC",
+    "243": "BC",
+    "244": "BC",
+    "245": "BC",
+    "246": "BC",
+    "248": "A",
+    "249": "A",
+    "250": "A",
+    "251": "BC",
+    "252": "BC",
+    "253": "BC",
+    "254": "BC",
+    "255": "BC",
+    "256": "BC",
+    "258": "round",
+    "259": "round",
+    "260": "round",
+    "261": "round",
+    "262": "round",
+    "263": "round",
+    "264": "round",
+    "265": "round",
+    "266": "round",
+    "267": "round",
+    "268": "round",
+    "269": "round",
+    "270": "round",
+    "271": "round",
+    "273": "round",
+    "274": "round",
+    "275": "round",
+    "276": "round",
+    "277": "round",
+    "278": "round",
+    "279": "round",
+    "280": "round",
+    "281": "round",
+    "282": "round",
+    "283": "round",
+    "284": "round",
+    "285": "round",
+    "286": "round",
+    "287": "round",
+    "288": "round",
+    "289": "round",
+    "290": "round",
+    "291": "round",
+    "293": "round",
+    "294": "round",
+    "295": "round",
+    "296": "round",
+    "297": "round",
+    "298": "round",
+    "299": "round",
+    "300": "round",
+    "301": "round",
+    "302": "round",
+    "303": "round",
+    "304": "round",
+    "305": "round",
+    "306": "round",
+    "307": "round",
+    "308": "round",
+    "309": "round",
+    "310": "round"
+  }
+}

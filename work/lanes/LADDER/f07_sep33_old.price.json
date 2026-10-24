@@ -1,0 +1,426 @@
+{
+  "evaluator": "exact2 with algebraic zero-class pruning",
+  "status": "PASS",
+  "second": 3.3388493959471016e-05,
+  "third": 2.0962330623949048e-06,
+  "total": 3.548472702186624e-05,
+  "weight3": 4.229657478648384e-06,
+  "pair_times_others": -2.133424416253479e-06,
+  "c1": 3.182639337258733e-19,
+  "A0": 0.9999999999999997,
+  "exp_minus_A1": 0.672831022086598,
+  "A1": 0.3962610624586212,
+  "CX": 129,
+  "R": 33,
+  "pair_classes": {
+    "round x round": 2.8839999999999314e-05,
+    "A x round": 1.0177777777777776e-06,
+    "A x BC": 9.866666666666645e-07,
+    "A x prefix": 6.729487402142309e-07,
+    "A x data_cell_idle": 6.204698623975396e-07,
+    "A x A": 3.9111111111110983e-07,
+    "data_cell_idle x round": 2.5504489861398403e-07,
+    "data_cell_idle x prefix": 1.8857064682139362e-07,
+    "prefix x round": 1.6611111111111132e-07,
+    "prefix x prefix": 1.5201536698040533e-07,
+    "BC x BC": 9.777777777777772e-08
+  },
+  "pair_class_examples": {
+    "round x round": [
+      1.1111111111110514e-07,
+      "L292 idle Y@q0 t=35..35",
+      "L293 idle Z@q20 t=35..35"
+    ],
+    "A x prefix": [
+      6.644483911131999e-08,
+      "L151 idle X@q6 t=24..29",
+      "L261 gate2 YY@q17,16 t=32"
+    ],
+    "A x data_cell_idle": [
+      1.6633362953085912e-07,
+      "L155 idle X@q7 t=25..28",
+      "L191 flip X@q11 t=29"
+    ],
+    "prefix x prefix": [
+      4.4237589202627645e-08,
+      "L147 idle X@q1 t=23..30",
+      "L204 gate2 XY@q9,3 t=30"
+    ],
+    "data_cell_idle x prefix": [
+      5.544454317695306e-08,
+      "L155 idle X@q7 t=25..28",
+      "L238 gate1 X@q20 t=32"
+    ],
+    "prefix x round": [
+      8.333333333333334e-09,
+      "L152 gate2 XI@q8,14 t=23",
+      "L282 flip X@q17 t=34"
+    ],
+    "data_cell_idle x round": [
+      1.6633362953085912e-07,
+      "L155 idle X@q7 t=25..28",
+      "L279 flip X@q11 t=34"
+    ],
+    "A x BC": [
+      6.666666666666667e-08,
+      "L170 flip Z@q22 t=29",
+      "L229 gate2 IZ@q21,16 t=31"
+    ],
+    "A x A": [
+      6.666666666666667e-08,
+      "L197 flip Z@q18 t=29",
+      "L227 gate2 IZ@q17,5 t=31"
+    ],
+    "A x round": [
+      6.666666666666667e-08,
+      "L229 gate2 IZ@q21,16 t=31",
+      "L301 flip Z@q22 t=35"
+    ],
+    "BC x BC": [
+      2.222222222222222e-09,
+      "L221 gate2 XI@q22,26 t=31",
+      "L224 gate2 XI@q29,33 t=31"
+    ]
+  },
+  "triple_classes_kept": {
+    "prefix x round x round": 9.251836032557102e-07,
+    "round x round x round": 7.79447407406558e-07,
+    "prefix x prefix x round": 2.1353203829348798e-07,
+    "BC x prefix x prefix": 2.0270415034148478e-07,
+    "data_cell_idle x prefix x round": 1.9459413979158893e-07,
+    "A x round x round": 1.6466666666659583e-07,
+    "A x prefix x round": 1.5383109651192858e-07,
+    "BC x round x round": 1.3469407407403955e-07,
+    "A x data_cell_idle x prefix": 1.3243480621954606e-07,
+    "data_cell_idle x data_cell_idle x round": 1.0036323446800578e-07,
+    "A x BC x round": 9.336592592591424e-08,
+    "A x prefix x prefix": 8.913629172111872e-08,
+    "BC x data_cell_idle x prefix": 8.466167193780642e-08,
+    "A x data_cell_idle x round": 8.195963772077609e-08,
+    "data_cell_idle x prefix x prefix": 8.001119511007228e-08,
+    "A x BC x prefix": 7.884676901719822e-08,
+    "prefix x prefix x prefix": 6.81052098263451e-08,
+    "data_cell_idle x round x round": 6.268750379590748e-08,
+    "A x data_cell_idle x data_cell_idle": 6.077644379303928e-08,
+    "A x A x round": 5.628444444443717e-08,
+    "BC x data_cell_idle x data_cell_idle": 5.441321385539082e-08,
+    "BC x BC x round": 5.194666666665432e-08,
+    "BC x prefix x round": 4.559755753085154e-08,
+    "data_cell_idle x data_cell_idle x prefix": 4.2790239224810566e-08,
+    "A x A x BC": 3.7007407407404685e-08,
+    "A x A x prefix": 2.892868678974645e-08,
+    "A x BC x data_cell_idle": 2.1095062582560033e-08,
+    "A x A x data_cell_idle": 1.070122653919281e-08,
+    "A x A x A": 8.053333333333284e-09,
+    "A x BC x BC": 5.7688888888889274e-09,
+    "BC x data_cell_idle x round": 4.494697390581181e-09,
+    "data_cell_idle x data_cell_idle x data_cell_idle": 2.61816306417954e-09,
+    "BC x BC x BC": 2.5733333333333393e-09,
+    "BC x BC x prefix": 2.447052277214741e-09,
+    "BC x BC x data_cell_idle": 8.888888888888652e-12
+  },
+  "triple_kept": 4.075730728094592e-06,
+  "top_triples": [
+    [
+      4.632575471216027e-09,
+      "L144 idle Z@q3 t=23..29",
+      "L156 idle Z@q15 t=25..30",
+      "L305 flip Z@q24 t=35"
+    ],
+    [
+      4.632575471216027e-09,
+      "L144 idle Z@q3 t=23..29",
+      "L156 idle Z@q15 t=25..30",
+      "L192 flip Z@q12 t=29"
+    ],
+    [
+      4.298835584563205e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Z@q13 t=19..31",
+      "L301 flip Z@q22 t=35"
+    ],
+    [
+      4.298835584563205e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Z@q13 t=19..31",
+      "L180 flip Z@q29 t=29"
+    ],
+    [
+      4.298835584563205e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Z@q13 t=19..31",
+      "L170 flip Z@q22 t=29"
+    ],
+    [
+      4.298835584563205e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Y@q13 t=19..31",
+      "L301 flip Z@q22 t=35"
+    ],
+    [
+      4.298835584563205e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Y@q13 t=19..31",
+      "L180 flip Z@q29 t=29"
+    ],
+    [
+      4.298835584563205e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Y@q13 t=19..31",
+      "L170 flip Z@q22 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L60 idle Z@q19 t=11..12",
+      "L110 idle Z@q13 t=19..31",
+      "L301 flip Z@q22 t=35"
+    ],
+    [
+      2.863979796115598e-09,
+      "L60 idle Z@q19 t=11..12",
+      "L110 idle Z@q13 t=19..31",
+      "L180 flip Z@q29 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L60 idle Z@q19 t=11..12",
+      "L110 idle Z@q13 t=19..31",
+      "L170 flip Z@q22 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L60 idle Z@q19 t=11..12",
+      "L110 idle Y@q13 t=19..31",
+      "L301 flip Z@q22 t=35"
+    ],
+    [
+      2.863979796115598e-09,
+      "L60 idle Z@q19 t=11..12",
+      "L110 idle Y@q13 t=19..31",
+      "L180 flip Z@q29 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L60 idle Z@q19 t=11..12",
+      "L110 idle Y@q13 t=19..31",
+      "L170 flip Z@q22 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L37 idle Z@q13 t=6..7",
+      "L110 idle Z@q13 t=19..31",
+      "L301 flip Z@q22 t=35"
+    ],
+    [
+      2.863979796115598e-09,
+      "L37 idle Z@q13 t=6..7",
+      "L110 idle Z@q13 t=19..31",
+      "L180 flip Z@q29 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L37 idle Z@q13 t=6..7",
+      "L110 idle Z@q13 t=19..31",
+      "L170 flip Z@q22 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L37 idle Z@q13 t=6..7",
+      "L110 idle Y@q13 t=19..31",
+      "L301 flip Z@q22 t=35"
+    ],
+    [
+      2.863979796115598e-09,
+      "L37 idle Z@q13 t=6..7",
+      "L110 idle Y@q13 t=19..31",
+      "L180 flip Z@q29 t=29"
+    ],
+    [
+      2.863979796115598e-09,
+      "L37 idle Z@q13 t=6..7",
+      "L110 idle Y@q13 t=19..31",
+      "L170 flip Z@q22 t=29"
+    ],
+    [
+      1.5441918237386755e-09,
+      "L144 idle Z@q3 t=23..29",
+      "L156 idle Z@q15 t=25..30",
+      "L239 gate1 Z@q7 t=32"
+    ],
+    [
+      1.544191823738634e-09,
+      "L144 idle Z@q3 t=23..29",
+      "L156 idle Z@q15 t=25..30",
+      "L228 idle Z@q12 t=32..32"
+    ],
+    [
+      1.544191823738634e-09,
+      "L144 idle Z@q3 t=23..29",
+      "L156 idle Z@q15 t=25..30",
+      "L225 idle Z@q31 t=32..32"
+    ],
+    [
+      1.544191823738634e-09,
+      "L144 idle Z@q3 t=23..29",
+      "L156 idle Z@q15 t=25..30",
+      "L222 idle Z@q24 t=32..32"
+    ],
+    [
+      1.4329451948544014e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Z@q13 t=19..31",
+      "L240 gate1 Z@q0 t=32"
+    ],
+    [
+      1.4329451948544014e-09,
+      "L45 flip Z@q19 t=8",
+      "L110 idle Y@q13 t=19..31",
+      "L240 gate1 Z@q0 t=32"
+    ],
+    [
+      1.3288955994097908e-09,
+      "L109 idle Z@q15 t=19..22",
+      "L92 idle Z@q20 t=16..18",
+      "L307 flip Z@q25 t=35"
+    ],
+    [
+      1.3288955994097908e-09,
+      "L109 idle Z@q15 t=19..22",
+      "L92 idle Z@q20 t=16..18",
+      "L185 flip Z@q32 t=29"
+    ],
+    [
+      1.3288955994097908e-09,
+      "L109 idle Z@q15 t=19..22",
+      "L92 idle Z@q20 t=16..18",
+      "L175 flip Z@q25 t=29"
+    ],
+    [
+      1.3288955994097908e-09,
+      "L104 idle Z@q3 t=18..20",
+      "L109 idle Z@q15 t=19..22",
+      "L305 flip Z@q24 t=35"
+    ],
+    [
+      1.3288955994097908e-09,
+      "L104 idle Z@q3 t=18..20",
+      "L109 idle Z@q15 t=19..22",
+      "L192 flip Z@q12 t=29"
+    ],
+    [
+      1.3288955994097908e-09,
+      "L103 idle Z@q0 t=18..20",
+      "L109 idle Z@q15 t=19..22",
+      "L313 flip Z@q28 t=35"
+    ],
+    [
+      1.3288955994097908e-09,
+      "L103 idle Z@q0 t=18..20",
+      "L109 idle Z@q15 t=19..22",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L307 flip Z@q25 t=35",
+      "L192 flip Z@q12 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L305 flip Z@q24 t=35",
+      "L195 flip Z@q17 t=29",
+      "L197 flip Z@q18 t=29"
+    ],
+    [
+      1e-09,
+      "L303 flip Z@q23 t=35",
+      "L195 flip Z@q17 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L301 flip Z@q22 t=35",
+      "L197 flip Z@q18 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L192 flip Z@q12 t=29",
+      "L309 flip Z@q26 t=35",
+      "L197 flip Z@q18 t=29"
+    ],
+    [
+      1e-09,
+      "L192 flip Z@q12 t=29",
+      "L195 flip Z@q17 t=29",
+      "L311 flip Z@q27 t=35"
+    ],
+    [
+      1e-09,
+      "L192 flip Z@q12 t=29",
+      "L195 flip Z@q17 t=29",
+      "L197 flip Z@q18 t=29"
+    ],
+    [
+      1e-09,
+      "L185 flip Z@q32 t=29",
+      "L192 flip Z@q12 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L182 flip Z@q30 t=29",
+      "L195 flip Z@q17 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L180 flip Z@q29 t=29",
+      "L197 flip Z@q18 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L175 flip Z@q25 t=29",
+      "L192 flip Z@q12 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L172 flip Z@q23 t=29",
+      "L195 flip Z@q17 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L170 flip Z@q22 t=29",
+      "L197 flip Z@q18 t=29",
+      "L199 flip Z@q21 t=29"
+    ],
+    [
+      1e-09,
+      "L73 flip Z@q1 t=12",
+      "L120 flip Z@q1 t=20",
+      "L303 flip Z@q23 t=35"
+    ],
+    [
+      1e-09,
+      "L73 flip Z@q1 t=12",
+      "L120 flip Z@q1 t=20",
+      "L182 flip Z@q30 t=29"
+    ],
+    [
+      1e-09,
+      "L73 flip Z@q1 t=12",
+      "L120 flip Z@q1 t=20",
+      "L172 flip Z@q23 t=29"
+    ],
+    [
+      1e-09,
+      "L45 flip Z@q19 t=8",
+      "L233 flip Z@q13 t=32",
+      "L301 flip Z@q22 t=35"
+    ]
+  ],
+  "seconds": 14.368011401034892
+}
