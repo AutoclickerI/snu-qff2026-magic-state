@@ -6,32 +6,21 @@ upstream/snu-qff2026-problem/
 **/vendor/
 __pycache__/
 *.pyc
-# generated candidate variants (the submitted ones live in work/submissions/)
-work/reorder/
-work/lanes/L5_precycle/*.qasm
-work/lanes/L5_precycle/*.json
-work/lanes/L5_precycle/*_stim.txt
-!work/lanes/L5_precycle/combined_lns_0012.*
-work/lanes/PRE/alap_search/
-work/lanes/MAIN/var/
-work/lanes/MAIN/*_h[0-9][0-9][0-9][0-9].*
-# downloaded papers and third-party material
+# downloaded papers, bundles and third-party material
 *.pdf
 *.tar.gz
 *.zip
-# compiled solver binaries (built from the .cpp next to them)
-work/lanes/FLAG/exact_top
-work/lanes/LAYOUT2/exact
-work/lanes/SCHED/encoders/exact200
-# bulk generated search outputs (rebuildable by the lane scripts)
-work/lanes/SCHED/encoders/
-# encoder enumeration dumps (rebuildable by the lanes' exenc/encode scripts)
+# generated draws (the submitted ones live in work/submissions/) and the hourly copies they are drawn from
+work/reorder/
+work/lanes/MAIN/*_h[0-9][0-9][0-9][0-9].*
+# evaluator outputs and encoder enumeration dumps (rebuildable)
+work/lanes/*/sparse/*_sparse_result.json
+work/lanes/*/sparse/*_adjoint*.log
 work/lanes/*/*_A_stats.json
 work/lanes/*/*_A_pareto.json
 work/lanes/*/*_A_raw.json
 work/lanes/*/*_A_filtered.json
 work/lanes/*/*_A_top.json
-# figure crops of downloaded papers
+# runtime state and logs (submission receipts seq_*.txt are committed by promote.sh)
 work/receipts/.submit.lock
-work/lanes/*/sparse/*_sparse_result.json
-work/lanes/*/sparse/*_adjoint*.log
+work/receipts/*.log

@@ -1,7 +1,0 @@
-p=0.001  shots=1,000,000  seed=0
-  format:      PASS
-  class:       PASS
-  correctness: FAIL
-    - detector(s) #25, #31 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)
-  RESULT: FAIL
-[twirl_records] circuit channels: 35 deterministic (+0 observable), 0 gauge, 2 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
