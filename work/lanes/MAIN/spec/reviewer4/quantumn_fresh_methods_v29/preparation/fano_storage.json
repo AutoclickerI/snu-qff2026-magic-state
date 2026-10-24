@@ -1,0 +1,217 @@
+{
+  "scope": "Exact finite-p storage-channel screen for a Fano-line repetition gadget.\n\nSeven-qubit Steane T storage; three data positions on a Fano line each acquire\nan X-repetition helper during a W-tick wait. Encoding and decoding consume two\nof those ticks. Helpers have native RX preparation and final MX flips, both p.\nThe helper MX happens alongside the next operation on data. Output stabilizer\nchecks are IDEAL AND POSTSELECTED in this toy. This is not the contest circuit.\nAll two-qubit depolarizing Pauli patterns and all 4^7 data patterns are included.\n",
+  "p": 0.001,
+  "protected_data_indices": [
+    0,
+    1,
+    2
+  ],
+  "fano_lines": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      3,
+      4
+    ],
+    [
+      0,
+      5,
+      6
+    ],
+    [
+      1,
+      3,
+      5
+    ],
+    [
+      1,
+      4,
+      6
+    ],
+    [
+      2,
+      3,
+      6
+    ],
+    [
+      2,
+      4,
+      5
+    ]
+  ],
+  "perfect_wrapper_leading_coefficients": {
+    "bare": 14,
+    "protected": 10
+  },
+  "results": [
+    {
+      "wait_ticks": 2,
+      "bare_loss": 4.164790631722846e-09,
+      "protected_loss": 1.4690915339187168e-09,
+      "relative_loss_change": -0.6472592108883517,
+      "bare_acceptance": 0.9860929486525511,
+      "protected_acceptance": 0.980587597566314,
+      "protected_channel": {
+        "I": 0.9991979725930097,
+        "X": 0.0002673424689968076,
+        "Z": 0.0002673424689968076,
+        "Y": 0.0002673424689968076
+      },
+      "helper_flag_acceptance": 0.9969401623489426
+    },
+    {
+      "wait_ticks": 3,
+      "bare_loss": 1.40702682445693e-08,
+      "protected_loss": 5.6851667137836955e-09,
+      "relative_loss_change": -0.5959446817243161,
+      "bare_acceptance": 0.9792155663908367,
+      "protected_acceptance": 0.9708321635061564,
+      "protected_channel": {
+        "I": 0.9985282873416269,
+        "X": 0.0009345378418429897,
+        "Z": 0.00026858740826504784,
+        "Y": 0.00026858740826504784
+      },
+      "helper_flag_acceptance": 0.9956158720318558
+    },
+    {
+      "wait_ticks": 4,
+      "bare_loss": 3.338522810105976e-08,
+      "protected_loss": 1.5039925321699967e-08,
+      "relative_loss_change": -0.5495035925418,
+      "bare_acceptance": 0.9723884398034468,
+      "protected_acceptance": 0.9611776514384934,
+      "protected_channel": {
+        "I": 0.9978581654025175,
+        "X": 0.0016012808182837783,
+        "Z": 0.0002702768895993987,
+        "Y": 0.00027027688959939877
+      },
+      "helper_flag_acceptance": 0.9942951108013215
+    },
+    {
+      "wait_ticks": 6,
+      "bare_loss": 1.1290174280825323e-07,
+      "protected_loss": 5.8285502117259466e-08,
+      "relative_loss_change": -0.48375020024049853,
+      "bare_acceptance": 0.9588834512100726,
+      "protected_acceptance": 0.9421671119802727,
+      "protected_channel": {
+        "I": 0.9965166210436132,
+        "X": 0.0029334001276634975,
+        "Z": 0.00027498941436164385,
+        "Y": 0.0002749894143616438
+      },
+      "helper_flag_acceptance": 0.9916641380064753
+    },
+    {
+      "wait_ticks": 8,
+      "bare_loss": 2.681579648226266e-07,
+      "protected_loss": 1.4959059901287605e-07,
+      "relative_loss_change": -0.44215492867488415,
+      "bare_acceptance": 0.945575006564698,
+      "protected_acceptance": 0.9235475325245733,
+      "protected_channel": {
+        "I": 0.9951733587191857,
+        "X": 0.004263681529784261,
+        "Z": 0.0002814798755150667,
+        "Y": 0.00028147987551506665
+      },
+      "helper_flag_acceptance": 0.9890471690277628
+    },
+    {
+      "wait_ticks": 10,
+      "bare_loss": 5.248025047917895e-07,
+      "protected_loss": 3.075725001984791e-07,
+      "relative_loss_change": -0.41392714899387606,
+      "bare_acceptance": 0.93246017478684,
+      "protected_acceptance": 0.9053106490324502,
+      "protected_channel": {
+        "I": 0.9938283976919906,
+        "X": 0.005592106223993212,
+        "Z": 0.00028974804200811535,
+        "Y": 0.00028974804200811535
+      },
+      "helper_flag_acceptance": 0.9864441293274042
+    },
+    {
+      "wait_ticks": 12,
+      "bare_loss": 9.086907360964375e-07,
+      "protected_loss": 5.510822723985416e-07,
+      "relative_loss_change": -0.39354254367565566,
+      "bare_acceptance": 0.9195360693266331,
+      "protected_acceptance": 0.8874483760681837,
+      "protected_channel": {
+        "I": 0.9924817572835477,
+        "X": 0.0069186554773999565,
+        "Z": 0.00029979361952622944,
+        "Y": 0.00029979361952622944
+      },
+      "helper_flag_acceptance": 0.983854944764365
+    },
+    {
+      "wait_ticks": 16,
+      "bare_loss": 2.162664277500333e-06,
+      "protected_loss": 1.3712662508071916e-06,
+      "relative_loss_change": -0.36593660649347803,
+      "bare_acceptance": 0.8942487097086871,
+      "protected_acceptance": 0.8528161894765038,
+      "protected_channel": {
+        "I": 0.9897835158961567,
+        "X": 0.009566053075396886,
+        "Z": 0.0003252155142232244,
+        "Y": 0.00032521551422322445
+      },
+      "helper_flag_acceptance": 0.978717846457129
+    },
+    {
+      "wait_ticks": 20,
+      "bare_loss": 4.241124582020996e-06,
+      "protected_loss": 2.7656750765308388e-06,
+      "relative_loss_change": -0.3478911022196548,
+      "bare_acceptance": 0.8696907001293058,
+      "protected_acceptance": 0.8195897139993444,
+      "protected_channel": {
+        "I": 0.9870787902621908,
+        "X": 0.012205725855933582,
+        "Z": 0.00035774194093785586,
+        "Y": 0.00035774194093785586
+      },
+      "helper_flag_acceptance": 0.9736352888326003
+    },
+    {
+      "wait_ticks": 24,
+      "bare_loss": 7.358539926764706e-06,
+      "protected_loss": 4.89366311592485e-06,
+      "relative_loss_change": -0.33496819143082046,
+      "bare_acceptance": 0.8458404827003722,
+      "protected_acceptance": 0.7877103057166869,
+      "protected_channel": {
+        "I": 0.9843677369556009,
+        "X": 0.014837526502399405,
+        "Z": 0.00039736827099991245,
+        "Y": 0.0003973682709999124
+      },
+      "helper_flag_acceptance": 0.9686066928311812
+    },
+    {
+      "wait_ticks": 32,
+      "bare_loss": 1.7585561697391485e-05,
+      "protected_loss": 1.2007145593632559e-05,
+      "relative_loss_change": -0.317215690903202,
+      "bare_acceptance": 0.8001804191125103,
+      "protected_acceptance": 0.727770511783666,
+      "protected_channel": {
+        "I": 0.9789272777471553,
+        "X": 0.020076928079917154,
+        "Z": 0.0004978970864638158,
+        "Y": 0.0004978970864638158
+      },
+      "helper_flag_acceptance": 0.9587091001334594
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "scope": "Exact noiseless certificates for two instrument-level synthesis freedoms.\n\nThese certify ideal identities only. They do not claim a finite-noise improvement.\n1. Clean parity bus: replace coherent uncomputation by an X measurement.\n2. Encoded Bell BC endpoint: allow a measured logical branch and use FRAME_X.\n",
+  "clean_bus": [
+    {
+      "controls": 1,
+      "targets": 1,
+      "coherent_CX": 3,
+      "measured_CX": 2,
+      "branch_identity_max_error": [
+        0.0,
+        0.0
+      ],
+      "byproduct": "Z on every control iff helper MX outcome is 1"
+    },
+    {
+      "controls": 2,
+      "targets": 1,
+      "coherent_CX": 5,
+      "measured_CX": 3,
+      "branch_identity_max_error": [
+        0.0,
+        0.0
+      ],
+      "byproduct": "Z on every control iff helper MX outcome is 1"
+    },
+    {
+      "controls": 2,
+      "targets": 2,
+      "coherent_CX": 6,
+      "measured_CX": 4,
+      "branch_identity_max_error": [
+        0.0,
+        0.0
+      ],
+      "byproduct": "Z on every control iff helper MX outcome is 1"
+    },
+    {
+      "controls": 3,
+      "targets": 1,
+      "coherent_CX": 7,
+      "measured_CX": 4,
+      "branch_identity_max_error": [
+        0.0,
+        0.0
+      ],
+      "byproduct": "Z on every control iff helper MX outcome is 1"
+    }
+  ],
+  "encoded_BC": {
+    "accepted_noiseless_probability": 0.9999999999999996,
+    "branches": [
+      {
+        "C_result": 0,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 7,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 25,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 30,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 42,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 45,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 51,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 52,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 75,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 76,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 82,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 85,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 97,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 102,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 120,
+        "C_parity": 0,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      },
+      {
+        "C_result": 127,
+        "C_parity": 1,
+        "probability": 0.06249999999999997,
+        "conditional_B_state_error": 0.0
+      }
+    ],
+    "FRAME_X_correction_errors": [
+      0.0,
+      0.0
+    ],
+    "uncorrelated_C_logical_X_fault_loss": 0.5000000000000001,
+    "conclusion": "Joint synthesis must verify branch agreement; dropping a parity detector alone is unsafe."
+  }
+}

@@ -1,0 +1,211 @@
+PREPARATION / VERIFICATION / INSTRUMENT RE-AUDIT
+Repository reviewed: AutoclickerI/quantumn
+Pinned revision: 57e99b97dd2dd6c19fab3f7d706eaaaa9f165610
+Scope: scratch analysis only; no submission, remote job, or repository mutation.
+
+1. STRONGEST NEW CANDIDATE: HELPER-ASSISTED DISCONNECTED B/C PREPARATION
+   PLUS DELAYED MEASURED-BUS VERIFICATION
+
+Exact ideal identity, with h initially |0>:
+  CX(a,h); CX(h,b); MX(h)=m
+implements CX(a,b) and a known Z_a^m byproduct. Both a and b survive.
+For k controls and l targets, computing their parity on h, fanning it out, and
+measuring h replaces 2k+l coherent CX operations by k+l CX plus one MX.
+instrument_identities.py checks each Kraus matrix for (k,l)=(1,1),(2,1),(2,2),(3,1).
+
+For a B-encoder bridge the Z byproduct remains a Z pattern inside B through
+later CSS gates. B->C and B->data leave Z_B on B, so its final MX readouts can
+absorb this known pattern by changing detector parities. A C-encoder Z pattern
+may propagate to B during B->C; it likewise only changes later B MX records.
+This can support disconnected B/C final-cell layouts using transient helpers.
+Do not apply arbitrary physical Pauli output corrections: those are disallowed.
+
+Pipelined remote B->C verification, for each i:
+  R:   D_i->A_i, B_i->h_i
+  R+1: B_i->D_i, h_i->C_i, MZ(A_i)
+  R+2: MX(B_i), MX(h_i), MZ(C_i)
+Use B's readout XOR h's readout in the B syndrome parities. C's encoder can
+finish at R, whereas ordinary C->h teleport followed by B->h check needs it
+finished at R-2. B's dangerous X information is copied before B->data and
+verified afterwards. Data coupling times and final global depth are unchanged.
+
+This is NOT a CX saving over ordinary one-CX C teleport plus one-CX check.
+It saves CX versus coherent uncomputation and offers later C preparation and
+helper reuse. It also does NOT beat an ideal adjacent one-CX direct check in
+noise. The important trade is a small measured noise cost for geometry freedom.
+
+Noise identity, proved with rational arithmetic in bus_noise_equivalence.py:
+after folding h's MX into B's MX, the first B->h depolarizing channel is exactly
+the direct B->C channel on (data X, B MX flip, C MZ flip). The added h->C channel,
+h reset and h MX add only a classical correlated B/C readout-flip channel.
+At p=.001 its probabilities (no flip, C only, B only, both) are
+  .9972031322666667, .0012646010666666667,
+  .0012646010666666667, .0002676656.
+Its first-order rejection mass across seven pairs is .0196.
+
+FULL-CIRCUIT GRID-FREE PRICES, ALL ORDERS, STANDARD p=.001
+All use the same old v11 prefix, standard separate 9-CX A/B/C encoders, no hops.
+They are NOT current-v29-prefix controls and are NOT 6x6 grid-valid circuits.
+
+Circuit       Conditional loss         Acceptance          Native depth
+direct R33    3.556443370461517e-5      .6727618975614805   36
+direct R34    3.639747146977817e-5      .6680890095047879   37
+bus R34       3.7576403974401186e-5     .6551717220744431   37
+direct R45    4.9685278313084306e-5     .6188810373945763   48
+bus R45       5.1961830075233544e-5     .6069362910730525   48
+
+Matched bus noise tax: +1.178932504623016e-6 at R34; +2.276551762149238e-6 at R45.
+Both sides have noiseless acceptance 1, noiseless loss 0, all six output Steane
+stabilizers +1, and harmful-single loss at numerical zero (~3.2e-19).
+R33 direct and R34 bus were evaluated by dense exact Walsh contraction. Other
+prices used the independently optimized sparse-kernel contraction, with
+computed-kernel omission bounds below 9.6e-15 (excluding floating roundoff).
+These are numerical exact-Pauli-channel contractions, not official MC receipts.
+The complete R34 bus sparse rerun matched all 73 dense observables within
+3.34e-16; its conditional-loss difference was 1.70e-16. See
+bus_dense_sparse_crosscheck.json.
+
+The bus suffix uses 35 cells; the full circuit uses all 36 because q19 is used
+by the prefix. At R34 the seven helpers reset at 33 after prefix measurements
+at 32. R33 would need earlier prefix releases. No quantum state is reused
+without reset. Explicit I(q19) operations preserve empty waiting ticks for
+R45; consecutive empty barriers alone do not advance the judge clock.
+
+GEOMETRIC LIMIT: the architecture agent exhaustively found no connected
+seven-cell B on 6x6 with a matching to 14 distinct external ports (D_i and h_i).
+Extending B-C to length-two paths does not remove this obstruction. Therefore
+use disconnected/helper-assisted B, dynamic placement or time-reused ports.
+35 suffix cells alone is not an embedding proof. Relevant current sources:
+  work/lanes/BCSYN2/{synth.py,ft.py}, work/lanes/SEPBC/REPORT.md,
+  docs/FINDINGS.md rows SEPBC, ST1, LADDER and FRESH.
+
+Failure gate: stop if helper-assisted placement loses the round-time gain,
+needs unchecked B waits, fails acceptance/runtime, or loses full all-orders
+loss after geometry and prefix are attached. Require actual 6x6 QASM before
+claiming an improvement over v29c.
+
+2. NEW RESEARCH CONTRACT: LOGICAL-BRANCH-EQUIVARIANT BC (AND A) ENDPOINT
+
+Current BCSYN2 ft.py fixes B=|0_L> and a positive pure-CSS C endpoint. The
+BCPOL U subset S search still fixes the logical coset. Instead permit
+  (|0_L 0_L> + |1_L 1_L>)/sqrt(2)
+on B,C; measure C in Z, check its three Hamming syndromes, permit either logical
+parity b, and set FRAME_X ^= b. Every one of the 16 accepted C codewords has
+probability 1/16 and leaves B=|b_L>. B->data gives logical X^b, canceled by frame.
+instrument_identities.py verifies all 16 branches exactly, not just one branch.
+
+For final X-error patterns e_B,e_C define
+  ell(e_B) = parity(e_B) XOR [H e_B != 0].
+After accepting H e_C=0, decoded X loss is governed by
+  ell(e_B) XOR parity(e_C).
+Thus matched logical-X errors on B and C can be benign: X_L^B X_L^C stabilizes
+the encoded Bell endpoint. This changes the correlated-fault constraint that
+makes the existing joint B/C synthesis expensive. It is not merely dropping
+the C logical-parity detector. An independent logical-X fault on C passes its
+three syndromes but makes the frame wrong; its T-state loss is exactly .5.
+Require a new full-Pauli fault contract and exact all-branch correctness.
+
+Analogously, a known logical-X eigenvalue of A=|+/-_L> can become FRAME_Z.
+This is one family of instrument freedoms, not a separately counted candidate.
+
+Cheap existing-network seed test was negative: on v29's 87-CX endpoint5 network,
+the minimum input X subset producing logical X on both B,C after the network
+has weight 5, with solutions (4,6,12,17,25) and (6,12,25,28,29). The older 82-CX
+network also needs weight 5. No free one-pivot patch exists. Fresh synthesis is
+required; no performance gain is claimed yet.
+
+3. NEW TOY-SUPPORTED CANDIDATE: SELECTIVE ASYMMETRIC TEMPORARY STORAGE
+
+During unavoidable data waiting, protect only a chosen 1–3 data positions with
+native-|+> helper h, CX(h,data), wait, CX(h,data), MX(h) and reject minus.
+This catches most Z/Y storage faults while leaving amplified X storage noise.
+It must fit inside existing waiting; added round delay can erase the benefit.
+
+Ideal-wrapper asymptotic mechanism: with per-Pauli storage probability a,
+unprotected Steane T storage has 14 a^3 accepted logical loss. For protected
+set P the coefficient is
+  (1/2) sum_{Fano lines L} 2^{|P intersect L|}
+    + (3/2) #{Fano lines disjoint from P}.
+One protected position gives 11; two give 10; three forming a Fano line give 10
+and remove every pure-Z logical line. Protecting all seven gives 28: it is worse.
+This is why selective asymmetric protection, rather than blanket encoding,
+is the candidate. Choose positions by actual A-danger/data-wait cross terms.
+
+Finite-p toy includes all helper prep, two noisy CXs, every data/helper idle,
+helper MX error and all 4^7 data patterns. Its FINAL output stabilizer checks
+are IDEAL AND POSTSELECTED; it is NOT the full contest circuit.
+
+At W=6 ticks:
+ bare loss 1.12901742808e-7;
+ protect 2 loss7.15087081779e-8, acceptance relative to bare .988343873836;
+ protect 3 on a line loss5.82855021173e-8, relative acceptance .982566870657.
+At W=12:
+ bare 9.08690736096e-7;
+ protect 2 6.12270561014e-7, relative acceptance .976598781599;
+ protect 3 5.51082272399e-7, relative acceptance .965104475693;
+ protect all 7 1.18596136860e-6 (30.5% worse), relative acceptance .920465480490.
+
+Do not multiply these acceptance ratios into v29 and call that a proof. The
+current acceptance margin is tight; helper adjacency/liveness and cross terms
+must be priced in a full circuit. The isolated storage absolute gain is small;
+the potentially larger mechanism is suppressing A-dangerous-Z times data-idle-Z
+cross terms. Existing studies shortened waits or moved states; this changes the
+physical channel during a wait. Failure gate: no full noisy improvement within
+acceptance and unchanged round depth, or no legal helper lifetime/adjacency.
+
+4. FRESH NEGATIVE SCREEN: JOINT DETECTOR KERNEL + LOGICAL FRAME ADMISSION
+
+Old DET used fixed frames; BUDGET tested 139 variants with frame changes only
+on12 standalone initialization records. I screened actual v29c's 993 supported
+single-fault syndromes. 449 nonzero syndromes have a nonidentity I/X/Z/Y logical
+frame making all accepted singles harmless. That first-order fact is misleading.
+Exact distinct-channel pair enumeration for every 449 rank-one acceptance
+kernel K={0,v} found ZERO with favorable screening objective
+  added_pair_loss - 6.3451e-5 * added_single_probability_mass.
+The best leading conditional risk of the newly admitted sector was .0036,
+far above the baseline ~6.35e-5. Baseline exact second order 4.94155555556e-5.
+This closes these 449 rank-one extensions at this screen, not all higher-rank
+kernels or future circuits. Do not promote plain frame-based admission as a
+new performance recommendation. New checks could disambiguate pair faults,
+but that is a different architecture.
+
+5. REDISCOVERY EXCLUDED
+
+All 15 current deferred rotations commute, their reachable X rank is 5, and
+their odd-mask vector can be reduced to one odd term modulo an affine
+Reed-Muller relation. This is already TREP/TREP2 (FINDINGS rows 58/69): the 1T
+form has a harmful single and 14T forms have harmful pairs. Not a new candidate.
+
+REPRODUCTION AND DEPENDENCIES
+
+Standalone standard-library-only:
+  python bus_noise_equivalence.py
+
+Standalone with NumPy (tested 2.3.5; no Stim/xtim):
+  python instrument_identities.py
+  python fano_storage.py
+  python selective_storage.py  (also needs sibling fano_storage.py)
+
+Repository/frontend-dependent audits:
+  clean_bus_round.py builds the five supplied QASM/JSON circuits.
+  frame_syndrome_screen.py and frame_pairs.py read pinned current v29c.
+  price_pairs.py extracts the repository exact2 pair algorithm via AST.
+They import audit/full_single_audit.py, audit/fresh_signature_width.py,
+audit/v15_readout_audit.py, upstream_judge/tprep, and the model/engine classes
+under quantumn_latest/work/lanes/EVAL. The builder additionally reads
+quantumn/work/submissions/v11_A1i_alap45.qasm (its first 204 source lines).
+
+All-orders dense command (slow, several minutes):
+  OPENBLAS_NUM_THREADS=1 audit/.venv/bin/python audit/fresh_exact_walsh.py 72 STEM
+Fast all-orders command (about 18–20s in these tests):
+  OPENBLAS_NUM_THREADS=1 audit/.venv/bin/python 
+    audit/reaudit_evaluation/sparse_kernel_walsh.py STEM 72 canonical
+Use the evaluation agent's portable bundle for self-contained repro packaging.
+Files bus_summary.json and *.dense_result.json / *.sparse_result.json preserve
+the final numerical receipts in this directory. *.qasm plus corresponding
+*.json are complete generated grid-free circuit inputs.
+
+Do not treat .walsh.log files for aborted directR34 or R45 dense runs as final
+receipts. Their complete replacement is the named sparse_result.json. Earlier
+unfilled-barrier R45 pair logs were superseded by bus_pairs_r45.log and the
+current .pairs.json files; the QASM now contains explicit idle placeholders.

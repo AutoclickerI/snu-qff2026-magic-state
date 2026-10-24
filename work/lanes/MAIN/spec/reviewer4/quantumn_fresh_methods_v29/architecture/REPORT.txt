@@ -1,0 +1,179 @@
+Architecture re-audit, pinned quantumn 57e99b97dd2dd6c19fab3f7d706eaaaa9f165610
+=============================================================================
+
+Source availability
+-------------------
+Read AGENTS, GOAL, CONSTRAINTS, PLAN, FINDINGS, latest GAP and LADDER reports,
+and existing ARCH/ST_TP/TREP source and reports. ENDSTATE, ST1, FRESH and SEPBC
+REPORT.md return404 at this pin. Their current results are known only from
+PLAN/FINDINGS; do not claim their uncommitted implementations were inspected.
+
+The latest complete circuits v29c/v25k were fetched by root. Current reported
+v29c three-seed mean is6.3451e-5. The1.162e-5 expectation bound is already
+adopted by the repository. None of the work below claims a below-bound circuit.
+
+1. Partial moving syndrome extraction (strong new experiment candidate)
+----------------------------------------------------------------------
+Standard Z-syndrome contact on a pair:
+    CX(D,A); M_Z(A), retain D.
+Replacement on any selected physical pair:
+    CX(A,D); CX(D,A); M_Z(D), retain A.
+
+This is an EXACT equality of both measurement Kraus maps after relabelling
+the retained output, for arbitrary entangled data and resource inputs. It
+does not need a fresh target and does not produce an uncorrectable physical
+Pauli frame. Any subset of the seven pairs can use the replacement.
+
+This is distinct from ST_TP's whole-block one-CX teleport to encoded O and
+from fixed whole-block output roles. It exposes128 partial output patterns
+to the global placement solver. The selected original data cells become
+measured cells, available for future use.
+
+Guaranteed local saving: standard check plus literal SWAP is4CX; fused
+instrument is2CX. Relative to a stationary check it ADDS1CX. A comparison
+with a separate two-CX data transfer plus check depends on the actual endpoint
+layout; do not announce a universal3-to2 reduction for unmatched circuits.
+
+Verified: moving_check.py compares exact2x4 Kraus operators and all128 masks
+times2^14 computational inputs (2,097,152 cases). Equality on all basis states
+with the same phases establishes arbitrary-superposition equivalence.
+
+Minimal experiment: put each mask into a grid-free current-prefix/suffix
+builder, derive detectors/output declarations, and price all surviving masks.
+Then allow the output cell variables to choose oldD or A inside the ENDSTATE
+time-indexed model. Close a mask if its best possible timing improvement
+cannot offset its additional physical CX noise. The identity alone is not
+a noisy fidelity improvement.
+
+2. Batch whole parity rectangles through one dirty bus
+-----------------------------------------------------
+For controls a_i, targets b_j, and an arbitrary live middle qubit h, define
+ A=product_i CX(a_i,h), B=product_j CX(h,b_j).
+The sequence A B A B implements every CX(a_i,b_j), and exactly restores h.
+It is valid even when h is entangled with external systems.
+
+The square-grid degree4 permits k=l=2: four distance-two CXs use8physicalCX,
+instead of16 independent4CX bridge gadgets. One-to-three fanout uses8instead
+of12. This is a meaningful extension of the prior single4CX bridge proposal:
+the synthesis unit is a rank-one binary matrix, not one remote gate.
+
+Use another block's live qubit as h to avoid demanding a spare empty cell,
+and allow non-connected final block footprints in the encoder search. Select
+bus roles by fault propagation: a C verifier bus may be preferable to data,
+but this has not been established quantitatively.
+
+Verified: dirty_bus.py exhaustively checks all basis vectors for k,l=(1,2),
+(1,3),(2,2). Required gate counts and ideal unitary equivalence are exact.
+
+Minimal experiment: find candidate outer-product parity submatrices of an
+encoder, tile them onto physical plus-shapes, preserve existing critical-path
+constraints, and evaluate the modified full circuit. Stop if induced B/C
+correlated faults or extra live-state exposure erase the gate-count benefit.
+
+New necessary geometry theorem (two_ports.py/json): NO connected7-cell block
+on6x6 has two distinct private outside neighbours per member. Enumerated all
+7,816 connected7-cell subsets;656have at least two outside neighbours per
+cell, but the maximum matching from14 demanded ports to outside cells is13.
+This applies to B-D plus B-h contacts even if h connects onward to C, so simply
+subdividing B-C with measured clean buses does NOT rescue stationaryconnectedB.
+
+Short independent proof: each B vertex needs two exterior neighbours, hence
+its induced internal degree is at most2. A connected seven-vertex bipartite
+grid graph of maximum degree2 is a path (not an odd cycle). Its five interior
+path vertices must all be interior grid sites. A turn in any three consecutive
+interior path vertices makes the two outside path vertices share a forced
+external grid neighbour; both need it, contradicting distinct private ports.
+The five interior vertices must therefore form a straight line, but the grid
+interior is only4x4. Contradiction. Encoder connectivity can only be maintained
+on an earlier stage; finalB must be disconnected, moved, or supported by helpers.
+
+3. Hybrid kernel-based measured uncomputation
+--------------------------------------------
+For a common parity register a=Lx after all diagonal phase gates, apply an
+invertible binary row transformation M. Rows in the kernel of the eventual
+output-syndrome map can be measured inX; their Pauli byproducts are tracked
+through future records and the permitted logical frame. Rows spanning the
+syndrome image must be coherently erased.
+
+Important: M is applied AFTER the phase gates. Applying it before them changes
+the physical rotation axes unless the phase network is re-synthesized.
+
+Verified toy: u=x0+x1, v=x0+x2, w=x0+x1+x2. After the phases, CX(u,v),CX(u,w)
+leave v=x1+x2 and w=x2. Coherently erase onlyu with2CX and measurev,w inX.
+Their byproducts are Z1Z2 and Z2, avoiding a forbiddenZ0 syndrome direction.
+Compared with7 reverse-computeCXs, this costs4CX+2MX. All four corrected Kraus
+operators agree exactly in kernel_uncompute.py (max numerical error0).
+
+Root's current-v29 screening found14/15 individual T-axis byproducts have
+nonzero final syndrome, so blanket measured uncomputation is invalid. The
+joint syndrome map has rank3, but15-rank3=12 includes dependent/trivial
+combinations: occupied parity rank is5, so do not claim12 independent useful
+safe directions. In a rank5 representation the meaningful quotient is at
+most5-3=2 safe directions. FullPauli rank9 and time separation need explicit
+common-register synthesis. This is a mechanism certificate, not a v29 patch.
+
+Also: a measured normalizer byproduct can be a nontrivial logical Pauli. If a
+noisy MX bit alone applies the wrong logical frame, it creates harmful order-p
+loss. Require a future detector signature that rejects a wrong result, a
+stabilizer/identity byproduct, or protected readout. Original single-axis
+fault protection does not extend automatically to arbitrary kernel products:
+a weight-three product could be an undetected logical. Optimize the joint
+map of output syndrome, logical byproduct and detector footprint, then audit
+all physical singles before interpreting any CX savings as useful.
+
+4. Local-Clifford / vertex-minor resource synthesis (research candidate)
+----------------------------------------------------------------------
+The odd cycle of one fixed interaction graph is not an invariant of a
+stabilizer resource or measurement instrument. Search graph-state local
+Clifford classes and Pauli-measured grid patches before routing a chosen
+encoder graph. Account for local Clifford gates, all measurement branches,
+physical frames, and reset costs in the final objective.
+
+Exact graph search for Steane|0L>:
+  labelled local-complementation orbit532; unlabelled classes9;
+  every representative has at least9edges.
+  2x4fullcluster/oneXYZmeasurement: no witness.
+  3x3fullcluster/twoXYZmeasurements: no witness.
+  2x5fullcluster/threeXYZmeasurements: no witness.
+  3x4fullcluster/fiveXZmeasurements:54 unsigned graph witnesses across25,344
+    patterns, all isomorphic to the standard bipartite Steane graph.
+
+Crucial limitation: the branch signs are not free. A separate symbolic CSS
+search of the native17CX checkerboard resource found27 unsigned Steane|0L>
+patterns but NONE have only Z byproducts or Z plus known logicalX. Some
+physicalX syndrome correction is necessary. No direct-neighbour correction
+from the measured bits was found either. Thus the54graph witnesses are not
+ready-to-submit ancilla factories. A full instrument solver must include
+coherent byproduct repair or consume the resource jointly with the next
+check. A simple3x3cluster shortcut is explicitly ruled out by this search.
+
+Files: graph_search.py/json, cluster_search.py/json, css_cluster_frames.py/json.
+
+5. Additional method boundaries for root
+--------------------------------------
+Finite-p nonzero-first-order synthesis: EVAL/exact2.py skips --third when
+abs(loss1)>=1e-12, despite GOAL saying c1=0 is only diagnostic. Evaluation
+agent confirmed its derivatives also omit a same-channel normalization term
+when harmful singles are present. A small allowed first-order budget can
+open cheaper circuits; one unheralded two-qubit Pauli producing logicalX/Y
+has raw loss p/30=3.333e-5 before acceptance conditioning, leaving narrow room
+below current6.35e-5. No actual profitable nonzero-c1 witness was found here.
+
+Nonlinear heralding: first compute an ideal oracle over3-6 selected detector
+bits, keeping all others constrained. For each pattern y obtain accepted
+mass A_y and loss numerator N_y. GeneralBoolean acceptance orders patterns
+by risk N_y/A_y, constrained by total acceptance>=.5. Compare with the best
+linear/subspace policy before implementing any circuit. If there is no
+meaningful oracle advantage, close the idea. If there is, compile an AND/OR
+into allowed CX/H/T gates on already measured syndrome wires, and price all
+postmeasurement/gate errors and xtim class/runtime effects. This is outside
+the existing affine DET/KNAP policy family, but is high-risk and unbuilt.
+
+Rejected duplicate
+------------------
+Bare terminal transversalS with Pauli-frame repair is exact and changes the
+judge's non-covariant CSS decoder, but root found prior audit evidence that it
+worsens v22 by9.2%. Do not present it as a new winning candidate.
+
+All experiments here are local, bounded, and complete. No remote jobs,
+submissions, pushes, or external messages were performed.
