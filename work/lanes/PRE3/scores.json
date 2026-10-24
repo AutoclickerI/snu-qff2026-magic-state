@@ -1,0 +1,169 @@
+[
+  {
+    "variant": "base",
+    "c1": 3.1826e-19,
+    "second": 4.09141e-05,
+    "third": 8.48318e-06,
+    "total": 4.93973e-05,
+    "exp_A1": 0.57462,
+    "check": {
+      "score": 4.524162507917273e-05,
+      "sem": 8.253625416041515e-06,
+      "acceptance": 0.574692,
+      "n_2q": 129,
+      "passed": true,
+      "format": true,
+      "class": true,
+      "correctness": true,
+      "acceptance_ok": true,
+      "format_errors": [],
+      "class_error": null,
+      "correctness_errors": []
+    },
+    "mc": {
+      "variant": "base",
+      "shots": 100000000,
+      "seeds": [
+        {
+          "seed": 0,
+          "score": 5.0119893435253133e-05,
+          "sem": 8.312318095629144e-07,
+          "acceptance": 0.57442261
+        },
+        {
+          "seed": 1000,
+          "score": 5.027539881639034e-05,
+          "sem": 8.355758666489954e-07,
+          "acceptance": 0.57443602
+        },
+        {
+          "seed": 2000,
+          "score": 4.839878622111621e-05,
+          "sem": 8.156308154628491e-07,
+          "acceptance": 0.57439457
+        }
+      ],
+      "mean": 4.959802615758657e-05,
+      "cx": 129
+    }
+  },
+  {
+    "variant": "q13_19",
+    "c1": 3.1826e-19,
+    "second": 4.09141e-05,
+    "third": 8.26819e-06,
+    "total": 4.91823e-05,
+    "exp_A1": 0.57958,
+    "check": {
+      "score": 6.554911180953486e-05,
+      "sem": 9.526105781699111e-06,
+      "acceptance": 0.579718,
+      "n_2q": 129,
+      "passed": true,
+      "format": true,
+      "class": true,
+      "correctness": true,
+      "acceptance_ok": true,
+      "format_errors": [],
+      "class_error": null,
+      "correctness_errors": []
+    },
+    "mc": {
+      "variant": "q13_19",
+      "shots": 100000000,
+      "seeds": [
+        {
+          "seed": 0,
+          "score": 4.94306252996537e-05,
+          "sem": 8.17197788756543e-07,
+          "acceptance": 0.57939789
+        },
+        {
+          "seed": 1000,
+          "score": 4.8248108671551144e-05,
+          "sem": 8.131293449654279e-07,
+          "acceptance": 0.57940095
+        },
+        {
+          "seed": 2000,
+          "score": 4.921071127434562e-05,
+          "sem": 8.201756253780743e-07,
+          "acceptance": 0.57944702
+        }
+      ],
+      "mean": 4.8963148415183496e-05,
+      "cx": 129
+    }
+  },
+  {
+    "variant": "q19_13_prompt",
+    "c1": 3.1826e-19,
+    "second": 4.09141e-05,
+    "third": 8.26819e-06,
+    "total": 4.91823e-05,
+    "exp_A1": 0.58612,
+    "check": {
+      "score": 4.267500593182572e-05,
+      "sem": 7.537702739033327e-06,
+      "acceptance": 0.585823,
+      "n_2q": 129,
+      "passed": true,
+      "format": true,
+      "class": true,
+      "correctness": true,
+      "acceptance_ok": true,
+      "format_errors": [],
+      "class_error": null,
+      "correctness_errors": []
+    },
+    "mc": {
+      "variant": "q19_13_prompt",
+      "shots": 100000000,
+      "seeds": [
+        {
+          "seed": 0,
+          "score": 4.982910553982053e-05,
+          "sem": 8.219298885621912e-07,
+          "acceptance": 0.58590255
+        },
+        {
+          "seed": 1000,
+          "score": 4.941513842962832e-05,
+          "sem": 8.153648995474392e-07,
+          "acceptance": 0.58595404
+        },
+        {
+          "seed": 2000,
+          "score": 5.029163258348189e-05,
+          "sem": 8.221343813302068e-07,
+          "acceptance": 0.58588275
+        }
+      ],
+      "mean": 4.984529218431024e-05,
+      "cx": 129
+    }
+  },
+  {
+    "variant": "active",
+    "c1": 3.1826e-19,
+    "second": 5.26435e-05,
+    "third": 0.000101837,
+    "total": 0.00015448,
+    "exp_A1": 0.43106,
+    "check": {
+      "score": 0.00014930762927262847,
+      "sem": 1.7665842188713558e-05,
+      "acceptance": 0.431994,
+      "n_2q": 129,
+      "passed": false,
+      "format": true,
+      "class": true,
+      "correctness": true,
+      "acceptance_ok": false,
+      "format_errors": [],
+      "class_error": null,
+      "correctness_errors": []
+    },
+    "mc": null
+  }
+]

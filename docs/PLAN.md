@@ -10,19 +10,20 @@
 - Every grid layout so far hits the area wall: separate B and C blocks do not fit next to the data early (R0, LAYOUT3,
   TP2, R1), so the 82-CX joint B+C prep stays. The five lanes below attack the wall (ANC4 shrinks C to 4 ancillas,
   REVSAT solves placement exactly, TREP re-synthesises the pre-stage), the round's own cost (ARCH) and the free local
-  choices (BUDGET). R1 closed: round at 47 on the v16 prefix ties v16e (FINDINGS).
+  choices (BUDGET); EARLYBC runs the proven joint B+C prep during the pre-stage. R1 and PRE3 closed: R1's round never moved
+  (data round CXs still at 50–51); only 12 free cells touch the data at step 33, A and B need 14 (FINDINGS).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
 seeds 0/1000/2000 → `work/promote.sh` (re-draws over hosts ≈ 10 min, sequential judge, commit, submit at the next slot).
-Bottleneck: the data wait before the round (R − 32 = 15–22 steps on every layout so far; LAYOUT3, R0).
+Bottleneck: the data wait before the round (v17a: data idle steps 33–49; the joint B+C prep at 35–49 and A at 43–49 set R = 50).
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P45 | G1 | ANC4: C replaced by ancillas measuring B's four Z-parities (reviewer 2 #5), B from a small separate encoder, earliest round on v17's prefix | 3-seed MC below v17's, or grid-free table + binding constraint | Codex lane ANC4 (`work/lanes/ANC4`, sunfish) | active |
 | 2 | P46 | G1 | REVSAT: complete SAT/CP-SAT time-expanded synthesis of A, B, checker, hops and round after the pre-stage (min R), with reverse-endpoint block synthesis (reviewer 2 #6) | 3-seed MC below v17's, or feasibility table R 36–47 with proofs | Codex lane REVSAT (`work/lanes/REVSAT`, tom, jerry) | active |
-| 3 | P44 | G1 | PRE3: release-oriented pre-stage (reorder, re-embed, data hops) | a full circuit below v17, or prefix variants with release tables and prices | Codex lane PRE3 (`work/lanes/PRE3`, tom, jerry, hippo) | active |
+| 3 | P50 | G1 | EARLYBC: v17a's joint 82-CX B+C prep and A encoder run during the pre-stage in never-used cells, moved next to the data at 33–35 by teleport moves or hops, round at ≤ 40 | 3-seed MC below 8.30e-5, or each placement family infeasible with its binding constraint | Codex lane EARLYBC (`work/lanes/EARLYBC`, zebra, hippo) | active |
 | 4 | P47 | G1 | TREP: the 16 protected 15-T phase-polynomial forms of the pre-stage (reviewer 2 #9) re-synthesised on the grid for lower pre-stage noise and earlier release | 3-seed MC below v17's, or all 16 priced | Codex lane TREP (`work/lanes/TREP`, jerry, hippo) | active |
 | 5 | P48 | G0 | ARCH: final-check architectures with round-only cost below the Steane round's 3.14e-5 grid-free | an idea below 3.14e-5 with its grid fit, or the mechanism that rules each direction out | Codex lane ARCH (`work/lanes/ARCH`, owl) | active |
 | 6 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
