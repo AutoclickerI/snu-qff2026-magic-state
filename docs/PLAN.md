@@ -1,12 +1,13 @@
 # Plan
 
-## Status (2026-10-25 05:40 KST)
-- Board: **rank 1** with v36b_r580, **server 3.87795e-5** (03:37; key 3.88e-5); Placeholder 4.984e-5, Inae 1.45e-4.
+## Status (2026-10-25 06:30 KST)
+- Board: **rank 1** with v36c_h2505_r4508, **server 3.84302e-5** (05:37; key 3.84e-5); Placeholder 4.984e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36d`) against the key boundary below ours (3.875e-5) and submits the best at :37.
-- **Best expected circuit: v36d** (`work/lanes/MAIN/v36d` = INTEG `integ_g1_j8`: v36c + acceptance trades + 34 pair,
-  echo and guard gadgets): **all-orders 4.02862e-5 (−2.10% vs v36c), acceptance 0.50596**, 282 CX, R44, 47 ticks, FAST;
-  it is the hourly stem from the 06:37 slot. v36c (4.11516e-5, 213 CX) is the base the lanes' deltas are priced on.
+  `lanes/MAIN/v36e`) against the key boundary below ours and submits the best at :37.
+- **Best expected circuit: v36e** (`work/lanes/MAIN/v36e` = BFLAG `final/bflag_d3`: v36d with the B/C resource replaced
+  by the 56-CX r3): **all-orders 3.92343e-5 (−2.61% vs v36d, −4.66% vs v36c), acceptance 0.50771**, 281 CX, R44, FAST
+  (4.1 s/1e6); the hourly stem from the 07:37 slot. v36d = v36c + INTEG's trades and 34 gadgets (4.02862e-5). Lanes'
+  deltas are priced on v36c and compose additively (BFLAG's r3: −1.087e-6 on v36c, −1.052e-6 on v36d).
 - Where v36c's loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
   3.041e-5, of which 2.274e-5 is a floor for every circuit whose outputs end on a CX with a measured partner (TERM) and
   0.768e-5 are leaks that every template tried on this grid keeps; A, B, C preparation 0.456e-5; prefix and data wait
