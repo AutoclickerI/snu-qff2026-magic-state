@@ -1,0 +1,62 @@
+{
+  "second": 9.106628990158654e-05,
+  "pair_classes": {
+    "round x round": 2.8839999999999317e-05,
+    "BC_prep_moves x BC_prep_moves": 2.8459553382878112e-05,
+    "A_prep x BC_prep_moves": 2.0653668740918632e-05,
+    "A_prep x prefix_including_idle": 4.1219436198930914e-06,
+    "A_prep x data_moves": 2.7518775842402375e-06,
+    "prefix_including_idle x prefix_including_idle": 2.1657978357804718e-06,
+    "A_prep x round": 1.951111111111115e-06,
+    "A_prep x A_prep": 1.6376327880169935e-06,
+    "prefix_including_idle x round": 4.84704838749161e-07
+  },
+  "examples": {
+    "round x round": [
+      1.1111111111110514e-07,
+      "L558 idle Y@q0 t=47..47",
+      "L560 idle Z@q20 t=47..47"
+    ],
+    "A_prep x BC_prep_moves": [
+      6.325579275851275e-07,
+      "L194 idle Z@q32 t=16..44",
+      "L490 gate2 IZ@q14,8 t=40"
+    ],
+    "A_prep x prefix_including_idle": [
+      3.084291424744738e-07,
+      "L379 idle Z@q0 t=30..43",
+      "L499 gate2 IZ@q8,14 t=42"
+    ],
+    "A_prep x A_prep": [
+      1.1081520961323533e-07,
+      "L479 idle Z@q9 t=40..44",
+      "L498 gate2 IZ@q1,2 t=42"
+    ],
+    "A_prep x round": [
+      6.666666666666667e-08,
+      "L490 gate2 IZ@q14,8 t=40",
+      "L576 flip Z@q26 t=47"
+    ],
+    "BC_prep_moves x BC_prep_moves": [
+      1.985398323379447e-06,
+      "L209 flip X@q25 t=16",
+      "L249 idle X@q13 t=19..30"
+    ],
+    "A_prep x data_moves": [
+      3.084291424744738e-07,
+      "L402 idle Z@q10 t=31..44",
+      "L498 gate2 IZ@q1,2 t=42"
+    ],
+    "prefix_including_idle x prefix_including_idle": [
+      9.657631592573094e-07,
+      "L281 idle X@q7 t=22..26",
+      "L450 idle Y@q20 t=37..43"
+    ],
+    "prefix_including_idle x round": [
+      2.0777851802481623e-07,
+      "L281 idle X@q7 t=22..26",
+      "L552 flip X@q14 t=46"
+    ]
+  },
+  "method": "Exact2 physical pairs assigned by emitted operation provenance; prefix class includes its long data-idle windows"
+}

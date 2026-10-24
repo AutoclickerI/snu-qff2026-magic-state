@@ -1,0 +1,57 @@
+{
+  "data_qubits": [
+    15,
+    9,
+    3,
+    26,
+    6,
+    7,
+    27
+  ],
+  "R": 55,
+  "R_model": 55,
+  "source": "complete prefix-round redesign",
+  "free_prefix": false,
+  "embedding": {
+    "sym": 3,
+    "row": 0,
+    "col": 0,
+    "cells": [
+      22,
+      21,
+      20,
+      19,
+      18,
+      16,
+      15,
+      14,
+      13,
+      12,
+      9,
+      8,
+      7,
+      3,
+      2
+    ]
+  },
+  "encoder": "s34c15",
+  "catalog": "work/lanes/ENDSTATE/legacy_staticA_h2_depth.json",
+  "block_teleports": 21,
+  "data_hops": 15,
+  "cx": 186,
+  "native_depth": 58,
+  "schedule": {
+    "status": "OPTIMAL",
+    "objective": -5879.0,
+    "bound": -5879.0,
+    "seconds": 0.008466488000000001,
+    "mode": "alap",
+    "R": 55
+  },
+  "prefix_source": "v23h_c2c9",
+  "template": "s34c15",
+  "model_R": 55,
+  "secondary_objective": 287,
+  "assembly": "ST1 frame propagation + SEPBC common.save; native positions/times from ENDSTATE solver",
+  "builder_sha256": "1dbd741e67e71daec746e17b3527bb11af36ab9b6ffe5050c334278115385abc"
+}

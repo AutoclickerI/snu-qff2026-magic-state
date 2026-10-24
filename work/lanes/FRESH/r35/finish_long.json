@@ -1,0 +1,173 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "CX": 210,
+  "R": 44,
+  "native_depth": 47,
+  "source": "work/lanes/MAIN/v35a",
+  "recipe": {
+    "source": "feedback_best",
+    "echoes": [
+      [
+        15,
+        21,
+        "X",
+        19,
+        29
+      ],
+      [
+        20,
+        26,
+        "Z",
+        18,
+        31
+      ]
+    ],
+    "watches": []
+  },
+  "base": "work/lanes/MAIN/v35a",
+  "timing_moves": [
+    {
+      "index": 155,
+      "kind": "M",
+      "qubits": [
+        21
+      ],
+      "old": 32,
+      "new": 36
+    },
+    {
+      "index": 140,
+      "kind": "M",
+      "qubits": [
+        22
+      ],
+      "old": 28,
+      "new": 34
+    },
+    {
+      "index": 131,
+      "kind": "R",
+      "qubits": [
+        13
+      ],
+      "old": 25,
+      "new": 33
+    },
+    {
+      "index": 128,
+      "kind": "M",
+      "qubits": [
+        16
+      ],
+      "old": 24,
+      "new": 30
+    },
+    {
+      "index": 82,
+      "kind": "R",
+      "qubits": [
+        19
+      ],
+      "old": 13,
+      "new": 17
+    },
+    {
+      "index": 69,
+      "kind": "M",
+      "qubits": [
+        19
+      ],
+      "old": 12,
+      "new": 10
+    },
+    {
+      "index": 9,
+      "kind": "M",
+      "qubits": [
+        20
+      ],
+      "old": 2,
+      "new": 7
+    }
+  ],
+  "verification": {
+    "ideal": {
+      "ideal_acceptance": 1.0,
+      "ideal_loss": 0.0,
+      "stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ],
+      "detectors": 72,
+      "native_depth": 47,
+      "schedule_matches": true,
+      "singles_checked": true,
+      "c1": 3.0901207518733525e-19,
+      "harmful_singles": [],
+      "sha256": "1620b2773be1281ffee46c824842158bbe7576e6da298a36f2f47b4eae3f5dd7"
+    },
+    "allorders": {
+      "loss": 4.3775984368317795e-05,
+      "acceptance": 0.5006707012148813
+    },
+    "speed": {
+      "stem": "/home/jihoon/competitions/quantumn/work/lanes/FRESH/r35/finish_long.qasm",
+      "shots": 50000,
+      "repeats": 2,
+      "seconds": [
+        0.17123664799146354,
+        0.17281443200772628
+      ],
+      "median_seconds_per_1e6": 3.4405107999918982,
+      "classification": "FAST",
+      "measurements": 88,
+      "detectors": 72,
+      "instructions": 424,
+      "t_gates": 15,
+      "mx_records": 35,
+      "mx_after_first_t": 34,
+      "mx_after_last_t": 8
+    },
+    "judge": {
+      "passed": true,
+      "acceptance": 0.500535,
+      "score": 4.095617689072667e-05,
+      "sem": 8.053432293524325e-06,
+      "n_2q": 210,
+      "seconds": 2.4562968050013296,
+      "report": "Report(p=0.001, shots=1000000, seed=0, format_errors=[], class_error=None, correctness_errors=[], score=np.float64(4.095617689072667e-05), sem=np.float64(8.053432293524325e-06), acceptance=0.500535, ideal_acceptance=0.9999999999999997, frame={'X': (0, []), 'Z': (0, [])}, conditional_detectors=[], n_2q=210, diagnosis=Diagnosis(shots=1024, chi=None, detectors=72, expectations=0))"
+    },
+    "seeds": [
+      4.520524e-05,
+      4.243429e-05,
+      4.360624e-05
+    ],
+    "mean": 4.374859e-05
+  },
+  "sha256": "1620b2773be1281ffee46c824842158bbe7576e6da298a36f2f47b4eae3f5dd7",
+  "provenance": {
+    "A_decoder": "reviewer6 port on SEPBC guard5_timing_1 (FRESH, MAIN/v35a)",
+    "echo_construction": "ST2 echoed parity protection rebuilt with FRESH timing feedback"
+  },
+  "exact_diagnostic": {
+    "c1": 3.090120751873293e-19,
+    "second": 3.813456124748494e-05,
+    "third_printed": 5.40184e-06,
+    "total_printed": 4.35364e-05,
+    "exp_minus_A1": 0.5008567011544917,
+    "receipt": "r35/finish_long.exact_wide.log",
+    "representation_fix": "int64 detector mask widened to Python integers; exact2 arithmetic unchanged"
+  }
+}

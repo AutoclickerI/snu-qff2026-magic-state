@@ -1,0 +1,253 @@
+{
+  "data_qubits": [
+    8,
+    26,
+    19,
+    22,
+    10,
+    28,
+    16
+  ],
+  "R": 39,
+  "R_model": 40,
+  "cx": 182,
+  "native_depth": 42,
+  "resource_depth": 11,
+  "resource_cx": 56,
+  "resource_cells": [
+    2,
+    3,
+    4,
+    5,
+    11,
+    17,
+    23,
+    25,
+    29,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "B": [
+    2,
+    32,
+    25,
+    23,
+    4,
+    34,
+    17
+  ],
+  "C": [
+    3,
+    33,
+    31,
+    29,
+    5,
+    35,
+    11
+  ],
+  "A": [
+    14,
+    20,
+    13,
+    21,
+    9,
+    27,
+    15
+  ],
+  "region_row": 2,
+  "prefix": "v30f",
+  "prefix_embedding": 2,
+  "data_hops": 9,
+  "measured_pivots": true,
+  "resource_verification": {
+    "target_ok": true,
+    "bad": [],
+    "residues": {
+      "0": 6
+    },
+    "cx": 56
+  },
+  "source_resource": "[14, 15, 16]",
+  "schedule": {
+    "name": "e2_rfa282083c_s23c21",
+    "resource_depth": 11,
+    "route_seed": 0,
+    "status": "OPTIMAL",
+    "seconds": 0.005174130000000001,
+    "bound": 40.0,
+    "paths": [
+      [
+        6,
+        7,
+        8
+      ],
+      [
+        26
+      ],
+      [
+        13,
+        19
+      ],
+      [
+        16,
+        22
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        21,
+        27,
+        28
+      ],
+      [
+        14,
+        15,
+        16
+      ]
+    ],
+    "R": 40,
+    "bc_init": 28,
+    "a_init": {
+      "14": 35,
+      "20": 35,
+      "13": 36,
+      "21": 35,
+      "9": 36,
+      "27": 36,
+      "15": 35
+    },
+    "a_times": [
+      36,
+      36,
+      37,
+      37,
+      37,
+      38,
+      38,
+      39,
+      39
+    ],
+    "hop_times": [
+      [
+        36,
+        38
+      ],
+      [],
+      [
+        28
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ],
+      [
+        28,
+        30
+      ],
+      [
+        29,
+        32
+      ]
+    ],
+    "data_hops": 9,
+    "exposure_proxy": 161,
+    "region": [
+      2,
+      3,
+      4,
+      5,
+      11,
+      17,
+      23,
+      25,
+      29,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "final": {
+      "b": [
+        2,
+        32,
+        25,
+        23,
+        4,
+        34,
+        17
+      ],
+      "c": [
+        3,
+        33,
+        31,
+        29,
+        5,
+        35,
+        11
+      ],
+      "d": [
+        8,
+        26,
+        19,
+        22,
+        10,
+        28,
+        16
+      ],
+      "a": [
+        14,
+        20,
+        13,
+        21,
+        9,
+        27,
+        15
+      ]
+    },
+    "scope": "fixed region, role split, A encoder, fixed data paths and ASAP prefix; atomic depth-d BC lifetime, no real BC synthesis yet"
+  },
+  "A_reuse": [
+    {
+      "cell": 14,
+      "old": "RESET",
+      "previous_measure": "MEASURE",
+      "bit": 33,
+      "replacement": "none"
+    },
+    {
+      "cell": 20,
+      "old": "RX",
+      "previous_measure": "MX",
+      "bit": 12,
+      "replacement": "none"
+    },
+    {
+      "cell": 15,
+      "old": "RESET",
+      "previous_measure": "MEASURE",
+      "bit": 34,
+      "replacement": "none"
+    },
+    {
+      "cell": 9,
+      "old": "RESET",
+      "previous_measure": "MEASURE",
+      "bit": 30,
+      "replacement": "none"
+    }
+  ],
+  "retiming": {
+    "status": "OPTIMAL",
+    "minimum_model_R": 39,
+    "mode": "ALAP; terminal/reset-followed measurements ASAP",
+    "source": "/home/jihoon/competitions/quantumn/work/lanes/ENDSTATE/joint/region2_k56_same_ordered"
+  }
+}

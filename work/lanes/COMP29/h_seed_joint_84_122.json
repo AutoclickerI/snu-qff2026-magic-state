@@ -1,0 +1,110 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "cx": 214,
+  "native_depth": 47,
+  "round_range": [
+    43,
+    44
+  ],
+  "R": 44,
+  "base": "MAIN/v35b",
+  "comp29_edits": [
+    "h_ST2_feedback_prep",
+    "native menu combination",
+    [
+      84,
+      122
+    ],
+    [
+      {
+        "changes": [
+          [
+            "add",
+            {
+              "t": 39,
+              "lines": [
+                "cx q[16],q[10];"
+              ]
+            }
+          ],
+          [
+            "add",
+            {
+              "t": 37,
+              "lines": [
+                "cx q[16],q[10];"
+              ]
+            }
+          ]
+        ],
+        "restored_check_dependencies": [],
+        "record_map": {}
+      },
+      {
+        "changes": [
+          [
+            "add",
+            {
+              "t": 31,
+              "lines": [
+                "cx q[13],q[7];"
+              ]
+            }
+          ],
+          [
+            "add",
+            {
+              "t": 32,
+              "lines": [
+                "h q[13];",
+                "measure q[13] -> c[541];",
+                "h q[13];"
+              ]
+            }
+          ],
+          [
+            "add",
+            {
+              "t": 27,
+              "lines": [
+                "cx q[13],q[7];"
+              ]
+            }
+          ],
+          [
+            "add",
+            {
+              "t": 26,
+              "lines": [
+                "reset q[13];",
+                "h q[13];"
+              ]
+            }
+          ],
+          [
+            "detector_add",
+            "// DETECTOR c[541]"
+          ]
+        ],
+        "restored_check_dependencies": [],
+        "record_map": {
+          "278": 541
+        }
+      }
+    ]
+  ],
+  "source": "/home/jihoon/competitions/quantumn/work/lanes/COMP29/h_ST2_feedback_prep",
+  "qasm_sha256": "e38f79d0e6e2eebd2bdd7a1d9b0d9e2214b9b854cc92ed6df6d2440f41da8a16",
+  "BC_round_range": [
+    44,
+    44
+  ]
+}

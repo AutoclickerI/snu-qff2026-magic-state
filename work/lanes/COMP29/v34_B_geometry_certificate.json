@@ -1,0 +1,199 @@
+{
+  "B": [
+    6,
+    26,
+    13,
+    11,
+    4,
+    23,
+    27
+  ],
+  "codewords": [
+    {
+      "mask": 7,
+      "cells": [
+        6,
+        26,
+        13
+      ],
+      "weight": 3,
+      "rectilinear_span_lower_bound": 5,
+      "logical": true
+    },
+    {
+      "mask": 25,
+      "cells": [
+        6,
+        11,
+        4
+      ],
+      "weight": 3,
+      "rectilinear_span_lower_bound": 6,
+      "logical": true
+    },
+    {
+      "mask": 30,
+      "cells": [
+        26,
+        13,
+        11,
+        4
+      ],
+      "weight": 4,
+      "rectilinear_span_lower_bound": 8,
+      "logical": false
+    },
+    {
+      "mask": 42,
+      "cells": [
+        26,
+        11,
+        23
+      ],
+      "weight": 3,
+      "rectilinear_span_lower_bound": 6,
+      "logical": true
+    },
+    {
+      "mask": 45,
+      "cells": [
+        6,
+        13,
+        11,
+        23
+      ],
+      "weight": 4,
+      "rectilinear_span_lower_bound": 7,
+      "logical": false
+    },
+    {
+      "mask": 51,
+      "cells": [
+        6,
+        26,
+        4,
+        23
+      ],
+      "weight": 4,
+      "rectilinear_span_lower_bound": 9,
+      "logical": false
+    },
+    {
+      "mask": 52,
+      "cells": [
+        13,
+        4,
+        23
+      ],
+      "weight": 3,
+      "rectilinear_span_lower_bound": 7,
+      "logical": true
+    },
+    {
+      "mask": 75,
+      "cells": [
+        6,
+        26,
+        11,
+        27
+      ],
+      "weight": 4,
+      "rectilinear_span_lower_bound": 8,
+      "logical": false
+    },
+    {
+      "mask": 76,
+      "cells": [
+        13,
+        11,
+        27
+      ],
+      "weight": 3,
+      "rectilinear_span_lower_bound": 7,
+      "logical": true
+    },
+    {
+      "mask": 82,
+      "cells": [
+        26,
+        4,
+        27
+      ],
+      "weight": 3,
+      "rectilinear_span_lower_bound": 6,
+      "logical": true
+    },
+    {
+      "mask": 85,
+      "cells": [
+        6,
+        13,
+        4,
+        27
+      ],
+      "weight": 4,
+      "rectilinear_span_lower_bound": 8,
+      "logical": false
+    },
+    {
+      "mask": 97,
+      "cells": [
+        6,
+        23,
+        27
+      ],
+      "weight": 3,
+      "rectilinear_span_lower_bound": 8,
+      "logical": true
+    },
+    {
+      "mask": 102,
+      "cells": [
+        26,
+        13,
+        23,
+        27
+      ],
+      "weight": 4,
+      "rectilinear_span_lower_bound": 6,
+      "logical": false
+    },
+    {
+      "mask": 120,
+      "cells": [
+        11,
+        4,
+        23,
+        27
+      ],
+      "weight": 4,
+      "rectilinear_span_lower_bound": 6,
+      "logical": false
+    },
+    {
+      "mask": 127,
+      "cells": [
+        6,
+        26,
+        13,
+        11,
+        4,
+        23,
+        27
+      ],
+      "weight": 7,
+      "rectilinear_span_lower_bound": 9,
+      "logical": true
+    }
+  ],
+  "min_edges": 5,
+  "scope": "A terminal single-qubit Pauli pulled back through at most three nearest-neighbor CX gates has connected support within at most three grid edges. Every nonzero B Z operator commuting with the three retained X checks has rectilinear span at least five edges, even allowing every grid cell as a helper. Thus no independent B Z flag in this terminal 1-3-CX model; does not exclude an earlier instrument or a rewrite borrowing existing gates.",
+  "enumeration": "v34_decoder_enumeration.json",
+  "actual_B_X_check_masks": [
+    85,
+    102,
+    120
+  ],
+  "actual_B_check_rows_verified": true,
+  "parity_flags": "Every individually measured observable commutes with every retained check because those checks must be re-expressed in the commuting measurement algebra. A product flag can detect B-X faults only if some measured observable has nonzero B-Z support; that observable obeys the same five-edge bound."
+}

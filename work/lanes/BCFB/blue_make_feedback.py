@@ -1,0 +1,16 @@
+from pathlib import Path
+H=Path(__file__).resolve().parent
+s=(H/'feedback.py').read_text().replace('from evaluate import price,H,BASE,database','from blue_evaluate import price,H,database')
+s=s.replace("p.add_argument('--prefix',default='fb');a=p.parse_args();rng=random.Random(a.seed)","p.add_argument('--prefix',default='blue');p.add_argument('--context',choices=['v25k','v26n'],required=True);p.add_argument('--initial');a=p.parse_args();rng=random.Random(a.seed);BASE=json.loads((H/'finalists'/a.context).with_suffix('.screen.json').read_text())['total']")
+s=s.replace("H/'inputs/fb_s401_0035.prep.json'", "H.parent/'inputs/fb_s401_0035.prep.json'")
+s=s.replace("initial=json.loads(json.dumps(base))", "initial=json.loads(json.dumps(base))\n if a.initial:base=json.loads(Path(a.initial).read_text())['prep']")
+s=s.replace("H/'runs'/f'fb_s{a.seed}.best.json'", "H/'runs'/f'{a.prefix}_s{a.seed}.best.json'")
+s=s.replace("opt=dict(timing='alap')", "opt=dict(timing='alap',context=a.context,auto_fast=True,mx=[q for q in d['pivots'] if q!=19],retime_window=2)")
+s=s.replace("q for q in d['pivots'] if rng.random()<.9", "q for q in d['pivots'] if q!=19 and rng.random()<.9")
+s=s.replace("row.get('exp_minus_A1',0)>.505", "row.get('exp_minus_A1',0)>=.5")
+s=s.replace("and row.get('check',{}).get('passed')", "and row.get('retained_screen')")
+(H/'blue_feedback.py').write_text(s)
+s=(H/'portfolio.py').read_text().replace("H=Path(__file__).resolve().parent", "CODE=Path(__file__).resolve().parent;H=CODE/'blue'")
+s=s.replace("H/'feedback.py'", "CODE/'blue_feedback.py'")
+s=s.replace("'--prefix',a.prefix]", "'--prefix',a.prefix,'--context','v25k' if k<a.workers//2 else 'v26n']\n if k%4 in (2,3):cmd+=['--initial',str(CODE/'finalists'/('fb_d14_c98_s517_00020.json' if depth==14 else 'fast_d15_c105_s526_00356.json'))]")
+(H/'blue_portfolio.py').write_text(s)

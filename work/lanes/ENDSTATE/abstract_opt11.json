@@ -1,0 +1,76 @@
+{
+  "data_qubits": [
+    13,
+    24,
+    14,
+    23,
+    22,
+    32,
+    21
+  ],
+  "R": 56,
+  "R_model": 165,
+  "source": "complete prefix-round redesign",
+  "free_prefix": false,
+  "embedding": {
+    "sym": 0,
+    "row": 2,
+    "col": 1,
+    "cells": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22,
+      23,
+      26,
+      27,
+      28,
+      29,
+      32,
+      33
+    ]
+  },
+  "encoder": "s34c15",
+  "catalog": null,
+  "block_teleports": 20,
+  "data_hops": 14,
+  "cx": 187,
+  "native_depth": 59,
+  "schedule": {
+    "status": "OPTIMAL",
+    "objective": -5709.0,
+    "bound": -5709.0,
+    "seconds": 0.010943047000000001,
+    "mode": "alap",
+    "R": 56
+  },
+  "realized_encoders": {
+    "a": {
+      "shape": 3,
+      "code_class": 12,
+      "cx": 11
+    },
+    "b": {
+      "shape": 29,
+      "code_class": 6,
+      "cx": 14
+    },
+    "c": {
+      "shape": 63,
+      "code_class": 28,
+      "cx": 12
+    }
+  },
+  "abstract_model_R": 55,
+  "prefix_source": "v29c",
+  "template": "s34c15",
+  "model_R": 165,
+  "secondary_objective": 441,
+  "assembly": "ST1 frame propagation + SEPBC common.save; native positions/times from ENDSTATE solver",
+  "builder_sha256": "1dbd741e67e71daec746e17b3527bb11af36ab9b6ffe5050c334278115385abc"
+}

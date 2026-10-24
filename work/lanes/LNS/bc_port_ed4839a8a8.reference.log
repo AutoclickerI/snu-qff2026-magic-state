@@ -1,0 +1,17 @@
+circuit work/lanes/LNS/bc_port_ed4839a8a8.qasm: 494 noise channels, 3700 faults, 608 (s,d) classes, rotation rank 5, 52 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.9236e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.20467e-05   (pairs 5.20467e-05 + same-channel normalisation 6.859e-23)
+1-F (2nd order) = 5.20467e-05
+third order: 1.64852e-05   (weight-3 sets 2.19280e-05 + pair-times-others -5.44274e-06)
+1-F (to 3rd order) = 6.85320e-05
+acceptance: first order 0.36978, second order 0.56840; exp(-A1) = 0.53248  (A1 = 0.63022)
+time: model+singles 0.6s, pairs 6.6s, triples 115.5s
+
+top 5 fault pairs by contribution to 1-F (each pair counted once):
+  9.658e-07 ( 1.86%)  n_ij=0.250  L163 idle X@q7 t=22..26   +   L274 idle Y@q20 t=37..43
+  3.084e-07 ( 0.59%)  n_ij=1.000  L200 idle Z@q10 t=31..44   +   L352 gate2 IZ@q1,2 t=42
+  3.084e-07 ( 0.59%)  n_ij=1.000  L200 idle Z@q10 t=31..44   +   L352 gate2 XY@q1,2 t=42
+  3.084e-07 ( 0.59%)  n_ij=1.000  L200 idle Z@q10 t=31..44   +   L362 gate2 ZI@q2,8 t=43
+  3.084e-07 ( 0.59%)  n_ij=1.000  L200 idle Z@q10 t=31..44   +   L375 gate2 ZZ@q1,2 t=44
+
+loss by channel kind (each pair split half/half): {'flip': '6.375e-07', 'gate': '2.670e-05', 'idle': '2.471e-05'}

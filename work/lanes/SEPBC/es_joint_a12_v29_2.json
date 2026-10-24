@@ -1,0 +1,106 @@
+{
+  "data_qubits": [
+    1,
+    32,
+    12,
+    10,
+    5,
+    28,
+    14
+  ],
+  "R": 55,
+  "R_model": 55,
+  "source_endstate": "/home/jihoon/competitions/quantumn/work/lanes/SEPBC/witness12_c_direct_a12.json",
+  "prefix": "v29",
+  "choice": {
+    "prefix_row": 2,
+    "prefix_col": 0,
+    "sym": 4,
+    "end_row": 0,
+    "end_col": 0,
+    "auto": 29,
+    "permutation": [
+      1,
+      2,
+      0,
+      4,
+      6,
+      5,
+      3
+    ],
+    "source": [
+      12,
+      32,
+      19,
+      22,
+      15,
+      28,
+      20
+    ],
+    "goals": [
+      1,
+      32,
+      12,
+      10,
+      5,
+      28,
+      14
+    ],
+    "manhattan": 12,
+    "max_manhattan": 4
+  },
+  "data_paths": [
+    [
+      12,
+      13,
+      7,
+      1
+    ],
+    [
+      32
+    ],
+    [
+      19,
+      18,
+      12
+    ],
+    [
+      22,
+      16,
+      10
+    ],
+    [
+      15,
+      9,
+      3,
+      4,
+      5
+    ],
+    [
+      28
+    ],
+    [
+      20,
+      14
+    ]
+  ],
+  "data_hops": 12,
+  "block_teleports": 14,
+  "encoders": {
+    "a": 12,
+    "b": 11,
+    "c": 11
+  },
+  "schedule": {
+    "status": "OPTIMAL",
+    "objective": -5177.0,
+    "bound": -5177.0,
+    "seconds": 0.00488666,
+    "mode": "alap",
+    "R": 55
+  },
+  "joint_prefix_lifetimes": true,
+  "prefix_restore_cells": [],
+  "cx": 174,
+  "native_depth": 58
+}

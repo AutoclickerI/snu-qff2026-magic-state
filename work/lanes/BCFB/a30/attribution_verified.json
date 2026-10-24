@@ -1,0 +1,7473 @@
+{
+  "source": "v30f",
+  "A": [
+    1,
+    14,
+    8,
+    9,
+    2,
+    16,
+    15
+  ],
+  "init_indices": {
+    "1": 225,
+    "14": 203,
+    "8": 201,
+    "9": 190,
+    "2": 215,
+    "16": 232,
+    "15": 202
+  },
+  "owned_indices": [
+    190,
+    200,
+    201,
+    202,
+    203,
+    213,
+    214,
+    215,
+    223,
+    224,
+    225,
+    231,
+    232,
+    233,
+    239,
+    240,
+    241,
+    249,
+    250,
+    258,
+    259
+  ],
+  "data_release": {
+    "0": 38,
+    "20": 39,
+    "7": 39,
+    "10": 32,
+    "3": 32,
+    "22": 43,
+    "21": 39
+  },
+  "exposure": {
+    "1": {
+      "init": 43,
+      "coupling": 48,
+      "live_steps": 5,
+      "gates": [
+        [
+          43,
+          "RX",
+          [
+            "reset q[1];",
+            "h q[1];"
+          ]
+        ],
+        [
+          44,
+          "MX",
+          [
+            "h q[1];",
+            "measure q[1] -> c[180];",
+            "h q[1];"
+          ]
+        ],
+        [
+          45,
+          "CX",
+          [
+            "cx q[1],q[2];"
+          ]
+        ],
+        [
+          47,
+          "CX",
+          [
+            "cx q[1],q[2];"
+          ]
+        ]
+      ],
+      "idle_gaps": [
+        {
+          "first": 46,
+          "steps": 1
+        }
+      ],
+      "idle_steps": 1
+    },
+    "14": {
+      "init": 41,
+      "coupling": 48,
+      "live_steps": 7,
+      "gates": [
+        [
+          41,
+          "RESET",
+          [
+            "reset q[14];"
+          ]
+        ],
+        [
+          42,
+          "CX",
+          [
+            "cx q[15],q[14];"
+          ]
+        ],
+        [
+          43,
+          "CX",
+          [
+            "cx q[14],q[8];"
+          ]
+        ],
+        [
+          45,
+          "CX",
+          [
+            "cx q[8],q[14];"
+          ]
+        ],
+        [
+          46,
+          "CX",
+          [
+            "cx q[14],q[15];"
+          ]
+        ],
+        [
+          47,
+          "CX",
+          [
+            "cx q[8],q[14];"
+          ]
+        ]
+      ],
+      "idle_gaps": [
+        {
+          "first": 44,
+          "steps": 1
+        }
+      ],
+      "idle_steps": 1
+    },
+    "8": {
+      "init": 41,
+      "coupling": 48,
+      "live_steps": 7,
+      "gates": [
+        [
+          41,
+          "MEASURE",
+          [
+            "measure q[8] -> c[54];"
+          ]
+        ],
+        [
+          42,
+          "CX",
+          [
+            "cx q[9],q[8];"
+          ]
+        ],
+        [
+          43,
+          "CX",
+          [
+            "cx q[14],q[8];"
+          ]
+        ],
+        [
+          44,
+          "CX",
+          [
+            "cx q[2],q[8];"
+          ]
+        ],
+        [
+          45,
+          "CX",
+          [
+            "cx q[8],q[14];"
+          ]
+        ],
+        [
+          46,
+          "CX",
+          [
+            "cx q[2],q[8];"
+          ]
+        ],
+        [
+          47,
+          "CX",
+          [
+            "cx q[8],q[14];"
+          ]
+        ]
+      ],
+      "idle_gaps": [],
+      "idle_steps": 0
+    },
+    "9": {
+      "init": 40,
+      "coupling": 48,
+      "live_steps": 8,
+      "gates": [
+        [
+          40,
+          "RX",
+          [
+            "reset q[9];",
+            "h q[9];"
+          ]
+        ],
+        [
+          41,
+          "MX",
+          [
+            "h q[9];",
+            "measure q[9] -> c[59];",
+            "h q[9];"
+          ]
+        ],
+        [
+          42,
+          "CX",
+          [
+            "cx q[9],q[8];"
+          ]
+        ]
+      ],
+      "idle_gaps": [
+        {
+          "first": 43,
+          "steps": 5
+        }
+      ],
+      "idle_steps": 5
+    },
+    "2": {
+      "init": 42,
+      "coupling": 48,
+      "live_steps": 6,
+      "gates": [
+        [
+          42,
+          "RX",
+          [
+            "reset q[2];",
+            "h q[2];"
+          ]
+        ],
+        [
+          43,
+          "MX",
+          [
+            "h q[2];",
+            "measure q[2] -> c[60];",
+            "h q[2];"
+          ]
+        ],
+        [
+          44,
+          "CX",
+          [
+            "cx q[2],q[8];"
+          ]
+        ],
+        [
+          45,
+          "CX",
+          [
+            "cx q[1],q[2];"
+          ]
+        ],
+        [
+          46,
+          "CX",
+          [
+            "cx q[2],q[8];"
+          ]
+        ],
+        [
+          47,
+          "CX",
+          [
+            "cx q[1],q[2];"
+          ]
+        ]
+      ],
+      "idle_gaps": [],
+      "idle_steps": 0
+    },
+    "16": {
+      "init": 44,
+      "coupling": 48,
+      "live_steps": 4,
+      "gates": [
+        [
+          44,
+          "MEASURE",
+          [
+            "measure q[16] -> c[55];"
+          ]
+        ],
+        [
+          45,
+          "CX",
+          [
+            "cx q[15],q[16];"
+          ]
+        ]
+      ],
+      "idle_gaps": [
+        {
+          "first": 46,
+          "steps": 2
+        }
+      ],
+      "idle_steps": 2
+    },
+    "15": {
+      "init": 41,
+      "coupling": 48,
+      "live_steps": 7,
+      "gates": [
+        [
+          41,
+          "RX",
+          [
+            "reset q[15];",
+            "h q[15];"
+          ]
+        ],
+        [
+          42,
+          "CX",
+          [
+            "cx q[15],q[14];"
+          ]
+        ],
+        [
+          45,
+          "CX",
+          [
+            "cx q[15],q[16];"
+          ]
+        ],
+        [
+          46,
+          "CX",
+          [
+            "cx q[14],q[15];"
+          ]
+        ]
+      ],
+      "idle_gaps": [
+        {
+          "first": 43,
+          "steps": 2
+        },
+        {
+          "first": 47,
+          "steps": 1
+        }
+      ],
+      "idle_steps": 3
+    }
+  },
+  "channels": [
+    {
+      "family": "pre_gate",
+      "unit": 0,
+      "kind": "flip",
+      "line": 5,
+      "qubits": [
+        7
+      ],
+      "steps": "0",
+      "ins": "instruction 1 (reset q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 1,
+      "kind": "flip",
+      "line": 7,
+      "qubits": [
+        13
+      ],
+      "steps": "0",
+      "ins": "instruction 3 (reset q[13])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 2,
+      "kind": "flip",
+      "line": 10,
+      "qubits": [
+        8
+      ],
+      "steps": "1",
+      "ins": "instruction 6 (measure q[8])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 2,
+      "kind": "flip",
+      "line": 10,
+      "qubits": [
+        8
+      ],
+      "steps": "1",
+      "ins": "instruction 6 (measure q[8])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 2,
+      "kind": "gate1",
+      "line": 10,
+      "qubits": [
+        8
+      ],
+      "steps": "1",
+      "ins": "instruction 6 (measure q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 3,
+      "kind": "flip",
+      "line": 12,
+      "qubits": [
+        13
+      ],
+      "steps": "1",
+      "ins": "instruction 8 (measure q[13])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 3,
+      "kind": "gate1",
+      "line": 12,
+      "qubits": [
+        13
+      ],
+      "steps": "1",
+      "ins": "instruction 8 (measure q[13])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 4,
+      "kind": "flip",
+      "line": 14,
+      "qubits": [
+        14
+      ],
+      "steps": "1",
+      "ins": "instruction 10 (measure q[14])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 4,
+      "kind": "flip",
+      "line": 14,
+      "qubits": [
+        14
+      ],
+      "steps": "1",
+      "ins": "instruction 10 (measure q[14])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 4,
+      "kind": "gate1",
+      "line": 14,
+      "qubits": [
+        14
+      ],
+      "steps": "1",
+      "ins": "instruction 10 (measure q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 5,
+      "kind": "gate1",
+      "line": 15,
+      "qubits": [
+        7
+      ],
+      "steps": "1",
+      "ins": "instruction 11 (t q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 6,
+      "kind": "flip",
+      "line": 16,
+      "qubits": [
+        1
+      ],
+      "steps": "1",
+      "ins": "instruction 12 (reset q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 7,
+      "kind": "flip",
+      "line": 18,
+      "qubits": [
+        9
+      ],
+      "steps": "1",
+      "ins": "instruction 14 (reset q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 8,
+      "kind": "flip",
+      "line": 22,
+      "qubits": [
+        1
+      ],
+      "steps": "2",
+      "ins": "instruction 18 (measure q[1])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 8,
+      "kind": "gate1",
+      "line": 22,
+      "qubits": [
+        1
+      ],
+      "steps": "2",
+      "ins": "instruction 18 (measure q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 9,
+      "kind": "flip",
+      "line": 24,
+      "qubits": [
+        2
+      ],
+      "steps": "2",
+      "ins": "instruction 20 (measure q[2])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 9,
+      "kind": "flip",
+      "line": 24,
+      "qubits": [
+        2
+      ],
+      "steps": "2",
+      "ins": "instruction 20 (measure q[2])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 9,
+      "kind": "gate1",
+      "line": 24,
+      "qubits": [
+        2
+      ],
+      "steps": "2",
+      "ins": "instruction 20 (measure q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 10,
+      "kind": "flip",
+      "line": 26,
+      "qubits": [
+        9
+      ],
+      "steps": "2",
+      "ins": "instruction 22 (measure q[9])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 10,
+      "kind": "gate1",
+      "line": 26,
+      "qubits": [
+        9
+      ],
+      "steps": "2",
+      "ins": "instruction 22 (measure q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 11,
+      "kind": "flip",
+      "line": 28,
+      "qubits": [
+        15
+      ],
+      "steps": "2",
+      "ins": "instruction 24 (reset q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 12,
+      "kind": "gate2",
+      "line": 30,
+      "qubits": [
+        7,
+        8
+      ],
+      "steps": "2",
+      "ins": "instruction 26 (cx q[7], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 13,
+      "kind": "gate2",
+      "line": 31,
+      "qubits": [
+        13,
+        14
+      ],
+      "steps": "2",
+      "ins": "instruction 27 (cx q[13], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 14,
+      "kind": "flip",
+      "line": 32,
+      "qubits": [
+        10
+      ],
+      "steps": "2",
+      "ins": "instruction 28 (reset q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 15,
+      "kind": "flip",
+      "line": 34,
+      "qubits": [
+        19
+      ],
+      "steps": "2",
+      "ins": "instruction 30 (reset q[19])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 16,
+      "kind": "flip",
+      "line": 37,
+      "qubits": [
+        3
+      ],
+      "steps": "3",
+      "ins": "instruction 33 (reset q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 17,
+      "kind": "flip",
+      "line": 40,
+      "qubits": [
+        10
+      ],
+      "steps": "3",
+      "ins": "instruction 36 (measure q[10])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 17,
+      "kind": "gate1",
+      "line": 40,
+      "qubits": [
+        10
+      ],
+      "steps": "3",
+      "ins": "instruction 36 (measure q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 18,
+      "kind": "flip",
+      "line": 43,
+      "qubits": [
+        19
+      ],
+      "steps": "3",
+      "ins": "instruction 39 (measure q[19])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 18,
+      "kind": "gate1",
+      "line": 43,
+      "qubits": [
+        19
+      ],
+      "steps": "3",
+      "ins": "instruction 39 (measure q[19])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 19,
+      "kind": "gate2",
+      "line": 45,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "3",
+      "ins": "instruction 41 (cx q[1], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 20,
+      "kind": "gate2",
+      "line": 46,
+      "qubits": [
+        9,
+        8
+      ],
+      "steps": "3",
+      "ins": "instruction 42 (cx q[9], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 21,
+      "kind": "gate2",
+      "line": 47,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "3",
+      "ins": "instruction 43 (cx q[13], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 22,
+      "kind": "gate2",
+      "line": 48,
+      "qubits": [
+        15,
+        14
+      ],
+      "steps": "3",
+      "ins": "instruction 44 (cx q[15], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 22,
+      "kind": "idle",
+      "line": 48,
+      "qubits": [
+        15
+      ],
+      "steps": "4..4",
+      "ins": "instruction 44 (cx q[15], q[14])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 23,
+      "kind": "flip",
+      "line": 49,
+      "qubits": [
+        0
+      ],
+      "steps": "3",
+      "ins": "instruction 45 (reset q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 24,
+      "kind": "flip",
+      "line": 53,
+      "qubits": [
+        0
+      ],
+      "steps": "4",
+      "ins": "instruction 49 (measure q[0])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 24,
+      "kind": "gate1",
+      "line": 53,
+      "qubits": [
+        0
+      ],
+      "steps": "4",
+      "ins": "instruction 49 (measure q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 25,
+      "kind": "gate2",
+      "line": 55,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "4",
+      "ins": "instruction 51 (cx q[1], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 25,
+      "kind": "idle",
+      "line": 55,
+      "qubits": [
+        7
+      ],
+      "steps": "5..5",
+      "ins": "instruction 51 (cx q[1], q[7])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 26,
+      "kind": "gate2",
+      "line": 56,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "4",
+      "ins": "instruction 52 (cx q[3], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 26,
+      "kind": "idle",
+      "line": 56,
+      "qubits": [
+        3
+      ],
+      "steps": "5..5",
+      "ins": "instruction 52 (cx q[3], q[2])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 27,
+      "kind": "gate2",
+      "line": 57,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "4",
+      "ins": "instruction 53 (cx q[8], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 28,
+      "kind": "gate2",
+      "line": 58,
+      "qubits": [
+        10,
+        9
+      ],
+      "steps": "4",
+      "ins": "instruction 54 (cx q[10], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 29,
+      "kind": "gate2",
+      "line": 59,
+      "qubits": [
+        19,
+        13
+      ],
+      "steps": "4",
+      "ins": "instruction 55 (cx q[19], q[13])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 30,
+      "kind": "flip",
+      "line": 60,
+      "qubits": [
+        4
+      ],
+      "steps": "4",
+      "ins": "instruction 56 (reset q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 31,
+      "kind": "flip",
+      "line": 64,
+      "qubits": [
+        4
+      ],
+      "steps": "5",
+      "ins": "instruction 60 (measure q[4])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 31,
+      "kind": "gate1",
+      "line": 64,
+      "qubits": [
+        4
+      ],
+      "steps": "5",
+      "ins": "instruction 60 (measure q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 32,
+      "kind": "gate2",
+      "line": 66,
+      "qubits": [
+        0,
+        1
+      ],
+      "steps": "5",
+      "ins": "instruction 62 (cx q[0], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 33,
+      "kind": "gate2",
+      "line": 67,
+      "qubits": [
+        8,
+        2
+      ],
+      "steps": "5",
+      "ins": "instruction 63 (cx q[8], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 34,
+      "kind": "gate2",
+      "line": 68,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "5",
+      "ins": "instruction 64 (cx q[9], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 35,
+      "kind": "gate2",
+      "line": 69,
+      "qubits": [
+        13,
+        19
+      ],
+      "steps": "5",
+      "ins": "instruction 65 (cx q[13], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 35,
+      "kind": "idle",
+      "line": 69,
+      "qubits": [
+        19
+      ],
+      "steps": "6..7",
+      "ins": "instruction 65 (cx q[13], q[19])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 36,
+      "kind": "gate2",
+      "line": 70,
+      "qubits": [
+        14,
+        15
+      ],
+      "steps": "5",
+      "ins": "instruction 66 (cx q[14], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 36,
+      "kind": "idle",
+      "line": 70,
+      "qubits": [
+        15
+      ],
+      "steps": "6..8",
+      "ins": "instruction 66 (cx q[14], q[15])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 37,
+      "kind": "gate2",
+      "line": 72,
+      "qubits": [
+        1,
+        0
+      ],
+      "steps": "6",
+      "ins": "instruction 68 (cx q[1], q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 37,
+      "kind": "idle",
+      "line": 72,
+      "qubits": [
+        0
+      ],
+      "steps": "7..9",
+      "ins": "instruction 68 (cx q[1], q[0])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 38,
+      "kind": "gate2",
+      "line": 73,
+      "qubits": [
+        2,
+        3
+      ],
+      "steps": "6",
+      "ins": "instruction 69 (cx q[2], q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 38,
+      "kind": "idle",
+      "line": 73,
+      "qubits": [
+        3
+      ],
+      "steps": "7..7",
+      "ins": "instruction 69 (cx q[2], q[3])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 39,
+      "kind": "gate2",
+      "line": 74,
+      "qubits": [
+        4,
+        10
+      ],
+      "steps": "6",
+      "ins": "instruction 70 (cx q[4], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 40,
+      "kind": "gate2",
+      "line": 75,
+      "qubits": [
+        7,
+        8
+      ],
+      "steps": "6",
+      "ins": "instruction 71 (cx q[7], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 40,
+      "kind": "idle",
+      "line": 75,
+      "qubits": [
+        7
+      ],
+      "steps": "7..9",
+      "ins": "instruction 71 (cx q[7], q[8])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 41,
+      "kind": "flip",
+      "line": 76,
+      "qubits": [
+        14
+      ],
+      "steps": "6",
+      "ins": "instruction 72 (reset q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 42,
+      "kind": "flip",
+      "line": 77,
+      "qubits": [
+        9
+      ],
+      "steps": "6",
+      "ins": "instruction 73 (reset q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 43,
+      "kind": "flip",
+      "line": 79,
+      "qubits": [
+        13
+      ],
+      "steps": "6",
+      "ins": "instruction 75 (reset q[13])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 44,
+      "kind": "gate2",
+      "line": 82,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "7",
+      "ins": "instruction 78 (cx q[10], q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 44,
+      "kind": "idle",
+      "line": 82,
+      "qubits": [
+        4
+      ],
+      "steps": "8..11",
+      "ins": "instruction 78 (cx q[10], q[4])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 45,
+      "kind": "flip",
+      "line": 83,
+      "qubits": [
+        2
+      ],
+      "steps": "7",
+      "ins": "instruction 79 (reset q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 46,
+      "kind": "flip",
+      "line": 84,
+      "qubits": [
+        20
+      ],
+      "steps": "7",
+      "ins": "instruction 80 (measure q[20])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 46,
+      "kind": "flip",
+      "line": 84,
+      "qubits": [
+        20
+      ],
+      "steps": "7",
+      "ins": "instruction 80 (measure q[20])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 46,
+      "kind": "gate1",
+      "line": 84,
+      "qubits": [
+        20
+      ],
+      "steps": "7",
+      "ins": "instruction 80 (measure q[20])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 47,
+      "kind": "flip",
+      "line": 85,
+      "qubits": [
+        1
+      ],
+      "steps": "7",
+      "ins": "instruction 81 (reset q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 48,
+      "kind": "gate2",
+      "line": 87,
+      "qubits": [
+        13,
+        14
+      ],
+      "steps": "7",
+      "ins": "instruction 83 (cx q[13], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 48,
+      "kind": "idle",
+      "line": 87,
+      "qubits": [
+        13
+      ],
+      "steps": "8..9",
+      "ins": "instruction 83 (cx q[13], q[14])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 49,
+      "kind": "gate2",
+      "line": 88,
+      "qubits": [
+        9,
+        8
+      ],
+      "steps": "7",
+      "ins": "instruction 84 (cx q[9], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 50,
+      "kind": "flip",
+      "line": 90,
+      "qubits": [
+        10
+      ],
+      "steps": "8",
+      "ins": "instruction 86 (reset q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 51,
+      "kind": "gate2",
+      "line": 91,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "8",
+      "ins": "instruction 87 (cx q[1], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 51,
+      "kind": "idle",
+      "line": 91,
+      "qubits": [
+        1
+      ],
+      "steps": "9..9",
+      "ins": "instruction 87 (cx q[1], q[2])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 52,
+      "kind": "gate2",
+      "line": 92,
+      "qubits": [
+        19,
+        20
+      ],
+      "steps": "8",
+      "ins": "instruction 88 (cx q[19], q[20])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 53,
+      "kind": "gate2",
+      "line": 93,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "8",
+      "ins": "instruction 89 (cx q[9], q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 53,
+      "kind": "idle",
+      "line": 93,
+      "qubits": [
+        3
+      ],
+      "steps": "9..9",
+      "ins": "instruction 89 (cx q[9], q[3])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 54,
+      "kind": "gate2",
+      "line": 94,
+      "qubits": [
+        14,
+        8
+      ],
+      "steps": "8",
+      "ins": "instruction 90 (cx q[14], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 55,
+      "kind": "gate2",
+      "line": 96,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "9",
+      "ins": "instruction 92 (cx q[9], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 55,
+      "kind": "idle",
+      "line": 96,
+      "qubits": [
+        10
+      ],
+      "steps": "10..11",
+      "ins": "instruction 92 (cx q[9], q[10])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 56,
+      "kind": "gate2",
+      "line": 97,
+      "qubits": [
+        14,
+        15
+      ],
+      "steps": "9",
+      "ins": "instruction 93 (cx q[14], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 57,
+      "kind": "gate2",
+      "line": 98,
+      "qubits": [
+        20,
+        19
+      ],
+      "steps": "9",
+      "ins": "instruction 94 (cx q[20], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 58,
+      "kind": "gate2",
+      "line": 99,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "9",
+      "ins": "instruction 95 (cx q[2], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 58,
+      "kind": "idle",
+      "line": 99,
+      "qubits": [
+        8
+      ],
+      "steps": "10..10",
+      "ins": "instruction 95 (cx q[2], q[8])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 59,
+      "kind": "gate2",
+      "line": 101,
+      "qubits": [
+        1,
+        0
+      ],
+      "steps": "10",
+      "ins": "instruction 97 (cx q[1], q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 59,
+      "kind": "idle",
+      "line": 101,
+      "qubits": [
+        0
+      ],
+      "steps": "11..11",
+      "ins": "instruction 97 (cx q[1], q[0])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 60,
+      "kind": "gate2",
+      "line": 102,
+      "qubits": [
+        2,
+        3
+      ],
+      "steps": "10",
+      "ins": "instruction 98 (cx q[2], q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 60,
+      "kind": "idle",
+      "line": 102,
+      "qubits": [
+        2
+      ],
+      "steps": "11..11",
+      "ins": "instruction 98 (cx q[2], q[3])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 61,
+      "kind": "gate2",
+      "line": 103,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "10",
+      "ins": "instruction 99 (cx q[9], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 61,
+      "kind": "idle",
+      "line": 103,
+      "qubits": [
+        15
+      ],
+      "steps": "11..11",
+      "ins": "instruction 99 (cx q[9], q[15])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 62,
+      "kind": "gate2",
+      "line": 104,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "10",
+      "ins": "instruction 100 (cx q[14], q[20])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 62,
+      "kind": "idle",
+      "line": 104,
+      "qubits": [
+        20
+      ],
+      "steps": "11..13",
+      "ins": "instruction 100 (cx q[14], q[20])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 63,
+      "kind": "gate2",
+      "line": 105,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "10",
+      "ins": "instruction 101 (cx q[13], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 63,
+      "kind": "idle",
+      "line": 105,
+      "qubits": [
+        13
+      ],
+      "steps": "11..11",
+      "ins": "instruction 101 (cx q[13], q[7])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 64,
+      "kind": "flip",
+      "line": 106,
+      "qubits": [
+        19
+      ],
+      "steps": "10",
+      "ins": "instruction 102 (measure q[19])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 64,
+      "kind": "gate1",
+      "line": 106,
+      "qubits": [
+        19
+      ],
+      "steps": "10",
+      "ins": "instruction 102 (measure q[19])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 65,
+      "kind": "gate2",
+      "line": 108,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "11",
+      "ins": "instruction 104 (cx q[1], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 66,
+      "kind": "gate2",
+      "line": 109,
+      "qubits": [
+        3,
+        9
+      ],
+      "steps": "11",
+      "ins": "instruction 105 (cx q[3], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 67,
+      "kind": "gate2",
+      "line": 110,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "11",
+      "ins": "instruction 106 (cx q[8], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 68,
+      "kind": "gate2",
+      "line": 112,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "12",
+      "ins": "instruction 108 (cx q[10], q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 69,
+      "kind": "gate2",
+      "line": 113,
+      "qubits": [
+        7,
+        13
+      ],
+      "steps": "12",
+      "ins": "instruction 109 (cx q[7], q[13])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 70,
+      "kind": "gate2",
+      "line": 114,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "12",
+      "ins": "instruction 110 (cx q[8], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 71,
+      "kind": "gate2",
+      "line": 115,
+      "qubits": [
+        15,
+        14
+      ],
+      "steps": "12",
+      "ins": "instruction 111 (cx q[15], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 72,
+      "kind": "gate2",
+      "line": 116,
+      "qubits": [
+        0,
+        1
+      ],
+      "steps": "12",
+      "ins": "instruction 112 (cx q[0], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 72,
+      "kind": "idle",
+      "line": 116,
+      "qubits": [
+        0
+      ],
+      "steps": "13..15",
+      "ins": "instruction 112 (cx q[0], q[1])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 73,
+      "kind": "gate2",
+      "line": 117,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "12",
+      "ins": "instruction 113 (cx q[3], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 73,
+      "kind": "idle",
+      "line": 117,
+      "qubits": [
+        3
+      ],
+      "steps": "13..15",
+      "ins": "instruction 113 (cx q[3], q[2])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 74,
+      "kind": "gate2",
+      "line": 119,
+      "qubits": [
+        4,
+        10
+      ],
+      "steps": "13",
+      "ins": "instruction 115 (cx q[4], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 74,
+      "kind": "idle",
+      "line": 119,
+      "qubits": [
+        4
+      ],
+      "steps": "14..15",
+      "ins": "instruction 115 (cx q[4], q[10])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 75,
+      "kind": "gate2",
+      "line": 120,
+      "qubits": [
+        7,
+        1
+      ],
+      "steps": "13",
+      "ins": "instruction 116 (cx q[7], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 75,
+      "kind": "idle",
+      "line": 120,
+      "qubits": [
+        7
+      ],
+      "steps": "14..15",
+      "ins": "instruction 116 (cx q[7], q[1])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 76,
+      "kind": "gate2",
+      "line": 121,
+      "qubits": [
+        8,
+        2
+      ],
+      "steps": "13",
+      "ins": "instruction 117 (cx q[8], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 76,
+      "kind": "idle",
+      "line": 121,
+      "qubits": [
+        8
+      ],
+      "steps": "14..15",
+      "ins": "instruction 117 (cx q[8], q[2])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 77,
+      "kind": "gate2",
+      "line": 122,
+      "qubits": [
+        15,
+        9
+      ],
+      "steps": "13",
+      "ins": "instruction 118 (cx q[15], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 77,
+      "kind": "idle",
+      "line": 122,
+      "qubits": [
+        15
+      ],
+      "steps": "14..17",
+      "ins": "instruction 118 (cx q[15], q[9])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 78,
+      "kind": "gate2",
+      "line": 123,
+      "qubits": [
+        13,
+        14
+      ],
+      "steps": "13",
+      "ins": "instruction 119 (cx q[13], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 79,
+      "kind": "gate2",
+      "line": 125,
+      "qubits": [
+        20,
+        14
+      ],
+      "steps": "14",
+      "ins": "instruction 121 (cx q[20], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 79,
+      "kind": "idle",
+      "line": 125,
+      "qubits": [
+        20
+      ],
+      "steps": "15..15",
+      "ins": "instruction 121 (cx q[20], q[14])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 80,
+      "kind": "gate2",
+      "line": 126,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "14",
+      "ins": "instruction 122 (cx q[1], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 81,
+      "kind": "gate2",
+      "line": 127,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "14",
+      "ins": "instruction 123 (cx q[9], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 82,
+      "kind": "flip",
+      "line": 129,
+      "qubits": [
+        13
+      ],
+      "steps": "14",
+      "ins": "instruction 125 (measure q[13])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 82,
+      "kind": "gate1",
+      "line": 129,
+      "qubits": [
+        13
+      ],
+      "steps": "14",
+      "ins": "instruction 125 (measure q[13])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 83,
+      "kind": "flip",
+      "line": 131,
+      "qubits": [
+        2
+      ],
+      "steps": "15",
+      "ins": "instruction 127 (measure q[2])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 83,
+      "kind": "gate1",
+      "line": 131,
+      "qubits": [
+        2
+      ],
+      "steps": "15",
+      "ins": "instruction 127 (measure q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 84,
+      "kind": "flip",
+      "line": 132,
+      "qubits": [
+        10
+      ],
+      "steps": "15",
+      "ins": "instruction 128 (measure q[10])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 84,
+      "kind": "gate1",
+      "line": 132,
+      "qubits": [
+        10
+      ],
+      "steps": "15",
+      "ins": "instruction 128 (measure q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 85,
+      "kind": "flip",
+      "line": 133,
+      "qubits": [
+        14
+      ],
+      "steps": "15",
+      "ins": "instruction 129 (measure q[14])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 85,
+      "kind": "gate1",
+      "line": 133,
+      "qubits": [
+        14
+      ],
+      "steps": "15",
+      "ins": "instruction 129 (measure q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 86,
+      "kind": "flip",
+      "line": 135,
+      "qubits": [
+        1
+      ],
+      "steps": "15",
+      "ins": "instruction 131 (measure q[1])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 86,
+      "kind": "gate1",
+      "line": 135,
+      "qubits": [
+        1
+      ],
+      "steps": "15",
+      "ins": "instruction 131 (measure q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 87,
+      "kind": "flip",
+      "line": 137,
+      "qubits": [
+        9
+      ],
+      "steps": "15",
+      "ins": "instruction 133 (measure q[9])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 87,
+      "kind": "gate1",
+      "line": 137,
+      "qubits": [
+        9
+      ],
+      "steps": "15",
+      "ins": "instruction 133 (measure q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 88,
+      "kind": "flip",
+      "line": 138,
+      "qubits": [
+        6
+      ],
+      "steps": "15",
+      "ins": "instruction 134 (reset q[6])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 89,
+      "kind": "flip",
+      "line": 141,
+      "qubits": [
+        10
+      ],
+      "steps": "16",
+      "ins": "instruction 137 (reset q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 90,
+      "kind": "flip",
+      "line": 143,
+      "qubits": [
+        9
+      ],
+      "steps": "16",
+      "ins": "instruction 139 (reset q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 91,
+      "kind": "flip",
+      "line": 145,
+      "qubits": [
+        2
+      ],
+      "steps": "16",
+      "ins": "instruction 141 (reset q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 92,
+      "kind": "flip",
+      "line": 147,
+      "qubits": [
+        1
+      ],
+      "steps": "16",
+      "ins": "instruction 143 (reset q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 93,
+      "kind": "flip",
+      "line": 149,
+      "qubits": [
+        14
+      ],
+      "steps": "16",
+      "ins": "instruction 145 (reset q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 94,
+      "kind": "flip",
+      "line": 152,
+      "qubits": [
+        6
+      ],
+      "steps": "16",
+      "ins": "instruction 148 (measure q[6])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 94,
+      "kind": "gate1",
+      "line": 152,
+      "qubits": [
+        6
+      ],
+      "steps": "16",
+      "ins": "instruction 148 (measure q[6])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 95,
+      "kind": "gate1",
+      "line": 154,
+      "qubits": [
+        0
+      ],
+      "steps": "16",
+      "ins": "instruction 150 (t q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 96,
+      "kind": "gate1",
+      "line": 155,
+      "qubits": [
+        7
+      ],
+      "steps": "16",
+      "ins": "instruction 151 (t q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 97,
+      "kind": "gate1",
+      "line": 156,
+      "qubits": [
+        8
+      ],
+      "steps": "16",
+      "ins": "instruction 152 (t q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 98,
+      "kind": "gate1",
+      "line": 157,
+      "qubits": [
+        20
+      ],
+      "steps": "16",
+      "ins": "instruction 153 (t q[20])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 99,
+      "kind": "gate1",
+      "line": 158,
+      "qubits": [
+        3
+      ],
+      "steps": "16",
+      "ins": "instruction 154 (t q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 100,
+      "kind": "gate1",
+      "line": 159,
+      "qubits": [
+        4
+      ],
+      "steps": "16",
+      "ins": "instruction 155 (t q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 101,
+      "kind": "gate2",
+      "line": 161,
+      "qubits": [
+        6,
+        0
+      ],
+      "steps": "17",
+      "ins": "instruction 157 (cx q[6], q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 101,
+      "kind": "idle",
+      "line": 161,
+      "qubits": [
+        0
+      ],
+      "steps": "18..31",
+      "ins": "instruction 157 (cx q[6], q[0])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 102,
+      "kind": "gate2",
+      "line": 162,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "17",
+      "ins": "instruction 158 (cx q[9], q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 102,
+      "kind": "idle",
+      "line": 162,
+      "qubits": [
+        3
+      ],
+      "steps": "18..27",
+      "ins": "instruction 158 (cx q[9], q[3])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 103,
+      "kind": "gate2",
+      "line": 163,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "17",
+      "ins": "instruction 159 (cx q[14], q[20])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 103,
+      "kind": "idle",
+      "line": 163,
+      "qubits": [
+        20
+      ],
+      "steps": "18..38",
+      "ins": "instruction 159 (cx q[14], q[20])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 104,
+      "kind": "gate2",
+      "line": 164,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "17",
+      "ins": "instruction 160 (cx q[2], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 104,
+      "kind": "idle",
+      "line": 164,
+      "qubits": [
+        2
+      ],
+      "steps": "18..25",
+      "ins": "instruction 160 (cx q[2], q[8])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 105,
+      "kind": "gate2",
+      "line": 165,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "17",
+      "ins": "instruction 161 (cx q[1], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 105,
+      "kind": "idle",
+      "line": 165,
+      "qubits": [
+        1
+      ],
+      "steps": "18..25",
+      "ins": "instruction 161 (cx q[1], q[7])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 106,
+      "kind": "gate2",
+      "line": 166,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "17",
+      "ins": "instruction 162 (cx q[10], q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 106,
+      "kind": "idle",
+      "line": 166,
+      "qubits": [
+        4
+      ],
+      "steps": "18..30",
+      "ins": "instruction 162 (cx q[10], q[4])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 107,
+      "kind": "gate1",
+      "line": 168,
+      "qubits": [
+        15
+      ],
+      "steps": "18",
+      "ins": "instruction 164 (t q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 108,
+      "kind": "gate2",
+      "line": 169,
+      "qubits": [
+        7,
+        6
+      ],
+      "steps": "18",
+      "ins": "instruction 165 (cx q[7], q[6])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 108,
+      "kind": "idle",
+      "line": 169,
+      "qubits": [
+        6
+      ],
+      "steps": "19..24",
+      "ins": "instruction 165 (cx q[7], q[6])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 109,
+      "kind": "gate2",
+      "line": 170,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "18",
+      "ins": "instruction 166 (cx q[8], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 109,
+      "kind": "idle",
+      "line": 170,
+      "qubits": [
+        14
+      ],
+      "steps": "19..24",
+      "ins": "instruction 166 (cx q[8], q[14])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 110,
+      "kind": "gate2",
+      "line": 171,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "18",
+      "ins": "instruction 167 (cx q[9], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 110,
+      "kind": "idle",
+      "line": 171,
+      "qubits": [
+        10
+      ],
+      "steps": "19..26",
+      "ins": "instruction 167 (cx q[9], q[10])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 111,
+      "kind": "gate2",
+      "line": 173,
+      "qubits": [
+        8,
+        7
+      ],
+      "steps": "19",
+      "ins": "instruction 169 (cx q[8], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 111,
+      "kind": "idle",
+      "line": 173,
+      "qubits": [
+        7
+      ],
+      "steps": "20..23",
+      "ins": "instruction 169 (cx q[8], q[7])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 112,
+      "kind": "gate2",
+      "line": 174,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "19",
+      "ins": "instruction 170 (cx q[9], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 112,
+      "kind": "idle",
+      "line": 174,
+      "qubits": [
+        15
+      ],
+      "steps": "20..30",
+      "ins": "instruction 170 (cx q[9], q[15])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 113,
+      "kind": "gate2",
+      "line": 176,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "20",
+      "ins": "instruction 172 (cx q[8], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 113,
+      "kind": "idle",
+      "line": 176,
+      "qubits": [
+        9
+      ],
+      "steps": "21..22",
+      "ins": "instruction 172 (cx q[8], q[9])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 114,
+      "kind": "flip",
+      "line": 179,
+      "qubits": [
+        8
+      ],
+      "steps": "21",
+      "ins": "instruction 175 (measure q[8])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 114,
+      "kind": "gate1",
+      "line": 179,
+      "qubits": [
+        8
+      ],
+      "steps": "21",
+      "ins": "instruction 175 (measure q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 115,
+      "kind": "flip",
+      "line": 181,
+      "qubits": [
+        8
+      ],
+      "steps": "22",
+      "ins": "instruction 177 (reset q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 116,
+      "kind": "gate2",
+      "line": 184,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "23",
+      "ins": "instruction 180 (cx q[8], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 116,
+      "kind": "idle",
+      "line": 184,
+      "qubits": [
+        9
+      ],
+      "steps": "24..26",
+      "ins": "instruction 180 (cx q[8], q[9])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 117,
+      "kind": "gate2",
+      "line": 186,
+      "qubits": [
+        8,
+        7
+      ],
+      "steps": "24",
+      "ins": "instruction 182 (cx q[8], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 118,
+      "kind": "gate2",
+      "line": 188,
+      "qubits": [
+        7,
+        6
+      ],
+      "steps": "25",
+      "ins": "instruction 184 (cx q[7], q[6])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 118,
+      "kind": "idle",
+      "line": 188,
+      "qubits": [
+        6
+      ],
+      "steps": "26..31",
+      "ins": "instruction 184 (cx q[7], q[6])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 119,
+      "kind": "gate2",
+      "line": 189,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "25",
+      "ins": "instruction 185 (cx q[8], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 119,
+      "kind": "idle",
+      "line": 189,
+      "qubits": [
+        14
+      ],
+      "steps": "26..38",
+      "ins": "instruction 185 (cx q[8], q[14])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 120,
+      "kind": "gate2",
+      "line": 191,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "26",
+      "ins": "instruction 187 (cx q[2], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 120,
+      "kind": "idle",
+      "line": 191,
+      "qubits": [
+        8
+      ],
+      "steps": "27..29",
+      "ins": "instruction 187 (cx q[2], q[8])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 121,
+      "kind": "gate2",
+      "line": 192,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "26",
+      "ins": "instruction 188 (cx q[1], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 121,
+      "kind": "idle",
+      "line": 192,
+      "qubits": [
+        7
+      ],
+      "steps": "27..35",
+      "ins": "instruction 188 (cx q[1], q[7])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 122,
+      "kind": "gate2",
+      "line": 194,
+      "qubits": [
+        9,
+        10
+      ],
+      "steps": "27",
+      "ins": "instruction 190 (cx q[9], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 122,
+      "kind": "idle",
+      "line": 194,
+      "qubits": [
+        10
+      ],
+      "steps": "28..30",
+      "ins": "instruction 190 (cx q[9], q[10])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 123,
+      "kind": "flip",
+      "line": 196,
+      "qubits": [
+        2
+      ],
+      "steps": "27",
+      "ins": "instruction 192 (measure q[2])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 123,
+      "kind": "gate1",
+      "line": 196,
+      "qubits": [
+        2
+      ],
+      "steps": "27",
+      "ins": "instruction 192 (measure q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 124,
+      "kind": "flip",
+      "line": 198,
+      "qubits": [
+        1
+      ],
+      "steps": "27",
+      "ins": "instruction 194 (measure q[1])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 124,
+      "kind": "gate1",
+      "line": 198,
+      "qubits": [
+        1
+      ],
+      "steps": "27",
+      "ins": "instruction 194 (measure q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 125,
+      "kind": "gate2",
+      "line": 200,
+      "qubits": [
+        9,
+        3
+      ],
+      "steps": "28",
+      "ins": "instruction 196 (cx q[9], q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 125,
+      "kind": "idle",
+      "line": 200,
+      "qubits": [
+        9
+      ],
+      "steps": "29..30",
+      "ins": "instruction 196 (cx q[9], q[3])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 126,
+      "kind": "flip",
+      "line": 201,
+      "qubits": [
+        1
+      ],
+      "steps": "28",
+      "ins": "instruction 197 (reset q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 127,
+      "kind": "flip",
+      "line": 202,
+      "qubits": [
+        2
+      ],
+      "steps": "28",
+      "ins": "instruction 198 (reset q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 128,
+      "kind": "gate1",
+      "line": 205,
+      "qubits": [
+        3
+      ],
+      "steps": "29",
+      "ins": "instruction 201 (tdg q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 129,
+      "kind": "gate2",
+      "line": 206,
+      "qubits": [
+        2,
+        1
+      ],
+      "steps": "29",
+      "ins": "instruction 202 (cx q[2], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 129,
+      "kind": "idle",
+      "line": 206,
+      "qubits": [
+        1
+      ],
+      "steps": "30..35",
+      "ins": "instruction 202 (cx q[2], q[1])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 130,
+      "kind": "gate1",
+      "line": 208,
+      "qubits": [
+        8
+      ],
+      "steps": "30",
+      "ins": "instruction 204 (tdg q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 131,
+      "kind": "gate2",
+      "line": 209,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "30",
+      "ins": "instruction 205 (cx q[3], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 131,
+      "kind": "idle",
+      "line": 209,
+      "qubits": [
+        3
+      ],
+      "steps": "31..31",
+      "ins": "instruction 205 (cx q[3], q[2])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 132,
+      "kind": "gate2",
+      "line": 211,
+      "qubits": [
+        4,
+        10
+      ],
+      "steps": "31",
+      "ins": "instruction 207 (cx q[4], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 133,
+      "kind": "gate2",
+      "line": 212,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "31",
+      "ins": "instruction 208 (cx q[9], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 134,
+      "kind": "gate2",
+      "line": 213,
+      "qubits": [
+        8,
+        2
+      ],
+      "steps": "31",
+      "ins": "instruction 209 (cx q[8], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 134,
+      "kind": "idle",
+      "line": 213,
+      "qubits": [
+        8
+      ],
+      "steps": "32..32",
+      "ins": "instruction 209 (cx q[8], q[2])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 135,
+      "kind": "gate2",
+      "line": 215,
+      "qubits": [
+        6,
+        0
+      ],
+      "steps": "32",
+      "ins": "instruction 211 (cx q[6], q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 135,
+      "kind": "idle",
+      "line": 215,
+      "qubits": [
+        0
+      ],
+      "steps": "33..34",
+      "ins": "instruction 211 (cx q[6], q[0])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 136,
+      "kind": "gate1",
+      "line": 216,
+      "qubits": [
+        15
+      ],
+      "steps": "32",
+      "ins": "instruction 212 (tdg q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 137,
+      "kind": "flip",
+      "line": 218,
+      "qubits": [
+        9
+      ],
+      "steps": "32",
+      "ins": "instruction 214 (measure q[9])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 137,
+      "kind": "gate1",
+      "line": 218,
+      "qubits": [
+        9
+      ],
+      "steps": "32",
+      "ins": "instruction 214 (measure q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 138,
+      "kind": "gate2",
+      "line": 219,
+      "qubits": [
+        2,
+        3
+      ],
+      "steps": "32",
+      "ins": "instruction 215 (cx q[2], q[3])",
+      "when": "after"
+    },
+    {
+      "family": "data_wait",
+      "unit": 138,
+      "kind": "idle",
+      "line": 219,
+      "qubits": [
+        3
+      ],
+      "steps": "33..47",
+      "ins": "instruction 215 (cx q[2], q[3])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 139,
+      "kind": "flip",
+      "line": 220,
+      "qubits": [
+        16
+      ],
+      "steps": "32",
+      "ins": "instruction 216 (measure q[16])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 139,
+      "kind": "flip",
+      "line": 220,
+      "qubits": [
+        16
+      ],
+      "steps": "32",
+      "ins": "instruction 216 (measure q[16])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 139,
+      "kind": "gate1",
+      "line": 220,
+      "qubits": [
+        16
+      ],
+      "steps": "32",
+      "ins": "instruction 216 (measure q[16])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 140,
+      "kind": "gate2",
+      "line": 221,
+      "qubits": [
+        10,
+        4
+      ],
+      "steps": "32",
+      "ins": "instruction 217 (cx q[10], q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 141,
+      "kind": "gate1",
+      "line": 223,
+      "qubits": [
+        10
+      ],
+      "steps": "33",
+      "ins": "instruction 219 (tdg q[10])",
+      "when": "after"
+    },
+    {
+      "family": "data_wait",
+      "unit": 141,
+      "kind": "idle",
+      "line": 223,
+      "qubits": [
+        10
+      ],
+      "steps": "34..47",
+      "ins": "instruction 219 (tdg q[10])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 142,
+      "kind": "flip",
+      "line": 225,
+      "qubits": [
+        4
+      ],
+      "steps": "33",
+      "ins": "instruction 221 (measure q[4])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 142,
+      "kind": "gate1",
+      "line": 225,
+      "qubits": [
+        4
+      ],
+      "steps": "33",
+      "ins": "instruction 221 (measure q[4])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 143,
+      "kind": "flip",
+      "line": 228,
+      "qubits": [
+        6
+      ],
+      "steps": "33",
+      "ins": "instruction 224 (measure q[6])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 143,
+      "kind": "gate1",
+      "line": 228,
+      "qubits": [
+        6
+      ],
+      "steps": "33",
+      "ins": "instruction 224 (measure q[6])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 144,
+      "kind": "gate2",
+      "line": 229,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "33",
+      "ins": "instruction 225 (cx q[2], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 144,
+      "kind": "idle",
+      "line": 229,
+      "qubits": [
+        2
+      ],
+      "steps": "34..39",
+      "ins": "instruction 225 (cx q[2], q[8])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 145,
+      "kind": "gate2",
+      "line": 230,
+      "qubits": [
+        15,
+        16
+      ],
+      "steps": "33",
+      "ins": "instruction 226 (cx q[15], q[16])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 146,
+      "kind": "flip",
+      "line": 231,
+      "qubits": [
+        9
+      ],
+      "steps": "33",
+      "ins": "instruction 227 (reset q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 147,
+      "kind": "gate2",
+      "line": 233,
+      "qubits": [
+        16,
+        15
+      ],
+      "steps": "34",
+      "ins": "instruction 229 (cx q[16], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 147,
+      "kind": "idle",
+      "line": 233,
+      "qubits": [
+        16
+      ],
+      "steps": "35..41",
+      "ins": "instruction 229 (cx q[16], q[15])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 148,
+      "kind": "gate2",
+      "line": 234,
+      "qubits": [
+        8,
+        9
+      ],
+      "steps": "34",
+      "ins": "instruction 230 (cx q[8], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 149,
+      "kind": "gate1",
+      "line": 236,
+      "qubits": [
+        0
+      ],
+      "steps": "35",
+      "ins": "instruction 232 (tdg q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 150,
+      "kind": "gate2",
+      "line": 237,
+      "qubits": [
+        9,
+        8
+      ],
+      "steps": "35",
+      "ins": "instruction 233 (cx q[9], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 150,
+      "kind": "idle",
+      "line": 237,
+      "qubits": [
+        8
+      ],
+      "steps": "36..40",
+      "ins": "instruction 233 (cx q[9], q[8])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 151,
+      "kind": "flip",
+      "line": 238,
+      "qubits": [
+        15
+      ],
+      "steps": "35",
+      "ins": "instruction 234 (measure q[15])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 151,
+      "kind": "gate1",
+      "line": 238,
+      "qubits": [
+        15
+      ],
+      "steps": "35",
+      "ins": "instruction 234 (measure q[15])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 152,
+      "kind": "gate1",
+      "line": 240,
+      "qubits": [
+        7
+      ],
+      "steps": "36",
+      "ins": "instruction 236 (tdg q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 153,
+      "kind": "gate2",
+      "line": 241,
+      "qubits": [
+        0,
+        1
+      ],
+      "steps": "36",
+      "ins": "instruction 237 (cx q[0], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 153,
+      "kind": "idle",
+      "line": 241,
+      "qubits": [
+        0
+      ],
+      "steps": "37..37",
+      "ins": "instruction 237 (cx q[0], q[1])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 154,
+      "kind": "gate2",
+      "line": 242,
+      "qubits": [
+        9,
+        15
+      ],
+      "steps": "36",
+      "ins": "instruction 238 (cx q[9], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 155,
+      "kind": "flip",
+      "line": 244,
+      "qubits": [
+        26
+      ],
+      "steps": "36",
+      "ins": "instruction 240 (measure q[26])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 155,
+      "kind": "flip",
+      "line": 244,
+      "qubits": [
+        26
+      ],
+      "steps": "36",
+      "ins": "instruction 240 (measure q[26])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 155,
+      "kind": "gate1",
+      "line": 244,
+      "qubits": [
+        26
+      ],
+      "steps": "36",
+      "ins": "instruction 240 (measure q[26])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 156,
+      "kind": "flip",
+      "line": 246,
+      "qubits": [
+        23
+      ],
+      "steps": "36",
+      "ins": "instruction 242 (measure q[23])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 156,
+      "kind": "flip",
+      "line": 246,
+      "qubits": [
+        23
+      ],
+      "steps": "36",
+      "ins": "instruction 242 (measure q[23])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 156,
+      "kind": "gate1",
+      "line": 246,
+      "qubits": [
+        23
+      ],
+      "steps": "36",
+      "ins": "instruction 242 (measure q[23])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 157,
+      "kind": "flip",
+      "line": 247,
+      "qubits": [
+        27
+      ],
+      "steps": "36",
+      "ins": "instruction 243 (measure q[27])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 157,
+      "kind": "flip",
+      "line": 247,
+      "qubits": [
+        27
+      ],
+      "steps": "36",
+      "ins": "instruction 243 (measure q[27])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 157,
+      "kind": "gate1",
+      "line": 247,
+      "qubits": [
+        27
+      ],
+      "steps": "36",
+      "ins": "instruction 243 (measure q[27])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 158,
+      "kind": "flip",
+      "line": 249,
+      "qubits": [
+        17
+      ],
+      "steps": "36",
+      "ins": "instruction 245 (measure q[17])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 158,
+      "kind": "flip",
+      "line": 249,
+      "qubits": [
+        17
+      ],
+      "steps": "36",
+      "ins": "instruction 245 (measure q[17])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 158,
+      "kind": "gate1",
+      "line": 249,
+      "qubits": [
+        17
+      ],
+      "steps": "36",
+      "ins": "instruction 245 (measure q[17])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 159,
+      "kind": "flip",
+      "line": 251,
+      "qubits": [
+        29
+      ],
+      "steps": "36",
+      "ins": "instruction 247 (measure q[29])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 159,
+      "kind": "flip",
+      "line": 251,
+      "qubits": [
+        29
+      ],
+      "steps": "36",
+      "ins": "instruction 247 (measure q[29])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 159,
+      "kind": "gate1",
+      "line": 251,
+      "qubits": [
+        29
+      ],
+      "steps": "36",
+      "ins": "instruction 247 (measure q[29])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 160,
+      "kind": "flip",
+      "line": 253,
+      "qubits": [
+        28
+      ],
+      "steps": "36",
+      "ins": "instruction 249 (measure q[28])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 160,
+      "kind": "flip",
+      "line": 253,
+      "qubits": [
+        28
+      ],
+      "steps": "36",
+      "ins": "instruction 249 (measure q[28])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 160,
+      "kind": "gate1",
+      "line": 253,
+      "qubits": [
+        28
+      ],
+      "steps": "36",
+      "ins": "instruction 249 (measure q[28])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 161,
+      "kind": "gate2",
+      "line": 256,
+      "qubits": [
+        7,
+        1
+      ],
+      "steps": "37",
+      "ins": "instruction 252 (cx q[7], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 161,
+      "kind": "idle",
+      "line": 256,
+      "qubits": [
+        7
+      ],
+      "steps": "38..38",
+      "ins": "instruction 252 (cx q[7], q[1])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 162,
+      "kind": "gate2",
+      "line": 257,
+      "qubits": [
+        15,
+        9
+      ],
+      "steps": "37",
+      "ins": "instruction 253 (cx q[15], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 163,
+      "kind": "flip",
+      "line": 258,
+      "qubits": [
+        21
+      ],
+      "steps": "37",
+      "ins": "instruction 254 (measure q[21])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 163,
+      "kind": "flip",
+      "line": 258,
+      "qubits": [
+        21
+      ],
+      "steps": "37",
+      "ins": "instruction 254 (measure q[21])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 163,
+      "kind": "gate1",
+      "line": 258,
+      "qubits": [
+        21
+      ],
+      "steps": "37",
+      "ins": "instruction 254 (measure q[21])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 164,
+      "kind": "flip",
+      "line": 259,
+      "qubits": [
+        13
+      ],
+      "steps": "37",
+      "ins": "instruction 255 (reset q[13])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 165,
+      "kind": "flip",
+      "line": 260,
+      "qubits": [
+        11
+      ],
+      "steps": "37",
+      "ins": "instruction 256 (reset q[11])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 166,
+      "kind": "flip",
+      "line": 261,
+      "qubits": [
+        25
+      ],
+      "steps": "37",
+      "ins": "instruction 257 (measure q[25])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 166,
+      "kind": "flip",
+      "line": 261,
+      "qubits": [
+        25
+      ],
+      "steps": "37",
+      "ins": "instruction 257 (measure q[25])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 166,
+      "kind": "gate1",
+      "line": 261,
+      "qubits": [
+        25
+      ],
+      "steps": "37",
+      "ins": "instruction 257 (measure q[25])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 167,
+      "kind": "flip",
+      "line": 262,
+      "qubits": [
+        19
+      ],
+      "steps": "37",
+      "ins": "instruction 258 (reset q[19])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 168,
+      "kind": "gate2",
+      "line": 263,
+      "qubits": [
+        26,
+        27
+      ],
+      "steps": "37",
+      "ins": "instruction 259 (cx q[26], q[27])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 169,
+      "kind": "gate2",
+      "line": 264,
+      "qubits": [
+        17,
+        23
+      ],
+      "steps": "37",
+      "ins": "instruction 260 (cx q[17], q[23])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 170,
+      "kind": "gate2",
+      "line": 265,
+      "qubits": [
+        28,
+        29
+      ],
+      "steps": "37",
+      "ins": "instruction 261 (cx q[28], q[29])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 171,
+      "kind": "gate2",
+      "line": 267,
+      "qubits": [
+        1,
+        0
+      ],
+      "steps": "38",
+      "ins": "instruction 263 (cx q[1], q[0])",
+      "when": "after"
+    },
+    {
+      "family": "data_wait",
+      "unit": 171,
+      "kind": "idle",
+      "line": 267,
+      "qubits": [
+        0
+      ],
+      "steps": "39..47",
+      "ins": "instruction 263 (cx q[1], q[0])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 172,
+      "kind": "gate2",
+      "line": 268,
+      "qubits": [
+        15,
+        21
+      ],
+      "steps": "38",
+      "ins": "instruction 264 (cx q[15], q[21])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 173,
+      "kind": "flip",
+      "line": 269,
+      "qubits": [
+        9
+      ],
+      "steps": "38",
+      "ins": "instruction 265 (measure q[9])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 173,
+      "kind": "gate1",
+      "line": 269,
+      "qubits": [
+        9
+      ],
+      "steps": "38",
+      "ins": "instruction 265 (measure q[9])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 174,
+      "kind": "gate2",
+      "line": 270,
+      "qubits": [
+        13,
+        19
+      ],
+      "steps": "38",
+      "ins": "instruction 266 (cx q[13], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 174,
+      "kind": "idle",
+      "line": 270,
+      "qubits": [
+        13
+      ],
+      "steps": "39..39",
+      "ins": "instruction 266 (cx q[13], q[19])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 175,
+      "kind": "gate2",
+      "line": 271,
+      "qubits": [
+        27,
+        28
+      ],
+      "steps": "38",
+      "ins": "instruction 267 (cx q[27], q[28])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 176,
+      "kind": "gate2",
+      "line": 272,
+      "qubits": [
+        29,
+        23
+      ],
+      "steps": "38",
+      "ins": "instruction 268 (cx q[29], q[23])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 177,
+      "kind": "gate2",
+      "line": 273,
+      "qubits": [
+        17,
+        11
+      ],
+      "steps": "38",
+      "ins": "instruction 269 (cx q[17], q[11])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 178,
+      "kind": "gate2",
+      "line": 274,
+      "qubits": [
+        26,
+        25
+      ],
+      "steps": "38",
+      "ins": "instruction 270 (cx q[26], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 178,
+      "kind": "idle",
+      "line": 274,
+      "qubits": [
+        26
+      ],
+      "steps": "39..39",
+      "ins": "instruction 270 (cx q[26], q[25])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 179,
+      "kind": "gate2",
+      "line": 276,
+      "qubits": [
+        14,
+        20
+      ],
+      "steps": "39",
+      "ins": "instruction 272 (cx q[14], q[20])",
+      "when": "after"
+    },
+    {
+      "family": "data_wait",
+      "unit": 179,
+      "kind": "idle",
+      "line": 276,
+      "qubits": [
+        20
+      ],
+      "steps": "40..46",
+      "ins": "instruction 272 (cx q[14], q[20])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 180,
+      "kind": "gate2",
+      "line": 277,
+      "qubits": [
+        1,
+        7
+      ],
+      "steps": "39",
+      "ins": "instruction 273 (cx q[1], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "data_wait",
+      "unit": 180,
+      "kind": "idle",
+      "line": 277,
+      "qubits": [
+        7
+      ],
+      "steps": "40..47",
+      "ins": "instruction 273 (cx q[1], q[7])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 181,
+      "kind": "gate2",
+      "line": 278,
+      "qubits": [
+        21,
+        15
+      ],
+      "steps": "39",
+      "ins": "instruction 274 (cx q[21], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "data_wait",
+      "unit": 181,
+      "kind": "idle",
+      "line": 278,
+      "qubits": [
+        21
+      ],
+      "steps": "40..47",
+      "ins": "instruction 274 (cx q[21], q[15])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 182,
+      "kind": "flip",
+      "line": 279,
+      "qubits": [
+        5
+      ],
+      "steps": "39",
+      "ins": "instruction 275 (reset q[5])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 183,
+      "kind": "gate2",
+      "line": 280,
+      "qubits": [
+        11,
+        17
+      ],
+      "steps": "39",
+      "ins": "instruction 276 (cx q[11], q[17])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 184,
+      "kind": "gate2",
+      "line": 281,
+      "qubits": [
+        25,
+        19
+      ],
+      "steps": "39",
+      "ins": "instruction 277 (cx q[25], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 185,
+      "kind": "gate2",
+      "line": 282,
+      "qubits": [
+        23,
+        29
+      ],
+      "steps": "39",
+      "ins": "instruction 278 (cx q[23], q[29])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 186,
+      "kind": "gate2",
+      "line": 283,
+      "qubits": [
+        28,
+        27
+      ],
+      "steps": "39",
+      "ins": "instruction 279 (cx q[28], q[27])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 187,
+      "kind": "flip",
+      "line": 286,
+      "qubits": [
+        14
+      ],
+      "steps": "40",
+      "ins": "instruction 282 (measure q[14])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 187,
+      "kind": "gate1",
+      "line": 286,
+      "qubits": [
+        14
+      ],
+      "steps": "40",
+      "ins": "instruction 282 (measure q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 188,
+      "kind": "gate2",
+      "line": 287,
+      "qubits": [
+        2,
+        1
+      ],
+      "steps": "40",
+      "ins": "instruction 283 (cx q[2], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 189,
+      "kind": "flip",
+      "line": 288,
+      "qubits": [
+        15
+      ],
+      "steps": "40",
+      "ins": "instruction 284 (measure q[15])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 189,
+      "kind": "gate1",
+      "line": 288,
+      "qubits": [
+        15
+      ],
+      "steps": "40",
+      "ins": "instruction 284 (measure q[15])",
+      "when": "after"
+    },
+    {
+      "family": "A_init",
+      "unit": 190,
+      "kind": "flip",
+      "line": 289,
+      "qubits": [
+        9
+      ],
+      "steps": "40",
+      "ins": "instruction 285 (reset q[9])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 191,
+      "kind": "flip",
+      "line": 291,
+      "qubits": [
+        4
+      ],
+      "steps": "40",
+      "ins": "instruction 287 (reset q[4])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 192,
+      "kind": "gate2",
+      "line": 292,
+      "qubits": [
+        11,
+        5
+      ],
+      "steps": "40",
+      "ins": "instruction 288 (cx q[11], q[5])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 193,
+      "kind": "gate2",
+      "line": 293,
+      "qubits": [
+        23,
+        17
+      ],
+      "steps": "40",
+      "ins": "instruction 289 (cx q[23], q[17])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 194,
+      "kind": "gate2",
+      "line": 294,
+      "qubits": [
+        29,
+        28
+      ],
+      "steps": "40",
+      "ins": "instruction 290 (cx q[29], q[28])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 195,
+      "kind": "gate2",
+      "line": 295,
+      "qubits": [
+        27,
+        26
+      ],
+      "steps": "40",
+      "ins": "instruction 291 (cx q[27], q[26])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 196,
+      "kind": "gate2",
+      "line": 296,
+      "qubits": [
+        19,
+        25
+      ],
+      "steps": "40",
+      "ins": "instruction 292 (cx q[19], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 197,
+      "kind": "flip",
+      "line": 297,
+      "qubits": [
+        13
+      ],
+      "steps": "40",
+      "ins": "instruction 293 (measure q[13])",
+      "when": "before"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 197,
+      "kind": "gate1",
+      "line": 297,
+      "qubits": [
+        13
+      ],
+      "steps": "40",
+      "ins": "instruction 293 (measure q[13])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 198,
+      "kind": "flip",
+      "line": 300,
+      "qubits": [
+        2
+      ],
+      "steps": "41",
+      "ins": "instruction 296 (measure q[2])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 198,
+      "kind": "gate1",
+      "line": 300,
+      "qubits": [
+        2
+      ],
+      "steps": "41",
+      "ins": "instruction 296 (measure q[2])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 199,
+      "kind": "flip",
+      "line": 301,
+      "qubits": [
+        22
+      ],
+      "steps": "41",
+      "ins": "instruction 297 (measure q[22])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 199,
+      "kind": "flip",
+      "line": 301,
+      "qubits": [
+        22
+      ],
+      "steps": "41",
+      "ins": "instruction 297 (measure q[22])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 199,
+      "kind": "gate1",
+      "line": 301,
+      "qubits": [
+        22
+      ],
+      "steps": "41",
+      "ins": "instruction 297 (measure q[22])",
+      "when": "after"
+    },
+    {
+      "family": "A_check",
+      "unit": 200,
+      "kind": "flip",
+      "line": 303,
+      "qubits": [
+        9
+      ],
+      "steps": "41",
+      "ins": "instruction 299 (measure q[9])",
+      "when": "before"
+    },
+    {
+      "family": "A_check",
+      "unit": 200,
+      "kind": "gate1",
+      "line": 303,
+      "qubits": [
+        9
+      ],
+      "steps": "41",
+      "ins": "instruction 299 (measure q[9])",
+      "when": "after"
+    },
+    {
+      "family": "A_init",
+      "unit": 201,
+      "kind": "flip",
+      "line": 305,
+      "qubits": [
+        8
+      ],
+      "steps": "41",
+      "ins": "instruction 301 (measure q[8])",
+      "when": "before"
+    },
+    {
+      "family": "A_init",
+      "unit": 201,
+      "kind": "gate1",
+      "line": 305,
+      "qubits": [
+        8
+      ],
+      "steps": "41",
+      "ins": "instruction 301 (measure q[8])",
+      "when": "after"
+    },
+    {
+      "family": "A_init",
+      "unit": 202,
+      "kind": "flip",
+      "line": 306,
+      "qubits": [
+        15
+      ],
+      "steps": "41",
+      "ins": "instruction 302 (reset q[15])",
+      "when": "after"
+    },
+    {
+      "family": "A_init",
+      "unit": 203,
+      "kind": "flip",
+      "line": 308,
+      "qubits": [
+        14
+      ],
+      "steps": "41",
+      "ins": "instruction 304 (reset q[14])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 204,
+      "kind": "flip",
+      "line": 309,
+      "qubits": [
+        1
+      ],
+      "steps": "41",
+      "ins": "instruction 305 (measure q[1])",
+      "when": "before"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 204,
+      "kind": "gate1",
+      "line": 309,
+      "qubits": [
+        1
+      ],
+      "steps": "41",
+      "ins": "instruction 305 (measure q[1])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 205,
+      "kind": "flip",
+      "line": 310,
+      "qubits": [
+        12
+      ],
+      "steps": "41",
+      "ins": "instruction 306 (reset q[12])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 206,
+      "kind": "gate2",
+      "line": 311,
+      "qubits": [
+        5,
+        4
+      ],
+      "steps": "41",
+      "ins": "instruction 307 (cx q[5], q[4])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 206,
+      "kind": "idle",
+      "line": 311,
+      "qubits": [
+        4
+      ],
+      "steps": "42..45",
+      "ins": "instruction 307 (cx q[5], q[4])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 207,
+      "kind": "gate2",
+      "line": 312,
+      "qubits": [
+        29,
+        23
+      ],
+      "steps": "41",
+      "ins": "instruction 308 (cx q[29], q[23])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 208,
+      "kind": "gate2",
+      "line": 313,
+      "qubits": [
+        17,
+        11
+      ],
+      "steps": "41",
+      "ins": "instruction 309 (cx q[17], q[11])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 209,
+      "kind": "gate2",
+      "line": 314,
+      "qubits": [
+        19,
+        13
+      ],
+      "steps": "41",
+      "ins": "instruction 310 (cx q[19], q[13])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 210,
+      "kind": "gate2",
+      "line": 315,
+      "qubits": [
+        26,
+        25
+      ],
+      "steps": "41",
+      "ins": "instruction 311 (cx q[26], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 211,
+      "kind": "gate2",
+      "line": 316,
+      "qubits": [
+        28,
+        27
+      ],
+      "steps": "41",
+      "ins": "instruction 312 (cx q[28], q[27])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 212,
+      "kind": "gate2",
+      "line": 318,
+      "qubits": [
+        16,
+        22
+      ],
+      "steps": "42",
+      "ins": "instruction 314 (cx q[16], q[22])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 213,
+      "kind": "gate2",
+      "line": 319,
+      "qubits": [
+        9,
+        8
+      ],
+      "steps": "42",
+      "ins": "instruction 315 (cx q[9], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "A_idle_prep",
+      "unit": 213,
+      "kind": "idle",
+      "line": 319,
+      "qubits": [
+        9
+      ],
+      "steps": "43..47",
+      "ins": "instruction 315 (cx q[9], q[8])"
+    },
+    {
+      "family": "A_CX",
+      "unit": 214,
+      "kind": "gate2",
+      "line": 320,
+      "qubits": [
+        15,
+        14
+      ],
+      "steps": "42",
+      "ins": "instruction 316 (cx q[15], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "A_idle_prep",
+      "unit": 214,
+      "kind": "idle",
+      "line": 320,
+      "qubits": [
+        15
+      ],
+      "steps": "43..44",
+      "ins": "instruction 316 (cx q[15], q[14])"
+    },
+    {
+      "family": "A_init",
+      "unit": 215,
+      "kind": "flip",
+      "line": 321,
+      "qubits": [
+        2
+      ],
+      "steps": "42",
+      "ins": "instruction 317 (reset q[2])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 216,
+      "kind": "gate2",
+      "line": 323,
+      "qubits": [
+        26,
+        27
+      ],
+      "steps": "42",
+      "ins": "instruction 319 (cx q[26], q[27])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 217,
+      "kind": "gate2",
+      "line": 324,
+      "qubits": [
+        25,
+        19
+      ],
+      "steps": "42",
+      "ins": "instruction 320 (cx q[25], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 218,
+      "kind": "gate2",
+      "line": 325,
+      "qubits": [
+        28,
+        29
+      ],
+      "steps": "42",
+      "ins": "instruction 321 (cx q[28], q[29])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 218,
+      "kind": "idle",
+      "line": 325,
+      "qubits": [
+        29
+      ],
+      "steps": "43..43",
+      "ins": "instruction 321 (cx q[28], q[29])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 219,
+      "kind": "gate2",
+      "line": 326,
+      "qubits": [
+        5,
+        11
+      ],
+      "steps": "42",
+      "ins": "instruction 322 (cx q[5], q[11])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 220,
+      "kind": "gate2",
+      "line": 327,
+      "qubits": [
+        23,
+        17
+      ],
+      "steps": "42",
+      "ins": "instruction 323 (cx q[23], q[17])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 221,
+      "kind": "gate2",
+      "line": 328,
+      "qubits": [
+        13,
+        12
+      ],
+      "steps": "42",
+      "ins": "instruction 324 (cx q[13], q[12])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 221,
+      "kind": "idle",
+      "line": 328,
+      "qubits": [
+        12
+      ],
+      "steps": "43..43",
+      "ins": "instruction 324 (cx q[13], q[12])"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 222,
+      "kind": "gate2",
+      "line": 330,
+      "qubits": [
+        22,
+        16
+      ],
+      "steps": "43",
+      "ins": "instruction 326 (cx q[22], q[16])",
+      "when": "after"
+    },
+    {
+      "family": "data_wait",
+      "unit": 222,
+      "kind": "idle",
+      "line": 330,
+      "qubits": [
+        22
+      ],
+      "steps": "44..47",
+      "ins": "instruction 326 (cx q[22], q[16])"
+    },
+    {
+      "family": "A_check",
+      "unit": 223,
+      "kind": "flip",
+      "line": 332,
+      "qubits": [
+        2
+      ],
+      "steps": "43",
+      "ins": "instruction 328 (measure q[2])",
+      "when": "before"
+    },
+    {
+      "family": "A_check",
+      "unit": 223,
+      "kind": "gate1",
+      "line": 332,
+      "qubits": [
+        2
+      ],
+      "steps": "43",
+      "ins": "instruction 328 (measure q[2])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 224,
+      "kind": "gate2",
+      "line": 334,
+      "qubits": [
+        14,
+        8
+      ],
+      "steps": "43",
+      "ins": "instruction 330 (cx q[14], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "A_idle_prep",
+      "unit": 224,
+      "kind": "idle",
+      "line": 334,
+      "qubits": [
+        14
+      ],
+      "steps": "44..44",
+      "ins": "instruction 330 (cx q[14], q[8])"
+    },
+    {
+      "family": "A_init",
+      "unit": 225,
+      "kind": "flip",
+      "line": 335,
+      "qubits": [
+        1
+      ],
+      "steps": "43",
+      "ins": "instruction 331 (reset q[1])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 226,
+      "kind": "gate2",
+      "line": 337,
+      "qubits": [
+        17,
+        23
+      ],
+      "steps": "43",
+      "ins": "instruction 333 (cx q[17], q[23])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 227,
+      "kind": "gate2",
+      "line": 338,
+      "qubits": [
+        27,
+        28
+      ],
+      "steps": "43",
+      "ins": "instruction 334 (cx q[27], q[28])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 228,
+      "kind": "gate2",
+      "line": 339,
+      "qubits": [
+        11,
+        5
+      ],
+      "steps": "43",
+      "ins": "instruction 335 (cx q[11], q[5])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 228,
+      "kind": "idle",
+      "line": 339,
+      "qubits": [
+        5
+      ],
+      "steps": "44..44",
+      "ins": "instruction 335 (cx q[11], q[5])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 229,
+      "kind": "gate2",
+      "line": 340,
+      "qubits": [
+        19,
+        13
+      ],
+      "steps": "43",
+      "ins": "instruction 336 (cx q[19], q[13])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 230,
+      "kind": "gate2",
+      "line": 341,
+      "qubits": [
+        26,
+        25
+      ],
+      "steps": "43",
+      "ins": "instruction 337 (cx q[26], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 230,
+      "kind": "idle",
+      "line": 341,
+      "qubits": [
+        26
+      ],
+      "steps": "44..44",
+      "ins": "instruction 337 (cx q[26], q[25])"
+    },
+    {
+      "family": "A_check",
+      "unit": 231,
+      "kind": "flip",
+      "line": 344,
+      "qubits": [
+        1
+      ],
+      "steps": "44",
+      "ins": "instruction 340 (measure q[1])",
+      "when": "before"
+    },
+    {
+      "family": "A_check",
+      "unit": 231,
+      "kind": "gate1",
+      "line": 344,
+      "qubits": [
+        1
+      ],
+      "steps": "44",
+      "ins": "instruction 340 (measure q[1])",
+      "when": "after"
+    },
+    {
+      "family": "A_init",
+      "unit": 232,
+      "kind": "flip",
+      "line": 346,
+      "qubits": [
+        16
+      ],
+      "steps": "44",
+      "ins": "instruction 342 (measure q[16])",
+      "when": "before"
+    },
+    {
+      "family": "A_init",
+      "unit": 232,
+      "kind": "gate1",
+      "line": 346,
+      "qubits": [
+        16
+      ],
+      "steps": "44",
+      "ins": "instruction 342 (measure q[16])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 233,
+      "kind": "gate2",
+      "line": 347,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "44",
+      "ins": "instruction 343 (cx q[2], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 234,
+      "kind": "gate2",
+      "line": 348,
+      "qubits": [
+        25,
+        19
+      ],
+      "steps": "44",
+      "ins": "instruction 344 (cx q[25], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 235,
+      "kind": "gate2",
+      "line": 349,
+      "qubits": [
+        29,
+        23
+      ],
+      "steps": "44",
+      "ins": "instruction 345 (cx q[29], q[23])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 236,
+      "kind": "gate2",
+      "line": 350,
+      "qubits": [
+        17,
+        11
+      ],
+      "steps": "44",
+      "ins": "instruction 346 (cx q[17], q[11])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 237,
+      "kind": "gate2",
+      "line": 351,
+      "qubits": [
+        28,
+        27
+      ],
+      "steps": "44",
+      "ins": "instruction 347 (cx q[28], q[27])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 238,
+      "kind": "gate2",
+      "line": 352,
+      "qubits": [
+        13,
+        12
+      ],
+      "steps": "44",
+      "ins": "instruction 348 (cx q[13], q[12])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 239,
+      "kind": "gate2",
+      "line": 354,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "45",
+      "ins": "instruction 350 (cx q[1], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "A_idle_prep",
+      "unit": 239,
+      "kind": "idle",
+      "line": 354,
+      "qubits": [
+        1
+      ],
+      "steps": "46..46",
+      "ins": "instruction 350 (cx q[1], q[2])"
+    },
+    {
+      "family": "A_CX",
+      "unit": 240,
+      "kind": "gate2",
+      "line": 355,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "45",
+      "ins": "instruction 351 (cx q[8], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 241,
+      "kind": "gate2",
+      "line": 356,
+      "qubits": [
+        15,
+        16
+      ],
+      "steps": "45",
+      "ins": "instruction 352 (cx q[15], q[16])",
+      "when": "after"
+    },
+    {
+      "family": "A_idle_prep",
+      "unit": 241,
+      "kind": "idle",
+      "line": 356,
+      "qubits": [
+        16
+      ],
+      "steps": "46..47",
+      "ins": "instruction 352 (cx q[15], q[16])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 242,
+      "kind": "flip",
+      "line": 357,
+      "qubits": [
+        6
+      ],
+      "steps": "45",
+      "ins": "instruction 353 (reset q[6])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 243,
+      "kind": "gate2",
+      "line": 358,
+      "qubits": [
+        26,
+        27
+      ],
+      "steps": "45",
+      "ins": "instruction 354 (cx q[26], q[27])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 244,
+      "kind": "gate2",
+      "line": 359,
+      "qubits": [
+        28,
+        29
+      ],
+      "steps": "45",
+      "ins": "instruction 355 (cx q[28], q[29])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 245,
+      "kind": "gate2",
+      "line": 360,
+      "qubits": [
+        11,
+        5
+      ],
+      "steps": "45",
+      "ins": "instruction 356 (cx q[11], q[5])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 245,
+      "kind": "idle",
+      "line": 360,
+      "qubits": [
+        11
+      ],
+      "steps": "46..46",
+      "ins": "instruction 356 (cx q[11], q[5])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 246,
+      "kind": "gate2",
+      "line": 361,
+      "qubits": [
+        23,
+        17
+      ],
+      "steps": "45",
+      "ins": "instruction 357 (cx q[23], q[17])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 246,
+      "kind": "idle",
+      "line": 361,
+      "qubits": [
+        17
+      ],
+      "steps": "46..46",
+      "ins": "instruction 357 (cx q[23], q[17])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 247,
+      "kind": "gate2",
+      "line": 362,
+      "qubits": [
+        12,
+        13
+      ],
+      "steps": "45",
+      "ins": "instruction 358 (cx q[12], q[13])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 248,
+      "kind": "gate2",
+      "line": 363,
+      "qubits": [
+        19,
+        25
+      ],
+      "steps": "45",
+      "ins": "instruction 359 (cx q[19], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 249,
+      "kind": "gate2",
+      "line": 365,
+      "qubits": [
+        2,
+        8
+      ],
+      "steps": "46",
+      "ins": "instruction 361 (cx q[2], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 250,
+      "kind": "gate2",
+      "line": 366,
+      "qubits": [
+        14,
+        15
+      ],
+      "steps": "46",
+      "ins": "instruction 362 (cx q[14], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "A_idle_prep",
+      "unit": 250,
+      "kind": "idle",
+      "line": 366,
+      "qubits": [
+        15
+      ],
+      "steps": "47..47",
+      "ins": "instruction 362 (cx q[14], q[15])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 251,
+      "kind": "gate2",
+      "line": 367,
+      "qubits": [
+        13,
+        19
+      ],
+      "steps": "46",
+      "ins": "instruction 363 (cx q[13], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 252,
+      "kind": "gate2",
+      "line": 368,
+      "qubits": [
+        25,
+        26
+      ],
+      "steps": "46",
+      "ins": "instruction 364 (cx q[25], q[26])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 253,
+      "kind": "gate2",
+      "line": 369,
+      "qubits": [
+        4,
+        5
+      ],
+      "steps": "46",
+      "ins": "instruction 365 (cx q[4], q[5])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 253,
+      "kind": "idle",
+      "line": 369,
+      "qubits": [
+        4
+      ],
+      "steps": "47..47",
+      "ins": "instruction 365 (cx q[4], q[5])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 254,
+      "kind": "gate2",
+      "line": 370,
+      "qubits": [
+        27,
+        28
+      ],
+      "steps": "46",
+      "ins": "instruction 366 (cx q[27], q[28])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 255,
+      "kind": "gate2",
+      "line": 371,
+      "qubits": [
+        12,
+        6
+      ],
+      "steps": "46",
+      "ins": "instruction 367 (cx q[12], q[6])",
+      "when": "after"
+    },
+    {
+      "family": "BC_idle",
+      "unit": 255,
+      "kind": "idle",
+      "line": 371,
+      "qubits": [
+        6
+      ],
+      "steps": "47..47",
+      "ins": "instruction 367 (cx q[12], q[6])"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 256,
+      "kind": "gate2",
+      "line": 372,
+      "qubits": [
+        29,
+        23
+      ],
+      "steps": "46",
+      "ins": "instruction 368 (cx q[29], q[23])",
+      "when": "after"
+    },
+    {
+      "family": "pre_gate",
+      "unit": 257,
+      "kind": "gate1",
+      "line": 374,
+      "qubits": [
+        20
+      ],
+      "steps": "47",
+      "ins": "instruction 370 (tdg q[20])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 258,
+      "kind": "gate2",
+      "line": 375,
+      "qubits": [
+        1,
+        2
+      ],
+      "steps": "47",
+      "ins": "instruction 371 (cx q[1], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "A_CX",
+      "unit": 259,
+      "kind": "gate2",
+      "line": 376,
+      "qubits": [
+        8,
+        14
+      ],
+      "steps": "47",
+      "ins": "instruction 372 (cx q[8], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 260,
+      "kind": "gate2",
+      "line": 377,
+      "qubits": [
+        26,
+        27
+      ],
+      "steps": "47",
+      "ins": "instruction 373 (cx q[26], q[27])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 261,
+      "kind": "gate2",
+      "line": 378,
+      "qubits": [
+        28,
+        29
+      ],
+      "steps": "47",
+      "ins": "instruction 374 (cx q[28], q[29])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 262,
+      "kind": "gate2",
+      "line": 379,
+      "qubits": [
+        5,
+        11
+      ],
+      "steps": "47",
+      "ins": "instruction 375 (cx q[5], q[11])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 263,
+      "kind": "gate2",
+      "line": 380,
+      "qubits": [
+        23,
+        17
+      ],
+      "steps": "47",
+      "ins": "instruction 376 (cx q[23], q[17])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 264,
+      "kind": "gate2",
+      "line": 381,
+      "qubits": [
+        12,
+        13
+      ],
+      "steps": "47",
+      "ins": "instruction 377 (cx q[12], q[13])",
+      "when": "after"
+    },
+    {
+      "family": "BC_prep",
+      "unit": 265,
+      "kind": "gate2",
+      "line": 382,
+      "qubits": [
+        19,
+        25
+      ],
+      "steps": "47",
+      "ins": "instruction 378 (cx q[19], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_data",
+      "unit": 266,
+      "kind": "gate2",
+      "line": 384,
+      "qubits": [
+        0,
+        1
+      ],
+      "steps": "48",
+      "ins": "instruction 380 (cx q[0], q[1])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_data",
+      "unit": 267,
+      "kind": "gate2",
+      "line": 385,
+      "qubits": [
+        20,
+        14
+      ],
+      "steps": "48",
+      "ins": "instruction 381 (cx q[20], q[14])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_data",
+      "unit": 268,
+      "kind": "gate2",
+      "line": 386,
+      "qubits": [
+        7,
+        8
+      ],
+      "steps": "48",
+      "ins": "instruction 382 (cx q[7], q[8])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_data",
+      "unit": 269,
+      "kind": "gate2",
+      "line": 387,
+      "qubits": [
+        10,
+        9
+      ],
+      "steps": "48",
+      "ins": "instruction 383 (cx q[10], q[9])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_data",
+      "unit": 270,
+      "kind": "gate2",
+      "line": 388,
+      "qubits": [
+        3,
+        2
+      ],
+      "steps": "48",
+      "ins": "instruction 384 (cx q[3], q[2])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_data",
+      "unit": 271,
+      "kind": "gate2",
+      "line": 389,
+      "qubits": [
+        22,
+        16
+      ],
+      "steps": "48",
+      "ins": "instruction 385 (cx q[22], q[16])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_data",
+      "unit": 272,
+      "kind": "gate2",
+      "line": 390,
+      "qubits": [
+        21,
+        15
+      ],
+      "steps": "48",
+      "ins": "instruction 386 (cx q[21], q[15])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 273,
+      "kind": "gate2",
+      "line": 391,
+      "qubits": [
+        6,
+        12
+      ],
+      "steps": "48",
+      "ins": "instruction 387 (cx q[6], q[12])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 274,
+      "kind": "gate2",
+      "line": 392,
+      "qubits": [
+        26,
+        25
+      ],
+      "steps": "48",
+      "ins": "instruction 388 (cx q[26], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 275,
+      "kind": "gate2",
+      "line": 393,
+      "qubits": [
+        13,
+        19
+      ],
+      "steps": "48",
+      "ins": "instruction 389 (cx q[13], q[19])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 276,
+      "kind": "gate2",
+      "line": 394,
+      "qubits": [
+        11,
+        17
+      ],
+      "steps": "48",
+      "ins": "instruction 390 (cx q[11], q[17])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 277,
+      "kind": "gate2",
+      "line": 395,
+      "qubits": [
+        4,
+        5
+      ],
+      "steps": "48",
+      "ins": "instruction 391 (cx q[4], q[5])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 278,
+      "kind": "gate2",
+      "line": 396,
+      "qubits": [
+        23,
+        29
+      ],
+      "steps": "48",
+      "ins": "instruction 392 (cx q[23], q[29])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 279,
+      "kind": "gate2",
+      "line": 397,
+      "qubits": [
+        27,
+        28
+      ],
+      "steps": "48",
+      "ins": "instruction 393 (cx q[27], q[28])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 280,
+      "kind": "gate2",
+      "line": 399,
+      "qubits": [
+        19,
+        25
+      ],
+      "steps": "49",
+      "ins": "instruction 395 (cx q[19], q[25])",
+      "when": "after"
+    },
+    {
+      "family": "A_couple_C",
+      "unit": 281,
+      "kind": "gate2",
+      "line": 400,
+      "qubits": [
+        17,
+        16
+      ],
+      "steps": "49",
+      "ins": "instruction 396 (cx q[17], q[16])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 282,
+      "kind": "gate2",
+      "line": 401,
+      "qubits": [
+        6,
+        0
+      ],
+      "steps": "49",
+      "ins": "instruction 397 (cx q[6], q[0])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 282,
+      "kind": "idle",
+      "line": 401,
+      "qubits": [
+        0
+      ],
+      "steps": "50..50",
+      "ins": "instruction 397 (cx q[6], q[0])"
+    },
+    {
+      "family": "round_other",
+      "unit": 283,
+      "kind": "gate2",
+      "line": 402,
+      "qubits": [
+        26,
+        20
+      ],
+      "steps": "49",
+      "ins": "instruction 398 (cx q[26], q[20])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 283,
+      "kind": "idle",
+      "line": 402,
+      "qubits": [
+        20
+      ],
+      "steps": "50..50",
+      "ins": "instruction 398 (cx q[26], q[20])"
+    },
+    {
+      "family": "round_other",
+      "unit": 284,
+      "kind": "gate2",
+      "line": 403,
+      "qubits": [
+        13,
+        7
+      ],
+      "steps": "49",
+      "ins": "instruction 399 (cx q[13], q[7])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 284,
+      "kind": "idle",
+      "line": 403,
+      "qubits": [
+        7
+      ],
+      "steps": "50..50",
+      "ins": "instruction 399 (cx q[13], q[7])"
+    },
+    {
+      "family": "round_other",
+      "unit": 285,
+      "kind": "gate2",
+      "line": 404,
+      "qubits": [
+        11,
+        10
+      ],
+      "steps": "49",
+      "ins": "instruction 400 (cx q[11], q[10])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 285,
+      "kind": "idle",
+      "line": 404,
+      "qubits": [
+        10
+      ],
+      "steps": "50..50",
+      "ins": "instruction 400 (cx q[11], q[10])"
+    },
+    {
+      "family": "round_other",
+      "unit": 286,
+      "kind": "gate2",
+      "line": 405,
+      "qubits": [
+        4,
+        3
+      ],
+      "steps": "49",
+      "ins": "instruction 401 (cx q[4], q[3])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 286,
+      "kind": "idle",
+      "line": 405,
+      "qubits": [
+        3
+      ],
+      "steps": "50..50",
+      "ins": "instruction 401 (cx q[4], q[3])"
+    },
+    {
+      "family": "round_other",
+      "unit": 287,
+      "kind": "gate2",
+      "line": 406,
+      "qubits": [
+        23,
+        22
+      ],
+      "steps": "49",
+      "ins": "instruction 402 (cx q[23], q[22])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 287,
+      "kind": "idle",
+      "line": 406,
+      "qubits": [
+        22
+      ],
+      "steps": "50..50",
+      "ins": "instruction 402 (cx q[23], q[22])"
+    },
+    {
+      "family": "round_other",
+      "unit": 288,
+      "kind": "gate2",
+      "line": 407,
+      "qubits": [
+        27,
+        21
+      ],
+      "steps": "49",
+      "ins": "instruction 403 (cx q[27], q[21])",
+      "when": "after"
+    },
+    {
+      "family": "pre_idle",
+      "unit": 288,
+      "kind": "idle",
+      "line": 407,
+      "qubits": [
+        21
+      ],
+      "steps": "50..50",
+      "ins": "instruction 403 (cx q[27], q[21])"
+    },
+    {
+      "family": "A_readout",
+      "unit": 289,
+      "kind": "flip",
+      "line": 408,
+      "qubits": [
+        1
+      ],
+      "steps": "49",
+      "ins": "instruction 404 (measure q[1])",
+      "when": "before"
+    },
+    {
+      "family": "A_readout",
+      "unit": 289,
+      "kind": "gate1",
+      "line": 408,
+      "qubits": [
+        1
+      ],
+      "steps": "49",
+      "ins": "instruction 404 (measure q[1])",
+      "when": "after"
+    },
+    {
+      "family": "A_readout",
+      "unit": 290,
+      "kind": "flip",
+      "line": 409,
+      "qubits": [
+        14
+      ],
+      "steps": "49",
+      "ins": "instruction 405 (measure q[14])",
+      "when": "before"
+    },
+    {
+      "family": "A_readout",
+      "unit": 290,
+      "kind": "gate1",
+      "line": 409,
+      "qubits": [
+        14
+      ],
+      "steps": "49",
+      "ins": "instruction 405 (measure q[14])",
+      "when": "after"
+    },
+    {
+      "family": "A_readout",
+      "unit": 291,
+      "kind": "flip",
+      "line": 410,
+      "qubits": [
+        8
+      ],
+      "steps": "49",
+      "ins": "instruction 406 (measure q[8])",
+      "when": "before"
+    },
+    {
+      "family": "A_readout",
+      "unit": 291,
+      "kind": "gate1",
+      "line": 410,
+      "qubits": [
+        8
+      ],
+      "steps": "49",
+      "ins": "instruction 406 (measure q[8])",
+      "when": "after"
+    },
+    {
+      "family": "A_readout",
+      "unit": 292,
+      "kind": "flip",
+      "line": 411,
+      "qubits": [
+        9
+      ],
+      "steps": "49",
+      "ins": "instruction 407 (measure q[9])",
+      "when": "before"
+    },
+    {
+      "family": "A_readout",
+      "unit": 292,
+      "kind": "gate1",
+      "line": 411,
+      "qubits": [
+        9
+      ],
+      "steps": "49",
+      "ins": "instruction 407 (measure q[9])",
+      "when": "after"
+    },
+    {
+      "family": "A_readout",
+      "unit": 293,
+      "kind": "flip",
+      "line": 412,
+      "qubits": [
+        2
+      ],
+      "steps": "49",
+      "ins": "instruction 408 (measure q[2])",
+      "when": "before"
+    },
+    {
+      "family": "A_readout",
+      "unit": 293,
+      "kind": "gate1",
+      "line": 412,
+      "qubits": [
+        2
+      ],
+      "steps": "49",
+      "ins": "instruction 408 (measure q[2])",
+      "when": "after"
+    },
+    {
+      "family": "A_readout",
+      "unit": 294,
+      "kind": "flip",
+      "line": 413,
+      "qubits": [
+        15
+      ],
+      "steps": "49",
+      "ins": "instruction 409 (measure q[15])",
+      "when": "before"
+    },
+    {
+      "family": "A_readout",
+      "unit": 294,
+      "kind": "gate1",
+      "line": 413,
+      "qubits": [
+        15
+      ],
+      "steps": "49",
+      "ins": "instruction 409 (measure q[15])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 295,
+      "kind": "flip",
+      "line": 414,
+      "qubits": [
+        12
+      ],
+      "steps": "49",
+      "ins": "instruction 410 (measure q[12])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 295,
+      "kind": "gate1",
+      "line": 414,
+      "qubits": [
+        12
+      ],
+      "steps": "49",
+      "ins": "instruction 410 (measure q[12])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 296,
+      "kind": "flip",
+      "line": 415,
+      "qubits": [
+        5
+      ],
+      "steps": "49",
+      "ins": "instruction 411 (measure q[5])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 296,
+      "kind": "gate1",
+      "line": 415,
+      "qubits": [
+        5
+      ],
+      "steps": "49",
+      "ins": "instruction 411 (measure q[5])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 297,
+      "kind": "flip",
+      "line": 416,
+      "qubits": [
+        29
+      ],
+      "steps": "49",
+      "ins": "instruction 412 (measure q[29])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 297,
+      "kind": "gate1",
+      "line": 416,
+      "qubits": [
+        29
+      ],
+      "steps": "49",
+      "ins": "instruction 412 (measure q[29])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 298,
+      "kind": "flip",
+      "line": 417,
+      "qubits": [
+        28
+      ],
+      "steps": "49",
+      "ins": "instruction 413 (measure q[28])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 298,
+      "kind": "gate1",
+      "line": 417,
+      "qubits": [
+        28
+      ],
+      "steps": "49",
+      "ins": "instruction 413 (measure q[28])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 299,
+      "kind": "flip",
+      "line": 419,
+      "qubits": [
+        17
+      ],
+      "steps": "50",
+      "ins": "instruction 415 (measure q[17])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 299,
+      "kind": "gate1",
+      "line": 419,
+      "qubits": [
+        17
+      ],
+      "steps": "50",
+      "ins": "instruction 415 (measure q[17])",
+      "when": "after"
+    },
+    {
+      "family": "A_readout",
+      "unit": 300,
+      "kind": "flip",
+      "line": 420,
+      "qubits": [
+        16
+      ],
+      "steps": "50",
+      "ins": "instruction 416 (measure q[16])",
+      "when": "before"
+    },
+    {
+      "family": "A_readout",
+      "unit": 300,
+      "kind": "gate1",
+      "line": 420,
+      "qubits": [
+        16
+      ],
+      "steps": "50",
+      "ins": "instruction 416 (measure q[16])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 301,
+      "kind": "flip",
+      "line": 421,
+      "qubits": [
+        19
+      ],
+      "steps": "50",
+      "ins": "instruction 417 (measure q[19])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 301,
+      "kind": "gate1",
+      "line": 421,
+      "qubits": [
+        19
+      ],
+      "steps": "50",
+      "ins": "instruction 417 (measure q[19])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 302,
+      "kind": "flip",
+      "line": 422,
+      "qubits": [
+        25
+      ],
+      "steps": "50",
+      "ins": "instruction 418 (measure q[25])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 302,
+      "kind": "gate1",
+      "line": 422,
+      "qubits": [
+        25
+      ],
+      "steps": "50",
+      "ins": "instruction 418 (measure q[25])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 303,
+      "kind": "flip",
+      "line": 424,
+      "qubits": [
+        6
+      ],
+      "steps": "50",
+      "ins": "instruction 420 (measure q[6])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 303,
+      "kind": "gate1",
+      "line": 424,
+      "qubits": [
+        6
+      ],
+      "steps": "50",
+      "ins": "instruction 420 (measure q[6])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 304,
+      "kind": "flip",
+      "line": 426,
+      "qubits": [
+        26
+      ],
+      "steps": "50",
+      "ins": "instruction 422 (measure q[26])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 304,
+      "kind": "gate1",
+      "line": 426,
+      "qubits": [
+        26
+      ],
+      "steps": "50",
+      "ins": "instruction 422 (measure q[26])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 305,
+      "kind": "flip",
+      "line": 428,
+      "qubits": [
+        13
+      ],
+      "steps": "50",
+      "ins": "instruction 424 (measure q[13])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 305,
+      "kind": "gate1",
+      "line": 428,
+      "qubits": [
+        13
+      ],
+      "steps": "50",
+      "ins": "instruction 424 (measure q[13])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 306,
+      "kind": "flip",
+      "line": 430,
+      "qubits": [
+        11
+      ],
+      "steps": "50",
+      "ins": "instruction 426 (measure q[11])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 306,
+      "kind": "gate1",
+      "line": 430,
+      "qubits": [
+        11
+      ],
+      "steps": "50",
+      "ins": "instruction 426 (measure q[11])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 307,
+      "kind": "flip",
+      "line": 432,
+      "qubits": [
+        4
+      ],
+      "steps": "50",
+      "ins": "instruction 428 (measure q[4])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 307,
+      "kind": "gate1",
+      "line": 432,
+      "qubits": [
+        4
+      ],
+      "steps": "50",
+      "ins": "instruction 428 (measure q[4])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 308,
+      "kind": "flip",
+      "line": 434,
+      "qubits": [
+        23
+      ],
+      "steps": "50",
+      "ins": "instruction 430 (measure q[23])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 308,
+      "kind": "gate1",
+      "line": 434,
+      "qubits": [
+        23
+      ],
+      "steps": "50",
+      "ins": "instruction 430 (measure q[23])",
+      "when": "after"
+    },
+    {
+      "family": "round_other",
+      "unit": 309,
+      "kind": "flip",
+      "line": 436,
+      "qubits": [
+        27
+      ],
+      "steps": "50",
+      "ins": "instruction 432 (measure q[27])",
+      "when": "before"
+    },
+    {
+      "family": "round_other",
+      "unit": 309,
+      "kind": "gate1",
+      "line": 436,
+      "qubits": [
+        27
+      ],
+      "steps": "50",
+      "ins": "instruction 432 (measure q[27])",
+      "when": "after"
+    }
+  ],
+  "counterfactuals": {
+    "base": {
+      "c1": 2.664535259100326e-19,
+      "second": 4.620053460872558e-05,
+      "third": 1.2038796905475979e-05,
+      "total": 5.8239331514201564e-05,
+      "exp_minus_A1": 0.52768720432947,
+      "T3a": 1.5536758578344967e-05,
+      "t3bc": -3.4979616728689877e-06,
+      "pair_seconds": 0.5682225089985877,
+      "seconds": 0.8974801209988073,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [],
+      "reference_verified": true,
+      "reference_second": 4.620053460872333e-05,
+      "reference_third": 1.2038796905475954e-05,
+      "reference_total": 5.823933151419929e-05
+    },
+    "no_A_CX": {
+      "c1": 2.664535259100326e-19,
+      "second": 3.5487013493469154e-05,
+      "third": 1.0520203451179133e-05,
+      "total": 4.600721694464829e-05,
+      "exp_minus_A1": 0.5332037877656489,
+      "T3a": 1.3225616793200478e-05,
+      "t3bc": -2.7054133420213443e-06,
+      "pair_seconds": 0.5480306640092749,
+      "seconds": 0.9166683000075864,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_CX"
+      ],
+      "reference_verified": true,
+      "reference_second": 3.548701349346709e-05,
+      "reference_third": 1.0520203451179007e-05,
+      "reference_total": 4.6007216944646094e-05
+    },
+    "no_A_CX_data_wait": {
+      "c1": 2.664535259100326e-19,
+      "second": 3.455895317862945e-05,
+      "third": 3.771126267889264e-06,
+      "total": 3.833007944651871e-05,
+      "exp_minus_A1": 0.568775360741691,
+      "T3a": 6.413309940172752e-06,
+      "t3bc": -2.6421836722834875e-06,
+      "pair_seconds": 0.5799532300006831,
+      "seconds": 0.969893959001638,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_CX",
+        "data_wait"
+      ],
+      "reference_verified": true,
+      "reference_second": 3.45589531786274e-05,
+      "reference_third": 3.771126267889132e-06,
+      "reference_total": 3.833007944651653e-05
+    },
+    "no_A_CX_pre_stage": {
+      "c1": 1.332267629550188e-19,
+      "second": 9.007467930442516e-06,
+      "third": 3.532237113474759e-06,
+      "total": 1.2539705043917274e-05,
+      "exp_minus_A1": 0.804534664134874,
+      "T3a": 3.872997994711829e-06,
+      "t3bc": -3.4076088123706965e-07,
+      "pair_seconds": 0.5197515610052506,
+      "seconds": 0.8522332440043101,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_CX",
+        "pre_gate",
+        "pre_idle"
+      ],
+      "reference_verified": true,
+      "reference_second": 9.007467930442883e-06,
+      "reference_third": 3.532237113474777e-06,
+      "reference_total": 1.253970504391766e-05
+    },
+    "no_A_all": {
+      "c1": 2.368475785866951e-19,
+      "second": 3.1661212723356054e-05,
+      "third": 6.537183765131383e-06,
+      "total": 3.819839648848744e-05,
+      "exp_minus_A1": 0.5542528791803252,
+      "T3a": 8.625796577416824e-06,
+      "t3bc": -2.088612812285442e-06,
+      "pair_seconds": 0.5604985019890592,
+      "seconds": 0.8928225449926686,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_CX",
+        "A_check",
+        "A_couple_C",
+        "A_couple_data",
+        "A_idle_prep",
+        "A_init",
+        "A_readout"
+      ],
+      "reference_verified": true,
+      "reference_second": 3.166121272335355e-05,
+      "reference_third": 6.537183765131251e-06,
+      "reference_total": 3.81983964884848e-05
+    },
+    "no_A_all_data_wait": {
+      "c1": 2.368475785866951e-19,
+      "second": 3.073315240851633e-05,
+      "third": 2.107221472554807e-06,
+      "total": 3.284037388107113e-05,
+      "exp_minus_A1": 0.5912286981660855,
+      "T3a": 4.142132701001415e-06,
+      "t3bc": -2.034911228446608e-06,
+      "pair_seconds": 0.5184752179920906,
+      "seconds": 0.868623240996385,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_CX",
+        "A_check",
+        "A_couple_C",
+        "A_couple_data",
+        "A_idle_prep",
+        "A_init",
+        "A_readout",
+        "data_wait"
+      ],
+      "reference_verified": true,
+      "reference_second": 3.073315240851386e-05,
+      "reference_third": 2.1072214725547014e-06,
+      "reference_total": 3.2840373881068565e-05
+    },
+    "no_A_all_pre_stage": {
+      "c1": 1.0362081563168128e-19,
+      "second": 7.354489836720928e-06,
+      "third": 1.7086688668520006e-06,
+      "total": 9.063158703572929e-06,
+      "exp_minus_A1": 0.8362949855733517,
+      "T3a": 1.9115311358265096e-06,
+      "t3bc": -2.02862268974509e-07,
+      "pair_seconds": 0.750478699002997,
+      "seconds": 1.1138910510053392,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_CX",
+        "A_check",
+        "A_couple_C",
+        "A_couple_data",
+        "A_idle_prep",
+        "A_init",
+        "A_readout",
+        "pre_gate",
+        "pre_idle"
+      ],
+      "reference_verified": true,
+      "reference_second": 7.3544898367210466e-06,
+      "reference_third": 1.7086688668520025e-06,
+      "reference_total": 9.063158703573049e-06
+    },
+    "no_A_coupling": {
+      "c1": 2.368475785866951e-19,
+      "second": 4.228995635703137e-05,
+      "third": 1.1039846654823495e-05,
+      "total": 5.332980301185487e-05,
+      "exp_minus_A1": 0.5310752325630643,
+      "T3a": 1.4169061387923027e-05,
+      "t3bc": -3.1292147330995323e-06,
+      "pair_seconds": 0.45867503799672704,
+      "seconds": 0.7734683149901684,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_couple_C",
+        "A_couple_data"
+      ],
+      "reference_verified": true,
+      "reference_second": 4.2289956357029533e-05,
+      "reference_third": 1.1039846654823665e-05,
+      "reference_total": 5.3329803011853197e-05
+    },
+    "no_A_encoder": {
+      "c1": 2.664535259100326e-19,
+      "second": 3.5487013493470224e-05,
+      "third": 9.582832072124752e-06,
+      "total": 4.506984556559497e-05,
+      "exp_minus_A1": 0.5403607788472179,
+      "T3a": 1.2229100391657114e-05,
+      "t3bc": -2.6462683195323623e-06,
+      "pair_seconds": 0.5587663589976728,
+      "seconds": 0.8829928779887268,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_CX",
+        "A_check",
+        "A_init"
+      ],
+      "reference_verified": true,
+      "reference_second": 3.548701349346709e-05,
+      "reference_third": 9.5828320721249e-06,
+      "reference_total": 4.506984556559199e-05
+    },
+    "no_A_idle": {
+      "c1": 2.664535259100326e-19,
+      "second": 4.5225124042930795e-05,
+      "third": 1.0126718276101047e-05,
+      "total": 5.535184231903184e-05,
+      "exp_minus_A1": 0.5340490613257578,
+      "T3a": 1.3552916864840869e-05,
+      "t3bc": -3.426198588739823e-06,
+      "pair_seconds": 0.5105159680097131,
+      "seconds": 0.8892311430099653,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_idle_post",
+        "A_idle_prep"
+      ],
+      "reference_verified": true,
+      "reference_second": 4.522512404292856e-05,
+      "reference_third": 1.012671827610102e-05,
+      "reference_total": 5.535184231902958e-05
+    },
+    "no_A_init_checks": {
+      "c1": 2.664535259100326e-19,
+      "second": 4.5889423497615686e-05,
+      "third": 1.1028121418798234e-05,
+      "total": 5.6917544916413916e-05,
+      "exp_minus_A1": 0.5347701484155762,
+      "T3a": 1.4425584322267155e-05,
+      "t3bc": -3.3974629034689224e-06,
+      "pair_seconds": 0.5614527389989235,
+      "seconds": 0.8885456919961143,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_check",
+        "A_init"
+      ],
+      "reference_verified": true,
+      "reference_second": 4.5889423497612217e-05,
+      "reference_third": 1.1028121418797974e-05,
+      "reference_total": 5.6917544916410196e-05
+    },
+    "no_A_readout": {
+      "c1": 2.664535259100326e-19,
+      "second": 4.60008676458635e-05,
+      "third": 1.1338541081796636e-05,
+      "total": 5.733940872766014e-05,
+      "exp_minus_A1": 0.5313939733152656,
+      "T3a": 1.449958094923991e-05,
+      "t3bc": -3.161039867443275e-06,
+      "pair_seconds": 0.47397642700525466,
+      "seconds": 0.8486789099988528,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "A_readout"
+      ],
+      "reference_verified": true,
+      "reference_second": 4.600086764585914e-05,
+      "reference_third": 1.133854108179661e-05,
+      "reference_total": 5.733940872765575e-05
+    },
+    "no_data_wait": {
+      "c1": 2.664535259100326e-19,
+      "second": 4.134555378535015e-05,
+      "third": 4.423105610337429e-06,
+      "total": 4.576865939568758e-05,
+      "exp_minus_A1": 0.5628907500056672,
+      "T3a": 7.596604492018852e-06,
+      "t3bc": -3.1734988816814226e-06,
+      "pair_seconds": 0.7904047920019366,
+      "seconds": 1.3790498500020476,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "data_wait"
+      ],
+      "reference_verified": true,
+      "reference_second": 4.13455537853479e-05,
+      "reference_third": 4.4231056103374e-06,
+      "reference_total": 4.5768659395685304e-05
+    },
+    "no_pre_stage": {
+      "c1": 1.332267629550188e-19,
+      "second": 1.7878687893661843e-05,
+      "third": 4.379313872449172e-06,
+      "total": 2.2258001766111016e-05,
+      "exp_minus_A1": 0.7962108624218432,
+      "T3a": 5.022500909247264e-06,
+      "t3bc": -6.431870367980913e-07,
+      "pair_seconds": 0.5093767040089006,
+      "seconds": 0.9273554640094517,
+      "pairs": 920,
+      "triples": 21422,
+      "table_keys": 4942,
+      "removed_families": [
+        "pre_gate",
+        "pre_idle"
+      ],
+      "reference_verified": true,
+      "reference_second": 1.7878687893662274e-05,
+      "reference_third": 4.379313872449183e-06,
+      "reference_total": 2.2258001766111457e-05
+    }
+  },
+  "scope": "A coupling includes entire joint noise channels; ablation differences overlap. pre-stage excludes post-release data waiting and block preparation.",
+  "pair_families": {
+    "pre_idle x pre_idle": 1.166666666666604e-05,
+    "pre_idle x round_other": 1.1199999999999845e-05,
+    "A_CX x data_wait": 3.926920508535746e-06,
+    "round_other x round_other": 2.799999999999978e-06,
+    "BC_prep x BC_prep": 2.3977777777777472e-06,
+    "A_couple_data x pre_idle": 1.9553779357497356e-06,
+    "A_CX x BC_prep": 1.4888888888888948e-06,
+    "A_CX x pre_idle": 1.2267455964812922e-06,
+    "A_CX x round_other": 1.2000000000000008e-06,
+    "A_couple_data x round_other": 1.1200000000000018e-06,
+    "BC_idle x BC_prep": 1.0440003949300115e-06,
+    "A_CX x A_idle_prep": 9.75410565794769e-07,
+    "BC_prep x round_other": 8.022222222222248e-07,
+    "data_wait x pre_idle": 7.731256006324549e-07,
+    "A_CX x pre_gate": 6.15555555555556e-07,
+    "A_CX x BC_idle": 3.9999999999998934e-07,
+    "pre_gate x pre_idle": 3.819959051269454e-07,
+    "A_CX x A_check": 3.111111111111111e-07,
+    "A_CX x A_CX": 2.8444444444444454e-07,
+    "A_CX x A_couple_data": 2.8444444444444454e-07,
+    "BC_idle x BC_idle": 2.217781727078062e-07,
+    "A_couple_data x A_couple_data": 1.8666666666666694e-07,
+    "A_couple_C x BC_idle": 1.7742253816624973e-07,
+    "A_couple_C x BC_prep": 1.6888888888888904e-07,
+    "A_readout x pre_idle": 1.6633362953085915e-07,
+    "data_wait x pre_gate": 1.549347142072314e-07,
+    "pre_gate x pre_gate": 1.2999999999999995e-07,
+    "BC_idle x round_other": 8.871126908312486e-08,
+    "A_readout x pre_gate": 3.3333333333333334e-08,
+    "A_couple_data x pre_gate": 1.777777777777777e-08
+  },
+  "top_A_pairs": [
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Z@q10 t=34..47",
+        "L375 gate2 ZZ@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Z@q10 t=34..47",
+        "L365 gate2 ZI@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Z@q10 t=34..47",
+        "L354 gate2 XY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Z@q10 t=34..47",
+        "L354 gate2 IZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Y@q10 t=34..47",
+        "L375 gate2 YY@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Y@q10 t=34..47",
+        "L365 gate2 YX@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Y@q10 t=34..47",
+        "L354 gate2 XZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 3.084291424744738e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L223 idle Y@q10 t=34..47",
+        "L354 gate2 IY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 1.9893664522365186e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L267 idle Z@q0 t=39..47",
+        "L376 gate2 ZZ@q8,14 t=47"
+      ]
+    },
+    {
+      "loss": 1.9893664522365186e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L267 idle Z@q0 t=39..47",
+        "L366 gate2 ZI@q14,15 t=46"
+      ]
+    },
+    {
+      "loss": 1.9893664522365186e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L267 idle Z@q0 t=39..47",
+        "L355 gate2 IZ@q8,14 t=45"
+      ]
+    },
+    {
+      "loss": 1.9893664522365186e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L267 idle Y@q0 t=39..47",
+        "L376 gate2 YY@q8,14 t=47"
+      ]
+    },
+    {
+      "loss": 1.9893664522365186e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L267 idle Y@q0 t=39..47",
+        "L355 gate2 XZ@q8,14 t=45"
+      ]
+    },
+    {
+      "loss": 1.6633362953085915e-07,
+      "families": [
+        "pre_idle",
+        "A_readout"
+      ],
+      "faults": [
+        "L173 idle X@q7 t=20..23",
+        "L409 flip X@q14 t=49"
+      ]
+    },
+    {
+      "loss": 1.5493471420723143e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L276 idle Z@q20 t=40..46",
+        "L347 gate2 ZZ@q2,8 t=44"
+      ]
+    },
+    {
+      "loss": 1.5493471420723143e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L276 idle Z@q20 t=40..46",
+        "L347 gate2 YY@q2,8 t=44"
+      ]
+    },
+    {
+      "loss": 1.5493471420723143e-07,
+      "families": [
+        "data_wait",
+        "A_CX"
+      ],
+      "faults": [
+        "L276 idle Z@q20 t=40..46",
+        "L334 gate2 IZ@q14,8 t=43"
+      ]
+    },
+    {
+      "loss": 1.4329451948544005e-07,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L166 idle X@q4 t=18..30",
+        "L375 gate2 YY@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 1.4329451948544005e-07,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L166 idle X@q4 t=18..30",
+        "L365 gate2 YX@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 1.4329451948544005e-07,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L166 idle X@q4 t=18..30",
+        "L354 gate2 XZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 1.4329451948544005e-07,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L166 idle X@q4 t=18..30",
+        "L354 gate2 IY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Z@q9 t=43..47",
+        "L375 gate2 ZZ@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Z@q9 t=43..47",
+        "L365 gate2 ZI@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Z@q9 t=43..47",
+        "L354 gate2 XY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Z@q9 t=43..47",
+        "L354 gate2 IZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Y@q9 t=43..47",
+        "L375 gate2 YY@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Y@q9 t=43..47",
+        "L365 gate2 YX@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Y@q9 t=43..47",
+        "L354 gate2 XZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 1.1081520961323533e-07,
+      "families": [
+        "A_idle_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L319 idle Y@q9 t=43..47",
+        "L354 gate2 IY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 8.847517840525524e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L171 idle X@q10 t=19..26",
+        "L375 gate2 YY@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 8.847517840525524e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L171 idle X@q10 t=19..26",
+        "L365 gate2 YX@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 8.847517840525524e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L171 idle X@q10 t=19..26",
+        "L354 gate2 XZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 8.847517840525524e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L171 idle X@q10 t=19..26",
+        "L354 gate2 IY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L376 gate2 ZZ@q8,14 t=47",
+        "L424 flip Z@q6 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L375 gate2 ZZ@q1,2 t=47",
+        "L430 flip Z@q11 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L366 gate2 ZI@q14,15 t=46",
+        "L424 flip Z@q6 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L365 gate2 ZI@q2,8 t=46",
+        "L430 flip Z@q11 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L355 gate2 IZ@q8,14 t=45",
+        "L424 flip Z@q6 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L354 gate2 XY@q1,2 t=45",
+        "L430 flip Z@q11 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L354 gate2 IZ@q1,2 t=45",
+        "L430 flip Z@q11 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L347 gate2 ZZ@q2,8 t=44",
+        "L426 flip Z@q26 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L347 gate2 YY@q2,8 t=44",
+        "L426 flip Z@q26 t=50"
+      ]
+    },
+    {
+      "loss": 6.666666666666667e-08,
+      "families": [
+        "A_CX",
+        "round_other"
+      ],
+      "faults": [
+        "L334 gate2 IZ@q14,8 t=43",
+        "L426 flip Z@q26 t=50"
+      ]
+    },
+    {
+      "loss": 4.435563454156243e-08,
+      "families": [
+        "BC_idle",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L311 idle X@q4 t=42..45",
+        "L400 gate2 YY@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 4.435563454156243e-08,
+      "families": [
+        "BC_idle",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L311 idle X@q4 t=42..45",
+        "L400 gate2 YX@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 4.435563454156243e-08,
+      "families": [
+        "BC_idle",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L311 idle X@q4 t=42..45",
+        "L400 gate2 XY@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 4.435563454156243e-08,
+      "families": [
+        "BC_idle",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L311 idle X@q4 t=42..45",
+        "L400 gate2 XX@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 3.333333333333333e-08,
+      "families": [
+        "BC_prep",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L291 flip X@q4 t=40",
+        "L400 gate2 YY@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 3.333333333333333e-08,
+      "families": [
+        "BC_prep",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L291 flip X@q4 t=40",
+        "L400 gate2 YX@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 3.333333333333333e-08,
+      "families": [
+        "BC_prep",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L291 flip X@q4 t=40",
+        "L400 gate2 XY@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 3.333333333333333e-08,
+      "families": [
+        "BC_prep",
+        "A_couple_C"
+      ],
+      "faults": [
+        "L291 flip X@q4 t=40",
+        "L400 gate2 XX@q17,16 t=49"
+      ]
+    },
+    {
+      "loss": 3.328890864197444e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L194 idle X@q10 t=28..30",
+        "L375 gate2 YY@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 3.328890864197444e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L194 idle X@q10 t=28..30",
+        "L365 gate2 YX@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 3.328890864197444e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L194 idle X@q10 t=28..30",
+        "L354 gate2 XZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 3.328890864197444e-08,
+      "families": [
+        "pre_idle",
+        "A_CX"
+      ],
+      "faults": [
+        "L194 idle X@q10 t=28..30",
+        "L354 gate2 IY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_CX",
+        "pre_gate"
+      ],
+      "faults": [
+        "L347 gate2 ZZ@q2,8 t=44",
+        "L374 gate1 Z@q20 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_CX",
+        "pre_gate"
+      ],
+      "faults": [
+        "L347 gate2 YY@q2,8 t=44",
+        "L374 gate1 Z@q20 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L344 gate1 Z@q1 t=44",
+        "L376 gate2 ZZ@q8,14 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L344 gate1 Z@q1 t=44",
+        "L366 gate2 ZI@q14,15 t=46"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L344 gate1 Z@q1 t=44",
+        "L355 gate2 IZ@q8,14 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L344 gate1 Y@q1 t=44",
+        "L376 gate2 ZZ@q8,14 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L344 gate1 Y@q1 t=44",
+        "L366 gate2 ZI@q14,15 t=46"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L344 gate1 Y@q1 t=44",
+        "L355 gate2 IZ@q8,14 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_CX",
+        "pre_gate"
+      ],
+      "faults": [
+        "L334 gate2 IZ@q14,8 t=43",
+        "L374 gate1 Z@q20 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Z@q9 t=41",
+        "L375 gate2 ZZ@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Z@q9 t=41",
+        "L365 gate2 ZI@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Z@q9 t=41",
+        "L354 gate2 XY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Z@q9 t=41",
+        "L354 gate2 IZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Y@q9 t=41",
+        "L375 gate2 ZZ@q1,2 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Y@q9 t=41",
+        "L365 gate2 ZI@q2,8 t=46"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Y@q9 t=41",
+        "L354 gate2 XY@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "A_check",
+        "A_CX"
+      ],
+      "faults": [
+        "L303 gate1 Y@q9 t=41",
+        "L354 gate2 IZ@q1,2 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L253 gate1 Z@q28 t=36",
+        "L376 gate2 ZZ@q8,14 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L253 gate1 Z@q28 t=36",
+        "L366 gate2 ZI@q14,15 t=46"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L253 gate1 Z@q28 t=36",
+        "L355 gate2 IZ@q8,14 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L253 gate1 Y@q28 t=36",
+        "L376 gate2 ZZ@q8,14 t=47"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L253 gate1 Y@q28 t=36",
+        "L366 gate2 ZI@q14,15 t=46"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L253 gate1 Y@q28 t=36",
+        "L355 gate2 IZ@q8,14 t=45"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L244 gate1 Z@q26 t=36",
+        "L347 gate2 ZZ@q2,8 t=44"
+      ]
+    },
+    {
+      "loss": 2.2222222222222224e-08,
+      "families": [
+        "BC_prep",
+        "A_CX"
+      ],
+      "faults": [
+        "L244 gate1 Z@q26 t=36",
+        "L347 gate2 YY@q2,8 t=44"
+      ]
+    }
+  ],
+  "cross_terms": {
+    "A_all x data_wait": {
+      "second": 3.926920508535704e-06,
+      "third": 3.1857290025619744e-06,
+      "total": 7.112649511097679e-06
+    },
+    "A_all x pre_stage": {
+      "second": 4.01512382842861e-06,
+      "third": 2.8309681347474247e-06,
+      "total": 6.846091963176039e-06
+    },
+    "A_CX x data_wait": {
+      "second": 3.9269205085357245e-06,
+      "third": 8.666141118486816e-07,
+      "total": 4.7935346203844e-06
+    },
+    "A_CX x pre_stage": {
+      "second": 1.8423011520370984e-06,
+      "third": 6.715166953224332e-07,
+      "total": 2.513817847359532e-06
+    }
+  },
+  "max_moment_reference_error": 4.3842425349882586e-18
+}

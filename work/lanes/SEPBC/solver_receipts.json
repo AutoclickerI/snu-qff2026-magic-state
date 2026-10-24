@@ -1,0 +1,940 @@
+{
+  "helper_d14_c72_s1.receipt.json": {
+    "depth": 14,
+    "cap": 72,
+    "seed": 1,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d14_c72_s1",
+    "status": "TIMEOUT",
+    "solver_seconds": 480.55384105583653,
+    "wall_seconds": 480.644840573892,
+    "iterations": 176,
+    "models": 0,
+    "cuts": 330,
+    "variables": 34449,
+    "solver_stats": {
+      "restarts": 162205,
+      "conflicts": 3520177,
+      "decisions": 25751540,
+      "propagations": 929335346
+    },
+    "basis": [
+      [
+        7,
+        3,
+        1
+      ],
+      [
+        6,
+        1,
+        3
+      ]
+    ]
+  },
+  "helper_d14_c82_s7.receipt.json": {
+    "depth": 14,
+    "cap": 82,
+    "seed": 7,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d14_c82_s7",
+    "status": "TIMEOUT",
+    "solver_seconds": 480.19950592541136,
+    "wall_seconds": 480.2921105858404,
+    "iterations": 182,
+    "models": 0,
+    "cuts": 330,
+    "variables": 34449,
+    "solver_stats": {
+      "restarts": 168731,
+      "conflicts": 3640179,
+      "decisions": 25141736,
+      "propagations": 813396544
+    },
+    "basis": [
+      [
+        6,
+        7,
+        2
+      ],
+      [
+        1,
+        5,
+        6
+      ]
+    ]
+  },
+  "helper_d16_c72_s5.receipt.json": {
+    "depth": 16,
+    "cap": 72,
+    "seed": 5,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d16_c72_s5",
+    "status": "TIMEOUT",
+    "solver_seconds": 481.76693471870385,
+    "wall_seconds": 481.86677647102624,
+    "iterations": 180,
+    "models": 0,
+    "cuts": 374,
+    "variables": 35352,
+    "solver_stats": {
+      "restarts": 160823,
+      "conflicts": 3600163,
+      "decisions": 31354036,
+      "propagations": 1359415342
+    },
+    "basis": [
+      [
+        2,
+        7,
+        4
+      ],
+      [
+        7,
+        2,
+        3
+      ]
+    ]
+  },
+  "interleave_r45_k4_s2.receipt0.json": {
+    "status": "INFEASIBLE",
+    "seconds": 63.87483068811707,
+    "stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 639\nbooleans: 17986\nconflicts: 116420\nbranches: 594079\npropagations: 101424108\ninteger_propagations: 21292341\nrestarts: 581\nlp_iterations: 158486\nwalltime: 63.8734\nusertime: 63.8734\ndeterministic_time: 85.4556\ngap_integral: 0\n",
+    "iteration": 0
+  },
+  "mb_control.receipt.json": {
+    "depth": 14,
+    "cap": 82,
+    "seed": 0,
+    "seconds": 20.0,
+    "backend": "cadical195",
+    "helpers": "",
+    "helper_x": false,
+    "hint": "work/lanes/SEPBC/inputs/seed82.prep.json",
+    "eager": false,
+    "fixed": true,
+    "out": "work/lanes/SEPBC/mb_control",
+    "max_measurements": 0,
+    "status": "SAT",
+    "solver_seconds": 0.0004054639721289277,
+    "wall_seconds": 0.04750514402985573,
+    "iterations": 1,
+    "models": 1,
+    "cuts": 0,
+    "variables": 14763,
+    "solver_stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 2928,
+      "propagations": 14763
+    },
+    "basis": [
+      [
+        4,
+        5,
+        7
+      ],
+      [
+        2,
+        7,
+        4
+      ]
+    ],
+    "witness_cx": 82,
+    "verification": {
+      "stim_target_pass": true,
+      "expectations": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clean_pass": true,
+      "clean_faults": 0,
+      "cx": 82,
+      "depth": 14
+    }
+  },
+  "mblns_s1.receipt.json": {
+    "args": {
+      "seed": 1,
+      "seconds": 600.0,
+      "cap": 80
+    },
+    "attempts": 395,
+    "witnesses": 11,
+    "seconds": 600.9301611098927
+  },
+  "mb_d14_c64_s2.receipt.json": {
+    "depth": 14,
+    "cap": 64,
+    "seed": 2,
+    "seconds": 600.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/inputs/seed82.prep.json",
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/mb_d14_c64_s2",
+    "max_measurements": 12,
+    "status": "TIMEOUT",
+    "solver_seconds": 600.0116773403715,
+    "wall_seconds": 600.1502895101439,
+    "iterations": 174,
+    "models": 0,
+    "cuts": 330,
+    "variables": 39102,
+    "solver_stats": {
+      "restarts": 144910,
+      "conflicts": 3480148,
+      "decisions": 29125918,
+      "propagations": 1781696354
+    },
+    "basis": [
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        3,
+        1,
+        4
+      ]
+    ]
+  },
+  "amb_d8_c12_s5.receipt.json": {
+    "args": {
+      "depth": 8,
+      "cap": 12,
+      "seed": 5,
+      "seconds": 300.0,
+      "count": 120
+    },
+    "status": "TIMEOUT",
+    "count": 120,
+    "seconds": 124.72916853497736
+  },
+  "interleave_r45_k4_s1.receipt0.json": {
+    "status": "INFEASIBLE",
+    "seconds": 1.0677554819267243,
+    "stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 636\nbooleans: 16656\nconflicts: 530\nbranches: 37303\npropagations: 2257085\ninteger_propagations: 642826\nrestarts: 2\nlp_iterations: 249\nwalltime: 1.06745\nusertime: 1.06745\ndeterministic_time: 1.92161\ngap_integral: 0\n",
+    "iteration": 0
+  },
+  "mb_d16_c64_s3.receipt.json": {
+    "depth": 16,
+    "cap": 64,
+    "seed": 3,
+    "seconds": 600.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/inputs/seed82.prep.json",
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/mb_d16_c64_s3",
+    "max_measurements": 12,
+    "status": "TIMEOUT",
+    "solver_seconds": 600.2879510666244,
+    "wall_seconds": 600.444937766064,
+    "iterations": 172,
+    "models": 0,
+    "cuts": 374,
+    "variables": 40492,
+    "solver_stats": {
+      "restarts": 156894,
+      "conflicts": 3440152,
+      "decisions": 36644700,
+      "propagations": 2059592348
+    },
+    "basis": [
+      [
+        5,
+        7,
+        6
+      ],
+      [
+        6,
+        3,
+        2
+      ]
+    ]
+  },
+  "helper_d12_c78_s4.receipt.json": {
+    "depth": 12,
+    "cap": 78,
+    "seed": 4,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d12_c78_s4",
+    "status": "TIMEOUT",
+    "solver_seconds": 482.4061361604836,
+    "wall_seconds": 482.48180423513986,
+    "iterations": 169,
+    "models": 0,
+    "cuts": 286,
+    "variables": 29451,
+    "solver_stats": {
+      "restarts": 162184,
+      "conflicts": 3380138,
+      "decisions": 19224088,
+      "propagations": 620143427
+    },
+    "basis": [
+      [
+        5,
+        7,
+        4
+      ],
+      [
+        3,
+        1,
+        6
+      ]
+    ]
+  },
+  "helper_d14_c64_s2.receipt.json": {
+    "depth": 14,
+    "cap": 64,
+    "seed": 2,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d14_c64_s2",
+    "status": "TIMEOUT",
+    "solver_seconds": 482.5055821600836,
+    "wall_seconds": 482.59659451199695,
+    "iterations": 171,
+    "models": 0,
+    "cuts": 330,
+    "variables": 34449,
+    "solver_stats": {
+      "restarts": 157547,
+      "conflicts": 3420152,
+      "decisions": 26366208,
+      "propagations": 1173087951
+    },
+    "basis": [
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        3,
+        1,
+        4
+      ]
+    ]
+  },
+  "helper_d14_c78_s0.receipt.json": {
+    "depth": 14,
+    "cap": 78,
+    "seed": 0,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d14_c78_s0",
+    "status": "TIMEOUT",
+    "solver_seconds": 484.8958652163856,
+    "wall_seconds": 485.0119160041213,
+    "iterations": 183,
+    "models": 0,
+    "cuts": 330,
+    "variables": 34449,
+    "solver_stats": {
+      "restarts": 170243,
+      "conflicts": 3660168,
+      "decisions": 25111236,
+      "propagations": 832789772
+    },
+    "basis": [
+      [
+        4,
+        5,
+        7
+      ],
+      [
+        2,
+        7,
+        4
+      ]
+    ]
+  },
+  "amb_d8_c10_s1.receipt.json": {
+    "args": {
+      "depth": 8,
+      "cap": 10,
+      "seed": 1,
+      "seconds": 300.0,
+      "count": 120
+    },
+    "status": "TIMEOUT",
+    "count": 0,
+    "seconds": 301.40944760106504
+  },
+  "mblns_s2.receipt.json": {
+    "args": {
+      "seed": 2,
+      "seconds": 600.0,
+      "cap": 79
+    },
+    "attempts": 484,
+    "witnesses": 9,
+    "seconds": 601.7141751230229
+  },
+  "amb_d6_c11_s4.receipt.json": {
+    "args": {
+      "depth": 6,
+      "cap": 11,
+      "seed": 4,
+      "seconds": 300.0,
+      "count": 120
+    },
+    "status": "TIMEOUT",
+    "count": 120,
+    "seconds": 121.13136527989991
+  },
+  "mblns_s3.receipt.json": {
+    "args": {
+      "seed": 3,
+      "seconds": 600.0,
+      "cap": 81
+    },
+    "attempts": 295,
+    "witnesses": 13,
+    "seconds": 600.732294049114
+  },
+  "interleave_r45_k4_s0.receipt0.json": {
+    "status": "INFEASIBLE",
+    "seconds": 1.278570500900969,
+    "stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 635\nbooleans: 16549\nconflicts: 526\nbranches: 35207\npropagations: 1970796\ninteger_propagations: 633943\nrestarts: 2\nlp_iterations: 252\nwalltime: 1.27824\nusertime: 1.27824\ndeterministic_time: 1.62421\ngap_integral: 0\n",
+    "iteration": 0
+  },
+  "mblns_s4.receipt.json": {
+    "args": {
+      "seed": 4,
+      "seconds": 600.0,
+      "cap": 80
+    },
+    "attempts": 506,
+    "witnesses": 8,
+    "seconds": 601.0569610539824
+  },
+  "mblns_s0.receipt.json": {
+    "args": {
+      "seed": 0,
+      "seconds": 600.0,
+      "cap": 81
+    },
+    "attempts": 291,
+    "witnesses": 13,
+    "seconds": 601.6246650950052
+  },
+  "mb_d14_c72_s1.receipt.json": {
+    "depth": 14,
+    "cap": 72,
+    "seed": 1,
+    "seconds": 600.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/inputs/seed82.prep.json",
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/mb_d14_c72_s1",
+    "max_measurements": 12,
+    "status": "TIMEOUT",
+    "solver_seconds": 603.0831217023078,
+    "wall_seconds": 603.222801045049,
+    "iterations": 190,
+    "models": 0,
+    "cuts": 330,
+    "variables": 39102,
+    "solver_stats": {
+      "restarts": 127260,
+      "conflicts": 3800193,
+      "decisions": 26755056,
+      "propagations": 1666938645
+    },
+    "basis": [
+      [
+        7,
+        3,
+        1
+      ],
+      [
+        6,
+        1,
+        3
+      ]
+    ]
+  },
+  "amb_d10_c10_s3.receipt.json": {
+    "args": {
+      "depth": 10,
+      "cap": 10,
+      "seed": 3,
+      "seconds": 300.0,
+      "count": 120
+    },
+    "status": "TIMEOUT",
+    "count": 0,
+    "seconds": 300.72562357084826
+  },
+  "mb_d14_c82_s4.receipt.json": {
+    "depth": 14,
+    "cap": 82,
+    "seed": 4,
+    "seconds": 600.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/inputs/seed82.prep.json",
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/mb_d14_c82_s4",
+    "max_measurements": 12,
+    "status": "SAT",
+    "solver_seconds": 0.1250832888763398,
+    "wall_seconds": 0.2752648629248142,
+    "iterations": 1,
+    "models": 1,
+    "cuts": 330,
+    "variables": 39102,
+    "solver_stats": {
+      "restarts": 208,
+      "conflicts": 1001,
+      "decisions": 197888,
+      "propagations": 782445
+    },
+    "basis": [
+      [
+        5,
+        7,
+        4
+      ],
+      [
+        3,
+        1,
+        6
+      ]
+    ],
+    "witness_cx": 82,
+    "verification": {
+      "stim_target_pass": true,
+      "expectations": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clean_pass": true,
+      "clean_faults": 0,
+      "cx": 82,
+      "depth": 14
+    }
+  },
+  "mblns_s5.receipt.json": {
+    "args": {
+      "seed": 5,
+      "seconds": 600.0,
+      "cap": 79
+    },
+    "attempts": 309,
+    "witnesses": 12,
+    "seconds": 600.9600203861482
+  },
+  "helper_d16_c64_s3.receipt.json": {
+    "depth": 16,
+    "cap": 64,
+    "seed": 3,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d16_c64_s3",
+    "status": "TIMEOUT",
+    "solver_seconds": 480.5602476715576,
+    "wall_seconds": 480.65911338082515,
+    "iterations": 170,
+    "models": 0,
+    "cuts": 374,
+    "variables": 35352,
+    "solver_stats": {
+      "restarts": 156643,
+      "conflicts": 3400140,
+      "decisions": 30421182,
+      "propagations": 1511904248
+    },
+    "basis": [
+      [
+        5,
+        7,
+        6
+      ],
+      [
+        6,
+        3,
+        2
+      ]
+    ]
+  },
+  "mb_d16_c72_s5.receipt.json": {
+    "depth": 16,
+    "cap": 72,
+    "seed": 5,
+    "seconds": 600.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/inputs/seed82.prep.json",
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/mb_d16_c72_s5",
+    "max_measurements": 12,
+    "status": "TIMEOUT",
+    "solver_seconds": 601.8028316479176,
+    "wall_seconds": 601.9593548998237,
+    "iterations": 173,
+    "models": 0,
+    "cuts": 374,
+    "variables": 40492,
+    "solver_stats": {
+      "restarts": 153694,
+      "conflicts": 3460152,
+      "decisions": 38646502,
+      "propagations": 2001068361
+    },
+    "basis": [
+      [
+        2,
+        7,
+        4
+      ],
+      [
+        7,
+        2,
+        3
+      ]
+    ]
+  },
+  "interleave_r45_k4_s3.receipt0.json": {
+    "status": "FEASIBLE",
+    "seconds": 459.58020515413955,
+    "stats": "CpSolverResponse summary:\nstatus: FEASIBLE\nobjective: 1307\nbest_bound: 261\nintegers: 640\nbooleans: 19452\nconflicts: 384303\nbranches: 1773844\npropagations: 313544269\ninteger_propagations: 96207252\nrestarts: 1223\nlp_iterations: 1389415\nwalltime: 459.58\nusertime: 459.58\ndeterministic_time: 561.517\ngap_integral: 4064.79\nsolution_fingerprint: 0x652f84d24f1b577d\n",
+    "iteration": 0,
+    "score": {
+      "c1": 2.9235872981795294e-19,
+      "second": 9.106628990159099e-05,
+      "third": 7.520213365650548e-05,
+      "total": 0.0001662684235580965,
+      "exp_minus_A1": 0.3323696352520963,
+      "T3a": 8.602602261379443e-05,
+      "t3bc": -1.0823888957288951e-05,
+      "pair_seconds": 0.46886002691462636,
+      "seconds": 0.7936759698204696,
+      "pairs": 850,
+      "triples": 23903,
+      "table_keys": 6712,
+      "seconds_total": 1.222855880158022,
+      "sha256": "ab337bff4c45d17fb6edc1d26809da198411957690b6a9b3a6a77175e38590f5"
+    }
+  },
+  "helper_d18_c64_s6.receipt.json": {
+    "depth": 18,
+    "cap": 64,
+    "seed": 6,
+    "seconds": 480.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": null,
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/helper_d18_c64_s6",
+    "status": "TIMEOUT",
+    "solver_seconds": 482.2847281640861,
+    "wall_seconds": 482.4272262060549,
+    "iterations": 162,
+    "models": 0,
+    "cuts": 418,
+    "variables": 40351,
+    "solver_stats": {
+      "restarts": 150975,
+      "conflicts": 3240150,
+      "decisions": 31709675,
+      "propagations": 1880216600
+    },
+    "basis": [
+      [
+        2,
+        5,
+        1
+      ],
+      [
+        7,
+        5,
+        6
+      ]
+    ]
+  },
+  "amb_d6_c10_s0.receipt.json": {
+    "args": {
+      "depth": 6,
+      "cap": 10,
+      "seed": 0,
+      "seconds": 300.0,
+      "count": 120
+    },
+    "status": "UNSAT",
+    "count": 0,
+    "seconds": 4.934512429172173
+  },
+  "mb_d14_c78_s0.receipt.json": {
+    "depth": 14,
+    "cap": 78,
+    "seed": 0,
+    "seconds": 600.0,
+    "backend": "cadical195",
+    "helpers": "18,24,30,31,32,33,34,35",
+    "helper_x": true,
+    "hint": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/inputs/seed82.prep.json",
+    "eager": true,
+    "fixed": false,
+    "out": "/data2/jihoon/home/jihoon/competitions/quantumn/work/lanes/SEPBC/mb_d14_c78_s0",
+    "max_measurements": 12,
+    "status": "SAT",
+    "solver_seconds": 8.152540711918846,
+    "wall_seconds": 8.300432305084541,
+    "iterations": 4,
+    "models": 1,
+    "cuts": 330,
+    "variables": 39102,
+    "solver_stats": {
+      "restarts": 4851,
+      "conflicts": 78296,
+      "decisions": 1371882,
+      "propagations": 47838098
+    },
+    "basis": [
+      [
+        4,
+        5,
+        7
+      ],
+      [
+        2,
+        7,
+        4
+      ]
+    ],
+    "witness_cx": 77,
+    "verification": {
+      "stim_target_pass": true,
+      "expectations": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clean_pass": true,
+      "clean_faults": 0,
+      "cx": 77,
+      "depth": 14
+    }
+  },
+  "amb_d8_c11_s2.receipt.json": {
+    "args": {
+      "depth": 8,
+      "cap": 11,
+      "seed": 2,
+      "seconds": 300.0,
+      "count": 120
+    },
+    "status": "TIMEOUT",
+    "count": 120,
+    "seconds": 122.26868609408848
+  },
+  "static_abc.json": {
+    "status": "UNKNOWN",
+    "seconds": 180.00993328500002,
+    "bound": 1083.0,
+    "args": {
+      "seconds": 180.0,
+      "workers": 2,
+      "maxhop": 4,
+      "a_connect": true,
+      "tag": "static_abc"
+    },
+    "stats": "CpSolverResponse summary:\nstatus: UNKNOWN\nobjective: 441208\nbest_bound: 1083\nintegers: 1424\nbooleans: 2940\nconflicts: 8386\nbranches: 1446078\npropagations: 134144841\ninteger_propagations: 63604733\nrestarts: 78\nlp_iterations: 2707942\nwalltime: 180.01\nusertime: 180.01\ndeterministic_time: 551.895\ngap_integral: 7172.13\n"
+  },
+  "static_bc.json": {
+    "status": "UNKNOWN",
+    "seconds": 180.046247189,
+    "bound": 1445.0,
+    "args": {
+      "seconds": 180.0,
+      "workers": 2,
+      "maxhop": 4,
+      "a_connect": false,
+      "tag": "static_bc"
+    },
+    "stats": "CpSolverResponse summary:\nstatus: UNKNOWN\nobjective: 441208\nbest_bound: 1445\nintegers: 1304\nbooleans: 2940\nconflicts: 11048\nbranches: 1603510\npropagations: 152411019\ninteger_propagations: 68638532\nrestarts: 93\nlp_iterations: 2701893\nwalltime: 180.046\nusertime: 180.046\ndeterministic_time: 550.044\ngap_integral: 7147.73\n"
+  },
+  "static_certificate_7.json": {
+    "width": 7,
+    "counts": {
+      "paths": 68,
+      "B_sets": 44,
+      "C_assignments": 3817,
+      "C_connected": 1,
+      "D_matchings": 1,
+      "A_matchings": 1
+    },
+    "examples": [
+      {
+        "b": [
+          1,
+          36,
+          8,
+          43,
+          15,
+          22,
+          29
+        ],
+        "c": [
+          0,
+          35,
+          7,
+          42,
+          14,
+          21,
+          28
+        ],
+        "d": [
+          2,
+          37,
+          9,
+          44,
+          16,
+          23,
+          30
+        ],
+        "a": [
+          3,
+          38,
+          10,
+          45,
+          17,
+          24,
+          31
+        ]
+      }
+    ],
+    "seconds": 0.00383071496617049,
+    "scope": "All 7x7 layouts with connected seven-cell B and C, seven distinct A/D/B/C roles, and NN A-D, D-B, B-C matchings; data/A need not connect. Time-dependent endpoint reuse and disconnected helper-assisted encoders excluded."
+  },
+  "static_certificate.json": {
+    "width": 6,
+    "counts": {
+      "paths": 1584,
+      "B_sets": 656,
+      "C_assignments": 59568,
+      "C_connected": 0,
+      "D_matchings": 0,
+      "A_matchings": 0
+    },
+    "examples": [],
+    "seconds": 0.06320792599581182,
+    "scope": "All 6x6 layouts with connected seven-cell B and C, seven distinct A/D/B/C roles, and NN A-D, D-B, B-C matchings; data/A need not connect. Time-dependent endpoint reuse and disconnected helper-assisted encoders excluded."
+  },
+  "unlabelled_bc": {
+    "args": {
+      "a_connect": false,
+      "count": 4,
+      "seconds": 120.0,
+      "tag": "unlabelled_bc",
+      "workers": 2
+    },
+    "iteration": 0,
+    "seconds": 6.411702209,
+    "status": "INFEASIBLE"
+  },
+  "unlabelled_abc": {
+    "args": {
+      "a_connect": true,
+      "count": 4,
+      "seconds": 120.0,
+      "tag": "unlabelled_abc",
+      "workers": 2
+    },
+    "iteration": 0,
+    "seconds": 16.887799969,
+    "status": "INFEASIBLE"
+  }
+}

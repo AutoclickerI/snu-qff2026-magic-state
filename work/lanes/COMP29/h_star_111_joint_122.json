@@ -1,0 +1,85 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "cx": 215,
+  "native_depth": 47,
+  "round_range": [
+    43,
+    44
+  ],
+  "R": 44,
+  "base": "MAIN/v35b",
+  "comp29_edits": [
+    "h_star_111",
+    "menu combination",
+    [
+      122
+    ],
+    [
+      {
+        "changes": [
+          [
+            "add",
+            {
+              "t": 31,
+              "lines": [
+                "cx q[13],q[7];"
+              ]
+            }
+          ],
+          [
+            "add",
+            {
+              "t": 32,
+              "lines": [
+                "h q[13];",
+                "measure q[13] -> c[541];",
+                "h q[13];"
+              ]
+            }
+          ],
+          [
+            "add",
+            {
+              "t": 27,
+              "lines": [
+                "cx q[13],q[7];"
+              ]
+            }
+          ],
+          [
+            "add",
+            {
+              "t": 26,
+              "lines": [
+                "reset q[13];",
+                "h q[13];"
+              ]
+            }
+          ],
+          [
+            "detector_add",
+            "// DETECTOR c[541]"
+          ]
+        ],
+        "restored_check_dependencies": [],
+        "record_map": {
+          "278": 541
+        }
+      }
+    ]
+  ],
+  "source": "/home/jihoon/competitions/quantumn/work/lanes/COMP29/h_star_111",
+  "qasm_sha256": "771d773418b83e18e5ecc471fe4f2de7ec346be7796a9d999685e61fb867b67b",
+  "BC_round_range": [
+    44,
+    44
+  ]
+}

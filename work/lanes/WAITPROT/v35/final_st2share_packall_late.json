@@ -1,0 +1,52 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "R": 44,
+  "native_depth": 47,
+  "cx": 222,
+  "base_sha256": "b606bd3902d28000e0ee073fc50a7c0870aaa1f2e1ab8947fdb7fd70c762218e",
+  "description": {
+    "family": "combination",
+    "source": "follow_st2best_fund_new05_released7Z_share21_28",
+    "packing": "all",
+    "late_initializations": [
+      {
+        "q": 1,
+        "kind": "RX",
+        "old": 38,
+        "new": 39
+      },
+      {
+        "q": 4,
+        "kind": "RX",
+        "old": 2,
+        "new": 4
+      },
+      {
+        "q": 6,
+        "kind": "RX",
+        "old": 9,
+        "new": 12
+      },
+      {
+        "remove_redundant_reset": {
+          "kind": "R",
+          "qs": [
+            21
+          ],
+          "t": 32,
+          "bit": null
+        }
+      }
+    ]
+  },
+  "signature_sha256": "086f8db656e14fcc119b8d73db4e76942a5ef64df6d9e4a0092bf58c34deefc4",
+  "qasm_sha256": "47b6a64094ef5493a30d07e227deca045d79894dc5baa43f8f9b395d523a3ad1"
+}

@@ -1,0 +1,176 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "CX": 211,
+  "R": 44,
+  "native_depth": 47,
+  "source": "work/lanes/SEPBC/v34/checked16_timing_0",
+  "recipe": {
+    "base": "/home/jihoon/competitions/quantumn/work/lanes/FRESH/r35/sepbc_echo_both",
+    "initial_mz_to_reset": [
+      40,
+      41
+    ],
+    "source": "ST2 v35b acceptance trade ported to SEPBC/FRESH composition"
+  },
+  "verification": {
+    "ideal": {
+      "ideal_acceptance": 1.0,
+      "ideal_loss": 0.0,
+      "stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ],
+      "detectors": 68,
+      "native_depth": 47,
+      "schedule_matches": true,
+      "singles_checked": true,
+      "c1": 3.0901207518733525e-19,
+      "harmful_singles": [],
+      "sha256": "a688cf3ad9d357dbcd872d387c80a20d9780b8418779b1285a143210d4ddd7b3"
+    },
+    "allorders": {
+      "loss": 4.1293260532646346e-05,
+      "acceptance": 0.5006036985453153
+    },
+    "speed": {
+      "stem": "/home/jihoon/competitions/quantumn/work/lanes/FRESH/r35/sepbc_reset_40_41.qasm",
+      "shots": 50000,
+      "repeats": 2,
+      "seconds": [
+        0.2964198809931986,
+        0.22788760002003983
+      ],
+      "median_seconds_per_1e6": 5.243074810132384,
+      "classification": "FAST",
+      "measurements": 84,
+      "detectors": 68,
+      "instructions": 420,
+      "t_gates": 15,
+      "mx_records": 33,
+      "mx_after_first_t": 32,
+      "mx_after_last_t": 8
+    },
+    "judge": {
+      "passed": true,
+      "acceptance": 0.500648,
+      "score": 3.5953404387913495e-05,
+      "sem": 7.201589798071572e-06,
+      "n_2q": 211,
+      "seconds": 2.910179379978217,
+      "report": "Report(p=0.001, shots=1000000, seed=0, format_errors=[], class_error=None, correctness_errors=[], score=np.float64(3.5953404387913495e-05), sem=np.float64(7.201589798071572e-06), acceptance=0.500648, ideal_acceptance=0.9999999999999997, frame={'X': (0, []), 'Z': (0, [])}, conditional_detectors=[], n_2q=211, diagnosis=Diagnosis(shots=1024, chi=None, detectors=68, expectations=0))"
+    },
+    "seeds": [
+      4.041815e-05,
+      4.19884e-05,
+      4.100048e-05
+    ],
+    "mean": 4.113567666666667e-05
+  },
+  "sha256": "a688cf3ad9d357dbcd872d387c80a20d9780b8418779b1285a143210d4ddd7b3",
+  "complete_recipe": {
+    "base": "r36/inputs/sepbc_checked16",
+    "timing": [
+      {
+        "bit": 45,
+        "q": [
+          21
+        ],
+        "old": 32,
+        "new": 36
+      },
+      {
+        "bit": 46,
+        "q": [
+          22
+        ],
+        "old": 32,
+        "new": 34
+      },
+      {
+        "bit": 43,
+        "q": [
+          16
+        ],
+        "old": 24,
+        "new": 30
+      },
+      {
+        "bit": 3,
+        "q": [
+          19
+        ],
+        "old": 10,
+        "new": 10
+      },
+      {
+        "bit": 42,
+        "q": [
+          20
+        ],
+        "old": 0,
+        "new": 7
+      },
+      {
+        "kind": "R",
+        "q": 13,
+        "old": 25,
+        "new": 33
+      },
+      {
+        "kind": "R",
+        "q": 19,
+        "old": 13,
+        "new": 17
+      }
+    ],
+    "echoes": [
+      [
+        15,
+        21,
+        "X",
+        19,
+        29
+      ],
+      [
+        20,
+        26,
+        "Z",
+        18,
+        31
+      ]
+    ],
+    "mz_to_reset": [
+      40,
+      41
+    ]
+  },
+  "provenance": {
+    "encoder": "SEPBC checked16_timing_0",
+    "decoder": "reviewer6/FRESH",
+    "timing": "FRESH r35 all-orders feedback",
+    "echo": "ST2 construction, FRESH schedule",
+    "reset_trade": "ST2 v35b"
+  },
+  "comparison_baseline": "work/lanes/MAIN/v35b",
+  "exact_diagnostic": {
+    "c1": 3.090120751873293e-19,
+    "second": 3.5001544192924385e-05,
+    "third_printed": 6.02727e-06,
+    "total_printed": 4.10288e-05,
+    "exp_minus_A1": 0.500771209742264,
+    "receipt": "r36/sepbc_reset_40_41.exact.log",
+    "scope": "unchanged exact2 arithmetic, detector-mask storage widened to Python integer for68 detectors"
+  }
+}
