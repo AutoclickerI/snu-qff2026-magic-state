@@ -16,7 +16,8 @@ dropped rules) · [reference/judge.md](docs/reference/judge.md) (how scores aris
 - Use idle capacity, caches and other lanes' outputs (RESOURCES); fix the critical path (PLAN).
 - Take the widest reading the rules allow (CONSTRAINTS "Boundary cases"); ask Jihoon when unclear.
 - No conservative or incremental steps, fallbacks or ritual checks; delete stale docs when you touch them.
-- Rank candidates by the 3-seed mean, submit by the seed-0 key, and report both: one seed hides 1%.
+- Rank candidates by the 3-seed mean (one seed hides 1%); when it and the exact third order disagree within noise, by
+  the mean of ≥ 100 seed-0 re-draws (sem ≈ 1e-7). Submit by the seed-0 key and report the numbers used.
 - Wait on process exit, never on an output file. Never `pkill -f` a pattern that your own command
   line contains (FINDINGS "Failures").
 - Only the main session submits, and every submitted candidate is committed in `work/submissions/` (qasm + json)
