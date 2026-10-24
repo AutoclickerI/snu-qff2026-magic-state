@@ -11,7 +11,7 @@ Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v3
 (`work/receipts/seq_v36b_r580.txt`; best seed-0 re-draw of `work/lanes/MAIN/v36b`, all-orders 4.12933e-5).
 
 Best competitor: Placeholder 4.984e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 00:51 KST; 5.058e-5 at 2026-10-24
-21:58). Board read 2026-10-25 03:50 KST; refresh with `work/submit.py board`.
+21:58). Board read 2026-10-25 04:52 KST (our 04:37 entry v36c_h2504_r1225 scored 3.87557e-5, same key, so the board keeps v36b_r580); refresh with `work/submit.py board`.
 
 ## Comparisons
 Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git show b2a5243:<path>` for the lanes removed at 04:10 on 2026-10-25, `git show a58eca7:<path>` for `work/candidates/` and earlier removals.
