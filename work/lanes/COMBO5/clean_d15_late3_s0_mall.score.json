@@ -1,0 +1,81 @@
+{
+  "check_1e6": {
+    "p": 0.001,
+    "shots": 1000000,
+    "seed": 0,
+    "format_errors": [],
+    "class_error": null,
+    "correctness_errors": [],
+    "score": 7.79864096936166e-05,
+    "sem": 1.0588161550666639e-05,
+    "acceptance": 0.532144,
+    "ideal_acceptance": 0.9999999999999997,
+    "frame": {
+      "X": [
+        0,
+        []
+      ],
+      "Z": [
+        0,
+        []
+      ]
+    },
+    "conditional_detectors": [],
+    "n_2q": 204,
+    "diagnosis": {
+      "shots": 1024,
+      "chi": null,
+      "chi_source": "deduced",
+      "num_detectors": 36,
+      "deterministic_detectors": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "gauge_detectors": [],
+      "expectations": [],
+      "suggested_postselect": "keep = ~dets[:, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]].any(axis=1)"
+    },
+    "passed": true
+  },
+  "exact": {
+    "c1": 3.1826393372587325e-19,
+    "second": 6.34833313884197e-05,
+    "third": 2.6368367736612393e-05,
+    "total": 8.98516991250324e-05,
+    "exp_minus_A1": 0.532221069213458
+  }
+}

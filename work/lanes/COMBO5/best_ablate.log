@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/COMBO5/final_ablate.py", line 21, in <module>
+    for stem in stems:one(stem)
+                      ^^^^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/COMBO5/final_ablate.py", line 12, in one
+    with out.open('w') as f:subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,check=True)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/jihoon/competitions/quantumn/.venv/bin/python', '/home/jihoon/competitions/quantumn/work/lanes/MAIN/ablate.py', 'work/lanes/COMBO5/clean_d14_late3_s0_init/clean_d14_late3_s0_m27.qasm', '--pre-end', '32', '--round-start', '47', '--a', '1,14,8,9,2,16,15', '--procs', '22', '--pairs']' returned non-zero exit status 2.

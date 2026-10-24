@@ -1,0 +1,6 @@
+p=0.001  shots=1,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: FAIL
+    - the output on data_qubits is not |T_L>: the expectation of X^7 on it is not fixed by the circuit (wrong state or wrong data_qubits)
+  RESULT: FAIL

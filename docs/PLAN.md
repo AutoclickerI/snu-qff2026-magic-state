@@ -1,15 +1,16 @@
 # Plan
 
-## Status (2026-10-24 13:30 KST)
-- Board (11:45): Placeholder 5.879e-5 (169 CX, acc 0.535); us 8.28792e-5 = v16 (server, bit-identical; BC2 clean B+C
-  prep + measure-init; 245-draw mean 8.584e-5, exact 8.42e-5), rank 2. Re-draw means run ≈ 2% above exact 3rd order.
+## Status (2026-10-24 14:00 KST)
+- Board (11:45): Placeholder 5.879e-5 (169 CX, acc 0.535); us 8.28792e-5 = v16 (exact 8.42e-5, 3-seed MC 8.554e-5), rank 2.
+  v17 (= `lanes/MAIN/spec/v16e_re`: v16 with q19/q13 released early + readout re-encoding CX 17→16, 19→25; exact
+  8.2464e-5, 3-seed MC 8.306e-5) is in promotion (`work/promote.sh`, re-draws over 4 hosts), submitted at the next slot.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
-  targets 1e-5. A round alone costs ≈ 2.87e-5 on our circuits.
-- Measured levers (FINDINGS): v16 with its data wait noiseless 5.66e-5 (−32.8%, below the leader); half the wait
-  −18.7%; the wait cost is cubic. Clean B+C rule −18.4% (BC2); L5 is exhausted at R 47 (COMBO5 ties v16). The
-  round's start R (50 now; pre-stage ends at 32) and small separate block preps are the levers: grid-free, separate
-  9-CX blocks give 3.55e-5 at R 33, 4.12e-5 at R 39, 5.79e-5 at R 50 (FINDINGS). Lanes: R1 (star round, B and C just in
-  time; R0's early-checked B failed), TP2 (teleport chain: one partner per data qubit). LAYOUT3 closed (R 42, 1.00e-4: 86-CX joint B+C prep). TP2 closed (routing bound: last CX 41; built 1.74e-4).
+  targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
+  4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
+- Every grid layout so far hits the area wall: separate B and C blocks do not fit next to the data early (R0, LAYOUT3,
+  TP2, R1), so the 82-CX joint B+C prep stays. The five lanes below attack the wall (ANC4 shrinks C to 4 ancillas,
+  REVSAT solves placement exactly, TREP re-synthesises the pre-stage), the round's own cost (ARCH) and the free local
+  choices (BUDGET). R1 closed: round at 47 on the v16 prefix ties v16e (FINDINGS).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
@@ -19,12 +20,16 @@ Bottleneck: the data wait before the round (R − 32 = 15–22 steps on every la
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P43 | G1 | Star round right after the pre-stage with corrected rules: A early (idle allowed), B and C just in time with B's check immediately before coupling, small separate exact encoders, 1-CX teleport moves for block qubits, early-released cells 13/19 (v16e prefix), A before T_DAG, staggering | 3-seed MC mean below v16's 8.554e-5, or best exact total with its dominant pairs | Codex lane R1 (`work/lanes/R1`, owl) | active |
-| 2 | P44 | G1 | Release-oriented pre-stage: reorder/re-embed the injection + double check so free cells reach every data qubit by step 33–35 (neighbours of data 7 and 8 first), data hops in pre-stage idle gaps; grid-free price per variant; build a just-in-time round where one opens | a full circuit below v16's 3-seed mean, or prefix variants with release tables and prices | Codex lane PRE3 (`work/lanes/PRE3`, tom, jerry, hippo) | active |
-| 3 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 4 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 5 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
-| 6 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
+| 1 | P45 | G1 | ANC4: C replaced by ancillas measuring B's four Z-parities (reviewer 2 #5), B from a small separate encoder, earliest round on v17's prefix | 3-seed MC below v17's, or grid-free table + binding constraint | Codex lane ANC4 (`work/lanes/ANC4`, sunfish) | active |
+| 2 | P46 | G1 | REVSAT: complete SAT/CP-SAT time-expanded synthesis of A, B, checker, hops and round after the pre-stage (min R), with reverse-endpoint block synthesis (reviewer 2 #6) | 3-seed MC below v17's, or feasibility table R 36–47 with proofs | Codex lane REVSAT (`work/lanes/REVSAT`, tom, jerry) | active |
+| 3 | P44 | G1 | PRE3: release-oriented pre-stage (reorder, re-embed, data hops) | a full circuit below v17, or prefix variants with release tables and prices | Codex lane PRE3 (`work/lanes/PRE3`, tom, jerry, hippo) | active |
+| 4 | P47 | G1 | TREP: the 16 protected 15-T phase-polynomial forms of the pre-stage (reviewer 2 #9) re-synthesised on the grid for lower pre-stage noise and earlier release | 3-seed MC below v17's, or all 16 priced | Codex lane TREP (`work/lanes/TREP`, jerry, hippo) | active |
+| 5 | P48 | G0 | ARCH: final-check architectures with round-only cost below the Steane round's 3.14e-5 grid-free | an idea below 3.14e-5 with its grid fit, or the mechanism that rules each direction out | Codex lane ARCH (`work/lanes/ARCH`, owl) | active |
+| 6 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
+| 7 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 8 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 9 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 10 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.
@@ -59,6 +64,19 @@ Checked against the code and the judge before acting. "Verified" means read in t
 | 8 | Retain v12's q1/q9 MX states instead of RX | pattern verified (MX → c[4]/c[5] → RX); PRE's q8 analogue gained nothing | tiny | P25 |
 | 9 | Choose X/Z stabilizer supports jointly with the grid placement for the v12-family cycle | valid: the grid anneals fix PLAQ; relaxed.py explored it only grid-free | unknown, a few % at most (inferred) | done: no gain (FINDINGS) |
 | 10 | Pair-sensitivity-guided LNS | valid process idea; overlaps the closed scheduler (FINDINGS) | unknown | parked: P33/P34 first |
+
+## Reviewer 2 review (2026-10-24, on commit 5f880dd; text in `work/lanes/MAIN/spec/reviewer2.md`)
+| # | Claim | Check | Item |
+|---|---|---|---|
+| 1 | Re-encode the last A/C readouts with two CX | measured exactly as predicted (−1.2954e-6 2nd order); v17 | done (FINDINGS) |
+| 2 | Evaluators and searches assume c1 = 0 | valid tooling gap; exact2 refuses c1 ≠ 0 candidates for `--third` | P49 |
+| 3 | Choose all init sites jointly under the acceptance budget | valid; small expected gain | P49 |
+| 4 | Detectors and logical frame chosen jointly | mostly buys acceptance, which is budget | P49 |
+| 5 | C → 4 ancillas reading Z_056, Z_146, Z_245, Z_3456 (12 CX, 6 layers) | parities hand-checked; early-checked B qubits are exposed | P45 |
+| 6 | Reverse-endpoint B+C synthesis (≤ 6 nonzero rows) | valid reformulation, speed unknown | P46 |
+| 7, 8 | A + cat check as one synthesis; dual helper for A | apply to the closed COMBO2 parity branch | closed with COMBO2 |
+| 9 | 16 protected 15-T forms of the pre-stage | not yet reproduced | P47 |
+| 10 | Integrate the final data idle analytically in MC | variance reduction only; ranking already uses exact2, and seed-0 draws cannot be variance-reduced | dropped |
 
 ## Open questions
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us

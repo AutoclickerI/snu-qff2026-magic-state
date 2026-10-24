@@ -1,0 +1,55 @@
+{
+  "strict_disjoint_no_helpers": {
+    "model": "B/C in pre-unused cells; A in released cells; data in pre cells; original orientation and all 8 symmetries/translations",
+    "result": "INFEASIBLE",
+    "log": "search_tpl.log; search_geom.log"
+  },
+  "relaxed_no_helpers": {
+    "model": "B/C in pre-unused cells; A/data may use released cells",
+    "layouts": 24,
+    "best_R_lb": 36,
+    "best_hops": 3,
+    "bc_depth14_cap100": "TIMEOUT/UNSAT in fixed-pivot sweeps; no clean witness",
+    "logs": [
+      "search_all2.log",
+      "pivot_search.log",
+      "pivot_search15.log"
+    ]
+  },
+  "one_helper": {
+    "model": "one B/C helper in pre-unused cells; A/data released cells",
+    "layouts": 21,
+    "best_R_lb": 36,
+    "best_hops": 3,
+    "clean_witness": {
+      "layout": "h1_s4_r0_c2",
+      "depth": 14,
+      "cap": 100,
+      "cx": 86,
+      "seed": 2683,
+      "cegar_constraints": 170,
+      "receipt": "h1_s4_r0_c2.piv14.log"
+    },
+    "logs": [
+      "search_h1.log",
+      "h1_s4_r0_c2.piv14.log"
+    ]
+  },
+  "one_helper_cap82": {
+    "layout": "h1_s4_r0_c2",
+    "depth": 14,
+    "cap": 82,
+    "result": "UNSAT over 4517 tested pivot assignments before time budget",
+    "receipt": "h1_s4_r0_c2.piv82.log"
+  },
+  "two_helpers": {
+    "constraint": "A uses at most two pre-stage cells",
+    "result": "INFEASIBLE",
+    "receipt": "search_h2.log"
+  },
+  "A_off_pre_data": {
+    "constraint": "A excludes transformed pre-stage data cells",
+    "result": "INFEASIBLE",
+    "receipt": "search_cleangeom.log"
+  }
+}

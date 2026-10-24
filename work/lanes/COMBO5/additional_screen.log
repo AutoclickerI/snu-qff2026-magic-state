@@ -1,0 +1,22 @@
+clean_d15_late5_s0 EXACT {'c1': 3.182639337258733e-19, 'second': 6.61367811827291e-05, 'third': 2.226124779723613e-05, 'total': 8.839802897996554e-05, 'exp_minus_A1': 0.554944004214666}
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/COMBO5/evaluate.py", line 38, in <module>
+    for stem in a.stems:score(stem,a.procs,a.mc)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/COMBO5/evaluate.py", line 18, in score
+    capacity();r['check_1e6']=record(tprep.check(text,data,shots=10**6,seed=0));save()
+    ^^^^^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/COMBO5/run_synth.py", line 16, in capacity
+    if load>cores or usage+n>cores*.75: raise RuntimeError(f'Capacity unavailable: {receipt}')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Capacity unavailable: {'time': 1792809342.9065654, 'cores': 64, 'nproc_all': 64, 'load': 77.1, 'user_cpu': 27.677, 'requested': 1}
+[twirl_records] circuit channels: 24 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+clean_d14_split46_s1 EXACT {'c1': 3.182639337258733e-19, 'second': 6.669843895240886e-05, 'third': 2.159931247585781e-05, 'total': 8.829775142826698e-05, 'exp_minus_A1': 0.5570840861290508}
+[twirl_records] circuit channels: 24 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+clean_d14_late3_k82_s2 EXACT {'c1': 3.182639337258733e-19, 'second': 6.732155525307104e-05, 'third': 2.3023732320145012e-05, 'total': 9.034528757321636e-05, 'exp_minus_A1': 0.5538820804697169}
+[twirl_records] circuit channels: 24 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+timed_compact_clean_d14_k100 MC 0 8.638937787313152e-05 0.54399049
+[twirl_records] circuit channels: 24 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+timed_compact_clean_d14_k100 MC 1000 8.625256062289345e-05 0.54398385
+[twirl_records] circuit channels: 24 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+timed_compact_clean_d14_k100 MC 2000 8.707241418876607e-05 0.54391509

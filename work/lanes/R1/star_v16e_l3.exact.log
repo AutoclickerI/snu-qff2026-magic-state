@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/R1/star_v16e_l3.qasm: 441 noise channels, 3589 faults, 567 (s,d) classes, rotation rank 5, 24 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 8.97171e-05   (pairs 8.97171e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 8.97171e-05
+third order: 1.28073e-05   (weight-3 sets 1.84301e-05 + pair-times-others -5.62280e-06)
+1-F (to 3rd order) = 1.02524e-04
+acceptance: first order 0.45263, second order 0.60287; exp(-A1) = 0.57847  (A1 = 0.54737)
+time: model+singles 0.3s, pairs 2.5s, triples 43.0s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '1.667e-05', 'gate': '3.443e-05', 'idle': '3.861e-05'}
