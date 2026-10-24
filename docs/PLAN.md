@@ -1,9 +1,8 @@
 # Plan
 
-## Status (2026-10-24 11:25 KST)
-- Board: Placeholder 5.879e-5 (169 CX, acc 0.535, 09:51); us 9.66371e-5 = v15 (server; LAYOUT2 parity layout +
-  measure-init, 110-draw mean 9.871e-5), rank 2. v16 (`v16_bc2m`: BC2 clean B+C prep + measure-init, exact 8.41984e-5;
-  BC2 circuit MC mean 8.46431e-5) is being promoted by `work/promote.sh` with 245 re-draws.
+## Status (2026-10-24 11:45 KST)
+- Board (11:45): Placeholder 5.879e-5 (169 CX, acc 0.535); us 8.28792e-5 = v16 (server, bit-identical; BC2 clean B+C
+  prep + measure-init; 245-draw mean 8.584e-5, exact 8.42e-5), rank 2. Re-draw means run ≈ 2% above exact 3rd order.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. A round alone costs ≈ 2.87e-5 on our circuits.
 - Measured levers (FINDINGS): clean B+C rule −18.4% (BC2), pre-stage kept (PRE2), earlier round −10.6% on L5 (EARLY,
@@ -21,7 +20,7 @@ Bottleneck: the data wait before the round (R − 32 = 15–22 steps on every la
 | 1 | P38 | G1 | Stack BC2's clean B+C rule with EARLY's release-aware merge on L5 (late cells in late layers, depths 13–15) + measure-init | 3-seed MC mean below 8.46431e-5 | Codex lane COMBO5 (`work/lanes/COMBO5`, zebra, sunfish) | active |
 | 2 | P39 | G1 | Clean B+C rule on LAYOUT2's parity layout, earliest R, data-move variants, measure-init | 3-seed MC mean below 8.46431e-5 | Codex lane COMBO2 (`work/lanes/COMBO2`, owl) | active |
 | 3 | P40 | G1 | New layouts with B+C prepared in parallel with the pre-stage (CP-SAT over pre-stage symmetries/translations), A in released cells, parity cat if it fits | 3-seed MC mean below 8.46431e-5, or the smallest R per approach | Codex lane LAYOUT3 (`work/lanes/LAYOUT3`, tom, hippo, jerry) | active |
-| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active: v16 promoting |
+| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
 | 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
 | 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P38–P40 | parked: used inside P38–P40 |
 | 7 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |

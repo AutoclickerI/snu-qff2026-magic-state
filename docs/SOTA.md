@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v15**, server 1-F = 9.66370640744519e-5
-(bit-identical to `fast_check`), acceptance 0.5014, 212 CX, submitted 2026-10-24 04:01:24 KST
-(`work/receipts/submit_v15_l2m_r33.log`); mean of 110 seed-0 re-draws 9.871e-5.
+Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v16**, server 1-F = 8.2879205986073e-5
+(bit-identical to `fast_check`), acceptance 0.5332, 207 CX, submitted 2026-10-24 11:35:26 KST
+(`work/receipts/submit_v16.txt`); mean of 245 seed-0 re-draws 8.584e-5.
 
 Best competitor: Placeholder 5.879e-5, 169 CX, acceptance 0.535 (submitted 2026-10-24 09:51 KST; 6.274e-5 at 02:57).
-Board read 2026-10-24 11:21 KST; refresh with `work/submit.py board`.
+Board read 2026-10-24 11:45 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -28,6 +28,7 @@ Board read 2026-10-24 11:21 KST; refresh with `work/submit.py board`.
 | v13: v12 + first-use `q[16]` measured instead of reset (re-draw r70) | server | 1.0977e-4, 115 CX (100 re-draws 1.1257e-4) | `work/submissions/v13_m16_r70.*`, `work/candidates/v13_m16.*`, `work/receipts/seq_v13_m16_r70.txt` |
 | v14: Steane-type round on L5 (A s7307, FT joint B+C sat6 82 CX) + first-use q27, q29 measured (re-draw r100) | server | 1.00638e-4, 207 CX (100 re-draws 1.0382e-4) | `work/submissions/v14_bcm_r100.*`, `work/candidates/v14_bcm.*`, `work/receipts/seq_v14_bcm_r100.txt`, `work/receipts/submit_v14.txt` |
 | v15: LAYOUT2 parity check on A (cat 27–28–29, R=54) + measure-init at all 13 sites (re-draw r33) | server | 9.66371e-5, 212 CX (110 re-draws 9.871e-5) | `work/submissions/v15_l2m_r33.*`, `work/candidates/v15_l2m.*`, `work/receipts/seq_v15_l2m_r33.txt` |
+| v16: L5 with BC2's clean B+C prep (82 CX, R=50) + measure-init at all sites (re-draw r147) | server | 8.28792e-5, 207 CX (245 re-draws 8.584e-5) | `work/submissions/v16_bc2m_r147.*`, `work/candidates/v16_bc2m.*`, `work/receipts/seq_v16_bc2m_r147.txt`, `work/receipts/submit_v16.txt` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
