@@ -1,0 +1,25 @@
+{
+ "data_qubits": [
+  0,
+  20,
+  7,
+  10,
+  3,
+  22,
+  21
+ ],
+ "cx": 208,
+ "native_depth": 47,
+ "source": "BFLAG synth",
+ "policy": "default",
+ "syn": "syn/l3_s11b_s32.json",
+ "name": "bflag_r1",
+ "base": "MAIN/v36c (prefix, A, round unchanged)",
+ "resource": "syn/l3_s11b_s32.json (CP-SAT soft-robust synthesis s11b + proxy LNS)",
+ "all_orders_loss": 4.0610124321355937e-05,
+ "all_orders_acceptance": 0.5004698831673771,
+ "cx_total": 208,
+ "resource_cx": 52,
+ "judge_1e6": "format/class/correctness pass, ideal acceptance 1.0; sampled acceptance 0.499898 < 0.5 (1e6 noise; expected 0.50047)",
+ "speed": "FAST 7.0 s/1e6"
+}

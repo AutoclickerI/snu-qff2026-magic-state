@@ -1,0 +1,38 @@
+{
+ "data_qubits": [
+  0,
+  20,
+  7,
+  10,
+  3,
+  22,
+  21
+ ],
+ "cx": 277,
+ "native_depth": 47,
+ "source": "BFLAG synth",
+ "policy": {
+  "12": "R"
+ },
+ "syn": "syn/r1.json",
+ "name": "bflag_d1",
+ "base": "MAIN/v36d (incumbent, INTEG gadgets unchanged)",
+ "resource": "syn/r1.json (= syn/l3_s11b_s32.json), 52-CX B/C resource, q12 R-init for v36d echo helper",
+ "all_orders_loss": 3.974304584413063e-05,
+ "all_orders_acceptance": 0.5036852578878851,
+ "incumbent_v36d": 4.0286189316763174e-05,
+ "judge_1e6": {
+  "passed": true,
+  "one_minus_F": 4.760780688686618e-05,
+  "sem": 8.18e-06,
+  "acceptance": 0.504119,
+  "n_2q": 277
+ },
+ "speed": {
+  "classification": "FAST",
+  "median_seconds_per_1e6": 7.94,
+  "instructions": 509,
+  "measurements": 93,
+  "detectors": 75
+ }
+}

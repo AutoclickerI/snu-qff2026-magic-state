@@ -28,10 +28,8 @@ Draw cost: racing examines ≈ 7.6× more draws per hour than plain re-draws (FI
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P75 | G1, G3 | Integration: compose each lane's v36c deltas with INTEG's trades and gadgets (`work/lanes/INTEG`, REPORT.md: menu of 332 priced singles, greedy by gain, leave-one-out), each joint re-priced by all orders; v36d is its first result | a finalist below v36d each time a lane delivers | main session, INTEG code | next |
-| 2 | P73 | G1 | B/C side on v36c (outside the prefix cap): IDEAS' bounds −9.04% (third-order masking by B/C Z flips) and −8.95% (correlated B/C X escaping C's check); mid-preparation B flag (ideal meter first), resource re-synthesis by in-situ loss with the masking objective and guardable idles (idles next to free cells q12, q19, q25–q29), priced on v36f | v36c deltas or a finalist below v36c | BFLAG (Claude, `work/lanes/BFLAG`) | active |
-| 3 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
-| 4 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
-| 5 | P81 | G2 | Delete FRESH's untracked bulk (BCFB, COMP29, SEPBC, WAITPROT, ST2 done on every host 2026-10-25 06:00; essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: BFLAG reads FRESH outputs |
+| 2 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 3 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair
