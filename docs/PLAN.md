@@ -1,15 +1,16 @@
 # Plan
 
-## Status (2026-10-24 16:15 KST)
-- Board: Placeholder 5.621e-5 (177 CX); us 7.14115e-5 = v20 (290 re-draws mean 7.430e-5), rank 2. New best: v22 =
-  v22h_c2c9 (HOPS hop_early + ACHECK's MX checks on q2, q9; FINDINGS "HOPS"), exact 7.1306e-5 (−2.45% vs v20), re-draw
-  mean 7.227e-5 after 47 draws (v21d 7.372e-5 after 167, stopped). Its best draw goes in at 16:45.
+## Status (2026-10-24 16:45 KST)
+- Board: Placeholder 5.621e-5 (177 CX); us v20 7.14115e-5 → v22_r155 (6.95468e-5 seed 0; v22 = v22h_c2c9, 380 re-draws
+  mean 7.2405e-5) submitted at 16:45. Next: v23h_c2c9 = BCSYN2's fb_s401_0035 B+C prep + HOPS hop_early + ACHECK checks on
+  q2, q9 (`lanes/MAIN/merge_hops.py`, `port_acheck.py`): exact 6.92210e-5 (−2.9% vs v22, −5.3% vs v20); re-draws for 17:45.
+  advance_watch_all family on the same prep: v23w_c2c9 6.94514e-5. Lane bases are still v22h_c2c9; their edits port.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
 - Every grid layout so far hits the area wall: separate unitary B and C encoders do not fit next to the data early
-  (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; BCSYN2 and MBP attack it; SEP2T's separate
-  blocks lose to idle exposure (FINDINGS). Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS, SEP2T (FINDINGS).
+  (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; BCSYN2's feedback search found a better 82-CX prep
+  (−2.9%); BCFB continues it, MBP tries measurement-based preps; SEP2T's separate blocks lose to idle exposure. Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS, SEP2T, BCSYN2 (FINDINGS).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
@@ -20,7 +21,7 @@ Bottleneck: the B+C prep footprint (82 CX; noiseless −26.5% on v19) and the da
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P51 | G1 | BCSYN2: clean (BC2 predicate) B+C prep below 82 CX or depth 14: multi-hour runs per cap, warm starts from BCSYN's 62–78-CX endpoint witnesses, incremental SAT, local search from the 82-CX witness, priced in v20 | 3-seed MC below v20's 7.282e-5, or ≥ 2 h per (cap, depth) with status | Codex lane BCSYN2 (`work/lanes/BCSYN2`, owl, tom) | active |
+| 1 | P59 | G1 | BCFB: continue BCSYN2's exact-loss feedback search for clean 82-CX B+C preps, priced inside v23h_c2c9 (depth 14–15, MX/measure-init on any B/C cell, prep timing vs hops and A, automorphisms) | a prep below v23h_c2c9's exact 6.92210e-5 confirmed by 3-seed MC, or the feedback loop converged | Codex lane BCFB (`work/lanes/BCFB`, tom, owl) | active |
 | 2 | P56 | G1 | MBP: measurement-based block preps (B, C from \|0⟩^7, A from \|+⟩^7, stabilizers measured by ancillas, frames folded into detectors), priced grid-free then embedded with time-multiplexed ancilla cells | a circuit below v22h_c2c9's exact 7.1306e-5 and its 3-seed MC, or each variant priced with its mechanism | Codex lane MBP (`work/lanes/MBP`, sunfish, zebra) | active |
 | 3 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`, zebra, jerry) | active |
 | 4 | P58 | G1 | PRESYN: structural pre-stage changes on v22h_c2c9 (weight-3 decomposition, a third H_XY check or extra stabilizer round within the acceptance headroom, compression, alternative forms and embeddings) | a circuit below v22h_c2c9 by exact and 3-seed MC, or each option priced with its mechanism | Codex lane PRESYN (`work/lanes/PRESYN`, owl, hippo) | active |

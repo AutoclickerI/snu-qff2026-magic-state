@@ -10,7 +10,7 @@ Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v2
 (bit-identical to `fast_check`), acceptance 0.5400, 203 CX, submitted 2026-10-24 15:45:42 KST
 (`work/receipts/submit_v20_status.txt`; re-draw r126 of `work/lanes/MAIN/v20`, 290 re-draws mean 7.430e-5).
 
-Best competitor: Placeholder 5.621e-5, 177 CX, acceptance 0.532 (submitted 2026-10-24 14:33 KST; 5.727e-5 at 13:32, 5.879e-5 at 09:51).
+Best competitor: Placeholder 5.612e-5, 179 CX, acceptance 0.533 (submitted 2026-10-24 16:02 KST; 5.621e-5 at 14:33, 5.727e-5 at 13:32).
 Board read 2026-10-24 15:50 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
