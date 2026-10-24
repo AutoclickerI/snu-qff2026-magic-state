@@ -1,0 +1,194 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "cx": 204,
+  "native_depth": 48,
+  "R": 45,
+  "source": "v23h",
+  "method": "ACHECK verify_2_9_15 edits",
+  "edits": [
+    "c2",
+    "c9"
+  ],
+  "steps_moved": 5,
+  "round_range": [
+    45,
+    45
+  ],
+  "lns_result": {
+    "desc": {
+      "family": "commute",
+      "move": "BCSYN2_plus_LNS",
+      "base": "h",
+      "recipe": [
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 33,
+          "q": 13,
+          "parent_total": 6.952345258302401e-05,
+          "iteration": 1,
+          "source": "/home/jihoon/competitions/quantumn/work/lanes/LNS/combo2_ebb6db5cde"
+        },
+        {
+          "family": "init",
+          "move": "reset_to_measure",
+          "unit": 40,
+          "q": 10,
+          "parent_total": 6.952345258302401e-05,
+          "iteration": 1,
+          "source": "/home/jihoon/competitions/quantumn/work/lanes/LNS/combo2_ebb6db5cde"
+        },
+        {
+          "family": "readout",
+          "move": "add_edge",
+          "edge": [
+            14,
+            8
+          ],
+          "parent_total": 6.952345258302401e-05,
+          "iteration": 1,
+          "source": "/home/jihoon/competitions/quantumn/work/lanes/LNS/combo2_ebb6db5cde"
+        },
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 226,
+          "q": 1,
+          "parent_total": 6.952345258302401e-05,
+          "iteration": 1,
+          "source": "/home/jihoon/competitions/quantumn/work/lanes/LNS/combo2_ebb6db5cde"
+        },
+        {
+          "family": "init",
+          "move": "watch_before_reset",
+          "axis": "X",
+          "unit": 37,
+          "q": 1,
+          "parent_total": 6.952345258302401e-05,
+          "iteration": 1,
+          "source": "/home/jihoon/competitions/quantumn/work/lanes/LNS/combo2_ebb6db5cde"
+        },
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 77,
+          "q": 10,
+          "parent_total": 6.952345258302401e-05,
+          "iteration": 1,
+          "source": "/home/jihoon/competitions/quantumn/work/lanes/LNS/combo2_ebb6db5cde"
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            51,
+            57
+          ],
+          "old": [
+            12,
+            13
+          ],
+          "ops": [
+            [
+              "cx q[1],q[0];"
+            ],
+            [
+              "cx q[1],q[7];"
+            ]
+          ],
+          "parent_total": 7.024143957613208e-05,
+          "local_track": true,
+          "source": "work/lanes/LNS/fast_compounds_d2fa7dd5be"
+        },
+        {
+          "family": "commute",
+          "move": "swap",
+          "units": [
+            111,
+            116
+          ],
+          "old": [
+            27,
+            28
+          ],
+          "ops": [
+            [
+              "cx q[9],q[3];"
+            ],
+            [
+              "cx q[9],q[15];"
+            ]
+          ],
+          "parent_total": 7.024143957613208e-05,
+          "local_track": true,
+          "source": "work/lanes/LNS/fast_compounds_d2fa7dd5be"
+        },
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 39,
+          "q": 1,
+          "parent_total": 7.024143957613208e-05,
+          "local_track": true,
+          "source": "work/lanes/LNS/fast_compounds_d2fa7dd5be"
+        },
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 12,
+          "q": 8,
+          "parent_total": 7.024143957613208e-05,
+          "local_track": true,
+          "source": "work/lanes/LNS/fast_compounds_d2fa7dd5be"
+        },
+        {
+          "family": "init",
+          "move": "check_rx",
+          "unit": 1,
+          "q": 1,
+          "parent_total": 7.024143957613208e-05,
+          "local_track": true,
+          "source": "work/lanes/LNS/fast_compounds_d2fa7dd5be"
+        }
+      ],
+      "parent_total": 6.9221e-05,
+      "source": "/home/jihoon/competitions/quantumn/work/lanes/MAIN/v23h_c2c9"
+    },
+    "sha256": "ed4839a8a86827884b4ff71bab2d506f62df993c98bde6eb19f89845d2dcc73c",
+    "c1": 2.9235872981795294e-19,
+    "second": 5.204672899738094e-05,
+    "third": 1.6485221095706788e-05,
+    "total": 6.853195009308773e-05,
+    "exp_minus_A1": 0.5324758062085857,
+    "pair_seconds": 0.45857598702423275,
+    "seconds": 4.465704170055687,
+    "pairs": 891,
+    "triples": 23921,
+    "table_keys": 6220,
+    "A1": 0.630217816780802,
+    "weight3": 2.1927963113638838e-05,
+    "pair_times_others": -5.442742017932049e-06,
+    "evaluator": "BCSYN2 exact Fourier contraction",
+    "pruned_exact2_check": {
+      "c1": 2.9235872981795294e-19,
+      "second": 5.204672899737861e-05,
+      "third": 1.648522109570672e-05,
+      "total": 6.853195009308534e-05,
+      "A1": 0.630217816780802,
+      "exp_minus_A1": 0.5324758062085857,
+      "weight3": 2.1927963113638475e-05,
+      "pair_times_others": -5.4427420179317556e-06,
+      "seconds": 28.26512974599609
+    },
+    "stem": "bc_port_ed4839a8a8"
+  }
+}
