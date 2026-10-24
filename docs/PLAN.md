@@ -1,54 +1,47 @@
 # Plan
 
-## Status (2026-10-25 02:45 KST)
-- Board: **rank 1**. 01:37 entry v35b_r1007 4.12926e-5 (server); 02:37 entry **v36a_r665, server 3.90052e-5** (best of 978
-  draws; all-orders 4.14605e-5); Placeholder 4.984e-5, Inae 1.45e-4. 03:37: best v36b draw (`work/receipts/chain_v36b.sh`).
-  From 04:37 the hourly loop `work/receipts/draw_loop.sh` re-draws whatever `work/receipts/next_stem.txt` names.
-- **Best expected circuit: v36c** (`work/lanes/MAIN/v36c` = ST2 `pop36b/zebra/g05_68249cb83c3226`, population edits on
-  v36b): **all-orders 4.11516e-5, acceptance 0.50273**, judge PASS, FAST. v36b = FRESH `r35/sepbc_reset_40_41_42`
-  (v36a + timing, echo and reset trades): 4.12933e-5, acceptance 0.50144, 211 CX, R44, 47 ticks (structure:
-  reference/circuit.md, written for v36a).
-- Where the loss sits (SEPBC ledger on v36a, removal gains, overlapping): the round 3.34e-5 of 4.146e-5 (final data
-  idle 2.76e-5, B→D 1.38e-5, B→C 4.2e-6, D→A 3.3e-6); BC resource 5.8e-6, waiting data 4.8e-6, prefix 4.3e-6, A 1.9e-6,
-  readout 1.6e-6. Proved floor 1.162e-5; any Steane-type round ≈ 2.884e-5 on the data side (ARCH).
-- Free acceptance: SEPBC's prep-reset delays and initial-check trades raise v36a's acceptance 0.50083 → 0.51692 at
-  unchanged loss; every lane now spends it on v36b.
-- **Codex is down from 2026-10-25 02:26 KST**: the Hermes proxy answers every model with 429 and a ~6-day retry; all
-  Codex lanes were cancelled at 03:50 (their threads are resumable). Running instead: Claude subagents INTEG (P75 on
-  v36c, `work/lanes/INTEG`), TERM (P77, plus reviewer 9's partial-rank extraction), IDEAS (P79) and T14 (P80), and ST2's population script itself (`pop36b/zebra2.log`).
-  CONSTRAINTS rule 11 (Codex only) is suspended while Codex is down (R-20261025-1).
+## Status (2026-10-25 04:30 KST)
+- Board: **rank 1** with v36b_r580, **server 3.87795e-5** (03:37; key 3.88e-5); Placeholder 4.984e-5, Inae 1.45e-4.
+  The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
+  `lanes/MAIN/v36c`) against the key boundary below ours (3.875e-5) and submits the best at :37.
+- **Best expected circuit: v36c** (`work/lanes/MAIN/v36c`, ST2 population edits on v36b): **all-orders 4.11516e-5,
+  acceptance 0.50273**, 213 CX, R44, 47 ticks, FAST (structure: reference/circuit.md).
+- Where the loss sits (FINDINGS "Where v36's loss sits"): the round ≈ 80% (final data idle, B→D CX), then the B/C
+  resource, waiting data, prefix, A, readout. Proved floor 1.162e-5; any Steane-type round pays ≈ 2.884e-5 on the data
+  side, so below ≈ 3.5e-5 needs a different final round (P77) or an earlier one (P76).
+- **Codex is down** (429, ~6-day retry, from 2026-10-25 02:26 KST). Workers are Claude subagents (R-20261025-1); their
+  dirs are `work/lanes/<LANE>` and they report to the main session, which verifies and promotes.
 
 ## Critical path
-Lanes find priced mechanisms → re-derive each on the incumbent → all orders → judge 1e6, speed, MC3 → `work/promote.sh`
-→ hourly slot (best seed-0 draw). Bottlenecks: (1) lanes priced mechanisms on the base they started from; fix: all
-mechanism lanes rebased on v36b at 02:25 and publish v36b deltas with acceptance cost, SEPBC (P75) composes them.
-(2) Each draw costs a full 1e8 shots; fix: DRAW (P78) races draws chunk by chunk and drops hopeless ones early.
+Lane finds a priced mechanism → re-derived on v36c → all orders (≈ 10 s) → judge 1e6, speed, MC3 → `work/promote.sh`
+→ hourly slot. Bottleneck: few workers (Codex down) and each finalist needs a full integration on the incumbent;
+fix: one integrator (INTEG) composes every lane's v36c deltas, and the other lanes deliver deltas on v36c, not new bases.
+Draw cost: racing (P78) cuts the full-run cost per useful draw ≈ 5.8×.
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P75 | G1, G3 | Integration on v36b: SEPBC's acceptance-only trades re-derived on v36b and v36c, then a knapsack (N − L0·A with measured pair interactions) over ST2, FRESH, WAITPROT, COMP29, BCFB and BCPOL v36b deltas, every conjunction re-priced by all orders | a finalist below v36c each time a lane delivers | SEPBC (`work/lanes/SEPBC`) | active |
-| 2 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03) against v36b's releases, decoder and q16 check: Pareto by flag-blind vs flag-detected danger, no c1/p30 pruning | v36b encoder deltas | BCFB (`work/lanes/BCFB`, on v36b) | active |
-| 3 | P76 | G1 | Earlier round with the decoder: ENDSTATE/ST1's R38–40 geometry with the A encoder and flag co-synthesized (routes, roles and prefix topology free; ST1 found R38 infeasible with fixed routes and R39 witnesses lost to waiting), then guards/echoes | a circuit below v36a with R ≤ 42 | ST1 (`work/lanes/ST1`) | active |
-| 4 | P77 | G1, G3 | Final round redesigned backward (reviewer 8 #10): the round costs ≈ 2.884e-5 of v36b's 4.129e-5 in any Steane-type form, the proved floor is 1.162e-5; terminal templates screened by an optimistic relaxation, survivors built into v36b; evaluator extended to FRAME/POSTSELECT where a template needs it | a template that beats the Steane round's data-side cost, built, or each template closed with its screen value | TERM (`work/lanes/TERM`, thread 01a16ee7) | active |
-| 5 | P71 | G1 | R38 base's acceptance headroom (0.087): A decoder for its A placement, echoes, guards, mz inits, knapsack | a finalist below v36a | ENDSTATE (`work/lanes/ENDSTATE`) | active |
-| 6 | P72 | G1, G2 | xtim slow path: established (FRESH) — the circuit-wide `has_general` flag is set when any noise atom needs the PPR retry, and then every noisy shot takes the general path. Now: a static atom-count speed predictor, and FAST realizations of SLOW-but-better edits on v36b (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer; source reuse) | FAST finalists below v36b | FRESH (`work/lanes/FRESH`) | active |
-| 7 | P73 | G1 | On v36b: acceptance-only removals and prep timing, idle_star and joint guards re-derived, reviewer 8's mid-preparation B flag (ideal meter priced first), a second A flag, M10 oracle | v36b deltas for P75 | COMP29 (`work/lanes/COMP29`, on v36b) | active |
-| 8 | P67 | G1 | Population search with all-orders fitness under the acceptance floor on v36b (g05 → v36c, −0.34%) | a finalist below v36c | ST2 (`work/lanes/ST2`, on v36b) | active |
-| 9 | P74 | G1 | Acceptance-efficient waiting-data protection re-placed on v36b (v35a menu: terminal_joint −2.3% at acceptance 0.515) | `WAITPROT/menu_v36b.json` for P75, finalists | WAITPROT (`work/lanes/WAITPROT`, on v36b) | active |
-| 10 | P62 | G1, G2 | B/C boundary cache rebuilt on v36b's exterior, wide B/C search with acceptance | v36b deltas for P75 | BCPOL (`work/lanes/BCPOL`, on v36b) | active |
-| 11 | P78 | G1 | Racing re-draws: `work/race.py` (chunk by chunk, drops a draw once P(below the board key) < 1e-4; bit-identical to fast_check on the same host), used by promote and the hourly loop from 04:20 | measured draws per CPU-hour in production | main session | active |
-| 12 | P80 | G1 | Rank-4 14-T phase network in the injection (reviewer 9 M01), encoder, parity network, helpers, records and releases co-synthesized, then the rest of v36c re-timed to the earlier release | a full circuit priced by all orders against v36c | T14 (Claude subagent, `work/lanes/T14`) | active |
-| 13 | P79 | G1 | Fresh-eyes structural review that builds: list v36b's design assumptions tick by tick, break each with an optimistic ideal-noise or ideal-meter screen, build ideas bounded above 0.5% that no active lane owns | ranked idea table with bounds, finalists | IDEAS (`work/lanes/IDEAS`) | active |
-| 14 | P2 | G1 | Hourly submission of the best verified candidate (`work/receipts/draw_loop.sh` runs `work/promote.sh` on `receipts/next_stem.txt` each hour; keep that file on the best all-orders stem; R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 1 | P77 | G1, G3 | Final round redesigned backward (reviewer 8 #10): terminal templates screened by an optimistic relaxation, survivors built into v36c; partial-rank syndrome extraction with frames (reviewer 9 M08, 2,825 subspaces); evaluator extended to FRAME/POSTSELECT where a template needs it | a template that beats the Steane round's data-side cost, built, or each template closed with its screen value | TERM (Claude, `work/lanes/TERM`) | active |
+| 2 | P75 | G1, G3 | Integration on v36c: acceptance-only trades re-derived on v36c, then a knapsack (Δloss vs Δlog-acceptance with measured pair interactions) over every lane's v36c deltas (WAITPROT menu, COMP29, BCFB, FRESH, ST2), each conjunction re-priced by all orders | a finalist below v36c each time a lane delivers | INTEG (Claude, `work/lanes/INTEG`) | active |
+| 3 | P76 | G1 | Earlier round: below R44 needs the prefix, data placement, A encoder and flag co-synthesized (FINDINGS "Earlier round"); ENDSTATE's R38 geometry reached 4.986e-5 without the v36 gadgets, and the A decoder did not help there | a circuit below v36c with R ≤ 42 | EARLY (Claude, `work/lanes/EARLY`) | active |
+| 4 | P80 | G1 | Rank-4 14-T phase network in the injection (reviewer 9 M01): encoder, parity network, helpers, records and releases co-synthesized, then the rest of v36c re-timed to the earlier release | a full circuit priced by all orders against v36c | T14 (Claude, `work/lanes/T14`) | active |
+| 5 | P79 | G1 | Fresh-eyes structural review: list v36c's design assumptions tick by tick, break each with an optimistic ideal-noise or ideal-meter screen, build ideas bounded above 0.5% that no lane owns | ranked idea table with bounds, finalists | IDEAS (Claude, `work/lanes/IDEAS`) | active |
+| 6 | P67 | G1 | Population search with all-orders fitness under the acceptance floor (g05 → v36c, −0.34%) | a finalist below v36c | ST2 script `pop36_search.py zebra3` (no agent) | active |
+| 7 | P78 | G1 | Racing re-draws (`work/race.py`) in the hourly loop | draws per CPU-hour measured in production | main session | active |
+| 8 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 9 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
+| 10 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03): Pareto by flag-blind vs flag-detected danger, no c1/p30 pruning, against v36c's releases | v36c encoder deltas | next free worker (BCFB code on disk) | next |
+| 11 | P73 | G1 | Mid-preparation B flag (ideal meter priced first), a second A flag | v36c deltas | next free worker (COMP29 code on disk) | next |
+| 12 | P81 | G2 | Delete the untracked bulk of BCFB, COMP29, FRESH, SEPBC, WAITPROT, ST2 and their stale tracked files (essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: INTEG (P75) and ST2's search (P67) still read these files |
 
-## Parked (an identity or legal witness, no price yet; evidence in FINDINGS and `work/lanes/MAIN/spec/`)
-- Reviewer 9 (`work/lanes/MAIN/spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair counterfactuals, M05 affine acceptance with frames (three no-frame coarsenings lost), M06 factorized magic-sign kernel for > 20 T, M07 accepted-instrument B/C contracts, M09 measured graph resources, M10 coupled MC with a control variate. (M01 is P80, M08 went to TERM, M02 is in the evaluator.)
-- Reviewer 8 (`work/lanes/MAIN/spec/reviewer8/`): error-path-weighted CEGAR targets for the synthesizers; detector-basis reduction (112 → 85 record terms, official PASS) and frame gauges for speed only. (Mid-preparation B flags are in P73, N − L0·A in P75.)
-- Reviewer 7 M02 seed: C-copy exchange (+0.0024 acceptance for +1.03e-7 loss, −1 CX), for P75's knapsack.
-- Reviewer 7 M04 nonlinear acceptance (8-CX/7-T AND), M05 measured graph resources (star → triangle), M06 transient flags
-  on encoded resource wires, M07 C-free post-use verification with a terminal-latency budget, M08 a syndrome-dressed
-  W_L verifier, M09 conditional sampling: each needs an optimistic-oracle or algebraic gate before a build.
+## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
+- Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair
+  counterfactuals, M05 affine acceptance with frames, M06 factorized magic-sign kernel for > 20 T, M07 accepted-instrument
+  B/C contracts, M09 measured graph resources, M10 coupled MC with a control variate.
+- Reviewer 8 (`spec/reviewer8/`): error-path-weighted CEGAR targets for the synthesizers; frame gauges for speed.
+- Reviewer 7 (`git show b2a5243:work/lanes/MAIN/spec/reviewer7/...`): M02 C-copy exchange (+1.03e-7, +0.0024 acceptance,
+  −1 CX) for P75; M04 nonlinear acceptance (8-CX/7-T AND), M05 measured graph resources, M06 transient flags on encoded
+  resource wires, M07 C-free post-use verification, M09 conditional sampling: each needs an optimistic gate first.
 - Reviewer 4: moving check (CX A→D, D→A, MZ D), dirty-bus remote CX, measured partial uncompute in the phase network.
 - Reviewer 3 #7: A as three direct Z checks or a GHZ meter, only with a layout that uses the freed cells.
 - Chamberland–Cross flagged logical-H measurement: implementation suspect (our grid build was not FT at first order).

@@ -36,8 +36,8 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
 
 11. **Codex lanes only.** [owner] Expansion work goes to parallel Codex lanes (`codex:codex-rescue`); new
     workers are never Sonnet or another model, and a failed Codex job is relaunched on Codex.
-    Suspended while Codex does not answer (429 since 2026-10-25 02:26 KST): new workers are Claude subagents until
-    a one-line Codex test succeeds again. [Jihoon, R-20261023-1, R-20261023-9, R-20261024-2, R-20261025-1]
+    Suspended while Codex answers 429 (since 2026-10-25 02:26 KST): workers are Claude subagents until a one-line
+    Codex test succeeds. [Jihoon, R-20261023-1, R-20261023-9, R-20261024-2, R-20261025-1]
 12. **Parallel, non-blocking.** [owner] Independent work runs in parallel in the background; never block
     on one experiment. [Jihoon, R-20261023-5, R-20261023-6, R-20261023-9]
 13. **Solver-backed search.** [owner] Prefer solver- or simulation-backed search over hand tuning.
@@ -49,7 +49,7 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
 |---|---|---|---|
 | 6 | Submitting a circuit that may not beat our best | the board keeps "팀별 최고 기록" (S); it costs only the slot | allowed (text: S) |
 | G0 | Choosing among valid circuits by their seed-0 score | the official score is seed 0 (P §2.3); P warns of noise, forbids nothing | allowed (text: P §2.3) |
-| G0 | Re-drawing the seed-0 sample by reordering simultaneous gates (noise model unchanged, `work/reorder.py`) | ranking "공식 설정으로 계산한 점수를 따릅니다"; P notes third-digit differences near 1e-4 may be statistical; nothing forbids it | allowed (text: P §2.3) |
+| G0 | Re-drawing the seed-0 sample by reordering simultaneous gates (noise model unchanged; `work/race.py` races the draws) | ranking "공식 설정으로 계산한 점수를 따릅니다"; P notes third-digit differences near 1e-4 may be statistical; nothing forbids it | allowed (text: P §2.3) |
 | 3 | Acceptance just above 0.5 | the gate is pass/fail at 0.5 (P §1.6); ranking uses 1-F, then 2q-gate count (S), so headroom is budget to spend on lower 1-F. Lanes keep only a verification margin: all-orders acceptance ≥ 0.5002 (≈ 4σ of the seed-0 1e8 acceptance); `promote.sh` re-checks every draw's seed-0 acceptance | allowed (text: P §1.6; Jihoon, R-20261024-4) |
 | — | AI agents doing the work | "LLM 등 생성형 AI 도구를 사용할 수 있습니다" (S) | allowed (text: S) |
 | — | Reusing Gidney's open cultivation code | no rule restricts prior code; P cites that literature | allowed (text) |

@@ -1,6 +1,6 @@
 # AGENTS
 
-Our entry in the SNU Qiskit Fall Fest 2026 hackathon: fault-tolerant preparation of the Steane-code
+Our SNU Qiskit Fall Fest 2026 hackathon entry: fault-tolerant preparation of the Steane-code
 |T_L⟩ on a 6×6 grid, scored by the organizers' judge. Owner: Jihoon.
 
 **Before any work, read [docs/GOAL.md](docs/GOAL.md) and [docs/CONSTRAINTS.md](docs/CONSTRAINTS.md).**
@@ -17,7 +17,7 @@ dropped rules) · [reference/judge.md](docs/reference/judge.md) (how scores aris
 - Take the widest reading the rules allow (CONSTRAINTS "Boundary cases"); ask Jihoon when unclear.
 - No conservative or incremental steps, fallbacks or ritual checks; delete stale docs when you touch them.
 - Rank candidates by the all-orders expectation where its scope covers them (`cd work/lanes/MAIN/sparse;
-  ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`, stem without suffix, e.g. ../v30f, last arg = processes: ~11 s with 16, reproduces reviewer 4's
+  ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`, stem without suffix, e.g. ../v30f, last arg = processes: ≈ 10 s on v36c with 16, reproduces reviewer 4's
   v29c 6.343913669754646e-5 and our re-draw means; needs barriers over all used qubits, no FRAME/POSTSELECT lines);
   otherwise by the 3-seed mean (one seed hides 1%), and when that and the exact
   third order disagree within noise, by ≥ 100 seed-0 re-draws. Submit by the seed-0 key and report the numbers used.

@@ -24,10 +24,10 @@ earlier submission.
 
 ## Decision rights
 - Pre-authorized beyond the global list: choosing which candidate to submit and when (R-20261023-1,
-  R-20261023-3); starting and stopping our jobs and Codex lanes on the hosts in CONSTRAINTS rule 9.
+  R-20261023-3); starting and stopping our jobs and research lanes (R-20261025-1) on the hosts in CONSTRAINTS rule 9.
 - Ask Jihoon: team registration or name changes; anything shown outside the team other than contest submissions;
-  award-ceremony logistics; turning any instruction of his into a standing rule (question tool; confirmed rules go to
-  RULINGS with his words).
+  award-ceremony logistics; turning any of Jihoon's instructions into a standing rule (question tool; confirmed rules go
+  to RULINGS with Jihoon's words).
 
 ## Terms
 - **True mean**: the expected official 1-F of a circuit. Computed exactly by the all-orders evaluator

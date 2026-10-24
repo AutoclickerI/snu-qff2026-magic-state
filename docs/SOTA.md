@@ -6,15 +6,15 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36a_r665**, server 1-F = 3.90052411583141e-5
-(= local seed-0), acceptance 0.50083, 207 CX, submitted 2026-10-25 02:37:34 KST, scored in 216 s
-(`work/receipts/promote_v36a.log`; best of 978 re-draws of `work/lanes/MAIN/v36a`; all-orders 4.14605e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36b_r580**, server 1-F = 3.87794862201698e-5
+(= local seed-0, key 3.88e-5), acceptance 0.50142, 211 CX, submitted 2026-10-25 03:37:45 KST
+(`work/receipts/seq_v36b_r580.txt`; best seed-0 re-draw of `work/lanes/MAIN/v36b`, all-orders 4.12933e-5).
 
 Best competitor: Placeholder 4.984e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 00:51 KST; 5.058e-5 at 2026-10-24
-21:58). Board read 2026-10-25 02:42 KST; refresh with `work/submit.py board`.
+21:58). Board read 2026-10-25 03:50 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
-Evidence under `work/candidates/` and lanes removed on 2026-10-25 resolves with `git show a58eca7:<path>`.
+Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git show b2a5243:<path>` for the lanes removed at 04:10 on 2026-10-25, `git show a58eca7:<path>` for `work/candidates/` and earlier removals.
 | Method | Conditions | Result | Evidence |
 |---|---|---|---|
 | v4: Gidney d3 injection + double cat check + superdense cycle, permuted | official | 1.534e-4, 111 CX | `work/submissions/v4_perm_lazy.*` |
@@ -43,6 +43,7 @@ Evidence under `work/candidates/` and lanes removed on 2026-10-25 resolves with 
 | v35a: SEPBC R44 guard5_timing_1 (reoriented A, five storage guards, v30g edits) + reviewer 6's A partial decoder rebuilt by FRESH (re-draw r188) | server | 4.17026e-5, 206 CX (all-orders 4.39353e-5) | `work/submissions/v35a_r188.*`, `work/lanes/FRESH/REPORT.md`, `work/lanes/SEPBC/REPORT.md` |
 | v35b: v35a + ST2's knapsack (two echoes funded by init changes; re-draw r1007) | server | 4.12926e-5, 210 CX (all-orders 4.37602e-5) | `work/submissions/v35b_r1007.*`, `work/lanes/ST2/REPORT.md` |
 | v36a: SEPBC `checked16_timing_0` (12-CX release-aware A encoder, A decoder, q16 known-X check; re-draw r665) | server | 3.90052e-5, 207 CX (all-orders 4.14605e-5) | `work/submissions/v36a_r665.*`, `work/lanes/SEPBC/REPORT.md` |
+| v36b: FRESH `r35/sepbc_reset_40_41_42` (v36a + timing, echo and reset trades; re-draw r580) | server | 3.87795e-5, 211 CX (all-orders 4.12933e-5) | `work/submissions/v36b_r580.*`, `work/lanes/MAIN/v36b.*` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |

@@ -1,9 +1,11 @@
 # Our circuit and its search tools
 Serves: G1, G2. Read before changing the circuit, its layout or the search code.
 
-## Structure of the incumbent (`work/lanes/MAIN/v36a`, PLAN "Status")
+## Structure of the incumbent (`work/lanes/MAIN/v36c`, PLAN "Status")
 Roles (physical qubits, code order): data D = [0,20,7,10,3,22,21] (the JSON `data_qubits`), A = [1,14,8,9,2,16,15],
-B = [6,26,13,11,4,23,27], C = [12,25,19,17,5,29,28]. 207 CX, 47 native ticks, round R44.
+B = [6,26,13,11,4,23,27], C = [12,25,19,17,5,29,28]. 213 CX, 47 native ticks, round R44 (B/D CX at ticks 43–44).
+v36a → v36b added timing, echo and reset trades (211 CX); v36b → v36c (ST2 population) swaps echo helpers (q26–q20 out;
+q20–q21 and q7–q13 in) and turns several first-use resets (q8, q9, q13, q19, q20, q1) into measured inits.
 1. **Prefix**: Gidney's d=3 cultivation stages (injection, double-cat check with T/T† layers) plus PRESYN's blue XZ
    stabilizer check, then coherent two-CX data hops into D. Source checks c54–c57 and blue outputs c64/c67 are detectors.
 2. **Waiting data**: five storage guards (helper reset, CX data→helper, measured) on the data runs before the round;
@@ -22,7 +24,9 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 
 ## Evaluators (rank by all orders; the others diagnose, confirm or gate)
 - **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
-  ~11–35 s. Scope: barriers over all used qubits, no FRAME/POSTSELECT, ≤ 20 T rotations, ideal acceptance ≈ 1.
+  ≈ 8–11 s on v36c (reviewer 9's detector basis `basis_v36c.json` via `compile_best`; other circuits fall back to the
+  plain basis, ≈ 20–35 s). Scope: barriers over all used qubits, no FRAME/POSTSELECT, ≤ 20 T rotations, ideal acceptance ≈ 1.
+  After editing `sparse_walsh.py`, copy it to `work/lanes/ST2/sparse/` and restart long searches (FINDINGS "Failures").
 - **Exact 2nd + 3rd order with sensitivities**: `work/lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`
   (loss by fault pair, per-channel gradients). Converges slowly below acceptance ≈ 0.5; use all orders to rank.
 - **3-seed official MC**: `work/lanes/MAIN/spec/mc3.py <stem>`; one seed hides ≈ 1%.
@@ -31,10 +35,16 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Speed**: `work/lanes/XTIM/speed_predict.py <stem>` (seconds per 1e6 shots; > 20 s is refused by promote.sh).
 
 ## Search machinery in the lanes
-- Resource synthesis (CNOT circuits for B/C, clean/FT contracts): `work/lanes/FRESH/{synth,sat_core,ft}.py`.
-- A-encoder enumeration (all rank-four states, 11–13 CX paths): `work/lanes/EXENC/exact.cpp`, `exenc.py`.
-- B/C boundary cache (B/C variants in 0.035 s against a fixed exterior): `work/lanes/BCPOL/cache*.py`, `boundary_api.py`.
-- Critical path, timing and A synthesis on a fixed exterior: `work/lanes/SEPBC/` (`exenc.py`, plan JSONs per candidate).
-- In-place B∪C regions and end-state enumeration: `work/lanes/ENDSTATE/`; full prefix/round co-design with CP-SAT and
-  exact-gradient retiming: `work/lanes/ST1/{redesign,gradient_retime}.py`.
-- Population search and acceptance knapsack: `work/lanes/ST2/pop35_*.py`, `knapsack_select.py`; region ledger `ledger.py`.
+Code of removed lanes: `git show b2a5243:work/lanes/<LANE>/<file>` (ENDSTATE, ST1, BCPOL, LNS) or `e438fb6^` (older).
+- Floors and Steane-round mechanics: `work/lanes/DR/{relaxed,steane,synth}.py` (`synth.dangerous_z`).
+- Exact 2nd/3rd order with sensitivities: `work/lanes/EVAL/exact2.py`; xtim speed: `work/lanes/XTIM/speed_predict.py`;
+  slow-path atom check: `work/lanes/FRESH/general_atoms.py`.
+- Resource synthesis (CNOT circuits for B/C, clean/FT contracts): `work/lanes/FRESH/{synth,sat_core,ft}.py`;
+  CEGAR clean B+C preps and exact-loss feedback: `work/lanes/BCSYN2/`; shared scheduler `work/lanes/SCHED/schedule.py`.
+- A-encoder enumeration (all rank-four states, 11–13 CX paths): `work/lanes/EXENC/exact.cpp`, `exenc.py`; release-aware
+  A synthesis and critical path on a fixed exterior: `work/lanes/SEPBC/` (`exenc.py`, `v30/CRITICAL_PATH.md`).
+- Population search with all-orders fitness and acceptance knapsack: `work/lanes/ST2/pop36_*.py`, `knapsack_select.py`,
+  scorer `sparse_budget.py`; region ledger `ledger.py`.
+- Gadget library and acceptance trades on v36c: `work/lanes/INTEG/` (in progress).
+- Stationary 7-cell encoder library and end-state witnesses: ENDSTATE (git); prefix/round co-design with CP-SAT and
+  exact-gradient retiming: ST1 (git, `redesign.py`, `gradient_retime.py`); B/C boundary cache: BCPOL (git).
