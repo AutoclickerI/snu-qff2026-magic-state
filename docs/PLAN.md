@@ -1,8 +1,8 @@
 # Plan
 
-## Status (2026-10-24 20:00 KST)
-- Board: Placeholder 5.166e-5 (195 CX, improving ~3%/h); us 6.32297e-5 = v25k_r262 (rank 2; 300 re-draws mean 6.5912e-5).
-  v27x (ST2's exchange4, MC mean 6.4768e-5) in re-draws for 20:37.
+## Status (2026-10-24 20:25 KST)
+- Board: Placeholder 5.166e-5 (195 CX); us 6.32297e-5 = v25k_r262 (rank 2). v26n_r115 (seed-0 6.18621e-5; 120 re-draws
+  mean 6.5202e-5) goes in at 20:37; v29c (ST1 combined, 3-seed mean 6.3451e-5, best true mean) in re-draws for 21:37.
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
@@ -17,10 +17,10 @@ small grid-native block preps; every earlier closure of it was model-bound.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P71 | G1 | ENDSTATE: exhaustive SAT catalog of final geometries (D, A, B, C or C6; transversal adjacencies; grid-native preps ≤ 12–14 CX with helpers, MB preps, ≤ 1–2 moves per block qubit), data hop distance per prefix embedding, earliest R, calibrated loss | witness or certificate for small preps, ranked catalog with emitted fragments | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, zebra) | active |
+| 1 | P71 | G1 | ENDSTATE: encoder library and end-state witness done (FINDINGS); now time-indexed prefix-compatible end-states (prefix symmetries, preps on cells free at that time, just in time), earliest R then least exposure, complete circuits priced | complete circuits with loss split; below 5e-5 or the mechanism that stops it | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, zebra) | active |
 | 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
 | 3 | P72 | G1 | FRESH: independent from-scratch redesign team; every inherited choice open | a verified grid circuit below 5e-5 true, or designs closed by mechanism | Codex lane FRESH (`work/lanes/FRESH`, zebra, sunfish) | active |
-| 4 | P69 | G1 | SEPBC: separate small B and C (and standard A) on the current lineage's cells at R≈45 via compact preps + teleports or new roles; then the blue check | a grid circuit below v25k (≈ 5.0–5.7e-5 before the blue check) | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
+| 4 | P69 | G1 | SEPBC: delivered v28s; stationary separate B/C proved impossible (FINDINGS). Now (a) its free q5 detector on v29c, (b) the reusable emitter that attaches ENDSTATE end-states to the real prefix, priced with a loss split | (a) priced; (b) every ENDSTATE end-state priced | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
 | 5 | P67 | G1 | ST2: composition of verified edits (exchange4, v26n's edits, BCFB/BCPOL preps) and population search on the v25k lineage; feeds the hourly slots until the redesign lands | compositions MC-verified | Codex lane ST2 (`work/lanes/ST2`, sunfish, zebra) | active |
 | 6 | P59 | G1 | BCFB: port its best clean B+C preps into v25k/v26n and re-run the exact feedback search in situ | a v25k-lineage circuit below v27x by re-draws | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
 | 7 | P62 | G1 | BCPOL: B+C contract relaxations (partial clean, joint prep+check endpoints, C6, boundary cache), priced in v23h_c2c9 and v25k | each relaxation priced with its mechanism; C6 feeds ENDSTATE | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
