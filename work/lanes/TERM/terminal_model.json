@@ -1,0 +1,47 @@
+[
+ {
+  "template": "final idle only (proved-floor tail)",
+  "second_order_p2": 11.6667,
+  "mechanism": "last tick D1(p) on 7 outputs"
+ },
+ {
+  "template": "class floor: CX at T-1 with measured partner + final idle",
+  "second_order_p2": 22.8667,
+  "mechanism": "(I|M)xP survivors of the last CX are invisible to the partner"
+ },
+ {
+  "template": "+ T-2 CX leak 1/15 X (T-2 partner fully checked afterwards)",
+  "second_order_p2": 24.22,
+  "mechanism": "(I_P,X_D) of the T-2 CX survives a Z-check at T-1"
+ },
+ {
+  "template": "+ T-1 partner prep leak 1/15 X (two-check class floor)",
+  "second_order_p2": 25.6667,
+  "mechanism": "(X_B,I_Q) of B's last pre-use CX propagates through B->D"
+ },
+ {
+  "template": "Steane round, full A X-parity coverage after D->A",
+  "second_order_p2": 27.2067,
+  "mechanism": "D->A leak 1/15, literal-zero C leaves B leak 2/15"
+ },
+ {
+  "template": "Steane round (ARCH grid-free)",
+  "second_order_p2": 28.84,
+  "mechanism": "D->A leak 2/15 X (A read in Z, Z_A invisible), B->C leak 2/15 X"
+ },
+ {
+  "template": "B-first template, A perfect (brief template)",
+  "second_order_p2": 25.5733,
+  "mechanism": "B fully checked after B->D: only (I_B,Z_D) leaks; A Z errors excluded"
+ },
+ {
+  "template": "v36c terminal (flag on D7,D10,D21; D10,D21 idle at 44)",
+  "second_order_p2": 30.5378,
+  "mechanism": "model of the actual schedule"
+ },
+ {
+  "template": "v36c without flag, no gap (all D->A at 44)",
+  "second_order_p2": 28.84,
+  "mechanism": "reference for the flag/gap trade"
+ }
+]
