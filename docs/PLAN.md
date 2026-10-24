@@ -3,7 +3,8 @@
 ## Status (2026-10-25 01:20 KST)
 - Board: **rank 1**, v35a_r188 4.17026e-5 (server; all-orders 4.39353e-5); Placeholder 5.058e-5, Inae 1.45e-4.
   01:37 slot: v35b_r1007 (seed-0 4.12926e-5, best of 606 re-draws; all-orders 4.37602e-5). 02:37 slot: **v36a** in re-draws
-  (cut 02:20). The board keeps each team's best, so every slot gets the best-expected circuit's best draw.
+  (cut 02:20). 03:37 slot: **v36b** (FRESH: v36a + timing, echoes and reset trades, all-orders 4.12933e-5, acceptance
+  0.50144, 211 CX), re-draws 02:20–03:20 (`work/receipts/chain_v36b.sh`). Every slot gets the best-expected circuit's best draw.
 - **Incumbent v36a** (`work/lanes/MAIN/v36a`, SEPBC `checked16_timing_0`): guard5 lineage (R44, five storage guards) + a
   12-CX A encoder synthesized against the actual cell releases + the A partial decoder + a q16 known-X check:
   **all-orders 4.14605e-5, acceptance 0.50083**, 207 CX, 47 ticks, MC3 4.1770e-5 (structure: reference/circuit.md).
@@ -24,7 +25,7 @@ as deltas with their acceptance cost.
 | 2 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03): re-rank EXENC/ACHECK paths by flag-blind vs flag-detected danger (Pareto, no c1/p30 pruning), build the frontier with input pivots and flag choice; v36a's encoder already gained 5.6% this way | a frontier encoder below v36a | BCFB (`work/lanes/BCFB`, on v35b; ported via P75) | active |
 | 3 | P76 | G1 | Earlier round with the decoder: ENDSTATE/ST1's R38–40 geometry with the A encoder and flag co-synthesized (routes, roles and prefix topology free; ST1 found R38 infeasible with fixed routes and R39 witnesses lost to waiting), then guards/echoes | a circuit below v36a with R ≤ 42 | ST1 (`work/lanes/ST1`) | active |
 | 4 | P71 | G1 | R38 base's acceptance headroom (0.087): A decoder for its A placement, echoes, guards, mz inits, knapsack | a finalist below v36a | ENDSTATE (`work/lanes/ENDSTATE`) | active |
-| 5 | P72 | G1, G2 | FAST SX/SX† (−1.8% on v35b at 191 s per 1e6): xtim's slow-path rule from its own plan counters, then a FAST realization; same for other SLOW-but-better edits | a FAST SX finalist, or the rule with numbers | FRESH (`work/lanes/FRESH`) | active |
+| 5 | P72 | G1, G2 | xtim slow path: established (FRESH) — the circuit-wide `has_general` flag is set when any noise atom needs the PPR retry, and then every noisy shot takes the general path. Now: a static atom-count speed predictor, and FAST realizations of SLOW-but-better edits on v36b (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer; source reuse) | FAST finalists below v36b | FRESH (`work/lanes/FRESH`) | active |
 | 6 | P73 | G1 | Acceptance-only check removal (q16's c43 type), readout edges, a second independent A flag; then reviewer 7's M10 joint-record oracle | priced deltas for P75 | COMP29 (`work/lanes/COMP29`, on v35b) | active |
 | 7 | P67 | G1 | Population search with all-orders fitness under the acceptance floor | priced deltas for P75 | ST2 (`work/lanes/ST2`, on v35b) | active |
 | 8 | P74 | G1 | Acceptance-efficient waiting-data protection (gain per acceptance) | menu `WAITPROT/menu_v35a.json` for P75 | WAITPROT (`work/lanes/WAITPROT`, on v35a) | active |
