@@ -33,12 +33,19 @@ for spec in "$@"; do
   fi
   pids+=($!)
 done
-# Relay the best completed passing score of every host to every host's reorder/<name>.thr (race.py drops against it).
+# Relay to every host's reorder/<name>.thr the key boundary (3 significant figures) below the best of: this hour's
+# completed passing draws and the last sequential-judge-passed picks (submitted at the next slot, maybe not yet on the
+# board). race.py drops against it; draws that cannot lower our board key are not worth completing.
 relay() {
-  local last= b
+  local last= b f p
   while sleep 15; do
-    b=$(cat reorder/${name}_*.log 2>/dev/null | awk '$2 == "1-F" && $NF == "True" {print $3}' | sort -g | head -1)
-    [ -n "$b" ] && [ "$b" != "$last" ] || continue
+    b=$( { cat reorder/${name}_*.log 2>/dev/null | awk '$2 == "1-F" && $NF == "True" {print $3}'
+           for f in $(ls -t receipts/seq_*.txt 2>/dev/null | head -3); do
+             grep -q "RESULT: PASS" $f || continue; p=${f#receipts/seq_}; p=${p%.txt}
+             sed -n 's/.*"score": \([0-9.e+-]*\).*/\1/p' submissions/$p.json 2>/dev/null; done; } | sort -g | head -1)
+    [ -n "$b" ] || continue
+    b=$(python3 -c "import math,sys; k=float(f'{float(sys.argv[1]):.2e}'); print(k - 0.5 * 10 ** (math.floor(math.log10(k)) - 2))" $b)
+    [ "$b" != "$last" ] || continue
     last=$b
     for spec in "$@"; do
       h=${spec%%:*}
