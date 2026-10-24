@@ -1,7 +1,7 @@
 # Plan
 
 ## Status (2026-10-25 02:45 KST)
-- Board: **rank 1**. 01:37 entry v35b_r1007 4.12926e-5 (server); 02:37 entry **v36a_r665, seed-0 3.90052e-5** (best of 978
+- Board: **rank 1**. 01:37 entry v35b_r1007 4.12926e-5 (server); 02:37 entry **v36a_r665, server 3.90052e-5** (best of 978
   draws; all-orders 4.14605e-5); Placeholder 4.984e-5, Inae 1.45e-4. 03:37: best v36b draw (`work/receipts/chain_v36b.sh`).
   From 04:37 the hourly loop `work/receipts/draw_loop.sh` re-draws whatever `work/receipts/next_stem.txt` names.
 - **Best expected circuit: v36c** (`work/lanes/MAIN/v36c` = ST2 `pop36b/zebra/g05_68249cb83c3226`, population edits on
