@@ -31,7 +31,7 @@ Draw cost: racing (P78) cuts the full-run cost per useful draw ≈ 5.8×.
 | 7 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 | 8 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
 | 9 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03): Pareto by flag-blind vs flag-detected danger, no c1/p30 pruning, against v36c's releases | v36c encoder deltas | next free worker (BCFB code on disk) | next |
-| 10 | P73 | G1 | Mid-preparation B flag (ideal meter priced first), a second A flag | v36c deltas | next free worker (COMP29 code on disk) | next |
+| 10 | P73 | G1 | B/C side on v36c (outside the prefix cap): mid-preparation B flag (ideal meter priced first), resource re-synthesis by in-situ loss, B/C acceptance trades | v36c deltas or a finalist below v36c | BFLAG (Claude, `work/lanes/BFLAG`) | active |
 | 11 | P81 | G2 | Delete the untracked bulk of BCFB, COMP29, FRESH, SEPBC, WAITPROT, ST2 and their stale tracked files (essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: INTEG (P75) and ST2's search (P67) still read these files |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
