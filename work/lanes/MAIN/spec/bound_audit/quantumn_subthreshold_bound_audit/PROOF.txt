@@ -1,0 +1,161 @@
+Two-native-tick retained-output lower bound for this judge
+========================================================
+
+Claim: Under the inspected STANDARD model at p=1/1000, every admissible circuit
+whose noiseless accepted output is the specified retained 7-qubit Steane T state
+has TRUE EXPECTED decoded infidelity at least 0.00001162. This is not a bound
+on a finite Monte Carlo realization / selected seed-0 sample.
+
+Assumptions used directly from the judge:
+  * Native operations last one scheduling tick and qubit use cannot overlap.
+  * Last allowed entangling gate is a CX; single-qubit gates have D1(p) noise.
+  * Every CX has D2(p) noise, independent of all other locations.
+  * Every waiting output qubit receives D1(p) per tick. Aggregation of consecutive
+    idles is exactly equivalent. No noise before first use is required by proof.
+  * Non-output quantum systems are discarded; only already-created classical
+    records determine acceptance and product-Pauli logical frames.
+  * Native reset/measurement destroys a qubit's entanglement on each record
+    branch; all seven final Steane qubits must be entangled with the remainder.
+  * The final ideal syndrome round CORRECTS every syndrome, without postselecting
+    its values; scoring is the actual X/Y target fidelity after that lookup.
+
+Let T be the circuit's last native tick.
+
+1. Final output-output CX case.
+------------------------------
+If a CX at T touches two retained output qubits, its following D2(p) acts on
+those qubits after all participant operations that can observe it. Conditional
+acceptance elsewhere cannot depend on this channel. Optimizing the subsequent
+judge-decoded target projector over all 128-dimensional input density operators
+gives minimum loss 0.000333328885923969... . Exact rational inequalities certify
+at least 0.0003333. This already exceeds the desired bound.
+
+The operator optimization is performed in all 64 stabilizer-syndrome sectors,
+each a 2D logical space; it does NOT assume a perfect code-space input. All
+pairs of Steane qubits are equivalent under code automorphisms; the certificate
+nevertheless computes ALL 21 pairs and verifies the bound separately for each.
+
+2. Every remaining final output operation is local or output-helper CX.
+------------------------------------------------------------------------
+A final output reset/measurement (or an untouched output) cannot satisfy exact
+noiseless Steane entanglement. This includes a last measurement EARLIER than T
+whose output is never reused: the scheduler skips its subsequent idle noise,
+but that qubit stays separable from the retained rest in every measurement
+branch. Operations or postselection confined to the rest, and product-Pauli
+logical frames, cannot recreate its entanglement. The exact noiseless checker
+requires the retained output in the Steane code space and target state, so this
+idle-exemption case is inadmissible. The same applies to a last reset at any
+earlier time, or a measured/reset output followed only by local 1q operations.
+Thus at T every admissible output either idles, has a 1q
+unitary, or has a CX with a non-output helper. The helper in that last CX has no
+later measurement or gate and is discarded. D2(p)'s exact data marginal after
+tracing this helper is D1(4p/5), irrespective of helper entanglement or any
+conditioning on disjoint records. One-qubit and idle D1(p) can also factor out
+D1(4p/5) with a CPTP residual. Therefore all seven outputs receive independent
+terminal D1(4p/5) channels, with all remaining physics absorbed in an arbitrary
+conditional pre-channel state.
+
+3. Find one pre-final local noise source for each final-CX output.
+----------------------------------------------------------------
+For an output having a final CX at T, inspect tick T-1. If it has a unitary or
+an idle there, use that channel. If it has a measurement, its explicit
+after-measurement D1(p) is available. If it has R/RX, its preparation channel
+also factors a D1(p/5): for q=p/5, replace its residual preparation error by
+
+  p' = (p - 2q/3)/(1 - 4q/3) = 13p/(15-4p).
+
+Then D1(q) after this modified noisy reset gives EXACTLY the original reset.
+The residual p' is 13/14996 at p=.001 and is a valid probability. This is a
+state-preparation channel identity, valid even when the reset discards previous
+entanglement. The RX proof is identical in the X basis.
+
+If no idle at T-1 is charged because this qubit is first used at T, STANDARD
+initial=1 supplies a noisy |0> just before its final CX. That preparation has
+the same decomposition. Thus even the first-use exception is covered without
+assuming its feasibility as a correct Steane state.
+
+For outputs with a final 1q gate / idle there is no need to find a prior source:
+their terminal D1(p) alone contains the final q_eff channel derived below.
+
+4. Extract independent D1(p/5) from every required pre-final channel.
+-------------------------------------------------------------------
+Set q=p/5, a=1-4q/3, lambda=1-16p/15. The identity
+
+  D2(p) = [D1(q) tensor D1(q)] composed with R
+
+has a Pauli-diagonal CPTP residual with probabilities
+
+  R_II     = (1 + 6 lambda/a + 9 lambda/a^2)/16,
+  R_weight1= (1 + 2 lambda/a - 3 lambda/a^2)/16 for each of 6 Paulis,
+  R_weight2= (1 - 2 lambda/a +   lambda/a^2)/16 for each of 9 Paulis.
+
+At p=.001 these are exactly
+  224745025/224880016,
+  9/224880016,
+  14993/224880016,
+respectively. They are nonnegative and sum to one with multiplicities 1,6,9.
+
+This handles even a penultimate CX SHARED BY TWO OUTPUTS: both independent
+factors are extracted together. For output-helper CX the helper factor is
+absorbed into R. For 1q gates / idles / post-measurement channels, D1(p) factors
+out D1(q) directly. For reset / first-use channels use Step 3's exact identity.
+
+5. Move these factors to the end without affecting any acceptance record.
+------------------------------------------------------------------------
+D1(q) commutes with any final single-qubit unitary and with idle noise. Through
+a final CX from/to a discarded helper, each output Pauli becomes the same Pauli
+on the output times a Pauli on that helper. The latter disappears on partial
+trace. Thus the entire D1(q) channel commutes through the final operation after
+discarding helpers, even for arbitrary entanglement and conditional states.
+Disjoint final measurements commute with these operations and cannot observe
+the extracted errors. Product-Pauli logical frames commute with depolarization.
+
+For each final-CX output, combining with its final-tick factor gives
+
+  D1(q_eff), q_eff = p/5 + 4p/5 - (4/3)(p/5)(4p/5)
+                  = p - 16p^2/75
+                  = 9373/9375000 at p=.001.
+
+Every final 1q/idle output has D1(p), which factors out this q_eff because
+q_eff < p. Consequently all seven outputs have independent D1(q_eff), and
+all additional noise and measurement correlations remain in a CPTP residual.
+
+6. Optimize the ACTUAL decoder over arbitrary pre-tail states.
+------------------------------------------------------------
+Let H be the judge's decoded target-fidelity observable on 7 qubits. The accepted
+state before the extracted channel may be arbitrary, including residual syndrome,
+correlations and deliberate logical prebias. Its best possible final fidelity is
+
+  lambda_max[ D1(q_eff)^{tensor 7}(H) ].
+
+Pauli channels preserve the 64-block stabilizer decomposition. In each block the
+observable has eigenvalues [1 +/- sqrt((v_x^2+v_y^2)/2)]/2, where v_x,v_y are exact
+signed expectations of the ideal decoder's corrected logical X and Y.
+
+terminal_bound.py enumerates all 4^7 Pauli patterns using rational probabilities,
+then ALL 64 initial syndrome sectors. It finds
+
+  minimum loss = 0.00001162029638920668820439987200204524...
+
+and checks, using exact rational integer comparisons in every sector,
+
+  (v_x^2+v_y^2)/2 <= (1 - 2*0.00001162)^2.
+
+Therefore L >= 1.162e-5 is a finite-p numerical certificate backed by the
+channel/causality proof, not a leading-order expansion. No assumption about
+the preparation algorithm, postselection amount, ancilla quality, or layout
+is used. Relaxing grid adjacency cannot evade this particular boundary result.
+
+Interpretation
+--------------
+The weaker last-tick-only relaxation, D1(.8p) on seven otherwise perfect outputs,
+gives loss 7.44545573875e-6 on a perfect T input (7.44545352763e-6 after arbitrary
+prebias optimization). It is BELOW1e-5, but it is not an implementable full-circuit
+witness: a final-CX output also has a preceding gate/idle/measurement/reset or
+first-use preparation noise source. That necessary extra noise raises the bound
+above1e-5. The old entanglement-based penultimate reset exclusion is therefore
+not needed; final reset/measurement exclusion is still required and immediate.
+
+The repository's 1.116e-5 checked-dummy figure is a different architectural
+relaxation that omits the previous output noise. Its label 'any circuit' is
+unsupported by that code; the present derivation is an independent argument.

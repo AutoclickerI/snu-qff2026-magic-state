@@ -7,7 +7,7 @@
 - Loss ledger (FINDINGS): of v23h_c2c9's 6.92e-5, the round alone is 2.87e-5 (its floor class) and ≈ 4e-5 is cross-region
   (prefix/wait residual + one later fault); the grid-free early round is 3.55e-5. LADDER: at fixed R45, separate small B and C
   encoders alone would give 5.71e-5 and with a standard A 5.03e-5 (adjacency ignored); ST1 and ST2 target their grid realization first.
-- Floors (FINDINGS): 2.567e-5 for a direct one-step final readout; no universal floor is proved (BIRD); G0 targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
+- Floors (FINDINGS): any circuit ≥ 1.162e-5 in expectation (proved), a direct one-step final readout ≥ 2.567e-5; G0's 1e-5 is out of reach, so the gap is the measure. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
 - Every grid layout so far hits the area wall: separate unitary B and C encoders do not fit next to the data early
   (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; BCSYN2's feedback search found a better 82-CX prep
