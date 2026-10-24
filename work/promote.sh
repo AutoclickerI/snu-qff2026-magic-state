@@ -1,6 +1,6 @@
 #!/bin/bash
 # Usage: promote.sh <stem> <host:procs:first:count>...   (host "zebra" runs here; "owl" runs through docker)
-# Seed-0 re-draws of <stem> (reorder.py) spread over hosts; the best passing draw by seed-0 1-F is copied to
+# Seed-0 re-draws of <stem> (race.py, dropping draws that cannot beat $RACE_THRESHOLD) spread over hosts; the best passing draw by seed-0 1-F is copied to
 # submissions/, checked by the sequential judge, committed and pushed, then submitted at the next slot by
 # submit_when_ready.sh. Re-draw variant numbers must not overlap between hosts.
 set -u
@@ -19,15 +19,15 @@ pids=()
 for spec in "$@"; do
   IFS=: read -r h procs first count <<< "$spec"
   log=reorder/${name}_$h.log
-  run="$PY reorder.py $stem $count $procs $first"
+  run="$PY race.py $stem $count $procs $first"
   if [ "$h" = zebra ]; then
-    env $ENV nice -n 5 $run > "$log" 2>&1 &
+    env $ENV RACE_THRESHOLD=${RACE_THRESHOLD:-inf} nice -n 5 $run > "$log" 2>&1 &
   else
     $SSH "$h" "mkdir -p $R/work/$dir $R/work/reorder" 2>/dev/null && rsync -a -e "$SSH" "$stem.qasm" "$stem.json" "$h:$R/work/$dir/"
     if [ "$h" = owl ]; then
-      run="docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -v /home/jihoon:/home/jihoon -w $R/work --cpus=$procs fnc-build:22.04 $run"
+      run="docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -e RACE_THRESHOLD=${RACE_THRESHOLD:-inf} -v /home/jihoon:/home/jihoon -w $R/work --cpus=$procs fnc-build:22.04 $run"
     else
-      run="env $ENV nice -n 5 $run"
+      run="env $ENV RACE_THRESHOLD=${RACE_THRESHOLD:-inf} nice -n 5 $run"
     fi
     $SSH "$h" "cd $R/work; $run" > "$log" 2>&1 &
   fi
