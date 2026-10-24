@@ -1,0 +1,684 @@
+{
+  "args": {
+    "out": "work/lanes/R0/phys20.json",
+    "horizon": 41,
+    "transform": "0,2,0",
+    "dhops": 2,
+    "bhops": 3,
+    "workers": 8,
+    "seconds": 180.0,
+    "seed": 0,
+    "connect": true,
+    "stageabc": false,
+    "helpers": 7,
+    "verify": true,
+    "synchronous": false,
+    "reset_a": false,
+    "physical": true,
+    "fast_b": false,
+    "no_presolve": false,
+    "log": false,
+    "hint": null,
+    "fixed": null
+  },
+  "status": "OPTIMAL",
+  "wall": 16.34633797100105,
+  "stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 3902406\nbest_bound: 3902406\nintegers: 2076\nbooleans: 4108\nconflicts: 13802\nbranches: 68762\npropagations: 10736081\ninteger_propagations: 5748030\nrestarts: 22\nlp_iterations: 0\nwalltime: 16.284\nusertime: 16.284\ndeterministic_time: 37.0736\ngap_integral: 233.676\nsolution_fingerprint: 0xfcc41bdb8455e7fd\n",
+  "P": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    21,
+    22,
+    25,
+    26,
+    27,
+    31,
+    32
+  ],
+  "F": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    17,
+    23,
+    24,
+    28,
+    29,
+    30,
+    33,
+    34,
+    35
+  ],
+  "pre_data": [
+    12,
+    32,
+    19,
+    16,
+    15,
+    27,
+    20
+  ],
+  "last_cx": 39,
+  "R": 33,
+  "Rmax": 38,
+  "data_moves": 2,
+  "block_moves": 14,
+  "tokens": {
+    "d0": {
+      "pos": [
+        12,
+        12,
+        12
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0
+      ]
+    },
+    "d1": {
+      "pos": [
+        32,
+        32,
+        32
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0
+      ]
+    },
+    "d2": {
+      "pos": [
+        19,
+        19,
+        19
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 37,
+      "target_start": [
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0
+      ]
+    },
+    "d3": {
+      "pos": [
+        16,
+        16,
+        16
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0
+      ]
+    },
+    "d4": {
+      "pos": [
+        15,
+        15,
+        15
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0
+      ]
+    },
+    "d5": {
+      "pos": [
+        27,
+        27,
+        27
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0
+      ]
+    },
+    "d6": {
+      "pos": [
+        20,
+        21,
+        22
+      ],
+      "times": [
+        34,
+        36
+      ],
+      "ends": [
+        36,
+        38
+      ],
+      "coupling": 38,
+      "target_start": [
+        33,
+        35
+      ],
+      "fast": [
+        0,
+        0
+      ]
+    },
+    "a0": {
+      "pos": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "a1": {
+      "pos": [
+        33,
+        33,
+        33,
+        33
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "a2": {
+      "pos": [
+        7,
+        13,
+        13,
+        13
+      ],
+      "times": [
+        34,
+        36,
+        36
+      ],
+      "ends": [
+        36,
+        36,
+        36
+      ],
+      "coupling": 37,
+      "target_start": [
+        33,
+        36,
+        36
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "a3": {
+      "pos": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "a4": {
+      "pos": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "a5": {
+      "pos": [
+        28,
+        28,
+        28,
+        28
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33,
+      "target_start": [
+        33,
+        33,
+        33
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "a6": {
+      "pos": [
+        29,
+        28,
+        28,
+        28
+      ],
+      "times": [
+        36,
+        38,
+        38
+      ],
+      "ends": [
+        38,
+        38,
+        38
+      ],
+      "coupling": 38,
+      "target_start": [
+        35,
+        38,
+        38
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b0": {
+      "pos": [
+        0,
+        6,
+        6,
+        6
+      ],
+      "times": [
+        36,
+        38,
+        38
+      ],
+      "ends": [
+        38,
+        38,
+        38
+      ],
+      "coupling": 38,
+      "target_start": [
+        35,
+        38,
+        38
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b1": {
+      "pos": [
+        30,
+        31,
+        31,
+        31
+      ],
+      "times": [
+        34,
+        36,
+        36
+      ],
+      "ends": [
+        36,
+        36,
+        36
+      ],
+      "coupling": 36,
+      "target_start": [
+        33,
+        36,
+        36
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b2": {
+      "pos": [
+        2,
+        8,
+        14,
+        20
+      ],
+      "times": [
+        33,
+        35,
+        37
+      ],
+      "ends": [
+        35,
+        37,
+        39
+      ],
+      "coupling": 39,
+      "target_start": [
+        32,
+        34,
+        36
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b3": {
+      "pos": [
+        4,
+        10,
+        10,
+        10
+      ],
+      "times": [
+        36,
+        38,
+        38
+      ],
+      "ends": [
+        38,
+        38,
+        38
+      ],
+      "coupling": 38,
+      "target_start": [
+        35,
+        38,
+        38
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b4": {
+      "pos": [
+        3,
+        9,
+        9,
+        9
+      ],
+      "times": [
+        36,
+        38,
+        38
+      ],
+      "ends": [
+        38,
+        38,
+        38
+      ],
+      "coupling": 38,
+      "target_start": [
+        35,
+        38,
+        38
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b5": {
+      "pos": [
+        35,
+        34,
+        33,
+        33
+      ],
+      "times": [
+        33,
+        36,
+        38
+      ],
+      "ends": [
+        35,
+        38,
+        38
+      ],
+      "coupling": 38,
+      "target_start": [
+        32,
+        35,
+        38
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b6": {
+      "pos": [
+        5,
+        11,
+        17,
+        23
+      ],
+      "times": [
+        33,
+        35,
+        37
+      ],
+      "ends": [
+        35,
+        37,
+        39
+      ],
+      "coupling": 39,
+      "target_start": [
+        32,
+        34,
+        36
+      ],
+      "fast": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "a": [
+    6,
+    33,
+    7,
+    10,
+    9,
+    28,
+    29
+  ],
+  "b": [
+    0,
+    30,
+    2,
+    4,
+    3,
+    35,
+    5
+  ],
+  "c": [
+    6,
+    24,
+    8,
+    10,
+    9,
+    34,
+    11
+  ]
+}

@@ -1,0 +1,1034 @@
+{
+  "sha256": "b8287d7c70331c7979668e49b80f3ce45af093c3830cf86f20069e3fc86cf619",
+  "metadata": {
+    "data_qubits": [
+      1,
+      26,
+      13,
+      16,
+      11,
+      21,
+      20
+    ],
+    "R": 33,
+    "Rmax": 47,
+    "last_step": 49,
+    "O": [
+      16,
+      22,
+      28,
+      5,
+      11,
+      21,
+      17
+    ],
+    "B": [
+      12,
+      32,
+      24,
+      34,
+      23,
+      33,
+      31
+    ],
+    "C": [
+      18,
+      26,
+      30,
+      35,
+      29,
+      27,
+      25
+    ],
+    "moves": 34,
+    "cx": 286,
+    "prefix_sha256": "69ddbb4950d26d1d820933667a489438a16549096c5ae4742b53950d2013d19b",
+    "prep_schedule": [
+      {
+        "block": "o",
+        "step": 28,
+        "stmts": [
+          "reset q[16];",
+          "h q[16];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 28,
+        "stmts": [
+          "reset q[22];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 31,
+        "stmts": [
+          "reset q[28];",
+          "h q[28];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 26,
+        "stmts": [
+          "reset q[5];",
+          "h q[5];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 26,
+        "stmts": [
+          "reset q[11];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 29,
+        "stmts": [
+          "reset q[21];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 27,
+        "stmts": [
+          "reset q[17];",
+          "h q[17];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 27,
+        "stmts": [
+          "cx q[5],q[11];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 29,
+        "stmts": [
+          "cx q[16],q[22];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 28,
+        "stmts": [
+          "cx q[11],q[17];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 30,
+        "stmts": [
+          "cx q[22],q[21];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 29,
+        "stmts": [
+          "cx q[17],q[11];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 30,
+        "stmts": [
+          "cx q[17],q[16];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 32,
+        "stmts": [
+          "cx q[11],q[17];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 31,
+        "stmts": [
+          "cx q[16],q[22];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 33,
+        "stmts": [
+          "cx q[17],q[16];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 32,
+        "stmts": [
+          "cx q[28],q[22];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 34,
+        "stmts": [
+          "cx q[16],q[17];"
+        ]
+      },
+      {
+        "block": "o",
+        "step": 35,
+        "stmts": [
+          "cx q[22],q[16];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "reset q[12];",
+          "h q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 7,
+        "stmts": [
+          "reset q[32];",
+          "h q[32];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 7,
+        "stmts": [
+          "reset q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "reset q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 16,
+        "stmts": [
+          "reset q[23];",
+          "h q[23];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 7,
+        "stmts": [
+          "reset q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 9,
+        "stmts": [
+          "reset q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 7,
+        "stmts": [
+          "reset q[18];",
+          "h q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "reset q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "reset q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "reset q[35];",
+          "h q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "reset q[29];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 10,
+        "stmts": [
+          "reset q[27];",
+          "h q[27];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 9,
+        "stmts": [
+          "reset q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "cx q[32],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 8,
+        "stmts": [
+          "cx q[18],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 9,
+        "stmts": [
+          "cx q[35],q[29];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 9,
+        "stmts": [
+          "cx q[32],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 9,
+        "stmts": [
+          "cx q[24],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 9,
+        "stmts": [
+          "cx q[33],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 9,
+        "stmts": [
+          "cx q[18],q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 10,
+        "stmts": [
+          "cx q[18],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 10,
+        "stmts": [
+          "cx q[26],q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 10,
+        "stmts": [
+          "cx q[30],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 10,
+        "stmts": [
+          "cx q[35],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 11,
+        "stmts": [
+          "cx q[32],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 11,
+        "stmts": [
+          "cx q[34],q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 11,
+        "stmts": [
+          "cx q[33],q[27];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 11,
+        "stmts": [
+          "cx q[18],q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 11,
+        "stmts": [
+          "cx q[25],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 12,
+        "stmts": [
+          "cx q[24],q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 12,
+        "stmts": [
+          "cx q[34],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 12,
+        "stmts": [
+          "cx q[30],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 12,
+        "stmts": [
+          "cx q[29],q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 12,
+        "stmts": [
+          "cx q[27],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 13,
+        "stmts": [
+          "cx q[32],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 13,
+        "stmts": [
+          "cx q[31],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 13,
+        "stmts": [
+          "cx q[18],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 13,
+        "stmts": [
+          "cx q[26],q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 13,
+        "stmts": [
+          "cx q[35],q[29];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 14,
+        "stmts": [
+          "cx q[34],q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 14,
+        "stmts": [
+          "cx q[33],q[32];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 14,
+        "stmts": [
+          "cx q[31],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 14,
+        "stmts": [
+          "cx q[25],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 15,
+        "stmts": [
+          "cx q[24],q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 15,
+        "stmts": [
+          "cx q[26],q[32];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 15,
+        "stmts": [
+          "cx q[30],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 15,
+        "stmts": [
+          "cx q[35],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 16,
+        "stmts": [
+          "cx q[12],q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 16,
+        "stmts": [
+          "cx q[32],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 16,
+        "stmts": [
+          "cx q[24],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 16,
+        "stmts": [
+          "cx q[34],q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 17,
+        "stmts": [
+          "cx q[23],q[29];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 16,
+        "stmts": [
+          "cx q[31],q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 16,
+        "stmts": [
+          "cx q[27],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 17,
+        "stmts": [
+          "cx q[32],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 17,
+        "stmts": [
+          "cx q[33],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 17,
+        "stmts": [
+          "cx q[31],q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 17,
+        "stmts": [
+          "cx q[18],q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 17,
+        "stmts": [
+          "cx q[30],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 18,
+        "stmts": [
+          "cx q[29],q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 18,
+        "stmts": [
+          "cx q[32],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 18,
+        "stmts": [
+          "cx q[24],q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 19,
+        "stmts": [
+          "cx q[35],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 18,
+        "stmts": [
+          "cx q[27],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 18,
+        "stmts": [
+          "cx q[25],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 19,
+        "stmts": [
+          "cx q[32],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 20,
+        "stmts": [
+          "cx q[34],q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 19,
+        "stmts": [
+          "cx q[18],q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 19,
+        "stmts": [
+          "cx q[26],q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 19,
+        "stmts": [
+          "cx q[30],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 20,
+        "stmts": [
+          "cx q[32],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 20,
+        "stmts": [
+          "cx q[24],q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 21,
+        "stmts": [
+          "cx q[31],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 21,
+        "stmts": [
+          "cx q[35],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 21,
+        "stmts": [
+          "cx q[32],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 21,
+        "stmts": [
+          "cx q[24],q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 22,
+        "stmts": [
+          "cx q[34],q[35];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 22,
+        "stmts": [
+          "cx q[18],q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 23,
+        "stmts": [
+          "cx q[29],q[23];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 22,
+        "stmts": [
+          "cx q[24],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 22,
+        "stmts": [
+          "cx q[33],q[32];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 24,
+        "stmts": [
+          "cx q[35],q[29];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 22,
+        "stmts": [
+          "cx q[27],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 23,
+        "stmts": [
+          "cx q[34],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 23,
+        "stmts": [
+          "cx q[18],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 24,
+        "stmts": [
+          "cx q[30],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 26,
+        "stmts": [
+          "cx q[29],q[23];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 23,
+        "stmts": [
+          "cx q[25],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 24,
+        "stmts": [
+          "cx q[24],q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 24,
+        "stmts": [
+          "cx q[33],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 24,
+        "stmts": [
+          "cx q[26],q[32];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 27,
+        "stmts": [
+          "cx q[29],q[23];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 25,
+        "stmts": [
+          "cx q[24],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 25,
+        "stmts": [
+          "cx q[33],q[32];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 25,
+        "stmts": [
+          "cx q[18],q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 25,
+        "stmts": [
+          "cx q[26],q[27];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 25,
+        "stmts": [
+          "cx q[35],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 26,
+        "stmts": [
+          "cx q[32],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 26,
+        "stmts": [
+          "cx q[34],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 28,
+        "stmts": [
+          "cx q[23],q[29];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 26,
+        "stmts": [
+          "cx q[18],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 26,
+        "stmts": [
+          "cx q[30],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 27,
+        "stmts": [
+          "cx q[24],q[30];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 27,
+        "stmts": [
+          "cx q[31],q[32];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 27,
+        "stmts": [
+          "cx q[26],q[25];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 27,
+        "stmts": [
+          "cx q[35],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 27,
+        "stmts": [
+          "cx q[27],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 28,
+        "stmts": [
+          "cx q[33],q[34];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 28,
+        "stmts": [
+          "cx q[18],q[12];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 28,
+        "stmts": [
+          "cx q[26],q[27];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 28,
+        "stmts": [
+          "cx q[30],q[24];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 28,
+        "stmts": [
+          "cx q[25],q[31];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 29,
+        "stmts": [
+          "cx q[12],q[18];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 29,
+        "stmts": [
+          "cx q[32],q[33];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 29,
+        "stmts": [
+          "cx q[35],q[29];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 29,
+        "stmts": [
+          "cx q[27],q[26];"
+        ]
+      },
+      {
+        "block": "bc",
+        "step": 29,
+        "stmts": [
+          "cx q[25],q[24];"
+        ]
+      }
+    ],
+    "source": {
+      "route": "work/lanes/TP2/joint52_alap.json",
+      "out": "work/lanes/TP2/tp_joint52_alap",
+      "o": "work/lanes/TP2/joint52_O.json",
+      "b": null,
+      "c": null,
+      "bc": "work/lanes/TP2/joint52_BC22.prep.json"
+    }
+  },
+  "judge_passed": false,
+  "correct_ok": true,
+  "acceptance_1e6": 0.476666,
+  "c1": 3.2621e-18,
+  "second": 0.00191421,
+  "total": 0.0019281,
+  "exp_A1": 0.47538,
+  "third": 1.38943e-05
+}

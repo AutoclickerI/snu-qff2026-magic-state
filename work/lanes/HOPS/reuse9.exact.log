@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/HOPS/reuse9.qasm: 457 noise channels, 3613 faults, 568 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.9236e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.44088e-05   (pairs 5.44088e-05 + same-channel normalisation 6.859e-23)
+1-F (2nd order) = 5.44088e-05
+third order: 1.90077e-05   (weight-3 sets 2.29859e-05 + pair-times-others -3.97819e-06)
+1-F (to 3rd order) = 7.34165e-05
+acceptance: first order 0.38333, second order 0.57355; exp(-A1) = 0.53974  (A1 = 0.61667)
+time: model+singles 0.4s, pairs 27.5s, triples 702.8s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '1.500e-06', 'gate': '2.781e-05', 'idle': '2.510e-05'}

@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/TP2/tp_joint52.qasm: 613 noise channels, 5029 faults, 594 (s,d) classes, rotation rank 5, 28 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.2629e-18   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.93537e-03   (pairs 1.93537e-03 + same-channel normalisation 8.476e-21)
+1-F (2nd order) = 1.93537e-03
+third order: 9.30512e-06   (weight-3 sets 5.23199e-04 + pair-times-others -5.13894e-04)
+1-F (to 3rd order) = 1.94468e-03
+acceptance: first order 0.25897, second order 0.53642; exp(-A1) = 0.47662  (A1 = 0.74103)
+time: model+singles 0.2s, pairs 2.2s, triples 38.2s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '3.310e-04', 'gate': '3.751e-04', 'idle': '1.229e-03'}

@@ -1,0 +1,12 @@
+circuit /home/jihoon/competitions/quantumn/work/lanes/HOPS/watch9_cancel_alap.qasm: 470 noise channels, 3600 faults, 584 (s,d) classes, rotation rank 5, 40 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.9236e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.62287e-05   (pairs 5.62287e-05 + same-channel normalisation 6.859e-23)
+1-F (2nd order) = 5.62287e-05
+third order: 1.84794e-05   (weight-3 sets 2.32535e-05 + pair-times-others -4.77412e-06)
+1-F (to 3rd order) = 7.47081e-05
+acceptance: first order 0.35744, second order 0.56391; exp(-A1) = 0.52594  (A1 = 0.64256)
+time: model+singles 0.4s, pairs 25.3s, triples 25.2s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '1.541e-06', 'gate': '2.816e-05', 'idle': '2.653e-05'}

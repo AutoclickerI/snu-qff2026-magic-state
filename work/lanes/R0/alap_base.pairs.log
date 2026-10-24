@@ -1,0 +1,57 @@
+2nd order 5.4029e-04 by region pair:
+  BidlexBidle    8.120e-05  15.0%   e.g. L362 idle X@q34 t=29..36 + L383 idle X@q0 t=31..42
+  BCprepxBidle   7.060e-05  13.1%   e.g. L72 idle X@q0 t=5..17 + L396 flip X@q1 t=31
+  BCprepxBCprep  5.415e-05  10.0%   e.g. L139 idle X@q1 t=11..11 + L399 idle X@q5 t=32..41
+  Bidlextail     3.916e-05   7.2%   e.g. L383 idle X@q0 t=31..42 + L556 idle Y@q10 t=44..44
+  Bidlexwait     3.820e-05   7.1%   e.g. L383 idle X@q0 t=31..42 + L501 idle X@q32 t=39..42
+  BidlexBmove    3.159e-05   5.8%   e.g. L383 idle X@q0 t=31..42 + L442 gate2 IX@q1,2 t=33
+  BidlexDmove    2.528e-05   4.7%   e.g. L383 idle X@q0 t=31..42 + L475 flip X@q32 t=36
+  Bidlexround    2.356e-05   4.4%   e.g. L383 idle X@q0 t=31..42 + L556 gate2 IY@q4,10 t=43
+  AprepxBidle    1.399e-05   2.6%   e.g. L340 flip Z@q31 t=26 + L432 idle Y@q23 t=33..40
+  AprepxBCprep   1.304e-05   2.4%   e.g. L340 flip Z@q31 t=26 + L372 idle Z@q22 t=30..31
+  tailxtail      1.167e-05   2.2%   e.g. L552 idle Y@q6 t=44..44 + L553 idle Z@q32 t=44..44
+  roundxtail     1.120e-05   2.1%   e.g. L552 gate2 IY@q0,6 t=43 + L553 idle Z@q32 t=44..44
+  tailxwait      9.316e-06   1.7%   e.g. L501 idle X@q32 t=39..42 + L552 idle Y@q6 t=44..44
+  Aprepxwait     9.265e-06   1.7%   e.g. L340 flip Z@q31 t=26 + L408 idle Z@q21 t=33..37
+  BCprepxtail    8.666e-06   1.6%   e.g. L24 flip X@q22 t=1 + L552 idle X@q6 t=44..44
+  BCprepxwait    8.185e-06   1.5%   e.g. L24 flip X@q22 t=1 + L501 idle X@q32 t=39..42
+  BCprepxBmove   7.786e-06   1.4%   e.g. L24 flip X@q22 t=1 + L442 gate2 IX@q1,2 t=33
+  Bmovextail     7.467e-06   1.4%   e.g. L442 gate2 IX@q1,2 t=33 + L552 idle Y@q6 t=44..44
+  Bmovexwait     7.453e-06   1.4%   e.g. L442 gate2 IX@q1,2 t=33 + L501 idle X@q32 t=39..42
+  Dmovextail     6.133e-06   1.1%   e.g. L475 flip X@q32 t=36 + L552 idle Y@q6 t=44..44
+  BCprepxround   5.679e-06   1.1%   e.g. L24 flip X@q22 t=1 + L461 gate2 XI@q26,32 t=34
+  roundxwait     5.590e-06   1.0%   e.g. L501 idle X@q32 t=39..42 + L552 gate2 IY@q0,6 t=43
+  BCprepxDmove   5.460e-06   1.0%   e.g. L24 flip X@q22 t=1 + L475 flip X@q32 t=36
+  BmovexDmove    4.907e-06   0.9%   e.g. L442 gate2 IX@q1,2 t=33 + L475 flip X@q32 t=36
+  Dmovexwait     4.591e-06   0.8%   e.g. L475 flip X@q32 t=36 + L502 idle X@q7 t=39..42
+  Bmovexround    4.480e-06   0.8%   e.g. L442 gate2 IX@q1,2 t=33 + L552 gate2 IY@q0,6 t=43
+  Aprepxround    3.742e-06   0.7%   e.g. L340 flip Z@q31 t=26 + L576 flip Z@q22 t=44
+  AprepxBmove    3.720e-06   0.7%   e.g. L340 flip Z@q31 t=26 + L530 flip Z@q22 t=40
+  Dmovexround    3.680e-06   0.7%   e.g. L475 flip X@q32 t=36 + L552 gate2 IY@q0,6 t=43
+  waitxwait      3.543e-06   0.7%   e.g. L501 idle X@q32 t=39..42 + L502 idle X@q7 t=39..42
+  Aprepxpre      3.339e-06   0.6%   e.g. L340 flip Z@q31 t=26 + L408 gate1 Z@q21 t=32
+  roundxround    2.800e-06   0.5%   e.g. L552 gate2 IY@q0,6 t=43 + L553 gate2 IZ@q33,32 t=43
+  BmovexBmove    2.702e-06   0.5%   e.g. L442 gate2 IX@q1,2 t=33 + L443 gate2 IX@q16,17 t=33
+  AidlexAprep    2.508e-06   0.5%   e.g. L340 flip Z@q31 t=26 + L447 idle Z@q33 t=34..35
+  AmovexAprep    1.529e-06   0.3%   e.g. L340 flip Z@q31 t=26 + L481 gate2 IZ@q33,27 t=36
+  DmovexDmove    1.176e-06   0.2%   e.g. L475 flip X@q32 t=36 + L476 flip X@q7 t=36
+  AprepxAprep    8.044e-07   0.1%   e.g. L342 flip Z@q27 t=26 + L400 gate2 IZ@q31,32 t=31
+  prexround      4.212e-07   0.1%   e.g. L316 idle X@q13 t=25..28 + L472 flip X@q32 t=35
+  prexwait       3.935e-07   0.1%   e.g. L316 idle X@q13 t=25..28 + L411 idle X@q26 t=33..33
+  prexpre        3.628e-07   0.1%   e.g. L316 idle X@q13 t=25..28 + L411 gate1 X@q26 t=32
+  Amovexpre      2.939e-07   0.1%   e.g. L307 gate2 XI@q14,20 t=23 + L456 flip X@q19 t=34
+  AprepxDmove    2.844e-07   0.1%   e.g. L377 gate2 IZ@q24,30 t=29 + L487 gate2 IY@q26,32 t=37
+  Aidlexpre      2.218e-07   0.0%   e.g. L367 idle Y@q18 t=29..33 + L382 gate2 XY@q15,9 t=30
+  Dmovexpre      1.378e-07   0.0%   e.g. L307 gate2 XI@q14,20 t=23 + L437 flip X@q8 t=33
+weight-3 term 1.7528e-04 by region (each triple split in thirds; kept triples cover 1.7080e-04):
+  BCprep   4.246e-05  24.9%
+  Bidle    3.988e-05  23.4%
+  wait     1.818e-05  10.6%
+  pre      1.380e-05   8.1%
+  Aprep    1.129e-05   6.6%
+  round    1.101e-05   6.4%
+  tail     8.242e-06   4.8%
+  Bmove    7.376e-06   4.3%
+  Aidle    7.108e-06   4.2%
+  Dmove    6.277e-06   3.7%
+  Amove    5.174e-06   3.0%

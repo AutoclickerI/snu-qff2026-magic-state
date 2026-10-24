@@ -57,20 +57,27 @@ def main():
     us = C.S.fold_units(raw)
     old = C.native_times(text, us)
     used = {int(b) for line in text.splitlines() for b in __import__("re").findall(r"c\[(\d+)\]", line)}
-    init = {q: max(i for i, u in enumerate(us) if old[i] < R and u.qs == (q,) and u.name in ("RESET", "RX")) for q in A}
+    init = {}
+    for q in A:
+        cand = [i for i, u in enumerate(us) if old[i] < R and u.qs == (q,) and u.name in ("RESET", "RX")]
+        if cand:
+            init[q] = max(cand)
+    if "q16" in edits and us[init[16]].name != "RESET" if 16 in init else "q16" in edits:
+        print("q16 has no reset to replace; skipping that edit")
+        edits.discard("q16")
     if "q1" in edits:
         prev = max(j for j, u in enumerate(us[:init[1]]) if 1 in u.qs)
         assert us[prev].name == "MX", us[prev].name
         us[prev] = C.unit(us[prev].lines + ["h q[1];"])
-    assert us[init[16]].name == "RESET", us[init[16]].name
-    for q in (2, 9, 15):
-        assert us[init[q]].name == "RX", (q, us[init[q]].name)
+    for e in edits:
+        if e.startswith("c"):
+            assert us[init[int(e[1:])]].name == "RX", (e, us[init[int(e[1:])]].name)
     bits = iter(b for b in range(256) if b not in used)
     uu, tt = [], []
     for i, (u, t) in enumerate(zip(us, old)):
-        if i == init[1] and "q1" in edits:
+        if "q1" in edits and i == init[1]:
             continue
-        if i == init[16] and "q16" in edits:
+        if "q16" in edits and i == init[16]:
             b = next(bits)
             u = C.unit([f"measure q[16] -> c[{b}];"])
             tail.append(f"// DETECTOR c[{b}]")

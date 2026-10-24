@@ -1,0 +1,11 @@
+c1 != 0: the third-order term is implemented for c1 = 0 only; skipped
+circuit abc_ideal.qasm: 577 noise channels, 4667 faults, 564 (s,d) classes, rotation rank 5, 28 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.5667e-03   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 6.28682e-04   (pairs 6.27602e-04 + same-channel normalisation 1.080e-06)
+1-F (2nd order) = 3.19535e-03
+acceptance: first order 0.25436, second order 0.53519; exp(-A1) = 0.47443  (A1 = 0.74564)
+time: model+singles 0.6s, pairs 3.8s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '1.959e-05', 'gate': '1.670e-04', 'idle': '4.411e-04'}

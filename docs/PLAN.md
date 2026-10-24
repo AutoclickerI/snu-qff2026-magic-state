@@ -1,32 +1,32 @@
 # Plan
 
-## Status (2026-10-24 15:50 KST)
-- Board: Placeholder 5.621e-5 (177 CX); us 7.14115e-5 = v20 (290 re-draws mean 7.430e-5), rank 2. v21d (v20 + ACHECK's A
-  init edits; exact 7.2542e-5, −0.76%; 3-seed MC 7.344e-5, within noise of v20's 7.282e-5) is in re-draws for 16:45; it is
-  submitted only if its re-draw mean beats v20's 7.430e-5.
+## Status (2026-10-24 16:15 KST)
+- Board: Placeholder 5.621e-5 (177 CX); us 7.14115e-5 = v20 (290 re-draws mean 7.430e-5), rank 2. New best: v22 =
+  v22h_c2c9 (HOPS hop_early + ACHECK's MX checks on q2, q9; FINDINGS "HOPS"), exact 7.1306e-5 (−2.45% vs v20), re-draw
+  mean 7.227e-5 after 47 draws (v21d 7.372e-5 after 167, stopped). Its best draw goes in at 16:45.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
-- Every grid layout so far hits the area wall: separate B and C blocks do not fit next to the data early (R0, LAYOUT3,
-  TP2, R1), so the 82-CX joint B+C prep stays. Closed this afternoon: ARCH (the round's data-side cost is structural), REVSAT (fixed-L5 placement
-  UNSAT for separate blocks), EARLYBC (zero-CX tweaks −2.7% on v17a, to port). ANC4 closed (4-ancilla checker costs more than C). Open: BCSYN (suffix block preps), TREP2
-  (v18 schedule and forms), BUDGET (local choices). R1 and PRE3 closed: R1's round never moved
-  (data round CXs still at 50–51); only 12 free cells touch the data at step 33, A and B need 14 (FINDINGS).
+- Every grid layout so far hits the area wall: separate unitary B and C encoders do not fit next to the data early
+  (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; SEP2T, BCSYN2 and MBP attack it from three
+  sides. Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS (FINDINGS).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
 seeds 0/1000/2000 → `work/promote.sh` (re-draws over hosts ≈ 10 min, sequential judge, commit, submit at the next slot).
-Bottleneck: the data wait before the round. v17a idles the data at 33–49; v18 delays the pre-stage (ALAP, ends at 45) so the round starts at 46.
+Bottleneck: the B+C prep footprint (82 CX; noiseless −26.5% on v19) and the data's waiting exposure before the round
+(cells 10 and 0 idle 13 steps against late A-encoder faults).
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P53 | G1 | SEP2T: settle whether separate small A/B/C blocks + teleports/hops beat the joint B+C prep on the grid with the ALAP pre-stage (long CP-SAT on FREELAY's 2-teleport models, constructive/LNS builds, C teleported in) | 3-seed MC below v19's 7.537e-5, or a built separate-block circuit with its loss breakdown | Codex lane SEP2T (`work/lanes/SEP2T`, sunfish, hippo) | active |
 | 2 | P51 | G1 | BCSYN2: clean (BC2 predicate) B+C prep below 82 CX or depth 14: multi-hour runs per cap, warm starts from BCSYN's 62–78-CX endpoint witnesses, incremental SAT, local search from the 82-CX witness, priced in v20 | 3-seed MC below v20's 7.282e-5, or ≥ 2 h per (cap, depth) with status | Codex lane BCSYN2 (`work/lanes/BCSYN2`, owl, tom) | active |
-| 3 | P55 | G1 | HOPS: cut the data hops' cost on v20 (−14% if noiseless): block teleports instead of data hops, block cells needing fewer moves, hop timing, \|+⟩ reuse or measure-init on every destination, embeddings/relabellings | 3-seed MC below v20's 7.282e-5, or each option priced | Codex lane HOPS (`work/lanes/HOPS`, jerry, hippo) | active |
-| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 3 | P56 | G1 | MBP: measurement-based block preps (B, C from \|0⟩^7, A from \|+⟩^7, stabilizers measured by ancillas, frames folded into detectors), priced grid-free then embedded with time-multiplexed ancilla cells | a circuit below v22h_c2c9's exact 7.1306e-5 and its 3-seed MC, or each variant priced with its mechanism | Codex lane MBP (`work/lanes/MBP`, sunfish, zebra) | active |
+| 4 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`, zebra, jerry) | active |
+| 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
 
 
 ## Idea review (2026-10-24)

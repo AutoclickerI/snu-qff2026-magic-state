@@ -1,0 +1,12 @@
+circuit v16_bc2m.qasm: 460 noise channels, 3662 faults, 589 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.1826e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.83953e-05   (pairs 5.83953e-05 + same-channel normalisation 8.684e-23)
+1-F (2nd order) = 5.83953e-05
+third order: 2.58031e-05   (weight-3 sets 3.01076e-05 + pair-times-others -4.30452e-06)
+1-F (to 3rd order) = 8.41984e-05
+acceptance: first order 0.37088, second order 0.56894; exp(-A1) = 0.53306  (A1 = 0.62912)
+time: model+singles 0.6s, pairs 3.2s, triples 49.7s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '2.429e-06', 'gate': '2.886e-05', 'idle': '2.711e-05'}

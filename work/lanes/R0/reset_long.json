@@ -1,0 +1,478 @@
+{
+  "args": {
+    "out": "work/lanes/R0/reset_long.json",
+    "horizon": 46,
+    "transform": "0,1,0",
+    "dhops": 2,
+    "bhops": 3,
+    "workers": 4,
+    "seconds": 60.0,
+    "seed": 0,
+    "connect": false,
+    "helpers": 7,
+    "verify": false,
+    "synchronous": false,
+    "reset_a": true,
+    "fast_b": false,
+    "no_presolve": false,
+    "log": false,
+    "hint": null,
+    "fixed": null
+  },
+  "status": "OPTIMAL",
+  "wall": 2.618169180001132,
+  "stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 3900362\nbest_bound: 3900362\nintegers: 2436\nbooleans: 4792\nconflicts: 717\nbranches: 21257\npropagations: 2408008\ninteger_propagations: 1315847\nrestarts: 10\nlp_iterations: 0\nwalltime: 2.58394\nusertime: 2.58394\ndeterministic_time: 3.5792\ngap_integral: 31.12\nsolution_fingerprint: 0x74a348261140a474\n",
+  "P": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    19,
+    20,
+    21,
+    25,
+    26
+  ],
+  "F": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    11,
+    17,
+    18,
+    22,
+    23,
+    24,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "pre_data": [
+    6,
+    26,
+    13,
+    10,
+    9,
+    21,
+    14
+  ],
+  "last_cx": 39,
+  "R": 33,
+  "Rmax": 36,
+  "data_moves": 0,
+  "block_moves": 10,
+  "tokens": {
+    "d0": {
+      "pos": [
+        6,
+        6,
+        6
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "d1": {
+      "pos": [
+        26,
+        26,
+        26
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "d2": {
+      "pos": [
+        13,
+        13,
+        13
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 36
+    },
+    "d3": {
+      "pos": [
+        10,
+        10,
+        10
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "d4": {
+      "pos": [
+        9,
+        9,
+        9
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "d5": {
+      "pos": [
+        21,
+        21,
+        21
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "d6": {
+      "pos": [
+        14,
+        14,
+        14
+      ],
+      "times": [
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33
+      ],
+      "coupling": 36
+    },
+    "a0": {
+      "pos": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "a1": {
+      "pos": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "a2": {
+      "pos": [
+        18,
+        12,
+        12,
+        12
+      ],
+      "times": [
+        33,
+        36,
+        36
+      ],
+      "ends": [
+        36,
+        36,
+        36
+      ],
+      "coupling": 36
+    },
+    "a3": {
+      "pos": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "a4": {
+      "pos": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "a5": {
+      "pos": [
+        27,
+        27,
+        27,
+        27
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 33
+    },
+    "a6": {
+      "pos": [
+        2,
+        8,
+        8,
+        8
+      ],
+      "times": [
+        33,
+        36,
+        36
+      ],
+      "ends": [
+        36,
+        36,
+        36
+      ],
+      "coupling": 36
+    },
+    "b0": {
+      "pos": [
+        1,
+        7,
+        7,
+        7
+      ],
+      "times": [
+        33,
+        36,
+        36
+      ],
+      "ends": [
+        36,
+        36,
+        36
+      ],
+      "coupling": 36
+    },
+    "b1": {
+      "pos": [
+        31,
+        32,
+        32,
+        32
+      ],
+      "times": [
+        35,
+        38,
+        38
+      ],
+      "ends": [
+        38,
+        38,
+        38
+      ],
+      "coupling": 38
+    },
+    "b2": {
+      "pos": [
+        24,
+        25,
+        19,
+        19
+      ],
+      "times": [
+        33,
+        36,
+        39
+      ],
+      "ends": [
+        36,
+        39,
+        39
+      ],
+      "coupling": 39
+    },
+    "b3": {
+      "pos": [
+        5,
+        11,
+        11,
+        11
+      ],
+      "times": [
+        35,
+        38,
+        38
+      ],
+      "ends": [
+        38,
+        38,
+        38
+      ],
+      "coupling": 38
+    },
+    "b4": {
+      "pos": [
+        4,
+        3,
+        3,
+        3
+      ],
+      "times": [
+        35,
+        38,
+        38
+      ],
+      "ends": [
+        38,
+        38,
+        38
+      ],
+      "coupling": 38
+    },
+    "b5": {
+      "pos": [
+        22,
+        22,
+        22,
+        22
+      ],
+      "times": [
+        33,
+        33,
+        33
+      ],
+      "ends": [
+        33,
+        33,
+        33
+      ],
+      "coupling": 34
+    },
+    "b6": {
+      "pos": [
+        17,
+        16,
+        15,
+        15
+      ],
+      "times": [
+        33,
+        36,
+        39
+      ],
+      "ends": [
+        36,
+        39,
+        39
+      ],
+      "coupling": 39
+    }
+  },
+  "a": [
+    0,
+    32,
+    18,
+    11,
+    3,
+    27,
+    2
+  ],
+  "b": [
+    1,
+    31,
+    24,
+    5,
+    4,
+    22,
+    17
+  ],
+  "c": []
+}
