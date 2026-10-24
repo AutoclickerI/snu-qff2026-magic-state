@@ -1,0 +1,22 @@
+{
+  "scope": "Packaging and handoff QA; no new optimization outcome or repeated large Monte Carlo run.",
+  "original_evidence_files_preserved_byte_for_byte": 264,
+  "task_count": 10,
+  "exact_task_and_baseline_evidence_paths_checked": 53,
+  "baseline_qasm_sha256": "b606bd3902d28000e0ee073fc50a7c0870aaa1f2e1ab8947fdb7fd70c762218e",
+  "baseline_receipt_consistency_check": "PASS",
+  "negative_receipt_fixtures_rejected": [
+    "failed gate",
+    "caught exception",
+    "candidate hash mismatch",
+    "shot-count mismatch",
+    "missing gate",
+    "parser failure",
+    "runtime version mismatch"
+  ],
+  "independent_editorial_check": "Completed; corrected percentage denominator, clarified evidence paths and logical-Y convention.",
+  "fresh_run_requirement": "Exit code 0 and newly generated final receipt; prior receipt must not mask an early runner failure.",
+  "source_snapshot_scope": "Selected evidence snapshot, not a complete Git checkout or full EXENC engine/cache.",
+  "environment": "Pinned Python 3.12 Linux x86_64; dependencies require installation.",
+  "new_whole_circuit_improvement_found": false
+}

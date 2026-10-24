@@ -1,0 +1,705 @@
+{
+  "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522",
+  "description": "Small legal witnesses for rule freedoms, not optimization candidates.\n\nUses the unchanged official judge from its pinned review6 installation.\nFull-target witnesses use the organizer's injection example; simple native\nprobes establish parser/scheduler/class semantics only.\n",
+  "data_qubits": [
+    0,
+    6,
+    13,
+    2,
+    7,
+    8,
+    1
+  ],
+  "native_witnesses": [
+    {
+      "name": "native_RX",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "RX 0\n",
+      "schedule": [
+        {
+          "instruction": "RX 0",
+          "ticks": [
+            0
+          ]
+        }
+      ],
+      "idle_gaps": [],
+      "noise_blocks": [
+        [
+          "RX 0",
+          "Z_ERROR(0.001) 0"
+        ]
+      ],
+      "class_passed": true
+    },
+    {
+      "name": "native_MX_reuse",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "MX 0\nCX 0 1\n",
+      "schedule": [
+        {
+          "instruction": "MX 0",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "CX 0 1",
+          "ticks": [
+            1
+          ]
+        }
+      ],
+      "idle_gaps": [],
+      "noise_blocks": [
+        [
+          "X_ERROR(0.001) 0",
+          "Z_ERROR(0.001) 0",
+          "MX 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "X_ERROR(0.001) 1",
+          "CX 0 1",
+          "DEPOLARIZE2(0.001) 0 1"
+        ]
+      ],
+      "class_passed": true
+    },
+    {
+      "name": "native_SX",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "SQRT_X 0\nSQRT_X_DAG 0\n",
+      "schedule": [
+        {
+          "instruction": "SQRT_X 0",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "SQRT_X_DAG 0",
+          "ticks": [
+            1
+          ]
+        }
+      ],
+      "idle_gaps": [],
+      "noise_blocks": [
+        [
+          "X_ERROR(0.001) 0",
+          "SQRT_X 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "SQRT_X_DAG 0",
+          "DEPOLARIZE1(0.001) 0"
+        ]
+      ],
+      "class_passed": true
+    },
+    {
+      "name": "partial_barrier",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "H 0\nT 0\nT_DAG 0\nRX 1  # barrier 0\nCX 1 2\n",
+      "schedule": [
+        {
+          "instruction": "H 0",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "T 0",
+          "ticks": [
+            1
+          ]
+        },
+        {
+          "instruction": "T_DAG 0",
+          "ticks": [
+            2
+          ]
+        },
+        {
+          "instruction": "RX 1",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "CX 1 2",
+          "ticks": [
+            1
+          ]
+        }
+      ],
+      "idle_gaps": [
+        [
+          4,
+          1,
+          2,
+          1
+        ],
+        [
+          4,
+          2,
+          2,
+          1
+        ]
+      ],
+      "noise_blocks": [
+        [
+          "X_ERROR(0.001) 0",
+          "H 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T_DAG 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "RX 1",
+          "Z_ERROR(0.001) 1"
+        ],
+        [
+          "X_ERROR(0.001) 2",
+          "CX 1 2",
+          "DEPOLARIZE2(0.001) 1 2",
+          "DEPOLARIZE1(0.0009999999999999731) 1",
+          "DEPOLARIZE1(0.0009999999999999731) 2"
+        ]
+      ],
+      "class_passed": true
+    },
+    {
+      "name": "global_barrier",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "H 0\nT 0\nT_DAG 0\nRX 1  # barrier 0 1 2\nCX 1 2\n",
+      "schedule": [
+        {
+          "instruction": "H 0",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "T 0",
+          "ticks": [
+            1
+          ]
+        },
+        {
+          "instruction": "T_DAG 0",
+          "ticks": [
+            2
+          ]
+        },
+        {
+          "instruction": "RX 1",
+          "ticks": [
+            3
+          ]
+        },
+        {
+          "instruction": "CX 1 2",
+          "ticks": [
+            4
+          ]
+        }
+      ],
+      "idle_gaps": [
+        [
+          2,
+          0,
+          3,
+          2
+        ]
+      ],
+      "noise_blocks": [
+        [
+          "X_ERROR(0.001) 0",
+          "H 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T_DAG 0",
+          "DEPOLARIZE1(0.001) 0",
+          "DEPOLARIZE1(0.001998666666666621) 0"
+        ],
+        [
+          "RX 1",
+          "Z_ERROR(0.001) 1"
+        ],
+        [
+          "X_ERROR(0.001) 2",
+          "CX 1 2",
+          "DEPOLARIZE2(0.001) 1 2"
+        ]
+      ],
+      "class_passed": true
+    },
+    {
+      "name": "commuting_temporally_separated_T",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "H 0\nH 1\nT 0\nCX 0 1\nT 1\nCX 0 1\n",
+      "schedule": [
+        {
+          "instruction": "H 0",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "H 1",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "T 0",
+          "ticks": [
+            1
+          ]
+        },
+        {
+          "instruction": "CX 0 1",
+          "ticks": [
+            2
+          ]
+        },
+        {
+          "instruction": "T 1",
+          "ticks": [
+            3
+          ]
+        },
+        {
+          "instruction": "CX 0 1",
+          "ticks": [
+            4
+          ]
+        }
+      ],
+      "idle_gaps": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          3,
+          1
+        ]
+      ],
+      "noise_blocks": [
+        [
+          "X_ERROR(0.001) 0",
+          "H 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "X_ERROR(0.001) 1",
+          "H 1",
+          "DEPOLARIZE1(0.001) 1",
+          "DEPOLARIZE1(0.0009999999999999731) 1"
+        ],
+        [
+          "T 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "CX 0 1",
+          "DEPOLARIZE2(0.001) 0 1",
+          "DEPOLARIZE1(0.0009999999999999731) 0"
+        ],
+        [
+          "T 1",
+          "DEPOLARIZE1(0.001) 1"
+        ],
+        [
+          "CX 0 1",
+          "DEPOLARIZE2(0.001) 0 1"
+        ]
+      ],
+      "class_passed": true
+    },
+    {
+      "name": "noncommuting_T_rejected",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "H 0\nT 0\nH 0\nT 0\nH 0\n",
+      "schedule": [
+        {
+          "instruction": "H 0",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "T 0",
+          "ticks": [
+            1
+          ]
+        },
+        {
+          "instruction": "H 0",
+          "ticks": [
+            2
+          ]
+        },
+        {
+          "instruction": "T 0",
+          "ticks": [
+            3
+          ]
+        },
+        {
+          "instruction": "H 0",
+          "ticks": [
+            4
+          ]
+        }
+      ],
+      "idle_gaps": [],
+      "noise_blocks": [
+        [
+          "X_ERROR(0.001) 0",
+          "H 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "H 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "H 0",
+          "DEPOLARIZE1(0.001) 0"
+        ]
+      ],
+      "class_passed": false,
+      "class_error": "XtimRejectError: rejected: the circuit is outside the simulable class (non-gate-localized (non-commuting magic))\n  at: non-gate-localized (non-commuting magic)\n  hint: xtim simulates circuits whose non-Clifford gates fold (through the intervening Cliffords) into ONE mutually-commuting layer of \u03c0/8 Pauli-product rotations; this circuit's don't \u2014 'non-commuting magic'. Common causes and fixes: (1) you wrote `H` then `M` to read a magic-carrying wire in the X/Y basis \u2014 write `MX`/`MY` directly; (2) a magic state was fed into a same-wire NON-COMMUTING check (e.g. a raw T-state into a controlled-H): Clifford-align the state's magic axis with the measured check first (for the H-eigenstate, prepare |H> = (H S H) T H |0>); (3) genuinely sequential non-commuting magic (T-depth \u2265 2 after folding) is not supported. `CH` itself IS supported whenever its magic commutes with the rest. (The index, when \u2265 0, is the post-deferral stream position, not a source line. See docs/xtim_simulable_class.md.)"
+    },
+    {
+      "name": "legacy_CZ_rejected",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [
+        "instruction 1 (cz q[0], q[1]): cz is not allowed in this noise model",
+        "the circuit is empty"
+      ]
+    },
+    {
+      "name": "initial_and_terminal_lifetimes",
+      "scope": "native conversion/schedule/class only; not a target-state circuit",
+      "format_errors": [],
+      "native": "H 0\nT 0\nT_DAG 0\nM 0\nH 1\nR 1  # barrier 0 1\n",
+      "schedule": [
+        {
+          "instruction": "H 0",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "T 0",
+          "ticks": [
+            1
+          ]
+        },
+        {
+          "instruction": "T_DAG 0",
+          "ticks": [
+            2
+          ]
+        },
+        {
+          "instruction": "M 0",
+          "ticks": [
+            3
+          ]
+        },
+        {
+          "instruction": "H 1",
+          "ticks": [
+            0
+          ]
+        },
+        {
+          "instruction": "R 1",
+          "ticks": [
+            4
+          ]
+        }
+      ],
+      "idle_gaps": [],
+      "noise_blocks": [
+        [
+          "X_ERROR(0.001) 0",
+          "H 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "T_DAG 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "X_ERROR(0.001) 0",
+          "M 0",
+          "DEPOLARIZE1(0.001) 0"
+        ],
+        [
+          "X_ERROR(0.001) 1",
+          "H 1",
+          "DEPOLARIZE1(0.001) 1"
+        ],
+        [
+          "R 1",
+          "X_ERROR(0.001) 1"
+        ]
+      ],
+      "class_passed": true
+    }
+  ],
+  "full_target_witnesses": [
+    {
+      "name": "organizer_injection_control",
+      "scope": "full target, official four-gate check at 10000 shots; no optimization claim",
+      "qasm_sha256": "fca592938f46411d8738ef431c7b833d4d84916b92c0af0c7ce237a106cedfd8",
+      "seconds": 0.02888473200437147,
+      "gates": {
+        "format_ok": true,
+        "class_ok": true,
+        "correct_ok": true,
+        "acceptance_ok": true,
+        "passed": true
+      },
+      "report": {
+        "p": 0.001,
+        "shots": 10000,
+        "seed": 0,
+        "format_errors": [],
+        "class_error": null,
+        "correctness_errors": [],
+        "score": 0.02695,
+        "sem": 0.0014662434143074608,
+        "acceptance": 1.0,
+        "ideal_acceptance": 1.0,
+        "frame": {
+          "X": [
+            0,
+            []
+          ],
+          "Z": [
+            0,
+            []
+          ]
+        },
+        "conditional_detectors": [],
+        "n_2q": 28,
+        "diagnosis": {
+          "shots": 1024,
+          "chi": null,
+          "chi_source": "deduced",
+          "num_detectors": 0,
+          "deterministic_detectors": [],
+          "gauge_detectors": [],
+          "expectations": [],
+          "suggested_postselect": "keep = np.ones(dets.shape[0], dtype=bool)  # no deterministic detectors"
+        }
+      }
+    },
+    {
+      "name": "biased_noiseless_postselection",
+      "scope": "full target, official four-gate check at 10000 shots; no optimization claim",
+      "qasm_sha256": "83999d4ac45b600b8f7f419d55d91057c76293f3eb53819d1e7f7e77f38122f5",
+      "seconds": 0.02708388599421596,
+      "gates": {
+        "format_ok": true,
+        "class_ok": true,
+        "correct_ok": true,
+        "acceptance_ok": true,
+        "passed": true
+      },
+      "report": {
+        "p": 0.001,
+        "shots": 10000,
+        "seed": 0,
+        "format_errors": [],
+        "class_error": null,
+        "correctness_errors": [],
+        "score": 0.026297252876262032,
+        "sem": 0.0015468528490042645,
+        "acceptance": 0.8518,
+        "ideal_acceptance": 0.8535533905932737,
+        "frame": {
+          "X": [
+            0,
+            []
+          ],
+          "Z": [
+            0,
+            []
+          ]
+        },
+        "conditional_detectors": [],
+        "n_2q": 28,
+        "diagnosis": {
+          "shots": 1024,
+          "chi": null,
+          "chi_source": "deduced",
+          "num_detectors": 0,
+          "deterministic_detectors": [],
+          "gauge_detectors": [],
+          "expectations": [],
+          "suggested_postselect": "keep = np.ones(dets.shape[0], dtype=bool)  # no deterministic detectors"
+        }
+      }
+    },
+    {
+      "name": "conditional_detector",
+      "scope": "full target, official four-gate check at 10000 shots; no optimization claim",
+      "qasm_sha256": "8722f5524034e438fb91c0da75166aa4a993955d9d5c7a265d82f125094e24d0",
+      "seconds": 0.026535741999396123,
+      "gates": {
+        "format_ok": true,
+        "class_ok": true,
+        "correct_ok": true,
+        "acceptance_ok": true,
+        "passed": true
+      },
+      "report": {
+        "p": 0.001,
+        "shots": 10000,
+        "seed": 0,
+        "format_errors": [],
+        "class_error": null,
+        "correctness_errors": [],
+        "score": 0.026297252876262032,
+        "sem": 0.0015468528490042645,
+        "acceptance": 0.8518,
+        "ideal_acceptance": 0.8535533905932737,
+        "frame": {
+          "X": [
+            0,
+            []
+          ],
+          "Z": [
+            0,
+            []
+          ]
+        },
+        "conditional_detectors": [
+          0
+        ],
+        "n_2q": 28,
+        "diagnosis": {
+          "shots": 1024,
+          "chi": null,
+          "chi_source": "deduced",
+          "num_detectors": 1,
+          "deterministic_detectors": [],
+          "gauge_detectors": [
+            0
+          ],
+          "expectations": [],
+          "suggested_postselect": "keep = np.ones(dets.shape[0], dtype=bool)  # no deterministic detectors"
+        }
+      }
+    },
+    {
+      "name": "constant_logical_X_frame",
+      "scope": "full target, official four-gate check at 10000 shots; no optimization claim",
+      "qasm_sha256": "5155c3399ddc73a5e63295fda5520606d02c4a9d628589d67abb551d9462696c",
+      "seconds": 0.02130390999809606,
+      "gates": {
+        "format_ok": true,
+        "class_ok": true,
+        "correct_ok": true,
+        "acceptance_ok": true,
+        "passed": true
+      },
+      "report": {
+        "p": 0.001,
+        "shots": 10000,
+        "seed": 0,
+        "format_errors": [],
+        "class_error": null,
+        "correctness_errors": [],
+        "score": 0.02645,
+        "sem": 0.0014326687509679272,
+        "acceptance": 1.0,
+        "ideal_acceptance": 1.0,
+        "frame": {
+          "X": [
+            1,
+            []
+          ],
+          "Z": [
+            0,
+            []
+          ]
+        },
+        "conditional_detectors": [],
+        "n_2q": 28,
+        "diagnosis": {
+          "shots": 1024,
+          "chi": null,
+          "chi_source": "deduced",
+          "num_detectors": 0,
+          "deterministic_detectors": [],
+          "gauge_detectors": [],
+          "expectations": [],
+          "suggested_postselect": "keep = np.ones(dets.shape[0], dtype=bool)  # no deterministic detectors"
+        }
+      }
+    }
+  ],
+  "biased_selector_exact_ideal_acceptance": 0.8535533905932737,
+  "stale_inline_problem_example_format_errors": [
+    "instruction 8 (cx q[5], q[0]): q[5] and q[0] are not neighbours on the chip",
+    "instruction 9 (cx q[5], q[6]): q[5] and q[6] are not neighbours on the chip",
+    "instruction 10 (cx q[6], q[5]): q[6] and q[5] are not neighbours on the chip",
+    "instruction 11 (cx q[5], q[6]): q[5] and q[6] are not neighbours on the chip",
+    "instruction 12 (cx q[1], q[6]): q[1] and q[6] are not neighbours on the chip",
+    "instruction 17 (cx q[6], q[5]): q[6] and q[5] are not neighbours on the chip",
+    "instruction 19 (cx q[6], q[1]): q[6] and q[1] are not neighbours on the chip",
+    "instruction 21 (cx q[6], q[13]): q[6] and q[13] are not neighbours on the chip",
+    "instruction 22 (cx q[13], q[6]): q[13] and q[6] are not neighbours on the chip",
+    "instruction 23 (cx q[6], q[13]): q[6] and q[13] are not neighbours on the chip",
+    "instruction 25 (cx q[2], q[7]): q[2] and q[7] are not neighbours on the chip",
+    "instruction 26 (cx q[6], q[1]): q[6] and q[1] are not neighbours on the chip",
+    "instruction 27 (cx q[1], q[6]): q[1] and q[6] are not neighbours on the chip",
+    "instruction 28 (cx q[6], q[1]): q[6] and q[1] are not neighbours on the chip",
+    "instruction 30 (cx q[6], q[1]): q[6] and q[1] are not neighbours on the chip"
+  ],
+  "precision_note": "Official exact means deterministic algebra up to floating-point roundoff, not interval arithmetic."
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "An already encoded, locally mixed flag can record an A phase fault.\n\nThis verifies ideal algebra only. Current v30f's two available A--resource\nedges have scheduling conflicts; no full grid implementation is claimed.\n",
+  "ideal_unitary_max_error": 0.0,
+  "fault_transport_max_error": 0.0,
+  "flag_observable": "Existing X_f X_b parity, not individual X_f",
+  "requirement": "Propagate the flag operator through the concurrent B/C encoder and close its echo exactly; account for all noisy flag CXs.",
+  "available_L5_edges": [
+    [
+      13,
+      14
+    ],
+    [
+      17,
+      16
+    ]
+  ],
+  "distinction": "Old external flags borrowed resource cells before preparation; this uses encoded resource syndrome information after/during preparation.",
+  "measured_physical_gain": false
+}

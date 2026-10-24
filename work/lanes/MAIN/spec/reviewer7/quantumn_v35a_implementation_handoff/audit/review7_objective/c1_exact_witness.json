@@ -1,0 +1,73 @@
+{
+  "scope": "Exact cyclotomic certificate: a harmful physical D2 Pauli need not cost p/30.\n\nThe full v31s+A circuit with all DETECTOR declarations removed still prepares\nthe ideal target and always accepts. It is deliberately uncompetitive. One\nphysical fault has decoded loss exactly1/4, so its first-order contribution is\np/60. Arithmetic below is exact in Q[w]/(w^4+1), w=exp(i*pi/4).\n",
+  "qasm_sha256": "fca71a0331b0433cdf7e79491f544347183b30d83d777bf12c567fcdfaa8d34d",
+  "fault": {
+    "x": 21990232572160,
+    "z": 206158430208,
+    "p": 6.666666666666667e-05,
+    "m": 1,
+    "chan": 41,
+    "pauli": "XI",
+    "qs": [
+      13,
+      7
+    ],
+    "ins": 23,
+    "jl": 1,
+    "label": "DEPOLARIZE2 XI@[13, 7] after/before native#23 srcL51",
+    "s": 16400,
+    "d": 0,
+    "e": 144,
+    "record_flips": [
+      2,
+      15
+    ]
+  },
+  "basis_dimension": 32,
+  "ideal_decoded_loss": "0",
+  "fault_acceptance": "1",
+  "conditional_decoded_loss": "1/4",
+  "first_order_location_probability": "p/15",
+  "first_order_contribution": "p/60",
+  "value_at_p_1e_3": "1/60000",
+  "arithmetic": "exact Fraction coefficients in Q[w]/(w^4+1)",
+  "implication": "Refutes only the universal p/30 per harmful Pauli assertion; no performance gain or small total c1 is claimed.",
+  "two_detector_release_witness": {
+    "dropped_detectors": [
+      2,
+      15
+    ],
+    "fault": {
+      "x": 144401061099077892,
+      "z": 19023275538354536448,
+      "p": 6.666666666666667e-05,
+      "m": 8,
+      "chan": 173,
+      "pauli": "XI",
+      "qs": [
+        7,
+        6
+      ],
+      "ins": 108,
+      "jl": 1,
+      "label": "DEPOLARIZE2 XI@[7, 6] after/before native#108 srcL172",
+      "s": 4608,
+      "d": 0,
+      "e": 16,
+      "record_flips": [
+        14,
+        17
+      ]
+    },
+    "qasm_sha256": "59c4c4e081783706cfe44e4590783f68245cb2271cb767faea00b403b5111710",
+    "ideal_acceptance": "1",
+    "ideal_loss": "0",
+    "fault_acceptance": "1/4",
+    "accepted_fault_loss": "1/2",
+    "unnormalized_loss": "1/8",
+    "first_order_contribution": "p/120",
+    "value_at_p_1e_3": "1/120000",
+    "total_first_order_loss_at_p_1e_3": 0.0003,
+    "implication": "Branch acceptance alone invalidates a fixed p/30 quantum, even when conditional accepted loss is1/2. Not competitive as a full circuit."
+  }
+}

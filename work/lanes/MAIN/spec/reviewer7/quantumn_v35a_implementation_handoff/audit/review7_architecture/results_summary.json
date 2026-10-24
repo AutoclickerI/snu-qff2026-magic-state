@@ -1,0 +1,109 @@
+{
+  "source_commit": "f843cb2a2a7e23e53cb2ba54b891d42943bfedfe",
+  "models": [
+    {
+      "name": "v32p_control",
+      "loss": 5.1443198493581796e-05,
+      "acceptance": 0.5009617725494582,
+      "CX": 205,
+      "depth": 48,
+      "qasm_sha256": "1df9e53e16e435b6c4493b95f9594000ff41e5dcc768d763c0ae81c60105e467",
+      "receipt": "v32p_control_canonical_sparse_result.json"
+    },
+    {
+      "name": "v32p_a_decode",
+      "loss": 4.6629334817191845e-05,
+      "acceptance": 0.5012004436526478,
+      "CX": 207,
+      "depth": 48,
+      "qasm_sha256": "4f5ca5ad4f329bdb43a13b5b576ccba0d43b06057ec47bbafb5db80f63aad24e",
+      "receipt": "v32p_a_decode_canonical_sparse_result.json",
+      "official_1m": {
+        "shots": 1000000,
+        "seed": 0,
+        "gates": {
+          "format_ok": true,
+          "class_ok": true,
+          "correct_ok": true,
+          "acceptance_ok": true,
+          "passed": true
+        },
+        "check_seconds": 2.9342885840014787,
+        "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522",
+        "score": 5.5888223552894306e-05,
+        "sem": 9.254771457839237e-06,
+        "acceptance": 0.501,
+        "frame": {
+          "X": [
+            0,
+            []
+          ],
+          "Z": [
+            0,
+            []
+          ]
+        },
+        "receipt": "v32p_a_decode.official_1000000_0.json"
+      }
+    },
+    {
+      "name": "v32p_a_decode_remove_z6",
+      "loss": 4.700644876388177e-05,
+      "acceptance": 0.5041542608844104,
+      "CX": 205,
+      "depth": 48,
+      "qasm_sha256": "827fca51efeb4d20b0f27a6710e615403a52aece788b2d2dfa91049382416a6f",
+      "receipt": "v32p_a_decode_remove_z6_canonical_sparse_result.json"
+    },
+    {
+      "name": "v32p_a_decode_remove_z26",
+      "loss": 4.663957577163049e-05,
+      "acceptance": 0.506172520400615,
+      "CX": 205,
+      "depth": 48,
+      "qasm_sha256": "d41336487747281444d376959562ce1c8add90e07c6e0b4a5d35c2dcecd6cf8d",
+      "receipt": "v32p_a_decode_remove_z26_canonical_sparse_result.json"
+    },
+    {
+      "name": "v32p_a_decode_budget_c",
+      "loss": 4.660582148959506e-05,
+      "acceptance": 0.5057676692108585,
+      "CX": 206,
+      "depth": 48,
+      "qasm_sha256": "1fac7575fd68cafefba9b4e945f0d5af85586bc564fc90a6e0e43976b5e5279c",
+      "receipt": "v32p_a_decode_budget_c_canonical_sparse_result.json",
+      "official_1m": {
+        "shots": 1000000,
+        "seed": 0,
+        "gates": {
+          "format_ok": true,
+          "class_ok": true,
+          "correct_ok": true,
+          "acceptance_ok": true,
+          "passed": true
+        },
+        "check_seconds": 2.773767928003508,
+        "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522",
+        "score": 5.140605444680953e-05,
+        "sem": 8.617919808916144e-06,
+        "acceptance": 0.505777,
+        "frame": {
+          "X": [
+            0,
+            []
+          ],
+          "Z": [
+            0,
+            []
+          ]
+        },
+        "receipt": "v32p_a_decode_budget_c.official_1000000_0.json"
+      }
+    }
+  ],
+  "recommended_candidate": "v32p_a_decode_budget_c",
+  "baseline_reproduced_exactly": true,
+  "loss_reduction_percent": 9.403336389727512,
+  "improvement_over_previous_fast_percent": 5.819156934037041,
+  "scope": "Model ranking uses completedallorders; official1m isvalidity/runtimeonly. Thislane didnotrun1e8."
+}

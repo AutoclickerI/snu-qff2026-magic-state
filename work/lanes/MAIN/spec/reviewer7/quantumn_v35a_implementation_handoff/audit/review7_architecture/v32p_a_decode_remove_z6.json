@@ -1,0 +1,44 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "source_qasm_sha256": "4f5ca5ad4f329bdb43a13b5b576ccba0d43b06057ec47bbafb5db80f63aad24e",
+  "source_commit": "f843cb2a2a7e23e53cb2ba54b891d42943bfedfe",
+  "method": "Bounded interaction test: remove one entire Z-wait echo after A decoding.",
+  "variant": "remove_z6",
+  "CX": 205,
+  "native_depth": 48,
+  "removed_echo": {
+    "helper": 6,
+    "data": 0,
+    "init": 34,
+    "cx_ticks": [
+      35,
+      40
+    ],
+    "measurement": 41,
+    "bit": 267
+  },
+  "official_class_tested": false,
+  "official_runtime_tested": false,
+  "independent_verification": {
+    "ideal_acceptance": 1.0,
+    "ideal_loss": 0.0,
+    "first_order_loss": 2.9605947323337507e-19,
+    "harmful_single_fault_count": 0,
+    "native_schedule_matches": true,
+    "qasm_sha256": "827fca51efeb4d20b0f27a6710e615403a52aece788b2d2dfa91049382416a6f"
+  },
+  "independent_all_orders": {
+    "loss": 4.700644876388177e-05,
+    "acceptance": 0.5041542608844104,
+    "conditional_loss_kernel_omission_bound": 1.2326706657192191e-14,
+    "scope": "Independent all73moments/allnoiseorders atSTANDARDp=.001; cutoffboundexcludesroundoff."
+  }
+}

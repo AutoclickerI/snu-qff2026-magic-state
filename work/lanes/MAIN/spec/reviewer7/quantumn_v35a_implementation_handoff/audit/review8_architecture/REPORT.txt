@@ -1,0 +1,143 @@
+REVIEW 8 ARCHITECTURE: v35a GUARD AND TERMINAL-READOUT BUDGET
+=========================================================
+
+Source: AutoclickerI/quantumn at
+  948dcfdca233baceee9759b90519a8589e00bd13
+  work/lanes/MAIN/v35a.qasm
+Actual QASM SHA256:
+  b606bd3902d28000e0ee073fc50a7c0870aaa1f2e1ab8947fdb7fd70c762218e
+
+CONCLUSION
+----------
+The current v35a baseline remains the lowest-loss circuit among the eight
+complete circuits in this bounded study. The old review7 improvement must
+not be represented as a new improvement over v35a: v35a already incorporates
+the A decoder, uses a different A encoder/schedule and guard set, and ends
+one native tick earlier than the old baseline.
+
+Two useful budget seeds were established quantitatively. Removing the q20
+X guard releases acceptance 0.0083520 for loss cost 2.60592e-7. Exchanging
+two C readout copies for one readout-encoding CX releases acceptance
+0.0024127 for loss cost 1.03012e-7. Neither is itself a loss improvement;
+their value depends on a subsequent check using that budget productively.
+
+The old CX28->29 readout edge cannot be appended for free on this schedule.
+Keeping the existing copies requires an additional terminal tick and more
+than doubles the loss in the fully noisy constructed circuit. This closes
+that precise transplant; it is not a general bound on C readout synthesis.
+
+FRESH BASELINE AND DOCUMENT CORRECTIONS
+-------------------------------------
+Read the latest AGENTS.md, GOAL.md, CONSTRAINTS.md, PLAN.md, FINDINGS.md and
+SOTA.md. The source contains 206 CX and 47 native ticks (numbered 0..46),
+with round start R=44. FINDINGS currently says depth 48 for v35a, whereas
+the actual QASM and its metadata's native_depth are 47.
+
+The source JSON's inherited qasm_sha256 is stale:
+  77be92f9cf1a1b1313b525dc78e17e593332e0d0ae32783bc08db9e9665843d3
+All new metadata uses the actual hash above. The source files are unchanged.
+
+Independent full 73-moment all-order reconstruction reproduces the current
+reported baseline:
+  loss       4.393527676042078e-5
+  acceptance 0.5012369386242203
+  cutoff omission bound on conditional loss 1.1963587293001213e-14
+The cutoff bound excludes floating-point roundoff. There is no Monte Carlo
+or fault-order truncation in these prices.
+
+BOUNDED PHYSICAL EXPERIMENTS
+---------------------------
+Each guard removal deletes its initialization, both CXs, measurement and
+singleton detector. Subsequent B/C preparation operations remain present.
+All surviving noise, idle gaps and terminal data noise are included.
+
+Name                    Loss                 Acceptance          CX Ticks
+v35a_control             4.393527676042078e-5  0.5012369386242203   206 47
+v35a_drop_z0_h6          4.418399915629458e-5  0.5036870155468977   204 47
+v35a_drop_x20_h19        4.419586891482355e-5  0.5095889631239797   204 47
+v35a_drop_x7_h13         4.479930434691934e-5  0.5031803765651132   204 47
+v35a_drop_x10_h11        4.455374483633684e-5  0.5070537033472257   204 47
+v35a_drop_x4_h5          4.488806082828242e-5  0.5089103736862808   204 47
+v35a_c_exchange_copies   4.403828890221351e-5  0.5036496038577888   205 47
+v35a_c_append_extra_tick 9.283570894562412e-5  0.5008361534871105   207 48
+
+Complete guard definitions (ticks are zero-based):
+  Z on q0:  RX q6@34; CX6->0@35,@39; MX q6@40 -> c273.
+  X on q20: R q19@13; CX20->19@18,@31; M q19@32 -> c274.
+  X on q7:  R q13@19; CX7->13@20,@23; M q13@24 -> c275.
+  X on q10: R q11@18; CX10->11@19,@28; M q11@29 -> c276.
+  X on q4:  R q5@17; CX4->5@18,@32; M q5@33 -> c277.
+
+The old review7 q20 Z guard through helper26 is not present in v35a.
+Confusing it with the current q20 X guard would give the wrong composition.
+
+C-copy exchange:
+  Remove R34,R35@44, CX28->34,CX29->35@45, M34(c268),M35(c267)@46,
+  and detectors {c27,c268}, {c26,c267}. Insert CX28->29@45.
+  Keep both original C measurements at46. For every retained detector that
+  contains c26, XOR c27 into its row. This is the exact substitution
+  old c26 = new c26 XOR c27, preserving the original C measurement contract.
+  The added CX carries DEPOLARIZE2(0.001), confirmed from the native noise
+  blocks. The removed copy checks and their physical operations are gone.
+
+Appended-edge control:
+  Keep both copies; insert CX28->29@46 and move M28,M29 to47. Apply the same
+  invertible detector substitution, including the retained copy checks.
+  It charges both the added noisy CX and the additional terminal idle tick.
+  The +111.3011% is the whole construction's measured model penalty, not a
+  separately isolated idle-only attribution.
+
+PARETO INFORMATION, NOT AN IMPROVEMENT CLAIM
+------------------------------------------
+Relative to v35a:
+  Drop Zq0: loss +2.48722e-7 (+0.56611%), acceptance +0.00245008.
+  Drop Xq20: loss +2.60592e-7 (+0.59313%), acceptance +0.00835202.
+  C-copy exchange: loss +1.03012e-7 (+0.23446%), acceptance +0.00241267.
+
+At equal 204-CX/47-tick cost, Xq20 removal dominates removal of Xq7, Xq10
+and Xq4 in both loss and acceptance. Zq0 removal has slightly lower loss
+and substantially less acceptance than Xq20 removal. The C-copy exchange
+offers a lower-loss, smaller-budget alternative at 205 CX. A future joint
+check selection must recompute actual compositions because error mechanisms
+and acceptance costs need not add independently.
+
+CERTIFICATES AND LIMITS
+----------------------
+All eight complete QASMs pass the independent checks:
+  ideal acceptance exactly 1, ideal loss 0;
+  no harmful physical single faults at threshold 1e-15 per contribution;
+  native schedule agrees with every authored operation tick;
+  every CX is nearest-neighbor on the 6x6 grid;
+  zero logical frame and no POSTSELECT extension;
+  file size, command count, and measure/reset count are within limits.
+First-order residuals are only floating roundoff, 3.09e-19 to 4.94e-19.
+Every all-order receipt contains all 73 moments and reports its cutoff bound.
+No noiseless-operation or noise-ablation shortcut is used for a candidate.
+
+Official class/correctness/acceptance/runtime validation is owned by the
+parent review. This lane did not run an official checker and does not claim
+that these local certificates substitute for that gate. No remote job,
+submission, commit, push, or source-repository mutation was performed.
+
+REPRODUCTION AND ARTIFACTS
+-------------------------
+The code uses the existing independent frontend/evaluator under
+audit/reaudit_evaluation/portable and NumPy 2.3.5 in audit/.venv.
+Both full-price subprocesses and numerical libraries are limited to one
+thread; at most two full-price subprocesses run concurrently.
+
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+    audit/.venv/bin/python audit/review8_architecture/build_guards.py
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+    audit/.venv/bin/python audit/review8_architecture/build_readout_exchange.py
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+    audit/.venv/bin/python audit/review8_architecture/price.py \
+    v35a_control v35a_drop_z0_h6 v35a_drop_x20_h19 v35a_drop_x7_h13 \
+    v35a_drop_x10_h11 v35a_drop_x4_h5 \
+    v35a_c_exchange_copies v35a_c_append_extra_tick
+  python audit/review8_architecture/summarize.py
+
+results_summary.json is the consolidated receipt. Each named circuit has a
+QASM, metadata with actual SHA256 and local verification, native STIM text,
+full 73-moment receipt, and a run log. The source baseline is reproduced
+byte-for-byte. The older review7 files and reports have not been overwritten.

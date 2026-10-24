@@ -1,0 +1,80 @@
+{
+  "scope": "A bipartite grid star gives a triangle graph state after Y measurement.\nEndpoint identity only; no full7-qubit target or performance improvement.\n",
+  "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522",
+  "center": 7,
+  "leaves": [
+    1,
+    6,
+    8
+  ],
+  "physical_graph_edges": [
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "effective_graph_edges": [
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      6,
+      8
+    ]
+  ],
+  "input_graph_bipartite": true,
+  "effective_triangle_bipartite": false,
+  "format_errors": [],
+  "xtim_class_passed": true,
+  "qasm_sha256": "2a9d07d9dcf13744922ce292175d66704456ef4c753c6ff3c466fa5b60abb6d3",
+  "native_depth": 7,
+  "native_CX": 3,
+  "branch_certificates": [
+    {
+      "measurement_bit": 0,
+      "probability": 0.4999999999999996,
+      "raw_leaf_state": "S^tensor3 * (Z1 Z6 Z8)^m |triangle>, up to global phase",
+      "fixed_leaf_Clifford": "Sdg on1,6,8",
+      "pauli_byproduct": "identity",
+      "recovered_triangle_fidelity": 0.9999999999999996,
+      "triangle_stabilizer_expectations": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "measurement_bit": 1,
+      "probability": 0.4999999999999996,
+      "raw_leaf_state": "S^tensor3 * (Z1 Z6 Z8)^m |triangle>, up to global phase",
+      "fixed_leaf_Clifford": "Sdg on1,6,8",
+      "pauli_byproduct": "Z on1,6,8",
+      "recovered_triangle_fidelity": 0.9999999999999996,
+      "triangle_stabilizer_expectations": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "limitations": [
+    "All physical gate,preparation,readout andidle noise must be priced in a real candidate.",
+    "The fixed localSdg may be compiled into downstream operations; it is not an uncharged gate.",
+    "The measurement-dependentZ byproduct must be propagated into legal record/frame handling; no conditional quantum gate is emitted.",
+    "A direct interaction-graph embedding no-go remains valid for the direct model; this uses a different measurement-based construction.",
+    "No claim of seven-qubit target correctness, single-fault safety or lower finite-noise loss."
+  ]
+}

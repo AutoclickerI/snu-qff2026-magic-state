@@ -1,0 +1,221 @@
+REVIEW 8: OBJECTIVE, CURRENT A INSTRUMENT, AND TRACKED INITIALIZATION
+=================================================================
+
+Current repository pin: 948dcfdca233baceee9759b90519a8589e00bd13.
+Official judge remains the independently pinned review6 installation.
+No remote edits, submissions, or new Monte Carlo jobs were performed here.
+
+1. CURRENT BASELINE AND WHAT IS ALREADY MERGED
+--------------------------------------------
+v35a is a materially newer baseline than v32p/v34m. It combines SEPBC's R44
+schedule, reoriented A preparation, five storage guards, prior measured
+initialization/readout edits, and the A partial decoder. Do not propose that
+two-CX A decoder or five guards as fresh ideas. PLAN lines23-29 also explicitly
+assign other A flags to BCFB, dual B/C flags to COMP29, acceptance budgeting to
+ST2, and the already-built 0.035-second B/C boundary cache to BCPOL.
+
+Root/architecture's current all-orders control:
+  conditional loss       4.393527676042078e-5
+  acceptance              0.5012369386242203
+
+I independently ran the unmodified official QASM converter and scheduler:
+  CX count                206
+  native depth            47, ticks0 through46
+  every operation agrees with the independent evaluator's native tick
+  QASM format errors      none
+
+FINDINGS line94 says depth48; that is stale. v35a.json's native_depth47 is
+correct. Its stored qasm_sha256 is stale, however: the actual pinned QASM hash
+is b606bd3902d28000e0ee073fc50a7c0870aaa1f2e1ab8947fdb7fd70c762218e,
+whereas metadata retains 77be92f9cf1a1b1313b525dc78e17e593332e0d0ae32783bc08db9e9665843d3.
+
+Evidence: current_contract_certificate.py/.json; pinned v35a.qasm/.json;
+quantumn_review8/docs/PLAN.md:4-6,21-29; FINDINGS.md:93-94.
+
+2. THE NEW A PREPARATION DOES NOT CLOSE FLAG-CONDITIONED ENCODER SEARCH
+--------------------------------------------------------------------
+The current encoder still has eleven CXs, over ticks38-43, on ordered cells
+[1,14,8,9,2,16,15]. Its layers are:
+  38: 8->9
+  39: 14->8
+  40: 14->15, 2->8
+  41: 15->16, 1->2, 8->14
+  42: 2->8, 14->15
+  43: 1->2, 8->14
+The plus pivots are cells1,14,8,2. Exact GF(2) propagation verifies that their
+output X span is the required encoded-plus X-stabilizer space.
+
+The already-merged A decoder uses CX9->15 at44 and CX8->9 at45, followed by
+MX8 -> c16 at46. Its observable before the decoder is X8 X9 X15, the same
+logical-X representative on code indices{2,3,6} as in review7. All terminal
+transfer/readout gates relevant to the proof preserve that observable.
+
+The crucial current-specific fact is that reversing the NEW A encoder pulls
+this flag back to X8, precisely the initialization MX8 -> c272 at37.
+Thus the noiseless relation is c16 XOR c272 = 0. The source currently requires
+c272=0 and c16=0 separately.
+
+The previous exact phase certificate remains valid: among all21 weight-two Z
+pairs on A,12 anticommute with this flag and9 commute. Z_L Z_k is blind exactly
+for k in{2,3,6}; pure Z_L is detected. This is a local phase-readout statement,
+not a claim about acceptance or loss of all complete-circuit faults.
+
+For a current-specific comparison I extracted and executed score() from
+EXENC/exenc.py at the NEW pin, using the actual current A layers and pivots.
+Its old local dangerous_z convention returns, in units p/15 and class order
+(Z_L,Z_L Z_0,...,Z_L Z_6):
+  v35a local vector: [0,3,4,0,4,0,0,0], total11; flag-blind total4.
+The old report's reference is [0,3,3,0,4,0,0,0], total10; also flag-blind4.
+Neither scalar is the complete current logical loss. EXENC assumes its own
+local reset/idle convention and omits the actual initialization instruments,
+data-state exposure, downstream flags, and new decoder faults.
+
+The published EXENC profiles still give a rigorous changed-objective witness:
+  13CX/depth7: [0,0,0,0,0,4,2,3], old9 -> flag-blind3
+  13CX/depth8: [0,0,0,0,3,3,0,3], old9 -> flag-blind6
+Equal old objective values differ by a factor two in the new local proxy.
+This proves old scalar ranking cannot certify the new optimum. It does NOT
+prove either of these encoders beats v35a after complete physical pricing.
+
+Also correct the stale EXENC summary in FINDINGS line25: the primary report
+explicitly contains depth7/8 profiles at6e-4, below the claimed6.67e-4 minimum
+for depth<=8. Exhaustiveness covers canonical11/12/13-CX paths and their ASAP
+schedules, with alternative layerings only through depth6. It is not an
+arbitrary-depth, arbitrary-instrument, arbitrary-helper impossibility proof.
+
+Strong next method: reweight cached encoder paths under v35a's actual terminal
+instrument and fault timing; retain a Pareto set of fault-signature profiles
+per ideal endpoint. Do not retain only one old-minimum-danger path per endpoint.
+All candidate readout/initialization faults and acceptance must be included.
+Go only if the full expectation beats4.393527676e-5, acceptance meets the chosen
+floor (.5 official, .5005 team margin), and the official runtime gate passes.
+
+Evidence: current_contract_certificate.py/.json;
+sources/work/lanes/EXENC/REPORT.md:21-46,73-80;
+sources/work/lanes/EXENC/exenc.py:35-86;
+sources/work/lanes/DR/synth.py:252 onward;
+audit/review7_architecture/flag_conditioned_encoder_certificate.py/.json.
+
+3. NEW CONCRETE THREE-PARITY TRACKED-INITIALIZATION EXPERIMENT: NEGATIVE
+------------------------------------------------------------------------
+The current c272/c16 relation suggests a zero-extra-quantum-gate record policy.
+I constructed and fully priced it rather than assuming it works.
+
+Exact propagation of a real Z8 sign error immediately after MX8(c272) gives:
+  flipped measurement bits: {16,29,30,32}
+  flipped existing detector rows:19 and69
+  output physical Z support: {3,7,20}, code indices{1,2,4}
+The output error differs from single Z on codeindex3 by the Z stabilizer
+support{1,2,3,4}; the fixed judge decoder corrects it.
+
+The experimental policy changes only DETECTOR declarations:
+  remove singleton detector c272;
+  replace row19 by c31 XOR c32 XOR c33 XOR c34 XOR c260 XOR c272;
+  replace row69 by c16 XOR c272.
+This accepts the old sector plus a tracked initialization-sign sector. It
+adds no gates and uses no unallowed physical-qubit FRAME extension. Official
+FRAME declarations are logical X/Z, not arbitrary physical corrections.
+
+Initial checks:
+  ideal acceptance1, ideal decoded loss0;
+  all six ideal output stabilizers equal1 BEFORE the fixed judge decoder;
+  ideal logical X=+1/sqrt(2), Y=-1/sqrt(2), also before that decoder;
+  no harmful single fault above1e-15; numerical first-order residual3.09e-19;
+  same206CX, depth47 and native schedule.
+
+Full73-moment all-orders result with finite-p channels:
+  conditional loss       5.518914727407511e-5
+  acceptance              0.5022404149733369
+  channels                539
+  evaluator wall time     35.29s
+  kernel omission bound   1.194e-14 (excludes floating-point roundoff)
+
+Relative to current v35a the policy gains acceptance0.00100347635 but worsens
+loss25.6147%. The newly accepted sector alone has conditional loss
+0.00567650310. Therefore this concrete policy is CLOSED and must not be
+promoted, described as an improvement, or sent for expensive Monte Carlo.
+It is a clean example of why zero first-order loss is insufficient.
+
+The root's narrower two-bit oracle, keeping row19 at zero, is also negative:
+c16 XOR c272 alone yields4.487635477e-5. That is a different policy; it does
+not include the B-syndrome offset tested here.
+
+Broader method that remains open: optimize a JOINT affine detector row-space
+and logical frame over A initialization/terminal records and B/C records,
+instead of merely deleting detectors or changing a quantum readout circuit.
+First run an optimistic sectorwise oracle with arbitrary accept/reject and the
+best logical Pauli per sector. If even that relaxed oracle cannot improve at
+the required acceptance, close the selected record set without any physical
+compiler work. Only an oracle margin justifies optimizing legal affine Hm=b
+and logical frame Fm+c. The small negative examples above are evidence for
+this early rejection gate; they are not evidence for guaranteed benefit of
+the larger domain. Existing BCFB/COMP29 mixed-basis circuit work is distinct.
+
+Evidence: tracked_init_probe.py/.json; v35a_tracked_c272.qasm/.json;
+v35a_tracked_c272_canonical_sparse_result.json;
+tracked_init_comparison.json; current_contract_certificate.json;
+root audit/review8_policy/sector_pair_16_272.json.
+Native source locations: v35a.qasm:337,431,450,453,508,552,558.
+
+4. ENDSTATE R38: USE A SECOND PARETO START, NOT A CLAIMED NEW DISCOVERY
+--------------------------------------------------------------------
+Current PLAN lines6/21 reports R38 region2_k56_A2_safe_dest at5.614e-5 with
+acceptance approximately.587. It is already active work. Simply recommending
+the A decoder/echo/guard combinations there would repeat PLAN.
+
+The useful objective correction is to compare trajectories at their feasible
+acceptance frontier, rather than discarding this start because its raw loss
+is worse. To beat current v35a it needs at least21.7398% net reduction from the
+reported5.614e-5. Its approximate log-acceptance budget above.5005 is.159417,
+versus.00147132 for v35a, roughly108times as large. This arithmetic does not
+imply enough useful checks exist or that gains compose independently.
+
+Placement-specific A flags must be rederived. Reprice each marginal change
+after previous guards/copies, including noise covariance. Old R45/R44 or
+separate-block feasibility closures do not prohibit this already-constructed
+in-place R38 state. Acceptance-aware boundary search is plausible, but calling
+the cache itself new would be false: PLAN line29 says BCPOL already built it.
+
+The ENDSTATE and BCPOL REPORT.md files AND their directories return404 at the
+new pinned commit through GitHub's contents API. SEPBC/FRESH are likewise not
+available there (independently checked by rules lane). Thus these numerical
+ENDSTATE/cache facts are committed-document reports, not independently rerun
+artifacts in this review. The EXENC report/source was successfully fetched.
+
+5. MATHEMATICAL PRUNING AND LOWER BOUND CARRY FORWARD UNCHANGED
+--------------------------------------------------------------
+PLAN line63 still rejects any c1!=0 using a universal p/30 minimum for one
+harmful D2 Pauli. That minimum is false. The exact review7 cyclotomic witness
+has a physical single-fault branch accepted with mass1/4 and conditional loss
+1/2, giving p/120=8.333333e-6 atp=.001. The full witness circuit is legal and
+deliberately uncompetitive; it refutes quantization, not the usefulness of
+zero-first-order design. Its absence of competition with v35a is explicit.
+
+Use the true accepted branch mass and loss, then a finite-p event lower bound,
+to reject c1-nonzero proposals. The review7 finite_p_guard algebra remains
+valid for independent effective channels. Its current floating implementation
+is a numerical screening calculation, not an interval certificate.
+
+This does not reopen below1e-5 under the standard rules. The separate retained-
+output-channel proof, including output-output CX, branch selection, logical
+frames, first use/reset, and arbitrary preceding quantum states, still gives
+the rigorously rounded-down lower bound1.1620296389e-5. Its exact rational
+comparison was rechecked in audit/review7_objective/bound_recheck.json. No new
+rule or v35a change affects those terminal assumptions. Avoid conflating the
+false per-fault quantization with this different global lower bound.
+
+6. WHAT CAN HONESTLY APPEAR AS FRESH METHODS IN THE PARENT ANSWER
+----------------------------------------------------------------
+Supported fresh direction: flag-conditioned A-encoder fault-signature search,
+with the current explicit contract and changed-objective certificate above.
+Supported correction: weighted finite-p c1 budgeting; no competitive gain yet.
+Distinct exploratory method: joint affine acceptance+logical-frame synthesis
+across A/B/C records, with an optimistic oracle as a strict first gate. Two
+tempting low-cost instances now have measured negative evidence.
+
+Do not count already-merged A decoding, generic new A flag choices, generic
+dual B/C decoding, simply building a boundary cache, or spending ENDSTATE's
+acceptance as newly discovered ideas. They are implemented or explicitly
+assigned in the latest PLAN. The parent can still explain how its more precise
+methods differ from those active lanes, and should label open directions as
+research candidates rather than pretend all ten are validated improvements.

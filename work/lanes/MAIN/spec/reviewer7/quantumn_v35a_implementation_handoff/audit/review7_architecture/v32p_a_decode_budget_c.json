@@ -1,0 +1,64 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "source_commit": "f843cb2a2a7e23e53cb2ba54b891d42943bfedfe",
+  "method": "Use part of the reclaimed q20-echo acceptance budget on C readout encoding.\n\nOne bounded variant only: actual noisy CX28->29 at46; move both MZ to47;\ninvertibly rewrite every detector containing c26 by XOR c27.\n",
+  "input_qasm": "v32p_a_decode_remove_z26.qasm",
+  "input_qasm_sha256": "d41336487747281444d376959562ce1c8add90e07c6e0b4a5d35c2dcecd6cf8d",
+  "CX": 206,
+  "native_depth": 48,
+  "official_class_tested": true,
+  "official_runtime_tested": true,
+  "independent_verification": {
+    "ideal_acceptance": 1.0,
+    "ideal_loss": 0.0,
+    "first_order_loss": 2.9605947323337507e-19,
+    "harmful_single_fault_count": 0,
+    "native_schedule_matches": true,
+    "noisy_added_CX": true,
+    "qasm_sha256": "1fac7575fd68cafefba9b4e945f0d5af85586bc564fc90a6e0e43976b5e5279c"
+  },
+  "independent_all_orders": {
+    "loss": 4.660582148959506e-05,
+    "acceptance": 0.5057676692108585,
+    "conditional_loss_kernel_omission_bound": 1.2287385780410811e-14,
+    "scope": "Independent all73moments/allnoiseorders atSTANDARDp=.001; cutoffboundexcludesroundoff."
+  },
+  "official_format_tested": true,
+  "official_correctness_tested": true,
+  "official_acceptance_tested": true,
+  "official_validation": {
+    "shots": 1000000,
+    "seed": 0,
+    "gates": {
+      "format_ok": true,
+      "class_ok": true,
+      "correct_ok": true,
+      "acceptance_ok": true,
+      "passed": true
+    },
+    "check_seconds": 2.773767928003508,
+    "official_commit": "76fe47c0324f1c1f8b72a7d55af200e88043b522",
+    "score": 5.140605444680953e-05,
+    "sem": 8.617919808916144e-06,
+    "acceptance": 0.505777,
+    "frame": {
+      "X": [
+        0,
+        []
+      ],
+      "Z": [
+        0,
+        []
+      ]
+    },
+    "receipt": "v32p_a_decode_budget_c.official_1000000_0.json"
+  }
+}

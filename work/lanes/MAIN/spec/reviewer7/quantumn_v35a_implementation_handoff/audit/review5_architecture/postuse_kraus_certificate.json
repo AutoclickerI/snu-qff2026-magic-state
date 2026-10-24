@@ -1,0 +1,48 @@
+{
+  "scope": "Exact finite certificate for the noiseless full post-use A/B instrument.\nBinary phase-ignored Pauli stabilizers and dyadic Kraus matrices suffice.\n",
+  "S": [
+    0,
+    30,
+    45,
+    51,
+    75,
+    85,
+    102,
+    120
+  ],
+  "C": [
+    0,
+    7,
+    25,
+    30,
+    42,
+    45,
+    51,
+    52,
+    75,
+    76,
+    82,
+    85,
+    97,
+    102,
+    120,
+    127
+  ],
+  "kraus_A": "diagonal 1[x in C] = P_Z",
+  "kraus_B": "(1/8) sum_{s in S} X^s = P_X",
+  "joint_projector_rank": 2,
+  "arbitrary_logical_input_unchanged": true,
+  "undetectable_preparation_fault_propagation": {
+    "Aplus": {
+      "paulis_checked": 16384,
+      "undetectable_phase_ignored_paulis": 128,
+      "harmful_propagated_parts": 0
+    },
+    "Bzero": {
+      "paulis_checked": 16384,
+      "undetectable_phase_ignored_paulis": 128,
+      "harmful_propagated_parts": 0
+    }
+  },
+  "limitation": "Exact ideal instrument and prep-Pauli certificate. Full circuit has separate numerical single-fault and all-orders receipts; noisy decoder masking can still yield large second-order loss."
+}

@@ -1,0 +1,46 @@
+FOLLOW-UP — A BIPARTITE GRID RESOURCE CAN HAVE A NONBIPARTITE GRAPH ENDPOINT
+========================================================================
+
+Verified endpoint identity, not a complete contest candidate.
+
+Physical resource: a4-qubit star on the6x6 grid.
+  center7; leaves1,6,8; edges7--1,7--6,7--8.
+Prepare|+> on all four and applyCZ on each star edge, decomposed into the
+allowed H-CX-H. Measure center7 inY usingSdg,H,measure.
+
+For measurement bitm in{0,1}, the normalized raw leaf state is
+  S_1 S_6 S_8 (Z_1 Z_6 Z_8)^m |K3>,
+up to branch-dependent global phase, where|K3> is the triangle graph state
+on the ordered leaves[1,6,8]. Each outcome has probability1/2.
+Apply the fixed Sdg to each leaf to obtain
+  (Z_1 Z_6 Z_8)^m |K3>.
+Only this fixed correction is emitted; the outcome-dependent Pauli is
+retained as a symbolic byproduct for downstream legal record handling.
+
+Checks performed:
+  - Statevector on4qubits; both branches have probability.5 within roundoff.
+  - After fixedSdg and the symbolicZ byproduct, fidelity with|K3> is
+    .9999999999999996 for both outcomes.
+  - Triangle stabilizers XZZ,ZXZ,ZZX all have expectation+1.
+  - Actual QASM uses3nearest-neighborCX, no nativeCZ or Y measurement.
+  - Official parser passes; native depth7; xtim class passes.
+
+The4-node physical star is bipartite. Its three-leaf graph-state endpoint
+after local Clifford and measurement is nonbipartite. Thus a no-go theorem
+for directly embedding an interaction triangle in the square grid does
+not exclude measurement-based graph-state/resource synthesis. The direct
+embedding theorem remains correct within its own model.
+
+All threeCX, physical1q gates, preparations, measurement and idles carry
+the official noise. A graph-minor identity is not a finite-noise fidelity
+claim, a fault-tolerance certificate, or a proof that the resource improves
+the current seven-qubit target circuit. Compile the local Cliffords and
+record-dependent Paulis into the whole instrument; price its schedule and
+its correlated faults. An arbitrary physical Pauli byproduct cannot be
+declared directly as a logical7-qubit frame without this propagation.
+
+Files: graph_vertex_minor.py; grid_star_to_triangle.qasm/.json/.native.stim.
+The QASM hash is
+2a9d07d9dcf13744922ce292175d66704456ef4c753c6ff3c466fa5b60abb6d3.
+
+No full-target performance improvement or lower-bound violation is claimed.

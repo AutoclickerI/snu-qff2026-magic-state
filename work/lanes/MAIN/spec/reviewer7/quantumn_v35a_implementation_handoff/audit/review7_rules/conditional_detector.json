@@ -1,0 +1,51 @@
+{
+  "name": "conditional_detector",
+  "scope": "full target, official four-gate check at 10000 shots; no optimization claim",
+  "qasm_sha256": "8722f5524034e438fb91c0da75166aa4a993955d9d5c7a265d82f125094e24d0",
+  "seconds": 0.026535741999396123,
+  "gates": {
+    "format_ok": true,
+    "class_ok": true,
+    "correct_ok": true,
+    "acceptance_ok": true,
+    "passed": true
+  },
+  "report": {
+    "p": 0.001,
+    "shots": 10000,
+    "seed": 0,
+    "format_errors": [],
+    "class_error": null,
+    "correctness_errors": [],
+    "score": 0.026297252876262032,
+    "sem": 0.0015468528490042645,
+    "acceptance": 0.8518,
+    "ideal_acceptance": 0.8535533905932737,
+    "frame": {
+      "X": [
+        0,
+        []
+      ],
+      "Z": [
+        0,
+        []
+      ]
+    },
+    "conditional_detectors": [
+      0
+    ],
+    "n_2q": 28,
+    "diagnosis": {
+      "shots": 1024,
+      "chi": null,
+      "chi_source": "deduced",
+      "num_detectors": 1,
+      "deterministic_detectors": [],
+      "gauge_detectors": [
+        0
+      ],
+      "expectations": [],
+      "suggested_postselect": "keep = np.ones(dets.shape[0], dtype=bool)  # no deterministic detectors"
+    }
+  }
+}

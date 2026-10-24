@@ -1,0 +1,47 @@
+{
+  "name": "constant_logical_X_frame",
+  "scope": "full target, official four-gate check at 10000 shots; no optimization claim",
+  "qasm_sha256": "5155c3399ddc73a5e63295fda5520606d02c4a9d628589d67abb551d9462696c",
+  "seconds": 0.02130390999809606,
+  "gates": {
+    "format_ok": true,
+    "class_ok": true,
+    "correct_ok": true,
+    "acceptance_ok": true,
+    "passed": true
+  },
+  "report": {
+    "p": 0.001,
+    "shots": 10000,
+    "seed": 0,
+    "format_errors": [],
+    "class_error": null,
+    "correctness_errors": [],
+    "score": 0.02645,
+    "sem": 0.0014326687509679272,
+    "acceptance": 1.0,
+    "ideal_acceptance": 1.0,
+    "frame": {
+      "X": [
+        1,
+        []
+      ],
+      "Z": [
+        0,
+        []
+      ]
+    },
+    "conditional_detectors": [],
+    "n_2q": 28,
+    "diagnosis": {
+      "shots": 1024,
+      "chi": null,
+      "chi_source": "deduced",
+      "num_detectors": 0,
+      "deterministic_detectors": [],
+      "gauge_detectors": [],
+      "expectations": [],
+      "suggested_postselect": "keep = np.ones(dets.shape[0], dtype=bool)  # no deterministic detectors"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+FOLLOW-UP — NONLINEAR ACCEPTANCE IS PHYSICALLY REALIZABLE
+=======================================================
+
+This supplements REPORT.txt and rules_matrix.json. The declaration API is
+affine-XOR only, but this is NOT a fundamental prohibition on nonlinear
+functions of original syndrome bits. A quantum circuit can compute a
+nonlinear function onto a new measured bit, and POSTSELECT or FRAME can
+refer to that new bit. Native ccx/ccz remain prohibited; their functions
+may be synthesized from allowed CX/H/T/TDG if the resulting full circuit
+passes the actual xtim class and all other gates.
+
+Concrete full-target witness
+----------------------------
+The organizer's legal injection prepares the target on sites
+[0,6,13,2,7,8,1]. Two disjoint controls on sites33/34 are prepared with H
+and measured in Z, giving fair recorded bits a,b. They retain their
+computational-basis values. Site35 starts in0. A nearest-neighbor CCX
+decomposition computes ab into35, which is measured into c[2].
+The only acceptance declaration is POSTSELECT(0)c[2].
+
+The ideal accepted control set is {00,01,10}; its probability is3/4.
+This3-element subset of four equally likely inputs cannot be the solution
+of affine GF(2) equations in the ORIGINAL two bits, whose nonempty solution
+sets have power-of-two size. It is implemented by a physical nonlinear
+predicate followed by an affine declaration on the NEW bit.
+
+Two versions were built and checked:
+  straightforward parity network:16CX,7T/TDG;
+  shortest walk within the searched3-wire parity-network family:8CX,7T/TDG.
+Both add two H around the CCZ target; the final H+measure is folded into
+native MX by the official parser. All actual operations/noise are charged.
+All CXs are along the path33--34--35. No custom or native3qubit gate occurs
+in either submitted QASM.
+
+The phase identity is
+  4abc = a+b+c-(a XOR b)-(a XOR c)-(b XOR c)+(a XOR b XOR c) mod8.
+The optimized reversible parity walk visits all needed parities and returns
+the linear map to identity. The emitted8x8 unitary differs from CCX by at
+most4.44e-16 in matrix entries. The BFS optimality claim is only within
+this restricted linear-parity walk family, not all possible decompositions.
+
+Official check (unchanged judge, p=.001,10000shots,seed0):
+  original16CX: all4gatesPASS, idealA.7499999999999998, noisyA.7405;
+  optimized8CX: all4gatesPASS, idealA.7499999999999998, noisyA.7396.
+Full circuit native depth28 in both. The optimized check completed in
+0.06196s in this local environment. Scores around.025 come from the poor
+injection baseline and are not optimization results. The slightly different
+short-shot acceptance numbers must not be used to rank the two methods.
+
+Implications and limitations
+---------------------------
+1. This removes a false *fundamental* restriction to affine acceptance
+   subspaces. It also motivates considering physically computed nonlinear
+   frame bits, subject to the same cost and class issues.
+2. It does not provide free software postprocessing or a classical if gate.
+   Real syndrome values must remain available in quantum registers, or be
+   reconstructed with charged gates and noise. Arbitrary classical records
+   cannot simply be loaded with forbidden conditional operations.
+3. This disjoint-helper witness does NOT establish class compatibility when
+   the predicate acts on records entangled with an existing magic circuit.
+   Propagated T axes and the unchanged official class test must be checked.
+4. The8CX+7T cost, helper footprint, extra measurement and critical-path
+   idles can erase the benefit. First calculate the ideal classical-policy
+   headroom on the exact syndrome distribution; build only small predicates
+   whose benefit exceeds their physical cost and fits available idle slots.
+5. Existing exhaustive small-record oracles with no headroom stay negative.
+   This witness cannot rescue a detector set that already has no better
+   classical policy. The proposed use is a different resource/record family.
+
+Files
+-----
+toffoli_witness.py reproduces the16CX construction and check.
+toffoli_witness_8cx.py finds and checks the8CX parity network.
+nonlinear_AND_postselection*.qasm/json/native.stim retain both witnesses.
+nonlinear_AND_parity_walk.json records the small BFS certificate.
+
+No remote work, submission, judge changes, malformed-input trick, or
+performance-improvement claim was involved.

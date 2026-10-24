@@ -1,0 +1,63 @@
+{
+  "scope": "Exact-state guard for a proposed late target-specific logical check.\n\nShows why a raw W_L projector appended after the final syndrome checks is\nnot safe. One otherwise correctable physical X or Y fault is converted\ninto accepted decoded loss. This is a 128-amplitude calculation, not a\nphysical circuit or a performance prediction.\n",
+  "results": [
+    {
+      "logical_representative": "full_weight7",
+      "physical_error": "I",
+      "acceptance": 0.9999999999999998,
+      "decoded_conditional_loss": -2.2204460492503136e-16,
+      "unnormalized_accepted_loss": -2.220446049250313e-16
+    },
+    {
+      "logical_representative": "full_weight7",
+      "physical_error": "X0",
+      "acceptance": 0.4999999999999999,
+      "decoded_conditional_loss": 0.4999999999999999,
+      "unnormalized_accepted_loss": 0.2499999999999999
+    },
+    {
+      "logical_representative": "full_weight7",
+      "physical_error": "Y0",
+      "acceptance": 0.4999999999999999,
+      "decoded_conditional_loss": 0.5,
+      "unnormalized_accepted_loss": 0.24999999999999994
+    },
+    {
+      "logical_representative": "full_weight7",
+      "physical_error": "Z0",
+      "acceptance": 8.474091755303838e-33,
+      "decoded_conditional_loss": null,
+      "unnormalized_accepted_loss": 2.8284768573805017e-33
+    },
+    {
+      "logical_representative": "weight3_line",
+      "physical_error": "I",
+      "acceptance": 0.9999999999999998,
+      "decoded_conditional_loss": -2.2204460492503136e-16,
+      "unnormalized_accepted_loss": -2.220446049250313e-16
+    },
+    {
+      "logical_representative": "weight3_line",
+      "physical_error": "X0",
+      "acceptance": 0.4999999999999999,
+      "decoded_conditional_loss": 0.4999999999999999,
+      "unnormalized_accepted_loss": 0.2499999999999999
+    },
+    {
+      "logical_representative": "weight3_line",
+      "physical_error": "Y0",
+      "acceptance": 0.4999999999999999,
+      "decoded_conditional_loss": 0.5,
+      "unnormalized_accepted_loss": 0.24999999999999994
+    },
+    {
+      "logical_representative": "weight3_line",
+      "physical_error": "Z0",
+      "acceptance": 8.474091755303838e-33,
+      "decoded_conditional_loss": null,
+      "unnormalized_accepted_loss": 2.8284768573805017e-33
+    }
+  ],
+  "consequence": "Use a syndrome-dressed target instrument, or place/flag the target check so the subsequent syndrome checks reject its non-code branches. A raw late W_L projector creates first-order decoded loss.",
+  "availability_note": "No rule forbids a target-specific instrument, but a complete gadget must pass the official commuting-rotation class, exact ideal target, full physical-noise and runtime gates."
+}

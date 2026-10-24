@@ -1,0 +1,271 @@
+REVIEW 7 — ACTUAL RULES, IMPLEMENTATION LIMITS, AND SELF-IMPOSED LIMITS
+====================================================================
+
+Scope and sources
+-----------------
+User repository: AutoclickerI/quantumn
+  f843cb2a2a7e23e53cb2ba54b891d42943bfedfe (2026-10-24 23:32:57 KST).
+Official problem/judge: SNUQuantums/snu-qff2026-problem
+  76fe47c0324f1c1f8b72a7d55af200e88043b522.
+Official event-site source: SNUQuantums/snu-qff2026
+  5ac69a9b58c38c050840e618b80d8d5c7ff5c675.
+
+Read: full problem.md, official qasm.py/noise.py/check.py/exact.py/parse.py,
+current event hackathon page, detailed guide and FAQ; quantumn AGENTS,
+GOAL, CONSTRAINTS, PLAN and relevant FINDINGS. The pinned source version
+was checked via the selected GitHub connector. The website guide says that
+additional announcements are delivered in KakaoTalk; unseen chat messages
+were not audited. This report therefore covers the retrieved public rules
+and judge, not an assertion that no later private announcement exists.
+
+Canonical sources:
+  https://github.com/SNUQuantums/snu-qff2026-problem/blob/76fe47c0324f1c1f8b72a7d55af200e88043b522/problem.md
+  https://github.com/SNUQuantums/snu-qff2026-problem/tree/76fe47c0324f1c1f8b72a7d55af200e88043b522/tprep
+  https://snuquantums.github.io/snu-qff2026/hackathon.html
+  https://snuquantums.github.io/snu-qff2026/hackathon-detail.html
+
+Web retrieval references available to parent: turn31view1 (hackathon page),
+turn32view0 (detailed guide). Root must open them itself before using web
+citations. Pinned GitHub links can also be used for the exact code sources.
+
+Main finding
+------------
+Most items in current CONSTRAINTS are faithfully grounded. The larger
+restriction is the family's representation: fixed A/B/C roles and endpoint
+contracts, a particular prefix/check decomposition, fixed output lifetimes,
+fast-evaluator support, and selected fault predicates. Some are already
+recognized in PLAN. They should not be presented as newly discovered bans
+or as things the team never considered.
+
+The official optimization problem is finite-p conditional decoded loss,
+subject to correctness, class, physical grid, noisy acceptance, size, and
+server runtime. It does not demand a particular preparation algorithm,
+three seven-qubit ancilla blocks, a permanently Steane-encoded trajectory,
+zero logical frame, ideal acceptance one, literal T-depth one, minimum
+CX count, maximum200CX, or a separate fault-tolerance theorem.
+
+RIGOROUS RULE DISTINCTIONS
+-------------------------
+
+1. OUTPUT LOCATION AND LIFETIME ARE FREE; OUTPUT STATE/ORDER ARE NOT.
+P112-118 and P360-365 permit any seven distinct final physical sites in an
+ordered data_qubits list. Moving/teleporting the logical information,
+changing which wires become outputs, temporary coding, and recycled
+ancillas are allowed if all actual gates remain legal. The current prefix
+footprint, data cell list, final-round timestamp and A/B/C partition are
+design choices. Correctness applies at the final outputs, after a logical
+Pauli frame but BEFORE the judge's perfect syndrome correction (P304-307).
+
+Do not propose a free gain by merely permuting data_qubits: a non-code
+automorphism generally fails correctness, while a Steane/Fano automorphism
+also permutes the Hamming decoder covariantly. A pure automorphism relabel
+does not change expected decoded loss; an actual circuit/layout change is
+needed. This is an algebraic observation, not a new measured speedup.
+
+2. JOINT RESOURCE INSTRUMENTS ARE LEGAL.
+There is no rule requiring separate pure A/B/C states, independent
+encoders, named resources, a fixed syndrome order, transversal final
+extraction, or separate preparation/verification/coupling stages. B/C can
+be entangled, outputs can be transferred, and ancillas need not be
+uncomputed to |0> merely for cleanliness. The accepted output must still
+be the exact target; ideal purity therefore enforces its decoupling from
+unobserved ancillas. Noise and record correlations must be evaluated as
+an instrument, not erased by assuming independent endpoint states.
+The current correlated rank-three B/C resource already uses some of this
+freedom. A proposal must identify the newly relaxed endpoint predicate.
+
+3. QUANTUM FEEDFORWARD IS FORBIDDEN, LOGICAL PAULI FRAME IS EXPLICITLY LEGAL.
+P143 prohibits if/conditional quantum instructions. P158-169 and P274-309
+allow fX and fZ to be affine XORs of measurement records, including constants.
+The frame is interpreted classically and carries no added physical Pauli
+gate channel. It is a logical X/Z correction only; it cannot declare an
+arbitrary physical correction, nonlinear Boolean decoder, or conditional S_L.
+One must declare BOTH FRAME_X and FRAME_Z, or neither. Automatically found
+frames need not be the only valid choices. Two ideal-equivalent frame
+records may differ under noise (P296-299).
+
+Important invariant: adding a parity already enforced by the acceptance
+constraints to a frame cannot improve accepted-shot loss. That parity has
+the same fixed value on every accepted noisy shot. Frame search needs
+record information outside those enforced relations, a changed acceptance
+subspace, or an altered physical instrument.
+
+4. RANDOM IDEAL POSTSELECTION IS LEGAL, WITH THE SAME NOISY ACCEPTANCE FLOOR.
+P167, P248-259 and exact.py216-246 permit random POSTSELECT branches and
+DETECTORs deterministic only within selected branches. Ideal acceptance
+does not have to equal1. Declared conditions are affine parity equalities;
+arbitrary OR, threshold, lookup-table acceptance and adaptive retries are
+not in the submitted interface.
+
+A fair stabilizer branch costs a factor1/2. Adding an independent fair
+branch to an existing A~.5 design clearly fails. But all postselection is
+not necessarily a half: a legal H-T-X measurement has noiseless P(0)=
+cos^2(pi/8)=0.8535533905932737. The full-target witness in this directory
+passes all four official gates with this biased selector, noisy A=.8518
+at10000shots. A conditional detector on the selected bit also passes.
+These are legality witnesses, not lower-loss circuits. A useful heralded
+design must outperform the best circuit after paying ALL acceptance,
+noise, geometry and class costs.
+
+5. THE DETECTOR SET IS A CHOICE OF PARITY SUBSPACE, NOT JUST A ROW SUBSET.
+P158,166,250-255 allow deterministic XORs, including ideal parity1. One
+may replace two checks d1=0,d2=0 by d1 XOR d2=0, which accepts both00 and11;
+this is a weaker but legal condition. An invertible basis change of the
+same full row space changes neither acceptance nor loss. A gain requires
+a different row space (or different measurements), priced at full noise.
+Past DET/BUDGET/KNAP searches already tested subsets and small subspaces
+on older bases; a new candidate must use a newly relevant resource and
+jointly optimize protection and accepted syndrome space rather than repeat
+the same drop-only search.
+
+6. FULL-GRID BARRIERS ARE NOT REQUIRED.
+P235-243 and noise.py54-88 use ASAP scheduling with barrier groups of any
+subset. No TICK text can override that schedule. Before first use, before
+reset, and after a last measurement, the listed idle charges are absent.
+The selected schedule can therefore use different physical lifetimes and
+partial synchronization. This does NOT imply deleting all barriers helps:
+earlier preparation can expose an ancilla longer, while a global barrier
+can intentionally delay its first use. Use native scheduling and exposure
+as variables, not line-number depth.
+
+The repository AGENTS describes the adopted sparse evaluator as requiring
+barriers over all used qubits and no FRAME/POSTSELECT. These are evaluator
+scope limits, not contest rules. AGENTS itself says use other evaluators
+outside that scope. Treat unsupported candidates as 'needs evaluator',
+not 'illegal'. Review6's extended frontend is also not a general official
+frontend; class and correctness still require the judge.
+
+7. RESET AND MEASUREMENT REUSE ARE REAL FREEDOMS, WITH DIFFERENT NOISE.
+P116-117 and145-148 permit midcircuit reset and h-measure-h as a native X
+readout leaving its observed |+> or |-> state. Reset+h folds into native
+RX. These use one native step; folded H carries no extra gate noise.
+General H, S and SX gates remain noisy. Measurement flips and post-M
+depolarization still exist. A random measurement-prepared state needs its
+record byproduct tracked. It is not a free known |+> reset, and resetting
+instead can change both finite-noise loss and simulator runtime.
+
+The 36-qubit limit is a simultaneous physical-chip limit, not a total
+number of ancilla lifetimes: reused physical sites are allowed. The1000
+measure+reset cap and simulator cost still apply.
+
+8. T CLASS IS A COMMUTATION CONSTRAINT, NOT LITERAL ONE-TICK T DEPTH.
+P205-213 describes one mutually commuting Pauli-rotation layer after
+Clifford propagation. Temporally separated T gates can satisfy it. The
+toy H0,H1,T0,CX01,T1,CX01 passes xtim class; H0,T0,H0,T0,H0 is rejected.
+No required15T budget is stated. Nevertheless arbitrary multistage
+distillation is not automatically admissible. Check propagated axes and
+actual xtim class early. Official exact.py has MAX_RANK22 as a further
+implementation capacity limit; it is not the old family's X-rank5.
+
+9. ALL LISTED SINGLE-QUBIT GATES ARE LEGAL AND NOISY.
+P135 lists S/Sdg/SX/SXdg as well as H/T/Tdg/Paulis. Native SX and SXdg
+conversion with their D1 channels is confirmed by the witness. A generator
+restricted to H/CX/T is narrower than the contest gate set. The prior
+review6 A+SX runtime result remains a practical limit on that tested
+family, not a rule against SX.
+
+qasm.GATES and exact.ROTATIONS contain legacy CZ/CS/CH/SWAP handling.
+STANDARD.gates filters those out. The explicit CZ native probe fails
+format. Their presence in the library is NOT permission to submit them.
+They may only be synthesized from permitted operations, paying actual
+gate/time/noise costs and passing class.
+
+10. NO200CX CAP; FEWER CX IS A TIEBREAKER.
+P345-348 and367-373 specify200000bytes,5000QASM statements,
+1000measure+reset and1hour per submission. There is no200CX ceiling.
+Primary ranking is finite-p1-F to3 significant figures; then fewer2q
+gates and earlier submission. The current repository already contains
+>200CX designs, so this should be a guardrail, not an accusation that the
+team has imposed a nonexistent cap.
+
+The team's20s-per-million promotion gate is a conservative runtime
+predictor for the1hour server limit. It is not itself an official rule.
+A different runtime class could be considered if actual whole-run
+measurement demonstrates fit in the server budget; short-run linear
+extrapolation and the CPU ratio alone are not a guarantee. Existing SX
+variants have a measured execution problem, so merely lifting the local
+gate would not establish feasibility.
+
+11. c1=0 IS A DIAGNOSTIC, NOT AN ADMISSIBILITY GATE.
+P553-564 explicitly says no particular algorithm or fault-tolerance
+condition is separately required; P586-591 distinguishes c1 from the
+finite-p official score. GOAL already states this correctly.
+
+PLAN's blanket rejection that one harmful2q Pauli necessarily costs
+>=p/15 *1/2=3.3e-5 needs family-specific assumptions. Generally a fault f
+with weightp/15 contributes (p/15)*a_f*ell_f/A0 at first order, where a_f
+is its accepted probability, ell_f its conditional decoded loss, and A0
+ideal acceptance. Taking a_f/A0=1 and ell_f>=1/2 is an extra assertion;
+random accepted branches and propagated non-Pauli errors require care.
+This audit has not produced a winning nonzero-c1 circuit, nor a full-class
+counterexample to every possible stronger theorem. Reopen the pruning
+rule only with an actual family-specific fault/branch calculation, not
+by assuming harmful singles will be cheap.
+
+12. THE FREE FINAL CORRECTION IS PART OF THE SCORE, NOT AN EXTRA GADGET.
+P304-307 requires exact target before it on ideal accepted runs. Under
+noise, P316-338 and check._sample correct output syndrome without noise;
+those six judge measurements cannot reject a shot or be referenced as
+participant records. Optimize decoded risk and error correlations, not
+raw output syndrome rate. This does not permit ending noiselessly in a
+wrong syndrome or attaching an uncharged physical correction.
+
+13. STATISTICAL REDRAWS ARE NOT A PHYSICAL IMPROVEMENT.
+P343-354 fixes seed0 and1e8shots with1e6chunks seeded0..99. The public
+rule does not require a mean over3seeds. The user repository's3-seed/re-draw
+means are estimators, not the exact expectation. Simultaneous gate
+reordering may leave the quantum noise channel unchanged while changing
+a finite MC realization. It cannot lower expected loss by itself. Report
+model gains and official seed-key changes separately. Public text silence
+on additional variants should not be promoted to organizer approval of
+every conceivable scoring tactic. No seed-selection scan was performed.
+
+Official micro-witness results
+-----------------------------
+rule_witnesses.py uses unchanged tprep.check and official dependencies.
+Four FULL-TARGET10k-shot cases all pass four gates:
+  organizer_injection_control: ideal A1; noisy A1.
+  biased_noiseless_postselection: ideal A.8535533905932737; noisy A.8518.
+  conditional_detector: same acceptance; conditionally deterministic bit.
+  constant_logical_X_frame: ideal A1; noisy A1.
+Scores of these intentionally simple injection circuits are poor and are
+not optimization candidates. Native-only probes cover RX, MX reuse, SX,
+partial/global barriers, separated commutingT, noncommutingT rejection,
+legacyCZ rejection and lifetime idle exemptions. Their scope is not
+confused with target-state validation. Complete results and QASMs are
+stored beside this report; no performance claim is made from them.
+
+Small source inconsistencies discovered
+--------------------------------------
+The official problem's inline copied injection QASM still includes
+nonadjacent CX5->0 etc for a6x6 grid. The linked examples/injection.qasm
+uses the corrected physical sites and passes. Do not reproduce or infer
+a layout freedom from the stale inline sample. The problem's submit.html
+link returned404; the current submission interface lives on hackathon.html.
+Neither issue changes the clear grid or scoring rules.
+
+Best consequences for the parent's10-candidate review
+----------------------------------------------------
+Prioritize expansions with a concrete changed feasible set:
+  - terminal resource decoding / extra commuting information on discarded
+    blocks (already a validated gain; extend with exact schedule/resource budgets);
+  - joint acceptance-subspace/protection/frame optimization on the new
+    binding-acceptance base, beyond dropping detector rows independently;
+  - conditional-instrument endpoint synthesis with measured Pauli byproducts;
+  - lifetime/partial-barrier and moving-output geometry co-design;
+  - biased heralding only in a redesigned high-acceptance architecture;
+  - physical Clifford gauge enumeration with measured simulator feasibility;
+  - commuting-phase parity-network re-synthesis without preserving the old
+    prefix's internal state or its chosen block partition.
+
+These are consequences of documented freedoms, not universal performance
+guarantees. The actual rule audit does not establish a way below1e-5.
+
+Reproduction
+------------
+From the workspace/bundle root, with review6 official dependencies:
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+    audit/review6_validation/venv/bin/python audit/review7_rules/rule_witnesses.py
+The script requires official/problem.md and official/examples/injection.qasm
+in this lane and the pinned official tprep source under review6_validation.
+No remote changes, messages, submissions or judge modifications occurred.

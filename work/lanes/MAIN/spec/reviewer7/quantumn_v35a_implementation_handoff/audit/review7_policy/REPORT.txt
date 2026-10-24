@@ -1,0 +1,35 @@
+Four-sector oracle for two current echo flags
+============================================
+
+Circuit: review7_architecture/v32p_a_decode, unchanged quantum operations.
+Exposed bits: 264 and270; detector indices57 and63. All other detectors stay0.
+Full73-moment evaluation completed in43.89034745seconds.
+
+sector    probability mass          conditional loss       best logical frame
+00        .5012004436526476         4.6629334817194223e-5    I
+01        .0000027429387931959814   4.7504756274296955e-5    I
+10        .0023226907035259203      1.0270178900717575e-4    I
+11        .000000027653220727175132 .008276318351796597     I
+
+The sector labels follow ascending detector axes in C-order, as specified
+in the JSON. The calculation prices an optimistic independent best Pauli
+frame on each sector, not an automatically implementable free nonlinear frame.
+
+All nonzero sectors have risk exceeding the incumbent00sector. Therefore
+no acceptance policy using these two exposed bits, with all other conditions
+fixed, can improve true expected loss even with that optimistic frame freedom.
+The legal XOR-zero policy accepts00and11 and gives L4.662978888182491e-5,
+A.5012004713058683, slightly worse than retaining both zero checks.
+
+This negative oracle closes only this fixed physical circuit / two-bit domain.
+It does not price removing the actual echo gates, which changes the noise model.
+That physical budget reallocation is separately demonstrated in architecture/.
+
+For any fixed instrument, rejecting mass r with conditional risk ell_rej
+changes L=N/A to (N-r*ell_rej)/(A-r). It helps exactly when ell_rej>L,
+provided the remaining acceptance satisfies the floor. Adding/removing a
+physical check changes N,A and the channel set, so this ratio test alone
+does not price a gadget.
+
+sector_pair.py reproduces the result with the portable sparse evaluator.
+sector_pair_264_270.json retains all73moments and cutoff diagnostics.

@@ -1,0 +1,108 @@
+QUANTUMN V35A — IMPLEMENTATION HANDOFF
+====================================
+
+This archive is the complete reviewed evidence package plus an actionable
+implementation brief. It is intended to be usable without the chat history.
+It contains the full English report, the original Korean report, ten task
+specifications, source snapshots, actual circuits, proofs, negative results,
+an evaluator, pinned official judge sources, and completed validation receipts.
+
+READ IN THIS ORDER
+------------------
+1. IMPLEMENTATION_HANDOFF.txt — execution order, gates, commands and output contract.
+2. REPORT_EN.txt — full findings, rule audit, ten methods and bound analysis.
+   REPORT_KO.txt is the full Korean review retained from the original package.
+3. IMPLEMENTATION_TASKS.json — machine-readable M01–M10 tasks and evidence paths.
+4. SUMMARY.json and the evidence paths for the task being implemented.
+
+README.txt retains the original reproduction guide. Where it is less explicit
+about execution pitfalls, follow IMPLEMENTATION_HANDOFF.txt. Historical
+review5/review6/review7 reports are supporting evidence at their own source
+pins; their older best-circuit recommendations are superseded by this v35a
+review. The pinned official source and actual circuit bytes take precedence
+over stale descriptive metadata. A future rule or source change requires
+reconciliation with the current official contract.
+
+BASELINE AND SCOPE
+------------------
+Reviewed circuit source:
+  AutoclickerI/quantumn @ 948dcfdca233baceee9759b90519a8589e00bd13
+Last repository text refresh:
+  126b1df310a2a138a181d8dda0ae6d11fb94d236
+  Only one WAITPROT status row changed; v35a remained byte-identical.
+Pinned official judge:
+  SNUQuantums/snu-qff2026-problem @ 76fe47c0324f1c1f8b72a7d55af200e88043b522
+
+Circuit: baseline/v35a.qasm
+SHA256: b606bd3902d28000e0ee073fc50a7c0870aaa1f2e1ab8947fdb7fd70c762218e
+Data order: [0,20,7,10,3,22,21]
+206 CX; 47 native ticks; R44.
+Expected loss:       4.393527676042078e-5
+Expected acceptance: 0.5012369386242203
+Official 100m-shot, seed-0 check: all four validity gates PASS.
+Official score: 4.499822441045316e-5; SEM: 8.175175781417765e-7.
+
+The model expectation and the official Monte Carlo estimate are different
+quantities. All new whole-circuit variants evaluated during this review lost
+to v35a. This is an evidence-backed research handoff, not a new winning circuit.
+Refresh the implementation checkout and identify its current incumbent before
+changing code. These pins describe what was reviewed, not every future HEAD.
+
+PRIORITY
+--------
+First: M01, reprice/resynthesize A encoders under the current flag instrument.
+In parallel: M02, compose better checks with physically priced acceptance trades.
+Common infrastructure: M03, replace unsupported universal p/30 pruning.
+Bounded policy screen: M10, a wider joint-record oracle only.
+Then: M04–M08 as explicitly gated architectural research.
+M09 is an evaluator project only where it adds value beyond existing caches.
+
+IMPORTANT EXECUTION LIMITS
+-------------------------
+The existing official runner can exit 0 even when a gate fails or an exception
+is written to its receipt. Check the final JSON, expected circuit hash, shots,
+seed and judge pin. check_official_receipt.py automates that consistency check;
+it does not replace the official judge or prove a receipt's authenticity.
+For a fresh run, require both process exit code 0 and a newly generated final
+receipt. Rename the old expected receipt before starting in the working copy:
+an early failure can leave a stale passing receipt untouched.
+
+Use unique candidate basenames. Several supplied scripts write output beside
+the evaluator using only the candidate basename and can overwrite receipts.
+Preserve this evidence archive and run experiments in a separate working copy.
+
+The pinned reproduction environment is Python 3.12 / Linux x86_64. Installing
+the pinned dependencies requires network access. Wheels and a virtual
+environment are not included. The sparse evaluator has a narrower supported
+class than the actual competition; unsupported does not mean illegal.
+
+The full EXENC search engine and historical path cache are NOT in this ZIP.
+The included EXENC source extract supports the objective certificate. M01's
+full search needs exact.cpp, DR/prepA_L5_s7307.json, and historical paths/cache
+from the implementation checkout or a regenerated equivalent. The local
+certificate itself remains reproducible without those missing search assets.
+
+The sub-1e-5 question is addressed in REPORT_EN.txt and
+audit/subthreshold_bound/PROOF.txt. Under the inspected STANDARD model, the
+retained-output-channel argument gives a safely rounded expected-loss bound
+L >= 1.162e-5. A weaker bound below 1e-5 is not an achievable construction.
+Changing that conclusion requires identifying a failed proof assumption,
+an actual model change, or a valid counterexample—not merely a low MC draw.
+
+CONTENTS
+--------
+REPORT_EN.txt / REPORT_KO.txt       Full technical reports
+IMPLEMENTATION_HANDOFF.txt         Agent instructions and reproduction commands
+IMPLEMENTATION_TASKS.json          Ten tasks with evidence and stop criteria
+check_official_receipt.py          Standard-library receipt consistency checker
+SUMMARY.json                      Consolidated numerical review results
+baseline/                         Unchanged v35a and corrected metadata
+quantumn_review8/                 Selected reviewed repository source snapshot
+audit/review8_*/                   Current-baseline studies and official receipts
+audit/review7_*/                   Earlier exact proofs and legal witnesses
+audit/review5_* / review6_*        Supporting certificates and evaluator imports
+audit/subthreshold_bound/          Terminal-noise proof and rational certificates
+SHA256SUMS.json                    SHA256 of every bundled file except itself
+
+The archive is a selected evidence snapshot, not a full Git checkout. No remote
+repository change or competition submission was performed as part of this review.

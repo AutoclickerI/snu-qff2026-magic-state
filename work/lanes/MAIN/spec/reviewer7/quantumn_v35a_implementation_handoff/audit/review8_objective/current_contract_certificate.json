@@ -1,0 +1,202 @@
+{
+  "source_commit": "948dcfdca233baceee9759b90519a8589e00bd13",
+  "source_qasm_sha256": "b606bd3902d28000e0ee073fc50a7c0870aaa1f2e1ab8947fdb7fd70c762218e",
+  "stored_metadata_qasm_sha256": "77be92f9cf1a1b1313b525dc78e17e593332e0d0ae32783bc08db9e9665843d3",
+  "scope": "Current pinned v35a native schedule and A-instrument certificate.\n\nRun with audit/review6_validation/venv/bin/python. Exact GF(2) assertions\nare separated from floating ideal-state checks and the local EXENC proxy.\n",
+  "official_native_schedule": {
+    "CX": 206,
+    "depth": 47,
+    "ticks": [
+      0,
+      46
+    ],
+    "every_operation_matches_independent_frontend_tick": true,
+    "format_errors": []
+  },
+  "A_encoder": {
+    "CX": 11,
+    "ticks": [
+      38,
+      43
+    ],
+    "layers": [
+      [
+        [
+          8,
+          9
+        ]
+      ],
+      [
+        [
+          14,
+          8
+        ]
+      ],
+      [
+        [
+          14,
+          15
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      [
+        [
+          15,
+          16
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          14
+        ]
+      ],
+      [
+        [
+          2,
+          8
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      [
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          14
+        ]
+      ]
+    ],
+    "plus_pivot_cells": [
+      1,
+      14,
+      8,
+      2
+    ],
+    "plus_pivot_X_images": {
+      "1": [
+        1,
+        8,
+        14
+      ],
+      "14": [
+        8,
+        14,
+        15,
+        16
+      ],
+      "8": [
+        8,
+        9,
+        15
+      ],
+      "2": [
+        2,
+        14,
+        15
+      ]
+    },
+    "exact_output_X_stabilizer_space_matches_plus_L": true
+  },
+  "A_flag": {
+    "terminal_measurement": {
+      "cell": 8,
+      "bit": 16,
+      "tick": 46
+    },
+    "decoder_CX": [
+      [
+        9,
+        15,
+        44
+      ],
+      [
+        8,
+        9,
+        45
+      ]
+    ],
+    "at_encoder_output_X_cells": [
+      8,
+      9,
+      15
+    ],
+    "code_support": [
+      2,
+      3,
+      6
+    ],
+    "at_encoder_input_X_cells": [
+      8
+    ],
+    "input_measurement": {
+      "cell": 8,
+      "bit": 272,
+      "tick": 37
+    },
+    "ideal_relation": "c16 XOR c272 = 0",
+    "pure_weight_two_Z_pairs": 21,
+    "detected_pairs": 12,
+    "blind_pairs": 9
+  },
+  "EXENC_local_proxy_only": {
+    "current_vector_units_p_over_15": [
+      0,
+      3,
+      4,
+      0,
+      4,
+      0,
+      0,
+      0
+    ],
+    "old_scalar_total_units": 11,
+    "flag_blind_units": 4,
+    "limitations": "Original EXENC local reset/idle convention; not the current full noisy instrument, real init/readout noise, or conditional logical loss."
+  },
+  "numeric_ideal_state_checks": [
+    {
+      "source": "quantumn_review8/work/lanes/MAIN/v35a",
+      "before_decoder_output_stabilizer_means": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ],
+      "before_decoder_logical_XY_means": {
+        "X": 0.7071067811865474,
+        "Y": -0.7071067811865472
+      },
+      "ideal_acceptance": 0.9999999999999997
+    },
+    {
+      "source": "audit/review8_objective/v35a_tracked_c272",
+      "before_decoder_output_stabilizer_means": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ],
+      "before_decoder_logical_XY_means": {
+        "X": 0.7071067811865474,
+        "Y": -0.7071067811865472
+      },
+      "ideal_acceptance": 0.9999999999999997
+    }
+  ],
+  "limitations": "GF(2) identities and native schedule are exact; quantum expectation calculations use floating arithmetic. No new encoder or overall performance improvement is claimed here."
+}

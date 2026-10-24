@@ -1,0 +1,47 @@
+{
+  "name": "biased_noiseless_postselection",
+  "scope": "full target, official four-gate check at 10000 shots; no optimization claim",
+  "qasm_sha256": "83999d4ac45b600b8f7f419d55d91057c76293f3eb53819d1e7f7e77f38122f5",
+  "seconds": 0.02708388599421596,
+  "gates": {
+    "format_ok": true,
+    "class_ok": true,
+    "correct_ok": true,
+    "acceptance_ok": true,
+    "passed": true
+  },
+  "report": {
+    "p": 0.001,
+    "shots": 10000,
+    "seed": 0,
+    "format_errors": [],
+    "class_error": null,
+    "correctness_errors": [],
+    "score": 0.026297252876262032,
+    "sem": 0.0015468528490042645,
+    "acceptance": 0.8518,
+    "ideal_acceptance": 0.8535533905932737,
+    "frame": {
+      "X": [
+        0,
+        []
+      ],
+      "Z": [
+        0,
+        []
+      ]
+    },
+    "conditional_detectors": [],
+    "n_2q": 28,
+    "diagnosis": {
+      "shots": 1024,
+      "chi": null,
+      "chi_source": "deduced",
+      "num_detectors": 0,
+      "deterministic_detectors": [],
+      "gauge_detectors": [],
+      "expectations": [],
+      "suggested_postselect": "keep = np.ones(dets.shape[0], dtype=bool)  # no deterministic detectors"
+    }
+  }
+}

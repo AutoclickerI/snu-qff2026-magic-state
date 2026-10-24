@@ -1,0 +1,27 @@
+{
+  "scope": "Finite-p distribution of nonidentity noise-channel counts.\n\nThis measures probability mass available to fault-order stratification.\nIt does not implement a new simulator or assert a measured wall-clock gain.\nOne aggregated idle channel counts once; its full finite-p probability is used.\n",
+  "results": [
+    {
+      "source": "quantumn_review8/work/lanes/MAIN/v35a",
+      "channels": 539,
+      "mean_count": 0.7936977000086606,
+      "count_probabilities_0_to_6": [
+        0.4515496720759748,
+        0.35963638446217633,
+        0.1425899817509508,
+        0.03752607027264647,
+        0.0073749784227237275,
+        0.0011545503219935877,
+        0.00014997886817678062
+      ],
+      "probability_at_least_2": 0.1888139434618481,
+      "probability_at_least_3": 0.04622396171089729,
+      "probability_at_least_4": 0.008697891438250826,
+      "first_order_integrated_numerator_variance_ratio_upper_bound": 0.1888139434618481,
+      "numerical_note": "Polynomial convolution uses double precision; no runtime/speedup benchmark implied."
+    }
+  ],
+  "variance_statement": "For numerator contribution G and event E=K>=2, integrate E^c exactly and sample from E. Var(P(E)*mean(G|E))=P(E)^2*Var(G|E)/m <= P(E)*Var(G)/m by total variance. This is a fixed-sample variance bound for numerator estimation, not a wall-clock or finite-sample ratio-estimator guarantee.",
+  "ratio_note": "Estimate acceptance with the same weighted samples and propagate joint covariance for N/A; do not report unweighted conditional scores or silently alter the noise distribution.",
+  "official_note": "Final validation remains the unmodified official judge with its specified chunks/seeds."
+}
