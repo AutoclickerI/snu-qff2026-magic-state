@@ -24,6 +24,7 @@ small grid-native block preps; every earlier closure of it was model-bound.
 | 4 | P69 | G1 | SEPBC: delivered v28s; stationary separate B/C proved impossible (FINDINGS). Now (a) its free q5 detector on v29c, (b) the reusable emitter that attaches ENDSTATE end-states to the real prefix, priced with a loss split | (a) priced; (b) every ENDSTATE end-state priced | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
 | 6 | P67 | G1 | ST2: macro-rewrite population search on v30f (init/check forms, commuting schedule, transfer phase, readout edge, timing, idle-slot detectors), seeded with COMP29's finalists | a v30f-lineage finalist below COMP29's best by 3-seed mean | Codex lane ST2 (`work/lanes/ST2`, zebra, sunfish, tom) | active |
 | 5 | P73 | G1 | COMP29: port the v23h→v29c local edits (blue XZ check, exchange, instrument, readout copy, LNS2/ST2 edits, timing feedback, known-zero detectors) onto v30f and price every combination | a v30f-lineage finalist below v30f by 3-seed mean | Codex lane COMP29 (`work/lanes/COMP29`, jerry, owl) | active |
+| 5 | P74 | G1 | WAITPROT: reviewer 4's selective Z protection of waiting data on v30f (helper \|+⟩, CX h→q twice around the wait, MX h; Fano-line triple meets every weight-3 Z logical) | priced singles/pairs/Fano triples; a finalist below v30f or the mechanism | Codex lane WAITPROT (`work/lanes/WAITPROT`, tom, zebra) | active |
 | 6 | P59 | G1 | BCFB: port its best clean B+C preps into v25k/v26n and re-run the exact feedback search in situ | a v25k-lineage circuit below v27x by re-draws | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
 | 7 | P62 | G1 | BCPOL: B+C contract relaxations (partial clean, joint prep+check endpoints, C6, boundary cache), priced in v23h_c2c9 and v25k | each relaxation priced with its mechanism; C6 feeds ENDSTATE | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
 | 8 | P70 | G2 | XTIM: the trigger of xtim's per-shot slow path, a fast speed predictor, physics-preserving rewrites (q8's −1.2% on v26n) | rule + validated `work/lanes/XTIM/speed_predict.py` | Codex lane XTIM (`work/lanes/XTIM`, zebra) | active |
@@ -50,6 +51,20 @@ The reviewer's zip (QASMs, scripts) is behind a chatgpt.com library link we cann
 | 8 | Move data during the prefix (time-indexed placement) | outside HOPS/FREELAY's bounded models | parked (placement lane) |
 | 9 | Live data as a 4-CX bridge (CX a→b through h) | identity correct; adds correlated data errors | parked |
 | 10 | B/C boundary cache (2^11 classes) to price preps fast | accelerator for 4–6 | P62 |
+
+## Reviewer 4 review (2026-10-24 21:10, on commit 57e99b9; zip not yet in the repo)
+| # | Claim | Check | Item |
+|---|---|---|---|
+| 1 | Measured-helper remote CX (CX B→h, CX h→C, MX h = Z_B^m CX(B,C)); pipelined B→h at R, h→C at R+1 lets C finish 2 ticks later; +1.18e-6 at R34 grid-relaxed | identity standard; obstruction re-checked (FINDINGS) | geometry lanes (ENDSTATE, FRESH, ST1) at their next turn |
+| 2 | Moving check (CX A→D, CX D→A, MZ D; output on A), 128 masks | identity plausible; adds a round CX on the output path, where the round's data-side loss sits (ARCH) | price only inside a placement model that saves R |
+| 3 | Dirty bus UVUV: 2×2 remote CX in 8 CX through one helper | identity standard; helper faults correlate outputs | B/C prep synthesis (BCPOL/FRESH) |
+| 4 | Encoded-Bell B/C endpoint, B = \|b_L⟩ with FRAME_X from C's parity | FRAME_X with record bits is legal (P l.161) | BCPOL endpoint family |
+| 5 | Measured partial uncompute in the phase network (7 CX → 4 CX + 2 MX toy; 14 of 15 axes unsafe alone) | unpriced | parked (prefix length) |
+| 6 | Selective Z protection of waiting data (Fano line) | targets v30f's wait-driven cubic term | P74 |
+| 7 | Allow c1 ≠ 0 under a budget | one harmful 2q Pauli costs ≥ p/15 × 1/2 = 3.3e-5, above the whole non-round loss; no gain possible | rejected |
+| 8 | Exact rational timing L(z) = P4/Q4 per CX shift | refinement of ST1's exact timing loop | COMP29/ST2 timing |
+| 9 | Sparse Walsh + detector basis change: v29c all-orders 6.34391e-5 in 28 s (v23: 261 s → 19 s) | our dense run died on v29c/v30f (FINDINGS Failures) | needs the zip |
+| 10 | Graph-resource + measurement-branch synthesis | no legal witness yet | parked |
 
 ## Open questions
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us
