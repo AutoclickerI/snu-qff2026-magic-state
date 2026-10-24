@@ -1,14 +1,15 @@
 # Our circuit and its search tools
 Serves: G1, G2. Read before changing the circuit, its layout or the search code.
 
-## Structure of the incumbent (`work/lanes/MAIN/v36c`; v36d adds INTEG's gadgets, v36e BFLAG's r3 resource; PLAN "Status")
+## Structure of the incumbent (`work/lanes/MAIN/v36c`; v36d–v36f add gadgets, resource r3 and guards; PLAN "Status")
 Roles (physical qubits, code order): data D = [0,20,7,10,3,22,21] (the JSON `data_qubits`), A = [1,14,8,9,2,16,15],
 B = [6,26,13,11,4,23,27], C = [12,25,19,17,5,29,28]. 213 CX, 47 native ticks, round R44 (B/D CX at ticks 43–44).
 v36a → v36b added timing, echo and reset trades (211 CX); v36b → v36c (ST2 population) swaps echo helpers (q26–q20 out;
 q20–q21 and q7–q13 in) and turns several first-use resets (q8, q9, q13, q19, q20, q1) into measured inits.
 v36c → v36d (INTEG) adds acceptance-only trades and 34 gadgets on waiting qubits: live-live CX pairs, echoed parity
 checks and guards (282 CX; list in `v36d.json` "integ"). v36d → v36e (BFLAG) replaces the 57-CX B/C resource by the 56-CX r3
-(`work/lanes/BFLAG/syn/r3.json`), 281 CX.
+(`work/lanes/BFLAG/syn/r3.json`), 281 CX. v36e → v36f (PRECELL) adds continuous guards (q6, q13 on q7), q14/q21 echo ends
+and five late guards on idle B/C qubits from never-used cells (293 CX).
 1. **Prefix**: Gidney's d=3 cultivation stages (injection, double-cat check with T/T† layers) plus PRESYN's blue XZ
    stabilizer check, then coherent two-CX data hops into D. Source checks c54–c57 and blue outputs c64/c67 are detectors.
 2. **Waiting data**: five storage guards (helper reset, CX data→helper, measured) on the data runs before the round;

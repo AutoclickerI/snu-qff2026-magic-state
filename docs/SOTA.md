@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36d_h2506_r53**, server 1-F = 3.75482776979395e-5
-(= local seed-0, key 3.75e-5), acceptance 0.50602, 282 CX, submitted 2026-10-25 06:38:07 KST
-(`work/receipts/seq_v36d_h2506_r53.txt`; best raced seed-0 draw of `work/lanes/MAIN/v36d`, all-orders 4.02862e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36e_h2507_r449**, server 1-F = 3.67131323483876e-5
+(= local seed-0, key 3.67e-5), acceptance 0.50772, 281 CX, submitted 2026-10-25 07:38:13 KST
+(`work/receipts/seq_v36e_h2507_r449.txt`; best raced seed-0 draw of `work/lanes/MAIN/v36e`, all-orders 3.92343e-5).
 
 Best competitor: Placeholder 4.984e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 00:51 KST; 5.058e-5 at 2026-10-24
-21:58). Board read 2026-10-25 06:48 KST; refresh with `work/submit.py board`.
+21:58). Board read 2026-10-25 07:55 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git show b2a5243:<path>` for the lanes removed at 04:10 on 2026-10-25, `git show a58eca7:<path>` for `work/candidates/` and earlier removals.
@@ -46,6 +46,7 @@ Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git sho
 | v36b: FRESH `r35/sepbc_reset_40_41_42` (v36a + timing, echo and reset trades; re-draw r580) | server | 3.87795e-5, 211 CX (all-orders 4.12933e-5) | `work/submissions/v36b_r580.*`, `work/lanes/MAIN/v36b.*` |
 | v36c: ST2 population edits on v36b (raced re-draw h2505_r4508) | server | 3.84302e-5, 213 CX (all-orders 4.11516e-5) | `work/submissions/v36c_h2505_r4508.*`, `work/lanes/MAIN/v36c.*` |
 | v36d: v36c + INTEG's acceptance trades and 34 pair/echo/guard gadgets (raced re-draw h2506_r53) | server | 3.75483e-5, 282 CX (all-orders 4.02862e-5) | `work/submissions/v36d_h2506_r53.*`, `work/lanes/INTEG/REPORT.md` |
+| v36e: v36d with BFLAG's 56-CX B/C resource r3 (raced re-draw h2507_r449) | server | 3.67131e-5, 281 CX (all-orders 3.92343e-5) | `work/submissions/v36e_h2507_r449.*`, `work/lanes/BFLAG/` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |

@@ -1,0 +1,437 @@
+{
+ "data_qubits": [
+  0,
+  20,
+  7,
+  10,
+  3,
+  22,
+  21
+ ],
+ "cx": 286,
+ "native_depth": 47,
+ "R": 44,
+ "source": "PRECELL nom_7 = v36d + q6 unread Z-guard (R 31, CX 6->7 at 32,34-41, CX 6->0 at 33; q6 enters B at 42) + q1-q0 pair at 35-36 + q14 X-echo end 35->36 (MX at 37 = A init) + q21 Z-echo end 34->35",
+ "integ": {
+  "kind": "joint",
+  "base": "G1",
+  "gadgets": [
+   {
+    "kind": "echo",
+    "q": 15,
+    "h": 21,
+    "axis": "X",
+    "t1": 14,
+    "t2": 17,
+    "rst": 19
+   },
+   {
+    "kind": "echo",
+    "q": 13,
+    "h": 12,
+    "axis": "X",
+    "t1": 28,
+    "t2": 30,
+    "rst": 37
+   },
+   {
+    "kind": "echo",
+    "q": 20,
+    "h": 26,
+    "axis": "X",
+    "t1": 11,
+    "t2": 13
+   },
+   {
+    "kind": "echo",
+    "q": 6,
+    "h": 12,
+    "axis": "Z",
+    "t1": 19,
+    "t2": 24,
+    "rst": 37
+   },
+   {
+    "kind": "echo",
+    "q": 21,
+    "h": 22,
+    "axis": "X",
+    "t1": 21,
+    "t2": 30,
+    "rst": 34
+   },
+   {
+    "kind": "echo",
+    "q": 15,
+    "h": 16,
+    "axis": "X",
+    "t1": 21,
+    "t2": 28
+   },
+   {
+    "kind": "echo",
+    "q": 15,
+    "h": 21,
+    "axis": "X",
+    "t1": 4,
+    "t2": 11,
+    "rst": 19
+   },
+   {
+    "kind": "echo",
+    "q": 19,
+    "h": 25,
+    "axis": "X",
+    "t1": 19,
+    "t2": 30,
+    "rst": 32
+   },
+   {
+    "kind": "echo",
+    "q": 0,
+    "h": 6,
+    "axis": "X",
+    "t1": 7,
+    "t2": 10
+   },
+   {
+    "kind": "pair",
+    "a": 1,
+    "b": 7,
+    "t": 35,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pguard",
+    "q": 16,
+    "d": 10
+   },
+   {
+    "kind": "pairR",
+    "a": 14,
+    "b": 20,
+    "t": 40
+   },
+   {
+    "kind": "pairR",
+    "a": 14,
+    "b": 15,
+    "t": 26
+   },
+   {
+    "kind": "pairR",
+    "a": 13,
+    "b": 14,
+    "t": 21
+   },
+   {
+    "kind": "pair",
+    "a": 14,
+    "b": 15,
+    "t": 23,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pairR",
+    "a": 10,
+    "b": 11,
+    "t": 30
+   },
+   {
+    "kind": "pair",
+    "a": 14,
+    "b": 20,
+    "t": 19,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 26,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 20,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 22,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 3,
+    "b": 4,
+    "t": 24,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 0,
+    "b": 6,
+    "t": 35,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 0,
+    "b": 6,
+    "t": 37,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 4,
+    "b": 5,
+    "t": 14,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "dead",
+     "dead"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 9,
+    "b": 10,
+    "t": 26,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 9,
+    "b": 10,
+    "t": 24,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 15,
+    "b": 16,
+    "t": 15,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "dead",
+     "dead"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 9,
+    "b": 10,
+    "t": 21,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 6,
+    "b": 7,
+    "t": 21,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 0,
+    "b": 6,
+    "t": 15,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 4,
+    "b": 10,
+    "t": 10,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 20,
+    "b": 21,
+    "t": 26,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 20,
+    "b": 21,
+    "t": 24,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   {
+    "kind": "pair",
+    "a": 20,
+    "b": 21,
+    "t": 22,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   }
+  ],
+  "extensions": [
+   "ext_pre_13_h12_6",
+   "ext_pre_15_h16_10"
+  ]
+ },
+ "allorders": 3.988419278941466e-05,
+ "allorders_acceptance": 0.5071047963871367,
+ "precell": {
+  "removed": [
+   "RX q6 @32",
+   "CX 6->0 @33,39",
+   "CX 0->6 @35-38",
+   "MX q6 @40 (c273) + DETECTOR",
+   "R q6 @41",
+   "CX 1->7 @35,36",
+   "CX 14->20 @35",
+   "MX q14 @36",
+   "RX q14 @37",
+   "CX 20->21 @34"
+  ],
+  "added": [
+   "R q6 @31",
+   "CX 6->7 @32,34,35,36,37,38,39,40,41",
+   "CX 6->0 @33",
+   "CX 1->0 @35,36",
+   "CX 14->20 @36",
+   "MX q14 @37 -> c12 (A |+> init)",
+   "CX 20->21 @35"
+  ]
+ }
+}
