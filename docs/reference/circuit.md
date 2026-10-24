@@ -26,6 +26,8 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Exact 2nd + 3rd order with sensitivities**: `work/lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`
   (loss by fault pair, per-channel gradients). Converges slowly below acceptance ≈ 0.5; use all orders to rank.
 - **3-seed official MC**: `work/lanes/MAIN/spec/mc3.py <stem>`; one seed hides ≈ 1%.
+- **Per-channel counterfactuals** (which noise matters, all orders): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python adjoint_ablation.py ../<stem> 72`
+  (~2 min; each channel made perfect in turn, values overlap, not additive; reviewer 8's tool).
 - **Speed**: `work/lanes/XTIM/speed_predict.py <stem>` (seconds per 1e6 shots; > 20 s is refused by promote.sh).
 
 ## Search machinery in the lanes

@@ -1,0 +1,905 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "R": 44,
+  "cx": 207,
+  "native_depth": 47,
+  "source": "FRESH/guard5_timing_0_a_decode on SEPBC guard5 lineage",
+  "method": "Time-aware rank-four CSS A synthesis with all source checks; exact-loss retiming; q16 known-X check where recorded",
+  "roles": {
+    "data": [
+      0,
+      20,
+      7,
+      10,
+      3,
+      22,
+      21
+    ],
+    "A": [
+      1,
+      14,
+      8,
+      9,
+      2,
+      16,
+      15
+    ],
+    "B": [
+      6,
+      26,
+      13,
+      11,
+      4,
+      23,
+      27
+    ],
+    "C": [
+      12,
+      25,
+      19,
+      17,
+      5,
+      29,
+      28
+    ]
+  },
+  "resource_schedule": [
+    {
+      "t": 25,
+      "lines": [
+        "reset q[13];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "h q[26];",
+        "measure q[26] -> c[256];",
+        "h q[26];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "measure q[23] -> c[257];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "measure q[27] -> c[258];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "h q[17];",
+        "measure q[17] -> c[260];",
+        "h q[17];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "measure q[29] -> c[261];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "h q[28];",
+        "measure q[28] -> c[262];",
+        "h q[28];"
+      ]
+    },
+    {
+      "t": 33,
+      "lines": [
+        "measure q[11] -> c[269];"
+      ]
+    },
+    {
+      "t": 33,
+      "lines": [
+        "measure q[25] -> c[259];"
+      ]
+    },
+    {
+      "t": 33,
+      "lines": [
+        "reset q[19];"
+      ]
+    },
+    {
+      "t": 33,
+      "lines": [
+        "cx q[26],q[27];"
+      ]
+    },
+    {
+      "t": 33,
+      "lines": [
+        "cx q[17],q[23];"
+      ]
+    },
+    {
+      "t": 33,
+      "lines": [
+        "cx q[28],q[29];"
+      ]
+    },
+    {
+      "t": 34,
+      "lines": [
+        "cx q[13],q[19];"
+      ]
+    },
+    {
+      "t": 34,
+      "lines": [
+        "cx q[27],q[28];"
+      ]
+    },
+    {
+      "t": 34,
+      "lines": [
+        "cx q[29],q[23];"
+      ]
+    },
+    {
+      "t": 34,
+      "lines": [
+        "cx q[17],q[11];"
+      ]
+    },
+    {
+      "t": 34,
+      "lines": [
+        "cx q[26],q[25];"
+      ]
+    },
+    {
+      "t": 35,
+      "lines": [
+        "measure q[5] -> c[270];"
+      ]
+    },
+    {
+      "t": 35,
+      "lines": [
+        "cx q[11],q[17];"
+      ]
+    },
+    {
+      "t": 35,
+      "lines": [
+        "cx q[25],q[19];"
+      ]
+    },
+    {
+      "t": 35,
+      "lines": [
+        "cx q[23],q[29];"
+      ]
+    },
+    {
+      "t": 35,
+      "lines": [
+        "cx q[28],q[27];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "reset q[4];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "cx q[11],q[5];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "cx q[23],q[17];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "cx q[29],q[28];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "cx q[27],q[26];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "cx q[19],q[25];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "measure q[13] -> c[263];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "measure q[12] -> c[271];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "cx q[5],q[4];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "cx q[29],q[23];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "cx q[17],q[11];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "cx q[19],q[13];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "cx q[26],q[25];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "cx q[28],q[27];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[26],q[27];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[25],q[19];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[28],q[29];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[5],q[11];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[23],q[17];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[13],q[12];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[17],q[23];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[27],q[28];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[11],q[5];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[19],q[13];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[26],q[25];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[25],q[19];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[29],q[23];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[17],q[11];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[28],q[27];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[13],q[12];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[4],q[5];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "reset q[6];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "cx q[26],q[27];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "cx q[28],q[29];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "cx q[23],q[17];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "cx q[12],q[13];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "cx q[19],q[25];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[11],q[5];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[13],q[19];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[25],q[26];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[27],q[28];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[12],q[6];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[29],q[23];"
+      ]
+    },
+    {
+      "t": 43,
+      "lines": [
+        "cx q[26],q[27];"
+      ]
+    },
+    {
+      "t": 43,
+      "lines": [
+        "cx q[28],q[29];"
+      ]
+    },
+    {
+      "t": 43,
+      "lines": [
+        "cx q[5],q[11];"
+      ]
+    },
+    {
+      "t": 43,
+      "lines": [
+        "cx q[23],q[17];"
+      ]
+    },
+    {
+      "t": 43,
+      "lines": [
+        "cx q[12],q[13];"
+      ]
+    },
+    {
+      "t": 43,
+      "lines": [
+        "cx q[19],q[25];"
+      ]
+    }
+  ],
+  "resource_contract": "Correlated rank-three B/C resource; native measured-initialization frames are specified by the QASM detector parities.",
+  "final_role_geometry_changed": false,
+  "construction_receipt": "checked16_timing_0.plan.json",
+  "qasm_sha256": "ada597a7b99e68cd60a2958e7e8f3db0c18436ef56be371b695a3d2c911ff9f4",
+  "input_source_qasm_sha256": "6fa49e2886b35778394ac499ddd45aca1a7f127bc2953a78c50dff0c7df2b73c",
+  "ported_edits": [
+    "instrument",
+    "copy4",
+    "edge14",
+    "mz11",
+    "mz5",
+    "mz12"
+  ],
+  "wait_guards": [
+    {
+      "t": 15,
+      "lines": [
+        "reset q[19];"
+      ]
+    },
+    {
+      "t": 17,
+      "lines": [
+        "reset q[5];"
+      ]
+    },
+    {
+      "t": 18,
+      "lines": [
+        "cx q[20],q[19];"
+      ]
+    },
+    {
+      "t": 18,
+      "lines": [
+        "reset q[11];"
+      ]
+    },
+    {
+      "t": 18,
+      "lines": [
+        "cx q[4],q[5];"
+      ]
+    },
+    {
+      "t": 19,
+      "lines": [
+        "reset q[13];"
+      ]
+    },
+    {
+      "t": 19,
+      "lines": [
+        "cx q[10],q[11];"
+      ]
+    },
+    {
+      "t": 20,
+      "lines": [
+        "cx q[7],q[13];"
+      ]
+    },
+    {
+      "t": 23,
+      "lines": [
+        "cx q[7],q[13];"
+      ]
+    },
+    {
+      "t": 24,
+      "lines": [
+        "measure q[13] -> c[275];"
+      ]
+    },
+    {
+      "t": 28,
+      "lines": [
+        "cx q[10],q[11];"
+      ]
+    },
+    {
+      "t": 29,
+      "lines": [
+        "measure q[11] -> c[276];"
+      ]
+    },
+    {
+      "t": 31,
+      "lines": [
+        "cx q[20],q[19];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "cx q[4],q[5];"
+      ]
+    },
+    {
+      "t": 32,
+      "lines": [
+        "measure q[19] -> c[274];"
+      ]
+    },
+    {
+      "t": 33,
+      "lines": [
+        "measure q[5] -> c[277];"
+      ]
+    },
+    {
+      "t": 34,
+      "lines": [
+        "reset q[6];",
+        "h q[6];"
+      ]
+    },
+    {
+      "t": 35,
+      "lines": [
+        "cx q[6],q[0];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[6],q[0];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "h q[6];",
+        "measure q[6] -> c[273];",
+        "h q[6];"
+      ]
+    }
+  ],
+  "variant": "SEPBC A partial decoder",
+  "CX": 207,
+  "decoder": {
+    "gates": [
+      [
+        9,
+        15,
+        44
+      ],
+      [
+        8,
+        9,
+        45
+      ]
+    ],
+    "flag_record": 16,
+    "flag_measurement_t": 46
+  },
+  "encoder_recipe": {
+    "mode": 2,
+    "R": 44,
+    "cx": 12,
+    "pivots": [
+      14,
+      8,
+      9,
+      16
+    ],
+    "ops": [
+      [
+        37,
+        8,
+        2
+      ],
+      [
+        38,
+        14,
+        8
+      ],
+      [
+        38,
+        2,
+        1
+      ],
+      [
+        39,
+        1,
+        2
+      ],
+      [
+        39,
+        9,
+        8
+      ],
+      [
+        40,
+        8,
+        2
+      ],
+      [
+        40,
+        9,
+        15
+      ],
+      [
+        41,
+        8,
+        9
+      ],
+      [
+        41,
+        16,
+        15
+      ],
+      [
+        42,
+        9,
+        8
+      ],
+      [
+        42,
+        15,
+        14
+      ],
+      [
+        43,
+        14,
+        8
+      ]
+    ]
+  },
+  "A_schedule": [
+    {
+      "t": 35,
+      "lines": [
+        "measure q[8] -> c[54];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "reset q[8];",
+        "h q[8];"
+      ]
+    },
+    {
+      "t": 36,
+      "lines": [
+        "reset q[2];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "reset q[14];",
+        "h q[14];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "cx q[8],q[2];"
+      ]
+    },
+    {
+      "t": 37,
+      "lines": [
+        "measure q[16] -> c[55];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "reset q[9];",
+        "h q[9];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[2],q[1];"
+      ]
+    },
+    {
+      "t": 38,
+      "lines": [
+        "cx q[14],q[8];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "reset q[16];",
+        "h q[16];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[1],q[2];"
+      ]
+    },
+    {
+      "t": 39,
+      "lines": [
+        "cx q[9],q[8];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "h q[16];",
+        "measure q[16] -> c[278];",
+        "h q[16];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[8],q[2];"
+      ]
+    },
+    {
+      "t": 40,
+      "lines": [
+        "cx q[9],q[15];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "cx q[8],q[9];"
+      ]
+    },
+    {
+      "t": 41,
+      "lines": [
+        "cx q[16],q[15];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[9],q[8];"
+      ]
+    },
+    {
+      "t": 42,
+      "lines": [
+        "cx q[15],q[14];"
+      ]
+    },
+    {
+      "t": 43,
+      "lines": [
+        "cx q[14],q[8];"
+      ]
+    }
+  ],
+  "D_A_times": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "t": 44
+    },
+    {
+      "pair": [
+        20,
+        14
+      ],
+      "t": 44
+    },
+    {
+      "pair": [
+        7,
+        8
+      ],
+      "t": 44
+    },
+    {
+      "pair": [
+        10,
+        9
+      ],
+      "t": 43
+    },
+    {
+      "pair": [
+        3,
+        2
+      ],
+      "t": 44
+    },
+    {
+      "pair": [
+        22,
+        16
+      ],
+      "t": 44
+    },
+    {
+      "pair": [
+        21,
+        15
+      ],
+      "t": 43
+    }
+  ],
+  "all_source_checks_retained": true,
+  "review_annotation_transform": "All 68 deterministic zero-reference conditions explicitly represented as POSTSELECT(0)",
+  "physically_equivalent_base_sha256": "8faa1fa93b210c16c5dd9ec2fb8b31057c036f6ec657a33f56c9defda65795cf"
+}
