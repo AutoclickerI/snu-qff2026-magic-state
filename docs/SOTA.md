@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36b_r580**, server 1-F = 3.87794862201698e-5
-(= local seed-0, key 3.88e-5), acceptance 0.50142, 211 CX, submitted 2026-10-25 03:37:45 KST
-(`work/receipts/seq_v36b_r580.txt`; best seed-0 re-draw of `work/lanes/MAIN/v36b`, all-orders 4.12933e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36c_h2505_r4508**, server 1-F = 3.84301781447612e-5
+(= local seed-0, key 3.84e-5), acceptance 0.50273, 213 CX, submitted 2026-10-25 05:38:01 KST
+(`work/receipts/seq_v36c_h2505_r4508.txt`; best of 6,526 raced seed-0 draws of `work/lanes/MAIN/v36c`, all-orders 4.11516e-5).
 
 Best competitor: Placeholder 4.984e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 00:51 KST; 5.058e-5 at 2026-10-24
-21:58). Board read 2026-10-25 04:52 KST (our 04:37 entry v36c_h2504_r1225 scored 3.87557e-5, same key, so the board keeps v36b_r580); refresh with `work/submit.py board`.
+21:58). Board read 2026-10-25 05:45 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git show b2a5243:<path>` for the lanes removed at 04:10 on 2026-10-25, `git show a58eca7:<path>` for `work/candidates/` and earlier removals.
@@ -44,6 +44,7 @@ Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git sho
 | v35b: v35a + ST2's knapsack (two echoes funded by init changes; re-draw r1007) | server | 4.12926e-5, 210 CX (all-orders 4.37602e-5) | `work/submissions/v35b_r1007.*`, `work/lanes/ST2/REPORT.md` |
 | v36a: SEPBC `checked16_timing_0` (12-CX release-aware A encoder, A decoder, q16 known-X check; re-draw r665) | server | 3.90052e-5, 207 CX (all-orders 4.14605e-5) | `work/submissions/v36a_r665.*`, `work/lanes/SEPBC/REPORT.md` |
 | v36b: FRESH `r35/sepbc_reset_40_41_42` (v36a + timing, echo and reset trades; re-draw r580) | server | 3.87795e-5, 211 CX (all-orders 4.12933e-5) | `work/submissions/v36b_r580.*`, `work/lanes/MAIN/v36b.*` |
+| v36c: ST2 population edits on v36b (raced re-draw h2505_r4508) | server | 3.84302e-5, 213 CX (all-orders 4.11516e-5) | `work/submissions/v36c_h2505_r4508.*`, `work/lanes/MAIN/v36c.*` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
