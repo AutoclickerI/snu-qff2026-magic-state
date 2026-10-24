@@ -2,7 +2,8 @@
 
 ## Status (2026-10-24 20:25 KST)
 - Board: Placeholder 5.166e-5 (195 CX); us 6.32297e-5 = v25k_r262 (rank 2). v26n_r115 (seed-0 6.18621e-5; 120 re-draws
-  mean 6.5202e-5) goes in at 20:37; v29c (ST1 combined, 3-seed mean 6.3451e-5, best true mean) in re-draws for 21:37.
+  mean 6.5202e-5) goes in at 20:37. v30f (FRESH's correlated rank-3 B/C, 189 CX, 3-seed mean 5.8944e-5, acceptance 0.5275)
+  is the new base and in re-draws for 21:37 (v29c's 189 draws: mean 6.3468e-5, min 6.11141e-5, superseded).
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
@@ -19,10 +20,10 @@ small grid-native block preps; every earlier closure of it was model-bound.
 |---|---|---|---|---|---|---|
 | 1 | P71 | G1 | ENDSTATE: encoder library and end-state witness done (FINDINGS); now time-indexed prefix-compatible end-states (prefix symmetries, preps on cells free at that time, just in time), earliest R then least exposure, complete circuits priced | complete circuits with loss split; below 5e-5 or the mechanism that stops it | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, zebra) | active |
 | 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
-| 3 | P72 | G1 | FRESH: independent from-scratch redesign team; every inherited choice open | a verified grid circuit below 5e-5 true, or designs closed by mechanism | Codex lane FRESH (`work/lanes/FRESH`, zebra, sunfish) | active |
+| 3 | P72 | G1 | FRESH: delivered v30f (correlated rank-3 B/C); now an earlier round (R ≤ 40) with that resource prepared during the prefix, no unchecked B wait | a verified grid circuit below 5e-5 true, or designs closed by mechanism | Codex lane FRESH (`work/lanes/FRESH`, zebra, sunfish) | active |
 | 4 | P69 | G1 | SEPBC: delivered v28s; stationary separate B/C proved impossible (FINDINGS). Now (a) its free q5 detector on v29c, (b) the reusable emitter that attaches ENDSTATE end-states to the real prefix, priced with a loss split | (a) priced; (b) every ENDSTATE end-state priced | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
 | 5 | P67 | G1 | ST2: composition of verified edits (exchange4, v26n's edits, BCFB/BCPOL preps) and population search on the v25k lineage; feeds the hourly slots until the redesign lands | compositions MC-verified | Codex lane ST2 (`work/lanes/ST2`, sunfish, zebra) | active |
-| 5 | P73 | G1 | COMP29: port the verified local edits (v26n readout copy, LNS2/ST2 speed-safe edits, ST1 feedback timing, BCFB preps, SEPBC q5) onto v29c and price every combination | a v29c-lineage finalist below v29c by all-orders or 3-seed mean | Codex lane COMP29 (`work/lanes/COMP29`, jerry, owl) | active |
+| 5 | P73 | G1 | COMP29: port the v23h→v29c local edits (blue XZ check, exchange, instrument, readout copy, LNS2/ST2 edits, timing feedback, known-zero detectors) onto v30f and price every combination | a v30f-lineage finalist below v30f by 3-seed mean | Codex lane COMP29 (`work/lanes/COMP29`, jerry, owl) | active |
 | 6 | P59 | G1 | BCFB: port its best clean B+C preps into v25k/v26n and re-run the exact feedback search in situ | a v25k-lineage circuit below v27x by re-draws | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
 | 7 | P62 | G1 | BCPOL: B+C contract relaxations (partial clean, joint prep+check endpoints, C6, boundary cache), priced in v23h_c2c9 and v25k | each relaxation priced with its mechanism; C6 feeds ENDSTATE | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
 | 8 | P70 | G2 | XTIM: the trigger of xtim's per-shot slow path, a fast speed predictor, physics-preserving rewrites (q8's −1.2% on v26n) | rule + validated `work/lanes/XTIM/speed_predict.py` | Codex lane XTIM (`work/lanes/XTIM`, zebra) | active |
