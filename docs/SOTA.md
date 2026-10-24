@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v23h_c2c9**, server 1-F = 6.7533721897002e-5
-(bit-identical to `fast_check`), acceptance 0.5410, 203 CX, submitted 2026-10-24 18:01:47 KST, scored in 353 s
-(`work/receipts/submit_v23h_c2c9_r290.log`; re-draw r290 of `work/lanes/MAIN/v23h_c2c9`, 320 re-draws mean 7.0272e-5).
+Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v25k**, server 1-F = 6.32296985810793e-5
+(bit-identical to `fast_check`), acceptance 0.5106, 215 CX, submitted 2026-10-24 19:36:42 KST, scored in 241 s
+(`work/receipts/promote_v25k.log`; re-draw r262 of `work/lanes/MAIN/v25k`, 300 re-draws mean 6.5912e-5).
 
-Best competitor: Placeholder 5.335e-5, 187 CX, acceptance 0.531 (submitted 2026-10-24 18:34 KST; 5.612e-5 at 16:02,
-5.621e-5 at 14:33, 5.727e-5 at 13:32). Board read 2026-10-24 19:25 KST; refresh with `work/submit.py board`.
+Best competitor: Placeholder 5.166e-5, 195 CX, acceptance 0.524 (submitted 2026-10-24 19:34 KST; 5.335e-5 at 18:34,
+5.612e-5 at 16:02, 5.727e-5 at 13:32). Board read 2026-10-24 19:45 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -34,6 +34,7 @@ Best competitor: Placeholder 5.335e-5, 187 CX, acceptance 0.531 (submitted 2026-
 | v20: v18 + q10 \|+⟩ reuse + third-order-checked timing, round at 45 (TREP2 reuse19_tuned, re-draw r126) | server | 7.14115e-5, 203 CX (290 re-draws 7.430e-5) | `work/submissions/v20_r126.*`, `work/receipts/seq_v20_r126.txt`, `work/lanes/TREP2/REPORT.md` |
 | v22: v20 + HOPS hop_early (earlier final pre-stage CXs and transfer chain, watched sources) + MX checks after the RX init of q2, q9 (re-draw r155) | server | 6.95468e-5, 203 CX (380 re-draws 7.2405e-5) | `work/submissions/v22_r155.*`, `work/lanes/MAIN/v22h_c2c9.*` |
 | v23h_c2c9: BCSYN2's fb_s401_0035 B+C prep + HOPS hop_early + ACHECK MX checks on q2, q9 (re-draw r290) | server | 6.75337e-5, 203 CX (320 re-draws 7.0272e-5) | `work/submissions/v23h_c2c9_r290.*`, `work/lanes/MAIN/v23h_c2c9.*` |
+| v25k: v23h_c2c9 + PRESYN's blue XZ check + q19 reset+H + KNAP timing/check pack (re-draw r262) | server | 6.32297e-5, 215 CX (300 re-draws 6.5912e-5) | `work/submissions/v25k_r262.*`, `work/lanes/MAIN/v25k.*`, `work/lanes/KNAP/REPORT.md` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
