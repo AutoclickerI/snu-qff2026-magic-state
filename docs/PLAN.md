@@ -27,10 +27,9 @@ small grid-native block preps; every earlier closure of it was model-bound.
 | 6 | P59 | G1 | BCFB: port its best clean B+C preps into v25k/v26n and re-run the exact feedback search in situ | a v25k-lineage circuit below v27x by re-draws | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
 | 7 | P62 | G1 | BCPOL: B+C contract relaxations (partial clean, joint prep+check endpoints, C6, boundary cache), priced in v23h_c2c9 and v25k | each relaxation priced with its mechanism; C6 feeds ENDSTATE | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
 | 8 | P70 | G2 | XTIM: the trigger of xtim's per-shot slow path, a fast speed predictor, physics-preserving rewrites (q8's −1.2% on v26n) | rule + validated `work/lanes/XTIM/speed_predict.py` | Codex lane XTIM (`work/lanes/XTIM`, zebra) | active |
-| 9 | P61 | G2 | WALSH: all-orders evaluator with wider scope than the reviewer's (width > 23 for blue circuits) | validated `work/lanes/WALSH/allorders.py` | Codex lane WALSH (`work/lanes/WALSH`, zebra, sunfish) | active |
 | 10 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
 | 11 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (kept running by Jihoon's answer, no new result since 02:05) | active |
-Done today (FINDINGS): KNAP (v25k), LNS2 (v26n), LADDER, BIRD, GAP, LNS (stopped), and the closed lanes listed there.
+Done today (FINDINGS): KNAP (v25k), LNS2 (v26n), LADDER, BIRD, GAP, XTIM, WALSH (`work/lanes/WALSH/allorders.py`), LNS (stopped), and the closed lanes listed there.
 
 ## Parked ideas (from the earlier idea and reviewer 1–2 reviews; outcomes of the rest are in FINDINGS)
 - One flag qubit (CX f→q twice, read X) on the A encoder's window where its 8 dangerous single faults sit (inferred
@@ -44,7 +43,6 @@ The reviewer's zip (QASMs, scripts) is behind a chatgpt.com library link we cann
 |---|---|---|---|
 | 1 | Copy the last C readouts onto fresh helpers, detect disagreement (+3 CX, same depth) | **reproduced** by exact2: v23h_c2c9 + copy4 6.87707e-5 (−0.65%), exp(-A1) 0.535, 3.6 s per 1e6 | P60 |
 | 2 | Helper-verified init, helper measured in the same tick as the qubit's first op | **reproduced** on v22 by exact2: init6 7.00021e-5 (−1.83%), copy4 + init6 6.95552e-5 (−2.46%), exp(-A1) 0.523, 2.7 s per 1e6; port to v23's MX-init prep pending | P60 |
-| 3 | All-orders Walsh-contraction evaluator (~4 min) | reviewer's values match our re-draw means: v22 7.2365e-5 vs 7.2405±0.006e-5, v23h_c2c9 7.0262e-5 vs 7.0298±0.007e-5 | P61 |
 | 4 | 128 partial clean policies between base and clean | valid: BCSYN2's `Model.cut` forces s_B = 0 when d = 0 | P62 |
 | 5 | Synthesize prep + B→C check as one; C's endpoint uniform over U ⊆ S (16 endpoints) | valid relaxation, unpriced | P62 |
 | 6 | C6: drop one C qubit (W_i = S + e_i), 6-CX C6 encoder | frees one cell on an area-bound grid; unpriced | P62 |
