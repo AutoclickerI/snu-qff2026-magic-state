@@ -8,7 +8,8 @@
   acceptance 0.50273**, 213 CX, R44, 47 ticks, FAST (structure: reference/circuit.md).
 - Where the loss sits (FINDINGS "Where v36's loss sits"): the round ≈ 80% (final data idle, B→D CX), then the B/C
   resource, waiting data, prefix, A, readout. Proved floor 1.162e-5; any Steane-type round pays ≈ 2.884e-5 on the data
-  side, so below ≈ 3.5e-5 needs a different final round (P77) or an earlier one (P76).
+  side. With v36c's prefix and data wait made noiseless the loss is still 3.497e-5: prefix and waiting work is capped
+  at 6.18e-6, the rest needs a different suffix or final check (P77, P76).
 - **Codex is down** (429, ~6-day retry, from 2026-10-25 02:26 KST). Workers are Claude subagents (R-20261025-1); their
   dirs are `work/lanes/<LANE>` and they report to the main session, which verifies and promotes.
 
@@ -23,16 +24,15 @@ Draw cost: racing (P78) cuts the full-run cost per useful draw ≈ 5.8×.
 |---|---|---|---|---|---|---|
 | 1 | P77 | G1, G3 | Final round redesigned backward (reviewer 8 #10): terminal templates screened by an optimistic relaxation, survivors built into v36c; partial-rank syndrome extraction with frames (reviewer 9 M08, 2,825 subspaces); evaluator extended to FRAME/POSTSELECT where a template needs it | a template that beats the Steane round's data-side cost, built, or each template closed with its screen value | TERM (Claude, `work/lanes/TERM`) | active |
 | 2 | P75 | G1, G3 | Integration on v36c: acceptance-only trades re-derived on v36c, then a knapsack (Δloss vs Δlog-acceptance with measured pair interactions) over every lane's v36c deltas (WAITPROT menu, COMP29, BCFB, FRESH, ST2), each conjunction re-priced by all orders | a finalist below v36c each time a lane delivers | INTEG (Claude, `work/lanes/INTEG`) | active |
-| 3 | P76 | G1 | Earlier round: below R44 needs the prefix, data placement, A encoder and flag co-synthesized (FINDINGS "Earlier round"); ENDSTATE's R38 geometry reached 4.986e-5 without the v36 gadgets, and the A decoder did not help there | a circuit below v36c with R ≤ 42 | EARLY (Claude, `work/lanes/EARLY`) | active |
-| 4 | P80 | G1 | Rank-4 14-T phase network in the injection (reviewer 9 M01): encoder, parity network, helpers, records and releases co-synthesized, then the rest of v36c re-timed to the earlier release | a full circuit priced by all orders against v36c | T14 (Claude, `work/lanes/T14`) | active |
-| 5 | P79 | G1 | Fresh-eyes structural review: list v36c's design assumptions tick by tick, break each with an optimistic ideal-noise or ideal-meter screen, build ideas bounded above 0.5% that no lane owns | ranked idea table with bounds, finalists | IDEAS (Claude, `work/lanes/IDEAS`) | active |
-| 6 | P67 | G1 | Population search with all-orders fitness under the acceptance floor (g05 → v36c, −0.34%) | a finalist below v36c | ST2 script `pop36_search.py zebra3` (no agent) | active |
-| 7 | P78 | G1 | Racing re-draws (`work/race.py`) in the hourly loop | draws per CPU-hour measured in production | main session | active |
-| 8 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
-| 9 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
-| 10 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03): Pareto by flag-blind vs flag-detected danger, no c1/p30 pruning, against v36c's releases | v36c encoder deltas | next free worker (BCFB code on disk) | next |
-| 11 | P73 | G1 | Mid-preparation B flag (ideal meter priced first), a second A flag | v36c deltas | next free worker (COMP29 code on disk) | next |
-| 12 | P81 | G2 | Delete the untracked bulk of BCFB, COMP29, FRESH, SEPBC, WAITPROT, ST2 and their stale tracked files (essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: INTEG (P75) and ST2's search (P67) still read these files |
+| 3 | P76 | G1 | Earlier round: below R44 needs the prefix, data placement, A encoder and flag co-synthesized (FINDINGS "Earlier round"); with v36c's suffix the data sit in place from ~tick 35 and prefix/wait gains are capped at 6.18e-6, so the suffix placement must change too; ENDSTATE's R38 geometry reached 4.986e-5 without the v36 gadgets, and the A decoder did not help there | a circuit below v36c with R ≤ 42 | EARLY (Claude, `work/lanes/EARLY`) | active |
+| 4 | P79 | G1 | Fresh-eyes structural review: list v36c's design assumptions tick by tick, break each with an optimistic ideal-noise or ideal-meter screen, build ideas bounded above 0.5% that no lane owns | ranked idea table with bounds, finalists | IDEAS (Claude, `work/lanes/IDEAS`) | active |
+| 5 | P67 | G1 | Population search with all-orders fitness under the acceptance floor (g05 → v36c, −0.34%) | a finalist below v36c | ST2 script `pop36_search.py zebra3` (no agent) | active |
+| 6 | P78 | G1 | Racing re-draws (`work/race.py`) in the hourly loop | draws per CPU-hour measured in production | main session | active |
+| 7 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 8 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits (q8 reuse after the flag: R44→43, +0.009 acceptance; data SX layer) | FAST deltas on v36c | next free worker (FRESH code on disk) | next |
+| 9 | P59 | G1 | Flag-conditioned A-encoder synthesis (reviewer 7 M01/M03): Pareto by flag-blind vs flag-detected danger, no c1/p30 pruning, against v36c's releases | v36c encoder deltas | next free worker (BCFB code on disk) | next |
+| 10 | P73 | G1 | Mid-preparation B flag (ideal meter priced first), a second A flag | v36c deltas | next free worker (COMP29 code on disk) | next |
+| 11 | P81 | G2 | Delete the untracked bulk of BCFB, COMP29, FRESH, SEPBC, WAITPROT, ST2 and their stale tracked files (essentials in `b2a5243`; locally hidden by `.git/info/exclude`) | only what future search needs is left | main session | parked: INTEG (P75) and ST2's search (P67) still read these files |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair

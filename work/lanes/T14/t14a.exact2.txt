@@ -1,0 +1,40 @@
+circuit t14a.qasm: 339 noise channels, 2533 faults, 409 (s,d) classes, rotation rank 4, 35 detectors, noiseless acceptance 1.000000
+first order : c1 p = 3.4787e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.54528e-04   (pairs 1.54528e-04 + same-channel normalisation 1.066e-22)
+1-F (2nd order) = 1.54528e-04
+acceptance: first order 0.63372, second order 0.70134; exp(-A1) = 0.69331  (A1 = 0.36628)
+time: model+singles 2.0s, pairs 2.9s
+
+top 30 fault pairs by contribution to 1-F (each pair counted once):
+  2.984e-06 ( 1.93%)  n_ij=1.000  L28 flip Z@q9 t=2   +   L124 idle Z@q0 t=20..28
+  2.984e-06 ( 1.93%)  n_ij=1.000  L24 flip Z@q14 t=1   +   L128 idle Z@q3 t=20..28
+  2.980e-06 ( 1.93%)  n_ij=1.000  L31 idle Z@q14 t=3..5   +   L128 idle Z@q3 t=20..28
+  1.331e-06 ( 0.86%)  n_ij=1.000  L28 flip Z@q9 t=2   +   L35 idle Z@q1 t=4..7
+  1.331e-06 ( 0.86%)  n_ij=1.000  L28 flip Z@q9 t=2   +   L185 idle Z@q1 t=25..28
+  1.000e-06 ( 0.65%)  n_ij=1.000  L20 flip Z@q8 t=0   +   L28 flip Z@q9 t=2
+  1.000e-06 ( 0.65%)  n_ij=1.000  L28 flip Z@q9 t=2   +   L152 flip Z@q8 t=21
+  1.000e-06 ( 0.65%)  n_ij=1.000  L28 flip Z@q9 t=2   +   L278 flip Z@q6 t=31
+  1.000e-06 ( 0.65%)  n_ij=1.000  L24 flip Z@q14 t=1   +   L290 flip Z@q4 t=31
+  9.987e-07 ( 0.65%)  n_ij=1.000  L28 flip Z@q9 t=2   +   L77 idle Z@q1 t=15..17
+  9.987e-07 ( 0.65%)  n_ij=1.000  L24 flip Z@q14 t=1   +   L41 idle Z@q2 t=5..7
+  9.987e-07 ( 0.65%)  n_ij=1.000  L24 flip Z@q14 t=1   +   L62 idle Z@q2 t=11..13
+  9.987e-07 ( 0.65%)  n_ij=1.000  L24 flip Z@q14 t=1   +   L197 idle Z@q2 t=26..28
+  9.987e-07 ( 0.65%)  n_ij=1.000  L24 flip Z@q14 t=1   +   L196 idle Z@q4 t=26..28
+  9.987e-07 ( 0.65%)  n_ij=1.000  L31 idle Z@q14 t=3..5   +   L290 flip Z@q4 t=31
+  9.973e-07 ( 0.65%)  n_ij=1.000  L31 idle Z@q14 t=3..5   +   L41 idle Z@q2 t=5..7
+  9.973e-07 ( 0.65%)  n_ij=1.000  L31 idle Z@q14 t=3..5   +   L62 idle Z@q2 t=11..13
+  9.973e-07 ( 0.65%)  n_ij=1.000  L31 idle Z@q14 t=3..5   +   L197 idle Z@q2 t=26..28
+  9.973e-07 ( 0.65%)  n_ij=1.000  L31 idle Z@q14 t=3..5   +   L196 idle Z@q4 t=26..28
+  9.947e-07 ( 0.64%)  n_ij=1.000  L70 gate1 Z@q15 t=12   +   L124 idle Z@q0 t=20..28
+  9.947e-07 ( 0.64%)  n_ij=1.000  L59 gate1 Z@q15 t=9   +   L128 idle Z@q3 t=20..28
+  9.947e-07 ( 0.64%)  n_ij=1.000  L81 gate1 Z@q8 t=15   +   L129 idle Z@q22 t=20..28
+  9.947e-07 ( 0.64%)  n_ij=1.000  L69 gate1 Z@q7 t=12   +   L125 idle Z@q20 t=20..28
+  9.947e-07 ( 0.64%)  n_ij=1.000  L82 gate1 Z@q9 t=15   +   L126 idle Z@q7 t=20..28
+  8.848e-07 ( 0.57%)  n_ij=1.000  L57 gate1 Z@q2 t=9   +   L127 idle Z@q10 t=20..27
+  8.848e-07 ( 0.57%)  n_ij=1.000  L58 gate1 Z@q9 t=9   +   L130 idle Z@q21 t=20..27
+  6.662e-07 ( 0.43%)  n_ij=1.000  L24 flip Z@q14 t=1   +   L157 idle Z@q4 t=23..24
+  6.653e-07 ( 0.43%)  n_ij=1.000  L31 idle Z@q14 t=3..5   +   L157 idle Z@q4 t=23..24
+  4.436e-07 ( 0.29%)  n_ij=1.000  L35 idle Z@q1 t=4..7   +   L70 gate1 Z@q15 t=12
+  4.436e-07 ( 0.29%)  n_ij=1.000  L70 gate1 Z@q15 t=12   +   L185 idle Z@q1 t=25..28
+
+loss by channel kind (each pair split half/half): {'flip': '2.348e-05', 'gate': '6.814e-05', 'idle': '6.291e-05'}
