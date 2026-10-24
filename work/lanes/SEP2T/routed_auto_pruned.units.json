@@ -1,0 +1,5505 @@
+[
+ {
+  "lines": [
+   "reset q[7];",
+   "h q[7];"
+  ],
+  "region": "pre",
+  "t": 0,
+  "qs": [
+   7
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[1];",
+   "h q[1];"
+  ],
+  "region": "pre",
+  "t": 1,
+  "qs": [
+   1
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "measure q[13] -> c[41];"
+  ],
+  "region": "pre",
+  "t": 1,
+  "qs": [
+   13
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "reset q[19];",
+   "h q[19];"
+  ],
+  "region": "pre",
+  "t": 1,
+  "qs": [
+   19
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "t q[7];"
+  ],
+  "region": "pre",
+  "t": 1,
+  "qs": [
+   7
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "reset q[3];",
+   "h q[3];"
+  ],
+  "region": "pre",
+  "t": 2,
+  "qs": [
+   3
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "measure q[9] -> c[40];"
+  ],
+  "region": "pre",
+  "t": 2,
+  "qs": [
+   9
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "cx q[1],q[7];"
+  ],
+  "region": "pre",
+  "t": 2,
+  "qs": [
+   1,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[19],q[13];"
+  ],
+  "region": "pre",
+  "t": 2,
+  "qs": [
+   13,
+   19
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "measure q[2] -> c[39];"
+  ],
+  "region": "pre",
+  "t": 3,
+  "qs": [
+   2
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "reset q[4];",
+   "h q[4];"
+  ],
+  "region": "pre",
+  "t": 3,
+  "qs": [
+   4
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[3],q[9];"
+  ],
+  "region": "pre",
+  "t": 3,
+  "qs": [
+   3,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[8];",
+   "h q[8];"
+  ],
+  "region": "pre",
+  "t": 3,
+  "qs": [
+   8
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[7],q[13];"
+  ],
+  "region": "pre",
+  "t": 3,
+  "qs": [
+   7,
+   13
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[2];"
+  ],
+  "region": "pre",
+  "t": 4,
+  "qs": [
+   1,
+   2
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[4],q[3];"
+  ],
+  "region": "pre",
+  "t": 4,
+  "qs": [
+   3,
+   4
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[7];"
+  ],
+  "region": "pre",
+  "t": 4,
+  "qs": [
+   7,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[0];",
+   "h q[0];"
+  ],
+  "region": "pre",
+  "t": 5,
+  "qs": [
+   0
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[3];"
+  ],
+  "region": "pre",
+  "t": 5,
+  "qs": [
+   2,
+   3
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[15];",
+   "h q[15];"
+  ],
+  "region": "pre",
+  "t": 5,
+  "qs": [
+   15
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[8];"
+  ],
+  "region": "pre",
+  "t": 5,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[0],q[1];"
+  ],
+  "region": "pre",
+  "t": 6,
+  "qs": [
+   0,
+   1
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[3],q[2];"
+  ],
+  "region": "pre",
+  "t": 6,
+  "qs": [
+   2,
+   3
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[9];"
+  ],
+  "region": "pre",
+  "t": 6,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[19];"
+  ],
+  "region": "pre",
+  "t": 7,
+  "qs": [
+   13,
+   19
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[7],q[1];"
+  ],
+  "region": "pre",
+  "t": 7,
+  "qs": [
+   1,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[3],q[4];"
+  ],
+  "region": "pre",
+  "t": 7,
+  "qs": [
+   3,
+   4
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[2];"
+  ],
+  "region": "pre",
+  "t": 7,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[15];"
+  ],
+  "region": "pre",
+  "t": 7,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[0];"
+  ],
+  "region": "pre",
+  "t": 8,
+  "qs": [
+   0,
+   1
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[3];"
+  ],
+  "region": "pre",
+  "t": 8,
+  "qs": [
+   2,
+   3
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[14];"
+  ],
+  "region": "pre",
+  "t": 8,
+  "qs": [
+   14
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[9];",
+   "h q[9];"
+  ],
+  "region": "pre",
+  "t": 8,
+  "qs": [
+   9
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[13];",
+   "h q[13];"
+  ],
+  "region": "pre",
+  "t": 8,
+  "qs": [
+   13
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[2];"
+  ],
+  "region": "pre",
+  "t": 9,
+  "qs": [
+   2
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "measure q[20] -> c[42];"
+  ],
+  "region": "pre",
+  "t": 9,
+  "qs": [
+   20
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "reset q[1];",
+   "h q[1];"
+  ],
+  "region": "pre",
+  "t": 9,
+  "qs": [
+   1
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[14];"
+  ],
+  "region": "pre",
+  "t": 9,
+  "qs": [
+   13,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[8];"
+  ],
+  "region": "pre",
+  "t": 9,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[10];"
+  ],
+  "region": "pre",
+  "t": 10,
+  "qs": [
+   10
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[1],q[2];"
+  ],
+  "region": "pre",
+  "t": 10,
+  "qs": [
+   1,
+   2
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[19],q[20];"
+  ],
+  "region": "pre",
+  "t": 10,
+  "qs": [
+   19,
+   20
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[3];"
+  ],
+  "region": "pre",
+  "t": 10,
+  "qs": [
+   3,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[8];"
+  ],
+  "region": "pre",
+  "t": 10,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[10];"
+  ],
+  "region": "pre",
+  "t": 11,
+  "qs": [
+   9,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[15];"
+  ],
+  "region": "pre",
+  "t": 11,
+  "qs": [
+   14,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[20],q[19];"
+  ],
+  "region": "pre",
+  "t": 11,
+  "qs": [
+   19,
+   20
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[8];"
+  ],
+  "region": "pre",
+  "t": 11,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[0];"
+  ],
+  "region": "pre",
+  "t": 12,
+  "qs": [
+   0,
+   1
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[3];"
+  ],
+  "region": "pre",
+  "t": 12,
+  "qs": [
+   2,
+   3
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[15];"
+  ],
+  "region": "pre",
+  "t": 12,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[20];"
+  ],
+  "region": "pre",
+  "t": 12,
+  "qs": [
+   14,
+   20
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[7];"
+  ],
+  "region": "pre",
+  "t": 12,
+  "qs": [
+   7,
+   13
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[7];"
+  ],
+  "region": "pre",
+  "t": 13,
+  "qs": [
+   1,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[3],q[9];"
+  ],
+  "region": "pre",
+  "t": 13,
+  "qs": [
+   3,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[14];"
+  ],
+  "region": "pre",
+  "t": 13,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[10],q[4];"
+  ],
+  "region": "pre",
+  "t": 14,
+  "qs": [
+   4,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[7],q[13];"
+  ],
+  "region": "pre",
+  "t": 14,
+  "qs": [
+   7,
+   13
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[9];"
+  ],
+  "region": "pre",
+  "t": 14,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[14];"
+  ],
+  "region": "pre",
+  "t": 14,
+  "qs": [
+   14,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[0],q[1];"
+  ],
+  "region": "pre",
+  "t": 14,
+  "qs": [
+   0,
+   1
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[3],q[2];"
+  ],
+  "region": "pre",
+  "t": 14,
+  "qs": [
+   2,
+   3
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[4],q[10];"
+  ],
+  "region": "pre",
+  "t": 15,
+  "qs": [
+   4,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[7],q[1];"
+  ],
+  "region": "pre",
+  "t": 15,
+  "qs": [
+   1,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[2];"
+  ],
+  "region": "pre",
+  "t": 15,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[9];"
+  ],
+  "region": "pre",
+  "t": 15,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[14];"
+  ],
+  "region": "pre",
+  "t": 15,
+  "qs": [
+   13,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[20],q[14];"
+  ],
+  "region": "pre",
+  "t": 16,
+  "qs": [
+   14,
+   20
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[2];"
+  ],
+  "region": "pre",
+  "t": 16,
+  "qs": [
+   1,
+   2
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[10];"
+  ],
+  "region": "pre",
+  "t": 16,
+  "qs": [
+   9,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "measure q[2] -> c[0];"
+  ],
+  "region": "pre",
+  "t": 17,
+  "qs": [
+   2
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[10] -> c[1];"
+  ],
+  "region": "pre",
+  "t": 17,
+  "qs": [
+   10
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[14] -> c[2];"
+  ],
+  "region": "pre",
+  "t": 17,
+  "qs": [
+   14
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "h q[1];",
+   "measure q[1] -> c[4];",
+   "h q[1];"
+  ],
+  "region": "pre",
+  "t": 17,
+  "qs": [
+   1
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[9];",
+   "measure q[9] -> c[5];",
+   "h q[9];"
+  ],
+  "region": "pre",
+  "t": 17,
+  "qs": [
+   9
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[10];",
+   "h q[10];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   10
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[9];",
+   "h q[9];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   9
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[2];",
+   "h q[2];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   2
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[1];",
+   "h q[1];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   1
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[14];",
+   "h q[14];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   14
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[6];",
+   "h q[6];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   6
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "t q[0];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   0
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "t q[7];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   7
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "t q[8];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   8
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "t q[20];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   20
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "t q[3];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   3
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "t q[4];"
+  ],
+  "region": "pre",
+  "t": 18,
+  "qs": [
+   4
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "cx q[6],q[0];"
+  ],
+  "region": "pre",
+  "t": 19,
+  "qs": [
+   0,
+   6
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[3];"
+  ],
+  "region": "pre",
+  "t": 19,
+  "qs": [
+   3,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[20];"
+  ],
+  "region": "pre",
+  "t": 19,
+  "qs": [
+   14,
+   20
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[8];"
+  ],
+  "region": "pre",
+  "t": 19,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[7];"
+  ],
+  "region": "pre",
+  "t": 19,
+  "qs": [
+   1,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[10],q[4];"
+  ],
+  "region": "pre",
+  "t": 19,
+  "qs": [
+   4,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "t q[15];"
+  ],
+  "region": "pre",
+  "t": 20,
+  "qs": [
+   15
+  ],
+  "name": "T"
+ },
+ {
+  "lines": [
+   "cx q[7],q[6];"
+  ],
+  "region": "pre",
+  "t": 20,
+  "qs": [
+   6,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[14];"
+  ],
+  "region": "pre",
+  "t": 20,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[10];"
+  ],
+  "region": "pre",
+  "t": 20,
+  "qs": [
+   9,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[7];"
+  ],
+  "region": "pre",
+  "t": 21,
+  "qs": [
+   7,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[15];"
+  ],
+  "region": "pre",
+  "t": 21,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[9];"
+  ],
+  "region": "pre",
+  "t": 22,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[8];",
+   "measure q[8] -> c[7];",
+   "h q[8];"
+  ],
+  "region": "pre",
+  "t": 23,
+  "qs": [
+   8
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[8];",
+   "h q[8];"
+  ],
+  "region": "pre",
+  "t": 24,
+  "qs": [
+   8
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[9];"
+  ],
+  "region": "pre",
+  "t": 25,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[10];"
+  ],
+  "region": "pre",
+  "t": 26,
+  "qs": [
+   9,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[7];"
+  ],
+  "region": "pre",
+  "t": 27,
+  "qs": [
+   7,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[3];"
+  ],
+  "region": "pre",
+  "t": 27,
+  "qs": [
+   3,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[14];"
+  ],
+  "region": "pre",
+  "t": 28,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[15];"
+  ],
+  "region": "pre",
+  "t": 28,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[8];"
+  ],
+  "region": "pre",
+  "t": 29,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "tdg q[15];"
+  ],
+  "region": "pre",
+  "t": 29,
+  "qs": [
+   15
+  ],
+  "name": "TDG"
+ },
+ {
+  "lines": [
+   "h q[9];",
+   "measure q[9] -> c[9];",
+   "h q[9];"
+  ],
+  "region": "pre",
+  "t": 29,
+  "qs": [
+   9
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "moves",
+  "t": 29,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "tdg q[8];"
+  ],
+  "region": "pre",
+  "t": 30,
+  "qs": [
+   8
+  ],
+  "name": "TDG"
+ },
+ {
+  "lines": [
+   "cx q[15],q[16];"
+  ],
+  "region": "moves",
+  "t": 30,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[9];"
+  ],
+  "region": "moves",
+  "t": 30,
+  "qs": [
+   9
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[16],q[15];"
+  ],
+  "region": "moves",
+  "t": 31,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[9];"
+  ],
+  "region": "moves",
+  "t": 31,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[8];"
+  ],
+  "region": "moves",
+  "t": 32,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[15];"
+  ],
+  "region": "moves",
+  "t": 32,
+  "qs": [
+   15
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[22];"
+  ],
+  "region": "moves",
+  "t": 33,
+  "qs": [
+   22
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[9],q[15];"
+  ],
+  "region": "moves",
+  "t": 33,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[16],q[22];"
+  ],
+  "region": "moves",
+  "t": 34,
+  "qs": [
+   16,
+   22
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[9];"
+  ],
+  "region": "moves",
+  "t": 34,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[21];"
+  ],
+  "region": "moves",
+  "t": 34,
+  "qs": [
+   21
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[29];"
+  ],
+  "region": "prep_b",
+  "t": 34,
+  "qs": [
+   29
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[17];"
+  ],
+  "region": "prep_b",
+  "t": 34,
+  "qs": [
+   17
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[11];",
+   "h q[11];"
+  ],
+  "region": "prep_b",
+  "t": 34,
+  "qs": [
+   11
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[23];",
+   "h q[23];"
+  ],
+  "region": "prep_b",
+  "t": 34,
+  "qs": [
+   23
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[25];",
+   "h q[25];"
+  ],
+  "region": "prep_c",
+  "t": 34,
+  "qs": [
+   25
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[26];"
+  ],
+  "region": "prep_c",
+  "t": 34,
+  "qs": [
+   26
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[34];"
+  ],
+  "region": "prep_c",
+  "t": 34,
+  "qs": [
+   34
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[33];",
+   "h q[33];"
+  ],
+  "region": "prep_c",
+  "t": 34,
+  "qs": [
+   33
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[22],q[16];"
+  ],
+  "region": "moves",
+  "t": 35,
+  "qs": [
+   16,
+   22
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[21];"
+  ],
+  "region": "moves",
+  "t": 35,
+  "qs": [
+   15,
+   21
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[11],q[17];"
+  ],
+  "region": "prep_b",
+  "t": 35,
+  "qs": [
+   11,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[23],q[29];"
+  ],
+  "region": "prep_b",
+  "t": 35,
+  "qs": [
+   23,
+   29
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[32];"
+  ],
+  "region": "prep_c",
+  "t": 35,
+  "qs": [
+   32
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[27];",
+   "h q[27];"
+  ],
+  "region": "prep_c",
+  "t": 35,
+  "qs": [
+   27
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[25],q[26];"
+  ],
+  "region": "prep_c",
+  "t": 35,
+  "qs": [
+   25,
+   26
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[33],q[34];"
+  ],
+  "region": "prep_c",
+  "t": 35,
+  "qs": [
+   33,
+   34
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[20];"
+  ],
+  "region": "pre",
+  "t": 36,
+  "qs": [
+   14,
+   20
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[21],q[15];"
+  ],
+  "region": "moves",
+  "t": 36,
+  "qs": [
+   15,
+   21
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "prep_b",
+  "t": 36,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[17],q[23];"
+  ],
+  "region": "prep_b",
+  "t": 36,
+  "qs": [
+   17,
+   23
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[24];"
+  ],
+  "region": "prep_c",
+  "t": 36,
+  "qs": [
+   24
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[26],q[32];"
+  ],
+  "region": "prep_c",
+  "t": 36,
+  "qs": [
+   26,
+   32
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[27],q[33];"
+  ],
+  "region": "prep_c",
+  "t": 36,
+  "qs": [
+   27,
+   33
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[14];",
+   "measure q[14] -> c[12];",
+   "h q[14];"
+  ],
+  "region": "pre",
+  "t": 37,
+  "qs": [
+   14
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[5];"
+  ],
+  "region": "prep_b",
+  "t": 37,
+  "qs": [
+   5
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[28];",
+   "h q[28];"
+  ],
+  "region": "prep_b",
+  "t": 37,
+  "qs": [
+   28
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[17],q[16];"
+  ],
+  "region": "prep_b",
+  "t": 37,
+  "qs": [
+   16,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[25],q[24];"
+  ],
+  "region": "prep_c",
+  "t": 37,
+  "qs": [
+   24,
+   25
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[27],q[26];"
+  ],
+  "region": "prep_c",
+  "t": 37,
+  "qs": [
+   26,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[15];"
+  ],
+  "region": "moves",
+  "t": 37,
+  "qs": [
+   15
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "measure q[19] -> c[3];"
+  ],
+  "region": "pre",
+  "t": 38,
+  "qs": [
+   19
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "cx q[11],q[5];"
+  ],
+  "region": "prep_b",
+  "t": 38,
+  "qs": [
+   5,
+   11
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[28],q[29];"
+  ],
+  "region": "prep_b",
+  "t": 38,
+  "qs": [
+   28,
+   29
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[23],q[17];"
+  ],
+  "region": "prep_b",
+  "t": 38,
+  "qs": [
+   17,
+   23
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[26],q[25];"
+  ],
+  "region": "prep_c",
+  "t": 38,
+  "qs": [
+   25,
+   26
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[16],q[15];"
+  ],
+  "region": "moves",
+  "t": 38,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[14];"
+  ],
+  "region": "moves",
+  "t": 38,
+  "qs": [
+   14
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[17],q[11];"
+  ],
+  "region": "prep_b",
+  "t": 39,
+  "qs": [
+   11,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[29],q[23];"
+  ],
+  "region": "prep_b",
+  "t": 39,
+  "qs": [
+   23,
+   29
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[25],q[24];"
+  ],
+  "region": "prep_c",
+  "t": 39,
+  "qs": [
+   24,
+   25
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[16];",
+   "measure q[16] -> c[64];",
+   "h q[16];"
+  ],
+  "region": "moves",
+  "t": 39,
+  "qs": [
+   16
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[19];"
+  ],
+  "region": "moves",
+  "t": 39,
+  "qs": [
+   19
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[15],q[14];"
+  ],
+  "region": "moves",
+  "t": 39,
+  "qs": [
+   14,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[13];",
+   "measure q[13] -> c[6];",
+   "h q[13];"
+  ],
+  "region": "pre",
+  "t": 40,
+  "qs": [
+   13
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[23],q[17];"
+  ],
+  "region": "prep_b",
+  "t": 40,
+  "qs": [
+   17,
+   23
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[32],q[33];"
+  ],
+  "region": "prep_c",
+  "t": 40,
+  "qs": [
+   32,
+   33
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[25],q[19];"
+  ],
+  "region": "moves",
+  "t": 40,
+  "qs": [
+   19,
+   25
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[15];",
+   "measure q[15] -> c[66];",
+   "h q[15];"
+  ],
+  "region": "moves",
+  "t": 40,
+  "qs": [
+   15
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "moves",
+  "t": 40,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[18];"
+  ],
+  "region": "moves",
+  "t": 40,
+  "qs": [
+   18
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[33],q[27];"
+  ],
+  "region": "prep_c",
+  "t": 41,
+  "qs": [
+   27,
+   33
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[25];",
+   "measure q[25] -> c[65];",
+   "h q[25];"
+  ],
+  "region": "moves",
+  "t": 41,
+  "qs": [
+   25
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[17],q[16];"
+  ],
+  "region": "moves",
+  "t": 41,
+  "qs": [
+   16,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[19],q[18];"
+  ],
+  "region": "moves",
+  "t": 41,
+  "qs": [
+   18,
+   19
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[13];"
+  ],
+  "region": "moves",
+  "t": 41,
+  "qs": [
+   13
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[15];"
+  ],
+  "region": "moves",
+  "t": 41,
+  "qs": [
+   15
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[27],q[26];"
+  ],
+  "region": "prep_c",
+  "t": 42,
+  "qs": [
+   26,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[19];",
+   "measure q[19] -> c[69];",
+   "h q[19];"
+  ],
+  "region": "moves",
+  "t": 42,
+  "qs": [
+   19
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[25];"
+  ],
+  "region": "moves",
+  "t": 42,
+  "qs": [
+   25
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[14],q[13];"
+  ],
+  "region": "moves",
+  "t": 42,
+  "qs": [
+   13,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[16],q[15];"
+  ],
+  "region": "moves",
+  "t": 42,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[12];"
+  ],
+  "region": "moves",
+  "t": 42,
+  "qs": [
+   12
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[9];"
+  ],
+  "region": "moves",
+  "t": 42,
+  "qs": [
+   9
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[2];",
+   "measure q[2] -> c[10];",
+   "h q[2];"
+  ],
+  "region": "pre",
+  "t": 43,
+  "qs": [
+   2
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[26],q[25];"
+  ],
+  "region": "moves",
+  "t": 43,
+  "qs": [
+   25,
+   26
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[19];"
+  ],
+  "region": "moves",
+  "t": 43,
+  "qs": [
+   19
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[13],q[12];"
+  ],
+  "region": "moves",
+  "t": 43,
+  "qs": [
+   12,
+   13
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[9];"
+  ],
+  "region": "moves",
+  "t": 43,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[8];"
+  ],
+  "region": "moves",
+  "t": 43,
+  "qs": [
+   8
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[17];",
+   "measure q[17] -> c[67];",
+   "h q[17];"
+  ],
+  "region": "moves",
+  "t": 44,
+  "qs": [
+   17
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[26];",
+   "measure q[26] -> c[70];",
+   "h q[26];"
+  ],
+  "region": "moves",
+  "t": 44,
+  "qs": [
+   26
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[25],q[19];"
+  ],
+  "region": "moves",
+  "t": 44,
+  "qs": [
+   19,
+   25
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[13];",
+   "measure q[13] -> c[76];",
+   "h q[13];"
+  ],
+  "region": "moves",
+  "t": 44,
+  "qs": [
+   13
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[8];"
+  ],
+  "region": "moves",
+  "t": 44,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[2];"
+  ],
+  "region": "moves",
+  "t": 44,
+  "qs": [
+   2
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[11],q[5];"
+  ],
+  "region": "prep_b",
+  "t": 45,
+  "qs": [
+   5,
+   11
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[14];",
+   "measure q[14] -> c[71];",
+   "h q[14];"
+  ],
+  "region": "moves",
+  "t": 45,
+  "qs": [
+   14
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[16];",
+   "measure q[16] -> c[72];",
+   "h q[16];"
+  ],
+  "region": "moves",
+  "t": 45,
+  "qs": [
+   16
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[25];",
+   "measure q[25] -> c[74];",
+   "h q[25];"
+  ],
+  "region": "moves",
+  "t": 45,
+  "qs": [
+   25
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[26];"
+  ],
+  "region": "moves",
+  "t": 45,
+  "qs": [
+   26
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[13];"
+  ],
+  "region": "moves",
+  "t": 45,
+  "qs": [
+   13
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[8],q[2];"
+  ],
+  "region": "moves",
+  "t": 45,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[17];"
+  ],
+  "region": "moves",
+  "t": 45,
+  "qs": [
+   17
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[27],q[26];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   26,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[25];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   25
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[15];",
+   "measure q[15] -> c[79];",
+   "h q[15];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   15
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[19],q[13];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   13,
+   19
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[8];",
+   "measure q[8] -> c[84];",
+   "h q[8];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   8
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[14];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   14
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[11],q[17];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   11,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "moves",
+  "t": 46,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[27];",
+   "measure q[27] -> c[75];",
+   "h q[27];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   27
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[26],q[25];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   25,
+   26
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[35];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   35
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[9];",
+   "measure q[9] -> c[81];",
+   "h q[9];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   9
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[19];",
+   "measure q[19] -> c[82];",
+   "h q[19];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   19
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[14];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   13,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[8];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   8
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[17],q[16];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   16,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[15];"
+  ],
+  "region": "moves",
+  "t": 47,
+  "qs": [
+   15
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[27];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   27
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[26];",
+   "measure q[26] -> c[78];",
+   "h q[26];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   26
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[34],q[35];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   34,
+   35
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[13];",
+   "measure q[13] -> c[86];",
+   "h q[13];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   13
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[19];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   19
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[14],q[8];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[16],q[15];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[9];"
+  ],
+  "region": "moves",
+  "t": 48,
+  "qs": [
+   9
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[28],q[27];"
+  ],
+  "region": "moves",
+  "t": 49,
+  "qs": [
+   27,
+   28
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[34];",
+   "measure q[34] -> c[80];",
+   "h q[34];"
+  ],
+  "region": "moves",
+  "t": 49,
+  "qs": [
+   34
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[26];"
+  ],
+  "region": "moves",
+  "t": 49,
+  "qs": [
+   26
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[25],q[19];"
+  ],
+  "region": "moves",
+  "t": 49,
+  "qs": [
+   19,
+   25
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[14];",
+   "measure q[14] -> c[89];",
+   "h q[14];"
+  ],
+  "region": "moves",
+  "t": 49,
+  "qs": [
+   14
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[13];"
+  ],
+  "region": "moves",
+  "t": 49,
+  "qs": [
+   13
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[15],q[9];"
+  ],
+  "region": "moves",
+  "t": 49,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[28];",
+   "measure q[28] -> c[77];",
+   "h q[28];"
+  ],
+  "region": "moves",
+  "t": 50,
+  "qs": [
+   28
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[27],q[26];"
+  ],
+  "region": "moves",
+  "t": 50,
+  "qs": [
+   26,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[19],q[13];"
+  ],
+  "region": "moves",
+  "t": 50,
+  "qs": [
+   13,
+   19
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[34];"
+  ],
+  "region": "moves",
+  "t": 50,
+  "qs": [
+   34
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[14];"
+  ],
+  "region": "moves",
+  "t": 50,
+  "qs": [
+   14
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[15];",
+   "measure q[15] -> c[99];",
+   "h q[15];"
+  ],
+  "region": "moves",
+  "t": 50,
+  "qs": [
+   15
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[28];"
+  ],
+  "region": "moves",
+  "t": 51,
+  "qs": [
+   28
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[27];",
+   "measure q[27] -> c[85];",
+   "h q[27];"
+  ],
+  "region": "moves",
+  "t": 51,
+  "qs": [
+   27
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[33],q[34];"
+  ],
+  "region": "moves",
+  "t": 51,
+  "qs": [
+   33,
+   34
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[16];",
+   "measure q[16] -> c[95];",
+   "h q[16];"
+  ],
+  "region": "moves",
+  "t": 51,
+  "qs": [
+   16
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[14];"
+  ],
+  "region": "moves",
+  "t": 51,
+  "qs": [
+   13,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[31];"
+  ],
+  "region": "moves",
+  "t": 51,
+  "qs": [
+   31
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[15];"
+  ],
+  "region": "moves",
+  "t": 51,
+  "qs": [
+   15
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[10],q[4];"
+  ],
+  "region": "pre",
+  "t": 52,
+  "qs": [
+   4,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[29],q[28];"
+  ],
+  "region": "moves",
+  "t": 52,
+  "qs": [
+   28,
+   29
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[27];"
+  ],
+  "region": "moves",
+  "t": 52,
+  "qs": [
+   27
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[17];",
+   "measure q[17] -> c[91];",
+   "h q[17];"
+  ],
+  "region": "moves",
+  "t": 52,
+  "qs": [
+   17
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[33];",
+   "measure q[33] -> c[93];",
+   "h q[33];"
+  ],
+  "region": "moves",
+  "t": 52,
+  "qs": [
+   33
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[32],q[31];"
+  ],
+  "region": "moves",
+  "t": 52,
+  "qs": [
+   31,
+   32
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[15];"
+  ],
+  "region": "moves",
+  "t": 52,
+  "qs": [
+   14,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "moves",
+  "t": 52,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[10];",
+   "measure q[10] -> c[8];",
+   "h q[10];"
+  ],
+  "region": "pre",
+  "t": 53,
+  "qs": [
+   10
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[28],q[27];"
+  ],
+  "region": "moves",
+  "t": 53,
+  "qs": [
+   27,
+   28
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[33];"
+  ],
+  "region": "moves",
+  "t": 53,
+  "qs": [
+   33
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[32];",
+   "measure q[32] -> c[102];",
+   "h q[32];"
+  ],
+  "region": "moves",
+  "t": 53,
+  "qs": [
+   32
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[16];"
+  ],
+  "region": "moves",
+  "t": 53,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[17];"
+  ],
+  "region": "moves",
+  "t": 53,
+  "qs": [
+   17
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "tdg q[4];"
+  ],
+  "region": "pre",
+  "t": 54,
+  "qs": [
+   4
+  ],
+  "name": "TDG"
+ },
+ {
+  "lines": [
+   "reset q[10];"
+  ],
+  "region": "moves",
+  "t": 54,
+  "qs": [
+   10
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[27],q[33];"
+  ],
+  "region": "moves",
+  "t": 54,
+  "qs": [
+   27,
+   33
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[32];"
+  ],
+  "region": "moves",
+  "t": 54,
+  "qs": [
+   32
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[15];",
+   "measure q[15] -> c[109];",
+   "h q[15];"
+  ],
+  "region": "moves",
+  "t": 54,
+  "qs": [
+   15
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[16],q[17];"
+  ],
+  "region": "moves",
+  "t": 54,
+  "qs": [
+   16,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[4],q[10];"
+  ],
+  "region": "moves",
+  "t": 55,
+  "qs": [
+   4,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[27];",
+   "measure q[27] -> c[94];",
+   "h q[27];"
+  ],
+  "region": "moves",
+  "t": 55,
+  "qs": [
+   27
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[33],q[32];"
+  ],
+  "region": "moves",
+  "t": 55,
+  "qs": [
+   32,
+   33
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[15];"
+  ],
+  "region": "moves",
+  "t": 55,
+  "qs": [
+   15
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[16];",
+   "measure q[16] -> c[112];",
+   "h q[16];"
+  ],
+  "region": "moves",
+  "t": 55,
+  "qs": [
+   16
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[10],q[4];"
+  ],
+  "region": "moves",
+  "t": 56,
+  "qs": [
+   4,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[11];",
+   "measure q[11] -> c[88];",
+   "h q[11];"
+  ],
+  "region": "moves",
+  "t": 56,
+  "qs": [
+   11
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[27];"
+  ],
+  "region": "moves",
+  "t": 56,
+  "qs": [
+   27
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[33];",
+   "measure q[33] -> c[103];",
+   "h q[33];"
+  ],
+  "region": "moves",
+  "t": 56,
+  "qs": [
+   33
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[15];"
+  ],
+  "region": "moves",
+  "t": 56,
+  "qs": [
+   9,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "moves",
+  "t": 56,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[26],q[27];"
+  ],
+  "region": "moves",
+  "t": 57,
+  "qs": [
+   26,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[14];",
+   "measure q[14] -> c[105];",
+   "h q[14];"
+  ],
+  "region": "moves",
+  "t": 57,
+  "qs": [
+   14
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[33];"
+  ],
+  "region": "moves",
+  "t": 57,
+  "qs": [
+   33
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[15],q[16];"
+  ],
+  "region": "moves",
+  "t": 57,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[4];"
+  ],
+  "region": "moves",
+  "t": 57,
+  "qs": [
+   4
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[11];"
+  ],
+  "region": "moves",
+  "t": 57,
+  "qs": [
+   11
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[30];"
+  ],
+  "region": "moves",
+  "t": 58,
+  "qs": [
+   30
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[26];",
+   "measure q[26] -> c[100];",
+   "h q[26];"
+  ],
+  "region": "moves",
+  "t": 58,
+  "qs": [
+   26
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[27],q[33];"
+  ],
+  "region": "moves",
+  "t": 58,
+  "qs": [
+   27,
+   33
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[15];",
+   "measure q[15] -> c[113];",
+   "h q[15];"
+  ],
+  "region": "moves",
+  "t": 58,
+  "qs": [
+   15
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[5],q[4];"
+  ],
+  "region": "moves",
+  "t": 58,
+  "qs": [
+   4,
+   5
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[14];"
+  ],
+  "region": "moves",
+  "t": 58,
+  "qs": [
+   14
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[17],q[11];"
+  ],
+  "region": "moves",
+  "t": 58,
+  "qs": [
+   11,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[24],q[30];"
+  ],
+  "region": "moves",
+  "t": 59,
+  "qs": [
+   24,
+   30
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[26];"
+  ],
+  "region": "moves",
+  "t": 59,
+  "qs": [
+   26
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[27];",
+   "measure q[27] -> c[108];",
+   "h q[27];"
+  ],
+  "region": "moves",
+  "t": 59,
+  "qs": [
+   27
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[5];",
+   "measure q[5] -> c[114];",
+   "h q[5];"
+  ],
+  "region": "moves",
+  "t": 59,
+  "qs": [
+   5
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[14];"
+  ],
+  "region": "moves",
+  "t": 59,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[17];",
+   "measure q[17] -> c[118];",
+   "h q[17];"
+  ],
+  "region": "moves",
+  "t": 59,
+  "qs": [
+   17
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[15];"
+  ],
+  "region": "moves",
+  "t": 59,
+  "qs": [
+   15
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[24];",
+   "measure q[24] -> c[68];",
+   "h q[24];"
+  ],
+  "region": "moves",
+  "t": 60,
+  "qs": [
+   24
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[32],q[26];"
+  ],
+  "region": "moves",
+  "t": 60,
+  "qs": [
+   26,
+   32
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[27];"
+  ],
+  "region": "moves",
+  "t": 60,
+  "qs": [
+   27
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[8];",
+   "measure q[8] -> c[117];",
+   "h q[8];"
+  ],
+  "region": "moves",
+  "t": 60,
+  "qs": [
+   8
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[17];"
+  ],
+  "region": "moves",
+  "t": 60,
+  "qs": [
+   17
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[14],q[15];"
+  ],
+  "region": "moves",
+  "t": 60,
+  "qs": [
+   14,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[5];"
+  ],
+  "region": "moves",
+  "t": 60,
+  "qs": [
+   5
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[24];"
+  ],
+  "region": "moves",
+  "t": 61,
+  "qs": [
+   24
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[25];",
+   "measure q[25] -> c[87];",
+   "h q[25];"
+  ],
+  "region": "moves",
+  "t": 61,
+  "qs": [
+   25
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[26],q[27];"
+  ],
+  "region": "moves",
+  "t": 61,
+  "qs": [
+   26,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[8];"
+  ],
+  "region": "moves",
+  "t": 61,
+  "qs": [
+   8
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[16],q[17];"
+  ],
+  "region": "moves",
+  "t": 61,
+  "qs": [
+   16,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[14];",
+   "measure q[14] -> c[123];",
+   "h q[14];"
+  ],
+  "region": "moves",
+  "t": 61,
+  "qs": [
+   14
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[11],q[5];"
+  ],
+  "region": "moves",
+  "t": 61,
+  "qs": [
+   5,
+   11
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[18],q[24];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   18,
+   24
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[25];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   25
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[13];",
+   "measure q[13] -> c[97];",
+   "h q[13];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   13
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[26];",
+   "measure q[26] -> c[110];",
+   "h q[26];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   26
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[8];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[16];",
+   "measure q[16] -> c[120];",
+   "h q[16];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   16
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[11];",
+   "measure q[11] -> c[124];",
+   "h q[11];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   11
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[14];"
+  ],
+  "region": "moves",
+  "t": 62,
+  "qs": [
+   14
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[24],q[25];"
+  ],
+  "region": "moves",
+  "t": 63,
+  "qs": [
+   24,
+   25
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[32];",
+   "measure q[32] -> c[107];",
+   "h q[32];"
+  ],
+  "region": "moves",
+  "t": 63,
+  "qs": [
+   32
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[26];"
+  ],
+  "region": "moves",
+  "t": 63,
+  "qs": [
+   26
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[8],q[14];"
+  ],
+  "region": "moves",
+  "t": 63,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[11];"
+  ],
+  "region": "moves",
+  "t": 63,
+  "qs": [
+   11
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "moves",
+  "t": 63,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[13];"
+  ],
+  "region": "moves",
+  "t": 63,
+  "qs": [
+   13
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[7],q[6];"
+  ],
+  "region": "pre",
+  "t": 64,
+  "qs": [
+   6,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[25],q[26];"
+  ],
+  "region": "moves",
+  "t": 64,
+  "qs": [
+   25,
+   26
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[32];"
+  ],
+  "region": "moves",
+  "t": 64,
+  "qs": [
+   32
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[17],q[11];"
+  ],
+  "region": "moves",
+  "t": 64,
+  "qs": [
+   11,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[16];"
+  ],
+  "region": "moves",
+  "t": 64,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[13];"
+  ],
+  "region": "moves",
+  "t": 64,
+  "qs": [
+   13,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[6],q[0];"
+  ],
+  "region": "pre",
+  "t": 65,
+  "qs": [
+   0,
+   6
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[9];",
+   "measure q[9] -> c[111];",
+   "h q[9];"
+  ],
+  "region": "moves",
+  "t": 65,
+  "qs": [
+   9
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[25];",
+   "measure q[25] -> c[116];",
+   "h q[25];"
+  ],
+  "region": "moves",
+  "t": 65,
+  "qs": [
+   25
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[26],q[32];"
+  ],
+  "region": "moves",
+  "t": 65,
+  "qs": [
+   26,
+   32
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[8];",
+   "measure q[8] -> c[126];",
+   "h q[8];"
+  ],
+  "region": "moves",
+  "t": 65,
+  "qs": [
+   8
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[17];",
+   "measure q[17] -> c[127];",
+   "h q[17];"
+  ],
+  "region": "moves",
+  "t": 65,
+  "qs": [
+   17
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[15];",
+   "measure q[15] -> c[130];",
+   "h q[15];"
+  ],
+  "region": "moves",
+  "t": 65,
+  "qs": [
+   15
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[14];",
+   "measure q[14] -> c[131];",
+   "h q[14];"
+  ],
+  "region": "moves",
+  "t": 65,
+  "qs": [
+   14
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[6];",
+   "measure q[6] -> c[13];",
+   "h q[6];"
+  ],
+  "region": "pre",
+  "t": 66,
+  "qs": [
+   6
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[19];",
+   "measure q[19] -> c[92];",
+   "h q[19];"
+  ],
+  "region": "moves",
+  "t": 66,
+  "qs": [
+   19
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[26];",
+   "measure q[26] -> c[121];",
+   "h q[26];"
+  ],
+  "region": "moves",
+  "t": 66,
+  "qs": [
+   26
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[25];"
+  ],
+  "region": "moves",
+  "t": 66,
+  "qs": [
+   25
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[17];"
+  ],
+  "region": "moves",
+  "t": 66,
+  "qs": [
+   17
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[14];"
+  ],
+  "region": "prep_a",
+  "t": 66,
+  "qs": [
+   14
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[8];"
+  ],
+  "region": "prep_a",
+  "t": 66,
+  "qs": [
+   8
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[9];",
+   "h q[9];"
+  ],
+  "region": "prep_a",
+  "t": 66,
+  "qs": [
+   9
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[15];",
+   "h q[15];"
+  ],
+  "region": "prep_a",
+  "t": 66,
+  "qs": [
+   15
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[7];"
+  ],
+  "region": "pre",
+  "t": 67,
+  "qs": [
+   1,
+   7
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[24];",
+   "measure q[24] -> c[96];",
+   "h q[24];"
+  ],
+  "region": "moves",
+  "t": 67,
+  "qs": [
+   24
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[6];"
+  ],
+  "region": "moves",
+  "t": 67,
+  "qs": [
+   6
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[2];",
+   "measure q[2] -> c[119];",
+   "h q[2];"
+  ],
+  "region": "moves",
+  "t": 67,
+  "qs": [
+   2
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[31],q[25];"
+  ],
+  "region": "moves",
+  "t": 67,
+  "qs": [
+   25,
+   31
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[26];"
+  ],
+  "region": "moves",
+  "t": 67,
+  "qs": [
+   26
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[19];"
+  ],
+  "region": "moves",
+  "t": 67,
+  "qs": [
+   19
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[16],q[17];"
+  ],
+  "region": "moves",
+  "t": 67,
+  "qs": [
+   16,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[9],q[8];"
+  ],
+  "region": "prep_a",
+  "t": 67,
+  "qs": [
+   8,
+   9
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[14];"
+  ],
+  "region": "prep_a",
+  "t": 67,
+  "qs": [
+   14,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[1];",
+   "measure q[1] -> c[11];",
+   "h q[1];"
+  ],
+  "region": "pre",
+  "t": 68,
+  "qs": [
+   1
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[18];",
+   "measure q[18] -> c[73];",
+   "h q[18];"
+  ],
+  "region": "moves",
+  "t": 68,
+  "qs": [
+   18
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[12],q[6];"
+  ],
+  "region": "moves",
+  "t": 68,
+  "qs": [
+   6,
+   12
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[24];"
+  ],
+  "region": "moves",
+  "t": 68,
+  "qs": [
+   24
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[31];",
+   "measure q[31] -> c[122];",
+   "h q[31];"
+  ],
+  "region": "moves",
+  "t": 68,
+  "qs": [
+   31
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[27],q[26];"
+  ],
+  "region": "moves",
+  "t": 68,
+  "qs": [
+   26,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[25],q[19];"
+  ],
+  "region": "moves",
+  "t": 68,
+  "qs": [
+   19,
+   25
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[16];",
+   "measure q[16] -> c[134];",
+   "h q[16];"
+  ],
+  "region": "moves",
+  "t": 68,
+  "qs": [
+   16
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[2];",
+   "h q[2];"
+  ],
+  "region": "prep_a",
+  "t": 68,
+  "qs": [
+   2
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[8];"
+  ],
+  "region": "prep_a",
+  "t": 68,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[29];",
+   "measure q[29] -> c[83];",
+   "h q[29];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   29
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[28];",
+   "measure q[28] -> c[90];",
+   "h q[28];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   28
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[12];",
+   "measure q[12] -> c[98];",
+   "h q[12];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   12
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[30],q[24];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   24,
+   30
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[18];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   18
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[27];",
+   "measure q[27] -> c[125];",
+   "h q[27];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   27
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[31];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   31
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "h q[25];",
+   "measure q[25] -> c[129];",
+   "h q[25];"
+  ],
+  "region": "moves",
+  "t": 69,
+  "qs": [
+   25
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "reset q[1];",
+   "h q[1];"
+  ],
+  "region": "prep_a",
+  "t": 69,
+  "qs": [
+   1
+  ],
+  "name": "RX"
+ },
+ {
+  "lines": [
+   "reset q[16];"
+  ],
+  "region": "prep_a",
+  "t": 69,
+  "qs": [
+   16
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[2],q[8];"
+  ],
+  "region": "prep_a",
+  "t": 69,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[24],q[18];"
+  ],
+  "region": "moves",
+  "t": 70,
+  "qs": [
+   18,
+   24
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[28];"
+  ],
+  "region": "moves",
+  "t": 70,
+  "qs": [
+   28
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[12];"
+  ],
+  "region": "moves",
+  "t": 70,
+  "qs": [
+   12
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[32],q[31];"
+  ],
+  "region": "moves",
+  "t": 70,
+  "qs": [
+   31,
+   32
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "reset q[27];"
+  ],
+  "region": "moves",
+  "t": 70,
+  "qs": [
+   27
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[25];"
+  ],
+  "region": "moves",
+  "t": 70,
+  "qs": [
+   25
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "reset q[29];"
+  ],
+  "region": "moves",
+  "t": 70,
+  "qs": [
+   29
+  ],
+  "name": "RESET"
+ },
+ {
+  "lines": [
+   "cx q[1],q[2];"
+  ],
+  "region": "prep_a",
+  "t": 70,
+  "qs": [
+   1,
+   2
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[14];"
+  ],
+  "region": "prep_a",
+  "t": 70,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[15],q[16];"
+  ],
+  "region": "prep_a",
+  "t": 70,
+  "qs": [
+   15,
+   16
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[34],q[28];"
+  ],
+  "region": "moves",
+  "t": 71,
+  "qs": [
+   28,
+   34
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[18],q[12];"
+  ],
+  "region": "moves",
+  "t": 71,
+  "qs": [
+   12,
+   18
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[33],q[27];"
+  ],
+  "region": "moves",
+  "t": 71,
+  "qs": [
+   27,
+   33
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[31],q[25];"
+  ],
+  "region": "moves",
+  "t": 71,
+  "qs": [
+   25,
+   31
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[35],q[29];"
+  ],
+  "region": "moves",
+  "t": 71,
+  "qs": [
+   29,
+   35
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[2],q[8];"
+  ],
+  "region": "prep_a",
+  "t": 71,
+  "qs": [
+   2,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[14],q[15];"
+  ],
+  "region": "prep_a",
+  "t": 71,
+  "qs": [
+   14,
+   15
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "tdg q[3];"
+  ],
+  "region": "pre",
+  "t": 72,
+  "qs": [
+   3
+  ],
+  "name": "TDG"
+ },
+ {
+  "lines": [
+   "tdg q[20];"
+  ],
+  "region": "pre",
+  "t": 72,
+  "qs": [
+   20
+  ],
+  "name": "TDG"
+ },
+ {
+  "lines": [
+   "tdg q[7];"
+  ],
+  "region": "pre",
+  "t": 72,
+  "qs": [
+   7
+  ],
+  "name": "TDG"
+ },
+ {
+  "lines": [
+   "tdg q[0];"
+  ],
+  "region": "pre",
+  "t": 72,
+  "qs": [
+   0
+  ],
+  "name": "TDG"
+ },
+ {
+  "lines": [
+   "h q[30];",
+   "measure q[30] -> c[101];",
+   "h q[30];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   30
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[24];",
+   "measure q[24] -> c[104];",
+   "h q[24];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   24
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[34];",
+   "measure q[34] -> c[106];",
+   "h q[34];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   34
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[18];",
+   "measure q[18] -> c[115];",
+   "h q[18];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   18
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[32];",
+   "measure q[32] -> c[128];",
+   "h q[32];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   32
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[33];",
+   "measure q[33] -> c[132];",
+   "h q[33];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   33
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[31];",
+   "measure q[31] -> c[133];",
+   "h q[31];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   31
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[35];",
+   "measure q[35] -> c[135];",
+   "h q[35];"
+  ],
+  "region": "moves",
+  "t": 72,
+  "qs": [
+   35
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "cx q[1],q[2];"
+  ],
+  "region": "prep_a",
+  "t": 72,
+  "qs": [
+   1,
+   2
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[8],q[14];"
+  ],
+  "region": "prep_a",
+  "t": 72,
+  "qs": [
+   8,
+   14
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[0],q[1];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   0,
+   1
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[6],q[12];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   6,
+   12
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[20],q[14];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   14,
+   20
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[26],q[25];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   25,
+   26
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[7],q[8];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   7,
+   8
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[19];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   13,
+   19
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[10],q[9];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   9,
+   10
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[11],q[17];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   11,
+   17
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[3],q[2];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   2,
+   3
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[4],q[5];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   4,
+   5
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[22],q[16];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   16,
+   22
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[23],q[29];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   23,
+   29
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[21],q[15];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   15,
+   21
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[27],q[28];"
+  ],
+  "region": "round",
+  "round_offset": 0,
+  "t": 73,
+  "qs": [
+   27,
+   28
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "measure q[1] -> c[136];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   1
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[14] -> c[137];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   14
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[8] -> c[138];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   8
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[9] -> c[139];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   9
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[2] -> c[140];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   2
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[16] -> c[141];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   16
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[15] -> c[142];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   15
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[12] -> c[143];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   12
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[25] -> c[144];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   25
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[19] -> c[145];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   19
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[17] -> c[146];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   17
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[5] -> c[147];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   5
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[29] -> c[148];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   29
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "measure q[28] -> c[149];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   28
+  ],
+  "name": "MEASURE"
+ },
+ {
+  "lines": [
+   "cx q[6],q[0];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   0,
+   6
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[26],q[20];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   20,
+   26
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[13],q[7];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   7,
+   13
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[11],q[10];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   10,
+   11
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[4],q[3];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   3,
+   4
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[23],q[22];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   22,
+   23
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "cx q[27],q[21];"
+  ],
+  "region": "round",
+  "round_offset": 1,
+  "t": 74,
+  "qs": [
+   21,
+   27
+  ],
+  "name": "CX"
+ },
+ {
+  "lines": [
+   "h q[6];",
+   "measure q[6] -> c[150];"
+  ],
+  "region": "round",
+  "round_offset": 2,
+  "t": 75,
+  "qs": [
+   6
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[26];",
+   "measure q[26] -> c[151];"
+  ],
+  "region": "round",
+  "round_offset": 2,
+  "t": 75,
+  "qs": [
+   26
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[13];",
+   "measure q[13] -> c[152];"
+  ],
+  "region": "round",
+  "round_offset": 2,
+  "t": 75,
+  "qs": [
+   13
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[11];",
+   "measure q[11] -> c[153];"
+  ],
+  "region": "round",
+  "round_offset": 2,
+  "t": 75,
+  "qs": [
+   11
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[4];",
+   "measure q[4] -> c[154];"
+  ],
+  "region": "round",
+  "round_offset": 2,
+  "t": 75,
+  "qs": [
+   4
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[23];",
+   "measure q[23] -> c[155];"
+  ],
+  "region": "round",
+  "round_offset": 2,
+  "t": 75,
+  "qs": [
+   23
+  ],
+  "name": "MX"
+ },
+ {
+  "lines": [
+   "h q[27];",
+   "measure q[27] -> c[156];"
+  ],
+  "region": "round",
+  "round_offset": 2,
+  "t": 75,
+  "qs": [
+   27
+  ],
+  "name": "MX"
+ }
+]

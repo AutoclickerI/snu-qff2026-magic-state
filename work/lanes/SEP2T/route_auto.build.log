@@ -1,0 +1,9 @@
+placements 392
+Traceback (most recent call last):
+  File "/home/jihoon/competitions/quantumn/work/lanes/SEP2T/construct_route.py", line 150, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--out',default='route_l5');p.add_argument('--trials',type=int,default=500);p.add_argument('--placements',type=int,default=40);p.add_argument('--seed',type=int,default=0);p.add_argument('--workers',type=int,default=2);p.add_argument('--automorphisms',action='store_true');main(p.parse_args())
+                                                                                                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jihoon/competitions/quantumn/work/lanes/SEP2T/construct_route.py", line 146, in main
+    if best is None:raise RuntimeError('No constructive route found')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: No constructive route found

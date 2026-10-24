@@ -1,0 +1,12 @@
+circuit pipeline_alap.qasm: 516 noise channels, 3368 faults, 510 (s,d) classes, rotation rank 5, 28 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.3315e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 1.55394e-04   (pairs 1.55394e-04 + same-channel normalisation 2.208e-23)
+1-F (2nd order) = 1.55394e-04
+third order: 1.82722e-04   (weight-3 sets 1.99776e-04 + pair-times-others -1.70549e-05)
+1-F (to 3rd order) = 3.38116e-04
+acceptance: first order 0.08640, second order 0.50676; exp(-A1) = 0.40108  (A1 = 0.91360)
+time: model+singles 0.3s, pairs 9.8s, triples 151.7s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '3.618e-05', 'gate': '3.461e-05', 'idle': '8.461e-05'}

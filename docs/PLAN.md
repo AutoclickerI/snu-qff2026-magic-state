@@ -8,8 +8,8 @@
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
 - Every grid layout so far hits the area wall: separate unitary B and C encoders do not fit next to the data early
-  (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; SEP2T, BCSYN2 and MBP attack it from three
-  sides. Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS (FINDINGS).
+  (R0, LAYOUT3, TP2, R1, REVSAT, FREELAY), so the 82-CX joint B+C prep stays; BCSYN2 and MBP attack it; SEP2T's separate
+  blocks lose to idle exposure (FINDINGS). Closed today: ARCH, REVSAT, EARLYBC, ANC4, R1, PRE3, BUDGET, TREP2, ACHECK, HOPS, SEP2T (FINDINGS).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
@@ -20,10 +20,10 @@ Bottleneck: the B+C prep footprint (82 CX; noiseless −26.5% on v19) and the da
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P53 | G1 | SEP2T: settle whether separate small A/B/C blocks + teleports/hops beat the joint B+C prep on the grid with the ALAP pre-stage (long CP-SAT on FREELAY's 2-teleport models, constructive/LNS builds, C teleported in) | 3-seed MC below v19's 7.537e-5, or a built separate-block circuit with its loss breakdown | Codex lane SEP2T (`work/lanes/SEP2T`, sunfish, hippo) | active |
-| 2 | P51 | G1 | BCSYN2: clean (BC2 predicate) B+C prep below 82 CX or depth 14: multi-hour runs per cap, warm starts from BCSYN's 62–78-CX endpoint witnesses, incremental SAT, local search from the 82-CX witness, priced in v20 | 3-seed MC below v20's 7.282e-5, or ≥ 2 h per (cap, depth) with status | Codex lane BCSYN2 (`work/lanes/BCSYN2`, owl, tom) | active |
-| 3 | P56 | G1 | MBP: measurement-based block preps (B, C from \|0⟩^7, A from \|+⟩^7, stabilizers measured by ancillas, frames folded into detectors), priced grid-free then embedded with time-multiplexed ancilla cells | a circuit below v22h_c2c9's exact 7.1306e-5 and its 3-seed MC, or each variant priced with its mechanism | Codex lane MBP (`work/lanes/MBP`, sunfish, zebra) | active |
-| 4 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`, zebra, jerry) | active |
+| 1 | P51 | G1 | BCSYN2: clean (BC2 predicate) B+C prep below 82 CX or depth 14: multi-hour runs per cap, warm starts from BCSYN's 62–78-CX endpoint witnesses, incremental SAT, local search from the 82-CX witness, priced in v20 | 3-seed MC below v20's 7.282e-5, or ≥ 2 h per (cap, depth) with status | Codex lane BCSYN2 (`work/lanes/BCSYN2`, owl, tom) | active |
+| 2 | P56 | G1 | MBP: measurement-based block preps (B, C from \|0⟩^7, A from \|+⟩^7, stabilizers measured by ancillas, frames folded into detectors), priced grid-free then embedded with time-multiplexed ancilla cells | a circuit below v22h_c2c9's exact 7.1306e-5 and its 3-seed MC, or each variant priced with its mechanism | Codex lane MBP (`work/lanes/MBP`, sunfish, zebra) | active |
+| 3 | P57 | G1 | LNS: exact-objective local search on v22h_c2c9 and v22w_c2c9 (re-timing, commuting reorders, init types, watch checks, T† moves, re-encodings, hop timing; third-order sets) | local-optimum certificate per move family, or each gain verified by MC | Codex lane LNS (`work/lanes/LNS`, zebra, jerry) | active |
+| 4 | P58 | G1 | PRESYN: structural pre-stage changes on v22h_c2c9 (weight-3 decomposition, a third H_XY check or extra stabilizer round within the acceptance headroom, compression, alternative forms and embeddings) | a circuit below v22h_c2c9 by exact and 3-seed MC, or each option priced with its mechanism | Codex lane PRESYN (`work/lanes/PRESYN`, owl, hippo) | active |
 | 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
 | 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
 | 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
