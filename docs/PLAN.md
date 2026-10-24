@@ -9,7 +9,7 @@
   −18.7%; the wait cost is cubic. Clean B+C rule −18.4% (BC2); L5 is exhausted at R 47 (COMBO5 ties v16). The
   round's start R (50 now; pre-stage ends at 32) and small separate block preps are the levers: grid-free, separate
   9-CX blocks give 3.55e-5 at R 33, 4.12e-5 at R 39, 5.79e-5 at R 50 (FINDINGS). Lanes: R1 (star round, B and C just in
-  time; R0's early-checked B failed), TP2 (teleport chain: one partner per data qubit). LAYOUT3 closed (R 42, 1.00e-4: early-checked B).
+  time; R0's early-checked B failed), TP2 (teleport chain: one partner per data qubit). LAYOUT3 closed (R 42, 1.00e-4: 86-CX joint B+C prep). TP2 closed (routing bound: last CX 41; built 1.74e-4).
 
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
@@ -20,13 +20,12 @@ Bottleneck: the data wait before the round (R − 32 = 15–22 steps on every la
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P43 | G1 | Star round right after the pre-stage with corrected rules: A early (idle allowed), B and C just in time with B's check immediately before coupling, small separate exact encoders, 1-CX teleport moves for block qubits, early-released cells 13/19 (v16e prefix), A before T_DAG, staggering | 3-seed MC mean below v16's 8.554e-5, or best exact total with its dominant pairs | Codex lane R1 (`work/lanes/R1`, owl) | active |
-| 2 | P42 | G1 | Teleport round right after the pre-stage: output block O, B, C prepared during the pre-stage in never-used cells, O moved next to the data (one partner per data qubit), data read in Z, B checks O | 3-seed MC mean below v16's 8.554e-5, or the smallest round start with the binding constraint | Codex lane TP2 (`work/lanes/TP2`, zebra, sunfish) | active |
-| 3 | P44 | G1 | Release-oriented pre-stage: reorder/re-embed the injection + double check so free cells reach every data qubit by step 33–35 (neighbours of data 7 and 8 first), data hops in pre-stage idle gaps; grid-free price per variant; build a just-in-time round where one opens | a full circuit below v16's 3-seed mean, or prefix variants with release tables and prices | Codex lane PRE3 (`work/lanes/PRE3`, tom, jerry, hippo) | active |
-| 4 | P39 | G1 | Clean B+C rule on LAYOUT2's parity layout, earliest R, data-move variants, measure-init | 3-seed MC mean below 8.46431e-5 | Codex lane COMBO2 (`work/lanes/COMBO2`, owl) | active |
-| 5 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
-| 6 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
-| 7 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
-| 8 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
+| 2 | P44 | G1 | Release-oriented pre-stage: reorder/re-embed the injection + double check so free cells reach every data qubit by step 33–35 (neighbours of data 7 and 8 first), data hops in pre-stage idle gaps; grid-free price per variant; build a just-in-time round where one opens | a full circuit below v16's 3-seed mean, or prefix variants with release tables and prices | Codex lane PRE3 (`work/lanes/PRE3`, tom, jerry, hippo) | active |
+| 3 | P39 | G1 | Clean B+C rule on LAYOUT2's parity layout, earliest R, data-move variants, measure-init | 3-seed MC mean below 8.46431e-5 | Codex lane COMBO2 (`work/lanes/COMBO2`, owl) | active |
+| 4 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
+| 5 | P14 | G1 | Smaller fault-tolerant joint B+C prep for L5 (sat6/sat7, old rule) | a merged circuit below the best by 3-seed MC | Sonnet lane ST_BC (40 jobs on jerry and hippo; kept running by Jihoon's answer, no new result since 02:05) | active |
+| 6 | P17 | G1 | Exact block encoders (`work/lanes/EXENC/exenc.py`) for the B, C, O blocks of each new layout, kept as a Pareto set | preps for each candidate layout | lanes P39–P42 | parked: used inside P39–P42 |
+| 7 | P21 | G1 | One or two flag qubits on the A/O encoder (idea 3) | Pareto table of flagged danger vs depth, Stim-checked | — | parked: the parity check on A (LAYOUT2) covers A's danger where it fits |
 
 ## Idea review (2026-10-24)
 Gains are relative to v12 (3-seed MC 1.133e-4). "Inferred" means estimated from the FINDINGS numbers cited, not measured.
