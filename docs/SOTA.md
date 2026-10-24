@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v17**, server 1-F = 7.92665761750324e-5
-(bit-identical to `fast_check`), acceptance 0.5430, 209 CX, submitted 2026-10-24 13:45:23 KST
-(`work/receipts/submit_v17_status.txt`; re-draw r37 of `work/lanes/MAIN/v17`, 3-seed MC 8.306e-5).
+Ours on the board (rank 2, team shown as "초정밀모델제어학회쨩"): **v18**, server 1-F = 7.49754153576437e-5
+(bit-identical to `fast_check`), acceptance 0.5278, 203 CX, submitted 2026-10-24 14:45:32 KST
+(`work/receipts/submit_v18_status.txt`; re-draw r174 of `work/lanes/MAIN/v18`, 280 re-draws mean 7.730e-5).
 
-Best competitor: Placeholder 5.727e-5, 166 CX, acceptance 0.528 (submitted 2026-10-24 13:32 KST; 5.879e-5 at 09:51).
-Board read 2026-10-24 14:05 KST; refresh with `work/submit.py board`.
+Best competitor: Placeholder 5.621e-5, 177 CX, acceptance 0.532 (submitted 2026-10-24 14:33 KST; 5.727e-5 at 13:32, 5.879e-5 at 09:51).
+Board read 2026-10-24 14:50 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 | Method | Conditions | Result | Evidence |
@@ -30,6 +30,7 @@ Board read 2026-10-24 14:05 KST; refresh with `work/submit.py board`.
 | v15: LAYOUT2 parity check on A (cat 27–28–29, R=54) + measure-init at all 13 sites (re-draw r33) | server | 9.66371e-5, 212 CX (110 re-draws 9.871e-5) | `work/submissions/v15_l2m_r33.*`, `work/candidates/v15_l2m.*`, `work/receipts/seq_v15_l2m_r33.txt` |
 | v16: L5 with BC2's clean B+C prep (82 CX, R=50) + measure-init at all sites (re-draw r147) | server | 8.28792e-5, 207 CX (245 re-draws 8.584e-5) | `work/submissions/v16_bc2m_r147.*`, `work/candidates/v16_bc2m.*`, `work/receipts/seq_v16_bc2m_r147.txt`, `work/receipts/submit_v16.txt` |
 | v17: v16 + q19/q13 released early + readout re-encoding CX 17→16, 19→25 (re-draw r37) | server | 7.92666e-5, 209 CX (3-seed 8.306e-5) | `work/submissions/v17_r37.*`, `work/receipts/seq_v17_r37.txt` |
+| v18: TREP's 19-CX injection encoder, pre-stage ALAP and interleaved with the suffix, round at 46 (re-draw r174) | server | 7.49754e-5, 203 CX (280 re-draws 7.730e-5) | `work/submissions/v18_r174.*`, `work/receipts/seq_v18_r174.txt`, `work/lanes/TREP/REPORT.md` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |

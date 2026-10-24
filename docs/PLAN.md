@@ -1,8 +1,9 @@
 # Plan
 
-## Status (2026-10-24 14:05 KST)
-- Board: Placeholder 5.727e-5 (166 CX, acc 0.528); us 7.92666e-5 = v17 (3-seed MC 8.306e-5), rank 2. v18 (TREP's
-  19-CX injection encoder + ALAP pre-stage, round at 46; exact 7.6064e-5, MC 7.636e-5) is in promotion for the 14:45 slot.
+## Status (2026-10-24 14:50 KST)
+- Board: Placeholder 5.621e-5 (177 CX, acc 0.532); us 7.49754e-5 = v18 (280 re-draws mean 7.730e-5), rank 2. v19
+  (FREELAY: v18 + |+⟩ reuse on cells 10, 9 + CP-SAT timing, round at 45; exact 7.4752e-5, MC 7.537e-5) is in promotion
+  for the 15:45 slot.
 - Floor under the judge's noise: 1.116e-5 for any circuit, 2.567e-5 for a direct one-step final readout (FINDINGS); G0
   targets 1e-5. Grid-free, small separate 9-CX blocks with the round right after the pre-stage give 3.55e-5 at R 33,
   4.12e-5 at R 39, 5.79e-5 at R 50; the round itself is 3.14e-5 of that (FINDINGS).
