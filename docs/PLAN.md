@@ -1,9 +1,10 @@
 # Plan
 
-## Status (2026-10-24 23:45 KST)
-- Board: Placeholder 5.058e-5; us 5.48190e-5 = v30g_r146. v32p_r13 (seed-0 4.93405e-5, best of 128) submitted 23:37:09.
-  v34m = v32p's echoes + reviewer 6's A partial decoder (all-orders 4.66293e-5, acceptance 0.5012) in re-draws for 00:37
-  (cut 00:20). Acceptance is the binding budget.
+## Status (2026-10-24 23:50 KST)
+- Board: **rank 1**, v32p_r13 4.93405e-5 (server); Placeholder 5.058e-5. v34m (v32p echoes + reviewer 6's A partial decoder,
+  all-orders 4.66293e-5, acceptance 0.5012) in re-draws for 00:37 (cut 00:20). Acceptance is the binding budget.
+- New bases: SEPBC guard5_timing_1 (v31s + v30g edits + wait guards, R44, all-orders 4.914e-5 without the decoder, acc 0.5010);
+  ENDSTATE region2_k56_A2_safe_dest (R38, 5.614e-5, acc ≈ 0.587: 0.086 of acceptance headroom to spend).
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
@@ -18,14 +19,14 @@ small grid-native block preps; every earlier closure of it was model-bound.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P71 | G1 | ENDSTATE: separate moved blocks closed (exposure; best 2.08e-4 at R56). Now in-place joint B∪C regions on cells free during the prefix (time-indexed, 48 embeddings), A on released cells, resource synthesized in place with FRESH's synthesizer and reviewer 4's helper primitives | complete circuits below v30f, or the binding constraint on R | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, zebra, hippo) | active |
+| 1 | P71 | G1 | ENDSTATE: delivered in-place joint B∪C regions (R38 region2_k56_A2_safe_dest 5.614e-5, acc ≈ 0.587; separate moved blocks closed). Now spend its acceptance headroom: A partial decoder for its A placement, echoed checks, wait guards, mz inits, knapsack | a finalist below v34m | Codex lane ENDSTATE (`work/lanes/ENDSTATE`, hippo, tom) | active |
 | 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
-| 3 | P72 | G1 | FRESH: delivered v30f (correlated rank-3 B/C); local early-round attempts stop at R44–45 (FINDINGS). Now a global joint re-synthesis of the cultivation prefix placement/schedule with the end-state (earliest R, then exposure); ST1 does local relayout macros | a verified grid circuit below 5e-5 true, or designs closed by mechanism | Codex lane FRESH (`work/lanes/FRESH`, zebra, sunfish) | active |
-| 4 | P69 | G1 | SEPBC: delivered v31s (R45). Now v31s + v30g's edits (timing feedback, mz inits) under the acceptance budget, then the next binding chain below R45 | a v31s-lineage finalist below v31s; then R ≤ 43 | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
-| 6 | P67 | G1 | ST2: delivered v30g; now a v30g loss ledger (prefix ops/idles, data wait, resource, A, round, cross terms; top five mechanisms) and population search aimed at its largest terms | ledger in ST2/REPORT.md; a finalist below v30g by all-orders | Codex lane ST2 (`work/lanes/ST2`, zebra, sunfish) | active |
-| 5 | P73 | G1 | COMP29: port the v23h→v29c local edits (blue XZ check, exchange, instrument, readout copy, LNS2/ST2 edits, timing feedback, known-zero detectors) onto v30f and price every combination | a v30f-lineage finalist below v30f by 3-seed mean | Codex lane COMP29 (`work/lanes/COMP29`, jerry, owl) | active |
+| 3 | P72 | G1 | FRESH: global CP-SAT found no R<55 independent-resource placement (FINDINGS). Now port the A partial decoder (re-derived per schedule) and echo checks onto SEPBC's R44 finalists | a finalist below v34m | Codex lane FRESH (`work/lanes/FRESH`, sunfish, zebra) | active |
+| 4 | P69 | G1 | SEPBC: delivered v31s (R45) and R44 v31s + v30g edits + wait guards (guard5_timing_1 4.914e-5). Now R ≤ 43 | R ≤ 43 finalists | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
+| 6 | P67 | G1 | ST2: delivered v32p (echoes). Now an acceptance knapsack on v34m (echoes, q16 watch, mz inits, known-zero, blue-check parts, A flag), new echo windows, v30g edits, SEPBC seeds | a finalist below v34m | Codex lane ST2 (`work/lanes/ST2`, zebra, owl) | active |
+| 5 | P73 | G1 | COMP29: dual of the A decoder for B and C on v34m (a logical-Z representative of B commuting with B→data read as a flag; same for C, blue-check cells, echo helpers) | a finalist below v34m | Codex lane COMP29 (`work/lanes/COMP29`, jerry, tom) | active |
 | 5 | P74 | G1 | WAITPROT: reviewer 4's selective Z protection of waiting data on v30f (helper \|+⟩, CX h→q twice around the wait, MX h; Fano-line triple meets every weight-3 Z logical) | priced singles/pairs/Fano triples; a finalist below v30f or the mechanism | Codex lane WAITPROT (`work/lanes/WAITPROT`, tom, zebra) | active |
-| 6 | P59 | G1 | BCFB: the A side of v30f (A's loss share and exposure, every library A encoder with exact feedback, just-in-time A, ACHECK-style checks and flags) | a v30f-lineage circuit below v30f by all-orders | Codex lane BCFB (`work/lanes/BCFB`, owl) | active |
+| 6 | P59 | G1 | BCFB: extend the A partial decoder on v34m (other logical-X representatives, stabilizer flags, fuller A readout decoders, flag-qubit choice) and combine with earlier A results | a finalist below v34m | Codex lane BCFB (`work/lanes/BCFB`, owl; new thread) | active |
 | 7 | P62 | G1 | BCPOL: endpoint machinery on v30f's resource (boundary cache rebuilt for v30f, rank-4 endpoints, partial clean, reviewer 4's encoded-Bell endpoint via FRAME_X, C6, helper primitives) | a v30f-lineage resource below v30f by all-orders | Codex lane BCPOL (`work/lanes/BCPOL`, jerry, hippo) | active |
 | 8 | P70 | G2 | XTIM: the trigger of xtim's per-shot slow path, a fast speed predictor, physics-preserving rewrites (q8's −1.2% on v26n) | rule + validated `work/lanes/XTIM/speed_predict.py` | Codex lane XTIM (`work/lanes/XTIM`, zebra) | active |
 | 10 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |
