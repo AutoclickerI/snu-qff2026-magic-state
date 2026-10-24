@@ -16,7 +16,7 @@
 ## Critical path
 edit (minutes) → `lanes/EVAL/exact2.py <qasm> --third` (30 s) and `lanes/MAIN/ablate.py --pairs` (1 min) → 1e8-shot MC at
 seeds 0/1000/2000 → `work/promote.sh` (re-draws over hosts ≈ 10 min, sequential judge, commit, submit at the next slot).
-Bottleneck: the data wait before the round (v17a: data idle steps 33–49; the joint B+C prep at 35–49 and A at 43–49 set R = 50).
+Bottleneck: the data wait before the round. v17a idles the data at 33–49; v18 delays the pre-stage (ALAP, ends at 45) so the round starts at 46.
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
@@ -24,7 +24,7 @@ Bottleneck: the data wait before the round (v17a: data idle steps 33–49; the j
 | 1 | P45 | G1 | ANC4: C replaced by ancillas measuring B's four Z-parities (reviewer 2 #5), B from a small separate encoder, earliest round on v17's prefix | 3-seed MC below v17's, or grid-free table + binding constraint | Codex lane ANC4 (`work/lanes/ANC4`, sunfish) | active |
 | 2 | P46 | G1 | REVSAT: complete SAT/CP-SAT time-expanded synthesis of A, B, checker, hops and round after the pre-stage (min R), with reverse-endpoint block synthesis (reviewer 2 #6) | 3-seed MC below v17's, or feasibility table R 36–47 with proofs | Codex lane REVSAT (`work/lanes/REVSAT`, tom, jerry) | active |
 | 3 | P50 | G1 | EARLYBC: v17a's joint 82-CX B+C prep and A encoder run during the pre-stage in never-used cells, moved next to the data at 33–35 by teleport moves or hops, round at ≤ 40 | 3-seed MC below 8.30e-5, or each placement family infeasible with its binding constraint | Codex lane EARLYBC (`work/lanes/EARLYBC`, zebra, hippo) | active |
-| 4 | P47 | G1 | TREP: the 16 protected 15-T phase-polynomial forms of the pre-stage (reviewer 2 #9) re-synthesised on the grid for lower pre-stage noise and earlier release | 3-seed MC below v17's, or all 16 priced | Codex lane TREP (`work/lanes/TREP`, jerry, hippo) | active |
+| 4 | P47 | G1 | TREP2: on v18, split the encoder and ALAP-schedule gains, exact-objective schedule search under the acceptance budget, the 15 untested 15-T forms, a schedule-aware encoder, re-encoding and measure-init re-applied | 3-seed MC below v18's 7.636e-5, or every lever measured | Codex lane TREP2 (`work/lanes/TREP2`, jerry, hippo) | active |
 | 5 | P48 | G0 | ARCH: final-check architectures with round-only cost below the Steane round's 3.14e-5 grid-free | an idea below 3.14e-5 with its grid fit, or the mechanism that rules each direction out | Codex lane ARCH (`work/lanes/ARCH`, owl) | active |
 | 6 | P49 | G1 | BUDGET: joint measure-init/MX-init choice under the acceptance budget (reviewer 2 #3), re-encoding combos, detector + frame (#2, #4), zero-CX timing on v17a | best variant of v17a with exact + 3-seed MC | Codex lane BUDGET (`work/lanes/BUDGET`, owl) | active |
 | 7 | P2 | G1 | Hourly submission of the best verified candidate (`work/promote.sh`, seed-0 re-draws, R-20261023-10) | each slot with a gain used; final best in by 2026-10-30 10:00 | main session | active |

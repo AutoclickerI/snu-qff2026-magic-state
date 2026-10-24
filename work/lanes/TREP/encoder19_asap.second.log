@@ -1,0 +1,10 @@
+circuit work/lanes/TREP/encoder19_asap.qasm: 464 noise channels, 3630 faults, 568 (s,d) classes, rotation rank 5, 36 detectors, noiseless acceptance 1.000000
+first order : c1 p = 2.7200e-19   (sum_i p_i n_i; 0 means every single fault is caught or harmless)
+second order: 5.73086e-05   (pairs 5.73086e-05 + same-channel normalisation 5.304e-23)
+1-F (2nd order) = 5.73086e-05
+acceptance: first order 0.36481, second order 0.56683; exp(-A1) = 0.52983  (A1 = 0.63519)
+time: model+singles 0.4s, pairs 6.2s
+
+top 0 fault pairs by contribution to 1-F (each pair counted once):
+
+loss by channel kind (each pair split half/half): {'flip': '1.479e-06', 'idle': '2.704e-05', 'gate': '2.879e-05'}
