@@ -1,9 +1,11 @@
 # Plan
 
-## Status (2026-10-25 00:05 KST)
-- Board: **rank 1**, v32p_r13 4.93405e-5 (server); Placeholder 5.058e-5. **v35a** (SEPBC R44 guard5_timing_1 + A decoder,
-  all-orders 4.39353e-5, acceptance 0.50124) replaced v34m (4.66293e-5) in the re-draws for 00:37 (cut 00:20).
-- Acceptance is the binding budget: v35a has ≈ 0.0007 over 0.5005. ENDSTATE's R38 circuit (5.614e-5, acc ≈ 0.587) has 0.086.
+## Status (2026-10-25 00:30 KST)
+- Board: **rank 1**, v32p_r13 4.93405e-5 (server); Placeholder 5.058e-5. **v35a_r188** (seed-0 4.17026e-5, best of 271
+  re-draws; all-orders 4.39353e-5) passed the sequential judge and is queued for 00:37. **v35b** (ST2's knapsack on v35a:
+  +2 echoes funded by init changes, all-orders 4.37602e-5, acceptance 0.50169) is in re-draws for 01:37 (cut 01:20).
+  The board keeps each team's best, so every hourly slot gets the best-expected candidate's best draw.
+- Acceptance is the binding budget. ENDSTATE's R38 circuit (5.614e-5, acc ≈ 0.587) has 0.086 of headroom.
 - **Total redesign (Jihoon, 2026-10-24 19:50: "we need total redesign for the larger jump").** Polishing the v23/v25 lineage
   tops out near 6.0e-5 if every verified edit composes. LADDER (adjacency ignored, our prefix): separate small B/C + standard
   A at R45 give 5.03e-5, an earlier round 3.74e-5 at R33; the grid-free reference is 3.55e-5; any circuit ≥ 1.162e-5
@@ -22,7 +24,7 @@ small grid-native block preps; every earlier closure of it was model-bound.
 | 2 | P66 | G1 | ST1: prefix/round co-design from scratch: prefix embedding (48) or re-synthesized cat layout, ENDSTATE end-states, data hops out of the prefix, just-in-time compact block preps, teleports, earliest R; full builds with exact feedback | a grid circuit below 5.0e-5 exact, then lower | Codex lane ST1 (`work/lanes/ST1`, owl, zebra) | active |
 | 3 | P72 | G1 | FRESH: delivered v35a (A decoder re-derived on SEPBC's R44 schedule). Now acceptance-free gains on v35a (reviewer 6's SX/SX† rewrite made FAST, all-orders timing feedback) and integration of other lanes' finalists onto v35a | a finalist below v35a | Codex lane FRESH (`work/lanes/FRESH`, sunfish, zebra) | active |
 | 4 | P69 | G1 | SEPBC: delivered v31s (R45) and guard5_timing_0 (R44, reoriented A + five storage guards + retiming, 4.9143e-5, MC3 4.9016e-5, acc 0.5007; R43 by source-check removal loses). Now R ≤ 43 by other mechanisms, kept compatible with the A partial decoder | R ≤ 43 finalists | Codex lane SEPBC (`work/lanes/SEPBC`, tom, zebra) | active |
-| 6 | P67 | G1 | ST2: delivered v32p (echoes). Now the acceptance knapsack on v35a (guards vs echoes vs mz inits, known-zero, blue-check parts) | a finalist below v35a | Codex lane ST2 (`work/lanes/ST2`, zebra, owl; new thread) | active |
+| 6 | P67 | G1 | ST2: delivered v32p (echoes) and v35b (v35a knapsack, −0.4%; guard prices per acceptance in its REPORT). Now a population search on v35b with all-orders fitness under the acceptance floor | a finalist below v35b | Codex lane ST2 (`work/lanes/ST2`, zebra, owl) | active |
 | 5 | P73 | G1 | COMP29: dual of the A decoder for B and C on v34m (a logical-Z representative of B commuting with B→data read as a flag; same for C, blue-check cells, echo helpers) | a finalist below v34m | Codex lane COMP29 (`work/lanes/COMP29`, jerry, tom) | active |
 | 5 | P74 | G1 | WAITPROT: delivered mixed X/Z protection of waiting data on v30f (−8.71%, 5.3806e-5; same family as ST2's echoes). Now acceptance-efficient protection gadgets for v35a (gain per acceptance), a priced menu for ST2's knapsack, and combinations against v35a's guards | a finalist below v35a | Codex lane WAITPROT (`work/lanes/WAITPROT`, owl) | active |
 | 6 | P59 | G1 | BCFB: extend the A partial decoder on v34m (other logical-X representatives, stabilizer flags, fuller A readout decoders, flag-qubit choice) and combine with earlier A results | a finalist below v34m | Codex lane BCFB (`work/lanes/BCFB`, owl; new thread) | active |
