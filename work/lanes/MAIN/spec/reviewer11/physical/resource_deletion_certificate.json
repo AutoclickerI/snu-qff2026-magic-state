@@ -1,0 +1,971 @@
+{
+  "scope": "All one/two-CX deletions among fixed r3 56 preparation CXs only.",
+  "total_tested": 1596,
+  "endpoint_preserved": 23,
+  "proxy_c1_safe": 22,
+  "baseline_proxy": {
+    "c1": 0.0,
+    "leak": 0.005466666666666659,
+    "X2": 5.908888888888891e-06,
+    "X2leak": 5.733333333333338e-06,
+    "RZ": 0.02346666666666661,
+    "acc1": 0.10773333333333528,
+    "nf": 1376
+  },
+  "starts": {
+    "6": 31,
+    "26": 32,
+    "13": 37,
+    "11": 33,
+    "4": 37,
+    "23": 32,
+    "27": 32,
+    "12": 38,
+    "25": 33,
+    "19": 35,
+    "17": 32,
+    "5": 35,
+    "29": 32,
+    "28": 32
+  },
+  "candidates": [
+    {
+      "deleted": [
+        {
+          "index": 407,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 41,
+          "b": null
+        },
+        {
+          "index": 419,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 42,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 5.837777777777781e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.024533333333333286,
+        "acc1": 0.10986666666666849,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": -7.111111111111062e-08,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_00"
+    },
+    {
+      "deleted": [
+        {
+          "index": 371,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 38,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 5.962222222222225e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023666666666666614,
+        "acc1": 0.10846666666666854,
+        "nf": 1367
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 5.333333333333339e-08,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_01"
+    },
+    {
+      "deleted": [
+        {
+          "index": 381,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 5.962222222222225e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023666666666666614,
+        "acc1": 0.10846666666666854,
+        "nf": 1367
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 5.333333333333339e-08,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_02"
+    },
+    {
+      "deleted": [
+        {
+          "index": 371,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 38,
+          "b": null
+        },
+        {
+          "index": 381,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.015555555555558e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.0666666666666677e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_03"
+    },
+    {
+      "deleted": [
+        {
+          "index": 317,
+          "k": "CX",
+          "q": [
+            25,
+            26
+          ],
+          "t": 34,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.055555555555557e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023666666666666614,
+        "acc1": 0.10846666666666854,
+        "nf": 1367
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.466666666666664e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_04"
+    },
+    {
+      "deleted": [
+        {
+          "index": 317,
+          "k": "CX",
+          "q": [
+            25,
+            26
+          ],
+          "t": 34,
+          "b": null
+        },
+        {
+          "index": 371,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 38,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.10888888888889e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.9999999999999809e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_05"
+    },
+    {
+      "deleted": [
+        {
+          "index": 317,
+          "k": "CX",
+          "q": [
+            25,
+            26
+          ],
+          "t": 34,
+          "b": null
+        },
+        {
+          "index": 381,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.10888888888889e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.9999999999999809e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_06"
+    },
+    {
+      "deleted": [
+        {
+          "index": 344,
+          "k": "CX",
+          "q": [
+            5,
+            11
+          ],
+          "t": 36,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.275555555555558e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023666666666666614,
+        "acc1": 0.10846666666666854,
+        "nf": 1367
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 3.666666666666677e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain.",
+      "candidate_stem": "audit/review11/physical/resource_delete_07"
+    },
+    {
+      "deleted": [
+        {
+          "index": 344,
+          "k": "CX",
+          "q": [
+            5,
+            11
+          ],
+          "t": 36,
+          "b": null
+        },
+        {
+          "index": 371,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 38,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.328888888888892e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 4.1999999999999937e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 344,
+          "k": "CX",
+          "q": [
+            5,
+            11
+          ],
+          "t": 36,
+          "b": null
+        },
+        {
+          "index": 381,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.328888888888892e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 4.1999999999999937e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 384,
+          "k": "CX",
+          "q": [
+            12,
+            13
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.348888888888891e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023666666666666614,
+        "acc1": 0.10846666666666854,
+        "nf": 1367
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 4.399999999999992e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 371,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 38,
+          "b": null
+        },
+        {
+          "index": 384,
+          "k": "CX",
+          "q": [
+            12,
+            13
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.402222222222224e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 4.933333333333326e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 381,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 39,
+          "b": null
+        },
+        {
+          "index": 384,
+          "k": "CX",
+          "q": [
+            12,
+            13
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.402222222222224e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 4.933333333333326e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 317,
+          "k": "CX",
+          "q": [
+            25,
+            26
+          ],
+          "t": 34,
+          "b": null
+        },
+        {
+          "index": 344,
+          "k": "CX",
+          "q": [
+            5,
+            11
+          ],
+          "t": 36,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.422222222222224e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 5.133333333333324e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 317,
+          "k": "CX",
+          "q": [
+            25,
+            26
+          ],
+          "t": 34,
+          "b": null
+        },
+        {
+          "index": 384,
+          "k": "CX",
+          "q": [
+            12,
+            13
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.495555555555556e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 5.866666666666656e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 344,
+          "k": "CX",
+          "q": [
+            5,
+            11
+          ],
+          "t": 36,
+          "b": null
+        },
+        {
+          "index": 384,
+          "k": "CX",
+          "q": [
+            12,
+            13
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 6.715555555555557e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 8.066666666666668e-07,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 343,
+          "k": "CX",
+          "q": [
+            19,
+            25
+          ],
+          "t": 36,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 7.088888888888892e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023666666666666614,
+        "acc1": 0.10846666666666854,
+        "nf": 1367
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.1800000000000006e-06,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 343,
+          "k": "CX",
+          "q": [
+            19,
+            25
+          ],
+          "t": 36,
+          "b": null
+        },
+        {
+          "index": 371,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 38,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 7.142222222222225e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.233333333333334e-06,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 343,
+          "k": "CX",
+          "q": [
+            19,
+            25
+          ],
+          "t": 36,
+          "b": null
+        },
+        {
+          "index": 381,
+          "k": "CX",
+          "q": [
+            4,
+            5
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 7.142222222222225e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.233333333333334e-06,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 317,
+          "k": "CX",
+          "q": [
+            25,
+            26
+          ],
+          "t": 34,
+          "b": null
+        },
+        {
+          "index": 343,
+          "k": "CX",
+          "q": [
+            19,
+            25
+          ],
+          "t": 36,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 7.235555555555558e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.326666666666667e-06,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 343,
+          "k": "CX",
+          "q": [
+            19,
+            25
+          ],
+          "t": 36,
+          "b": null
+        },
+        {
+          "index": 344,
+          "k": "CX",
+          "q": [
+            5,
+            11
+          ],
+          "t": 36,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 7.455555555555559e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.5466666666666665e-06,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    },
+    {
+      "deleted": [
+        {
+          "index": 343,
+          "k": "CX",
+          "q": [
+            19,
+            25
+          ],
+          "t": 36,
+          "b": null
+        },
+        {
+          "index": 384,
+          "k": "CX",
+          "q": [
+            12,
+            13
+          ],
+          "t": 39,
+          "b": null
+        }
+      ],
+      "proxy": {
+        "c1": 0.0,
+        "leak": 0.005466666666666659,
+        "X2": 7.528888888888891e-06,
+        "X2leak": 5.733333333333338e-06,
+        "RZ": 0.023866666666666616,
+        "acc1": 0.10920000000000181,
+        "nf": 1358
+      },
+      "accepted_nonzero_x_signatures": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "delta_proxy_X2_plus_X2leak": 1.6199999999999997e-06,
+      "delta_leak": 0.0,
+      "scope": "Endpoint and local Pauli proxy only; not a full noisy gain."
+    }
+  ]
+}

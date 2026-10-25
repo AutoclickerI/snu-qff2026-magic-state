@@ -20,7 +20,8 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    e.g. 02:20>" <hosts incl. zebra>`; the slot is at :37 each hour. Hourly loop: `work/receipts/draw_loop.sh <pid of the running cut>`
    races an hour-named copy of the stem in `work/receipts/next_stem.txt` until HH:20 and promotes it; variant k of a stem is
    the same circuit every hour, so `work/receipts/offset_<stem>.txt` carries the next unused k; `work/receipts/race_specs.sh`
-   sizes each host's processes from its free cores at the start of the hour (cap 75%, zebra 16). `race.py` changes reach
+   sizes each host's processes from its free cores at the start of the hour (cap 75%; racer maxima jerry 24, hippo 12,
+   zebra 8 leave room for lanes: edit its host list when lanes move). `race.py` changes reach
    the hosts only by rsync (promote.sh copies the stem, not the code). By hand: `work/submit.py submit|status|board|wait`.
 7. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without credentials or caches.
    Refresh one host at a time (zebra caps SSH connections):
@@ -42,7 +43,7 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 | Submission quota | one per hour (slot :37) | `work/submit.py`; the board keeps each team's best entry, so every slot is used |
 | Claude subagents | research lanes while Codex is down (R-20261025-1), one dir each under `work/lanes/` | Agent tool, background; the brief names the goal and incumbent numbers, the docs to read, prior lanes' git paths, evaluator commands, host limits, and "no submit, no commit"; the main session verifies and commits |
 | Codex | research lanes when it answers | down since 2026-10-25 02:26 KST (Hermes proxy 127.0.0.1:18645: 429, ~6-day retry on every model); test with a one-line `codex-companion.mjs task` before relaunching; briefs forbid `spawn_agent` |
-| Reviewer bundles | independent audits with circuits, certificates and task lists | `work/lanes/MAIN/spec/reviewer{8,9}/`; reviewers 3–7: `git show b2a5243:work/lanes/MAIN/spec/reviewer<n>/...` |
+| Reviewer bundles | independent audits with circuits, certificates and task lists | `work/lanes/MAIN/spec/reviewer{8,9,11}/`; reviewers 3–7: `git show b2a5243:work/lanes/MAIN/spec/reviewer<n>/...` |
 | Upstream | judge and cultivation code | `upstream/snu-qff2026-problem` (76fe47c), `upstream/magic-state-cultivation` (871e68f); not in git |
 
 ## Consumers

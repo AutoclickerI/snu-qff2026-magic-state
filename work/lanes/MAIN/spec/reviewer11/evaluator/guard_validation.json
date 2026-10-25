@@ -1,0 +1,81 @@
+{
+  "tests": [
+    {
+      "case": "uniform",
+      "counts": {
+        "original_channels": 1,
+        "original_terms": 3,
+        "character_channels_before_merge": 1,
+        "character_channels": 1,
+        "character_generators": 2,
+        "identity_channels_dropped": 0,
+        "fallback_channels": 0,
+        "retained_constant_factor": 1.0
+      },
+      "maximum_difference": 0,
+      "passed": true
+    },
+    {
+      "case": "unequal_one_ulp",
+      "counts": {
+        "original_channels": 1,
+        "original_terms": 3,
+        "character_channels_before_merge": 0,
+        "character_channels": 0,
+        "character_generators": 0,
+        "identity_channels_dropped": 0,
+        "fallback_channels": 1,
+        "retained_constant_factor": 1.0
+      },
+      "maximum_difference": 0,
+      "passed": true
+    },
+    {
+      "case": "unnormalized",
+      "counts": {
+        "original_channels": 1,
+        "original_terms": 3,
+        "character_channels_before_merge": 1,
+        "character_channels": 1,
+        "character_generators": 2,
+        "identity_channels_dropped": 0,
+        "fallback_channels": 0,
+        "retained_constant_factor": 1.0
+      },
+      "maximum_difference": 0,
+      "passed": true
+    },
+    {
+      "case": "nonunit_constant",
+      "counts": {
+        "original_channels": 1,
+        "original_terms": 3,
+        "character_channels_before_merge": 0,
+        "character_channels": 0,
+        "character_generators": 0,
+        "identity_channels_dropped": 1,
+        "fallback_channels": 0,
+        "retained_constant_factor": 0.59
+      },
+      "maximum_difference": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "case": "merged_nonunit",
+      "counts": {
+        "original_channels": 3,
+        "original_terms": 9,
+        "character_channels_before_merge": 2,
+        "character_channels": 1,
+        "character_generators": 2,
+        "identity_channels_dropped": 1,
+        "fallback_channels": 0,
+        "retained_constant_factor": 0.59
+      },
+      "maximum_difference": 5.551115123125783e-17,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "Uniform algebra, one-ULP unequal-probability fallback, nonunit trivial level and merged constants."
+}

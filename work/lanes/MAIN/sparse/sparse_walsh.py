@@ -158,6 +158,7 @@ def compile_channels(m, groups, nd, kernel_scope):
 
 WARM = ROOT/'basis_warm.json'   # saved detector-row XOR sequences keyed by detector record sets (v36c, v36f families)
 BASIS_TRIALS = 1000
+SEARCH_WIDTH = 9
 
 def search_basis(m, eng, groups, nd, kernel_scope, warm, trials=BASIS_TRIALS, seed=80353):
     """Detector-row XORs among zero-reference identity rows outside the kernel scope (the accepted event and every moment
@@ -233,12 +234,17 @@ def search_basis(m, eng, groups, nd, kernel_scope, warm, trials=BASIS_TRIALS, se
     return ops, best
 
 def compile_best(m, eng, groups, nd, kernel_scope):
-    """compile_channels and its min-fill plan in the cheapest detector basis found: the plain one, or a basis searched
-    from each saved sequence in basis_warm.json (v36c: width 11 -> 9; v36f: ~130 s -> ~5 s at 16 processes)."""
+    """compile_channels and its min-fill plan in the cheapest detector basis found: the plain one, or a saved sequence
+    from basis_warm.json replayed on this circuit; only when the best of those is still wide (> SEARCH_WIDTH, where each
+    width step doubles the contraction) is it refined by BASIS_TRIALS hill-climb steps (v36h: 12 s of search saved 18% of
+    the work estimate and none of the 6 s contraction; v36f with the plain basis: width 12, ~130 s)."""
     compiled = compile_channels(m, groups, nd, kernel_scope)
     elim = minfill([set(scope) for scope, _, _ in compiled])
     warms = list(json.loads(WARM.read_text())['bases'].values())
-    ops = min((search_basis(m, eng, groups, nd, set(kernel_scope), w) for w in warms), key=lambda r: r[1])[0]
+    ops, cost = min((search_basis(m, eng, groups, nd, set(kernel_scope), w, trials=0) for w in warms),
+                    key=lambda r: r[1])
+    if min(cost, (elim['work_entries'], elim['width']))[1] > SEARCH_WIDTH:
+        ops = min((search_basis(m, eng, groups, nd, set(kernel_scope), w) for w in warms), key=lambda r: r[1])[0]
     if not ops:
         return compiled, elim
     rows = [1 << i for i in range(nd)]

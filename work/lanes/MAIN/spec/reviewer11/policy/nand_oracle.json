@@ -1,0 +1,37 @@
+{
+  "source_commit": "0ff9423a8e69c13998ab1baf7bf09c8e97558a60",
+  "bits": [
+    3,
+    310
+  ],
+  "detector_rows": [
+    3,
+    75
+  ],
+  "accepted_patterns": [
+    "00",
+    "01",
+    "10"
+  ],
+  "identity": "P(d3=0 or d75=0, others=0)=P(drop row3)+P(drop row75)-P(all0); same identity for unnormalized loss numerator",
+  "baseline": {
+    "A": 0.5015149656065663,
+    "L": 3.836054467100275e-05
+  },
+  "drop_c3": {
+    "A": 0.5021530034099022,
+    "L": 3.836127552201376e-05
+  },
+  "drop_c310": {
+    "A": 0.5022196593031298,
+    "L": 3.8362895745571734e-05
+  },
+  "cost_free_nand_oracle": {
+    "A": 0.5028576971064658,
+    "N": 1.9291442907909406e-05,
+    "L": 3.836362258928492e-05,
+    "delta_A": 0.0013427314998994966,
+    "delta_L": 3.0779182821709904e-09
+  },
+  "scope": "Exact all-orders conditional policy oracle from zero-reference relaxations. Added physical RCCX gate noise/time not included. Sparse omission and floating roundoff remain."
+}

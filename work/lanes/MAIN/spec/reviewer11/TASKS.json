@@ -1,0 +1,145 @@
+{
+  "analysis_commit": "0ff9423a8e69c13998ab1baf7bf09c8e97558a60",
+  "baseline": "v36g",
+  "baseline_loss": 3.836054467100275e-05,
+  "baseline_acceptance": 0.5015149656065663,
+  "prerequisite": "Fix filename-only cache bypass and QASM-only semantic identity before new search.",
+  "tasks": [
+    {
+      "number": 1,
+      "id": "analytic_channels",
+      "title": "Uniform Pauli character factors and exact coalescing",
+      "evidence_status": "implemented_validated",
+      "priority": "P0",
+      "depends_on": [],
+      "first_deliverable": "Integrate guarded factor path, preserving source-channel provenance and original fallback.",
+      "acceptance_criteria": "Compare all moments on v36f/v36g and representative real edits; measure total workload throughput.",
+      "stop_rule": "Fallback for any unsupported distribution; no physical-score claim."
+    },
+    {
+      "number": 2,
+      "id": "amortized_planner",
+      "title": "Budget basis search using total evaluation cost",
+      "evidence_status": "measured_v36g_option",
+      "priority": "P0",
+      "depends_on": [
+        "analytic_channels"
+      ],
+      "first_deliverable": "Saved-basis-first planner with request/reuse-aware budget and semantic plan cache.",
+      "acceptance_criteria": "Acceptance-only and full-score workload cost improves with identical moments.",
+      "stop_rule": "Do not globally disable search on new graphs; retain an adaptive full-search path."
+    },
+    {
+      "number": 3,
+      "id": "decoder_safe_bflag",
+      "title": "Relax current F1 to decoder-safe B X cosets",
+      "evidence_status": "finite_certificate_physical_gain_unmeasured",
+      "priority": "P1",
+      "depends_on": [
+        "analytic_channels"
+      ],
+      "first_deliverable": "One current-r3 neighborhood with safe residues, X2leak diagnostics and full-exterior ranking.",
+      "acceptance_criteria": "Fixed ideal endpoint, valid whole-circuit single-fault behavior, A>=0.5 and lower expected L.",
+      "stop_rule": "Old relaxed-residue failures apply; stop bounded first window without useful headroom."
+    },
+    {
+      "number": 4,
+      "id": "joint_bc_clifford",
+      "title": "Join B/C preparation and verification in a Clifford window",
+      "evidence_status": "gated_synthesis_candidate",
+      "priority": "P1",
+      "depends_on": [
+        "analytic_channels"
+      ],
+      "first_deliverable": "One physically distinct 4–6-wire endpoint/instrument-equivalent witness spanning B-to-C.",
+      "acceptance_criteria": "Boundary Pauli/record equivalence, unchanged native budget or fully priced added cost, class and full-noise gain.",
+      "stop_rule": "Reject pure isotropic frame gauges; no broad solver before first witness."
+    },
+    {
+      "number": 5,
+      "id": "joint_a_guard_decoder",
+      "title": "Joint A encoder decoder and data guard boundary",
+      "evidence_status": "concrete_boundary_gap",
+      "priority": "P2",
+      "depends_on": [
+        "analytic_channels"
+      ],
+      "first_deliverable": "Sufficient current-v36g process boundary reproducing baseline, then one joint physical window.",
+      "acceptance_criteria": "A/N agree with whole-circuit evaluator before search; candidate charges every removed guard and new idle.",
+      "stop_rule": "Do not reuse old 128 A-only classes without sufficiency proof; stop if boundary/cost is intractable."
+    },
+    {
+      "number": 6,
+      "id": "partial_coherent_c",
+      "title": "Fourteen intermediate C resource/readout contracts",
+      "evidence_status": "exact_contract_and_restricted_mechanism",
+      "priority": "P2",
+      "depends_on": [
+        "analytic_channels"
+      ],
+      "first_deliverable": "Current-boundary ideal instrument screen followed by a routed, readout-priced winning contract.",
+      "acceptance_criteria": "Joint complementary stabilizer readout, all single faults, acceptance, native schedule, full L and runtime.",
+      "stop_rule": "Ideal gain is about 1–1.5e-6 in a restricted model; stop when real readout/waiting consumes it."
+    },
+    {
+      "number": 7,
+      "id": "nonmonotone_bundles",
+      "title": "Finite connected two and three edit neighborhoods",
+      "evidence_status": "coverage_gap_verified",
+      "priority": "P1",
+      "depends_on": [
+        "analytic_channels",
+        "amortized_planner"
+      ],
+      "first_deliverable": "Explicit all-or-nothing bundle list and full A/N prices including nonpositive singles.",
+      "acceptance_criteria": "Semantic candidate identity, complete finite enumeration or clearly labeled heuristic beam.",
+      "stop_rule": "Harmful interactions do not prove beneficial ones; stop at scoped neighborhood budget."
+    },
+    {
+      "number": 8,
+      "id": "record_rccx",
+      "title": "Four-T measured-record logic after a Boolean-policy oracle",
+      "evidence_status": "primitive_and_placement_verified_first_policy_negative",
+      "priority": "P2",
+      "depends_on": [
+        "analytic_channels"
+      ],
+      "first_deliverable": "Favorable exact policy table followed by one fully noisy, class-valid 19-T implementation.",
+      "acceptance_criteria": "Relative phase invisible, records remain available, signed omission bounds propagated and complete A/N gain.",
+      "stop_rule": "Supplied pair raises cost-free loss and fails sampled acceptance; do not promote or reprice it expensively."
+    },
+    {
+      "number": 9,
+      "id": "open_boundary_tensor",
+      "title": "Generate response tables with open boundary indices",
+      "evidence_status": "algebraic_extension_unbenchmarked",
+      "priority": "P2",
+      "depends_on": [
+        "analytic_channels",
+        "amortized_planner"
+      ],
+      "first_deliverable": "Reproduce old sufficient 128-class table via one open-boundary contraction per observable/kernel.",
+      "acceptance_criteria": "Every A/N entry matches; induced width, peak memory and full table time show useful benefit.",
+      "stop_rule": "No 128x claim; batch or retain old method if width grows. Expand v36g only after sufficient-boundary proof."
+    },
+    {
+      "number": 10,
+      "id": "family_race_allocation",
+      "title": "Allocate racing across physical families by valid wins per compute",
+      "evidence_status": "finite_budget_pilot_proposal",
+      "priority": "P1",
+      "depends_on": [],
+      "first_deliverable": "Balanced v36f/v36g pilot on identical workers with valid-key, CPU and correlation accounting.",
+      "acceptance_criteria": "Held-out calibrated winner-rate/cost estimate with uncertainty and official key/tie semantics.",
+      "stop_rule": "q/E[C] is not a global adaptive finite-budget guarantee; retain evidence uncertainty if winners are too rare."
+    }
+  ],
+  "global_gates": [
+    "Unchanged official format/class/ideal correctness",
+    "Actual native schedule/noise and ordered data mapping",
+    "Absolute noisy acceptance >=0.5 plus team verification margin",
+    "Unnormalized A,N and expected L with numerical-error accounting",
+    "Official runtime feasibility",
+    "Record precise finite search scope; no unsupported universal closure"
+  ]
+}
