@@ -1,9 +1,9 @@
 # Plan
 
-## Status (2026-10-25 10:25 KST)
-- Board: **rank 1** with v36f_h2509_r154749, **server 3.58239e-5** (09:37; key 3.58e-5); Placeholder 4.984e-5.
+## Status (2026-10-25 10:45 KST)
+- Board: **rank 1** with v36f_h2510_r252072, **server 3.56477e-5** (10:37; key 3.56e-5); Placeholder 4.984e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36f`) against the key boundary below our best and submits the best at :37.
+  `lanes/MAIN/v36g`) against the key boundary below our best and submits the best at :37.
 - **Best expected circuit: v36g** (`work/lanes/MAIN/v36g` = INTEG2 `integ2_h2`: v36f + 10 small gadgets, 4 init-check
   trades, 6 timing shifts): **all-orders 3.836054e-5 (−0.04% vs v36f), acceptance 0.50151**, 320 CX, R44, FAST; the
   hourly stem from the 10:20 race. Lineage: v36c (ST2) 4.11516e-5 → v36d (INTEG gadgets) 4.02862e-5 → v36e (BFLAG
