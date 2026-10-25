@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36f_h2510_r252072**, server 1-F = 3.56477280411118e-5
-(= local seed-0, key 3.56e-5), acceptance 0.50438, 293 CX, submitted 2026-10-25 10:38:32 KST
-(`work/receipts/seq_v36f_h2510_r252072.txt`; best raced seed-0 draw of `work/lanes/MAIN/v36f`, all-orders 3.83761e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36h_h2513_r4852**, server 1-F = 3.53130699502577e-5
+(= local seed-0, key 3.53e-5), acceptance 0.50166, 327 CX, submitted 2026-10-25 13:38:55 KST
+(`work/receipts/seq_v36h_h2513_r4852.txt`; best raced seed-0 draw of `work/lanes/MAIN/v36h`, all-orders 3.81547e-5).
 
-Best competitor: Placeholder 4.984e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 00:51 KST; 5.058e-5 at 2026-10-24
-21:58). Board read 2026-10-25 10:44 KST; refresh with `work/submit.py board`.
+Best competitor: Placeholder 4.906e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 13:26 KST). Board read
+2026-10-25 13:45 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git show b2a5243:<path>` for the lanes removed at 04:10 on 2026-10-25, `git show a58eca7:<path>` for `work/candidates/` and earlier removals.
@@ -48,6 +48,8 @@ Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git sho
 | v36d: v36c + INTEG's acceptance trades and 34 pair/echo/guard gadgets (raced re-draw h2506_r53) | server | 3.75483e-5, 282 CX (all-orders 4.02862e-5) | `work/submissions/v36d_h2506_r53.*`, `work/lanes/INTEG/REPORT.md` |
 | v36e: v36d with BFLAG's 56-CX B/C resource r3 (raced re-draw h2507_r449) | server | 3.67131e-5, 281 CX (all-orders 3.92343e-5) | `work/submissions/v36e_h2507_r449.*`, `work/lanes/BFLAG/REPORT.md` |
 | v36f: v36e + PRECELL's continuous guards, echo ends and late B/C guards (raced re-draws h2508_r8782, h2509_r154749, h2510_r252072) | server | 3.62209e-5, then 3.58239e-5 and 3.56477e-5 with the κ-rule racer, 293 CX (all-orders 3.83761e-5) | `work/submissions/v36f_h25{08,09,10}_r*.*`, `work/lanes/PRECELL/REPORT.md` |
+| v36g: v36f + INTEG2 re-integration (raced re-draws h2511_r42271, h2512_r151914; neither lowered the key) | server | 3.57728e-5, 3.55529e-5, 320 CX (all-orders 3.83605e-5) | `work/submissions/v36g_h2511_r42271.*`, `work/submissions/v36g_h2512_r151914.*`, `work/lanes/INTEG2/REPORT.md` |
+| v36h: v36g + ACCBUY known-state guards and init-check trades (raced re-draw h2513_r4852) | server | 3.53131e-5, 327 CX (all-orders 3.81547e-5) | `work/submissions/v36h_h2513_r4852.*`, `work/lanes/ACCBUY/REPORT.md` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
