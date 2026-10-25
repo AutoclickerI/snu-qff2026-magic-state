@@ -33,12 +33,12 @@ is relayed across hosts (FINDINGS "Race drop rule"). The all-orders price inside
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P85 | G1 | B/C resource with decoder-safe residues and a joint last-layer window (reviewer 11 Tasks 3, 4): BFLAG's F1 demands s = 0 when no detector fires, but the decoder only needs s ∈ {0, 9..15} (64 of 128 X patterns instead of 8); add X2leak to the LNS objective; extend the synthesized window through B→C at tick 44 with endpoint \|0_L⟩_B\|0⟩^7_C, CX-only, then H/S on charged idles. Prior: FRESH's relaxed-residue R45 builds lost (8.86e-5–1.05e-4) | a resource that beats r3 in all orders on v36h, or the cost that blocks it per lead | BCX (Claude, `work/lanes/BCX`, hippo ≤ 24 cores) | active |
-| 2 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 2 | P89 | G1 | Nonmonotone connected 2–3-edit bundles on v36h (reviewer 11 Task 7): the greedy searches kept only positive singles, marked losers dead and stopped early, so "free a slot, then use it twice" was never priced; enumerate bundles in neighbourhoods of shared helpers, windows or signatures, all-or-nothing, semantic cache keys, with the 1-s evaluator | a bundle finalist below v36h, or the exact enumerated neighbourhood with no win | BUNDLE (Claude, `work/lanes/BUNDLE`, zebra ≤ 32) | active |
+| 3 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 11 (`spec/reviewer11/`, TASKS.json): Task 5 joint A encoder + data guard + A decoder across their fixed
-  boundary (needs an exterior table built on v36h, AENC's is v36c's); Task 7 non-monotone 2–3-edit bundles on the INTEG2/
-  ACCBUY menus, priced as bundles (same-qubit trades are non-additive); Task 8 the 4-T measured-classical RCCX (`physical/
+  boundary (needs an exterior table built on v36h, AENC's is v36c's); Task 8 the 4-T measured-classical RCCX (`physical/
   rccx_probe.py`: nonlinear postselection, 19 T fits the evaluator), each record pair gated by the joint accepted-sector
   oracle first (the first pair lost); Task 9 open-boundary tables for region search.
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair
