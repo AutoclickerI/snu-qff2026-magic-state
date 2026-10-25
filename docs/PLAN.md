@@ -3,14 +3,13 @@
 ## Status (2026-10-25 17:20 KST)
 - Board: **rank 1** with v36h_h2517_r342819, **server 3.48827e-5** (17:37; key 3.49e-5); Placeholder 4.906e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v37a` from the 20:20 race) against the key boundary below our best and submits the best at :37.
-- **Best expected circuit: v37a** (`work/lanes/MAIN/v37a`, GLOBAL's R46 layout with both A-flag-gap helpers on the
-  grid, rebuilt A and B/C, repaired and acceptance-funded): **all-orders 3.761822e-5 (−0.74% vs v36k), acceptance
-  0.50079**, 390 CX, 49 ticks; races from the 21:37 slot (race 20:20–21:20). Lineage: v36c (ST2) 4.11516e-5 → v36e (r3) 3.92343e-5 → v36h
-  (ACCBUY) 3.815473e-5 → v36i (APROC) 3.809138e-5 → v36k (greedy bundles) 3.789826e-5 → v37a (layout R46) 3.761822e-5.
-  Not yet applied to v37a: the greedy bundle polish (worth −2.6e-7 from v36h to v36k), a B/C resource of r3's
-  quality (B/C gate noise removed is worth 4.73e-6 on R46 against 3.81e-6 on v36h), and a late X check (−1.15e-6 as
-  a phantom on v36h).
+  `lanes/MAIN/v37b` from the 22:20 race) against the key boundary below our best and submits the best at :37.
+- **Best expected circuit: v37b** (`work/lanes/MAIN/v37b`: v37a, GLOBAL's R46 layout with both A-flag-gap helpers,
+  plus 11 POLISH edits): **all-orders 3.742321e-5 (−0.52% vs v37a), acceptance 0.50348**, 391 CX; races from the 23:37
+  slot. v37a's first race (submitted 21:39, best draw 3.48009e-5, key 3.48e-5) is being scored. Lineage: v36c (ST2)
+  4.11516e-5 → v36e (r3) 3.92343e-5 → v36h (ACCBUY) 3.815473e-5 → v36k (greedy bundles) 3.789826e-5 → v37a (layout
+  R46) 3.761822e-5 → v37b. Lanes found separate −1.8e-7 gains on v37a (GLOBAL's B/C 3.7433e-5, COMPLETE's phase-network
+  end 3.7441e-5); MERGE combines them with POLISH's edits.
 - Where the loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
   3.041e-5, of which 2.274e-5 is our terminal class's floor (TERM) and 0.768e-5 leaks that every template tried keeps;
   A, B, C preparation 0.456e-5; prefix and data wait 0.618e-5. Closed today on this layout: an earlier round (R43, worth
@@ -43,7 +42,8 @@ so lane searches are bound by ideas, not evaluation.
 | 3 | P99 | G1 | A state-specific end of the 15-T phase network (DIGEST #1, reviewer 12 #2–4): synthesize only the completion the target needs, with output placement free, and archive release profiles so A/B/C preparation, the round or GLOBAL's room can move earlier (data waits 28–42 3.88e-6, a tick shorter −0.68e-6); rebased on v37a at 20:00 (144 v36k circuits priced, none below v36k) | finalist L < τ(v37a) − 1e-7 at A ≥ 0.5002, or three release profiles built downstream with the cost that ate the gain | COMPLETE (Codex, `work/lanes/COMPLETE`, tom ≤ 24) | active |
 | 4 | P100 | G1 | A encoder, nearby data guards and A's partial decoder as one process with transient encoded flags (DIGEST #2, reviewer 11 Task 5, reviewer 12 #6, reviewer 7 M06); A cells 33–42 noiseless −1.64e-6; rebased on v37a at 20:00 (177 v36k circuits priced, best −1.4e-8 below the gate) | finalist as P99, or the window grown until the boundary model no longer fits, with the cost that ate the gain | AJOINT (Codex, `work/lanes/AJOINT`, hippo ≤ 24) | active |
 | 5 | P101 | G1 | The greedy local-edit polish on v37a (BUNDLE's menu ported to R46: singles, connected 2-bundles, greedy joint extension; then GUARDNET's guard network and APROC's A pass): v36i → v36k gained −1.93e-7 this way | a greedy round gains < 1e-9 after all three stages | POLISH (Codex, `work/lanes/POLISH`, zebra ≤ 16) | active |
-| 6 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 6 | P104 | G1 | Merge the lanes' independent gains on v37a (POLISH's edits, GLOBAL's B/C, COMPLETE's phase-network end) by footprint, re-apply POLISH's menu where they overlap, repair | finalist L < L(v37b) − 5e-8, or the measured reason they do not combine | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 4) | active |
+| 7 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 14 (`spec/reviewer14/REPORT_KO.md`, on v36i; numbers reviewer-reported): #2 physical syndrome removed
