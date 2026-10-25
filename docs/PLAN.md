@@ -6,7 +6,7 @@
   `lanes/MAIN/v37a` from the 20:20 race) against the key boundary below our best and submits the best at :37.
 - **Best expected circuit: v37a** (`work/lanes/MAIN/v37a`, GLOBAL's R46 layout with both A-flag-gap helpers on the
   grid, rebuilt A and B/C, repaired and acceptance-funded): **all-orders 3.761822e-5 (−0.74% vs v36k), acceptance
-  0.50079**, 390 CX, 49 ticks; races from the 20:37 slot. Lineage: v36c (ST2) 4.11516e-5 → v36e (r3) 3.92343e-5 → v36h
+  0.50079**, 390 CX, 49 ticks; races from the 21:37 slot (race 20:20–21:20). Lineage: v36c (ST2) 4.11516e-5 → v36e (r3) 3.92343e-5 → v36h
   (ACCBUY) 3.815473e-5 → v36i (APROC) 3.809138e-5 → v36k (greedy bundles) 3.789826e-5 → v37a (layout R46) 3.761822e-5.
   Not yet applied to v37a: the greedy bundle polish (worth −2.6e-7 from v36h to v36k), a B/C resource of r3's
   quality (B/C gate noise removed is worth 4.73e-6 on R46 against 3.81e-6 on v36h), and a late X check (−1.15e-6 as
