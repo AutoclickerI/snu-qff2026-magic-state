@@ -1,100 +1,53 @@
 # Plan
 
-## Status (2026-10-25 17:20 KST)
-- Board: **rank 1** with v37a_h2521_r2793, **server 3.48009e-5** (21:39; key 3.48e-5); Placeholder 4.005e-5.
-  The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v37d` from the 00:20 race) against the key boundary below our best and submits the best at :37.
-- **Best expected circuit: v37d** (`work/lanes/MAIN/v37d`: v37c, the MERGE of COMPLETE's R45 phase-network end,
-  POLISH's edits and GLOBAL's B/C core on v37a, plus MERGE pass 2 with AJOINT's q9 reorder and two converged greedy
-  passes): **all-orders 3.676347e-5 (−0.38% vs v37c), acceptance 0.50235**, 406 CX, 48 ticks; races from the 01:37
-  slot. Lineage: v36h (ACCBUY) 3.815473e-5 → v36k (greedy bundles) 3.789826e-5 → v37a (layout R46) 3.761822e-5 → v37b
-  (POLISH) 3.742321e-5 → v37c (MERGE) 3.690403e-5 → v37d. Lane gains on a shared base compound when merged.
-- Where the loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
-  3.041e-5, of which 2.274e-5 is our terminal class's floor (TERM) and 0.768e-5 leaks that every template tried keeps;
-  A, B, C preparation 0.456e-5; prefix and data wait 0.618e-5. Closed today on this layout: an earlier round (R43, worth
-  only −0.68e-6), C's partially coherent instrument (PCC), and the A-flag gap (FLAG: ≥ 2 data gap ticks in every valid
-  flagged round; helpers need a new layout), and the B/C resource on v36h's cells (P85: 22 LNS runs end at one
-  acceptance-only move, decoder-safe residues each cost ≥ p/15·2.6e-3 through the exterior's undetected data-X weight).
-- Reviewers 11–14 (`work/lanes/MAIN/spec/reviewer{11,12,13,14}/`; untrusted, run with `python -I`; reviewer 14's square final round is P102) and DIGEST's
-  re-read of reviewers 1–12: B/C widenings (P85 closed, P90), evaluator and racer speedups (done: character tables,
-  quotient contraction, packed syndrome decoding; P96), acceptance sources (P95). None found a circuit below v36h.
-  Fixed today from reviewer 13: `fast_check.py` reports `gates_ok` apart from the 1e6-shot acceptance estimate, and
-  `race_specs.sh` skips a host without room instead of forcing 4 racers past the 75% cap.
-- Lanes run on Codex (CONSTRAINTS rule 11), one dir each under `work/lanes/<LANE>`, and report to the main session,
-  which verifies and promotes. IFACE, BCV and GUARDNET closed their tested families (FINDINGS).
+## Status (2026-10-26 00:20 KST)
+- Board: **rank 1** with v37a_h2521_r2793, **server 3.48009e-5** (key 3.48e-5); next team Placeholder 3.856e-5 (22:53; 4.005e-5 an hour earlier), so rank 1 needs our key to keep falling. The
+  hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` and submits
+  the hour's best at :37: v37c for the 00:37 slot, **v37d** from the 00:20 race (01:37 slot).
+- **Best expected circuit: v37d** (`work/lanes/MAIN/v37d`): **all-orders 3.676347e-5, acceptance 0.50235**, 406 CX,
+  48 ticks, round R45 on GLOBAL's R46 layout (data [6,20,19,10,2,22,16]). Since v36h (3.815473e-5): greedy bundles,
+  the R46 layout with both A-flag-gap helpers (v37a), POLISH's edits (v37b), MERGE of COMPLETE's R45 end, POLISH and
+  GLOBAL's B/C (v37c), MERGE pass 2 (v37d). Lane gains on a shared base compound when merged.
+- Where the loss sits (FINDINGS): our terminal class floor 2.274e-5 is 61% of the total; the two-check tick before
+  the reads +0.57e-5; preparation and waits before it ≈ +0.9e-5. The square round with perfect A/B/C arriving just in
+  time on v37c's real prefix gives **2.860e-5** (WHOLEEND), so the square route is worth up to ≈ −0.8e-5, decided
+  by preparing A, B, C on the grid. Out of class, no tested ending wins: unmeasured-partner block endings ≥ 28.747 p²,
+  whole-grid tails ≥ 3.37e-5, fresh helpers ≥ 4.37e-5, and a 30% gain needs ≥ 4 outputs in a CX at T−1.
+- Lanes run on Codex (CONSTRAINTS rule 11), one dir each under `work/lanes/<LANE>`, report to the main session,
+  which verifies (all orders, judge `gates_ok`, judge speed ≤ 1.5× the incumbent's) and promotes.
 
 ## Critical path
-Lane delta on v36h → all orders (≈ 1 s at 16 processes) → judge 1e6, speed → `next_stem.txt` → hourly race of seed-0
-draws → `work/promote.sh` → slot. The board score is the hour's best draw: about mean − 3.5 to 4σ (σ = the judge's sem ≈
-7.2e-7), so a 1% lower mean (3.8e-7) is worth about as much as 3 doublings of racing compute; racing gains are
-logarithmic, so lanes take the cores they need and the racer fills the rest at each hour's start (`race_specs.sh`: racer
-caps hippo 12, zebra 8 leave room for the lanes). The drop rule is relative to the prior (κ = 0.7) and the threshold
-is relayed across hosts (FINDINGS "Race drop rule"). The all-orders price inside lane searches is ≈ 1 s at 16 processes and ≈ 3–5 s
-CPU at 1 (EVALF character tables, then reviewer 12's quotient contraction, ≈ 2× less CPU) and the adjoint map ≈ 1 min,
-so lane searches are bound by ideas, not evaluation.
+Lane candidate → all orders on v37d's terms (≈ 1 s at 16 processes) → judge 1e6/1e7 and speed → `next_stem.txt` →
+hourly race (stem read at HH:20, best draw submitted at HH+1:37) → `work/promote.sh` → slot. The board score is the
+hour's best draw, about mean − 3.5 to 4σ (σ ≈ 7.2e-7), so a 1% lower mean (3.7e-7) is worth about 3 doublings of
+racing compute; racing gains are logarithmic, so lanes take the cores they need and the racer fills the rest at each
+hour's start (`race_specs.sh`). Lane searches are bound by ideas, not evaluation. Last stem change that can reach
+the final slot (2026-10-30 11:37): `next_stem.txt` before 10:20 that day.
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P102 | G1 | Reviewer 14's square final round (`spec/reviewer14/REPORT_KO.md` #1, #5): A = \|+_L⟩, B = \|0_L⟩, C = \|+_L⟩; D→A ∥ B→C, then B→D ∥ C→A, then MZ(A), MX(B), MX(C). B's X syndrome reaches A through C, and C catches A's logical Z, so the round reaches TERM's two-check floor 25.67 p² (reviewer-reported round only 2.5558e-5 vs 2.8713e-5 for the Steane round; TERM had this route blocked only by a literal-\|0_L⟩ C). Our round is ≈ 30 p², so ≈ −3e-6 if preparation costs stay comparable; B needs a logical-Z verification first; the eraser variant (C's readout as FRAME_Z) frees A's state. Gates 1–2 passed (SQUARE): round only reproduced exactly (square 2.555843e-5, eraser 2.558464e-5, Steane 2.871336e-5; v37a's round 2.903231e-5); grid-free full suffix with real preparations 3.4896e-5 vs 4.0423e-5 for the standard suffix built the same way (−5.5e-6). Gate 3, the grid, is the obstacle: each index needs a 2×2 cell square, which scatters every block, so routed builds run R85–R94 and lose (best first-order-safe 8.93e-4, A 0.155); noiseless preparation and waits bring the same build to 3.38e-5. Since 23:25 on reviewer 15's #1–4: couple C_i → A_{P(i)} with P a Steane automorphism (a k-cycle makes a 4k-cycle, so no unit squares; round +≤ 4.5e-8; their layout from v37b with two data hops checked here: all 28 contacts adjacent, P preserves the judge's codewords), measured helpers with byproducts folded into detectors instead of reverse CX chains, the 18-stabilizer resource (3 gauge qubits free) instead of three pure states, projector preparation keeping all 512 branches | finalist L < τ(v37a) − 1e-7 at A ≥ 0.5002, or the failed gate with measured costs | SQUARE (Codex, `work/lanes/SQUARE`, owl ≤ 24 in docker, hippo ≤ 8; encoder route with measured helpers and gauge freedom) | active |
-| 2 | P91 | G1 | Room next to the data on the real grid. Off-grid phantoms on v36h, all orders: both A-flag-gap helpers −1.609e-6, late X check S12X (data 0, 20, 3, 22 at 40–43) −1.150e-6, **both −2.705e-6 (−7.1%)** at acceptance 0.4985 (`work/lanes/GLOBAL/room/prices.txt`); the largest lever left above the round. Blocked in v36h only by occupancy: no free cell next to q10/q21 at 44 or over a stabilizer's support at 39–43; R43's layout model found helper room only with +4–6 hops and 4–17 moved roles, never built (closure inferred). Built: R46 with both helpers, repaired, is v37a (−5.4e-7 vs v36h); next on v37a: r3-quality B/C on R46 cells (≈ 0.9e-6 behind), a late X check, greedy bundle polish | finalist L < τ − 5e-7 at A ≥ 0.5002, or every realization priced with the cost that ate the prize per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active: finalist v37a (−5.4e-7 vs v36h); continuing on v37a |
-| 3 | P101 | G1 | The greedy local-edit polish on v37a (BUNDLE's menu ported to R46: singles, connected 2-bundles, greedy joint extension; then GUARDNET's guard network and APROC's A pass): v36i → v36k gained −1.93e-7 this way | a greedy round gains < 1e-9 after all three stages | POLISH (Codex, `work/lanes/POLISH`, zebra ≤ 16) | active |
-| 4 | P104 | G1 | Merge the lanes' independent gains on v37a (POLISH's edits, GLOBAL's B/C, COMPLETE's phase-network end) by footprint, re-apply POLISH's menu where they overlap, repair | finalist L < L(v37b) − 5e-8, or the measured reason they do not combine | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 24) | next: re-run on v37d when lanes post new gains (pass 2 gave v37d, −1.41e-7 vs v37c) |
-| 5 | P106 | G1 | Systematic search for new endings (TERMINAL prices five named ones): enumerate block-level templates (2–4 ticks of transversal CX between D and ≤ 4 ancilla blocks in {\|0_L⟩, \|+_L⟩, \|0⟩⁷, \|+⟩⁷, cat, Bell}, reads in X/Z or none, affine FRAMEs), keep the correct and first-order fault-tolerant ones, score with an exact second-order terminal model; rank by tail loss and grid-friendliness (per-index interaction graph a tree, or ≤ 1 hop: the square needs a unit square per index); then out-of-class qubit-level endings; best two or three to a grid-free suffix and the grid | finalist L < L(v37c) − 1e-7 at A ≥ 0.5002 | ENDSEARCH (Codex, `work/lanes/ENDSEARCH`, tom ≤ 24) | active: frontier done (square minimal 25.667 p², trees ≥ 27.207, unmeasured ≥ 28.747; grid-free suffixes ≈ 3.4e-5); now the five-block path on the grid, starting from v37c plus an E block checking A |
-| 6 | P107 | G1 | v37c's own A and B/C preparations re-synthesized under the weakest contract its round needs (reviewer 15 #2–4): measured helpers with byproducts folded into detectors, the needed stabilizer subspace with free gauge qubits (fault-safe, not merely weaker), projector preparation keeping all branches | finalist L < L(v37c) − 5e-8, or (a)–(c) priced for A and B/C with the cost that ate each gain | PREPFREE (Codex, `work/lanes/PREPFREE`, sunfish ≤ 12) | active |
-| 7 | P108 | G1 | An ending beyond per-index block templates, aiming at 20–30% (L ≤ 2.99e-5 / 2.62e-5): reproduce reviewer 15's idle-output floor screen; the 35-qubit tree ending with just-in-time A/B/C preparation and B unmeasured (#5); T-preserving round contracts (#8); backward whole-grid synthesis of the last layers from an unmeasured-helper final tick (#9); each gated on its optimistic tail | each step at its gate, survivors priced as full circuits against v37c | WHOLEEND (Codex, `work/lanes/WHOLEEND`, owl ≤ 16 in docker) | active |
-| 8 | P109 | G1 | The square round on the grid by projector preparation (reviewer 15 #4), diversifying P102: A, C from \|+⟩⁷ with their Z stabilizers measured, B from \|0⟩⁷ with its X stabilizers measured, all 512 branches kept and the records folded into the final detectors; flagged or bridged syndrome paths over scattered cells instead of block encoders, P and the layout in one CP-SAT model, just-in-time preparation, then MERGE's menu and acceptance buyback | finalist L < L(v37d) − 1e-7 at A ≥ 0.5002, or the cost that ate the gain | SQPROJ (Codex, `work/lanes/SQPROJ`, hippo ≤ 24) | active |
-| 9 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 1 | P102 | G1 | Square final round on the grid (reviewer 14 #1; reviewer 15 #1–3): A, C = \|+_L⟩, B = \|0_L⟩; D→A ∥ B→C, then B→D ∥ C→A, read A in Z, B and C in X; 25.667 p², the two-check floor. Coupling C_i → A_{P(i)} with P a Steane automorphism removes the unit square per index (reviewer 15's layout from v37b with two data hops, checked: all 28 contacts adjacent, P preserves the judge's codewords). Encoder route with measured helpers (byproducts folded into detectors) and the 18-stabilizer resource (3 gauge qubits free) | finalist L < L(v37d) − 1e-7 at A ≥ 0.5002, or the failed gate with measured costs | SQUARE (Codex, `work/lanes/SQUARE`, owl ≤ 24 in docker, hippo ≤ 8) | active |
+| 2 | P109 | G1 | The square round by projector preparation (reviewer 15 #4), diversifying P102: A, C from \|+⟩⁷ with Z stabilizers measured, B from \|0⟩⁷ with X stabilizers measured, all 512 branches kept and folded into the final detectors; flagged or bridged syndrome paths over scattered cells, P and the layout in one CP-SAT model, just-in-time preparation, then MERGE's menu and acceptance buyback | finalist L < L(v37d) − 1e-7 at A ≥ 0.5002, or the cost that ate the gain | SQPROJ (Codex, `work/lanes/SQPROJ`, hippo ≤ 24) | active |
+| 3 | P106 | G1 | The five-block path ending E–A–D–B–C on the grid (27.207 p², no unit squares, catches every single-block logical resource error without a separate verification; grid-free suffix 3.408e-5 vs square-with-leaf 3.3945e-5), starting from v37c plus an E block checking A | finalist L < L(v37c) − 1e-7 at A ≥ 0.5002 | ENDSEARCH (Codex, `work/lanes/ENDSEARCH`, tom ≤ 24) | active |
+| 4 | P107 | G1 | v37c's own A and B/C preparations under the weakest contract its round needs (reviewer 15 #2–4): measured helpers, the needed stabilizer subspace with free gauge qubits, projector preparation | finalist L < L(v37c) − 5e-8, or each contract priced with the cost that ate its gain | PREPFREE (Codex, `work/lanes/PREPFREE`, sunfish ≤ 12) | active |
+| 5 | P91 | G1 | B/C of r3's quality on R46's cells and a late X check on v37a (ideal B/C source and core noise on v37a is worth 4.09e-6; phantom X checks priced, placement binds) | finalist L < L(v37a) − 5e-7 at A ≥ 0.5002, or the cost per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active |
+| 6 | P101 | G1 | Greedy local-edit polish on v37a (BUNDLE's menu ported: singles, connected 2-bundles, joint extension; guard network; A pass) | a greedy round gains < 1e-9 | POLISH (Codex, `work/lanes/POLISH`, zebra ≤ 16) | active |
+| 7 | P104 | G1 | Merge the lanes' new gains onto v37d by footprint, regenerate POLISH's menu where they overlap, repair to convergence | finalist L < L(v37d) − 5e-8, or the measured reason they do not combine | MERGE (Codex, `work/lanes/MERGE`) | next: when a lane posts a gain |
+| 8 | P110 | G2 | Second cleanup: once the lanes above end, delete the closed lanes they still read (ACCBUY, AENC, AJOINT, APROC, BCSYN2, BCV, BCX, BFLAG, BUNDLE, COMPLETE, EARLY, EVAL, EXENC, FLAG, FRESH, GUARDNET, INTEG, INTEG2, R43, SCHED, T14, TERM, XTIM) and keep one copy of the shared tools (evaluators, repair menu, terminal model) | `work/lanes` holds only live lanes, MAIN and the tools they use | main session | next: when the active lanes end |
+| 9 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:20 | main session | active |
 
-## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
-- Reviewer 15 (`spec/reviewer15/REPORT_KO.md`, on v37b; numbers reviewer-reported; #1–4 are in SQUARE): #5 a 35-qubit
-  tree ending E→D, then D→A ∥ B→C with MX(E), then B→D with A, C read and B unmeasured (optimistic 2.676e-5 only if
-  A/B/C's last preparation layer runs in E→D's tick; 4.21e-5 if prepared before; with D1(p/5) on A/B/C 2.945e-5);
-  #6 corrections computed only up to a stabilizer coset (8 T instead of 16; the 54-tick triple-checked controller has
-  no data protection priced); #7 a time-sliced 15-T code with four live coordinates (bare factory not FT: a Z on the
-  reused output wire passes); #8 T-preserving instead of input-preserving round contracts (22 extra logical contracts,
-  e.g. A = \|+i_L⟩, B any codeword, C = \|0_L⟩ with FRAMEs; round 2.977e-5) and #9 backward whole-grid synthesis
-  (both with #5 in WHOLEEND); #10 a flagged 10→7 converter before any source. Screen for every ending
-  (reviewer's bound, not reproduced): with k outputs not in a CX at T−1 the floor is 13.66, 16.52, 19.73, 23.29,
-  27.20, 31.45, 36.06, 41.01e-6 for k = 0..7, so a 30% gain needs ≥ 4 outputs in a CX at T−1.
-- Reviewer 14 (`spec/reviewer14/REPORT_KO.md`, on v36i; numbers reviewer-reported): #2 physical syndrome removed
-  linearly (P₁^s₀P₂^s₁P₄^s₂) with the remainder as a logical FRAME from a measured OR₃(s) (verified on all 64 sector
-  pairs and 16,384 Paulis; duplicated RCCX OR needs 32 T, above our evaluator's 20 T; decided by how long the data wait
-  during the Boolean computation); #3 coherent recovery (closed by TERMINAL: lookup fails at first order, and any ≥ 2-tick output wait costs ≥ 4.63e-5); #4 a final check that also zeroes the syndrome, merged into existing readouts (a free
-  logical-only projector plus one D1 tick gives 4.909e-5 on v36i; selecting syndrome 0 alone keeps A 0.5005); #6
-  [[10,1,2]] morphing with a flagged 10→7 contraction (bare 6-CX conversion fails at first order; gate: the noisy
-  conversion from a perfect 10-qubit input must beat ≈ 2.7e-5); #7 25-qubit gauging (46% acceptance and 18
-  classically controlled corrections as published); #8 a \|+i_L⟩ T-specific meter (needs a Y resource and its
-  verification); #9 steering accepted preparation residues onto one output coordinate (an objective for B/C
-  synthesis: the pair term is (Q² − Σqᵢ²)/2); #10 controlled-W hooks that keep the syndrome checks. Their
-  closures (reviewer-reported): dummy final CX 4.10–4.17e-5, appended encoded helpers, [[16,1,4]] shallow decode
-  6.16e-5, logical-only final check 4.91e-5; 91.9% of the second-order sector they examined comes from two faults
-  that no existing detector sees.
-- Reviewer 13 (`spec/reviewer13/`): #6 logical-coset tagging of B through redundant C marks (BCV built tag 10 natively, 54 CX, judge-valid: +2.98e-6, preparation 9.07e-6 against a 3.11e-6 budget; 35 of 120 tags unresolved by the solver); #7 Choi-SDP relaxation of one slot as a synthesis target and stop certificate (formulated, not solved); #8 keeping candidates by score distribution (E[ℓ²]), not only the mean: SEM can rise at most to 8.72e-7 from ≈ 7.2e-7, worth ≤ ≈ 6e-7 of key at 4σ; first measure whether real stems differ.
-- DIGEST (`work/lanes/DIGEST/DIGEST.md`: 94 reviewer ideas from reviewers 1–12 against what we measured since, with closure scope; #1 done by COMPLETE, #2 by AJOINT, #3 closed by BCV): #4 rank-six 22-T/31-T phase routing with holder protection, #5 C-free post-use verification or another terminal class (no credible estimate).
-- Reviewer 12 (`spec/reviewer12/`, TASKS.json, REPORT_KO.txt): #2 coherent completion instead of TREP2's full reversal of
-  the phase-network routing CXs (`network()` undoes every routing CX; synthesize only the completion the target state
-  needs, with output placement and the next check); parked because the prefix is cheap on v36h: summed per-channel
-  removal gains (overlapping) are 0.4e-6 for ticks ≤ 12 and 1.1e-6 for 13–22, against 12e-6 for 33–42 and 65e-6 for
-  the round (`MAIN/sparse/v36h_adjoint_72.json`); #3 a global lifetime/placement model that reproduces v36h exactly
-  (ST1/FRESH's used independent A/B/C encoders and cannot express r3) before any wider solve; #4 keep candidates by
-  critical-cell release profile, not only L and L − λA (ST2 `pop36_search.py` drops slot-opening prefixes); #7 the
-  22-T normalized rank-six phase family (39,928 minimal supports, witness in `code/rank6_phase_audit.py`; three harmful
-  phase-axis pairs, so it pays only through cheaper routing; needs > 20 T in the evaluator, reviewer 9 M06), screened
-  first against T14's failure mechanism.
-- Reviewer 11 (`spec/reviewer11/`, TASKS.json): Task 5 joint A encoder + data guard + A decoder across their fixed
-  boundary (needs an exterior table built on v36h, AENC's is v36c's; reviewer 12 #6); Task 8 the 4-T measured-classical RCCX (`physical/
-  rccx_probe.py`: nonlinear postselection, 19 T fits the evaluator), each record pair gated by the joint accepted-sector
-  oracle first (the first pair lost); Task 9 open-boundary tables for region search.
-- Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair
-  counterfactuals, M05 affine acceptance with frames, M06 factorized magic-sign kernel for > 20 T, M07 accepted-instrument
-  B/C contracts (PCC closed the C-stabilizer form on v36h's layout), M09 measured graph resources, M10 coupled MC with a control variate.
-- Reviewer 8 (`spec/reviewer8/`): error-path-weighted CEGAR targets for the synthesizers; frame gauges for speed.
-- Reviewer 7 (`git show b2a5243:work/lanes/MAIN/spec/reviewer7/...`): M02 C-copy exchange (+1.03e-7, +0.0024 acceptance,
-  −1 CX) as an acceptance source; M05 measured graph resources, M06 transient flags on encoded
-  resource wires, M07 C-free post-use verification, M09 conditional sampling: each needs an optimistic gate first.
-- Reviewer 4: moving check (CX A→D, D→A, MZ D), dirty-bus remote CX, measured partial uncompute in the phase network.
-- Reviewer 3 #7: A as three direct Z checks or a GHZ meter, only with a layout that uses the freed cells.
+## Parked (no price yet; reviewer bundles in `work/lanes/MAIN/spec/`, older ones in git)
+- Reviewer 15 (`spec/reviewer15/REPORT_KO.md`; numbers reviewer-reported): #6 corrections up to a stabilizer coset
+  (8 T instead of 16; the 54-tick controller leaves the data unprotected); #7 a time-sliced 15-T code (bare factory not
+  FT: a Z on the reused output wire passes); #10 a flagged 10→7 converter. #5, #8, #9 closed by WHOLEEND (FINDINGS).
+- Reviewer 14 (`spec/reviewer14/REPORT_KO.md`): #6 [[10,1,2]] morphing with a flagged 10→7 contraction (gate: the
+  noisy conversion from a perfect 10-qubit input must beat ≈ 2.7e-5); #7 25-qubit gauging (46% acceptance as
+  published); #8 a \|+i_L⟩ T-specific meter (needs a verified Y resource); #9 steering accepted preparation residues
+  onto one output coordinate (a synthesis objective: pair term (Q² − Σqᵢ²)/2); #10 controlled-W hooks that keep the
+  syndrome checks. #2–#4 closed by TERMINAL (FINDINGS).
+- Reviewers 3–13 and DIGEST's 94-idea table (`git show b9051547^:work/lanes/DIGEST/DIGEST.md`): none priced below
+  v36h; reopen one only with a mechanism that fits the square or path ending.
 - Chamberland–Cross flagged logical-H measurement: implementation suspect (our grid build was not FT at first order).
 
 ## Open questions

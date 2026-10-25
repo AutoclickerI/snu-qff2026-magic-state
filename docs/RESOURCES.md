@@ -7,8 +7,8 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 1. Python is `.venv/bin/python` (stim, xtim 3.1.3+qff2, qiskit, OR-Tools). The judge `tprep` is installed editable from
    `upstream/snu-qff2026-problem` (keep it unmodified; `git pull` for organizer updates).
 2. Official score, bit-identical to the server, ~10 s at 20 processes: `cd work && ../.venv/bin/python fast_check.py
-   <qasm> <json> [shots] [procs]`. Sanity: `fast_check.py submissions/v36b_r580.qasm submissions/v36b_r580.json`
-   gives the server's 3.87794862201698e-5 (another host may differ in the last ulp). Below 1e8 shots, read `gates_ok`
+   <qasm> <json> [shots] [procs]`. Sanity: `fast_check.py submissions/v37a_h2521_r2793.qasm submissions/v37a_h2521_r2793.json`
+   gives the server's 3.48009448845875e-5 (another host may differ in the last ulp). Below 1e8 shots, read `gates_ok`
    (format, class, correctness); acceptance there is a binomial estimate, so gate on the exact all-orders A ≥ 0.5002.
 3. Ranking evaluators (all orders, exact 2nd/3rd order, 3-seed MC, speed): `docs/reference/circuit.md` "Evaluators".
 4. Sequential judge plus fault scan (~5 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
@@ -43,10 +43,11 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 | pegasus | — | SSH from zebra times out |
 | Submission quota | one per hour (slot :37) | `work/submit.py`; the board keeps each team's best entry, so every slot is used |
 | Claude subagents | research lanes while Codex is down (R-20261025-1), one dir each under `work/lanes/` | Agent tool, background; the brief names the goal and incumbent numbers, the docs to read, prior lanes' git paths, evaluator commands, host limits, and "no submit, no commit"; the main session verifies and commits |
-| Codex | all subagent work (CONSTRAINTS rule 11), via the `codex:codex-rescue` agent | admitted again since 2026-10-25 15:28 KST after a day of 429 `local_auth_cap` (the local Hermes reserve policy `~/.hermes/auth_cap.json` refuses a credential at ≤ 1% 7-day remaining); probe: `node ~/.local/src/codex-plugin-cc/plugins/codex/scripts/codex-companion.mjs task "Reply with the single word OK and do nothing else."` (answers OK within a minute when admitted); briefs forbid `spawn_agent` |
-| Reviewer bundles | independent audits with circuits, certificates and task lists | `work/lanes/MAIN/spec/reviewer{8,9,11}/`; reviewers 3–7: `git show b2a5243:work/lanes/MAIN/spec/reviewer<n>/...` |
+| Codex | all subagent work (CONSTRAINTS rule 11), via the `codex:codex-rescue` agent | launch from the lane dir: `node ~/.local/src/codex-plugin-cc/plugins/codex/scripts/codex-companion.mjs task --background --write "$(cat BRIEF.md)"`; continue a thread with `CODEX_RESUME_THREAD_ID=<threadId>` (in `~/.claude/plugins/data/codex-openai-codex/state/<repo>/jobs/<job>.json`); wait with `tail --pid` on its `task-worker`; `cancel` leaves remote processes and owl's docker containers running (kill by PID, `docker kill`). 429 `local_auth_cap` means the local Hermes reserve policy `~/.hermes/auth_cap.json` refuses every credential; probe: `node ~/.local/src/codex-plugin-cc/plugins/codex/scripts/codex-companion.mjs task "Reply with the single word OK and do nothing else."` (answers OK within a minute when admitted); briefs forbid `spawn_agent` |
+| Reviewer bundles | independent audits with circuits, certificates and task lists | `work/lanes/MAIN/spec/reviewer{14,15}/`; reviewers 8–13: `git show b9051547^:work/lanes/MAIN/spec/reviewer<n>/...`, 3–7: `b2a5243` |
 | Upstream | judge and cultivation code | `upstream/snu-qff2026-problem` (76fe47c), `upstream/magic-state-cultivation` (871e68f); not in git |
 
 ## Consumers
 - `/home/jihoon/.claude/projects/-home-jihoon-competitions-quantumn/memory/*.md`
-- Subagent briefs (delegation prompts, no file); lane outputs are `work/lanes/<LANE>/REPORT.md`.
+- Lane briefs `work/lanes/<LANE>/{BRIEF,CONTINUE*}.md` (point to docs and rule numbers); lane outputs are
+  `work/lanes/<LANE>/REPORT.md`.
