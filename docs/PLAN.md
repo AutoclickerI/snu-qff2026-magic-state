@@ -1,14 +1,14 @@
 # Plan
 
-## Status (2026-10-25 10:45 KST)
+## Status (2026-10-25 12:15 KST)
 - Board: **rank 1** with v36f_h2510_r252072, **server 3.56477e-5** (10:37; key 3.56e-5); Placeholder 4.984e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36g`) against the key boundary below our best and submits the best at :37.
-- **Best expected circuit: v36g** (`work/lanes/MAIN/v36g` = INTEG2 `integ2_h2`: v36f + 10 small gadgets, 4 init-check
-  trades, 6 timing shifts): **all-orders 3.836054e-5 (−0.04% vs v36f), acceptance 0.50151**, 320 CX, R44, FAST; the
-  hourly stem from the 10:20 race. Lineage: v36c (ST2) 4.11516e-5 → v36d (INTEG gadgets) 4.02862e-5 → v36e (BFLAG
-  resource r3) 3.92343e-5 → v36f (PRECELL guards) 3.83761e-5 → v36g. The gadget space on v36f is used up (INTEG2); ≈ 0.018
-  acceptance is free for < 2e-8 loss and nothing on v36f buys it.
+  `lanes/MAIN/v36h`) against the key boundary below our best and submits the best at :37.
+- **Best expected circuit: v36h** (`work/lanes/MAIN/v36h` = ACCBUY `accbuy_f1`: v36g + seven known-state guards on idle
+  data, two init-check trades): **all-orders 3.815473e-5 (−0.54% vs v36g), acceptance 0.50164**, 327 CX, R44, FAST; the
+  hourly stem from the 12:20 race. Lineage: v36c (ST2) 4.11516e-5 → v36d (INTEG gadgets) 4.02862e-5 → v36e (BFLAG
+  resource r3) 3.92343e-5 → v36f (PRECELL guards) 3.83761e-5 → v36g (INTEG2) 3.83605e-5 → v36h. Gadgets, guards and
+  acceptance buyers on this schedule are used up (INTEG2, ACCBUY).
 - Where v36c's loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
   3.041e-5, of which 2.274e-5 is a floor for every circuit whose outputs end on a CX with a measured partner (TERM) and
   0.768e-5 are leaks that every template tried on this grid keeps; A, B, C preparation 0.456e-5; prefix and data wait
@@ -29,8 +29,7 @@ rule"); before that racing examined ≈ 7.6× more draws than plain re-draws.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P83 | G1 | Spend free acceptance (≈ 0.018 for < 2e-8 loss, INTEG2) on loss: a second colour-code check in the cultivation stage on cells A/B/C use only from ≈ 32 (PRESYN's blue XZ check: −2.8% for ≈ 0.028 on v22), checks/flags in the T-check region, late checks borrowing A/B/C cells before their roles; R44 must hold | a finalist below v36g, or closures with mechanisms | ACCBUY (Claude, `work/lanes/ACCBUY`, zebra ≤ 24 processes) | active |
-| 2 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 1 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair

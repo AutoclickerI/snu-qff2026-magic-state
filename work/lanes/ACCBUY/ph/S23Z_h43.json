@@ -1,0 +1,241 @@
+{
+ "data_qubits": [
+  0,
+  20,
+  7,
+  10,
+  3,
+  22,
+  21
+ ],
+ "cx": 320,
+ "native_depth": 47,
+ "source": "INTEG2 integ2_h2: v36f + MX->reset on init checks c187/c183/c186/c188 + 10 greedy gadgets + 6 timing shifts",
+ "base": "MAIN/v36f",
+ "trades": [
+  "reset_187",
+  "reset_183",
+  "reset_186",
+  "reset_188"
+ ],
+ "gadgets": [
+  {
+   "family": "guard",
+   "g": {
+    "h": 12,
+    "seq": [
+     [
+      8,
+      13
+     ],
+     [
+      9,
+      13
+     ],
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  {
+   "family": "echo",
+   "g": {
+    "kind": "echo",
+    "q": 11,
+    "h": 17,
+    "axis": "X",
+    "t1": 20,
+    "t2": 27,
+    "rst": null
+   }
+  },
+  {
+   "family": "pair",
+   "g": {
+    "kind": "pair",
+    "a": 6,
+    "b": 7,
+    "t": 8,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   "run": [
+    8
+   ]
+  },
+  {
+   "family": "guard",
+   "g": {
+    "h": 28,
+    "seq": [
+     [
+      22,
+      22
+     ],
+     [
+      23,
+      22
+     ],
+     [
+      24,
+      22
+     ],
+     [
+      25,
+      22
+     ],
+     [
+      26,
+      22
+     ],
+     [
+      27,
+      22
+     ],
+     [
+      28,
+      22
+     ],
+     [
+      29,
+      22
+     ]
+    ]
+   }
+  },
+  {
+   "family": "guard",
+   "g": {
+    "h": 18,
+    "seq": [
+     [
+      6,
+      19
+     ],
+     [
+      7,
+      19
+     ]
+    ]
+   }
+  },
+  {
+   "family": "pair",
+   "g": {
+    "kind": "pair",
+    "a": 5,
+    "b": 11,
+    "t": 23,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   "run": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "family": "pair",
+   "g": {
+    "kind": "pair",
+    "a": 20,
+    "b": 26,
+    "t": 29,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "live",
+     "live"
+    ]
+   },
+   "run": [
+    28,
+    29
+   ]
+  },
+  {
+   "family": "echo",
+   "g": {
+    "kind": "echo",
+    "q": 12,
+    "h": 18,
+    "axis": "X",
+    "t1": 20,
+    "t2": 23,
+    "rst": null
+   }
+  },
+  {
+   "family": "pair",
+   "g": {
+    "kind": "pair",
+    "a": 16,
+    "b": 17,
+    "t": 24,
+    "sa": [
+     "live",
+     "live"
+    ],
+    "sb": [
+     "dead",
+     "dead"
+    ]
+   },
+   "run": [
+    22,
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "family": "guard",
+   "g": {
+    "h": 5,
+    "seq": [
+     [
+      8,
+      4
+     ],
+     [
+      9,
+      4
+     ]
+    ]
+   }
+  }
+ ],
+ "shifts": [
+  "CX 3->4 20->19",
+  "CX 20->21 27->28",
+  "MEASURE q13 32->33",
+  "CX 5->11 23->21",
+  "CX 5->11 24->26",
+  "CX 16->17 24->22"
+ ],
+ "allorders_ev2": 3.836054467100275e-05,
+ "allorders_acceptance_ev2": 0.5015149656065663,
+ "incumbent_v36f": 3.837606198613569e-05
+}
