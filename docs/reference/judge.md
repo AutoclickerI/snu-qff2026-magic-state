@@ -33,7 +33,8 @@ Serves: G1, G2. Read before reasoning about scores, noise, validity or evaluator
     cat's controlled X^7. B must come after it.
   - Measuring a fresh qubit prepares |0⟩ with 2p/3 error (in use). Measuring it in X prepares |±⟩ with 2p/3 error,
     but the Z^m offset must stay off the data (B and C qubits only).
-  - The final data idle step (while B is measured) is irreducible. Any final-step gate on the output costs at least
-    as much: a dummy CX partner's preparation error propagates onto the output.
+  - The output's last step cannot be a read or reset. A final CX with a measured partner leaves D1(2p/5) on the output
+    (TERM, our class floor); only CXs with unmeasured helpers go lower (BOUND's minimizer), and every tested helper
+    ending lost (FINDINGS "Endings outside our terminal class"), which closes those builds, not the family.
   - POSTSELECT on a noiselessly random bit halves acceptance; a biased outcome (logical H_XY on \|+_L⟩: 0.854) is
     affordable but worth ≤ 1% (FINDINGS).

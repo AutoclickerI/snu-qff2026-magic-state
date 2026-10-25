@@ -22,6 +22,13 @@ round R45 (one tick earlier than v37a's).
 Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes and timing are design variables.
 
 ## Evaluators (rank by all orders; the others diagnose, confirm or gate)
+- **Selection**: the finalist is the lowest exact L at exact A ≥ 0.5002. J_τ = A(L − τ) is only a search heuristic,
+  with τ = the current incumbent's L: MERGE's τ fixed at v37b's L made `greedy_pass.choose` trade loss for acceptance
+  (cost so far 6.5e-11). Keep the (L, A) Pareto front for later acceptance buys.
+- **Validity before ranking**: the all-orders price checks only the decoded loss; a build that changes the outputs or
+  the tail must first have its six noiseless output stabilizers at +1 (the judge's raw code-space check; reviewer 16:
+  H·T⁴·H = X on one output keeps decoded loss 0 and fails). Stem files must be named by QASM plus ordered
+  `data_qubits`: `write_stem` in `MERGE/ev37.py` and `BUNDLE/ev.py` writes the JSON once per QASM hash.
 - **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
   ≈ 1 s (7 s at 1 process); prints JSON with loss and acceptance. Scope: barriers over all used qubits, no
   FRAME/POSTSELECT, ≤ 20 T. `compile_best` replays saved detector bases (`basis_warm.json`) and searches only above

@@ -28,13 +28,13 @@ the final slot (2026-10-30 11:37): `next_stem.txt` before 10:20 that day.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P106 | G1 | The five-block path ending E–A–D–B–C on the grid (27.207 p², no unit squares, catches every single-block logical resource error without a separate verification; grid-free suffix 3.408e-5 vs square-with-leaf 3.3945e-5), starting from v37c plus an E block checking A | finalist L < L(v37c) − 1e-7 at A ≥ 0.5002 | ENDSEARCH (Codex, `work/lanes/ENDSEARCH`, owl ≤ 24 in docker) | active: phantom E on v37c (real preparation) 3.4542e-5 at A 0.489; grid builds 1.05e-3 because only one A cell has a free neighbour; now the joint A/B/C/E layout solve to a witness or certificate |
+| 1 | P106 | G1 | The five-block path ending E–A–D–B–C on the grid (27.207 p², no unit squares, catches every single-block logical resource error without a separate verification; grid-free suffix 3.408e-5 vs square-with-leaf 3.3945e-5), starting from v37c plus an E block checking A | finalist L < L(v37c) − 1e-7 at A ≥ 0.5002 | ENDSEARCH (Codex, `work/lanes/ENDSEARCH`, owl ≤ 24 in docker) | active: phantom E on v37c (real preparation) 3.4542e-5 at A 0.489; grid builds 1.05e-3 because only one A cell has a free neighbour; now the joint A/B/C/E layout solve to a witness or certificate, with E (a leaf: its errors reach A only after D→A) prepared non-FT on scattered cells by graph states and measured helpers and per-coordinate release times (reviewer 16 #3, #7) |
 | 2 | P107 | G1 | v37c's own A and B/C preparations under the weakest contract its round needs (reviewer 15 #2–4): measured helpers, the needed stabilizer subspace with free gauge qubits, projector preparation | finalist L < L(v37c) − 5e-8, or each contract priced with the cost that ate its gain | PREPFREE (Codex, `work/lanes/PREPFREE`, sunfish ≤ 12) | active |
 | 3 | P91 | G1 | B/C of r3's quality on R46's cells and a late X check on v37a (ideal B/C source and core noise on v37a is worth 4.09e-6; phantom X checks priced, placement binds) | finalist L < L(v37a) − 5e-7 at A ≥ 0.5002, or the cost per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active |
 | 4 | P101 | G1 | Greedy local-edit polish on v37a (BUNDLE's menu ported: singles, connected 2-bundles, joint extension; guard network; A pass) | a greedy round gains < 1e-9 | POLISH (Codex, `work/lanes/POLISH`, zebra ≤ 16) | active |
-| 5 | P104 | G1 | Merge the lanes' new gains onto v37d by footprint, regenerate POLISH's menu where they overlap, repair to convergence; pass 3 ports GLOBAL's BC3 B/C resource (−4.6e-7 on v37a's line) and POLISH's latest edits | finalist L < L(v37d) − 5e-8, or the measured reason they do not combine | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 24) | active (pass 3) |
+| 5 | P104 | G1 | Merge the lanes' new gains onto v37d by footprint, regenerate POLISH's menu where they overlap, repair to convergence; pass 3 ported GLOBAL's BC3 B/C resource (v37e, −3.9e-7) and continues with POLISH's latest edits and repair; select by lowest L. Next pass: ejection moves (drop a selected edit), several acceptance buyers per move, interactions by error signature, not footprint (reviewer 16 #8: two independent D1(p) on different outputs each cost 0 decoded but 5p²/9 together) | finalist L < L(v37e) − 5e-8, or the measured reason they do not combine | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 24) | active (pass 3) |
 | 6 | P110 | G2 | Second cleanup: once the lanes above end, delete the closed lanes they still read (ACCBUY, AENC, AJOINT, APROC, BCSYN2, BCV, BCX, BFLAG, BUNDLE, COMPLETE, EARLY, EVAL, EXENC, FLAG, FRESH, GUARDNET, INTEG, INTEG2, R43, SCHED, SQPROJ, SQUARE, T14, TERM, WHOLEEND, XTIM) and keep one copy of the shared tools (evaluators, repair menu, terminal model) | `work/lanes` holds only live lanes, MAIN and the tools they use | main session | next: when the active lanes end |
-| 7 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:20 | main session | active |
+| 7 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the stem with the lowest expected key: the lowest all-orders mean unless its judge time costs more draws than its gain (≈ 1.1e-7 per halving of the draw rate; σ per draw is equal across stems, FINDINGS "Score spread per stem") (R-20261023-10) | final best in by 2026-10-30 10:20 | main session | active |
 
 ## Parked (no price yet; reviewer bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Square final round (reviewer 14 #1, reviewer 15 #1–4): worth up to ≈ −0.8e-5, but every built preparation of its
@@ -48,6 +48,14 @@ the final slot (2026-10-30 11:37): `next_stem.txt` before 10:20 that day.
   published); #8 a \|+i_L⟩ T-specific meter (needs a verified Y resource); #9 steering accepted preparation residues
   onto one output coordinate (a synthesis objective: pair term (Q² − Σqᵢ²)/2); #10 controlled-W hooks that keep the
   syndrome checks. #2–#4 closed by TERMINAL (FINDINGS).
+- Reviewer 16 (`spec/reviewer16/REPORT_KO.md`, on v37d; numbers reviewer-reported): #2 price 20–50 of WHOLEEND's 4,791
+  un-priced T-only contracts with real preparation (tail c2 mis-ranks); #4 choose a tail's last two layers jointly
+  (4-block toy: layerwise 44.8 p², joint 28.747 p², at the unmeasured-partner minimum, still above the square); #5
+  contracts that fix only the needed detector parities, not each raw record bit; #6 entangled non-CSS logical resources
+  (135 stabilizer groups on three logical qubits, 32 entangled with A read in Z and B in X; witness Z_A X_B, X_A Z_B X_C,
+  X_B Y_C keeps T up to (X+Y)/√2 with affine frames; its logical X_A, X_C preparation errors pass); #9 SDP bounds over a
+  boundary's free gauge qubits with the accepted-map effects. #3, #7, #8 went to ENDSEARCH and MERGE; #1 and #10 are
+  measured (FINDINGS).
 - Reviewers 3–13 and DIGEST's 94-idea table (`git show b9051547^:work/lanes/DIGEST/DIGEST.md`): none priced below
   v36h; reopen one only with a mechanism that fits the square or path ending.
 - Chamberland–Cross flagged logical-H measurement: implementation suspect (our grid build was not FT at first order).

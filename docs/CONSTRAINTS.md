@@ -18,7 +18,7 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
 5. **Server time.** [hard] "채점 서버의 제출당 시간 제한은 **1시간**" (P §3); an overrun is recorded as an
    error. The server needed 158–224 s for v17–v22, whose single-process 1e6-shot `fast_check` takes ~2.3 s on zebra,
    so server time ≈ 80 × that timing. Enforced by `work/promote.sh`, which refuses a candidate above 20 s per 1e6
-   (≈ 27 min on the server). Some circuits run ~50× slower in xtim (FINDINGS "Failures"). [external: P]
+   (≈ 27 min on the server). [external: P]
 6. **Submission cadence.** [hard] "**제출은 팀당 1시간에 한 번**", none while one is queued or scoring
    (P §3). Enforced by the server. [external: P, S]
 7. **Deadline.** [hard] Submissions close 2026-10-30 12:00 KST. [external: S]

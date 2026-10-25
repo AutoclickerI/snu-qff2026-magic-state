@@ -18,7 +18,7 @@ dropped rules) · [reference/judge.md](docs/reference/judge.md) (how scores aris
 - No conservative or incremental steps, fallbacks or ritual checks; delete stale docs when you touch them.
 - Rank candidates by the all-orders expectation where its scope covers them (`cd work/lanes/MAIN/sparse;
   ../../../../.venv/bin/python sparse_walsh.py ../v37d 72 canonical 16`: stem without suffix, last arg = processes,
-  ≈ 1 s; needs barriers over all used qubits, no FRAME/POSTSELECT lines; validation in FINDINGS); otherwise by the
+  ≈ 1 s; needs barriers over all used qubits, no FRAME/POSTSELECT; final pick: lowest L at A ≥ 0.5002); otherwise by the
   3-seed mean (one seed hides 1%), and when that and the exact third order disagree within noise, by ≥ 100 seed-0
   re-draws. Submit by the seed-0 key and report the numbers used.
 - Wait on process exit, never on an output file. Never `pkill -f` a pattern that your own command
