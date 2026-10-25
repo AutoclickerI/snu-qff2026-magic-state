@@ -1,9 +1,9 @@
 # Plan
 
 ## Status (2026-10-25 17:20 KST)
-- Board: **rank 1** with v36h_h2513_r4852, **server 3.53131e-5** (13:37; key 3.53e-5); Placeholder 4.906e-5.
+- Board: **rank 1** with v36h_h2517_r342819, **server 3.48827e-5** (17:37; key 3.49e-5); Placeholder 4.906e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36h`) against the key boundary below our best and submits the best at :37.
+  `lanes/MAIN/v36i` from the 18:20 race) against the key boundary below our best and submits the best at :37.
 - **Best expected circuit: v36i** (`work/lanes/MAIN/v36i`, APROC: v36h + a joint A-side guard witness and greedy
   repairs): **all-orders 3.809138e-5 (−0.17% vs v36h), acceptance 0.50673** (+0.0051), 353 CX, FAST (6.1 s per 1e6);
   `next_stem.txt` races it from the 19:37 slot (each race starts at HH:20 for the next hour's :37). Lineage: v36c (ST2) 4.11516e-5 → v36d 4.02862e-5 → v36e (r3)

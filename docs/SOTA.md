@@ -6,9 +6,9 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36h_h2513_r4852**, server 1-F = 3.53130699502577e-5
-(= local seed-0, key 3.53e-5), acceptance 0.50166, 327 CX, submitted 2026-10-25 13:38:55 KST
-(`work/receipts/seq_v36h_h2513_r4852.txt`; best raced seed-0 draw of `work/lanes/MAIN/v36h`, all-orders 3.81547e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36h_h2517_r342819**, server 1-F = 3.48827333200885e-5
+(= local seed-0, key 3.49e-5), 327 CX, submitted 2026-10-25 17:39:22 KST
+(`work/receipts/seq_v36h_h2517_r342819.txt`; best raced seed-0 draw of `work/lanes/MAIN/v36h`, all-orders 3.81547e-5).
 
 Best competitor: Placeholder 4.906e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 13:26 KST). Board read
 2026-10-25 13:45 KST; refresh with `work/submit.py board`.
