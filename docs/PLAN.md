@@ -43,8 +43,7 @@ so lane searches are bound by ideas, not evaluation.
 | 3 | P99 | G1 | A state-specific end of the 15-T phase network (DIGEST #1, reviewer 12 #2–4): synthesize only the completion the target needs, with output placement free, and archive release profiles so A/B/C preparation, the round or GLOBAL's room can move earlier (data waits 28–42 3.88e-6, a tick shorter −0.68e-6); rebased on v37a at 20:00 (144 v36k circuits priced, none below v36k) | finalist L < τ(v37a) − 1e-7 at A ≥ 0.5002, or three release profiles built downstream with the cost that ate the gain | COMPLETE (Codex, `work/lanes/COMPLETE`, tom ≤ 24) | active |
 | 4 | P100 | G1 | A encoder, nearby data guards and A's partial decoder as one process with transient encoded flags (DIGEST #2, reviewer 11 Task 5, reviewer 12 #6, reviewer 7 M06); A cells 33–42 noiseless −1.64e-6; rebased on v37a at 20:00 (177 v36k circuits priced, best −1.4e-8 below the gate) | finalist as P99, or the window grown until the boundary model no longer fits, with the cost that ate the gain | AJOINT (Codex, `work/lanes/AJOINT`, hippo ≤ 24) | active |
 | 5 | P101 | G1 | The greedy local-edit polish on v37a (BUNDLE's menu ported to R46: singles, connected 2-bundles, greedy joint extension; then GUARDNET's guard network and APROC's A pass): v36i → v36k gained −1.93e-7 this way | a greedy round gains < 1e-9 after all three stages | POLISH (Codex, `work/lanes/POLISH`, zebra ≤ 16) | active |
-| 6 | P103 | G3 | Verify reviewer 14's universal floor 1.3657e-5 (our proof's 1.162e-5 plus the pre-tail noise on the final CX's partner helper; 60 symmetry cases × 64 sectors in rationals) | confirmed with value, scope and certificate, or refuted | BOUND (Codex, `work/lanes/BOUND`, hippo ≤ 4) | active |
-| 7 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 6 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 14 (`spec/reviewer14/REPORT_KO.md`, on v36i; numbers reviewer-reported): #2 physical syndrome removed
@@ -90,5 +89,4 @@ so lane searches are bound by ideas, not evaluation.
 - Chamberland–Cross flagged logical-H measurement: implementation suspect (our grid build was not FT at first order).
 
 ## Open questions
-- Reviewer 14's universal floor 1.3657e-5 (P103): if it holds, G0's floor statement changes; it does not change what we build.
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us either way.
