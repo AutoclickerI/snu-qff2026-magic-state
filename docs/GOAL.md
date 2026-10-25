@@ -3,10 +3,10 @@
 ## G0 — Official 1-F of 1e-5, or as close to it as possible, by the deadline (R-20261024-3)
 The measure is the official 1-F (`tprep.check(..., shots=10**8, seed=0)`) of our best board entry when submissions
 close, 2026-10-30 12:00 KST; the score is the gap to 1e-5. Every admissible circuit has true expected 1-F ≥ 1.366e-5
-(FINDINGS "Floor, any circuit"), so 1e-5 itself is out of reach. The key is one seed-0 draw the hourly race finds ≈ 3.5–4σ (≈ 2.7e-6)
+(FINDINGS "Floor, any circuit"). The key is one seed-0 draw the hourly race finds ≈ 3.5–4σ (≈ 2.7e-6)
 below the true mean: the levers are a lower true mean (1% ≈ 0.5σ), then racing compute. Our terminal class (outputs
-end on a CX with a measured partner) has floor 2.274e-5 (FINDINGS "Terminal class floor"); getting below it means
-ending the outputs on CXs with unmeasured helpers, the floor's own minimizer. Rank 1 (R-20261023-1) holds while our key stays below every other team's; ties go to fewer CX, then
+end on a CX with a measured partner) has floor 2.274e-5 (FINDINGS "Terminal class floor"); below it,
+outputs end on CXs with unmeasured helpers. Rank 1 (R-20261023-1) holds while our key stays below every other team's; ties go to fewer CX, then
 the earlier entry.
 
 ## Subgoals (ranked)
@@ -20,7 +20,7 @@ the earlier entry.
 
 ## Non-goals
 - The ideathon track.
-- `fault_scan` c1 = 0: the judge does not check it; it is a diagnostic.
+- `fault_scan` c1 = 0 (a diagnostic; the judge does not check it).
 
 ## Decision rights
 - Pre-authorized beyond the global list: choosing which candidate to submit and when (R-20261023-1,
@@ -30,5 +30,5 @@ the earlier entry.
 
 ## Terms
 - **True mean**: the expected official 1-F of a circuit, computed exactly by the all-orders evaluator
-  (`docs/reference/circuit.md`). The board shows one MC draw (seed 0, ±0.8e-6 near 4e-5); a submission is the best
-  seed-0 re-draw of the best true-mean circuit.
+  (`docs/reference/circuit.md`). The board shows one seed-0 draw (±0.8e-6 near 4e-5), the best
+  re-draw of the best true-mean circuit.
