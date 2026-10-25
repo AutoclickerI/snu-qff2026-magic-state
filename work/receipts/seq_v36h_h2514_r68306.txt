@@ -1,0 +1,12 @@
+[twirl_records] circuit channels: 79 deterministic (+0 observable), 0 gauge, 0 anti, 0 refused observables, 0 born-decisions (+0 det-decisions)
+p=0.001  shots=100,000,000  seed=0
+  format:      PASS
+  class:       PASS
+  correctness: PASS
+  acceptance:  PASS  (0.5017, floor 0.5)
+  score 1-F = 3.55324e-05 ± 7.1e-07   (3 significant figures: 3.55e-05)
+  2q+ gates = 327
+  RESULT: PASS
+np.float64(3.553241612854731e-05) 0.5016546 327 297s
+5673 single faults, c1 ~ 0   (1-F ~ 0 p at first order; estimated from 256 shots per fault)
+  no single fault broke the output in these shots: fault tolerant at first order as far as this scan can see
