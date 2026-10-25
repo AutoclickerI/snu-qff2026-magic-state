@@ -3,13 +3,13 @@
 ## Status (2026-10-25 17:20 KST)
 - Board: **rank 1** with v36h_h2517_r342819, **server 3.48827e-5** (17:37; key 3.49e-5); Placeholder 4.906e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v37b` from the 22:20 race) against the key boundary below our best and submits the best at :37.
-- **Best expected circuit: v37b** (`work/lanes/MAIN/v37b`: v37a, GLOBAL's R46 layout with both A-flag-gap helpers,
-  plus 11 POLISH edits): **all-orders 3.742321e-5 (−0.52% vs v37a), acceptance 0.50348**, 391 CX; races from the 23:37
-  slot. v37a's first race (submitted 21:39, best draw 3.48009e-5, key 3.48e-5) is being scored. Lineage: v36c (ST2)
-  4.11516e-5 → v36e (r3) 3.92343e-5 → v36h (ACCBUY) 3.815473e-5 → v36k (greedy bundles) 3.789826e-5 → v37a (layout
-  R46) 3.761822e-5 → v37b. Lanes found separate −1.8e-7 gains on v37a (GLOBAL's B/C 3.7433e-5, COMPLETE's phase-network
-  end 3.7441e-5, the round one tick earlier; COMPLETE closed); MERGE combines them with POLISH's edits.
+  `lanes/MAIN/v37c` from the 23:20 race) against the key boundary below our best and submits the best at :37.
+- **Best expected circuit: v37c** (`work/lanes/MAIN/v37c`: MERGE of COMPLETE's R45 phase-network end, POLISH's edits
+  and GLOBAL's B/C core on v37a, jointly repaired): **all-orders 3.690403e-5 (−1.39% vs v37b), acceptance 0.50572**,
+  400 CX, 48 ticks; races from the 00:37 slot. Lineage: v36c (ST2) 4.11516e-5 → v36e (r3) 3.92343e-5 → v36h (ACCBUY)
+  3.815473e-5 → v36k (greedy bundles) 3.789826e-5 → v37a (layout R46) 3.761822e-5 → v37b (POLISH) 3.742321e-5 → v37c.
+  Lane gains on a shared base compound: merged contributions −1.78e-7 (COMPLETE), −1.38e-7 (POLISH), −1.53e-7
+  (GLOBAL), joint repair −2.46e-7.
 - Where the loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
   3.041e-5, of which 2.274e-5 is our terminal class's floor (TERM) and 0.768e-5 leaks that every template tried keeps;
   A, B, C preparation 0.456e-5; prefix and data wait 0.618e-5. Closed today on this layout: an earlier round (R43, worth
@@ -41,7 +41,7 @@ so lane searches are bound by ideas, not evaluation.
 | 2 | P91 | G1 | Room next to the data on the real grid. Off-grid phantoms on v36h, all orders: both A-flag-gap helpers −1.609e-6, late X check S12X (data 0, 20, 3, 22 at 40–43) −1.150e-6, **both −2.705e-6 (−7.1%)** at acceptance 0.4985 (`work/lanes/GLOBAL/room/prices.txt`); the largest lever left above the round. Blocked in v36h only by occupancy: no free cell next to q10/q21 at 44 or over a stabilizer's support at 39–43; R43's layout model found helper room only with +4–6 hops and 4–17 moved roles, never built (closure inferred). Built: R46 with both helpers, repaired, is v37a (−5.4e-7 vs v36h); next on v37a: r3-quality B/C on R46 cells (≈ 0.9e-6 behind), a late X check, greedy bundle polish | finalist L < τ − 5e-7 at A ≥ 0.5002, or every realization priced with the cost that ate the prize per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active: finalist v37a (−5.4e-7 vs v36h); continuing on v37a |
 | 3 | P100 | G1 | A encoder, nearby data guards and A's partial decoder as one process with transient encoded flags (DIGEST #2, reviewer 11 Task 5, reviewer 12 #6, reviewer 7 M06); A cells 33–42 noiseless −1.64e-6; rebased on v37a at 20:00 (177 v36k circuits priced, best −1.4e-8 below the gate) | finalist as P99, or the window grown until the boundary model no longer fits, with the cost that ate the gain | AJOINT (Codex, `work/lanes/AJOINT`, hippo ≤ 24) | active |
 | 4 | P101 | G1 | The greedy local-edit polish on v37a (BUNDLE's menu ported to R46: singles, connected 2-bundles, greedy joint extension; then GUARDNET's guard network and APROC's A pass): v36i → v36k gained −1.93e-7 this way | a greedy round gains < 1e-9 after all three stages | POLISH (Codex, `work/lanes/POLISH`, zebra ≤ 16) | active |
-| 5 | P104 | G1 | Merge the lanes' independent gains on v37a (POLISH's edits, GLOBAL's B/C, COMPLETE's phase-network end) by footprint, re-apply POLISH's menu where they overlap, repair | finalist L < L(v37b) − 5e-8, or the measured reason they do not combine | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 4) | active |
+| 5 | P104 | G1 | Merge the lanes' independent gains on v37a (POLISH's edits, GLOBAL's B/C, COMPLETE's phase-network end) by footprint, re-apply POLISH's menu where they overlap, repair | finalist L < L(v37b) − 5e-8, or the measured reason they do not combine | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 4) | done 22:45 (v37c); re-run when lanes post new gains |
 | 6 | P106 | G1 | Systematic search for new endings (TERMINAL prices five named ones): enumerate block-level templates (2–4 ticks of transversal CX between D and ≤ 4 ancilla blocks in {\|0_L⟩, \|+_L⟩, \|0⟩⁷, \|+⟩⁷, cat, Bell}, reads in X/Z or none, affine FRAMEs), keep the correct and first-order fault-tolerant ones, score with an exact second-order terminal model; rank by tail loss and grid-friendliness (per-index interaction graph a tree, or ≤ 1 hop: the square needs a unit square per index); then out-of-class qubit-level endings; best two or three to a grid-free suffix and the grid | the frontier reported and the best templates priced against v37b | ENDSEARCH (Codex, `work/lanes/ENDSEARCH`, tom ≤ 24) | active |
 | 7 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
