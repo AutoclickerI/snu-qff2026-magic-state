@@ -135,6 +135,13 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Source: this session; the first message restates CONSTRAINTS rule 11 (Codex first), not a new rule.
 - Effect: R-20261025-1 continues until a proxy probe (RESOURCES "Codex") admits Codex; then new workers go to Codex.
 
+## R-20261025-3 — 2026-10-25 16:41 KST — no zip archives in work/
+> "and read my feedbacks previously handed off and digest it. don't keep zip archive in works directory."
+> Q: "Should this become a standing rule for future reviewer handoffs? I recommend yes: unpack each zip into a new spec/reviewerN folder, commit what we use, then delete the zip." A: "Yes, standing rule (Recommended)"
+
+- Source: this session (message 15:51 KST; answer 16:41 KST).
+- Effect: CONSTRAINTS rule 14. The digest itself was a one-time instruction (DIGEST lane, PLAN P93/P94).
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
