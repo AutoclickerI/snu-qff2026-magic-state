@@ -3,20 +3,19 @@
 ## Status (2026-10-25 17:20 KST)
 - Board: **rank 1** with v36h_h2517_r342819, **server 3.48827e-5** (17:37; key 3.49e-5); Placeholder 4.906e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36j` from the 18:20 race) against the key boundary below our best and submits the best at :37.
-- **Best expected circuit: v36j** (`work/lanes/MAIN/v36j`: v36i + five disjoint BUNDLE 2-edit bundles; a greedy
-  joint extension with more bundles and cheap acceptance sources is running): **all-orders 3.798125e-5 (−0.45% vs v36h),
-  acceptance 0.50055**, 357 CX, FAST (9.4 s per 1e6); races from the 19:37 slot. Lineage: v36c (ST2) 4.11516e-5 → v36d
-  4.02862e-5 → v36e (r3) 3.92343e-5 → v36f 3.83761e-5 → v36g 3.83605e-5 → v36h (ACCBUY) 3.815473e-5 → v36i (APROC)
-  3.809138e-5 → v36j.
+  `lanes/MAIN/v36k` from the 18:20 race) against the key boundary below our best and submits the best at :37.
+- **Best expected circuit: v36k** (`work/lanes/MAIN/v36k`: v36i + 35 edits from a greedy joint extension with
+  BUNDLE's v36h-positive 2-bundles and singles; pass 2 over all 3,401 bundles is running): **all-orders 3.789826e-5
+  (−0.67% vs v36h), acceptance 0.50104**, 364 CX, FAST (7.9 s per 1e6); races from the 19:37 slot. Lineage: v36c (ST2)
+  4.11516e-5 → v36d 4.02862e-5 → v36e (r3) 3.92343e-5 → v36f 3.83761e-5 → v36g 3.83605e-5 → v36h (ACCBUY) 3.815473e-5 →
+  v36i (APROC) 3.809138e-5 → v36j (five bundles) 3.798125e-5 → v36k. Local edits on v36h were not exhausted: greedy
+  joint pricing of bundles that each gain ≤ 3e-8 compounds (−8.3e-8 over v36j).
 - Where the loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
   3.041e-5, of which 2.274e-5 is our terminal class's floor (TERM) and 0.768e-5 leaks that every template tried keeps;
   A, B, C preparation 0.456e-5; prefix and data wait 0.618e-5. Closed today on this layout: an earlier round (R43, worth
   only −0.68e-6), C's partially coherent instrument (PCC), and the A-flag gap (FLAG: ≥ 2 data gap ticks in every valid
   flagged round; helpers need a new layout), and the B/C resource on v36h's cells (P85: 22 LNS runs end at one
   acceptance-only move, decoder-safe residues each cost ≥ p/15·2.6e-3 through the exterior's undetected data-X weight).
-  Local edits on v36h pay little: BUNDLE's best 2-edit bundle is −1.75e-8 at acceptance ≥ 0.5005 with 41% of the 2-edit
-  neighbourhood enumerated (the rest is finishing as a script).
 - Reviewers 11–13 (`work/lanes/MAIN/spec/reviewer{11,12,13}/`; untrusted, run with `python -I`) and DIGEST's
   re-read of reviewers 1–12: B/C widenings (P85 closed, P90), evaluator and racer speedups (done: character tables,
   quotient contraction, packed syndrome decoding; P96), acceptance sources (P95). None found a circuit below v36h.
