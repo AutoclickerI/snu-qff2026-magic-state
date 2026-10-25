@@ -17,9 +17,8 @@
 - Reviewers 11 and 12 (bundles in `work/lanes/MAIN/spec/reviewer{11,12}/`; untrusted, run with `python -I`): B/C
   search widenings (P85, P90), evaluator and racer speedups (done: character tables, quotient contraction, packed
   syndrome decoding), closures (FINDINGS); parked ideas below. Neither found a circuit below the incumbent.
-- **Codex is refused locally** (429 `local_auth_cap` since 02:26 KST; RESOURCES "Codex" has the probe). Workers are
-  Claude subagents until a probe admits Codex (R-20261025-1, R-20261025-2); their dirs are `work/lanes/<LANE>` and they
-  report to the main session, which verifies and promotes.
+- **Codex is back** (15:28 KST; R-20261025-2): lanes run on Codex workers (`codex:codex-rescue`), Claude only when Codex
+  is refused; lane dirs are `work/lanes/<LANE>` and they report to the main session, which verifies and promotes.
 
 ## Critical path
 Lane delta on v36h → all orders (≈ 1 s at 16 processes) → judge 1e6, speed → `next_stem.txt` → hourly race of seed-0
@@ -36,7 +35,7 @@ so lane searches are bound by ideas, not evaluation.
 |---|---|---|---|---|---|---|
 | 1 | P90 | G1 | Directly synthesized rank-four B/C resource R_102 = span{(g,g)} + (0,102) with C's X(V)/Z(V^⊥) readout, joint on v36h's B/C cells in the existing ticks, ranked by the exact J_τ = N − τ·A (τ = L(v36h)) instead of the proxy (reviewer 12 #1, #5). PCC closed only r3 + a noiseless V map: with the same B/C prep noise removed on both sides R_102 beats R_0 by −8.22e-7, with r3's noise it loses +4.38e-7, so a direct build must keep its preparation cost below ≈ 4.52e-6 (v36h 3.70e-6) including the extra seed and fan-out | J_τ < 0 finalist, or a full Pareto pass on the 102 contract with no win and its mechanism | BCX (Claude, `work/lanes/BCX`, hippo ≤ 24) | active |
 | 2 | P85 | G1 | B/C resource with decoder-safe residues (64 of 128 X patterns instead of 8, X2leak in the objective) and a joint window through B→C at 44 (reviewer 11 Tasks 3, 4). Wave 1: four Pareto points all lose (best +2.0e-9) | a resource that beats r3, or the cost that blocks it per lead | BCX | active |
-| 3 | P89 | G1 | Nonmonotone connected 2–3-edit bundles on v36h (reviewer 11 Task 7, reviewer 12 #10): the greedy searches kept only positive singles, marked losers dead and stopped early; enumerate bundles in neighbourhoods of shared helpers, windows or signatures, all-or-nothing, semantic cache keys | a bundle finalist below v36h, or the exact enumerated neighbourhood with no win | BUNDLE (Claude, `work/lanes/BUNDLE`, zebra ≤ 32) | active |
+| 3 | P89 | G1 | Nonmonotone connected 2–3-edit bundles on v36h (reviewer 11 Task 7, reviewer 12 #10): the greedy searches kept only positive singles, marked losers dead and stopped early; enumerate bundles in neighbourhoods of shared helpers, windows or signatures, all-or-nothing, semantic cache keys | a bundle finalist below v36h, or the exact enumerated neighbourhood with no win | BUNDLE (Codex since 15:30, `work/lanes/BUNDLE`, zebra ≤ 32) | active |
 | 4 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
