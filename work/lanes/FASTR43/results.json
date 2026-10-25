@@ -1,0 +1,62 @@
+{
+ "base": {
+  "stem": "MAIN/v36f",
+  "allorders": 3.837606198613569e-05,
+  "acceptance": 0.5043916856529436,
+  "lane_evaluator_check": "c/v36f_rt reproduces both exactly"
+ },
+ "q8reuse": {
+  "stem": "c/q8reuse",
+  "edit": "RX8@22 removed (reuse MX8@21 c7 state), 5 gadget pairs straddling t22 dropped, t>22 shifted -1; R43, depth 46, 283 CX",
+  "allorders": 3.8370177458227455e-05,
+  "acceptance": 0.5101260529324437,
+  "ideal": "PASS c1=3.09e-19",
+  "atoms": "SLOW 141 (all X atoms, all at the leading H of MX8@21)",
+  "speed_s_per_1e6": 251.4,
+  "judge_1e5": "PASS acc 0.50782, 23.2 s single process"
+ },
+ "v36f_nopairs22": {
+  "stem": "c/v36f_nopairs22",
+  "edit": "same 5 pairs dropped, no reuse/compression (control)",
+  "allorders": 3.842604122720407e-05,
+  "acceptance": 0.49938726516467014,
+  "atoms": "FAST 0"
+ },
+ "sx_full": {
+  "stem": "c/sx_full",
+  "edit": "SX before last D->A CX, SXDG at t46 on all 7 data (FRESH recipe; TDG20 43->42, TDG10 42->41)",
+  "allorders": 3.851637006654448e-05,
+  "acceptance": 0.5043998694318893,
+  "ideal": "PASS c1=3.09e-19",
+  "atoms": "SLOW 306 (all X atoms, at the leading H of SQRT_X on the 7 data wires)",
+  "speed_s_per_1e6": 323.6,
+  "judge_1e5": "PASS acc 0.50281, 31.6 s single process"
+ },
+ "v35b_sx_crosscheck": {
+  "stem": "c/v35b_sx",
+  "allorders": 4.26691144433378e-05,
+  "matches": "FRESH v35b SX 4.26691144433378e-5"
+ },
+ "counterfactuals_v36f": {
+  "A_encoder_noiseless": [
+   3.689747662452392e-05,
+   0.5181381045311877
+  ],
+  "A_drop_Zcontaining": [
+   3.714041646697889e-05,
+   0.5148194441631532
+  ],
+  "A_drop_Xonly": [
+   3.8128177404943456e-05,
+   0.5076463397747117
+  ],
+  "BC_drop_Xcontaining": [
+   3.185165629855348e-05,
+   0.5540036826621745
+  ],
+  "BC_drop_Zcontaining": [
+   3.347171080314523e-05,
+   0.5363051989507628
+  ]
+ }
+}

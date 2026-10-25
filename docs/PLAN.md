@@ -31,7 +31,6 @@ rule"); before that racing examined ≈ 7.6× more draws than plain re-draws.
 |---|---|---|---|---|---|---|
 | 1 | P75 | G1, G3 | Re-integration on v36f: leave-one-out of v36f's gadgets, INTEG's 332 singles, PRECELL's guards and INTEG's unused acceptance trades re-priced on v36f (the B/C resource and guards changed every gadget's environment), greedy joint by gain with acceptance ≥ 0.5010 | a finalist below v36f, or the LOO and singles tables showing none | INTEG2 (Claude, `work/lanes/INTEG2`, zebra ≤ 20 processes) | active |
 | 2 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
-| 3 | P72 | G1, G2 | FAST realizations of SLOW-but-better edits on v36f: q8 reuse after the flag (R44→43, +0.01 acceptance on v35b), data SX layer (−2.2% on v35a); price both on v36f first | a FAST finalist below v36f, or the mechanism that blocks it | FASTR43 (Claude, `work/lanes/FASTR43`, zebra ≤ 12 processes) | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair

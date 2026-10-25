@@ -1,0 +1,2508 @@
+{
+ "prediction": "SLOW",
+ "general_atoms": 306,
+ "standard_failures": 306,
+ "total_atoms": 1892,
+ "class_rejected": false,
+ "reject_gate_index": -1,
+ "deferred_wires": 197,
+ "normalized_instructions": 1253,
+ "offending_gates": [
+  {
+   "index": 941,
+   "qubit": 83,
+   "atoms": 114,
+   "instruction": "0:7,83"
+  },
+  {
+   "index": 945,
+   "qubit": 121,
+   "atoms": 88,
+   "instruction": "0:7,121"
+  },
+  {
+   "index": 971,
+   "qubit": 53,
+   "atoms": 26,
+   "instruction": "0:7,53"
+  },
+  {
+   "index": 975,
+   "qubit": 20,
+   "atoms": 34,
+   "instruction": "0:7,20"
+  },
+  {
+   "index": 979,
+   "qubit": 42,
+   "atoms": 9,
+   "instruction": "0:7,42"
+  },
+  {
+   "index": 983,
+   "qubit": 54,
+   "atoms": 12,
+   "instruction": "0:7,54"
+  },
+  {
+   "index": 987,
+   "qubit": 134,
+   "atoms": 23,
+   "instruction": "0:7,134"
+  }
+ ],
+ "scope": "Exact-engine dispatch screen; validated on current T-prep family. FAST is not a universal <=20s runtime certificate.",
+ "atoms": [
+  {
+   "noise_index": 1,
+   "noise_instruction": "1:2,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 3,
+   "noise_instruction": "1:2,43",
+   "qubit": 43,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 4,
+   "noise_instruction": "1:0,44",
+   "qubit": 44,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 9,
+   "noise_instruction": "1:2,43",
+   "qubit": 43,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 13,
+   "noise_instruction": "1:3,43",
+   "qubit": 43,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 15,
+   "noise_instruction": "1:3,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 19,
+   "noise_instruction": "1:2,49",
+   "qubit": 49,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 32,
+   "noise_instruction": "1:0,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 34,
+   "noise_instruction": "1:4,42,8",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 34,
+   "noise_instruction": "1:4,42,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 36,
+   "noise_instruction": "1:4,43,44",
+   "qubit": 43,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 36,
+   "noise_instruction": "1:4,43,44",
+   "qubit": 44,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 38,
+   "noise_instruction": "1:2,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 41,
+   "noise_instruction": "1:2,49",
+   "qubit": 49,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 45,
+   "noise_instruction": "1:3,49",
+   "qubit": 49,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 51,
+   "noise_instruction": "1:0,2",
+   "qubit": 2,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 53,
+   "noise_instruction": "1:4,45,2",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 53,
+   "noise_instruction": "1:4,45,2",
+   "qubit": 2,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 55,
+   "noise_instruction": "1:4,46,8",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 55,
+   "noise_instruction": "1:4,46,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 57,
+   "noise_instruction": "1:4,43,42",
+   "qubit": 43,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 57,
+   "noise_instruction": "1:4,43,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 59,
+   "noise_instruction": "1:4,48,44",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 59,
+   "noise_instruction": "1:4,48,44",
+   "qubit": 44,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 64,
+   "noise_instruction": "1:2,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 68,
+   "noise_instruction": "1:3,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 70,
+   "noise_instruction": "1:4,45,42",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 70,
+   "noise_instruction": "1:4,45,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 71,
+   "noise_instruction": "1:3,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 73,
+   "noise_instruction": "1:4,54,2",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 73,
+   "noise_instruction": "1:4,54,2",
+   "qubit": 2,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 74,
+   "noise_instruction": "1:3,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 76,
+   "noise_instruction": "1:4,8,44",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 76,
+   "noise_instruction": "1:4,8,44",
+   "qubit": 44,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 78,
+   "noise_instruction": "1:4,49,46",
+   "qubit": 49,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 78,
+   "noise_instruction": "1:4,49,46",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 80,
+   "noise_instruction": "1:4,50,43",
+   "qubit": 50,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 80,
+   "noise_instruction": "1:4,50,43",
+   "qubit": 43,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 82,
+   "noise_instruction": "1:4,57,48",
+   "qubit": 57,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 82,
+   "noise_instruction": "1:4,57,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 83,
+   "noise_instruction": "1:3,57",
+   "qubit": 57,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 90,
+   "noise_instruction": "1:4,53,45",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 90,
+   "noise_instruction": "1:4,53,45",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 92,
+   "noise_instruction": "1:4,8,2",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 92,
+   "noise_instruction": "1:4,8,2",
+   "qubit": 2,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 94,
+   "noise_instruction": "1:4,46,49",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 94,
+   "noise_instruction": "1:4,46,49",
+   "qubit": 49,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 96,
+   "noise_instruction": "1:4,43,50",
+   "qubit": 50,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 97,
+   "noise_instruction": "1:3,50",
+   "qubit": 50,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 99,
+   "noise_instruction": "1:4,44,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 100,
+   "noise_instruction": "1:3,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 102,
+   "noise_instruction": "1:4,45,53",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 102,
+   "noise_instruction": "1:4,45,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 104,
+   "noise_instruction": "1:4,2,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 105,
+   "noise_instruction": "1:3,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 107,
+   "noise_instruction": "1:4,58,49",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 107,
+   "noise_instruction": "1:4,58,49",
+   "qubit": 49,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 109,
+   "noise_instruction": "1:4,42,8",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 109,
+   "noise_instruction": "1:4,42,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 110,
+   "noise_instruction": "1:3,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 111,
+   "noise_instruction": "1:0,61",
+   "qubit": 61,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 112,
+   "noise_instruction": "1:2,46",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 116,
+   "noise_instruction": "1:3,46",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 118,
+   "noise_instruction": "1:2,63",
+   "qubit": 63,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 122,
+   "noise_instruction": "1:4,49,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 123,
+   "noise_instruction": "1:3,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 124,
+   "noise_instruction": "1:0,65",
+   "qubit": 65,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 125,
+   "noise_instruction": "1:2,45",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 129,
+   "noise_instruction": "1:3,45",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 131,
+   "noise_instruction": "1:4,63,61",
+   "qubit": 63,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 131,
+   "noise_instruction": "1:4,63,61",
+   "qubit": 61,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 132,
+   "noise_instruction": "1:3,63",
+   "qubit": 63,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 134,
+   "noise_instruction": "1:4,46,8",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 134,
+   "noise_instruction": "1:4,46,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 136,
+   "noise_instruction": "1:4,64,53",
+   "qubit": 64,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 136,
+   "noise_instruction": "1:4,64,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 137,
+   "noise_instruction": "1:3,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 138,
+   "noise_instruction": "1:3,64",
+   "qubit": 64,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 139,
+   "noise_instruction": "1:0,67",
+   "qubit": 67,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 141,
+   "noise_instruction": "1:4,45,65",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 141,
+   "noise_instruction": "1:4,45,65",
+   "qubit": 65,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 142,
+   "noise_instruction": "1:3,45",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 143,
+   "noise_instruction": "1:0,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 145,
+   "noise_instruction": "1:4,50,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 147,
+   "noise_instruction": "1:4,46,54",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 147,
+   "noise_instruction": "1:4,46,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 148,
+   "noise_instruction": "1:3,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 150,
+   "noise_instruction": "1:4,61,8",
+   "qubit": 61,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 150,
+   "noise_instruction": "1:4,61,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 152,
+   "noise_instruction": "1:4,46,67",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 152,
+   "noise_instruction": "1:4,46,67",
+   "qubit": 67,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 154,
+   "noise_instruction": "1:4,61,48",
+   "qubit": 61,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 154,
+   "noise_instruction": "1:4,61,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 156,
+   "noise_instruction": "1:4,20,50",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 158,
+   "noise_instruction": "1:4,65,8",
+   "qubit": 65,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 158,
+   "noise_instruction": "1:4,65,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 159,
+   "noise_instruction": "1:3,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 161,
+   "noise_instruction": "1:4,45,42",
+   "qubit": 45,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 161,
+   "noise_instruction": "1:4,45,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 163,
+   "noise_instruction": "1:4,65,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 166,
+   "noise_instruction": "1:4,46,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 168,
+   "noise_instruction": "1:4,61,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 176,
+   "noise_instruction": "1:4,64,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 178,
+   "noise_instruction": "1:4,58,67",
+   "qubit": 67,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 180,
+   "noise_instruction": "1:4,63,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 182,
+   "noise_instruction": "1:4,45,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 184,
+   "noise_instruction": "1:4,54,46",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 186,
+   "noise_instruction": "1:4,8,61",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 188,
+   "noise_instruction": "1:4,69,20",
+   "qubit": 69,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 188,
+   "noise_instruction": "1:4,69,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 189,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 190,
+   "noise_instruction": "1:3,69",
+   "qubit": 69,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 192,
+   "noise_instruction": "1:4,57,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 196,
+   "noise_instruction": "1:4,58,67",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 196,
+   "noise_instruction": "1:4,58,67",
+   "qubit": 67,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 198,
+   "noise_instruction": "1:4,67,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 202,
+   "noise_instruction": "1:4,42,63",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 204,
+   "noise_instruction": "1:4,8,46",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 206,
+   "noise_instruction": "1:4,48,61",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 208,
+   "noise_instruction": "1:4,53,45",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 210,
+   "noise_instruction": "1:4,54,65",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 211,
+   "noise_instruction": "1:3,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 215,
+   "noise_instruction": "1:4,58,67",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 217,
+   "noise_instruction": "1:4,42,45",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 218,
+   "noise_instruction": "1:3,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 220,
+   "noise_instruction": "1:4,8,65",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 221,
+   "noise_instruction": "1:3,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 223,
+   "noise_instruction": "1:4,48,46",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 232,
+   "noise_instruction": "1:3,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 236,
+   "noise_instruction": "1:4,69,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 238,
+   "noise_instruction": "1:4,20,61",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 239,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 251,
+   "noise_instruction": "1:4,71,53",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 251,
+   "noise_instruction": "1:4,71,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 253,
+   "noise_instruction": "1:4,74,48",
+   "qubit": 74,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 253,
+   "noise_instruction": "1:4,74,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 262,
+   "noise_instruction": "1:4,58,5",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 278,
+   "noise_instruction": "1:4,58,5",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 281,
+   "noise_instruction": "1:4,48,16",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 283,
+   "noise_instruction": "1:4,53,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 285,
+   "noise_instruction": "1:4,77,74",
+   "qubit": 77,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 285,
+   "noise_instruction": "1:4,77,74",
+   "qubit": 74,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 289,
+   "noise_instruction": "1:2,84",
+   "qubit": 84,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 295,
+   "noise_instruction": "1:3,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 297,
+   "noise_instruction": "1:3,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 299,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 301,
+   "noise_instruction": "1:3,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 303,
+   "noise_instruction": "1:3,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 310,
+   "noise_instruction": "1:4,48,16",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 312,
+   "noise_instruction": "1:4,53,71",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 312,
+   "noise_instruction": "1:4,53,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 313,
+   "noise_instruction": "1:3,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 314,
+   "noise_instruction": "1:3,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 316,
+   "noise_instruction": "1:4,77,74",
+   "qubit": 74,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 321,
+   "noise_instruction": "1:4,46,54",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 321,
+   "noise_instruction": "1:4,46,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 322,
+   "noise_instruction": "1:3,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 324,
+   "noise_instruction": "1:4,86,20",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 324,
+   "noise_instruction": "1:4,86,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 326,
+   "noise_instruction": "1:4,84,8",
+   "qubit": 84,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 326,
+   "noise_instruction": "1:4,84,8",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 327,
+   "noise_instruction": "1:3,84",
+   "qubit": 84,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 329,
+   "noise_instruction": "1:4,85,42",
+   "qubit": 85,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 329,
+   "noise_instruction": "1:4,85,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 330,
+   "noise_instruction": "1:3,85",
+   "qubit": 85,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 332,
+   "noise_instruction": "1:4,83,58",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 332,
+   "noise_instruction": "1:4,83,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 335,
+   "noise_instruction": "1:4,74,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 339,
+   "noise_instruction": "1:3,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 341,
+   "noise_instruction": "1:4,42,71",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 341,
+   "noise_instruction": "1:4,42,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 343,
+   "noise_instruction": "1:4,8,86",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 343,
+   "noise_instruction": "1:4,8,86",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 345,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 345,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 347,
+   "noise_instruction": "1:4,20,50",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 350,
+   "noise_instruction": "1:4,58,89",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 351,
+   "noise_instruction": "1:3,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 359,
+   "noise_instruction": "1:4,8,42",
+   "qubit": 8,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 359,
+   "noise_instruction": "1:4,8,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 361,
+   "noise_instruction": "1:4,46,48",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 361,
+   "noise_instruction": "1:4,46,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 366,
+   "noise_instruction": "1:4,83,91",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 370,
+   "noise_instruction": "1:4,71,93",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 371,
+   "noise_instruction": "1:3,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 378,
+   "noise_instruction": "1:4,86,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 382,
+   "noise_instruction": "1:4,8,46",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 384,
+   "noise_instruction": "1:4,42,63",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 386,
+   "noise_instruction": "1:4,48,96",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 390,
+   "noise_instruction": "1:4,86,20",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 390,
+   "noise_instruction": "1:4,86,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 391,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 393,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 393,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 395,
+   "noise_instruction": "1:4,83,97",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 402,
+   "noise_instruction": "1:4,97,48",
+   "qubit": 97,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 402,
+   "noise_instruction": "1:4,97,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 403,
+   "noise_instruction": "1:3,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 404,
+   "noise_instruction": "1:3,97",
+   "qubit": 97,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 406,
+   "noise_instruction": "1:4,86,63",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 408,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 408,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 410,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 410,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 412,
+   "noise_instruction": "1:4,71,42",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 412,
+   "noise_instruction": "1:4,71,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 414,
+   "noise_instruction": "1:2,100",
+   "qubit": 100,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 416,
+   "noise_instruction": "1:4,86,63",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 418,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 418,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 420,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 420,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 421,
+   "noise_instruction": "1:3,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 423,
+   "noise_instruction": "1:4,71,42",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 423,
+   "noise_instruction": "1:4,71,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 424,
+   "noise_instruction": "1:3,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 426,
+   "noise_instruction": "1:4,20,96",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 428,
+   "noise_instruction": "1:4,100,46",
+   "qubit": 100,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 428,
+   "noise_instruction": "1:4,100,46",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 430,
+   "noise_instruction": "1:4,42,63",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 432,
+   "noise_instruction": "1:4,86,48",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 432,
+   "noise_instruction": "1:4,86,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 434,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 434,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 436,
+   "noise_instruction": "1:4,20,96",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 438,
+   "noise_instruction": "1:4,100,42",
+   "qubit": 100,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 438,
+   "noise_instruction": "1:4,100,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 442,
+   "noise_instruction": "1:4,71,93",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 444,
+   "noise_instruction": "1:4,86,48",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 444,
+   "noise_instruction": "1:4,86,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 445,
+   "noise_instruction": "1:3,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 447,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 447,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 449,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 449,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 451,
+   "noise_instruction": "1:4,20,96",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 453,
+   "noise_instruction": "1:4,42,71",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 453,
+   "noise_instruction": "1:4,42,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 454,
+   "noise_instruction": "1:3,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 456,
+   "noise_instruction": "1:4,100,86",
+   "qubit": 100,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 456,
+   "noise_instruction": "1:4,100,86",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 460,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 460,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 462,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 462,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 464,
+   "noise_instruction": "1:4,20,96",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 466,
+   "noise_instruction": "1:4,84,100",
+   "qubit": 100,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 467,
+   "noise_instruction": "1:3,100",
+   "qubit": 100,
+   "axis": "X",
+   "first_bad_gate": 945,
+   "gate_instruction": "0:7,121"
+  },
+  {
+   "noise_index": 469,
+   "noise_instruction": "1:4,85,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 472,
+   "noise_instruction": "1:4,48,86",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 472,
+   "noise_instruction": "1:4,48,86",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 474,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 474,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 476,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 476,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 478,
+   "noise_instruction": "1:4,20,96",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 486,
+   "noise_instruction": "1:4,42,103",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 487,
+   "noise_instruction": "1:3,42",
+   "qubit": 42,
+   "axis": "X",
+   "first_bad_gate": 979,
+   "gate_instruction": "0:7,42"
+  },
+  {
+   "noise_index": 489,
+   "noise_instruction": "1:4,48,86",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 489,
+   "noise_instruction": "1:4,48,86",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 490,
+   "noise_instruction": "1:3,86",
+   "qubit": 86,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 492,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 492,
+   "noise_instruction": "1:4,54,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 493,
+   "noise_instruction": "1:3,58",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 495,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 495,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 497,
+   "noise_instruction": "1:4,20,96",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 498,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 501,
+   "noise_instruction": "1:4,71,104",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 502,
+   "noise_instruction": "1:3,71",
+   "qubit": 71,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 504,
+   "noise_instruction": "1:4,83,91",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 506,
+   "noise_instruction": "1:4,46,54",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 506,
+   "noise_instruction": "1:4,46,54",
+   "qubit": 54,
+   "axis": "X",
+   "first_bad_gate": 983,
+   "gate_instruction": "0:7,54"
+  },
+  {
+   "noise_index": 515,
+   "noise_instruction": "1:4,97,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 517,
+   "noise_instruction": "1:4,48,96",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 522,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 46,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 522,
+   "noise_instruction": "1:4,46,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 531,
+   "noise_instruction": "1:4,71,53",
+   "qubit": 53,
+   "axis": "X",
+   "first_bad_gate": 971,
+   "gate_instruction": "0:7,53"
+  },
+  {
+   "noise_index": 541,
+   "noise_instruction": "1:4,46,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 566,
+   "noise_instruction": "1:4,91,83",
+   "qubit": 91,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 566,
+   "noise_instruction": "1:4,91,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 568,
+   "noise_instruction": "1:4,48,111",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 574,
+   "noise_instruction": "1:4,20,50",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 575,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 589,
+   "noise_instruction": "1:4,91,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 590,
+   "noise_instruction": "1:3,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 594,
+   "noise_instruction": "1:4,58,89",
+   "qubit": 58,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 596,
+   "noise_instruction": "1:4,111,48",
+   "qubit": 111,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 596,
+   "noise_instruction": "1:4,111,48",
+   "qubit": 48,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 646,
+   "noise_instruction": "1:4,48,111",
+   "qubit": 111,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 647,
+   "noise_instruction": "1:3,111",
+   "qubit": 111,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 651,
+   "noise_instruction": "1:4,58,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 658,
+   "noise_instruction": "1:4,20,121",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 659,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 679,
+   "noise_instruction": "1:4,83,58",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 680,
+   "noise_instruction": "1:3,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 686,
+   "noise_instruction": "1:0,134",
+   "qubit": 134,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 708,
+   "noise_instruction": "1:4,111,134",
+   "qubit": 134,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 726,
+   "noise_instruction": "1:4,20,121",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 736,
+   "noise_instruction": "1:4,134,111",
+   "qubit": 134,
+   "axis": "X",
+   "first_bad_gate": 987,
+   "gate_instruction": "0:7,134"
+  },
+  {
+   "noise_index": 753,
+   "noise_instruction": "1:4,86,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 754,
+   "noise_instruction": "1:3,20",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 830,
+   "noise_instruction": "1:4,83,150",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 831,
+   "noise_instruction": "1:3,83",
+   "qubit": 83,
+   "axis": "X",
+   "first_bad_gate": 941,
+   "gate_instruction": "0:7,83"
+  },
+  {
+   "noise_index": 858,
+   "noise_instruction": "1:4,20,86",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  },
+  {
+   "noise_index": 883,
+   "noise_instruction": "1:4,20,86",
+   "qubit": 20,
+   "axis": "X",
+   "first_bad_gate": 975,
+   "gate_instruction": "0:7,20"
+  }
+ ],
+ "stem": "/home/jihoon/competitions/quantumn/work/lanes/FASTR43/c/sx_full",
+ "qasm_sha256": "09c5200bc31c09eae80824a0780e6d371d886a5beeeff890a78d81f438c3f0d8",
+ "seconds": 0.9970523850060999
+}
