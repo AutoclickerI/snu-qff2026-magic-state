@@ -4,7 +4,7 @@ Nonzero kernel assignments become a selector axis. All remaining detector
 variables are summed exactly; no Monte Carlo or fault-order truncation.
 The upstream kernel's numerical zero threshold is separately reported.
 """
-import json, math, sys, time
+import json, math, random, sys, time
 from collections import defaultdict
 from pathlib import Path
 import numpy as np
@@ -156,17 +156,90 @@ def compile_channels(m, groups, nd, kernel_scope):
         compiled.append((scope, 1 - m.chans[fs[0]['chan']]['p'], terms))
     return compiled
 
-BASIS = ROOT/'basis_v36c.json'   # reviewer 9's saved detector-row XORs for the v36c family (32 operations)
+WARM = ROOT/'basis_warm.json'   # saved detector-row XOR sequences keyed by detector record sets (v36c, v36f families)
+BASIS_TRIALS = 1000
+
+def search_basis(m, eng, groups, nd, kernel_scope, warm, trials=BASIS_TRIALS, seed=80353):
+    """Detector-row XORs among zero-reference identity rows outside the kernel scope (the accepted event and every moment
+    are unchanged; only contraction coordinates move): replay a saved sequence where its rows exist, then reviewer 9's
+    hill-climb (random elementary XOR, kept if min-fill (work, width) drops). Returns (ops, (work, width))."""
+    from fastfill import minfill_adj
+    faults = [f for fs in groups.values() for f in fs]
+    chans = list(groups)
+    cidx = {c: j for j, c in enumerate(chans)}
+    free = [i for i in range(nd) if i not in kernel_scope and tuple(eng.projs[i]) == (0, 0, 1) and int(eng.v[i]) == 0]
+    rows = {i: sum(((f['d'] >> i) & 1) << j for j, f in enumerate(faults)) for i in range(nd) if i not in kernel_scope}
+    cm = [0] * len(chans)
+    for j, f in enumerate(faults):
+        cm[cidx[f['chan']]] |= 1 << j
+    inc = {i: {c for c in range(len(chans)) if rows[i] & cm[c]} for i in rows}
+    scopes = [set() for _ in chans]
+    cnt, mem, adj = {}, {}, {}
+
+    def link(i, c, d):
+        mem[i] = mem.get(i, 0) + d
+        for w in scopes[c]:
+            if w == i:
+                continue
+            k = (min(i, w), max(i, w))
+            n0 = cnt.get(k, 0)
+            cnt[k] = n0 + d
+            if n0 == 0 and d > 0:
+                adj[i] = adj.get(i, 0) | (1 << w); adj[w] = adj.get(w, 0) | (1 << i)
+            elif n0 + d == 0:
+                adj[i] &= ~(1 << w); adj[w] &= ~(1 << i)
+        if mem[i] > 0:
+            adj.setdefault(i, 0)
+        elif i in adj:
+            del adj[i]
+
+    def move(i, ni):
+        add, rem = ni - inc[i], inc[i] - ni
+        for c in add:
+            link(i, c, 1); scopes[c].add(i)
+        for c in rem:
+            scopes[c].discard(i); link(i, c, -1)
+        return add, rem
+
+    for i in rows:
+        for c in inc[i]:
+            link(i, c, 1); scopes[c].add(i)
+    keys = {','.join(map(str, sorted(d))): i for i, d in enumerate(m.dets)}
+    fs, ops = set(free), []
+    for kt, ksrc in warm:
+        i, j = keys.get(kt), keys.get(ksrc)
+        if i is None or j is None or i == j or i not in fs or j not in fs:
+            continue
+        rows[i] ^= rows[j]
+        ni = {c for c in range(len(chans)) if rows[i] & cm[c]}
+        move(i, ni); inc[i] = ni; ops.append((i, j))
+    best = minfill_adj(adj)
+    rng = random.Random(seed)
+    for _ in range(trials if len(free) > 1 else 0):
+        i, j = rng.sample(free, 2)
+        nr = rows[i] ^ rows[j]
+        ni = {c for c in range(len(chans)) if nr & cm[c]}
+        add, rem = move(i, ni)
+        if not add and not rem:
+            continue
+        cost = minfill_adj(adj)
+        if cost < best:
+            rows[i], inc[i], best = nr, ni, cost; ops.append((i, j))
+        else:
+            for c in add:
+                scopes[c].discard(i); link(i, c, -1)
+            for c in rem:
+                link(i, c, 1); scopes[c].add(i)
+    return ops, best
 
 def compile_best(m, eng, groups, nd, kernel_scope):
-    """compile_channels and its min-fill plan, in reviewer 9's saved detector basis when it applies and is cheaper.
-    The XORs act only among zero-reference identity detector rows outside the kernel scope, so the accepted event and
-    every moment are unchanged; only the contraction coordinates move (v36c: width 11 -> 9, 20.7 s -> 7.9 s)."""
+    """compile_channels and its min-fill plan in the cheapest detector basis found: the plain one, or a basis searched
+    from each saved sequence in basis_warm.json (v36c: width 11 -> 9; v36f: ~130 s -> ~5 s at 16 processes)."""
     compiled = compile_channels(m, groups, nd, kernel_scope)
     elim = minfill([set(scope) for scope, _, _ in compiled])
-    ops = json.loads(BASIS.read_text())['elementary_row_xors']
-    touched = {i for pair in ops for i in pair}
-    if any(i >= nd or tuple(eng.projs[i]) != (0, 0, 1) or int(eng.v[i]) or i in kernel_scope for i in touched):
+    warms = list(json.loads(WARM.read_text())['bases'].values())
+    ops = min((search_basis(m, eng, groups, nd, set(kernel_scope), w) for w in warms), key=lambda r: r[1])[0]
+    if not ops:
         return compiled, elim
     rows = [1 << i for i in range(nd)]
     for target, source in ops:

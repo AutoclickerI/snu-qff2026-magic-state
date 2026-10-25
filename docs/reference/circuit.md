@@ -28,9 +28,12 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 
 ## Evaluators (rank by all orders; the others diagnose, confirm or gate)
 - **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
-  ≈ 8–11 s on v36c (reviewer 9's detector basis `basis_v36c.json` via `compile_best`; other circuits fall back to the
-  plain basis, ≈ 20–35 s). Scope: barriers over all used qubits, no FRAME/POSTSELECT, ≤ 20 T rotations, ideal acceptance ≈ 1.
-  After editing `sparse_walsh.py`, copy it to `work/lanes/ST2/sparse/` and restart long searches (FINDINGS "Failures").
+  ≈ 5–13 s (v29c 5 s, v36c 8 s, v36f 12 s). `compile_best` contracts in a detector basis searched per circuit: saved
+  XOR sequences keyed by detector record sets (`basis_warm.json`: v36c from reviewer 9, v36f from INTEG2) replayed where
+  their rows exist, then 1,000 seeded hill-climb steps; the plain basis took ≈ 130–190 s on v36f/v36g. Values agree with
+  the plain basis to ≈ 1e-16 absolute. Scope: barriers over all used qubits, no FRAME/POSTSELECT, ≤ 20 T rotations, ideal
+  acceptance ≈ 1. After editing `sparse_walsh.py`, copy it to `work/lanes/ST2/sparse/` and restart long searches
+  (FINDINGS "Failures").
 - **Exact 2nd + 3rd order with sensitivities**: `work/lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`
   (loss by fault pair, per-channel gradients). Converges slowly below acceptance ≈ 0.5; use all orders to rank.
 - **3-seed official MC**: `work/lanes/MAIN/spec/mc3.py <stem>`; one seed hides ≈ 1%.
