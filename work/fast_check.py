@@ -87,5 +87,9 @@ if __name__ == "__main__":
     procs = int(sys.argv[4]) if len(sys.argv) > 4 else 25
     t = time.time()
     rep = check(text, data, shots=shots, procs=procs)
-    print(f"1-F={rep.score!r} sem={rep.sem:.3g} acc={rep.acceptance!r} n_2q={rep.n_2q} passed={rep.passed} "
-          f"({time.time() - t:.1f}s, {procs} procs)")
+    # Below 1e8 shots the acceptance gate is a binomial estimate (an exact A of 0.5002 misses it at 1e6 shots 34% of
+    # the time), so gates_ok (format, class, correctness) is the verdict there and exact all-orders A >= 0.5002 the
+    # acceptance criterion; passed is the judge's own verdict on this run.
+    z = (rep.acceptance - 0.5) / (0.25 / shots) ** 0.5 if rep.acceptance is not None else float("nan")
+    print(f"1-F={rep.score!r} sem={rep.sem:.3g} acc={rep.acceptance!r} (z vs 0.5 = {z:+.2f}) n_2q={rep.n_2q} "
+          f"gates_ok={rep.correct_ok} passed={rep.passed} ({time.time() - t:.1f}s, {procs} procs)")

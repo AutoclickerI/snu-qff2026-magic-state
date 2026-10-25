@@ -13,7 +13,7 @@ for hc in owl:96:72:72 tom:64:48:36 jerry:64:48:24 hippo:48:36:12 sunfish:32:24:
   read -r busy mine <<< "$out"
   [ -n "$mine" ] || continue
   procs=$((cores - busy - 2)); [ $procs -gt $((cap - mine)) ] && procs=$((cap - mine))
-  [ $procs -gt $rmax ] && procs=$rmax; [ $procs -lt 4 ] && procs=4
+  [ $procs -gt $rmax ] && procs=$rmax; [ $procs -lt 4 ] && continue   # no room: skip the host (75% cap)
   specs="$specs $h:$procs:$off:$((procs * 400))"; off=$((off + procs * 400))
 done
 echo $specs

@@ -8,7 +8,8 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    `upstream/snu-qff2026-problem` (keep it unmodified; `git pull` for organizer updates).
 2. Official score, bit-identical to the server, ~10 s at 20 processes: `cd work && ../.venv/bin/python fast_check.py
    <qasm> <json> [shots] [procs]`. Sanity: `fast_check.py submissions/v36b_r580.qasm submissions/v36b_r580.json`
-   gives the server's 3.87794862201698e-5 (another host may differ in the last ulp).
+   gives the server's 3.87794862201698e-5 (another host may differ in the last ulp). Below 1e8 shots, read `gates_ok`
+   (format, class, correctness); acceptance there is a binomial estimate, so gate on the exact all-orders A ≥ 0.5002.
 3. Ranking evaluators (all orders, exact 2nd/3rd order, 3-seed MC, speed): `docs/reference/circuit.md` "Evaluators".
 4. Sequential judge plus fault scan (~5 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
 5. Seed-0 re-draws of one circuit (same noise model, verified per variant): `RACE_THRESHOLD=<x> work/race.py <stem> <n> [procs]
