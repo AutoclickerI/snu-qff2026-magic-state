@@ -1,0 +1,90 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 3,
+      "record": 319,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    },
+    {
+      "q": 13,
+      "record": 318,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    },
+    {
+      "q": 7,
+      "record": 317,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 27,
+  "readmask": 14,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 3.001001124,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12544.0,
+    "bound": -12747.0
+  },
+  "cx": 382,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.744070474797568e-05,
+    "acceptance": 0.5002258524945301,
+    "bound": 3.6945460134101393e-14,
+    "width": 12,
+    "seconds": 28.88624521699967,
+    "sha256": "bac698c0aa16abf3a40239566f3170cdeb5e579e24a391e051fb5ff822e38b05",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_neighbor_k27_m14",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 382,
+    "depth": 48,
+    "J_tau": -8.879599167050677e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_neighbor_k27_m14",
+      "v37_read14_k27"
+    ],
+    "single_fault": {
+      "first_order_loss": 2.794061278639927e-19,
+      "harmful_faults": 0,
+      "top": [],
+      "scope": "exact single-fault diagnostic at p=.001, not an all-orders ranking"
+    }
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": false,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 3.4004692647585245e-05,
+    "sampled_acceptance": 0.499931,
+    "seconds": 11.724623441696167,
+    "qasm_sha256": "bac698c0aa16abf3a40239566f3170cdeb5e579e24a391e051fb5ff822e38b05"
+  },
+  "sha256": "bac698c0aa16abf3a40239566f3170cdeb5e579e24a391e051fb5ff822e38b05",
+  "base": "MAIN/v37a"
+}

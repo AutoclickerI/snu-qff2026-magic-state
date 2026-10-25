@@ -1,0 +1,78 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 11,
+      "record": 297,
+      "measure_time": 33,
+      "remove_reset_at": 34
+    },
+    {
+      "q": 3,
+      "record": 319,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 27,
+  "readmask": 3,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 5.001598813,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12598.0,
+    "bound": -12810.0
+  },
+  "cx": 383,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.747208242587522e-05,
+    "acceptance": 0.5019892413108341,
+    "bound": 3.681567775759812e-14,
+    "width": 13,
+    "seconds": 32.462346925982274,
+    "sha256": "10273b0168ac0f10e3609752c7cf32658c08145da5499d212045c87650f4f82a",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_handoff_k27_m3",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 383,
+    "depth": 48,
+    "J_tau": -7.335775727116741e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_handoff_k27_m3",
+      "v37_neighbor_k27_m03"
+    ]
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 2.89077265368941e-05,
+    "sampled_acceptance": 0.501596,
+    "seconds": 2.363135814666748,
+    "qasm_sha256": "10273b0168ac0f10e3609752c7cf32658c08145da5499d212045c87650f4f82a"
+  },
+  "sha256": "10273b0168ac0f10e3609752c7cf32658c08145da5499d212045c87650f4f82a",
+  "base": "MAIN/v37a"
+}

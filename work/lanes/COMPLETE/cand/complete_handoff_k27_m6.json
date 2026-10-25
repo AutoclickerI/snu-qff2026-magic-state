@@ -1,0 +1,84 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 3,
+      "record": 319,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    },
+    {
+      "q": 13,
+      "record": 318,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 27,
+  "readmask": 6,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 5.004602987,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12570.0,
+    "bound": -12773.0
+  },
+  "cx": 382,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.7449770938848384e-05,
+    "acceptance": 0.5018863772928053,
+    "bound": 3.6823223513317845e-14,
+    "width": 12,
+    "seconds": 22.696359396970365,
+    "sha256": "2e2b8d841f21a3b2ec60261777c0b2a9f8c831d4169df8df5281648d5ecdff0b",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_handoff_k27_m6",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 382,
+    "depth": 48,
+    "J_tau": -8.454055672407098e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_handoff_k27_m6",
+      "v37_neighbor_k27_m06"
+    ],
+    "single_fault": {
+      "first_order_loss": 2.7940612786399276e-19,
+      "harmful_faults": 0,
+      "top": [],
+      "scope": "exact single-fault diagnostic at p=.001, not an all-orders ranking"
+    }
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 4.484465810432649e-05,
+    "sampled_acceptance": 0.501732,
+    "seconds": 2.8135201930999756,
+    "qasm_sha256": "2e2b8d841f21a3b2ec60261777c0b2a9f8c831d4169df8df5281648d5ecdff0b"
+  },
+  "sha256": "2e2b8d841f21a3b2ec60261777c0b2a9f8c831d4169df8df5281648d5ecdff0b",
+  "base": "MAIN/v37a"
+}

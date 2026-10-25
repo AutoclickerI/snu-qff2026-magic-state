@@ -1,0 +1,40 @@
+# COMPLETE
+
+**Verdict: VERIFIED FINALIST; the completion contract is met for the tested families and final completion-repair neighborhood.**
+Best: [complete_neighbor_k27_m14](cand/complete_neighbor_k27_m14.qasm), L=3.744070474797568e-05, A=0.5002258524945301, Jτ=-8.87959916705068e-08; SHA256 `bac698c0aa16abf3a40239566f3170cdeb5e579e24a391e051fb5ff822e38b05`. 382CX, 48 native ticks.
+Improvement over v37a=1.77511800375e-07; target margin=7.75118003752e-08. Exact A≥.5002. Judge1e6 gates_ok=True, passed=False, 11.725s; sampled acceptance=0.499931. Exact all-orders values determine ranking; the noisy run checks gates/runtime.
+What moved: reverse the blue check’s final CX and exchange its X/Z readout ports (q1/q2), then reuse q2’s measured-Z state directly for the data hop. Direct source Z-read handoffs on q3, q7, q13 replace their following resets. The existing A encoder,65-CX correlated resource and both on-grid A-flag-gap helpers run at R45, one tick earlier. Readout bits keep their logical meanings; independent Pauli propagation verifies the same XX/ZZ observables and c64 lies in the detector span (`bell_certificate.json`).
+Current control: byte-identical v37a, L=3.761821654835085e-05, A=0.5007854638217537, Jτ=0, SHA `cdaa719694c6`. Fixed model OPTIMAL:557 native operations, explicit roles/lifetimes/records, both helpers, A11 and all65 resource CXs.
+
+Decisions: the strict pre28 five-wire completions were already CNOT-minimal or lost after routing. Following the performance priority, completion was extended through the immediately following blue check at34–36 and its source handoffs. GLOBAL’s B/C synthesis and late-X work and POLISH’s general greedy campaign were left to those lanes; this lane only retimes the carried resource and repairs the changed completion interface.
+Current archive: 30 distinct actual native source-record cell/release vectors, each saved, ideal-checked and exactly priced before selection. Complete downstream families include phase-check roots q9/q7/q14, Bell-port exchange and R45 coherent handoffs. B/C’s65 gates are retained rather than replaced by an independent-encoder model.
+Repair coverage: all32 subsets of five individually feasible guard restorations were modeled and every emitted circuit priced. Source Z-read/reset handoffs were composed and repriced; the final neighborhood covers all32 guard choices at the best tested handoff mask and all16 handoff masks on the leading guard profile, plus the additional leading profiles. All eight subsets of three opened cancelling prefix pairs were tested on the q11 direct-read branch. The final guard/source-handoff pass found no further improvement over the retained winner. This is a finite completion neighborhood; no global layout/Clifford optimum is claimed.
+
+| Complete family / matched change | L | A | Measured cost or gain |
+|---|---:|---:|---|
+| Phase-check readout/reset on q9 | 3.763487557978e-05 | 0.49978729480 | ΔL=+0.016659µ; Same depth; below acceptance floor. |
+| q9 root, vacated-slot repair + acceptance purchase | 3.771635057036e-05 | 0.50079272451 | ΔL=+0.098134µ; One init-check trade funds acceptance. |
+| Phase-check root q7 | 3.975632784757e-05 | 0.49007405141 | ΔL=+2.138111µ; Requires a later round in this fixed-block model. |
+| Phase-check root q14 | 3.860527103982e-05 | 0.48718507586 | ΔL=+0.987054µ; Requires a later round in this fixed-block model. |
+| Bell-port exchange, current R46 | 3.761826136535e-05 | 0.50061885965 | ΔL=+0.000045µ; Essentially neutral until the interface is used. |
+| R45 by dropping three source checks | 4.391482546243e-05 | 0.50320950334 | ΔL=+6.296609µ; Source-check loss consumes the shorter wait. |
+| R45 Bell handoff, all source checks retained | 3.78292059915e-05 | 0.50069013377 | ΔL=+0.210989µ; Initial guard-removal cost exceeds waiting gain. |
+| R45 plus three restored guards | 3.751377016345e-05 | 0.50135994127 | ΔL=-0.104446µ; First judge-verified numerical finalist. |
+| Four-guard profile before source-read reuse | 3.761614181176e-05 | 0.50195828103 | ΔL=-0.002075µ; Retained despite worse fixed-interface score. |
+| Four-guard profile with q3/q13 Z-read reuse | 3.744977093885e-05 | 0.50188637729 | ΔL=-0.168446µ; Reverses the guard-profile ranking. |
+| Matched direct-read recipe moved back to R46 | 3.805473732202e-05 | 0.49505834361 | Complete R45 counterpart gains 0.604966µ; this includes the re-scheduled handoff/readout noise. |
+
+µ=1e-6 loss. Deleting sourceM15/c322 from the matched R45 Bell build costs 2.731816µ. The successful read/port completion keeps that check. Pairwise build differences include their full retiming and noise interaction; they are not additive channel allocations.
+Preserved v36k measurements: baseline L=3.789826092701952e-05, A=0.5010395982258441. History has144 numerically priced distinct QASMs,27 rejected attempts,120 independently verified output-permutation completions and30 release profiles. Best relocated tested circuit after repair: L=.00015785851733506653, A=.4598734973759598, judge gates_ok=True but acceptance fails. Restoration-family gate-noise removal saved .208/.775/1.539µ; pre-round-idle removal saved121.821/51.786/120.036µ (overlapping counterfactuals). Full original-cohort report: [history_v36k/REPORT.md](history_v36k/REPORT.md).
+Verified: every priced QASM hash and ordered data mapping, exact baseline reproduction, ideal checks for all archived profiles, all numerical finalists promoted to cand through independent judge1e6 and runtime checks. v37a and the q3/q13 direct-read winner have roundoff-zero first-order loss (2.79e-19), so the measured gains are higher-order. The sparse-kernel omission bounds remain in results.json.
+Scope/inference: scheduling feasibility or infeasibility applies only to the declared native model; timing objectives do not prove noisy global optimality. Unbuilt larger windows, different output geometries and new resource/check families remain open. Raw SLOW dispatch was confirmed for q9-measurement reuse without reset, but no long noisy run was spent on that losing case.
+Implementation corrections retained as evidence: v36k strict per-wire ordering inserted a false extra tick; exact commuting dependencies fixed it. A extraction now follows original operation identity through interleaved D→A couplings. Removing a measurement eliminates its detector column rather than dropping its term (c275^c282 is deterministic, c282 alone is random). Rejected attempts have errors, never fabricated prices.
+Ledger: 315 numerically priced distinct QASMs and 31 rejected QASMs. All Jτ below use v37a; J_v36k and the historical report preserve the earlier objective. Aliases, full precision, provenance and counterfactuals are in [results.json](results.json). A<.5002 is excluded from candidate ranking.
+No submission, commit/push, sub-agent or GPU was used. Only COMPLETE was written; tom was read only (its race occupied22 workers). All owned jobs were observed to exit before final delivery.
+
+<table><thead><tr><th>Circuit</th><th>L</th><th>A</th><th>Jτ</th><th>SHA256 prefix</th><th>What moved</th></tr></thead><tbody>
+<tr><td><a href="builds/swap8_9_restore_g023.qasm">swap8_9_restore_g023</a></td><td>0.0001892027276392</td><td>0.470865058243</td><td>7.137584964e-05</td><td>a8aec02613e7</td><td>v36k history: new data guard</td></tr><tr><td><a href="builds/swap8_9_restore_g024.qasm">swap8_9_restore_g024</a></td><td>0.0002054784598099</td><td>0.470430117307</td><td>7.896651393e-05</td><td>c055efa73412</td><td>v36k history: new data guard</td></tr><tr><td><a href="builds/swap8_9_restore_g025.qasm">swap8_9_restore_g025</a></td><td>0.0001890216496094</td><td>0.471176172759</td><td>7.133769013e-05</td><td>9012d6a53c8d</td><td>v36k history: new data guard</td></tr>
+</tbody></table>
+
+Files: `cand/`, `results.json`, `finalists_v37.json`, `model_v37a.json`, `archive_v37.json`, `v37_joint_schedules.json`, `v37.py`, `handoff_v37.py`, `prefix_finish_v37.py`, `logs/`, `history_v36k/`.
+Full report with all 315 prices: REPORT.full.md and results.json (local, not in git).

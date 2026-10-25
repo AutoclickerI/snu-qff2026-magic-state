@@ -1,0 +1,71 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 7,
+      "record": 317,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 27,
+  "readmask": 8,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 3.001915211,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12590.0,
+    "bound": -12804.0
+  },
+  "cx": 382,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.7445752665581104e-05,
+    "acceptance": 0.5013865547058901,
+    "bound": 3.685993191184895e-14,
+    "width": 12,
+    "seconds": 23.717069654027,
+    "sha256": "1bd20ea6a41197647c0c33d5349cdd4c967b03c29f16d7684e54ff01b9711b45",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_neighbor_k27_m08",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 382,
+    "depth": 48,
+    "J_tau": -8.647107199312345e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_neighbor_k27_m08"
+    ]
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 2.6964783992106177e-05,
+    "sampled_acceptance": 0.500653,
+    "seconds": 10.563377618789673,
+    "qasm_sha256": "1bd20ea6a41197647c0c33d5349cdd4c967b03c29f16d7684e54ff01b9711b45"
+  },
+  "sha256": "1bd20ea6a41197647c0c33d5349cdd4c967b03c29f16d7684e54ff01b9711b45",
+  "base": "MAIN/v37a"
+}

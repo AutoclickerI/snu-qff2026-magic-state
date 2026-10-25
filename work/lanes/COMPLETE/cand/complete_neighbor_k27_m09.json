@@ -1,0 +1,77 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 11,
+      "record": 297,
+      "measure_time": 33,
+      "remove_reset_at": 34
+    },
+    {
+      "q": 7,
+      "record": 317,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 27,
+  "readmask": 9,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 3.0012426690000003,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12590.0,
+    "bound": -12791.0
+  },
+  "cx": 383,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.746554598470244e-05,
+    "acceptance": 0.5004952781393827,
+    "bound": 3.692557149569041e-14,
+    "width": 13,
+    "seconds": 51.4149045739905,
+    "sha256": "79ea4475131cda272252bdb88481df5e5e7551ce748324958e03e2a14f065867",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_neighbor_k27_m09",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 383,
+    "depth": 48,
+    "J_tau": -7.641089621690853e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_neighbor_k27_m09"
+    ]
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 3.3964133874628263e-05,
+    "sampled_acceptance": 0.500528,
+    "seconds": 2.381699562072754,
+    "qasm_sha256": "79ea4475131cda272252bdb88481df5e5e7551ce748324958e03e2a14f065867"
+  },
+  "sha256": "79ea4475131cda272252bdb88481df5e5e7551ce748324958e03e2a14f065867",
+  "base": "MAIN/v37a"
+}

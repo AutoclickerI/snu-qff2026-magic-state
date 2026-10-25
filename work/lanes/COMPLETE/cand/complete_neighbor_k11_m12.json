@@ -1,0 +1,77 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=11; direct Z-read handoffs [{'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 13,
+      "record": 318,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    },
+    {
+      "q": 7,
+      "record": 317,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 11,
+  "readmask": 12,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 3.005593225,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12573.0,
+    "bound": -12754.0
+  },
+  "cx": 381,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.74997747021625e-05,
+    "acceptance": 0.5011878896576045,
+    "bound": 3.687454226017616e-14,
+    "width": 12,
+    "seconds": 22.07271162600955,
+    "sha256": "7c0357380bacaa3d483ff86748215764d375ef7ec7eb4369dc15445cb819935c",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_neighbor_k11_m12",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=11; direct Z-read handoffs [{'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 381,
+    "depth": 48,
+    "J_tau": -5.936161893828868e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_neighbor_k11_m12"
+    ]
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 3.290713606203282e-05,
+    "sampled_acceptance": 0.501411,
+    "seconds": 3.219785213470459,
+    "qasm_sha256": "7c0357380bacaa3d483ff86748215764d375ef7ec7eb4369dc15445cb819935c"
+  },
+  "sha256": "7c0357380bacaa3d483ff86748215764d375ef7ec7eb4369dc15445cb819935c",
+  "base": "MAIN/v37a"
+}

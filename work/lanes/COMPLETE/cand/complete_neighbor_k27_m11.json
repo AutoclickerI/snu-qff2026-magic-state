@@ -1,0 +1,83 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 11,
+      "record": 297,
+      "measure_time": 33,
+      "remove_reset_at": 34
+    },
+    {
+      "q": 3,
+      "record": 319,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    },
+    {
+      "q": 7,
+      "record": 317,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 27,
+  "readmask": 11,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 3.0011297970000004,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12572.0,
+    "bound": -12784.0
+  },
+  "cx": 383,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.746346131414101e-05,
+    "acceptance": 0.5003283767586812,
+    "bound": 3.6937889283005724e-14,
+    "width": 13,
+    "seconds": 42.8815353520331,
+    "sha256": "98912bbe8a38f8ec666b5409ac6d1e06f599260f024df7183fefc1ffc2f18f13",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_neighbor_k27_m11",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 383,
+    "depth": 48,
+    "J_tau": -7.742843512711811e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_neighbor_k27_m11"
+    ]
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 5.6907695717546015e-05,
+    "sampled_acceptance": 0.500811,
+    "seconds": 2.5171658992767334,
+    "qasm_sha256": "98912bbe8a38f8ec666b5409ac6d1e06f599260f024df7183fefc1ffc2f18f13"
+  },
+  "sha256": "98912bbe8a38f8ec666b5409ac6d1e06f599260f024df7183fefc1ffc2f18f13",
+  "base": "MAIN/v37a"
+}

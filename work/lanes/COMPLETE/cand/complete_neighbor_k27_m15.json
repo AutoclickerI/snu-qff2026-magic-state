@@ -1,0 +1,89 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+  "handoffs": [
+    {
+      "q": 11,
+      "record": 297,
+      "measure_time": 33,
+      "remove_reset_at": 34
+    },
+    {
+      "q": 3,
+      "record": 319,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    },
+    {
+      "q": 13,
+      "record": 318,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    },
+    {
+      "q": 7,
+      "record": 317,
+      "measure_time": 39,
+      "remove_reset_at": 40
+    }
+  ],
+  "keepmask": 27,
+  "readmask": 15,
+  "schedule": {
+    "status": "FEASIBLE",
+    "seconds": 3.0012510910000003,
+    "round_shift": -1,
+    "weights": {},
+    "objective": -12544.0,
+    "bound": -12756.0
+  },
+  "cx": 383,
+  "native_depth": 48,
+  "all_orders": {
+    "loss": 3.745903644199544e-05,
+    "acceptance": 0.5009888298867078,
+    "bound": 3.688919413743448e-14,
+    "width": 13,
+    "seconds": 42.77309087297181,
+    "sha256": "d0664bcaab2bbd2a804c166a7318329a5d08e67e9a5a6f9b19ae59d5bbb598a3",
+    "stem": "/home/jihoon/competitions/quantumn/work/lanes/COMPLETE/builds/v37_neighbor_k27_m15",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_hash": "bb4e3ecd6797b291",
+    "what_moved": "v37a R45 Bell/source completion; guardmask=27; direct Z-read handoffs [{'q': 11, 'record': 297, 'measure_time': 33, 'remove_reset_at': 34}, {'q': 3, 'record': 319, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 13, 'record': 318, 'measure_time': 39, 'remove_reset_at': 40}, {'q': 7, 'record': 317, 'measure_time': 39, 'remove_reset_at': 40}]",
+    "cx": 383,
+    "depth": 48,
+    "J_tau": -7.97474552242388e-08,
+    "tau": 3.761821654835085e-05,
+    "aliases": [
+      "v37_neighbor_k27_m15"
+    ]
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "sampled_loss": 3.695476736474541e-05,
+    "sampled_acceptance": 0.500612,
+    "seconds": 4.473861455917358,
+    "qasm_sha256": "d0664bcaab2bbd2a804c166a7318329a5d08e67e9a5a6f9b19ae59d5bbb598a3"
+  },
+  "sha256": "d0664bcaab2bbd2a804c166a7318329a5d08e67e9a5a6f9b19ae59d5bbb598a3",
+  "base": "MAIN/v37a"
+}
