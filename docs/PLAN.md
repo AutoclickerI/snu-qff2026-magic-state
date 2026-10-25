@@ -1,10 +1,9 @@
 # Plan
 
-## Status (2026-10-25 08:45 KST)
-- Board: **rank 1** with v36f_h2508_r8782, **server 3.62209e-5** (08:37; key 3.62e-5); Placeholder 4.984e-5.
+## Status (2026-10-25 09:45 KST)
+- Board: **rank 1** with v36f_h2509_r154749, **server 3.58239e-5** (09:37; key 3.58e-5); Placeholder 4.984e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36f`) against the key boundary below our best and submits the best at :37; the 09:37 slot takes
-  v36f_h2509_r154749, 3.58239e-5 (best of 17,692 draws).
+  `lanes/MAIN/v36f`) against the key boundary below our best and submits the best at :37.
 - **Best expected circuit: v36f** (`work/lanes/MAIN/v36f` = PRECELL `precell_eg`: v36e + q6/q13 continuous guards on q7,
   q14/q21 echo ends, five late guards on idle B/C qubits from never-used cells): **all-orders 3.83761e-5 (−2.19% vs v36e,
   −6.75% vs v36c), acceptance 0.50439**, 293 CX, R44, FAST; the hourly stem from the 08:37 slot. Lineage: v36c (ST2)
