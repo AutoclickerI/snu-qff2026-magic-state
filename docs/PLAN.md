@@ -4,10 +4,11 @@
 - Board: **rank 1** with v37c_h2600_r43418, **server 3.428e-5** (key 3.43e-5, 00:40); next team Placeholder 3.856e-5 (22:53; 4.005e-5 an hour earlier), so rank 1 needs our key to keep falling. The
   hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` and submits
   the hour's best at :37: **v37d** from the 00:20 race (01:37 slot).
-- **Best expected circuit: v37d** (`work/lanes/MAIN/v37d`): **all-orders 3.676347e-5, acceptance 0.50235**, 406 CX,
-  48 ticks, round R45 on GLOBAL's R46 layout (data [6,20,19,10,2,22,16]). Since v36h (3.815473e-5): greedy bundles,
-  the R46 layout with both A-flag-gap helpers (v37a), POLISH's edits (v37b), MERGE of COMPLETE's R45 end, POLISH and
-  GLOBAL's B/C (v37c), MERGE pass 2 (v37d). Lane gains on a shared base compound when merged.
+- **Best expected circuit: v37e** (`work/lanes/MAIN/v37e`): **all-orders 3.637096e-5, acceptance 0.50243**, 406 CX,
+  v37d with GLOBAL's BC3 B/C sources ported by MERGE pass 3 (still repairing); races from the 01:20 race (02:37 slot).
+  Round R45 on GLOBAL's R46 layout (data [6,20,19,10,2,22,16]). Since v36h (3.815473e-5): greedy bundles, the R46
+  layout with both A-flag-gap helpers (v37a), POLISH (v37b), MERGE of COMPLETE's R45 end, POLISH and GLOBAL's B/C
+  (v37c), MERGE pass 2 (v37d 3.676347e-5), BC3 (v37e). Lane gains on a shared base compound when merged.
 - Where the loss sits (FINDINGS): our terminal class floor 2.274e-5 is 61% of the total; the two-check tick before
   the reads +0.57e-5; preparation and waits before it ≈ +0.9e-5. The square round with perfect A/B/C arriving just in
   time on v37c's real prefix gives **2.860e-5** (WHOLEEND), but every built way to prepare the square's interleaved
