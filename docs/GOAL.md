@@ -3,10 +3,9 @@
 ## G0 — Official 1-F of 1e-5, or as close to it as possible, by the deadline (R-20261024-3)
 The measure is the official 1-F (`tprep.check(..., shots=10**8, seed=0)`) of our best board entry when submissions
 close, 2026-10-30 12:00 KST; the score is the gap to 1e-5. Every admissible circuit has true expected 1-F ≥ 1.162e-5
-(proved twice; FINDINGS "Floor, any circuit"). The key is one seed-0 draw the hourly race finds ≈ 3.5–4σ (≈ 2.7e-6)
+(FINDINGS "Floor, any circuit"). The key is one seed-0 draw the hourly race finds ≈ 3.5–4σ (≈ 2.7e-6)
 below the true mean: the levers are a lower true mean (1% ≈ 0.5σ), then racing compute. Our terminal class (outputs
-end on a CX with a measured partner) has floor 2.274e-5 (FINDINGS "Terminal class floor"); below it needs a different
-final instrument. Rank 1 (R-20261023-1) holds while our key stays below every other team's; ties go to fewer CX, then
+end on a CX with a measured partner) has floor 2.274e-5 (FINDINGS "Terminal class floor"). Rank 1 (R-20261023-1) holds while our key stays below every other team's; ties go to fewer CX, then
 the earlier entry.
 
 ## Subgoals (ranked)

@@ -139,7 +139,8 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 > "and read my feedbacks previously handed off and digest it. don't keep zip archive in works directory."
 > Q: "Should this become a standing rule for future reviewer handoffs? I recommend yes: unpack each zip into a new spec/reviewerN folder, commit what we use, then delete the zip." A: "Yes, standing rule (Recommended)"
 
-- Source: this session (message 15:51 KST; answer 16:41 KST).
+- Confirmed: "Yes, standing rule (Recommended)" (question-tool answer, 16:41 KST).
+- Source: this session (message 15:51 KST).
 - Effect: CONSTRAINTS rule 14. The digest itself was a one-time instruction (DIGEST lane, PLAN P93/P94).
 
 ## Dropped agent rules (do not reintroduce)

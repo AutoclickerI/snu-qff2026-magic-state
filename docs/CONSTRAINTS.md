@@ -35,15 +35,15 @@ Each rule is `[hard]` (external, or protects others, shared resources, safety or
 ## Jihoon's rules (below G0)
 
 11. **Codex lanes only.** [owner] Expansion work goes to parallel Codex lanes (`codex:codex-rescue`); new
-    workers are never Sonnet or another model, and a failed Codex job is relaunched on Codex. While the Codex probe
-    (RESOURCES "Codex") is refused, workers are Claude subagents.
+    workers are never another model, and a failed Codex job is relaunched on Codex; Claude subagents only while
+    the Codex probe (RESOURCES) is refused.
     [Jihoon, R-20261023-1, R-20261023-9, R-20261024-2, R-20261025-1, R-20261025-2]
 12. **Parallel, non-blocking.** [owner] Independent work runs in parallel in the background; never block
     on one experiment. [Jihoon, R-20261023-5, R-20261023-6, R-20261023-9]
 13. **Solver-backed search.** [owner] Prefer solver- or simulation-backed search over hand tuning.
     [Jihoon, R-20261023-4, R-20261023-9]
-14. **No zip archives in work/.** [owner] Unpack a handoff zip into a new `work/lanes/MAIN/spec/reviewerN/`, commit the
-    parts we use, then delete the zip. [Jihoon, R-20261025-3]
+14. **No zips in work/.** [owner] Unpack a handoff into `work/lanes/MAIN/spec/reviewerN/`, commit what we use,
+    delete the zip. [Jihoon, R-20261025-3]
 
 ## Boundary cases (what the rules allow)
 
