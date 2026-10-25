@@ -1,0 +1,95 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "ajoint_change": {
+    "kind": "joint q9 guard/check reorder integrated with the latest verified POLISH exterior",
+    "source": "POLISH/cand/polish_ecc75052febf",
+    "source_sha256": "ecc75052febf05b7a68e907e5265337996a129401c581002089921a06a385497",
+    "replaces": "CX16->10@37",
+    "moves": [
+      {
+        "operation": "measure q[9] -> c[321]",
+        "old_tick": 37,
+        "new_tick": 39
+      },
+      {
+        "operation": "CX9->10",
+        "old_tick": 39,
+        "new_tick": 37
+      },
+      {
+        "operation": "CX16->10",
+        "old_tick": 37,
+        "new_tick": null
+      }
+    ]
+  },
+  "native_depth": 49,
+  "cx": 396,
+  "qasm_sha256": "dd374d5610e861e58bb91609a1626aca7bbc48e8f2dbb87b71229524b0a795b1",
+  "tau": 3.761821654835085e-05,
+  "all_orders": {
+    "loss": 3.73848905325705e-05,
+    "acceptance": 0.5004499980669088,
+    "J_tau": -1.1676800414623413e-07,
+    "bound": 3.692891322127862e-14
+  },
+  "target_margin": 1.3332601578034444e-07,
+  "verification": {
+    "ideal_acceptance": 1.0,
+    "ideal_loss": 0.0,
+    "first_order_loss": 2.7940612786399777e-19,
+    "first_order_rejection": 0.6929333333333049,
+    "harmful_single_faults": []
+  },
+  "judge_1e6": {
+    "gates_ok": true,
+    "passed": true,
+    "shots": 1000000,
+    "qasm_sha256": "dd374d5610e861e58bb91609a1626aca7bbc48e8f2dbb87b71229524b0a795b1",
+    "log": "logs/a37_joint_latest.judge.txt",
+    "log_sha256": "f3c998244c0ff5c9e0220be034301c654f4926cc62c159a166236a0b9091e3f3"
+  },
+  "enumeration": {
+    "encoders": 1268,
+    "pivot_choices": 35,
+    "guard_contexts": 2,
+    "all_full_fault_checks_pass": true,
+    "proxy_used_to_exclude": false
+  },
+  "independent_replay": {
+    "path": "cand/ajoint_dd374d5610e8.qasm",
+    "sha256": "dd374d5610e861e58bb91609a1626aca7bbc48e8f2dbb87b71229524b0a795b1",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator": {
+      "sparse_walsh.py": "3f9545dd340371b2fa8585850e8681f995befb570e78ad57ab13c71708a4e039",
+      "frontend.py": "b4971e2ce3dfd122cae8a72f432594dce88e708afdc078c9e6b4751f1a1fe987",
+      "fastfill.py": "bdd8a5d825be541e3fac6c0878b7ecbd8fdc50e8f72cfac9819578f11ebb3b77",
+      "basis_warm.json": "afa66e1f76ba2455b17302289cd653732790b3006a3b39d7129b3154712b1289"
+    },
+    "tau": 3.761821654835085e-05,
+    "moved": "independent MAIN-basis finalist replay",
+    "loss": 3.738489053245958e-05,
+    "acceptance": 0.5004499980669088,
+    "bound": 3.692891322127863e-14,
+    "width": 11,
+    "seconds": 35.659626416047104,
+    "J_tau": -1.1676800420174437e-07
+  },
+  "completion_receipt": "completion37.json"
+}
