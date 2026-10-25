@@ -3,8 +3,8 @@
 ## Status (2026-10-25 08:45 KST)
 - Board: **rank 1** with v36f_h2508_r8782, **server 3.62209e-5** (08:37; key 3.62e-5); Placeholder 4.984e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36f`) against the key boundary below our best and submits the best at :37; the hour to 09:20 already
-  holds 3.58239e-5.
+  `lanes/MAIN/v36f`) against the key boundary below our best and submits the best at :37; the 09:37 slot takes
+  v36f_h2509_r154749, 3.58239e-5 (best of 17,692 draws).
 - **Best expected circuit: v36f** (`work/lanes/MAIN/v36f` = PRECELL `precell_eg`: v36e + q6/q13 continuous guards on q7,
   q14/q21 echo ends, five late guards on idle B/C qubits from never-used cells): **all-orders 3.83761e-5 (−2.19% vs v36e,
   −6.75% vs v36c), acceptance 0.50439**, 293 CX, R44, FAST; the hourly stem from the 08:37 slot. Lineage: v36c (ST2)
@@ -20,8 +20,8 @@
 
 ## Critical path
 Lane delta on v36f → all orders (≈ 11 s) → judge 1e6, speed → `next_stem.txt` → hourly race of seed-0 draws →
-`work/promote.sh` → slot. The board score is the hour's best draw: about mean − 4.5σ (σ ≈ 8.7e-7 at 1e8 shots), so a
-1% lower mean (3.8e-7) is worth about as much as 2.7 doublings of racing compute; racing gains are logarithmic, so
+`work/promote.sh` → slot. The board score is the hour's best draw: about mean − 3.5 to 4σ (σ = the judge's sem ≈ 7.2e-7), so
+a 1% lower mean (3.8e-7) is worth about as much as 3 doublings of racing compute; racing gains are logarithmic, so
 lanes take the cores they need and the racer fills the rest at each hour's start (`race_specs.sh`). From the hour to
 09:20 the drop rule is relative to the prior (κ = 0.7) and the threshold is relayed across hosts (FINDINGS "Race drop
 rule"); before that racing examined ≈ 7.6× more draws than plain re-draws.
