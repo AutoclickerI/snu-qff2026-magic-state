@@ -20,8 +20,8 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    e.g. 02:20>" <hosts incl. zebra>`; the slot is at :37 each hour. Hourly loop: `work/receipts/draw_loop.sh <pid of the running cut>`
    races an hour-named copy of the stem in `work/receipts/next_stem.txt` until HH:20 and promotes it; variant k of a stem is
    the same circuit every hour, so `work/receipts/offset_<stem>.txt` carries the next unused k; `work/receipts/race_specs.sh`
-   sizes each host's processes from its free cores at the start of the hour (cap 75%; racer maxima jerry 24, hippo 12,
-   zebra 8 leave room for lanes: edit its host list when lanes move). `race.py` changes reach
+   sizes each host's processes from its free cores at the start of the hour (cap 75%; racer maxima hippo 12, zebra 8 leave
+   room for lanes: edit its host list when lanes move). `race.py` changes reach
    the hosts only by rsync (promote.sh copies the stem, not the code). By hand: `work/submit.py submit|status|board|wait`.
 7. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without credentials or caches.
    Refresh one host at a time (zebra caps SSH connections):
