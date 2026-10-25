@@ -15,7 +15,8 @@
   only −0.68e-6), C's partially coherent instrument (PCC), and the A-flag gap (FLAG: ≥ 2 data gap ticks in every valid
   flagged round; helpers need a new layout), and the B/C resource on v36h's cells (P85: 22 LNS runs end at one
   acceptance-only move, decoder-safe residues each cost ≥ p/15·2.6e-3 through the exterior's undetected data-X weight).
-  Incremental search on v36h's layout is exhausted (BUNDLE: best 2-edit bundle −1.75e-8 at acceptance ≥ 0.5005).
+  Local edits on v36h pay little: BUNDLE's best 2-edit bundle is −1.75e-8 at acceptance ≥ 0.5005 with 41% of the 2-edit
+  neighbourhood enumerated (the rest is finishing as a script).
 - Reviewers 11 and 12 (bundles in `work/lanes/MAIN/spec/reviewer{11,12}/`; untrusted, run with `python -I`): B/C
   search widenings (P85, P90), evaluator and racer speedups (done: character tables, quotient contraction, packed
   syndrome decoding), closures (FINDINGS); parked ideas below. Neither found a circuit below the incumbent.
@@ -36,11 +37,13 @@ so lane searches are bound by ideas, not evaluation.
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
 | 1 | P91 | G1 | Room next to the data on the real grid. Off-grid phantoms on v36h, all orders: both A-flag-gap helpers −1.609e-6, late X check S12X (data 0, 20, 3, 22 at 40–43) −1.150e-6, **both −2.705e-6 (−7.1%)** at acceptance 0.4985 (`work/lanes/GLOBAL/room/prices.txt`); the largest lever left above the round. Blocked in v36h only by occupancy: no free cell next to q10/q21 at 44 or over a stabilizer's support at 39–43; R43's layout model found helper room only with +4–6 hops and 4–17 moved roles, never built (closure inferred). Build cheapest-first (cats or chains over free cells, single role or guard swaps, block translations that keep r3 and the A encoder), then R43's layouts with re-synthesized blocks | finalist L < τ − 5e-7 at A ≥ 0.5002, or every realization priced with the cost that ate the prize per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active |
-| 2 | P92 | G1 | Re-digest of every reviewer handoff (reviewers 3–12, git history and `spec/`) against what we measured since: ideas closed only by inference, on older circuits, or alone but possibly paying together | ranked top five with first decisive tests | DIGEST (Codex, `work/lanes/DIGEST`) | active |
-| 3 | P90 | G1 | Directly synthesized rank-four B/C resource R_102 (reviewer 12 #1, #5), exact J_τ. Six CP-SAT witnesses all lose (best 4.891e-5; X2 ≥ 4× r3's; acceptance needs region acc1 ≤ 0.3153 vs v36h 0.32187); 24 LNS runs (wave 4) end 16:01, then Pareto pricing (`work/lanes/BCX/HANDOFF.md` §3) | J_τ < 0 finalist, or close with the mechanism in HANDOFF §3.6 | main session (BCX scripts on hippo) | active |
-| 4 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 2 | P93 | G1 | Prefix-to-suffix interface (DIGEST #1; reviewer 12 #2–4): state-specific completion of the prefix's last stage instead of reversing every routing CX, output placement and earlier releases, kept as a 20–50-profile release archive; first a round-trip model that reproduces v36h with r3. Changes the occupancy that bounded EARLY (R42) and R43's helper layouts; pre-round pool 7.72e-6 | finalist, or three downstream builds priced with none below τ | IFACE (Codex, `work/lanes/IFACE`, hippo ≤ 24) | active |
+| 3 | P94 | G1 | A side as one process (DIGEST #2; reviewer 11 Task 5, reviewer 12 #6, reviewer 7 M06): encoder, data guards and partial decoder chosen jointly in 4–6-wire windows, transient encoded flags allowed; A cells 33–42 noiseless −1.64e-6, flag gaps noiseless −2.66e-6 (overlapping) | finalist, or every window around A searched with no witness below τ | APROC (Codex, `work/lanes/APROC`, tom ≤ 12) | active |
+| 4 | P90 | G1 | Directly synthesized rank-four B/C resource R_102 (reviewer 12 #1, #5), exact J_τ. Six CP-SAT witnesses all lose (best 4.891e-5; X2 ≥ 4× r3's; acceptance needs region acc1 ≤ 0.3153 vs v36h 0.32187); 24 LNS runs (wave 4) end 16:01, then Pareto pricing (`work/lanes/BCX/HANDOFF.md` §3) | J_τ < 0 finalist, or close with the mechanism in HANDOFF §3.6 | main session (BCX scripts on hippo) | active |
+| 5 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
+- DIGEST (`work/lanes/DIGEST/DIGEST.md`: 94 reviewer ideas from reviewers 1–12 against what we measured since, with closure scope): #3 a B/C verification instrument with an earlier encoded flag and complementary readout (after P90 closes), #4 rank-six 22-T/31-T phase routing with holder protection, #5 C-free post-use verification or another terminal class (no credible estimate).
 - Reviewer 12 (`spec/reviewer12/`, TASKS.json, REPORT_KO.txt): #2 coherent completion instead of TREP2's full reversal of
   the phase-network routing CXs (`network()` undoes every routing CX; synthesize only the completion the target state
   needs, with output placement and the next check); parked because the prefix is cheap on v36h: summed per-channel
