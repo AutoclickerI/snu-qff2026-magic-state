@@ -42,7 +42,9 @@ so lane searches are bound by ideas, not evaluation.
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 12 (`spec/reviewer12/`, TASKS.json, REPORT_KO.txt): #2 coherent completion instead of TREP2's full reversal of
   the phase-network routing CXs (`network()` undoes every routing CX; synthesize only the completion the target state
-  needs, with output placement and the next check); #3 a global lifetime/placement model that reproduces v36h exactly
+  needs, with output placement and the next check); parked because the prefix is cheap on v36h: summed per-channel
+  removal gains (overlapping) are 0.4e-6 for ticks ≤ 12 and 1.1e-6 for 13–22, against 12e-6 for 33–42 and 65e-6 for
+  the round (`MAIN/sparse/v36h_adjoint_72.json`); #3 a global lifetime/placement model that reproduces v36h exactly
   (ST1/FRESH's used independent A/B/C encoders and cannot express r3) before any wider solve; #4 keep candidates by
   critical-cell release profile, not only L and L − λA (ST2 `pop36_search.py` drops slot-opening prefixes); #7 the
   22-T normalized rank-six phase family (39,928 minimal supports, witness in `code/rank6_phase_audit.py`; three harmful
