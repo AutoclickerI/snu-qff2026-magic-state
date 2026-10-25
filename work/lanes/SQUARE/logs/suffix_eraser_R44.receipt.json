@@ -1,0 +1,136 @@
+{
+  "stem": "builds/suffix_eraser_R44",
+  "sha256": "28f57f8c1f31ddf9b48d3260919756dde748ec27110abf7804474c8ed4f4b0bc",
+  "loss": 3.602758656550951e-05,
+  "acceptance": 0.5394221907187482,
+  "J_tau": -8.580211099672015e-07,
+  "single_fault_loss": 2.4980018054065524e-19,
+  "harmful_single_faults": [],
+  "metadata": {
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "grid_free": true,
+    "round_start": 44,
+    "change": "v37a causal prefix + grid-free eraser suffix",
+    "roles": {
+      "D": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ],
+      "A": [
+        11,
+        28,
+        27,
+        32,
+        4,
+        5,
+        26
+      ],
+      "B": [
+        30,
+        31,
+        34,
+        35,
+        17,
+        23,
+        29
+      ],
+      "C": [
+        33,
+        7,
+        12,
+        18,
+        24,
+        13,
+        25
+      ]
+    },
+    "release": {
+      "0": 44,
+      "1": 44,
+      "2": 44,
+      "3": 40,
+      "4": 36,
+      "5": 36,
+      "6": 44,
+      "7": 37,
+      "8": 41,
+      "9": 40,
+      "10": 43,
+      "11": 34,
+      "12": 37,
+      "13": 39,
+      "14": 42,
+      "15": 41,
+      "16": 40,
+      "17": 29,
+      "18": 37,
+      "19": 39,
+      "20": 44,
+      "21": 42,
+      "22": 42,
+      "23": 32,
+      "24": 38,
+      "25": 39,
+      "26": 36,
+      "27": 35,
+      "28": 34,
+      "29": 33,
+      "30": 0,
+      "31": 0,
+      "32": 35,
+      "33": 36,
+      "34": 0,
+      "35": 0
+    },
+    "logical_z_verification": [
+      0,
+      1,
+      2
+    ]
+  },
+  "host": "bd9e5e460484",
+  "evaluator": {
+    "source": "/home/jihoon/competitions/quantumn/work/lanes/SQUARE/builds/suffix_eraser_R44",
+    "method": "sparse kernel cutset conditioning",
+    "channels": 688,
+    "factors": 386,
+    "dense_width": 26,
+    "conditioned_width": 10,
+    "conditioned_work_entries": 8182,
+    "kernel_bits": 19,
+    "canonical_detector_rows": true,
+    "detector_row_changes": {
+      "42": 4398046527488
+    },
+    "seconds": 11.043546272994718,
+    "acceptance": 0.5394221907187482,
+    "loss": 3.602758656550951e-05,
+    "conditional_loss_kernel_omission_bound": 3.4260883519802503e-14,
+    "omission_bound_note": "Bounds sparse cutoff error for computed kernel coefficients; excludes floating point roundoff."
+  },
+  "evaluator_hashes": {
+    "price.py": "871a8a0fbc924d9adba54435ee92547ae726a0c07064b451127629ade3071b19",
+    "sparseframe/fastfill.py": "bdd8a5d825be541e3fac6c0878b7ecbd8fdc50e8f72cfac9819578f11ebb3b77",
+    "sparseframe/frontend.py": "6965d2b9daa9869472fb742042e26ed8ad72614b8f30be3db02d1def7a707185",
+    "sparseframe/judge_subset/__init__.py": "3826c1ea5b8684fe2284c878bf61a77127b3f05a53d1a56f76d04d1ed636959f",
+    "sparseframe/judge_subset/grid.py": "40f0cb4f51a00e2d7006c1418c001e42eaaccb10fd5634cf80ee54bc5cd529c1",
+    "sparseframe/judge_subset/noise.py": "e76288b912d96fdbb3e015d48564897dbba9a18bcb6030d79ad405e7d5c62f51",
+    "sparseframe/judge_subset/parse.py": "f4f47a63eb63bcc7ec9a0f6d5dd1ad77d245ab61e22a23b7d2a7b891d821ab54",
+    "sparseframe/judge_subset/qasm.py": "12a3643131e218855e9262bf6d2b00ba17aec5f1b9596e9e10a3cfb769cc6279",
+    "sparseframe/sparse_walsh.py": "ab7c2669ff0177bdc728f6656225c594fc7072c070d52efd722b3460ac50d713",
+    "sparseframe/basis_warm.json": "afa66e1f76ba2455b17302289cd653732790b3006a3b39d7129b3154712b1289"
+  }
+}

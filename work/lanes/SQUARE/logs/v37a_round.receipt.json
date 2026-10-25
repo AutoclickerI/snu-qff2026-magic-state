@@ -1,0 +1,371 @@
+{
+  "stem": "builds/v37a_round",
+  "sha256": "cdaa719694c647348ca0fc5e3b311f1586df7f974ad993c0249fef18b9ee1b0e",
+  "loss": 2.903230601583247e-05,
+  "acceptance": 0.9471249113533862,
+  "J_tau": -8.131929751999576e-06,
+  "single_fault_loss": 3.1826393372587325e-19,
+  "harmful_single_faults": [],
+  "metadata": {
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "source": "GLOBAL global_r46_m14: R46 layout (15 moved roles, 10 data hops), rebuilt A/B/C, two A-flag-gap helpers, INTEG/ACCBUY repair, q14 readout 48->47",
+    "cx": 390,
+    "noise_start": 45,
+    "noisy_units": [
+      [
+        45,
+        [
+          6,
+          7
+        ]
+      ],
+      [
+        45,
+        [
+          2,
+          8
+        ]
+      ],
+      [
+        46,
+        [
+          12,
+          18
+        ]
+      ],
+      [
+        46,
+        [
+          20,
+          14
+        ]
+      ],
+      [
+        46,
+        [
+          26,
+          27
+        ]
+      ],
+      [
+        46,
+        [
+          19,
+          13
+        ]
+      ],
+      [
+        46,
+        [
+          25,
+          24
+        ]
+      ],
+      [
+        46,
+        [
+          10,
+          9
+        ]
+      ],
+      [
+        46,
+        [
+          11,
+          5
+        ]
+      ],
+      [
+        46,
+        [
+          3,
+          4
+        ]
+      ],
+      [
+        46,
+        [
+          22,
+          21
+        ]
+      ],
+      [
+        46,
+        [
+          28,
+          29
+        ]
+      ],
+      [
+        46,
+        [
+          16,
+          15
+        ]
+      ],
+      [
+        46,
+        [
+          17,
+          23
+        ]
+      ],
+      [
+        46,
+        [
+          8,
+          7
+        ]
+      ],
+      [
+        46,
+        [
+          6,
+          0
+        ]
+      ],
+      [
+        46,
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        47,
+        [
+          12,
+          6
+        ]
+      ],
+      [
+        47,
+        [
+          26,
+          20
+        ]
+      ],
+      [
+        47,
+        [
+          25,
+          19
+        ]
+      ],
+      [
+        47,
+        [
+          11,
+          10
+        ]
+      ],
+      [
+        47,
+        [
+          3,
+          2
+        ]
+      ],
+      [
+        47,
+        [
+          28,
+          22
+        ]
+      ],
+      [
+        47,
+        [
+          17,
+          16
+        ]
+      ],
+      [
+        47,
+        [
+          9,
+          8
+        ]
+      ],
+      [
+        47,
+        [
+          18
+        ]
+      ],
+      [
+        47,
+        [
+          27
+        ]
+      ],
+      [
+        47,
+        [
+          24
+        ]
+      ],
+      [
+        47,
+        [
+          5
+        ]
+      ],
+      [
+        47,
+        [
+          4
+        ]
+      ],
+      [
+        47,
+        [
+          29
+        ]
+      ],
+      [
+        47,
+        [
+          23
+        ]
+      ],
+      [
+        47,
+        [
+          0
+        ]
+      ],
+      [
+        47,
+        [
+          1
+        ]
+      ],
+      [
+        47,
+        [
+          14
+        ]
+      ],
+      [
+        48,
+        [
+          7
+        ]
+      ],
+      [
+        48,
+        [
+          13
+        ]
+      ],
+      [
+        48,
+        [
+          9
+        ]
+      ],
+      [
+        48,
+        [
+          8
+        ]
+      ],
+      [
+        48,
+        [
+          21
+        ]
+      ],
+      [
+        48,
+        [
+          15
+        ]
+      ],
+      [
+        48,
+        [
+          12
+        ]
+      ],
+      [
+        48,
+        [
+          26
+        ]
+      ],
+      [
+        48,
+        [
+          25
+        ]
+      ],
+      [
+        48,
+        [
+          11
+        ]
+      ],
+      [
+        48,
+        [
+          3
+        ]
+      ],
+      [
+        48,
+        [
+          28
+        ]
+      ],
+      [
+        48,
+        [
+          17
+        ]
+      ]
+    ],
+    "change": "v37a round only: preparations perfect, early D->A at45; all waits from45 retained"
+  },
+  "host": "bd9e5e460484",
+  "evaluator": {
+    "source": "/home/jihoon/competitions/quantumn/work/lanes/SQUARE/builds/v37a_round",
+    "method": "sparse kernel cutset conditioning",
+    "channels": 93,
+    "factors": 66,
+    "dense_width": 18,
+    "conditioned_width": 4,
+    "conditioned_work_entries": 46,
+    "kernel_bits": 19,
+    "canonical_detector_rows": true,
+    "detector_row_changes": {
+      "38": 274877923328
+    },
+    "seconds": 0.5478541179909371,
+    "acceptance": 0.9471249113533862,
+    "loss": 2.903230601583247e-05,
+    "conditional_loss_kernel_omission_bound": 1.951285734413333e-14,
+    "omission_bound_note": "Bounds sparse cutoff error for computed kernel coefficients; excludes floating point roundoff."
+  },
+  "evaluator_hashes": {
+    "price.py": "871a8a0fbc924d9adba54435ee92547ae726a0c07064b451127629ade3071b19",
+    "sparse/fastfill.py": "bdd8a5d825be541e3fac6c0878b7ecbd8fdc50e8f72cfac9819578f11ebb3b77",
+    "sparse/frontend.py": "b4971e2ce3dfd122cae8a72f432594dce88e708afdc078c9e6b4751f1a1fe987",
+    "sparse/judge_subset/__init__.py": "3826c1ea5b8684fe2284c878bf61a77127b3f05a53d1a56f76d04d1ed636959f",
+    "sparse/judge_subset/grid.py": "40f0cb4f51a00e2d7006c1418c001e42eaaccb10fd5634cf80ee54bc5cd529c1",
+    "sparse/judge_subset/noise.py": "e76288b912d96fdbb3e015d48564897dbba9a18bcb6030d79ad405e7d5c62f51",
+    "sparse/judge_subset/parse.py": "f4f47a63eb63bcc7ec9a0f6d5dd1ad77d245ab61e22a23b7d2a7b891d821ab54",
+    "sparse/judge_subset/qasm.py": "12a3643131e218855e9262bf6d2b00ba17aec5f1b9596e9e10a3cfb769cc6279",
+    "sparse/sparse_walsh.py": "3f9545dd340371b2fa8585850e8681f995befb570e78ad57ab13c71708a4e039",
+    "sparse/basis_warm.json": "afa66e1f76ba2455b17302289cd653732790b3006a3b39d7129b3154712b1289"
+  }
+}

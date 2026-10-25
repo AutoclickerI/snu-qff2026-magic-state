@@ -1,0 +1,54 @@
+{
+  "stem": "builds/v37a",
+  "sha256": "cdaa719694c647348ca0fc5e3b311f1586df7f974ad993c0249fef18b9ee1b0e",
+  "loss": 3.761821654835085e-05,
+  "acceptance": 0.5007854638217537,
+  "J_tau": 0.0,
+  "single_fault_loss": 2.794061278639928e-19,
+  "harmful_single_faults": [],
+  "metadata": {
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "source": "GLOBAL global_r46_m14: R46 layout (15 moved roles, 10 data hops), rebuilt A/B/C, two A-flag-gap helpers, INTEG/ACCBUY repair, q14 readout 48->47",
+    "cx": 390
+  },
+  "host": "8548d9cabee2",
+  "evaluator": {
+    "source": "/home/jihoon/competitions/quantumn/work/lanes/SQUARE/builds/v37a",
+    "method": "sparse kernel cutset conditioning",
+    "channels": 742,
+    "factors": 444,
+    "dense_width": 26,
+    "conditioned_width": 11,
+    "conditioned_work_entries": 12601,
+    "kernel_bits": 19,
+    "canonical_detector_rows": true,
+    "detector_row_changes": {
+      "38": 274877923328
+    },
+    "seconds": 17.111905769997975,
+    "acceptance": 0.5007854638217537,
+    "loss": 3.761821654835085e-05,
+    "conditional_loss_kernel_omission_bound": 3.6904173150709376e-14,
+    "omission_bound_note": "Bounds sparse cutoff error for computed kernel coefficients; excludes floating point roundoff."
+  },
+  "evaluator_hashes": {
+    "price.py": "e8e1d2f841ac160feb33e6dbe78087e6b71626479cb8a91708d0975a15969a33",
+    "sparse/fastfill.py": "bdd8a5d825be541e3fac6c0878b7ecbd8fdc50e8f72cfac9819578f11ebb3b77",
+    "sparse/frontend.py": "b4971e2ce3dfd122cae8a72f432594dce88e708afdc078c9e6b4751f1a1fe987",
+    "sparse/judge_subset/__init__.py": "3826c1ea5b8684fe2284c878bf61a77127b3f05a53d1a56f76d04d1ed636959f",
+    "sparse/judge_subset/grid.py": "40f0cb4f51a00e2d7006c1418c001e42eaaccb10fd5634cf80ee54bc5cd529c1",
+    "sparse/judge_subset/noise.py": "e76288b912d96fdbb3e015d48564897dbba9a18bcb6030d79ad405e7d5c62f51",
+    "sparse/judge_subset/parse.py": "f4f47a63eb63bcc7ec9a0f6d5dd1ad77d245ab61e22a23b7d2a7b891d821ab54",
+    "sparse/judge_subset/qasm.py": "12a3643131e218855e9262bf6d2b00ba17aec5f1b9596e9e10a3cfb769cc6279",
+    "sparse/sparse_walsh.py": "3f9545dd340371b2fa8585850e8681f995befb570e78ad57ab13c71708a4e039",
+    "sparse/basis_warm.json": "afa66e1f76ba2455b17302289cd653732790b3006a3b39d7129b3154712b1289"
+  }
+}
