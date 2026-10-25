@@ -1,0 +1,120 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    28,
+    16
+  ],
+  "grid_free": false,
+  "template": {
+    "n": 5,
+    "depth": 2,
+    "output": 0,
+    "layers": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    ],
+    "resource_x": [
+      2,
+      16
+    ],
+    "resource_z": [
+      4,
+      8
+    ],
+    "product_plus_mask": 9,
+    "read_x": 6,
+    "read_z": 24,
+    "frame_x": 0,
+    "frame_z": 0,
+    "logical_detectors": [
+      2,
+      8
+    ],
+    "logical_resource_guard": 1,
+    "dangerous_resource_paulis": [],
+    "graph": "tree",
+    "terminal": "idle",
+    "rates_XYZ": [
+      10,
+      7,
+      7
+    ],
+    "second_order_p2": 27.206666666666667,
+    "incoming_syndrome_rank": 6,
+    "first_order": 0,
+    "category": "5/tree/idle/same/1/1"
+  },
+  "round_start": 107,
+  "change": "CP-SAT packed template; grid GF2 CSS preparation; v37b causal prefix; all noise",
+  "prep_cx": 182,
+  "seed": 0,
+  "roles": [
+    [
+      6,
+      20,
+      19,
+      10,
+      2,
+      28,
+      16
+    ],
+    [
+      12,
+      26,
+      25,
+      11,
+      8,
+      34,
+      22
+    ],
+    [
+      0,
+      21,
+      18,
+      4,
+      3,
+      29,
+      15
+    ],
+    [
+      1,
+      27,
+      24,
+      5,
+      9,
+      35,
+      14
+    ],
+    [
+      13,
+      32,
+      31,
+      17,
+      7,
+      33,
+      23
+    ]
+  ]
+}
