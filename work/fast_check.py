@@ -34,8 +34,10 @@ def _chunk(k):
         for r in recs:
             parity ^= (meas[:, r >> 3] >> (r & 7)) & 1
         keep &= parity == v
-    syn = np.unpackbits(meas[keep], axis=1, bitorder="little")[:, n_meas - n_syn:n_meas].astype(bool)
-    z_fix, x_fix = syn[:, :n_syn // 2].any(axis=1), syn[:, n_syn // 2:].any(axis=1)
+    kept = meas[keep]
+    syn = [(kept[:, b >> 3] >> (b & 7)) & 1 for b in range(n_meas - n_syn, n_meas)]
+    z_fix = np.bitwise_or.reduce(syn[:n_syn // 2]).astype(bool)
+    x_fix = np.bitwise_or.reduce(syn[n_syn // 2:]).astype(bool)
     sign = np.stack([np.where(z_fix, -1, 1), np.where(z_fix ^ x_fix, -1, 1)], axis=1)
     if plan is not None:
         sign = sign * plan.signs

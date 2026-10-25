@@ -403,6 +403,67 @@ def contract_selector(factors, order, batch_size):
         result *= a.reshape(-1)
     return result, peak_elements
 
+def contract_quotient(compiled, states, emask, order):
+    """factors_for + contract_selector without gathering back: a factor depends on the selector only through the
+    parities of its kernel masks, so every factor and every bucket message is kept on one row per class of states
+    with equal parities on its mask span, and is lifted to a bucket's (finer) classes only inside that bucket (reviewer
+    12). Returns the selector vector and the largest bucket product (elements, per chunk)."""
+    classes = {}
+    def span(vecs):
+        piv = {}
+        for v in vecs:
+            for h, w in sorted(piv.items(), reverse=True):
+                if v >> h & 1: v ^= w
+            if v: piv[v.bit_length() - 1] = v
+        for h in sorted(piv):
+            for g in piv:
+                if g != h and piv[g] >> h & 1: piv[g] ^= piv[h]
+        return tuple(piv[h] for h in sorted(piv))
+    def cls(b):
+        if b not in classes:
+            rho = np.zeros(len(states), dtype=np.int64)
+            for j, mask in enumerate(b):
+                rho |= (np.bitwise_count(states & mask) & 1).astype(np.int64) << j
+            classes[b] = np.unique(rho, return_index=True, return_inverse=True)[1:]
+        return classes[b]
+    pos = {v: i for i, v in enumerate(order)}
+    groups = defaultdict(list)
+    for e in compiled:
+        groups[min((pos[v] for v in e[0]), default=len(pos))].append(e)
+    factors = []
+    for entries in groups.values():
+        scope = tuple(sorted(set().union(*(set(e[0]) for e in entries))))
+        b = span([km for e in entries for km, _, _ in e[2]])
+        reps = cls(b)[0]
+        out = None
+        for escope, chi, gens, _ in sorted(entries, key=lambda e: any(km for km, _, _ in e[2])):
+            row, col = patterns(escope, gens, states[reps], emask, {})
+            out = multiply(out, chi[np.arange(len(chi))[:, None] ^ col[columns(escope, scope)][None, :]][row])
+        factors.append((scope, b, out))
+    peak_elements = 0
+    for v in order:
+        bucket = [f for f in factors if v in f[0]]
+        factors = [f for f in factors if v not in f[0]]
+        if not bucket: continue
+        union = tuple(sorted(set().union(*(set(s) for s, _, _ in bucket))))
+        b = span([m for _, bb, _ in bucket for m in bb])
+        reps = cls(b)[0]
+        result = np.empty((len(reps), 1 << (len(union) - 1)))
+        for lo in range(0, len(reps), CHUNK):
+            here = reps[lo:lo + CHUNK]
+            out = None
+            for scope, bb, a in sorted(bucket, key=lambda f: f[2].shape[0]):
+                out = multiply(out, np.take(a[cls(bb)[1][here]], columns(scope, union), axis=1))
+            peak_elements = max(peak_elements, out.size)
+            pairs = out.reshape(len(out), -1, 2, 1 << union.index(v))
+            result[lo:lo + len(here)] = (pairs[:, :, 0] + pairs[:, :, 1]).reshape(len(out), -1) * 0.5
+        factors.append((tuple(q for q in union if q != v), b, result))
+    result = np.ones(len(states))
+    for scope, b, a in factors:
+        assert not scope
+        result *= a.reshape(-1)[cls(b)[1]]
+    return result, peak_elements
+
 _CTX = {}
 
 def _row(key):
@@ -410,8 +471,7 @@ def _row(key):
     t = time.perf_counter()
     states,weights,omission_bound=sparse_kernel(eng,ks,psi,where,key)
     emask = 0 if key is None else emask_for(key)
-    factors = factors_for(compiled, states, emask, elim['order'])
-    vec, peak = contract_selector(factors, elim['order'], len(states))
+    vec, peak = contract_quotient(compiled, states, emask, elim['order'])
     value = float(np.dot(weights, vec) / (1 << len(ks)))
     return dict(key=key, value=value, kernel_nonzero=len(states), peak_bucket_elements=peak,
                 absolute_kernel_omission_bound=omission_bound, seconds=time.perf_counter()-t)

@@ -32,7 +32,8 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
   ≈ 1 s (v29c 0.8 s, v36h 1.3 s; 7 s at 1 process). Each noise channel is a character table on its signature image
   (uniform Pauli channels have two levels; channels with the same image merge, v36g 692 → 439 entries; EVALF, from
-  reviewer 11). `compile_best` contracts in a detector basis: saved XOR sequences keyed
+  reviewer 11); rows contract on selector classes of each factor's mask span (`contract_quotient`, reviewer 12), while
+  `factors_for`/`contract_selector` keep explicit arrays for the adjoint. `compile_best` contracts in a detector basis: saved XOR sequences keyed
   by detector record sets (`basis_warm.json`: v36c from reviewer 9, v36f from INTEG2) are replayed where their rows exist,
   and 1,000 seeded hill-climb steps run only if the best width exceeds `SEARCH_WIDTH` = 9; the plain basis took ≈ 130–190 s
   on v36f/v36g. Values agree with

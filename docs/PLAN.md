@@ -1,6 +1,6 @@
 # Plan
 
-## Status (2026-10-25 14:30 KST)
+## Status (2026-10-25 15:20 KST)
 - Board: **rank 1** with v36h_h2513_r4852, **server 3.53131e-5** (13:37; key 3.53e-5); Placeholder 4.906e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
   `lanes/MAIN/v36h`) against the key boundary below our best and submits the best at :37.
@@ -14,9 +14,9 @@
   A, B, C preparation 0.456e-5; prefix and data wait 0.618e-5. Closed today on this layout: an earlier round (R43, worth
   only −0.68e-6), C's partially coherent instrument (PCC), and the A-flag gap (FLAG: ≥ 2 data gap ticks in every valid
   flagged round; helpers need a new layout). Left: the B/C resource (P85) and the masking terms.
-- Reviewer 11 (bundle in `work/lanes/MAIN/spec/reviewer11/`, TASKS.json; untrusted, run with `python -I`): two
-  widenings of the B/C search space (P85; PCC closed), the evaluator speedup and planner fix (both done), and four
-  closures (FINDINGS). It found no circuit below v36g.
+- Reviewers 11 and 12 (bundles in `work/lanes/MAIN/spec/reviewer{11,12}/`; untrusted, run with `python -I`): B/C
+  search widenings (P85, P90), evaluator and racer speedups (done: character tables, quotient contraction, packed
+  syndrome decoding), closures (FINDINGS); parked ideas below. Neither found a circuit below the incumbent.
 - **Codex is refused locally** (429 `local_auth_cap` since 02:26 KST; RESOURCES "Codex" has the probe). Workers are
   Claude subagents until a probe admits Codex (R-20261025-1, R-20261025-2); their dirs are `work/lanes/<LANE>` and they
   report to the main session, which verifies and promotes.
@@ -27,19 +27,29 @@ draws → `work/promote.sh` → slot. The board score is the hour's best draw: a
 7.2e-7), so a 1% lower mean (3.8e-7) is worth about as much as 3 doublings of racing compute; racing gains are
 logarithmic, so lanes take the cores they need and the racer fills the rest at each hour's start (`race_specs.sh`: racer
 caps hippo 12, zebra 8 leave room for the lanes). The drop rule is relative to the prior (κ = 0.7) and the threshold
-is relayed across hosts (FINDINGS "Race drop rule"). The all-orders price inside lane searches is now ≈ 1 s (EVALF,
-4–6× faster) and the adjoint map ≈ 1 min, so lane searches are bound by ideas, not evaluation.
+is relayed across hosts (FINDINGS "Race drop rule"). The all-orders price inside lane searches is ≈ 1 s at 16 processes and ≈ 3–5 s
+CPU at 1 (EVALF character tables, then reviewer 12's quotient contraction, ≈ 2× less CPU) and the adjoint map ≈ 1 min,
+so lane searches are bound by ideas, not evaluation.
 
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P85 | G1 | B/C resource with decoder-safe residues and a joint last-layer window (reviewer 11 Tasks 3, 4): BFLAG's F1 demands s = 0 when no detector fires, but the decoder only needs s ∈ {0, 9..15} (64 of 128 X patterns instead of 8); add X2leak to the LNS objective; extend the synthesized window through B→C at tick 44 with endpoint \|0_L⟩_B\|0⟩^7_C, CX-only, then H/S on charged idles. Prior: FRESH's relaxed-residue R45 builds lost (8.86e-5–1.05e-4) | a resource that beats r3 in all orders on v36h, or the cost that blocks it per lead | BCX (Claude, `work/lanes/BCX`, hippo ≤ 24 cores) | active |
-| 2 | P89 | G1 | Nonmonotone connected 2–3-edit bundles on v36h (reviewer 11 Task 7): the greedy searches kept only positive singles, marked losers dead and stopped early, so "free a slot, then use it twice" was never priced; enumerate bundles in neighbourhoods of shared helpers, windows or signatures, all-or-nothing, semantic cache keys, with the 1-s evaluator | a bundle finalist below v36h, or the exact enumerated neighbourhood with no win | BUNDLE (Claude, `work/lanes/BUNDLE`, zebra ≤ 32) | active |
-| 3 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 1 | P90 | G1 | Directly synthesized rank-four B/C resource R_102 = span{(g,g)} + (0,102) with C's X(V)/Z(V^⊥) readout, joint on v36h's B/C cells in the existing ticks, ranked by the exact J_τ = N − τ·A (τ = L(v36h)) instead of the proxy (reviewer 12 #1, #5). PCC closed only r3 + a noiseless V map: with the same B/C prep noise removed on both sides R_102 beats R_0 by −8.22e-7, with r3's noise it loses +4.38e-7, so a direct build must keep its preparation cost below ≈ 4.52e-6 (v36h 3.70e-6) including the extra seed and fan-out | J_τ < 0 finalist, or a full Pareto pass on the 102 contract with no win and its mechanism | BCX (Claude, `work/lanes/BCX`, hippo ≤ 24) | active |
+| 2 | P85 | G1 | B/C resource with decoder-safe residues (64 of 128 X patterns instead of 8, X2leak in the objective) and a joint window through B→C at 44 (reviewer 11 Tasks 3, 4). Wave 1: four Pareto points all lose (best +2.0e-9) | a resource that beats r3, or the cost that blocks it per lead | BCX | active |
+| 3 | P89 | G1 | Nonmonotone connected 2–3-edit bundles on v36h (reviewer 11 Task 7, reviewer 12 #10): the greedy searches kept only positive singles, marked losers dead and stopped early; enumerate bundles in neighbourhoods of shared helpers, windows or signatures, all-or-nothing, semantic cache keys | a bundle finalist below v36h, or the exact enumerated neighbourhood with no win | BUNDLE (Claude, `work/lanes/BUNDLE`, zebra ≤ 32) | active |
+| 4 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
+- Reviewer 12 (`spec/reviewer12/`, TASKS.json, REPORT_KO.txt): #2 coherent completion instead of TREP2's full reversal of
+  the phase-network routing CXs (`network()` undoes every routing CX; synthesize only the completion the target state
+  needs, with output placement and the next check); #3 a global lifetime/placement model that reproduces v36h exactly
+  (ST1/FRESH's used independent A/B/C encoders and cannot express r3) before any wider solve; #4 keep candidates by
+  critical-cell release profile, not only L and L − λA (ST2 `pop36_search.py` drops slot-opening prefixes); #7 the
+  22-T normalized rank-six phase family (39,928 minimal supports, witness in `code/rank6_phase_audit.py`; three harmful
+  phase-axis pairs, so it pays only through cheaper routing; needs > 20 T in the evaluator, reviewer 9 M06), screened
+  first against T14's failure mechanism.
 - Reviewer 11 (`spec/reviewer11/`, TASKS.json): Task 5 joint A encoder + data guard + A decoder across their fixed
-  boundary (needs an exterior table built on v36h, AENC's is v36c's); Task 8 the 4-T measured-classical RCCX (`physical/
+  boundary (needs an exterior table built on v36h, AENC's is v36c's; reviewer 12 #6); Task 8 the 4-T measured-classical RCCX (`physical/
   rccx_probe.py`: nonlinear postselection, 19 T fits the evaluator), each record pair gated by the joint accepted-sector
   oracle first (the first pair lost); Task 9 open-boundary tables for region search.
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair

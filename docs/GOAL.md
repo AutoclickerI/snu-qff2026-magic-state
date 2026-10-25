@@ -14,7 +14,7 @@ the earlier entry.
 | Rank | Id | Subgoal | Serves G0 by | Done when |
 |---|---|---|---|---|
 | 1 | G1 | Lowest true 1-F circuit that passes every judge gate, submitted | it is the key; a lower true mean keeps the seed-0 key low | our key is below every competitor's at the deadline and every PLAN lever is built or closed |
-| 2 | G2 | Fast, predictable search with solvers and validated evaluators (R-20261023-4, R-20261023-5) | turns each idea into a ranked, verified candidate in minutes | evaluator ranking matches 3-seed official means; one all-orders price ≤ 5 s; edit to official score < 5 min |
+| 2 | G2 | Fast, predictable search with solvers and validated evaluators (R-20261023-4, R-20261023-5) | turns each idea into a ranked, verified candidate in minutes | evaluator ranking matches 3-seed official means; one all-orders price ≤ 1 s; edit to official score < 5 min |
 | 3 | G3 | Bounds and the gap per loss source | picks the lever with the most headroom | current best has floors and a loss split (FINDINGS) |
 | 4 | G4 | Fewer 2-qubit gates at equal key | wins ties | our best entry has the fewest CX among teams at our key |
 

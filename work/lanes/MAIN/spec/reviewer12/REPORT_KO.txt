@@ -1,0 +1,191 @@
+quantumn 최적화 검토 — 근거와 재현 자료가 있는 후보 10개
+2026-10-25
+
+검토 기준
+초기 계산: f4b685ff12aed683def0697d42a6a48348efe48d
+최신 코드/계획 반영: 598ddad4c595ceb583e779a924d06749f950a997
+대상: v36h, 6×6 격자에서 Steane 논리 T 상태 준비. 기대 손실 L=1−F와 noisy acceptance를 주목적으로 삼았다.
+
+핵심 판단
+가장 유력한 누락은 현재 모듈의 구현을 고정한 실험 결과를 더 넓은 설계 공간의 종료 근거로 사용하는 데 있다. PCC의 R102 직접 준비, parity network의 전체 역연산, 현재 상관 B/C resource를 표현하지 못했던 global placement model이 구체적인 사례다. 탐색 중간 상태를 L/A만으로 선택하면 다음 모듈에 필요한 셀을 일찍 비우는 후보도 잃을 수 있다.
+
+이번 검토가 새 물리 회로의 우승을 입증한 것은 아니다. 직접 확인한 성과는 (1) PCC의 matched diagnostic에서 우열이 뒤집힌다는 점, (2) 최신 evaluator 중간 메시지 압축의 수치 동등성과 일부 구간 가속, (3) packed syndrome 후처리 가속, (4) 완전한 유한 열거로 얻은 새 22-T rank-six odd-support 후보이다. 물리 성능이 아직 측정되지 않은 제안에는 첫 실험과 중단 조건을 붙였다. 이미 존재하는 제안의 재개/확장과 현재 진행 중인 P89도 명시한다. 세계 최초 방법론이라는 주장은 하지 않는다.
+
+기준 회로의 재현
+초기 evaluator: A=0.5016415049479503, L=3.8154733224167045e-5.
+최신 evaluator: A=0.5016415049479505, L=3.815473322483099e-5.
+물리 회로는 동일하고 차이는 evaluator의 부동소수 계산 수준이다. 현재 계획은 327 CX, R44, native 47 ticks를 기록한다. PLAN에 기록된 server 3.53131e-5는 선택된 유한 seed-0 표본 점수이며 위 기대 손실과 다른 양이다. 라이브 순위표를 독립 조회한 결과는 아니다. [S1,S2]
+
+검토 중 EVALF가 main에 통합되었다. 과거 evaluator에서 측정한 3.57배를 최신 main의 추가 개선으로 사용하지 않는다. 최신 구현은 이미 first-bucket selector 압축을 하므로 후보 8은 그 표현을 중간 메시지까지 유지하는 부분만 다룬다. P89 역시 최신 PLAN에서 active이므로 새로 발견한 누락으로 세지 않는다. [S1,S2]
+
+공통 채택 기준
+물리 후보는 공식 격자/명령/회로 클래스와 이상적 출력 상태/record 조건을 만족해야 한다. A>=0.5와 팀의 verification margin을 확보하고, 실제 native schedule의 gate/reset/measurement/idle을 포함한 전체 A와 비정규화 손실 N을 계산한다. 비교 목적값은 L=N/A이다. 기대 손실 개선은 기존 sparse cutoff와 수치 오차를 충분히 넘어야 한다. 후보별 runtime도 공식 한도 안에 있어야 한다. 최종 xtim/공식 1e8-shot 판정은 이번 검토에서 새로 실행하지 않았다. [S3]
+
+후보 1 — R102 resource를 직접 준비하고 readout과 함께 합성
+우선순위: 물리 P1. 상태: 새 대조 실험으로 재개 근거를 확인; 실제 회로 개선 미측정.
+
+PCC는 기존 noisy rank-three r3 preparation을 보존하고, 그 뒤에 무잡음 phantom map을 붙여 R_V를 만든다. 이 실험은 특정 r3 error distribution에서 readout을 바꾼 결과다. 직접 R102를 준비하는 모든 회로의 noisy behavior를 포함하지 않는다. 보고서의 'ideal preparation'이라는 표현은 이 구별을 가리기 쉽다. [S4]
+
+같은 prep-noise 영역을 양쪽에서 제거하는 matched comparison을 수행했다.
+원래 r3 준비 잡음 유지: R0 3.815473322405639e-5, R102 3.859308714806462e-5, 차이 +4.38353924008229e-7.
+동일 B/C 준비 잡음 제거: R0 3.44583098811529e-5, R102 3.3636035481649826e-5, 차이 −8.222743995030721e-7.
+후자의 acceptance는 각각 0.5383575892242546, 0.5366476429081105다.
+개입은 tick 33..43의 B/C 내부 native operation 66개와 해당 구간에 완전히 속한 idle run 3개의 잡음을 제거했다. prefix, A, data, late coupling/readout 잡음은 유지했다. 이는 48-qubit phantom diagnostic이며 제출 가능한 회로가 아니다. 제거한 준비 잡음을 되돌려도 8.22e-7가 남는다는 보장은 없다.
+
+실행안: C2=span{85,102,120}일 때 |R_V>=2^(-(3+k)/2) Σ_{u∈C2,v∈V}|u>_B|u+v>_C, V=span{102}를 product inputs에서 직접 합성한다. BFLAG의 nx=3, pivot<=3, endpoint {(g,g)}를 네 생성자 (g1,g1),(g2,g2),(g3,g3),(0,102)로 확장한다. B→C 뒤 endpoint는 |0_L>_B|V>_C다. 102는 기존 routing screen에서 partner가 가능한 경우였으므로 먼저 이를 택한다. 준비 fault가 실제 readout에서 어떻게 mask되는지까지 공동 목적함수에 넣는다. [S4,S5]
+
+첫 산출물: 동일 14 B/C cells와 round deadline에서 직접 rank-four preparation witness 한 개, 전체 single-fault response 및 full-noise A/N/L.
+중단 조건: 추가 준비/읽기/idle/acceptance 비용을 포함하면 개선이 사라지거나 정해진 작은 합성 창에서 witness를 찾지 못함.
+재현: receipts/pcc_matched_counterfactual.json, specs/*.json, code/reproduce_pcc.py.
+
+후보 2 — 전체 inverse 대신 목표 상태에 필요한 coherent completion만 합성
+우선순위: 물리 P1/P2. 상태: 과거 partial-uncompute 제안의 구체적 확장; 절감량 미측정.
+
+보관된 TREP2/forms.py의 network()는 모든 routing CX를 reversed(gates)로 무조건 되돌린다. CELLS, DATA, ROWS도 고정하고 encoder19의 나머지 경계를 유지한다. 이는 parity register의 전체 선형 변환을 복구하도록 요구한다. 실제 과제는 지정 입력에서 목표 상태와 허용되는 측정 분기의 결과를 만드는 것이므로 더 작은 completion이 가능할 여지가 있다. [S6]
+
+실행안: 보호된 15-T phase 구조는 유지하고, 마지막 Clifford completion과 출력 data placement, helper measurement/record map을 함께 합성한다. residual Clifford는 후속 check/encoder에 흡수할 수 있는지 확인한다. 전체 arbitrary-input unitary equality 대신 관련 입력 부분공간의 accepted state-preparation instrument equality를 요구한다. 확률분포만 같게 만들면 안 된다. fault discrimination이 달라지므로 ideal equality와 noisy 성능을 별도로 검증한다.
+
+첫 산출물: 기존 15-T route 하나의 uncompute suffix만 제한된 4–6-wire 창에서 재합성한 실제 witness. 이어 data hops까지 포함해 비교한다.
+중단 조건: endpoint/record 조건을 만족시키는 짧은 completion이 없거나 gate 절감이 verification 비용과 prefix×suffix malignant pairs 증가로 상쇄됨.
+관련 선행: reviewer4 measured partial uncompute는 이미 있었다. 이 항목의 추가점은 coherent state-specific completion과 최종 배치의 공동 최적화다.
+
+후보 3 — 현재 v36h를 정확히 재현하는 lifetime placement model부터 만들기
+우선순위: 물리 P2. 상태: 기존 global solver의 표현 범위 보완.
+
+과거 ST1/FRESH global solver는 reset 이후 lifetime별 위치, routing, encoder placement를 이미 다룬다. 단순히 동적 재배치를 처음 제안하는 것은 중복이다. 실제 문제는 그 global model이 독립 A/B/C encoder를 사용해 상관 rank-three resource를 나타내지 못했다는 데 있다. 보고서도 알려진 좋은 correlated incumbent를 모델이 재현하지 못한다고 명시한다. R55 warm start나 UNKNOWN 결과를 현재 v36h의 한계로 볼 수 없다. [S7]
+
+실행안: 현재 r3, guard, detector, native schedule을 모두 담은 모델을 만들고 모든 변수를 고정했을 때 327-CX/47-tick v36h가 정확히 나오는 것부터 확인한다. 그 뒤 reset-separated lifetime, source release, resource location과 일부 data routes를 함께 푼다. reset으로 소거된 과거 상태를 옮길 SWAP는 필요 없지만 살아 있는 quantum state나 measured-but-unreset state가 임의로 이동하게 허용해서는 안 된다.
+
+첫 산출물: current-incumbent fixed round-trip 성공과 semantic signature/ordered data mapping 일치. 이후 한두 lifetime 연결 지역을 동시에 풀어본다.
+중단 조건: 모델이 현재 회로를 표현하지 못하면 탐색 확대를 중단한다. time limit의 UNKNOWN은 불가능성 증명으로 기록하지 않는다.
+
+후보 4 — 셀 release profile별로 탐색 중간 후보를 보존
+우선순위: 탐색 P2. 상태: 현재 selection 구현에서 확인한 새 검색 축; 효용 미측정.
+
+ST2/pop36_search.py는 낮은 L 상위 3개, 고정 L−λA scalarization 3개, random 2개를 남기고 두 번 정체하면 멈춘다. 필요한 cell이 언제 비는지 별도로 보존하지 않는다. 같은 suffix로 평가하면 약간 나쁜 prefix라도 critical helper를 일찍 비우면 새 suffix와 결합했을 때 좋아질 수 있다. 무작위 두 슬롯은 이런 기하학적 다양성을 지속적으로 보존하는 장치가 아니다. [S8]
+
+실행안: 동일하게 연결 가능한 boundary state/records별로 critical-cell release vector와 suffix 접근성을 archive key로 둔다. L/A가 조금 나빠도 새로운 interface를 여는 후보는 별도 보존한다. 서로 다른 boundary channel 사이에서 L/A만으로 strict dominance를 선언하지 않는다.
+
+첫 산출물: 20–50개의 prefix 변형을 기존 selection과 release-aware selection에 같은 budget으로 넣는다. 구분된 profile 중 가장 유망한 3개만 downstream synthesis와 full-noise pricing까지 진행한다.
+중단 조건: 실제로 열린 suffix 구조가 없거나, cell을 비우는 비용이 얻을 수 있는 downstream 개선을 모두 소비함.
+후보 3과 구분: 3은 어떤 circuit을 표현할 수 있는가, 4는 그 중 무엇을 살아남게 하는가의 문제다.
+
+후보 5 — BC local search를 실제 finite-p 비율 목적함수로 평가
+우선순위: 탐색 P1. 상태: 기존 full-exterior/open-boundary 방향의 실행 강화.
+
+BFLAG/lns3.py의 score는 X2 + KZ*RZ + KA*acc1을 사용하고 기본 주변 회로는 v36c/v36d다. 이는 탐색 proxy로서 의미가 있지만 현재 v36h에서 nonlinear masking, higher orders, acceptance 분모까지 보존하는 순위라는 보장은 없다. 최신 P85의 decoder-safe residue 확대와 병행해서 실제 fitness까지 바꿀 필요가 있다. [S5,S9,S1]
+
+실행안: N=A·L, 기준 τ=L(v36h)에 대해 Jτ=N−τA를 사용한다. A>0에서 Jτ<0은 L<τ와 정확히 동치다. 이는 식 자체의 정확한 비교 성질이며 전체 noisy evaluator의 범위 안에서 적용한다. 작은 candidate set은 현재 빨라진 all-orders evaluator로 바로 가격을 매길 수 있다. 큰 지역 탐색은 충분한 boundary state/record signature에 대한 exterior response를 구축해 계산을 재사용한다.
+
+AENC의 128-class table은 고정된 v36c A-only 경계에서 검증된 결과다. BC나 v36h A+data에 그 class count를 그대로 쓰지 않는다. acceptance와 N이 whole-circuit 값과 맞는 sufficient boundary를 먼저 증명/검증한다. [S10]
+
+첫 산출물: 동일한 유한 BC neighborhood에 대해 proxy와 exact Jτ ranking을 함께 기록. 실제 순위 역전, 특히 proxy가 버린 승리 후보가 있는지 확인.
+중단 조건: 충분한 boundary의 비용이 full pricing보다 크거나 bounded neighborhood에서 순위 역전도 유망한 후보도 없음.
+
+후보 6 — A encoder, data guard, decoder를 하나의 process로 최적화
+우선순위: 물리 P2. 상태: reviewer11 Task5에 이미 제안되어 parked; 재개 가치가 큼.
+
+AENC가 입증한 12-CX 최적성은 v36c의 고정 A cells/releases, D→A timing, flag와 탐색 grammar 안의 결과다. 현재 q16 guard(RX38, CX10→16@39, MX16@40)와 q14–q20 pair@40–41은 같은 공간과 시간을 사용한다. A encoder를 따로 바꾸면 이 보호 동작이 깨질 수 있다. [S10,S11]
+
+실행안: current v36h에서 A preparation, 데이터 접촉, guard records, decoder까지 걸치는 process boundary를 만든다. A 자체 noise가 조금 나빠져도 data idle 또는 guard가 개선되는 교환을 전체 Jτ로 평가한다. 삭제한 guard와 새 idle을 모두 비용에 넣는다.
+
+첫 산출물: baseline A/N을 재현하는 충분한 boundary, 이어 4–6-wire joint window witness 하나.
+중단 조건: boundary state space가 감당되지 않거나 정해진 창에서 개선 없음.
+주의: 최신 FLAG의 결과를 반영한다. 고정 roles, depth47, 특정 coupling/decoder 조건에서 gap<=1인 flagged round는 4,198,620개 검사 중 0개였다. 단순 flag mirror/commute를 다시 제안하지 않는다. 넓어진 process/placement가 이 제한 밖의 실제 회로를 만드는지가 핵심이다. [S12]
+
+후보 7 — 22-T, normalized rank-six phase family를 routing 목적함수로 탐색
+우선순위: 연구 P3. 상태: 이번 검토에서 새 유한 열거와 정확한 witness 확보; 물리 성능 미측정.
+
+6개 binary coordinate의 63개 nonzero parity axes에 대해 degree<=3 signature rank는 41, kernel dimension은 22였다. kernel basis가 완전함을 확인하고 2^22=4,194,304개의 odd support를 전수 열거했다. bare harmful logical axis 31을 제외하면 T<=20에서 나오는 지원은 rank-five 15-T 496개와 rank-four 14-T 155개뿐이었다. normalized odd-support rank가 실제 6인 첫 경우는 22-T이며 최소 지원이 39,928개다. 이 최소성은 해당 phase-polynomial coset에서 distinct odd support를 세는 결과다. 모든 measured Clifford+T circuit이나 cancelling T/T†가 포함된 raw rotation list에 대한 하한이 아니다.
+
+구체적인 22개 axes:
+5,6,7,9,10,11,12,17,18,19,20,24,29,30,35,39,43,47,51,55,59,63
+7,11,19에 coefficient −1, 나머지에 +1.
+모든 64개 y에서 Σ_a c_a(a·y mod2) = (31·y mod2) mod8을 정확하게 확인했다. residual S/CZ correction은 필요 없다.
+
+별도의 sixth-coordinate flag가 완벽하고 q=p/3 phase-axis faults만 있다는 제한된 모형에서 harmful pairs는 (7,24),(11,20),(12,19)이다. 정확한 유리수 convolution의 conditional loss는 3.34595015325913e-7, acceptance는 약 0.99269261이다. Clifford, 다른 Pauli 성분, initialization, measurement, idle, prefix/suffix cross faults는 모두 제외된 값이다. 15-T 보호 가족은 이 제한된 축 모형의 harmful pairs가 0이므로 22-T가 그 자체로 더 보호되는 것은 아니다. 목적은 추가 phase-pair 비용을 지불하더라도 grid routing/출력 배치/자원 release를 더 싸게 만들 수 있는지 찾는 것이다.
+
+실행안: 39,928 지원 중 작은 수를 nearest-neighbor routing과 completion 비용으로 선별한다. full single-fault response와 T14를 실패시킨 holder×suffix pair를 먼저 검사한 다음 full noisy circuit을 만든다. >20 T는 내부 evaluator 제약의 확대가 필요하며 공식 규정의 독립적인 20-T 제한 때문은 아니다. class/runtime 적합성은 별도로 검증한다. [S3,S13]
+
+중단 조건: 빠른 routing/fault screen을 통과한 witness가 없으면 큰 evaluator 개발로 확대하지 않는다. phase-only 수치를 전체 점수처럼 사용하지 않는다.
+재현: code/rank6_phase_audit.py, receipts/rank6_phase_certificate.json. 표준 라이브러리만 필요.
+
+후보 8 — 최신 evaluator의 selector quotient를 중간 bucket message까지 유지
+우선순위: 구현 P0(짧게). 상태: 최신 main 전체 73모멘트 동등성 확인; 대표 구간 속도 측정.
+
+현재 sparse_walsh.py:factors_for는 이미 first-bucket의 kernel-mask span에서 대표 selector만 계산한 뒤 out[inverse]로 전체 selector indexing에 다시 펼친다. 이후 contract_selector는 펼쳐진 배열을 처리한다. 추가점은 이 압축 표현을 다음 bucket message에도 유지하는 것이다. [S2,S14]
+
+mask span B에 대해 x~_B y iff 모든 m∈B에서 m·x=m·y mod2로 정의한다. 같은 class는 factor에 대해 같은 입력이다. bucket을 합칠 때 자식 mask span의 합집합에서 class를 만들고 정확한 index map으로 자식을 들어 올린다. 최종 weighted sum에서만 원래 selector multiplicity/weight를 반영한다. 기존 sparse cutoff를 바꾸지 않는 표현 변경이며 부동소수 roundoff는 남는다.
+
+최신 598ddad4의 실제 코드에서 검증:
+73/73 모멘트 비교, max selector-vector 차이 2.220446049250313e-16, max weighted-moment 차이 4.099643272857164e-17.
+두 구현의 최종 A=0.5016415049479505, L=3.815473322483099e-5는 동일.
+대표 factor construction+contraction CPU:
+X(0,0): 47.42 ms -> 30.36 ms, 1.56배.
+Y(0,0): 41.77 ms -> 27.19 ms, 1.54배.
+Acceptance: warm 19.42 ms -> 약19.19 ms, 사실상 중립.
+ABBA 순서, 각 implementation 2회인 작은 component benchmark이다. 전체 workload/end-to-end 속도 향상은 아직 측정하지 않았다. 전체73 검증은 각 행 한 번의 동등성 검사이며 추가 성능 benchmark가 아니다.
+
+첫 산출물: source-channel provenance와 adjoint 경로를 보존한 통합안. 실제 여러 edited circuit의 전체 모멘트 및 총 탐색 throughput을 비교.
+중단 조건: 다중 프로세스/새 회로/전체 workload에서 overhead가 이득을 상쇄하면 해당 shape에 기존 경로를 유지.
+재현: code/selector_quotient_latest.py --repo PATH --verify-all. 최신 main용이다. 과거 3.57배 측정은 현 main 가속으로 인용하지 않는다.
+
+후보 9 — 6 syndrome bits만 packed 상태에서 읽기
+우선순위: 구현 P0(짧게). 상태: Boolean equivalence 및 synthetic stage benchmark 확인.
+
+work/race.py와 work/fast_check.py는 np.unpackbits(meas[keep])로 모든 measurement record를 푼 다음 마지막 6개만 쓴다. v36h는 judge syndrome을 포함하면 97 bits, packed 13 bytes이고, million-shot chunk에서 약 절반이 남으므로 불필요한 unpacked 중간 배열이 약52MB다. [S15]
+
+실행안: 필요한 byte에 mask를 직접 씌워 z_fix/x_fix만 만든다. 현재97-bit 예는 byte11의56 mask와 byte11의192 및 byte12의1 mask다. 배포 코드는 n_meas와 n_syn에서 동적으로 mask를 계산한다. sampler seeds, expectation multiplication, summation order는 유지할 수 있다.
+
+synthetic 1,000,000-shot test: kept501,556, correction bits 완전 동일, median CPU42.275ms ->9.685ms, 약4.37배 후처리 구간 가속. unpacked 중간 저장52,161,824 bytes 회피. 실제 xtim/race 전체 4.37배를 뜻하지 않는다.
+
+첫 산출물: 실제 chunk 출력의 kept/corrected/sum/sumsq 동일성과 전체 runtime 확인. sampling이 대부분이면 총이득은 작다.
+재현: code/packed_syndrome.py, code/packed_decode_probe.py, receipt. wrapper와 helper는 새 코드이며 공식 judge를 바꾸지 않는다.
+
+후보 10 — 손해인 단독 편집도 포함한 connected 2–3-edit bundle 완주
+우선순위: 탐색 P1 유지. 상태: 최신 main P89/BUNDLE에서 이미 active. 새로 놓친 방향으로 주장하지 않음.
+
+기존 greedy 계열은 좋은 single부터 후보를 만들고, 탈락한 single을 dead로 두거나 조기 중단한다. '보호 동작 하나를 제거해 자리를 비운 다음 그 자리를 두 번 활용'하는 이동은 단독 중간 점수가 나빠도 최종 묶음이 좋을 수 있다. 최신 계획은 이 누락을 정확히 인식해 P89를 시작했다. [S1,S11]
+
+실행안: shared helper/window/signature로 연결된 유한 neighborhood를 미리 명시하고 singles의 부호와 무관하게 2–3개 all-or-nothing composition을 만든다. 일부 편집이 invalid라고 몰래 건너뛴 부분 묶음의 점수를 원래 bundle의 점수로 기록하지 않는다. QASM뿐 아니라 ordered data mapping, detector/frame, evaluator/model version을 포함한 semantic identity를 사용한다.
+
+첫 산출물: 실제 평가한 bundle 목록, full A/N/L, enumeration scope와 제외 이유. finite exhaustive completion인지 heuristic beam인지 분리.
+중단 조건: 선언한 neighborhood에서 완전 열거 후 이득이 없으면 그 범위만 닫는다. 유해한 interaction이 있다는 사실만으로 유익한 interaction이 존재한다고 결론 내리지 않는다.
+이 항목은 새 lane을 중복 개설하라는 권고가 아니라, 이미 시작한 유망 작업의 우선순위와 완료 기준을 유지하라는 권고다.
+
+권하지 않는 방향과 이유
+1. v36h의 유효 T/T† sign assignment16개: 73 moments가 모두 bit-identical. 단독 부호 mutation은 이득 없음. receipt 포함.
+2. 기존 rank-five16/17-T 지원: bare harmful logical axis를 포함. 단순 T-count cap 완화만으로 보호 가족이 생기지 않음. 22-T normalized rank-six는 다른 유한 가족이다.
+3. acceptance-first evaluation, 단순73-moment 공유, exact-noise-equivalence cache: 이미 코드/이전 리뷰에 있음. 새로운 발견으로 세지 않음.
+4. Bellman-optimal racing: 동일 normal model에서 기존 κ=.7 대비 hit/CPU 개선은 대략1%. 우선순위 낮음. 모델링 결과이며 실제 race benchmark가 아님.
+5. 마지막 data–data CX: reviewer11의 all-syndrome arbitrary-state bound가 기대손실>=0.0003333을 준다. 좋은 입력 상태를 공동 합성한다는 이유로 피할 수 있는 하한이 아님. [S16]
+6. known-state/borrowed helper의 단순 identity 삽입: 제한된2–4pulse probe에서 유용한 새 witness 없음. 일반 불가능성 주장은 하지 않음.
+7. source-check disentangler부터 다음 BC prep까지 합치는 경계는 연구 가설로 남지만, 좋은 ideal/noisy witness가 없어 위10개보다 후순위다. 측정 뒤 공짜 GHZ가 남는다고 가정하지 않는다.
+
+현실적인 목표
+저장소의 STANDARD-model certificate는 모든 admissible circuit의 true expected L>=1.162e-5를 주장하고, 현재 measured-partner terminal class에는 약2.274e-5의 하한을 준다. 이는 유한 seed-0 표본 점수의 하한이 아니다. 이번 검토에서 해당 certificate를 새로 전부 실행한 것은 아니며 그 가정과 증명 구조를 확인했다. 이 둘의 차이가 곧 사용 가능한 설계 여유를 뜻하지 않는다. 따라서 '간단한 변경으로 기대손실1e-5 보장'이라는 약속은 근거가 없다. [S16,S17]
+
+실행 순서 제안
+짧은 구현 작업으로8·9를 처리하되 전체속도 측정 뒤 작업을 끝낸다. 물리 탐색의 첫 우선순위는1의 directR102이며,5의 exact finite-p pricing으로 실제 개선을 판단한다. 기존10은 계속한다. 다음으로2와6의 작은 witness를 구하고,3의 current-incumbent coverage가 확보되면4의 release-profile archive를 결합한다. 7은 독립 연구 트랙에서 routing/single-fault screen을 먼저 통과시킨다.
+
+재현/검증 한계
+현재 원격 저장소나 제출본은 수정하지 않았다. 새로 개선된 grid-legal quantum circuit 또는 공식10^8-shot 우승을 보고하는 자료가 아니다. 계산 결과, source SHA-256, 정확한 유한 열거 certificate, 진단 spec와 실행 코드를 함께 제공한다. 성능 숫자는 각 receipt에 명시한 로컬 구간에만 적용한다. old/current evaluator benchmark를 섞지 않는다.
+
+출처 (commit 고정)
+S1 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/docs/PLAN.md
+S2 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/EVALF/REPORT.md
+S3 https://github.com/SNUQuantums/snu-qff2026-problem/blob/76fe47c0324f1c1f8b72a7d55af200e88043b522/problem.md
+S4 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/PCC/REPORT.md
+S5 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/BFLAG/synth_bc.py
+S6 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/MAIN/spec/reviewer9/quantumn_v36c_handoff/audit/review10/physical/sources/work__lanes__TREP2__forms.py
+S7 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/FRESH/REPORT_prior_architecture.md
+S8 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/ST2/pop36_search.py
+S9 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/BFLAG/lns3.py
+S10 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/AENC/REPORT.md
+S11 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/MAIN/spec/reviewer11/TASKS.json
+S12 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/FLAG/REPORT.md
+S13 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/T14/REPORT.md
+S14 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/MAIN/sparse/sparse_walsh.py
+S15 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/race.py
+S16 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/MAIN/spec/reviewer11/bound/PROOF.txt
+S17 https://github.com/AutoclickerI/quantumn/blob/598ddad4c595ceb583e779a924d06749f950a997/work/lanes/TERM/REPORT.md
