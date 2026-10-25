@@ -1,0 +1,75 @@
+--- a/work/lanes/MAIN/sparse/sparse_walsh.py
++++ b/work/lanes/MAIN/sparse/sparse_walsh.py
+@@ -466,19 +466,41 @@
+ 
+ _CTX = {}
+ 
+-def _row(key):
++def _rows_unified(keys):
++    """Observable bits label selector rows; they are never averaged or eliminated."""
+     eng, ks, psi, where, compiled, elim = (_CTX[k] for k in ('eng', 'ks', 'psi', 'where', 'compiled', 'elim'))
+-    t = time.perf_counter()
+-    states,weights,omission_bound=sparse_kernel(eng,ks,psi,where,key)
+-    emask = 0 if key is None else emask_for(key)
+-    vec, peak = contract_quotient(compiled, states, emask, elim['order'])
+-    value = float(np.dot(weights, vec) / (1 << len(ks)))
+-    return dict(key=key, value=value, kernel_nonzero=len(states), peak_bucket_elements=peak,
+-                absolute_kernel_omission_bound=omission_bound, seconds=time.perf_counter()-t)
++    start = time.perf_counter()
++    shift = len(ks)
++    if shift + 10 > 64:
++        raise ValueError('unified selector exceeds uint64')
++    packed, weights, bounds, sizes = [], [], [], []
++    kernels = {}
++    for key in keys:
++        identity = (0, 0, 1) if key is None else eng.Qs[key]
++        if identity not in kernels:
++            kernels[identity] = sparse_kernel(eng, ks, psi, where, key)
++        states, w, bound = kernels[identity]
++        label = 0 if key is None else emask_for(key)
++        packed.append(states.astype(np.uint64) | np.uint64(label << shift))
++        weights.append(w)
++        bounds.append(bound)
++        sizes.append(len(states))
++    lifted = [(scope, chi, tuple((km | (e << shift), rm, 0) for km, rm, e in gens), sources)
++              for scope, chi, gens, sources in compiled]
++    vec, peak = contract_quotient(lifted, np.concatenate(packed), 0, elim['order'])
++    rows, offset = [], 0
++    for key, w, bound, size in zip(keys, weights, bounds, sizes):
++        value = float(np.dot(w, vec[offset:offset+size]) / (1 << shift))
++        rows.append(dict(key=key, value=value, kernel_nonzero=size, peak_bucket_elements=peak,
++                         absolute_kernel_omission_bound=bound,
++                         seconds=(time.perf_counter()-start)/len(keys)))
++        offset += size
++    return rows
+ 
+ def run(stem, nkeys=72, canonicalize=False, procs=1):
+-    """Each acceptance/observable key is an independent contraction; procs > 1 forks workers that share the
+-    prepared model and return rows in key order, so the result equals the serial run."""
++    """Contract acceptance and scored moments with observable bits in the selector.
++    Multiprocess runs divide keys into balanced blocks, sharing within each block.
++    """
+     start = time.perf_counter()
+     m, eng, groups, nd, ks, psi, where, dense_elim = prepare(stem,canonicalize)
+     compiled, elim = compile_best(m, eng, groups, nd, ks)
+@@ -486,13 +508,16 @@
+     _CTX.update(eng=eng, ks=ks, psi=psi, where=where, compiled=compiled, elim=elim)
+     if procs > 1:
+         import multiprocessing as mp
+-        with mp.get_context('fork').Pool(procs) as pool:
+-            rows = list(pool.imap(_row, keys))
++        blocks = [keys[i::procs] for i in range(min(procs, len(keys)))]
++        with mp.get_context('fork').Pool(min(procs, len(keys))) as pool:
++            batches = list(pool.imap(_rows_unified, blocks))
++        by_key = {r['key']: r for batch in batches for r in batch}
++        rows = [by_key[key] for key in keys]
+     else:
+-        rows = [_row(key) for key in keys]
++        rows = _rows_unified(keys)
+     for row in rows:
+         print(json.dumps(row), flush=True)
+-    out = dict(source=str(stem), method='sparse kernel cutset conditioning',
++    out = dict(source=str(stem), method='observable-unified sparse kernel cutset conditioning',
+                channels=len(m.chans), factors=len(compiled), dense_width=dense_elim['width'], conditioned_width=elim['width'],
+                conditioned_work_entries=elim['work_entries'], kernel_bits=len(ks), results=rows,
+                canonical_detector_rows=canonicalize, detector_row_changes=m.detector_row_changes,

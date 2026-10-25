@@ -1,0 +1,98 @@
+--- /dev/null
++++ b/work/race_capacity.py
+@@ -0,0 +1,46 @@
++"""Event snapshots for measured host idle core-minutes; no periodic worker or lease."""
++import argparse
++import json
++import os
++from pathlib import Path
++import socket
++import time
++
++
++def snapshot(event, name):
++    # /proc/stat aggregates USER_HZ CPU time over cores, so delta idle / HZ / 60
++    # is core-minutes. I/O wait is recorded separately, never called idle capacity.
++    cpu = [int(v) for v in Path('/proc/stat').read_text().splitlines()[0].split()[1:]]
++    return dict(event=event,name=name,host=socket.gethostname(),wall_ns=time.time_ns(),
++                monotonic_ns=time.monotonic_ns(),boot_id=Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
++                cores=os.cpu_count(),clock_ticks=os.sysconf('SC_CLK_TCK'),idle_ticks=cpu[3],iowait_ticks=cpu[4],
++                cpu_ticks=cpu[:8],load=Path('/proc/loadavg').read_text().strip())
++
++
++def idle_between(before, after):
++    if any(before[k] != after[k] for k in ('host','boot_id','clock_ticks','cores')):
++        raise ValueError('incompatible snapshots')
++    dt = (after['monotonic_ns']-before['monotonic_ns'])/1e9
++    delta = after['idle_ticks']-before['idle_ticks']
++    if dt <= 0 or delta < 0:
++        raise ValueError('non-monotone CPU counters')
++    return dict(elapsed_minutes=dt/60,idle_core_minutes=delta/before['clock_ticks']/60,
++                mean_idle_cores=delta/before['clock_ticks']/dt,
++                reclaimable_core_minutes=None)  # reservations and the team cap still need measurement
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('event')
++    parser.add_argument('name')
++    parser.add_argument('--output',type=Path,default=Path('reorder/capacity.jsonl'))
++    args = parser.parse_args()
++    args.output.parent.mkdir(parents=True,exist_ok=True)
++    payload = (json.dumps(snapshot(args.event,args.name),separators=(',',':'))+'\n').encode()
++    fd = os.open(args.output,os.O_WRONLY | os.O_APPEND | os.O_CREAT,0o600)
++    try:
++        if os.write(fd,payload) != len(payload):
++            raise OSError('incomplete capacity snapshot write')
++        os.fsync(fd)
++    finally:
++        os.close(fd)
+--- a/work/receipts/cut_redraws.sh
++++ b/work/receipts/cut_redraws.sh
+@@ -1,14 +1,21 @@
+ #!/bin/bash
+-# Usage: cut_redraws.sh <stem name> <time accepted by date -d, e.g. "00:20 tomorrow"> <host>...
+-# Stops the stem's re-draws at HHMM KST so promote.sh can pick the best completed draw in time for the next slot.
++# Usage: cut_redraws.sh <stem name> <deadline accepted by date -d> <host>...
++# Require patched race.py's registered controller. SIGUSR1 stops after complete chunks.
++set -eu
+ name=$1; t=$2; shift 2
++R=/home/jihoon/competitions/quantumn
++PY=$R/.venv/bin/python
+ SSH="ssh -q -o ControlMaster=no -o ControlPath=none"
+-target=$(date -d "$t" +%s) || exit 1; echo "cut at $(date -d @$target)"
+-until [ "$(date +%s)" -ge "$target" ]; do sleep 20; done
+-pat="race.py lanes\\/MAIN\\/${name:0:${#name}-1}[${name: -1}]"
++target=$(date -d "$t" +%s)
++remaining=$((target - $(date +%s)))
++if [ "$remaining" -gt 0 ]; then sleep "$remaining"; fi
+ for h in "$@"; do
+-  if [ "$h" = zebra ]; then ps -u jihoon -o pid,args | awk "/$pat/ {print \$1}" | xargs -r kill
+-  elif [ "$h" = owl ]; then $SSH owl "docker ps --no-trunc --format '{{.ID}} {{.Command}}' | awk '/$pat/ {print substr(\$1,1,12)}' | xargs -r docker kill"
+-  else $SSH $h "ps -u jihoon -o pid,args | awk '/$pat/ {print \$1}' | xargs -r kill"; fi
++  if [ "$h" = zebra ]; then
++    "$PY" "$R/work/race_control.py" "$R/work/reorder/$name.pid.json"
++    (cd "$R/work" && "$PY" race_capacity.py cut "$name")
++  else
++    # Owl races must use --pid=host; the controller uses only the standard library.
++    $SSH "$h" "$PY $R/work/race_control.py $R/work/reorder/$name.pid.json && cd $R/work && $PY race_capacity.py cut $name"
++  fi
+ done
+-date; echo cut
++date; echo 'cut: all registered controllers exited after checkpointing'
+--- a/work/receipts/race_specs.sh
++++ b/work/receipts/race_specs.sh
+@@ -10,6 +10,13 @@
+ for hc in owl:96:72:72 tom:64:48:36 jerry:64:48:24 hippo:48:36:12 sunfish:32:24:24 zebra:64:48:8; do
+   IFS=: read -r h cores cap rmax <<< "$hc"
+   if [ "$h" = zebra ]; then out=$(bash -c "$probe"); else out=$(timeout 30 $SSH $h "$probe" 2>/dev/null); fi
++  # Event-driven CPU-counter receipt; never infer idle minutes from runnable counts.
++  root=/home/jihoon/competitions/quantumn
++  if [ "$h" = zebra ]; then
++    "$root/.venv/bin/python" "$root/work/race_capacity.py" allocation "offset_$off"
++  else
++    $SSH "$h" "cd $root/work && $root/.venv/bin/python race_capacity.py allocation offset_$off" || exit 1
++  fi
+   read -r busy mine <<< "$out"
+   [ -n "$mine" ] || continue
+   procs=$((cores - busy - 2)); [ $procs -gt $((cap - mine)) ] && procs=$((cap - mine))

@@ -1,0 +1,899 @@
+--- a/work/lanes/MAIN/sparse/sparse_walsh.py
++++ b/work/lanes/MAIN/sparse/sparse_walsh.py
+@@ -466,19 +466,41 @@
+ 
+ _CTX = {}
+ 
+-def _row(key):
++def _rows_unified(keys):
++    """Observable bits label selector rows; they are never averaged or eliminated."""
+     eng, ks, psi, where, compiled, elim = (_CTX[k] for k in ('eng', 'ks', 'psi', 'where', 'compiled', 'elim'))
+-    t = time.perf_counter()
+-    states,weights,omission_bound=sparse_kernel(eng,ks,psi,where,key)
+-    emask = 0 if key is None else emask_for(key)
+-    vec, peak = contract_quotient(compiled, states, emask, elim['order'])
+-    value = float(np.dot(weights, vec) / (1 << len(ks)))
+-    return dict(key=key, value=value, kernel_nonzero=len(states), peak_bucket_elements=peak,
+-                absolute_kernel_omission_bound=omission_bound, seconds=time.perf_counter()-t)
++    start = time.perf_counter()
++    shift = len(ks)
++    if shift + 10 > 64:
++        raise ValueError('unified selector exceeds uint64')
++    packed, weights, bounds, sizes = [], [], [], []
++    kernels = {}
++    for key in keys:
++        identity = (0, 0, 1) if key is None else eng.Qs[key]
++        if identity not in kernels:
++            kernels[identity] = sparse_kernel(eng, ks, psi, where, key)
++        states, w, bound = kernels[identity]
++        label = 0 if key is None else emask_for(key)
++        packed.append(states.astype(np.uint64) | np.uint64(label << shift))
++        weights.append(w)
++        bounds.append(bound)
++        sizes.append(len(states))
++    lifted = [(scope, chi, tuple((km | (e << shift), rm, 0) for km, rm, e in gens), sources)
++              for scope, chi, gens, sources in compiled]
++    vec, peak = contract_quotient(lifted, np.concatenate(packed), 0, elim['order'])
++    rows, offset = [], 0
++    for key, w, bound, size in zip(keys, weights, bounds, sizes):
++        value = float(np.dot(w, vec[offset:offset+size]) / (1 << shift))
++        rows.append(dict(key=key, value=value, kernel_nonzero=size, peak_bucket_elements=peak,
++                         absolute_kernel_omission_bound=bound,
++                         seconds=(time.perf_counter()-start)/len(keys)))
++        offset += size
++    return rows
+ 
+ def run(stem, nkeys=72, canonicalize=False, procs=1):
+-    """Each acceptance/observable key is an independent contraction; procs > 1 forks workers that share the
+-    prepared model and return rows in key order, so the result equals the serial run."""
++    """Contract acceptance and scored moments with observable bits in the selector.
++    Multiprocess runs divide keys into balanced blocks, sharing within each block.
++    """
+     start = time.perf_counter()
+     m, eng, groups, nd, ks, psi, where, dense_elim = prepare(stem,canonicalize)
+     compiled, elim = compile_best(m, eng, groups, nd, ks)
+@@ -486,13 +508,16 @@
+     _CTX.update(eng=eng, ks=ks, psi=psi, where=where, compiled=compiled, elim=elim)
+     if procs > 1:
+         import multiprocessing as mp
+-        with mp.get_context('fork').Pool(procs) as pool:
+-            rows = list(pool.imap(_row, keys))
++        blocks = [keys[i::procs] for i in range(min(procs, len(keys)))]
++        with mp.get_context('fork').Pool(min(procs, len(keys))) as pool:
++            batches = list(pool.imap(_rows_unified, blocks))
++        by_key = {r['key']: r for batch in batches for r in batch}
++        rows = [by_key[key] for key in keys]
+     else:
+-        rows = [_row(key) for key in keys]
++        rows = _rows_unified(keys)
+     for row in rows:
+         print(json.dumps(row), flush=True)
+-    out = dict(source=str(stem), method='sparse kernel cutset conditioning',
++    out = dict(source=str(stem), method='observable-unified sparse kernel cutset conditioning',
+                channels=len(m.chans), factors=len(compiled), dense_width=dense_elim['width'], conditioned_width=elim['width'],
+                conditioned_work_entries=elim['work_entries'], kernel_bits=len(ks), results=rows,
+                canonical_detector_rows=canonicalize, detector_row_changes=m.detector_row_changes,
+--- a/work/promote.sh
++++ b/work/promote.sh
+@@ -15,6 +15,10 @@
+ s=$(date +%s.%N); env $ENV $PY fast_check.py "$stem.qasm" "$stem.json" 1000000 1 > /dev/null 2>&1; e=$(date +%s.%N)
+ secs=$(python3 -c "print(round($e - $s, 1))"); echo "judge speed: $secs s per 1e6 shots, 1 process"
+ python3 -c "import sys; sys.exit(0 if $secs <= 20 else 1)" || { echo "too slow for the server's 1-hour limit; not promoted"; exit 1; }
++# Comparator boundary is candidate-specific, including the fewer-CX tie region.
++RACE_THRESHOLD=$($PY race_threshold.py "$stem.qasm") || exit 1
++# Exact certificate is made on each execution host (build/CPU identity is strict).
++env $ENV $PY race_exact.py "$stem" --output "$stem.exact.json" || exit 1
+ pids=()
+ for spec in "$@"; do
+   IFS=: read -r h procs first count <<< "$spec"
+@@ -25,26 +29,21 @@
+   else
+     $SSH "$h" "mkdir -p $R/work/$dir $R/work/reorder" 2>/dev/null && rsync -a -e "$SSH" "$stem.qasm" "$stem.json" "$h:$R/work/$dir/"
+     if [ "$h" = owl ]; then
+-      run="docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -e RACE_THRESHOLD=${RACE_THRESHOLD:-inf} -v /home/jihoon:/home/jihoon -w $R/work --cpus=$procs fnc-build:22.04 $run"
++      run="docker run --rm --pid=host -u 1010:1012 -e HOME=/home/jihoon -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -e RACE_THRESHOLD=${RACE_THRESHOLD:-inf} -v /home/jihoon:/home/jihoon -w $R/work --cpus=$procs fnc-build:22.04 bash -c '$PY race_exact.py $stem --output $stem.exact.json && exec $run'"
+     else
+-      run="env $ENV RACE_THRESHOLD=${RACE_THRESHOLD:-inf} nice -n 5 $run"
++      run="env $ENV RACE_THRESHOLD=${RACE_THRESHOLD:-inf} bash -c '$PY race_exact.py $stem --output $stem.exact.json && exec nice -n 5 $run'"
+     fi
+     $SSH "$h" "cd $R/work; $run" > "$log" 2>&1 &
+   fi
+   pids+=($!)
+ done
+-# Relay to every host's reorder/<name>.thr the key boundary (3 significant figures) below the best of: this hour's
++# Relay to every host's reorder/<name>.thr the candidate-specific first losing float against: this hour's
+ # completed passing draws and the last sequential-judge-passed picks (submitted at the next slot, maybe not yet on the
+ # board). race.py drops against it; draws that cannot lower our board key are not worth completing.
+ relay() {
+   local last= b f p
+   while sleep 15; do
+-    b=$( { cat reorder/${name}_*.log 2>/dev/null | awk '$2 == "1-F" && $NF == "True" {print $3}'
+-           for f in $(ls -t receipts/seq_*.txt 2>/dev/null | head -3); do
+-             grep -q "RESULT: PASS" $f || continue; p=${f#receipts/seq_}; p=${p%.txt}
+-             sed -n 's/.*"score": \([0-9.e+-]*\).*/\1/p' submissions/$p.json 2>/dev/null; done; } | sort -g | head -1)
+-    [ -n "$b" ] || continue
+-    b=$(python3 -c "import math,sys; k=float(f'{float(sys.argv[1]):.2e}'); print(k - 0.5 * 10 ** (math.floor(math.log10(k)) - 2))" $b)
++    b=$($PY race_threshold.py "$stem.qasm" --logs "reorder/${name}_*.log") || return 1
+     [ "$b" != "$last" ] || continue
+     last=$b
+     for spec in "$@"; do
+--- a/work/race.py
++++ b/work/race.py
+@@ -17,12 +17,19 @@
+ import os
+ import random
+ import sys
++import signal
++import queue
++import itertools
++from pathlib import Path
+ 
+ import numpy as np
+ 
+ import tprep
+ import tprep.check  # noqa: F401  (tprep/__init__ rebinds tprep.check to the function)
+ from reorder import shuffle, signature
++from race_identity import load_mean, digest, environment, file_hash
++from race_checkpoint import Journal, replay
++from race_control import register_controller
+ 
+ tc = sys.modules["tprep.check"]
+ KAPPA = 0.7
+@@ -62,8 +69,9 @@
+     return int(keep.sum()), int((z_fix | x_fix).sum()), infid.sum(), (infid ** 2).sum()
+ 
+ 
+-def _init(lines, data, ref, best, thr_file):
+-    _G.update(lines=lines, data=data, ref=ref, best=best, thr_file=thr_file, totals=[], kepts=[])
++def _init(lines, data, ref, best, thr_file, exact, stop, checkpoint_dir):
++    _G.update(lines=lines, data=data, ref=ref, best=best, thr_file=thr_file, exact=exact, stop=stop, checkpoint_dir=Path(checkpoint_dir), totals=[], kepts=[])
++    signal.signal(signal.SIGUSR1, signal.SIG_IGN)
+ 
+ 
+ def _threshold(best, thr_file):
+@@ -75,49 +83,156 @@
+ 
+ 
+ def _p_below(kept, total, c, thr):
+-    """P(completed score < thr) after c chunks, from the per-chunk mean and spread seen so far."""
+-    t, n = np.array(_G["totals"]), len(_G["totals"])
++    """Normal tail of R=S-tau*K with exact E[S], E[K]; samples estimate spread only."""
++    if math.isinf(thr) and thr > 0:
++        return 1.0
++    if c == N_CHUNKS:
++        return float(total < thr * kept)
++    t, n = np.asarray(_G["totals"]), len(_G["totals"])
+     if n < 30:
+         return 1.0
++    a, numerator = _G["exact"]
++    mu = tc.CHUNK * (numerator - thr * a)
++    residuals = t - thr * np.asarray(_G["kepts"])
++    variance = float(np.mean((residuals - mu) ** 2))
+     m = N_CHUNKS - c
+-    mu_t, sd_t, mu_k = t.mean(), t.std(ddof=1), float(np.mean(_G["kepts"]))
+-    z = (thr * (kept + m * mu_k) - total - m * mu_t) / (math.sqrt(m) * sd_t)
++    target = -(total - thr * kept) - m * mu
++    if variance == 0:
++        return float(target > 0)
++    z = target / math.sqrt(m * variance)
+     return 0.5 * math.erfc(-z / math.sqrt(2))
+ 
+ 
++def _header(var, k):
++    return dict(schema=1, qasm=var, data_qubits=_G["data"], variant=k,
++                environment_sha256=digest(environment()),
++                chunk_code_sha256=digest(_chunk.__code__.co_code.hex()),
++                race_source_sha256=file_hash(__file__),
++                noise="tprep.STANDARD", p=float(1e-3).hex(),
++                chunk_shots=tc.CHUNK, n_chunks=N_CHUNKS, seed_rule="seed = chunk index (zero based)")
++
++
++def _resume_worthwhile(journal, thr):
++    """Compare probability per remaining chunk, excluding already spent work.
++    Defer an uncalibrated finite-threshold prefix; never treat n<30's 1 as a model.
++    """
++    c = len(journal.obj["chunks"])
++    if c == N_CHUNKS:
++        return True
++    if math.isinf(thr) and thr > 0:
++        return c > 0
++    prior = journal.obj['prior']
++    if max(len(_G['totals']),len(prior['totals'])) < 30:
++        return False
++    current = _G['totals'], _G['kepts']
++    if len(prior['totals']) > len(current[0]):
++        _G['totals'] = [float.fromhex(s) for s in prior['totals']]
++        _G['kepts'] = prior['kepts']
++    try:
++        a, _, s, _ = replay(journal.values())
++        # A fresh race often stops early. Estimate that cost from the persisted
++        # calibration, using deterministic bootstrap paths through the same checks.
++        fresh_p, fresh_cost = _fresh_value(thr)
++        resume_p = _p_below(a,s,c,thr)
++        return resume_p / (N_CHUNKS-c) > fresh_p / fresh_cost
++    finally:
++        _G['totals'],_G['kepts'] = current
++
++
++def _fresh_value(thr):
++    """Predicted fresh success/cost includes pruning, not a full-run cost fiction.
++    Bootstrap is a scheduling estimate only; official sums never use these draws.
++    """
++    a,numerator = _G['exact']
++    r = np.asarray(_G['totals']) - thr*np.asarray(_G['kepts'])
++    mu = tc.CHUNK*(numerator-thr*a)
++    variance = float(np.mean((r-mu)**2))
++    if variance == 0:
++        return float(mu < 0), float(N_CHUNKS if mu < 0 else 1)
++    from statistics import NormalDist
++    rng = np.random.default_rng(70313)
++    increments = rng.normal(mu,math.sqrt(variance),size=(2048,N_CHUNKS))
++    sums = np.cumsum(increments,axis=1)
++    costs = np.full(len(sums),N_CHUNKS)
++    prior = 0.5*math.erfc(N_CHUNKS*mu/math.sqrt(2*N_CHUNKS*variance))
++    if prior == 0:
++        return 0.,1.
++    # Draw bridges conditional on a winning final sum. This resolves a 4-sigma
++    # tail without claiming zero probability from 2048 unconditional samples.
++    ends = N_CHUNKS*mu + math.sqrt(N_CHUNKS*variance)*np.array([
++        NormalDist().inv_cdf(max(1e-300,min(1-1e-16,float(u)*prior))) for u in rng.random(len(sums))])
++    fraction = np.arange(1,N_CHUNKS+1)/N_CHUNKS
++    winners = sums + fraction[None,:]*(ends-sums[:,-1])[:,None]
++    alive = np.ones(len(sums),dtype=bool)
++    winning_alive = alive.copy()
++    for c in CHECKS:
++        if c >= N_CHUNKS: continue
++        scale = math.sqrt((N_CHUNKS-c)*variance)
++        def prob(t):
++            z = (-t-(N_CHUNKS-c)*mu)/scale
++            return np.array([0.5*math.erfc(-v/math.sqrt(2)) for v in z])
++        drop = alive & (prob(sums[:,c-1]) < KAPPA*prior)
++        costs[drop] = c; alive[drop] = False
++        winning_alive &= prob(winners[:,c-1]) >= KAPPA*prior
++    return prior*float(winning_alive.mean()),float(costs.mean())
++
++
+ def race(k):
++    if _G['stop'].is_set():
++        return k,None,0,'paused'
+     var = "\n".join(shuffle(_G["lines"], random.Random(k)))
+     assert signature(var) == _G["ref"], f"variant {k} changes the schedule"
+-    tc._sample = _capture
+-    try:
+-        rep = tprep.check(var, _G["data"], shots=10**8, seed=0)
+-    finally:
+-        tc._sample = _orig
+-    if not rep.correct_ok:
+-        return k, None, 0
+-    circuit, plan = _G["circuit"], _G["plan"]
+-    kept = corrected = 0
+-    total = total_sq = 0.0
+-    for c in range(N_CHUNKS):
+-        if c in CHECKS:
+-            thr = _threshold(_G["best"], _G["thr_file"])
+-            if _p_below(kept, total, c, thr) < KAPPA * _p_below(0, 0.0, 0, thr):
+-                return k, None, c
+-        a, b, s, s2 = _chunk(circuit, plan, c)
+-        kept += a
+-        corrected += b
+-        total += s
+-        total_sq += s2
+-        _G["totals"].append(s)
+-        _G["kepts"].append(a)
+-    mean = max(total / kept, 0.0)                     # tprep.check._sample's arithmetic
+-    var_ = max(total_sq / kept - mean ** 2, 0.0)
+-    out = {"score": mean, "sem": (var_ / kept) ** 0.5, "acceptance": kept / 10**8, "n_2q": rep.n_2q,
+-           "passed": kept / 10**8 >= tc.ACCEPTANCE_FLOOR, "text": var}
+-    with _G["best"].get_lock():
+-        if out["passed"] and mean < _G["best"].value:
+-            _G["best"].value = mean
+-    return k, out, N_CHUNKS
++    path = _G['checkpoint_dir']/f'r{k}.json'
++    with Journal(path,_header(var,k)) as journal:
++        if journal.obj['state'] in ('dropped','published'):
++            return k,None,0,journal.obj['state']
++        values = journal.values()
++        if values and not _resume_worthwhile(journal,_threshold(_G['best'],_G['thr_file'])):
++            return k,None,0,'deferred'
++        if values:
++            prior = journal.obj['prior']
++            if len(prior['totals']) > len(_G['totals']):
++                _G['totals'] = [float.fromhex(s) for s in prior['totals']]
++                _G['kepts'] = prior['kepts']
++        tc._sample = _capture
++        try:
++            rep = tprep.check(var, _G["data"], shots=10**8, seed=0)
++        finally:
++            tc._sample = _orig
++        if not (rep.format_ok and rep.class_ok and rep.correct_ok):
++            journal.state('dropped')
++            return k,None,0,'invalid'
++        circuit, plan = _G["circuit"], _G["plan"]
++        kept, corrected, total, total_sq = replay(values)
++        used = 0
++        for c in range(len(values),N_CHUNKS):
++            if _G['stop'].is_set():
++                journal.state('paused')
++                return k,None,used,'paused'
++            if c in CHECKS:
++                thr = _threshold(_G["best"],_G["thr_file"])
++                if _p_below(kept,total,c,thr) < KAPPA*_p_below(0,0.,0,thr):
++                    journal.state('dropped')
++                    return k,None,used,'dropped'
++            a,b,s,s2 = _chunk(circuit,plan,c)
++            kept += a; corrected += b; total += s; total_sq += s2
++            _G['totals'].append(float(s)); _G['kepts'].append(a)
++            journal.append((a,b,s,s2),_G['totals'],_G['kepts'])
++            used += 1
++        mean = max(total/kept,0.)
++        var_ = max(total_sq/kept-mean**2,0.)
++        acceptance = kept/(N_CHUNKS*tc.CHUNK)
++        out = dict(score=mean,sem=(var_/kept)**0.5,acceptance=acceptance,n_2q=rep.n_2q,
++                   passed=acceptance>=tc.ACCEPTANCE_FLOOR,text=var,
++                   checkpoint=str(path),checkpoint_write_seconds=journal.write_seconds,
++                   kept=kept,corrected=corrected,total=total.hex(),total_sq=total_sq.hex())
++        # No incomplete run can ever reach the promotion output path.
++        assert len(journal.obj['chunks']) == N_CHUNKS
++        journal.state('complete')
++        with _G['best'].get_lock():
++            if out['passed'] and mean < _G['best'].value:
++                _G['best'].value = mean
++        return k,out,used,'complete'
+ 
+ 
+ def main():
+@@ -127,27 +242,66 @@
+     thr = float(os.environ.get("RACE_THRESHOLD", "inf"))
+     text = open(stem + ".qasm").read()
+     meta = json.load(open(stem + ".json"))
++    exact = load_mean(stem + ".exact.json", text, meta["data_qubits"])
+     name = os.path.basename(stem)
+     os.makedirs("reorder", exist_ok=True)
+     best = mp.Value("d", thr)
+     thr_file = f"reorder/{name}.thr"
++    checkpoint_dir = Path('reorder/checkpoints')/digest(dict(text=text,data=meta['data_qubits']))
++    checkpoint_dir.mkdir(parents=True,exist_ok=True)
++    stop = mp.Event()
++    signal.signal(signal.SIGUSR1,lambda signum,frame: stop.set())
++    register_controller(Path(f'reorder/{name}.pid.json'),stem)
++    # Across hour names, content identity gives the same checkpoint directory.
++    resumes = []
++    for path in sorted(checkpoint_dir.glob('r*.json')):
++        obj = Journal.read(path)
++        if obj['state'] in ('active','paused','complete') and obj['chunks']:
++            hdr = obj['header']
++            if (hdr['environment_sha256'] != digest(environment()) or
++                    hdr['race_source_sha256'] != file_hash(__file__) or
++                    hdr['chunk_shots'] != tc.CHUNK or hdr['n_chunks'] != N_CHUNKS):
++                print(f'checkpoint incompatible with this build: {path}',flush=True)
++                continue
++            resumes.append(obj['header']['variant'])
++    resume_set = set(resumes)
++    tasks = iter(itertools.chain(resumes,(k for k in range(k0,k0+n) if k not in resume_set)))
++    results = queue.Queue()
+     used = done = 0
+-    with mp.get_context("fork").Pool(procs, _init, (text.split("\n"), meta["data_qubits"], signature(text), best, thr_file)) as pool:
+-        for k, out, c in pool.imap_unordered(race, range(k0, k0 + n)):
++    with mp.get_context('fork').Pool(procs,_init,
++            (text.split('\n'),meta['data_qubits'],signature(text),best,thr_file,exact,stop,str(checkpoint_dir))) as pool:
++        active = 0
++        def dispatch():
++            nonlocal active
++            if stop.is_set(): return False
++            try: k = next(tasks)
++            except StopIteration: return False
++            pool.apply_async(race,(k,),callback=results.put,error_callback=results.put)
++            active += 1
++            return True
++        for _ in range(procs): dispatch()
++        while active:
++            result = results.get()  # completion event, no polling
++            active -= 1
++            if isinstance(result,BaseException): raise result
++            k,out,c,state = result
+             used += c
+             if out is None:
+-                print(f"{name}_r{k} dropped after {c} chunks (threshold {_threshold(best, thr_file):.5e})", flush=True)
+-                continue
+-            done += 1
+-            path = f"reorder/{name}_r{k}"
+-            open(path + ".qasm", "w").write(out["text"])
+-            json.dump({"data_qubits": meta["data_qubits"], "score": out["score"], "acceptance": out["acceptance"],
+-                       "n_2q": out["n_2q"], "passed": out["passed"], "source": f"{stem} reordered, rng {k}"},
+-                      open(path + ".json", "w"), indent=1)
+-            print(f"{name}_r{k} 1-F {out['score']:.5e} acc {out['acceptance']:.4f} 2q {out['n_2q']} "
+-                  f"pass {out['passed']}", flush=True)
+-    print(f"{name}: {n} variants, {done} completed, {used / N_CHUNKS:.1f} full-run equivalents", flush=True)
+-
+-
+-if __name__ == "__main__":
++                print(f'{name}_r{k} {state} after {c} new chunks (threshold {_threshold(best,thr_file):.17g})',flush=True)
++            else:
++                done += 1
++                path = Path(f'reorder/{name}_r{k}')
++                path.with_suffix('.qasm').write_text(out['text'])
++                path.with_suffix('.json').write_text(json.dumps(dict(data_qubits=meta['data_qubits'],
++                    score=out['score'],acceptance=out['acceptance'],n_2q=out['n_2q'],passed=out['passed'],
++                    source=f'{stem} reordered, rng {k}'),indent=1))
++                saved = Journal.read(out['checkpoint'])
++                with Journal(out['checkpoint'],saved['header']) as journal:
++                    journal.state('published')
++                print(f"{name}_r{k} 1-F {out['score']:.17g} acc {out['acceptance']:.4f} 2q {out['n_2q']} pass {out['passed']}",flush=True)
++            dispatch()
++    print(f'{name}: {done} completed, {used} new chunks, cut={stop.is_set()}',flush=True)
++
++
++if __name__ == '__main__':
+     main()
+--- /dev/null
++++ b/work/race_capacity.py
+@@ -0,0 +1,46 @@
++"""Event snapshots for measured host idle core-minutes; no periodic worker or lease."""
++import argparse
++import json
++import os
++from pathlib import Path
++import socket
++import time
++
++
++def snapshot(event, name):
++    # /proc/stat aggregates USER_HZ CPU time over cores, so delta idle / HZ / 60
++    # is core-minutes. I/O wait is recorded separately, never called idle capacity.
++    cpu = [int(v) for v in Path('/proc/stat').read_text().splitlines()[0].split()[1:]]
++    return dict(event=event,name=name,host=socket.gethostname(),wall_ns=time.time_ns(),
++                monotonic_ns=time.monotonic_ns(),boot_id=Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
++                cores=os.cpu_count(),clock_ticks=os.sysconf('SC_CLK_TCK'),idle_ticks=cpu[3],iowait_ticks=cpu[4],
++                cpu_ticks=cpu[:8],load=Path('/proc/loadavg').read_text().strip())
++
++
++def idle_between(before, after):
++    if any(before[k] != after[k] for k in ('host','boot_id','clock_ticks','cores')):
++        raise ValueError('incompatible snapshots')
++    dt = (after['monotonic_ns']-before['monotonic_ns'])/1e9
++    delta = after['idle_ticks']-before['idle_ticks']
++    if dt <= 0 or delta < 0:
++        raise ValueError('non-monotone CPU counters')
++    return dict(elapsed_minutes=dt/60,idle_core_minutes=delta/before['clock_ticks']/60,
++                mean_idle_cores=delta/before['clock_ticks']/dt,
++                reclaimable_core_minutes=None)  # reservations and the team cap still need measurement
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('event')
++    parser.add_argument('name')
++    parser.add_argument('--output',type=Path,default=Path('reorder/capacity.jsonl'))
++    args = parser.parse_args()
++    args.output.parent.mkdir(parents=True,exist_ok=True)
++    payload = (json.dumps(snapshot(args.event,args.name),separators=(',',':'))+'\n').encode()
++    fd = os.open(args.output,os.O_WRONLY | os.O_APPEND | os.O_CREAT,0o600)
++    try:
++        if os.write(fd,payload) != len(payload):
++            raise OSError('incomplete capacity snapshot write')
++        os.fsync(fd)
++    finally:
++        os.close(fd)
+--- /dev/null
++++ b/work/race_checkpoint.py
+@@ -0,0 +1,91 @@
++"""Atomic, locked per-variant snapshots. Only complete chunks are durable.
++
++Each save fsyncs a new file, atomically replaces the old snapshot, then fsyncs
++the directory. A killed write leaves the previous complete snapshot usable.
++"""
++import fcntl
++import json
++import os
++from pathlib import Path
++import tempfile
++from race_identity import digest
++
++
++class Journal:
++    def __init__(self, path, header):
++        self.path = Path(path)
++        self.path.parent.mkdir(parents=True,exist_ok=True)
++        self.lock = open(str(self.path)+'.lock','a')
++        fcntl.flock(self.lock,fcntl.LOCK_EX | fcntl.LOCK_NB)
++        self.obj = dict(header=header,chunks=[],state='active',prior=dict(totals=[],kepts=[]))
++        if self.path.exists():
++            obj = self.read(self.path)
++            if obj['header'] != header:
++                self.close()
++                raise ValueError('checkpoint identity mismatch')
++            self.obj = obj
++        self.write_seconds = 0.0
++
++    @staticmethod
++    def read(path):
++        obj = json.loads(Path(path).read_text())
++        checksum = obj.pop('sha256')
++        if digest(obj) != checksum:
++            raise ValueError('checkpoint checksum mismatch')
++        for i, row in enumerate(obj['chunks']):
++            if row['index'] != i or row['seed'] != i:
++                raise ValueError('non-contiguous chunk sequence or seed mismatch')
++        return obj
++
++    def save(self):
++        import time
++        start = time.perf_counter()
++        payload = dict(self.obj,sha256=digest(self.obj))
++        fd, name = tempfile.mkstemp(prefix=self.path.name+'.',suffix='.tmp',dir=self.path.parent)
++        try:
++            with os.fdopen(fd,'w') as f:
++                json.dump(payload,f,separators=(',',':'))
++                f.write('\n'); f.flush(); os.fsync(f.fileno())
++            os.replace(name,self.path)
++            fd = os.open(self.path.parent,os.O_RDONLY | os.O_DIRECTORY)
++            try:
++                os.fsync(fd)
++            finally:
++                os.close(fd)
++        finally:
++            if os.path.exists(name):
++                os.unlink(name)
++        self.write_seconds += time.perf_counter()-start
++
++    def append(self, values, totals, kepts):
++        i = len(self.obj['chunks'])
++        a,b,s,s2 = values
++        self.obj['chunks'].append(dict(index=i,seed=i,kept=int(a),corrected=int(b),
++                                      loss=float(s).hex(),loss_sq=float(s2).hex()))
++        self.obj['prior'] = dict(totals=[float(t).hex() for t in totals[-1024:]],kepts=kepts[-1024:])
++        self.save()
++
++    def state(self, value):
++        self.obj['state'] = value
++        self.save()
++
++    def values(self):
++        return [(r['kept'],r['corrected'],float.fromhex(r['loss']),float.fromhex(r['loss_sq']))
++                for r in self.obj['chunks']]
++
++    def close(self):
++        self.lock.close()
++
++    def __enter__(self):
++        return self
++
++    def __exit__(self, *exc):
++        self.close()
++
++
++def replay(values):
++    kept = corrected = 0
++    total = total_sq = 0.0
++    for a,b,s,s2 in values:  # the judge's sequential accumulation, never sum(partial sums)
++        kept += a; corrected += b; total += s; total_sq += s2
++    return kept,corrected,total,total_sq
+--- /dev/null
++++ b/work/race_control.py
+@@ -0,0 +1,76 @@
++"""Stop precisely the registered controller at a chunk boundary, then await exit."""
++import argparse
++import ctypes
++import hashlib
++import json
++import os
++from pathlib import Path
++import select
++import signal
++import platform
++
++
++def syscall(number, *args):
++    # The installed uv Python and glibc expose no pidfd wrappers, although the
++    # Linux kernel supports them. These syscall numbers match both hosted ISAs.
++    if platform.machine() not in ('x86_64','aarch64'):
++        raise RuntimeError('pidfd syscall ABI not defined for this architecture')
++    libc = ctypes.CDLL(None,use_errno=True)
++    libc.syscall.restype = ctypes.c_long
++    result = libc.syscall(number,*args)
++    if result == -1:
++        error = ctypes.get_errno()
++        raise OSError(error,os.strerror(error))
++    return result
++
++
++def process_identity(pid):
++    root = Path('/proc')/str(pid)
++    return dict(pid=pid,uid=root.stat().st_uid,
++                start_ticks=root.joinpath('stat').read_text().rsplit(')',1)[1].split()[19],
++                command_sha256=hashlib.sha256(root.joinpath('cmdline').read_bytes()).hexdigest())
++
++
++def register_controller(path, stem):
++    obj = dict(process_identity(os.getpid()),stem=stem)
++    tmp = Path(str(path)+'.tmp')
++    tmp.write_text(json.dumps(obj)+'\n')
++    os.replace(tmp,path)
++
++
++def request_stop(path):
++    if not Path(path).exists():
++        print(f'no registered racer for {path}; host may have been skipped',flush=True)
++        return False
++    obj = json.loads(Path(path).read_text())
++    pid = obj['pid']
++    # Hold the process reference before revalidating its identity; no PID reuse race.
++    try:
++        fd = syscall(434,pid,0)  # pidfd_open
++    except ProcessLookupError:
++        print(f'controller {pid} already exited',flush=True)
++        return False
++    try:
++        try:
++            current = process_identity(pid)
++        except FileNotFoundError:
++            return False  # exited after pidfd_open; its fd cannot refer to a reused PID
++        if obj['uid'] != os.getuid() or current != {k:obj[k] for k in current}:
++            raise ValueError('controller identity mismatch; no signal sent')
++        try:
++            syscall(424,fd,signal.SIGUSR1,ctypes.c_void_p(),0)  # pidfd_send_signal
++        except ProcessLookupError:
++            return False  # already exited between identity validation and the signal
++        poll = select.poll()
++        poll.register(fd,select.POLLIN)
++        poll.poll()  # actual process exit; never wait on an output file
++    finally:
++        os.close(fd)
++    return True
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('pid_record',type=Path)
++    args = parser.parse_args()
++    request_stop(args.pid_record)
+--- /dev/null
++++ b/work/race_exact.py
+@@ -0,0 +1,42 @@
++"""Create the required exact-mean certificate using the installed validated evaluator."""
++import argparse
++import contextlib
++import io
++import json
++from pathlib import Path
++import sys
++
++from race_identity import file_hash, mean_identity
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('stem', type=Path)
++    parser.add_argument('--output', type=Path, required=True)
++    parser.add_argument('--evaluator', type=Path, default=Path(__file__).parent/'lanes/MAIN/sparse')
++    args = parser.parse_args()
++    sys.path.insert(0, str(args.evaluator.resolve()))
++    import sparse_walsh as sw
++    # run() writes a result beside the evaluator. Invoke its pure stages so the
++    # only write is the explicit certificate path, also when using a live reader.
++    m, eng, groups, nd, ks, psi, where, dense = sw.prepare(args.stem, True)
++    compiled, elim = sw.compile_best(m, eng, groups, nd, ks)
++    rows = []
++    for key in [None] + eng.keys:
++        states, weights, bound = sw.sparse_kernel(eng,ks,psi,where,key)
++        vec, _ = sw.contract_quotient(compiled,states,0 if key is None else sw.emask_for(key),elim['order'])
++        rows.append(float(sw.np.dot(weights,vec)/(1 << len(ks))))
++    a = rows[0]
++    obs = sum(w*b*r for w,b,r in zip(eng.W,eng.beta,rows[1:]))
++    loss = (a-obs)/(2*a)
++    text = args.stem.with_suffix('.qasm').read_text()
++    data = json.loads(args.stem.with_suffix('.json').read_text())['data_qubits']
++    obj = dict(identity=mean_identity(text,data),A=a.hex(),N=float(a*loss).hex(),L=float(loss).hex(),
++               evaluator={p.name:file_hash(p) for p in sorted(args.evaluator.glob('*.py'))},
++               moments=[r.hex() for r in rows])
++    args.output.write_text(json.dumps(obj,indent=2)+'\n')
++    print(json.dumps(dict(A=a,N=a*loss,L=loss,output=str(args.output))))
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ b/work/race_identity.py
+@@ -0,0 +1,52 @@
++"""Strict identities for exact means and resumable chunks; no path-name identity."""
++import hashlib
++import importlib.metadata
++import json
++import os
++import platform
++import sys
++from functools import lru_cache
++from pathlib import Path
++
++
++def digest(value):
++    return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':')).encode()).hexdigest()
++
++
++def file_hash(path):
++    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
++
++
++@lru_cache(None)
++def environment():
++    import numpy
++    import tprep
++    import xtim
++    files = {}
++    for module in (numpy, tprep, xtim):
++        root = Path(module.__file__).resolve().parent
++        for path in sorted(root.rglob('*')):
++            if path.is_file() and (path.suffix in ('.py', '.so')):
++                files[f'{module.__name__}/{path.relative_to(root)}'] = file_hash(path)
++    cpu = Path('/proc/cpuinfo').read_text()
++    flags = next(line for line in cpu.splitlines() if line.startswith('flags'))
++    result = dict(python=sys.version,platform=platform.platform(),machine=platform.machine(),
++                  cpu_flags=flags, packages={p:importlib.metadata.version(p) for p in ('numpy','xtim','stim','qiskit')},
++                  threads={k:os.environ.get(k) for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS')},
++                  files=files)
++    return result
++
++
++def mean_identity(text, data):
++    return dict(qasm_sha256=hashlib.sha256(text.encode()).hexdigest(),data_qubits=list(data),
++                noise='tprep.STANDARD',p=float(1e-3).hex(),environment_sha256=digest(environment()))
++
++
++def load_mean(path, text, data):
++    obj = json.loads(Path(path).read_text())
++    if obj['identity'] != mean_identity(text, data):
++        raise ValueError('exact mean identity mismatch (QASM/data/noise/build/environment)')
++    a, n = float.fromhex(obj['A']), float.fromhex(obj['N'])
++    if not (0 < a <= 1 and 0 <= n <= a):
++        raise ValueError('invalid exact moments')
++    return a, n
+--- /dev/null
++++ b/work/race_threshold.py
+@@ -0,0 +1,77 @@
++"""Official 3-significant-digit comparator; threshold is the first losing double.
++
++No credentials or network access. The controller supplies the confirmed board
++incumbent in receipts/race_incumbent.json; passed sequential picks and completed
++draws can only strengthen it. Candidates are always later than the incumbent.
++"""
++import argparse
++import glob
++import json
++import math
++import re
++import struct
++from pathlib import Path
++
++
++def published(score):
++    # tprep/check.py Report.__str__, official problem section 2.3.
++    return float(format(score, '.3g'))
++
++
++def wins(score, cx, incumbent_key, incumbent_cx, *, earlier=False):
++    return (published(score), cx, 0 if earlier else 2) < (incumbent_key, incumbent_cx, 1)
++
++
++def first_losing(incumbent_key, incumbent_cx, candidate_cx, *, earlier=False):
++    if not math.isfinite(incumbent_key) or incumbent_key <= 0:
++        raise ValueError('incumbent key must be positive and finite')
++    if published(incumbent_key) != incumbent_key:
++        raise ValueError('incumbent key must already be formatted')
++    if min(incumbent_cx, candidate_cx) < 0:
++        raise ValueError('negative gate count')
++    # Nonnegative finite binary64 values have the same bit order as numeric order.
++    lo, hi = 0, 0x7ff0000000000000  # +0 wins; +inf loses
++    while hi - lo > 1:
++        mid = (lo + hi) // 2
++        x = struct.unpack('>d', struct.pack('>Q', mid))[0]
++        if wins(x, candidate_cx, incumbent_key, incumbent_cx, earlier=earlier):
++            lo = mid
++        else:
++            hi = mid
++    return struct.unpack('>d', struct.pack('>Q', hi))[0]
++
++
++def cx_count(path):
++    text = re.sub(r'//[^\n]*', '', Path(path).read_text())
++    return sum(bool(re.match(r'\s*cx\s', s)) for s in text.split(';'))
++
++
++def controller_threshold(candidate, work, log_pattern=None):
++    best = json.loads((work / 'receipts/race_incumbent.json').read_text())
++    assert published(best['score']) == best['score_key']
++    incumbents = [(best['score_key'], best['n_2q'])]
++    for receipt in (work / 'receipts').glob('seq_*.txt'):
++        if 'RESULT: PASS' not in receipt.read_text():
++            continue
++        path = work / 'submissions' / (receipt.stem[4:] + '.json')
++        if not path.exists():
++            raise ValueError(f'missing score for passed pick: {path}')
++        pick = json.loads(path.read_text())
++        incumbents.append((published(pick['score']), pick['n_2q']))
++    if log_pattern:
++        for path in glob.glob(log_pattern):
++            for line in Path(path).read_text().splitlines():
++                m = re.fullmatch(r'\S+ 1-F (\S+) acc \S+ 2q (\d+) pass True', line)
++                if m:
++                    incumbents.append((published(float(m[1])), int(m[2])))
++    key, cx = min(incumbents)
++    return first_losing(key, cx, cx_count(candidate))
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('candidate')
++    parser.add_argument('--work', type=Path, default=Path('.'))
++    parser.add_argument('--logs')
++    args = parser.parse_args()
++    print(repr(controller_threshold(args.candidate, args.work, args.logs)))
+--- a/work/receipts/cut_redraws.sh
++++ b/work/receipts/cut_redraws.sh
+@@ -1,14 +1,21 @@
+ #!/bin/bash
+-# Usage: cut_redraws.sh <stem name> <time accepted by date -d, e.g. "00:20 tomorrow"> <host>...
+-# Stops the stem's re-draws at HHMM KST so promote.sh can pick the best completed draw in time for the next slot.
++# Usage: cut_redraws.sh <stem name> <deadline accepted by date -d> <host>...
++# Require patched race.py's registered controller. SIGUSR1 stops after complete chunks.
++set -eu
+ name=$1; t=$2; shift 2
++R=/home/jihoon/competitions/quantumn
++PY=$R/.venv/bin/python
+ SSH="ssh -q -o ControlMaster=no -o ControlPath=none"
+-target=$(date -d "$t" +%s) || exit 1; echo "cut at $(date -d @$target)"
+-until [ "$(date +%s)" -ge "$target" ]; do sleep 20; done
+-pat="race.py lanes\\/MAIN\\/${name:0:${#name}-1}[${name: -1}]"
++target=$(date -d "$t" +%s)
++remaining=$((target - $(date +%s)))
++if [ "$remaining" -gt 0 ]; then sleep "$remaining"; fi
+ for h in "$@"; do
+-  if [ "$h" = zebra ]; then ps -u jihoon -o pid,args | awk "/$pat/ {print \$1}" | xargs -r kill
+-  elif [ "$h" = owl ]; then $SSH owl "docker ps --no-trunc --format '{{.ID}} {{.Command}}' | awk '/$pat/ {print substr(\$1,1,12)}' | xargs -r docker kill"
+-  else $SSH $h "ps -u jihoon -o pid,args | awk '/$pat/ {print \$1}' | xargs -r kill"; fi
++  if [ "$h" = zebra ]; then
++    "$PY" "$R/work/race_control.py" "$R/work/reorder/$name.pid.json"
++    (cd "$R/work" && "$PY" race_capacity.py cut "$name")
++  else
++    # Owl races must use --pid=host; the controller uses only the standard library.
++    $SSH "$h" "$PY $R/work/race_control.py $R/work/reorder/$name.pid.json && cd $R/work && $PY race_capacity.py cut $name"
++  fi
+ done
+-date; echo cut
++date; echo 'cut: all registered controllers exited after checkpointing'
+--- a/work/receipts/draw_loop.sh
++++ b/work/receipts/draw_loop.sh
+@@ -13,8 +13,7 @@
+   src=$(cat receipts/next_stem.txt); t=$(date -d "now + 60 min" "+%Y-%m-%d %H:20")
+   name=$(basename $src)_h$(date -d "$t" +%d%H); stem=lanes/MAIN/$name
+   cp $src.qasm $stem.qasm; cp $src.json $stem.json
+-  key=$(timeout 60 ../.venv/bin/python submit.py board 2>/dev/null | grep -m1 "초정밀모델제어학회쨩" | sed -n 's/.*(key \([0-9.e+-]*\)).*/\1/p')
+-  thr=$(python3 -c "import math,sys; k=float(sys.argv[1]); print(k - 0.5 * 10 ** (math.floor(math.log10(k)) - 2))" "${key:-x}" 2>/dev/null || echo inf)
++  thr=$(../.venv/bin/python race_threshold.py "$stem.qasm") || exit 1
+   off=$(cat receipts/offset_$(basename $src).txt 2>/dev/null || echo 0)
+   { read -r specs; read -r used; } < <(bash receipts/race_specs.sh $off)
+   echo $((off + used)) > receipts/offset_$(basename $src).txt
+--- /dev/null
++++ b/work/receipts/race_incumbent.json
+@@ -0,0 +1,6 @@
++{
++  "score_key": 3.53e-5,
++  "score": 3.53130699502577e-5,
++  "n_2q": 327,
++  "source": "v36h_h2513_r4852, task-confirmed current best"
++}
+--- a/work/receipts/race_specs.sh
++++ b/work/receipts/race_specs.sh
+@@ -10,6 +10,13 @@
+ for hc in owl:96:72:72 tom:64:48:36 jerry:64:48:24 hippo:48:36:12 sunfish:32:24:24 zebra:64:48:8; do
+   IFS=: read -r h cores cap rmax <<< "$hc"
+   if [ "$h" = zebra ]; then out=$(bash -c "$probe"); else out=$(timeout 30 $SSH $h "$probe" 2>/dev/null); fi
++  # Event-driven CPU-counter receipt; never infer idle minutes from runnable counts.
++  root=/home/jihoon/competitions/quantumn
++  if [ "$h" = zebra ]; then
++    "$root/.venv/bin/python" "$root/work/race_capacity.py" allocation "offset_$off"
++  else
++    $SSH "$h" "cd $root/work && $root/.venv/bin/python race_capacity.py allocation offset_$off" || exit 1
++  fi
+   read -r busy mine <<< "$out"
+   [ -n "$mine" ] || continue
+   procs=$((cores - busy - 2)); [ $procs -gt $((cap - mine)) ] && procs=$((cap - mine))

@@ -1,0 +1,173 @@
+--- a/work/race.py
++++ b/work/race.py
+@@ -23,6 +23,7 @@
+ import tprep
+ import tprep.check  # noqa: F401  (tprep/__init__ rebinds tprep.check to the function)
+ from reorder import shuffle, signature
++from race_identity import load_mean
+ 
+ tc = sys.modules["tprep.check"]
+ KAPPA = 0.7
+@@ -62,8 +63,8 @@
+     return int(keep.sum()), int((z_fix | x_fix).sum()), infid.sum(), (infid ** 2).sum()
+ 
+ 
+-def _init(lines, data, ref, best, thr_file):
+-    _G.update(lines=lines, data=data, ref=ref, best=best, thr_file=thr_file, totals=[], kepts=[])
++def _init(lines, data, ref, best, thr_file, exact):
++    _G.update(lines=lines, data=data, ref=ref, best=best, thr_file=thr_file, exact=exact, totals=[], kepts=[])
+ 
+ 
+ def _threshold(best, thr_file):
+@@ -75,13 +76,23 @@
+ 
+ 
+ def _p_below(kept, total, c, thr):
+-    """P(completed score < thr) after c chunks, from the per-chunk mean and spread seen so far."""
+-    t, n = np.array(_G["totals"]), len(_G["totals"])
++    """Normal tail of R=S-tau*K with exact E[S], E[K]; samples estimate spread only."""
++    if math.isinf(thr) and thr > 0:
++        return 1.0
++    if c == N_CHUNKS:
++        return float(total < thr * kept)
++    t, n = np.asarray(_G["totals"]), len(_G["totals"])
+     if n < 30:
+         return 1.0
++    a, numerator = _G["exact"]
++    mu = tc.CHUNK * (numerator - thr * a)
++    residuals = t - thr * np.asarray(_G["kepts"])
++    variance = float(np.mean((residuals - mu) ** 2))
+     m = N_CHUNKS - c
+-    mu_t, sd_t, mu_k = t.mean(), t.std(ddof=1), float(np.mean(_G["kepts"]))
+-    z = (thr * (kept + m * mu_k) - total - m * mu_t) / (math.sqrt(m) * sd_t)
++    target = -(total - thr * kept) - m * mu
++    if variance == 0:
++        return float(target > 0)
++    z = target / math.sqrt(m * variance)
+     return 0.5 * math.erfc(-z / math.sqrt(2))
+ 
+ 
+@@ -127,12 +138,13 @@
+     thr = float(os.environ.get("RACE_THRESHOLD", "inf"))
+     text = open(stem + ".qasm").read()
+     meta = json.load(open(stem + ".json"))
++    exact = load_mean(stem + ".exact.json", text, meta["data_qubits"])
+     name = os.path.basename(stem)
+     os.makedirs("reorder", exist_ok=True)
+     best = mp.Value("d", thr)
+     thr_file = f"reorder/{name}.thr"
+     used = done = 0
+-    with mp.get_context("fork").Pool(procs, _init, (text.split("\n"), meta["data_qubits"], signature(text), best, thr_file)) as pool:
++    with mp.get_context("fork").Pool(procs, _init, (text.split("\n"), meta["data_qubits"], signature(text), best, thr_file, exact)) as pool:
+         for k, out, c in pool.imap_unordered(race, range(k0, k0 + n)):
+             used += c
+             if out is None:
+@@ -144,7 +156,7 @@
+             json.dump({"data_qubits": meta["data_qubits"], "score": out["score"], "acceptance": out["acceptance"],
+                        "n_2q": out["n_2q"], "passed": out["passed"], "source": f"{stem} reordered, rng {k}"},
+                       open(path + ".json", "w"), indent=1)
+-            print(f"{name}_r{k} 1-F {out['score']:.5e} acc {out['acceptance']:.4f} 2q {out['n_2q']} "
++            print(f"{name}_r{k} 1-F {out['score']:.17g} acc {out['acceptance']:.4f} 2q {out['n_2q']} "
+                   f"pass {out['passed']}", flush=True)
+     print(f"{name}: {n} variants, {done} completed, {used / N_CHUNKS:.1f} full-run equivalents", flush=True)
+ 
+--- /dev/null
++++ b/work/race_exact.py
+@@ -0,0 +1,42 @@
++"""Create the required exact-mean certificate using the installed validated evaluator."""
++import argparse
++import contextlib
++import io
++import json
++from pathlib import Path
++import sys
++
++from race_identity import file_hash, mean_identity
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('stem', type=Path)
++    parser.add_argument('--output', type=Path, required=True)
++    parser.add_argument('--evaluator', type=Path, default=Path(__file__).parent/'lanes/MAIN/sparse')
++    args = parser.parse_args()
++    sys.path.insert(0, str(args.evaluator.resolve()))
++    import sparse_walsh as sw
++    # run() writes a result beside the evaluator. Invoke its pure stages so the
++    # only write is the explicit certificate path, also when using a live reader.
++    m, eng, groups, nd, ks, psi, where, dense = sw.prepare(args.stem, True)
++    compiled, elim = sw.compile_best(m, eng, groups, nd, ks)
++    rows = []
++    for key in [None] + eng.keys:
++        states, weights, bound = sw.sparse_kernel(eng,ks,psi,where,key)
++        vec, _ = sw.contract_quotient(compiled,states,0 if key is None else sw.emask_for(key),elim['order'])
++        rows.append(float(sw.np.dot(weights,vec)/(1 << len(ks))))
++    a = rows[0]
++    obs = sum(w*b*r for w,b,r in zip(eng.W,eng.beta,rows[1:]))
++    loss = (a-obs)/(2*a)
++    text = args.stem.with_suffix('.qasm').read_text()
++    data = json.loads(args.stem.with_suffix('.json').read_text())['data_qubits']
++    obj = dict(identity=mean_identity(text,data),A=a.hex(),N=float(a*loss).hex(),L=float(loss).hex(),
++               evaluator={p.name:file_hash(p) for p in sorted(args.evaluator.glob('*.py'))},
++               moments=[r.hex() for r in rows])
++    args.output.write_text(json.dumps(obj,indent=2)+'\n')
++    print(json.dumps(dict(A=a,N=a*loss,L=loss,output=str(args.output))))
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ b/work/race_identity.py
+@@ -0,0 +1,52 @@
++"""Strict identities for exact means and resumable chunks; no path-name identity."""
++import hashlib
++import importlib.metadata
++import json
++import os
++import platform
++import sys
++from functools import lru_cache
++from pathlib import Path
++
++
++def digest(value):
++    return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':')).encode()).hexdigest()
++
++
++def file_hash(path):
++    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
++
++
++@lru_cache(None)
++def environment():
++    import numpy
++    import tprep
++    import xtim
++    files = {}
++    for module in (numpy, tprep, xtim):
++        root = Path(module.__file__).resolve().parent
++        for path in sorted(root.rglob('*')):
++            if path.is_file() and (path.suffix in ('.py', '.so')):
++                files[f'{module.__name__}/{path.relative_to(root)}'] = file_hash(path)
++    cpu = Path('/proc/cpuinfo').read_text()
++    flags = next(line for line in cpu.splitlines() if line.startswith('flags'))
++    result = dict(python=sys.version,platform=platform.platform(),machine=platform.machine(),
++                  cpu_flags=flags, packages={p:importlib.metadata.version(p) for p in ('numpy','xtim','stim','qiskit')},
++                  threads={k:os.environ.get(k) for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS')},
++                  files=files)
++    return result
++
++
++def mean_identity(text, data):
++    return dict(qasm_sha256=hashlib.sha256(text.encode()).hexdigest(),data_qubits=list(data),
++                noise='tprep.STANDARD',p=float(1e-3).hex(),environment_sha256=digest(environment()))
++
++
++def load_mean(path, text, data):
++    obj = json.loads(Path(path).read_text())
++    if obj['identity'] != mean_identity(text, data):
++        raise ValueError('exact mean identity mismatch (QASM/data/noise/build/environment)')
++    a, n = float.fromhex(obj['A']), float.fromhex(obj['N'])
++    if not (0 < a <= 1 and 0 <= n <= a):
++        raise ValueError('invalid exact moments')
++    return a, n

@@ -1,0 +1,143 @@
+--- a/work/promote.sh
++++ b/work/promote.sh
+@@ -15,6 +15,7 @@
+ s=$(date +%s.%N); env $ENV $PY fast_check.py "$stem.qasm" "$stem.json" 1000000 1 > /dev/null 2>&1; e=$(date +%s.%N)
+ secs=$(python3 -c "print(round($e - $s, 1))"); echo "judge speed: $secs s per 1e6 shots, 1 process"
+ python3 -c "import sys; sys.exit(0 if $secs <= 20 else 1)" || { echo "too slow for the server's 1-hour limit; not promoted"; exit 1; }
++RACE_THRESHOLD=$($PY race_threshold.py "$stem.qasm") || exit 1
+ pids=()
+ for spec in "$@"; do
+   IFS=: read -r h procs first count <<< "$spec"
+@@ -33,18 +34,13 @@
+   fi
+   pids+=($!)
+ done
+-# Relay to every host's reorder/<name>.thr the key boundary (3 significant figures) below the best of: this hour's
++# Relay to every host's reorder/<name>.thr the candidate-specific first losing float against: this hour's
+ # completed passing draws and the last sequential-judge-passed picks (submitted at the next slot, maybe not yet on the
+ # board). race.py drops against it; draws that cannot lower our board key are not worth completing.
+ relay() {
+   local last= b f p
+   while sleep 15; do
+-    b=$( { cat reorder/${name}_*.log 2>/dev/null | awk '$2 == "1-F" && $NF == "True" {print $3}'
+-           for f in $(ls -t receipts/seq_*.txt 2>/dev/null | head -3); do
+-             grep -q "RESULT: PASS" $f || continue; p=${f#receipts/seq_}; p=${p%.txt}
+-             sed -n 's/.*"score": \([0-9.e+-]*\).*/\1/p' submissions/$p.json 2>/dev/null; done; } | sort -g | head -1)
+-    [ -n "$b" ] || continue
+-    b=$(python3 -c "import math,sys; k=float(f'{float(sys.argv[1]):.2e}'); print(k - 0.5 * 10 ** (math.floor(math.log10(k)) - 2))" $b)
++    b=$($PY race_threshold.py "$stem.qasm" --logs "reorder/${name}_*.log") || return 1
+     [ "$b" != "$last" ] || continue
+     last=$b
+     for spec in "$@"; do
+--- a/work/race.py
++++ b/work/race.py
+@@ -144,7 +144,7 @@
+             json.dump({"data_qubits": meta["data_qubits"], "score": out["score"], "acceptance": out["acceptance"],
+                        "n_2q": out["n_2q"], "passed": out["passed"], "source": f"{stem} reordered, rng {k}"},
+                       open(path + ".json", "w"), indent=1)
+-            print(f"{name}_r{k} 1-F {out['score']:.5e} acc {out['acceptance']:.4f} 2q {out['n_2q']} "
++            print(f"{name}_r{k} 1-F {out['score']:.17g} acc {out['acceptance']:.4f} 2q {out['n_2q']} "
+                   f"pass {out['passed']}", flush=True)
+     print(f"{name}: {n} variants, {done} completed, {used / N_CHUNKS:.1f} full-run equivalents", flush=True)
+ 
+--- /dev/null
++++ b/work/race_threshold.py
+@@ -0,0 +1,77 @@
++"""Official 3-significant-digit comparator; threshold is the first losing double.
++
++No credentials or network access. The controller supplies the confirmed board
++incumbent in receipts/race_incumbent.json; passed sequential picks and completed
++draws can only strengthen it. Candidates are always later than the incumbent.
++"""
++import argparse
++import glob
++import json
++import math
++import re
++import struct
++from pathlib import Path
++
++
++def published(score):
++    # tprep/check.py Report.__str__, official problem section 2.3.
++    return float(format(score, '.3g'))
++
++
++def wins(score, cx, incumbent_key, incumbent_cx, *, earlier=False):
++    return (published(score), cx, 0 if earlier else 2) < (incumbent_key, incumbent_cx, 1)
++
++
++def first_losing(incumbent_key, incumbent_cx, candidate_cx, *, earlier=False):
++    if not math.isfinite(incumbent_key) or incumbent_key <= 0:
++        raise ValueError('incumbent key must be positive and finite')
++    if published(incumbent_key) != incumbent_key:
++        raise ValueError('incumbent key must already be formatted')
++    if min(incumbent_cx, candidate_cx) < 0:
++        raise ValueError('negative gate count')
++    # Nonnegative finite binary64 values have the same bit order as numeric order.
++    lo, hi = 0, 0x7ff0000000000000  # +0 wins; +inf loses
++    while hi - lo > 1:
++        mid = (lo + hi) // 2
++        x = struct.unpack('>d', struct.pack('>Q', mid))[0]
++        if wins(x, candidate_cx, incumbent_key, incumbent_cx, earlier=earlier):
++            lo = mid
++        else:
++            hi = mid
++    return struct.unpack('>d', struct.pack('>Q', hi))[0]
++
++
++def cx_count(path):
++    text = re.sub(r'//[^\n]*', '', Path(path).read_text())
++    return sum(bool(re.match(r'\s*cx\s', s)) for s in text.split(';'))
++
++
++def controller_threshold(candidate, work, log_pattern=None):
++    best = json.loads((work / 'receipts/race_incumbent.json').read_text())
++    assert published(best['score']) == best['score_key']
++    incumbents = [(best['score_key'], best['n_2q'])]
++    for receipt in (work / 'receipts').glob('seq_*.txt'):
++        if 'RESULT: PASS' not in receipt.read_text():
++            continue
++        path = work / 'submissions' / (receipt.stem[4:] + '.json')
++        if not path.exists():
++            raise ValueError(f'missing score for passed pick: {path}')
++        pick = json.loads(path.read_text())
++        incumbents.append((published(pick['score']), pick['n_2q']))
++    if log_pattern:
++        for path in glob.glob(log_pattern):
++            for line in Path(path).read_text().splitlines():
++                m = re.fullmatch(r'\S+ 1-F (\S+) acc \S+ 2q (\d+) pass True', line)
++                if m:
++                    incumbents.append((published(float(m[1])), int(m[2])))
++    key, cx = min(incumbents)
++    return first_losing(key, cx, cx_count(candidate))
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('candidate')
++    parser.add_argument('--work', type=Path, default=Path('.'))
++    parser.add_argument('--logs')
++    args = parser.parse_args()
++    print(repr(controller_threshold(args.candidate, args.work, args.logs)))
+--- a/work/receipts/draw_loop.sh
++++ b/work/receipts/draw_loop.sh
+@@ -13,8 +13,7 @@
+   src=$(cat receipts/next_stem.txt); t=$(date -d "now + 60 min" "+%Y-%m-%d %H:20")
+   name=$(basename $src)_h$(date -d "$t" +%d%H); stem=lanes/MAIN/$name
+   cp $src.qasm $stem.qasm; cp $src.json $stem.json
+-  key=$(timeout 60 ../.venv/bin/python submit.py board 2>/dev/null | grep -m1 "초정밀모델제어학회쨩" | sed -n 's/.*(key \([0-9.e+-]*\)).*/\1/p')
+-  thr=$(python3 -c "import math,sys; k=float(sys.argv[1]); print(k - 0.5 * 10 ** (math.floor(math.log10(k)) - 2))" "${key:-x}" 2>/dev/null || echo inf)
++  thr=$(../.venv/bin/python race_threshold.py "$stem.qasm") || exit 1
+   off=$(cat receipts/offset_$(basename $src).txt 2>/dev/null || echo 0)
+   { read -r specs; read -r used; } < <(bash receipts/race_specs.sh $off)
+   echo $((off + used)) > receipts/offset_$(basename $src).txt
+--- /dev/null
++++ b/work/receipts/race_incumbent.json
+@@ -0,0 +1,6 @@
++{
++  "score_key": 3.53e-5,
++  "score": 3.53130699502577e-5,
++  "n_2q": 327,
++  "source": "v36h_h2513_r4852, task-confirmed current best"
++}
