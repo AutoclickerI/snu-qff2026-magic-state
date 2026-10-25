@@ -1,9 +1,9 @@
 # Plan
 
 ## Status (2026-10-26 00:20 KST)
-- Board: **rank 1** with v37a_h2521_r2793, **server 3.48009e-5** (key 3.48e-5); next team Placeholder 3.856e-5 (22:53; 4.005e-5 an hour earlier), so rank 1 needs our key to keep falling. The
+- Board: **rank 1** with v37c_h2600_r43418, **server 3.428e-5** (key 3.43e-5, 00:40); next team Placeholder 3.856e-5 (22:53; 4.005e-5 an hour earlier), so rank 1 needs our key to keep falling. The
   hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` and submits
-  the hour's best at :37: v37c for the 00:37 slot, **v37d** from the 00:20 race (01:37 slot).
+  the hour's best at :37: **v37d** from the 00:20 race (01:37 slot).
 - **Best expected circuit: v37d** (`work/lanes/MAIN/v37d`): **all-orders 3.676347e-5, acceptance 0.50235**, 406 CX,
   48 ticks, round R45 on GLOBAL's R46 layout (data [6,20,19,10,2,22,16]). Since v36h (3.815473e-5): greedy bundles,
   the R46 layout with both A-flag-gap helpers (v37a), POLISH's edits (v37b), MERGE of COMPLETE's R45 end, POLISH and
@@ -27,7 +27,7 @@ the final slot (2026-10-30 11:37): `next_stem.txt` before 10:20 that day.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P106 | G1 | The five-block path ending E–A–D–B–C on the grid (27.207 p², no unit squares, catches every single-block logical resource error without a separate verification; grid-free suffix 3.408e-5 vs square-with-leaf 3.3945e-5), starting from v37c plus an E block checking A | finalist L < L(v37c) − 1e-7 at A ≥ 0.5002 | ENDSEARCH (Codex, `work/lanes/ENDSEARCH`, tom ≤ 24) | active |
+| 1 | P106 | G1 | The five-block path ending E–A–D–B–C on the grid (27.207 p², no unit squares, catches every single-block logical resource error without a separate verification; grid-free suffix 3.408e-5 vs square-with-leaf 3.3945e-5), starting from v37c plus an E block checking A | finalist L < L(v37c) − 1e-7 at A ≥ 0.5002 | ENDSEARCH (Codex, `work/lanes/ENDSEARCH`, owl ≤ 24 in docker) | active: phantom E on v37c (real preparation) 3.4542e-5 at A 0.489; grid builds 1.05e-3 because only one A cell has a free neighbour; now the joint A/B/C/E layout solve to a witness or certificate |
 | 2 | P107 | G1 | v37c's own A and B/C preparations under the weakest contract its round needs (reviewer 15 #2–4): measured helpers, the needed stabilizer subspace with free gauge qubits, projector preparation | finalist L < L(v37c) − 5e-8, or each contract priced with the cost that ate its gain | PREPFREE (Codex, `work/lanes/PREPFREE`, sunfish ≤ 12) | active |
 | 3 | P91 | G1 | B/C of r3's quality on R46's cells and a late X check on v37a (ideal B/C source and core noise on v37a is worth 4.09e-6; phantom X checks priced, placement binds) | finalist L < L(v37a) − 5e-7 at A ≥ 0.5002, or the cost per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active |
 | 4 | P101 | G1 | Greedy local-edit polish on v37a (BUNDLE's menu ported: singles, connected 2-bundles, joint extension; guard network; A pass) | a greedy round gains < 1e-9 | POLISH (Codex, `work/lanes/POLISH`, zebra ≤ 16) | active |

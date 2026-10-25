@@ -7,8 +7,8 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 1. Python is `.venv/bin/python` (stim, xtim 3.1.3+qff2, qiskit, OR-Tools). The judge `tprep` is installed editable from
    `upstream/snu-qff2026-problem` (keep it unmodified; `git pull` for organizer updates).
 2. Official score, bit-identical to the server, ~10 s at 20 processes: `cd work && ../.venv/bin/python fast_check.py
-   <qasm> <json> [shots] [procs]`. Sanity: `fast_check.py submissions/v37a_h2521_r2793.qasm submissions/v37a_h2521_r2793.json`
-   gives the server's 3.48009448845875e-5 (another host may differ in the last ulp). Below 1e8 shots, read `gates_ok`
+   <qasm> <json> [shots] [procs]`. Sanity: `fast_check.py submissions/v37c_h2600_r43418.qasm submissions/v37c_h2600_r43418.json`
+   gives the server's 1-F (`receipts/seq_v37c_h2600_r43418.txt`) (another host may differ in the last ulp). Below 1e8 shots, read `gates_ok`
    (format, class, correctness); acceptance there is a binomial estimate, so gate on the exact all-orders A ≥ 0.5002.
 3. Ranking evaluators (all orders, exact 2nd/3rd order, 3-seed MC, speed): `docs/reference/circuit.md` "Evaluators".
 4. Sequential judge plus fault scan (~5 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
