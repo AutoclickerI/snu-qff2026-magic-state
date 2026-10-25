@@ -1,7 +1,7 @@
 # Plan
 
 ## Status (2026-10-25 17:20 KST)
-- Board: **rank 1** with v36h_h2517_r342819, **server 3.48827e-5** (17:37; key 3.49e-5); Placeholder 4.906e-5.
+- Board: **rank 1** with v37a_h2521_r2793, **server 3.48009e-5** (21:39; key 3.48e-5); Placeholder 4.005e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
   `lanes/MAIN/v37c` from the 23:20 race) against the key boundary below our best and submits the best at :37.
 - **Best expected circuit: v37c** (`work/lanes/MAIN/v37c`: MERGE of COMPLETE's R45 phase-network end, POLISH's edits

@@ -6,12 +6,12 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v36h_h2517_r342819**, server 1-F = 3.48827333200885e-5
-(= local seed-0, key 3.49e-5), 327 CX, submitted 2026-10-25 17:39:22 KST
-(`work/receipts/seq_v36h_h2517_r342819.txt`; best raced seed-0 draw of `work/lanes/MAIN/v36h`, all-orders 3.81547e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v37a_h2521_r2793**, server 1-F = 3.48009448845875e-5
+(key 3.48e-5), 390 CX, acceptance 0.501, submitted 2026-10-25 21:39:58 KST (`work/receipts/submit_v37a_h2521_r2793.log`;
+best raced seed-0 draw of `work/lanes/MAIN/v37a`, all-orders 3.761822e-5).
 
-Best competitor: Placeholder 4.906e-5, 201 CX, acceptance 0.521 (submitted 2026-10-25 13:26 KST). Board read
-2026-10-25 13:45 KST; refresh with `work/submit.py board`.
+Best competitor: Placeholder 4.005e-5, 189 CX, acceptance 0.570 (submitted 2026-10-25 21:53 KST). Board read
+2026-10-25 22:50 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git show b2a5243:<path>` for the lanes removed at 04:10 on 2026-10-25, `git show a58eca7:<path>` for `work/candidates/` and earlier removals.
@@ -53,7 +53,7 @@ Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git sho
 | v36i: v36h + APROC's joint A-side guard witness (CX22→16 at 40 replaces CX10→16 at 39 and MX16 at 40) and greedy guard/echo repairs | all orders | 3.809138e-5, acceptance 0.50673, 353 CX, judge 1e6 6.1 s at 1 process | `work/lanes/MAIN/v36i.*`, `work/lanes/APROC/REPORT.md` |
 | v36j: v36i + five disjoint 2-edit bundles from BUNDLE's v36h enumeration (greedy union, 10 edits at ticks 14–35: guard h5 on q4, pair 7_13, CX20→26 at 15 and 32 with MX26 moves, CX19→18 at 35) | all orders | 3.798125e-5 (−0.29% vs v36i), acceptance 0.50055, 357 CX, judge 1e6 9.4 s at 1 process | `work/lanes/MAIN/v36j.*`, `work/lanes/BUNDLE/res/b2.jsonl` |
 | v36k: v36i + 35 edits from a greedy joint extension (each round prices every valid addition of a v36h-positive BUNDLE 2-bundle or single on top, keeps the best at A ≥ 0.5002, funds acceptance with cheap singles); raced at 19:37 (best re-draw 3.54821e-5, key unchanged) | all orders | 3.789826e-5 (−0.22% vs v36j, −0.67% vs v36h), acceptance 0.50104, 364 CX, judge 1e6 7.9 s at 1 process | `work/lanes/MAIN/v36k.*` |
-| v37a: GLOBAL's R46 layout (15 ancilla roles moved, data [6,20,19,10,2,22,16] routed in 10 hops), rebuilt A (11 CX) and B/C (65 CX, warm-started), both A-flag-gap helpers on the grid, acceptance trades, INTEG repair, q14 readout 48→47; raced 20:20–21:20, best re-draw 3.48009e-5 submitted at 21:39 | all orders | **3.761822e-5 (−0.74% vs v36k, −1.41% vs v36h)**, acceptance 0.50079, 390 CX, 49 ticks, judge 1e6 gates_ok 2.6 s at 1 process | `work/lanes/MAIN/v37a.*`, `work/lanes/GLOBAL/REPORT.md` |
+| v37a: GLOBAL's R46 layout (15 ancilla roles moved, data [6,20,19,10,2,22,16] routed in 10 hops), rebuilt A (11 CX) and B/C (65 CX, warm-started), both A-flag-gap helpers on the grid, acceptance trades, INTEG repair, q14 readout 48→47; raced 20:20–21:20, best re-draw 3.48009e-5 submitted at 21:39, scored 3.48009e-5 (key 3.48e-5) | all orders | **3.761822e-5 (−0.74% vs v36k, −1.41% vs v36h)**, acceptance 0.50079, 390 CX, 49 ticks, judge 1e6 gates_ok 2.6 s at 1 process | `work/lanes/MAIN/v37a.*`, `work/lanes/GLOBAL/REPORT.md` |
 | v37b: v37a + POLISH's greedy edits (CX16→10 at 37, CX19→25 at 13, pair moves 2_3 at 21/23, CX12→13 at 10 removed, A reads on q7/13/15/21 one tick earlier); racing from the 23:37 slot (race 22:20–23:20) | all orders | 3.742321e-5 (−0.52% vs v37a), acceptance 0.50348, 391 CX, judge 1e6 gates_ok, same speed as v37a | `work/lanes/MAIN/v37b.*`, `work/lanes/POLISH/` |
 | v37c: MERGE of the lanes' gains on v37a: COMPLETE's R45 end of the phase network (round one tick earlier), POLISH's edits regenerated on it, GLOBAL's B/C core moved one tick earlier, joint greedy repair (one CX pair dropped for judge speed); racing from the 00:37 slot (race 23:20–00:20) | all orders | **3.690403e-5 (−1.39% vs v37b, −1.90% vs v37a)**, acceptance 0.50572, 400 CX, 48 ticks; judge 1e7 3.6902e-5 ± 2.4e-6, gates_ok | `work/lanes/MAIN/v37c.*`, `work/lanes/MERGE/REPORT.md` |
 
