@@ -1,8 +1,9 @@
 """Bitset min-fill elimination equal to sparse_walsh.minfill (same key (fill, degree, vertex), same order)."""
 
 
-def minfill_adj(adj):
-    """adj: dict vertex -> bitmask of neighbours (vertex ids are bit positions). Returns (work_entries, width)."""
+def minfill_adj(adj, order=None):
+    """adj: dict vertex -> bitmask of neighbours (vertex ids are bit positions). Returns (work_entries, width) and appends
+    the elimination order to `order` when given."""
     N = dict(adj)
     pc = int.bit_count
 
@@ -21,6 +22,8 @@ def minfill_adj(adj):
     width = 0; cost = 0
     while keys:
         v = min(keys.values())[2]
+        if order is not None:
+            order.append(v)
         n = N.pop(v); del keys[v]
         d = pc(n)
         width = max(width, d); cost += 1 << d

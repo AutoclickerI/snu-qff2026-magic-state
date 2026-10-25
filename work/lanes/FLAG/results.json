@@ -1,0 +1,267 @@
+{
+ "evaluator_hashes": {
+  "sparse_walsh.py": "e40b8efa9832f8c7cda5c10bbc34ddfa944e105978c380adc35ee7e09e452e83",
+  "frontend.py": "b4971e2ce3dfd122cae8a72f432594dce88e708afdc078c9e6b4751f1a1fe987",
+  "fastfill.py": "bdd8a5d825be541e3fac6c0878b7ecbd8fdc50e8f72cfac9819578f11ebb3b77",
+  "basis_warm.json": "afa66e1f76ba2455b17302289cd653732790b3006a3b39d7129b3154712b1289"
+ },
+ "data_qubits": [
+  0,
+  20,
+  7,
+  10,
+  3,
+  22,
+  21
+ ],
+ "allorders": {
+  "v36h": {
+   "qasm_sha256": "c8e8a44e104a173ec6122ddb9e1331b52af844b86b93a3d40e1b0e65d82b3566",
+   "loss": 3.8154733224167045e-05,
+   "acceptance": 0.5016415049479503,
+   "d_loss": 0.0
+  },
+  "v36h_star9": {
+   "qasm_sha256": "3af23be510395b44c88b55ed3dc9493f524275649944897c8fdbd5b7ac70abb2",
+   "loss": 3.815473322416705e-05,
+   "acceptance": 0.5016415049479502,
+   "d_loss": 6.776263578034403e-21,
+   "judge_1e6_seed0_8procs": "1-F=np.float64(4.685185443627228e-05) sem=8.63e-06 acc=0.501581 n_2q=327 passed=True (2.9s, 8 procs)"
+  },
+  "v36h_e16": {
+   "qasm_sha256": "b09d15c382f1f578dca44500ad6ebefe2a72efb1b11cff43b3dbaade57f78d03",
+   "loss": 3.9862650268926425e-05,
+   "acceptance": 0.5026378572857046,
+   "d_loss": 1.70791704475938e-06,
+   "judge_1e6_seed0_8procs": "1-F=np.float64(3.280924703772245e-05) sem=6.67e-06 acc=0.502907 n_2q=329 passed=True (3.1s, 8 procs)"
+  }
+ },
+ "counterfactuals": {
+  "ctl": {
+   "stem": "v36h",
+   "qasm_sha256": "c8e8a44e104a173ec6122ddb9e1331b52af844b86b93a3d40e1b0e65d82b3566",
+   "spec": {
+    "name": "ctl",
+    "groups": [
+     {
+      "qubits_idle": [
+       [
+        10,
+        44,
+        44
+       ]
+      ],
+      "scale": 1.0
+     }
+    ]
+   },
+   "loss": 3.8154733224167045e-05,
+   "acceptance": 0.5016415049479503,
+   "d_loss_vs_stem": 0.0
+  },
+  "e_data": {
+   "stem": "v36h",
+   "qasm_sha256": "c8e8a44e104a173ec6122ddb9e1331b52af844b86b93a3d40e1b0e65d82b3566",
+   "spec": {
+    "name": "q21x0_q10x2",
+    "groups": [
+     {
+      "qubits_idle": [
+       [
+        21,
+        44,
+        44
+       ]
+      ],
+      "scale": 0.0
+     },
+     {
+      "qubits_idle": [
+       [
+        10,
+        44,
+        44
+       ]
+      ],
+      "scale": 2.0
+     }
+    ]
+   },
+   "loss": 3.811510302725596e-05,
+   "acceptance": 0.5021436312779939,
+   "d_loss_vs_stem": -3.963019691108501e-08
+  },
+  "both0": {
+   "stem": "v36h",
+   "qasm_sha256": "c8e8a44e104a173ec6122ddb9e1331b52af844b86b93a3d40e1b0e65d82b3566",
+   "spec": {
+    "name": "both0",
+    "groups": [
+     {
+      "qubits_idle": [
+       [
+        21,
+        44,
+        44
+       ],
+       [
+        10,
+        44,
+        44
+       ]
+      ],
+      "scale": 0.0
+     }
+    ]
+   },
+   "loss": 3.5491042051549095e-05,
+   "acceptance": 0.502307486602664,
+   "d_loss_vs_stem": -2.6636911726179505e-06
+  },
+  "q10x2": {
+   "stem": "v36h",
+   "qasm_sha256": "c8e8a44e104a173ec6122ddb9e1331b52af844b86b93a3d40e1b0e65d82b3566",
+   "spec": {
+    "name": "q10x2",
+    "groups": [
+     {
+      "qubits_idle": [
+       [
+        10,
+        44,
+        44
+       ]
+      ],
+      "scale": 2.0
+     }
+    ]
+   },
+   "loss": 3.952383220611354e-05,
+   "acceptance": 0.50181062033143,
+   "d_loss_vs_stem": 1.369098981946493e-06
+  },
+  "e16_pair0": {
+   "stem": "v36h_e16",
+   "qasm_sha256": "b09d15c382f1f578dca44500ad6ebefe2a72efb1b11cff43b3dbaade57f78d03",
+   "spec": {
+    "name": "e16_pairnoise0",
+    "groups": [
+     {
+      "units": [
+       [
+        42,
+        [
+         10,
+         16
+        ]
+       ],
+       [
+        44,
+        [
+         10,
+         16
+        ]
+       ]
+      ],
+      "scale": 0.0
+     }
+    ]
+   },
+   "loss": 3.826652607298472e-05,
+   "acceptance": 0.5035405824920507,
+   "d_loss_vs_stem": -1.596124195941708e-06
+  },
+  "e16_q22gap0": {
+   "stem": "v36h_e16",
+   "qasm_sha256": "b09d15c382f1f578dca44500ad6ebefe2a72efb1b11cff43b3dbaade57f78d03",
+   "spec": {
+    "name": "e16_q22gap0",
+    "groups": [
+     {
+      "qubits_idle": [
+       [
+        22,
+        44,
+        44
+       ]
+      ],
+      "scale": 0.0
+     }
+    ]
+   },
+   "loss": 3.852125466812479e-05,
+   "acceptance": 0.5029709023864101,
+   "d_loss_vs_stem": -1.341395600801635e-06
+  },
+  "e16_pair42_0": {
+   "stem": "v36h_e16",
+   "qasm_sha256": "b09d15c382f1f578dca44500ad6ebefe2a72efb1b11cff43b3dbaade57f78d03",
+   "spec": {
+    "name": "e16_pairZ16_0",
+    "groups": [
+     {
+      "units": [
+       [
+        42,
+        [
+         10,
+         16
+        ]
+       ]
+      ],
+      "scale": 0.0
+     }
+    ]
+   },
+   "loss": 3.9106301765744515e-05,
+   "acceptance": 0.5031393125882814,
+   "d_loss_vs_stem": -7.563485031819106e-07
+  }
+ },
+ "enumeration": {
+  "model": "flagenum.py: GF(2) CSS model, A=|+_L>, data code + reference; D->A ticks 42..44, A-A oriented matchings at 43/44/45, all X/Z readout bases; B->D at 45",
+  "gap_le_1": {
+   "configs": 4198620,
+   "valid_with_flag": 0
+  },
+  "gap_2": {
+   "configs": 18387060,
+   "valid_with_flag": 104,
+   "placements": {
+    "7+10": 22,
+    "10+10": 52,
+    "10+21": 30
+   },
+   "flag_measured_cells": [
+    8,
+    9,
+    15
+   ],
+   "flag_strength": [
+    [
+     12,
+     7
+    ]
+   ]
+  }
+ },
+ "aenc_search": {
+  "note": "AENC asearch.cpp on table_v36c.json (first-order in-situ class score of the A region), <=16 CX; qdouble = A9 encoder ops <= 41 (D10->A9 @42, CX9->15 @43); flag89 = mirror decoder windows",
+  "base": {
+   "encoders": 87,
+   "best_score": 1.8581534014e-06,
+   "best_cx": 12
+  },
+  "qdouble": {
+   "encoders": 49,
+   "best_score": 4.75919740871e-06,
+   "best_cx": 11
+  },
+  "flag89": {
+   "encoders": 0,
+   "best_score": null,
+   "best_cx": null
+  }
+ },
+ "partial_reversal": "no nonempty proper subset of data with B->D before D->A keeps the A rows deterministic (126 subsets checked)"
+}

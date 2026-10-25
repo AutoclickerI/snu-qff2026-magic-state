@@ -264,17 +264,26 @@ def make_model(ops,dets):
                 for i,g in enumerate(gens):
                     if (a|(b<<3))>>i&1:ps=mul(ps,g)
                 Q[T,a,b]=pull(mul(ps,L))
+    record_ps={bit:pull((0,1<<w,1)) for bit,w in records.items()}
+    # comm(F,P) is linear in F: column cx[w] (cz[w]) holds the targets anticommuting with X (Z) on wire w.
+    targets=[r[:3] for r in rots]+proj+sig+list(record_ps.values())
+    cx=[0]*n;cz=[0]*n
+    for j,(x,z,_) in enumerate(targets):
+        while z:b=z&-z;cx[b.bit_length()-1]|=1<<j;z^=b
+        while x:b=x&-x;cz[b.bit_length()-1]|=1<<j;x^=b
+    nr,nd,ne=len(rots),len(proj),len(sig);bits=list(record_ps)
     for f in faults:
-        F=(f['x'],f['z'])
-        f['s']=sum(comm(F,r)<<j for j,r in enumerate(rots) if j>=f['m'])
-        f['d']=sum(comm(F,v)<<j for j,v in enumerate(proj))
-        f['e']=sum(comm(F,v)<<j for j,v in enumerate(sig))
+        x,z,a=f['x'],f['z'],0
+        while x:b=x&-x;a^=cx[b.bit_length()-1];x^=b
+        while z:b=z&-z;a^=cz[b.bit_length()-1];z^=b
+        f['s']=a&((1<<nr)-1)&~((1<<f['m'])-1)
+        f['d']=(a>>nr)&((1<<nd)-1)
+        f['e']=(a>>(nr+nd))&((1<<ne)-1)
+        a>>=nr+nd+ne;f['record_flips']=[]
+        while a:b=a&-a;f['record_flips'].append(bits[b.bit_length()-1]);a^=b
     model=SimpleNamespace(rots=rots,proj_m=proj,Q=Q,cz=0,cxz=0,proj_v=[None]*len(proj),n_post=0,faults=faults,chans=chans)
     model.gen_m=[pull(g) for g in gens];model.native=text;model.steps=steps;model.labels=labels;model.dets=dets
-    model.record_ps={bit:pull((0,1<<w,1)) for bit,w in records.items()}
-    for f in faults:
-        F=(f['x'],f['z'])
-        f['record_flips']=[bit for bit,P in model.record_ps.items() if comm(F,P)]
+    model.record_ps=record_ps
     return model
 def parse_current(src):
     ops=[];dets=[];time=0

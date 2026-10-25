@@ -30,7 +30,9 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 
 ## Evaluators (rank by all orders; the others diagnose, confirm or gate)
 - **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
-  ≈ 3–5 s (v29c 3.3 s, v36c 4.5 s, v36h 5.0 s). `compile_best` contracts in a detector basis: saved XOR sequences keyed
+  ≈ 1 s (v29c 0.8 s, v36h 1.3 s; 7 s at 1 process). Each noise channel is a character table on its signature image
+  (uniform Pauli channels have two levels; channels with the same image merge, v36g 692 → 439 entries; EVALF, from
+  reviewer 11). `compile_best` contracts in a detector basis: saved XOR sequences keyed
   by detector record sets (`basis_warm.json`: v36c from reviewer 9, v36f from INTEG2) are replayed where their rows exist,
   and 1,000 seeded hill-climb steps run only if the best width exceeds `SEARCH_WIDTH` = 9; the plain basis took ≈ 130–190 s
   on v36f/v36g. Values agree with
@@ -45,8 +47,8 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Region counterfactuals**: `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python region.py ../<stem> <spec.json> 16`, spec =
   `{"name", "units": [[time, [qubits]], ...]}`: the named ops' noise channels made perfect (example: `T14/spec_prefix.json`).
 - **Per-channel counterfactuals** (which noise matters, all orders): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python adjoint_ablation.py ../<stem> 72`
-  (one process, 2–25 min with host load; each channel made perfect in turn, values overlap, not additive; reviewer 8's
-  tool; `v36{c,f,g}_adjoint_72.json`). Single Pauli components: `work/lanes/IDEAS/abl.py`.
+  (one process, ≈ 1 min; each channel made perfect in turn, values overlap, not additive; reviewer 8's tool; derivatives
+  from merged-factor gradients; `v36{c,f,g,h}_adjoint_72.json`). Single Pauli components: `work/lanes/IDEAS/abl.py`.
 - **Phantom gadgets** (ideal adjacency, off-grid ancillas, up to 40 qubits): `work/lanes/ACCBUY/sparse40/` (frontend
   for phantom qubits; ACCBUY `ph.py`).
 - **Speed**: `work/lanes/XTIM/speed_predict.py <stem>` (seconds per 1e6 shots; > 20 s is refused by promote.sh).

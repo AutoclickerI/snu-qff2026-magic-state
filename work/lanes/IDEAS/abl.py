@@ -18,38 +18,28 @@ _G = {}
 
 
 def compile_filtered(m, groups, nd, ks, meta, keep):
-    kmap = {q: j for j, q in enumerate(ks)}
-    compiled = []
+    """Weighted faults (weight 0 drops a fault) as sw.compile_channels entries; a channel's no-fault weight is
+    1 - (sum of its kept fault probabilities)."""
+    kept = {}
     for cid, fs in groups.items():
-        md = meta[cid]
-        ws = [keep(md, f) for f in fs]
-        if all(w == 0 for w in ws):
-            continue
-        sigs = [f['d'] | (f['s'] << nd) for f in fs]
-        union = 0
-        for sig, w in zip(sigs, ws):
-            if w:
-                union |= sig
-        scope = tuple(i for i in range(union.bit_length()) if union >> i & 1 and i not in kmap)
-        rmap = {q: j for j, q in enumerate(scope)}
-        terms = []
-        ptot = 0.
-        for f, sig, w in zip(fs, sigs, ws):
-            if not w:
-                continue
-            km = sum(((sig >> q) & 1) << j for q, j in kmap.items())
-            rm = sum(((sig >> q) & 1) << j for q, j in rmap.items())
-            terms.append((km, rm, f['e'], f['p'] * w))
-            ptot += f['p'] * w
-        compiled.append((scope, 1 - ptot, terms))
-    return compiled
+        ws = [keep(meta[cid], f) for f in fs]
+        if any(ws):
+            kept[cid] = [dict(f, p=f['p'] * w) for f, w in zip(fs, ws) if w]
+    saved = {cid: m.chans[cid]['p'] for cid in kept}
+    for cid, fs in kept.items():
+        m.chans[cid]['p'] = sum(f['p'] for f in fs)
+    try:
+        return sw.compile_channels(m, kept, nd, ks)
+    finally:
+        for cid, p in saved.items():
+            m.chans[cid]['p'] = p
 
 
 def _job(arg):
     name, k = arg
     compiled, elim = _G['comp'][name]
     states, weights, emask = _G['kern'][k]
-    factors = sw.factors_for(compiled, states, emask)
+    factors = sw.factors_for(compiled, states, emask, elim['order'])
     vec, _ = sw.contract_selector(factors, elim['order'], len(states))
     return name, k, float(np.dot(weights, vec) / (1 << len(_G['ks'])))
 
@@ -72,7 +62,7 @@ class Ctx:
         comp = {}
         for name, keep in specs.items():
             c = compile_filtered(self.m, self.groups, self.nd, self.ks, self.meta, keep)
-            comp[name] = (c, sw.minfill([set(s) for s, _, _ in c]))
+            comp[name] = (c, sw.minfill([set(e[0]) for e in c]))
         _G.update(comp=comp, kern=self.kern, ks=self.ks)
         jobs = [(n, k) for n in specs for k in range(len(self.keys))]
         import multiprocessing as mp

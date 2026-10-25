@@ -121,7 +121,7 @@ def find_ops(m, eng, groups, nd, ks, trials=TRIALS, seed=80353):
 
 def compile_search(m, eng, groups, nd, kernel_scope):
     compiled = sw.compile_channels(m, groups, nd, kernel_scope)
-    elim = sw.minfill([set(scope) for scope, _, _ in compiled])
+    elim = sw.minfill([set(e[0]) for e in compiled])
     ops, _, _ = find_ops(m, eng, groups, nd, set(kernel_scope))
     if not ops:
         return compiled, elim
@@ -131,7 +131,7 @@ def compile_search(m, eng, groups, nd, kernel_scope):
     moved = {c: [dict(f, d=sum(((f['d'] & r).bit_count() & 1) << i for i, r in enumerate(rows))) for f in fs]
              for c, fs in groups.items()}
     alt = sw.compile_channels(m, moved, nd, kernel_scope)
-    alt_elim = sw.minfill([set(scope) for scope, _, _ in alt])
+    alt_elim = sw.minfill([set(e[0]) for e in alt])
     sw._BASIS_INFO = dict(before=(elim['work_entries'], elim['width']), after=(alt_elim['work_entries'], alt_elim['width']),
                           ops=len(ops), warm=bool(WARM))
     sw._BASIS_OPS = [[_DETKEYS[a], _DETKEYS[b]] for a, b in ops] if _DETKEYS else None
