@@ -1,0 +1,1441 @@
+{
+  "decompositions": {
+    "ccx": "all 8 inputs: exact permutation",
+    "rccx": "all 8 inputs: exact permutation with allowed relative phase"
+  },
+  "linear_identity": {
+    "single_axis_physical_Paulis": 128,
+    "two_axis_Paulis": 16384,
+    "identity": "P_lin=P_judge P_L^(OR(s) xor parity(s)), modulo stabilizers"
+  },
+  "schedules": [
+    {
+      "stem": "a_measX_cut7",
+      "sha256": "872e1a1e8b8693cd00cb0491c51ef7f41e57b645d07d6ca472c3be6e77416970",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 17
+    },
+    {
+      "stem": "a_measX_cut8",
+      "sha256": "872e1a1e8b8693cd00cb0491c51ef7f41e57b645d07d6ca472c3be6e77416970",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 17
+    },
+    {
+      "stem": "a_resetX_cut7",
+      "sha256": "af09ea07ee48cea00ea733d977104014347b863e959f55d2bac6a0770870d2c4",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "a_resetX_cut8",
+      "sha256": "af09ea07ee48cea00ea733d977104014347b863e959f55d2bac6a0770870d2c4",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "a_resetZ_cut7",
+      "sha256": "9b8fcfcb2875b334d0e952bd5d5c5634229ade0c9103be7c6d683db90f6be2bb",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "a_resetZ_cut8",
+      "sha256": "9b8fcfcb2875b334d0e952bd5d5c5634229ade0c9103be7c6d683db90f6be2bb",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "ab_checkedA_cut7",
+      "sha256": "a09812d145153a59ef964f1d2b87febb0f98ac01c7bc9df885909659378e6dec",
+      "native_ticks": 10,
+      "cx": 73,
+      "detectors": 10
+    },
+    {
+      "stem": "ab_checkedA_cut8",
+      "sha256": "a09812d145153a59ef964f1d2b87febb0f98ac01c7bc9df885909659378e6dec",
+      "native_ticks": 10,
+      "cx": 73,
+      "detectors": 10
+    },
+    {
+      "stem": "ab_checkedC_cut7",
+      "sha256": "1f0f19a244e7819144a8fec461f92938ff5829b48c147a649fd5445a1d047210",
+      "native_ticks": 10,
+      "cx": 73,
+      "detectors": 10
+    },
+    {
+      "stem": "ab_checkedC_cut8",
+      "sha256": "1f0f19a244e7819144a8fec461f92938ff5829b48c147a649fd5445a1d047210",
+      "native_ticks": 10,
+      "cx": 73,
+      "detectors": 10
+    },
+    {
+      "stem": "b_measX_cut7",
+      "sha256": "872e1a1e8b8693cd00cb0491c51ef7f41e57b645d07d6ca472c3be6e77416970",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 17
+    },
+    {
+      "stem": "b_measX_cut8",
+      "sha256": "872e1a1e8b8693cd00cb0491c51ef7f41e57b645d07d6ca472c3be6e77416970",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 17
+    },
+    {
+      "stem": "b_resetX_cut7",
+      "sha256": "af09ea07ee48cea00ea733d977104014347b863e959f55d2bac6a0770870d2c4",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "b_resetX_cut8",
+      "sha256": "af09ea07ee48cea00ea733d977104014347b863e959f55d2bac6a0770870d2c4",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "b_resetZ_cut7",
+      "sha256": "9b8fcfcb2875b334d0e952bd5d5c5634229ade0c9103be7c6d683db90f6be2bb",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "b_resetZ_cut8",
+      "sha256": "9b8fcfcb2875b334d0e952bd5d5c5634229ade0c9103be7c6d683db90f6be2bb",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "c_coherent",
+      "sha256": "94b49108b138fa6cd5fdfda561ca13765ecece693fc5e5b87e9a55eec287acd9",
+      "native_ticks": 59,
+      "cx": 103,
+      "detectors": 0
+    },
+    {
+      "stem": "c_coherent_rccx",
+      "sha256": "225068590800d639be71bcbac9252c587691ab6f3a068da0f2e1b26536ffd4d7",
+      "native_ticks": 38,
+      "cx": 79,
+      "detectors": 0
+    },
+    {
+      "stem": "class_cut7",
+      "sha256": "25efeb936047add7f00cbed850f6068c494da84d25a594f4fd2308bbe421a8d2",
+      "native_ticks": 10,
+      "cx": 59,
+      "detectors": 10
+    },
+    {
+      "stem": "class_cut8",
+      "sha256": "25efeb936047add7f00cbed850f6068c494da84d25a594f4fd2308bbe421a8d2",
+      "native_ticks": 10,
+      "cx": 59,
+      "detectors": 10
+    },
+    {
+      "stem": "d_linear_frame",
+      "sha256": "1578828044890299019556e24fc062d74daeea50c8856de3262156309bc7d4bf",
+      "native_ticks": 36,
+      "cx": 41,
+      "detectors": 8
+    },
+    {
+      "stem": "e_zero_syndrome_check",
+      "sha256": "25efeb936047add7f00cbed850f6068c494da84d25a594f4fd2308bbe421a8d2",
+      "native_ticks": 10,
+      "cx": 59,
+      "detectors": 10
+    },
+    {
+      "stem": "square_cut7",
+      "sha256": "e9055369b63140f66cf02746863c341a648d786e05ac6c7039752cfec39194e5",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "square_cut8",
+      "sha256": "e9055369b63140f66cf02746863c341a648d786e05ac6c7039752cfec39194e5",
+      "native_ticks": 10,
+      "cx": 66,
+      "detectors": 10
+    },
+    {
+      "stem": "v37b",
+      "sha256": "5a85ae498568a7ad4f07ba251b3fd8505f8ba7931d593963d03a18ace11ba74c",
+      "native_ticks": 49,
+      "cx": 391,
+      "detectors": 56
+    },
+    {
+      "stem": "v37b_timecut46",
+      "sha256": "5a85ae498568a7ad4f07ba251b3fd8505f8ba7931d593963d03a18ace11ba74c",
+      "native_ticks": 49,
+      "cx": 391,
+      "detectors": 56
+    },
+    {
+      "stem": "v37b_timecut47",
+      "sha256": "5a85ae498568a7ad4f07ba251b3fd8505f8ba7931d593963d03a18ace11ba74c",
+      "native_ticks": 49,
+      "cx": 391,
+      "detectors": 56
+    },
+    {
+      "stem": "v37b_timecut48",
+      "sha256": "5a85ae498568a7ad4f07ba251b3fd8505f8ba7931d593963d03a18ace11ba74c",
+      "native_ticks": 49,
+      "cx": 391,
+      "detectors": 56
+    }
+  ],
+  "d_tail_first_order": {
+    "verdict": "first-order zero for the saved perfect-extraction tail",
+    "enumerated_external_cases": [
+      {
+        "kind": "input measurement flip",
+        "axis": "X",
+        "position": 0,
+        "accepted": true,
+        "loss": 0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "IX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "IY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "IZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "XI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "XX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "XY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "XZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "YI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "YX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "YY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "YZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "ZI",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "ZX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "ZY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 0,
+        "pauli": "ZZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "input measurement flip",
+        "axis": "X",
+        "position": 1,
+        "accepted": true,
+        "loss": 0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "IX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "IY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "IZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "XI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "XX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "XY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "XZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "YI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "YX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "YY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "YZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "ZI",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "ZX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "ZY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 1,
+        "pauli": "ZZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "input measurement flip",
+        "axis": "X",
+        "position": 3,
+        "accepted": true,
+        "loss": 0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "IX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "IY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "IZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "XI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "XX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "XY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "XZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "YI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "YX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "YY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "YZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "ZI",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "ZX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "ZY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "X",
+        "position": 3,
+        "pauli": "ZZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "input measurement flip",
+        "axis": "Z",
+        "position": 0,
+        "accepted": true,
+        "loss": 0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "IX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "IY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "IZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "XI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "XX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "XY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "XZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "YI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "YX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "YY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "YZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "ZI",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "ZX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "ZY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 0,
+        "pauli": "ZZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "input measurement flip",
+        "axis": "Z",
+        "position": 1,
+        "accepted": true,
+        "loss": 0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "IX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "IY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "IZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "XI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "XX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "XY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "XZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "YI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "YX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "YY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "YZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "ZI",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "ZX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "ZY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 1,
+        "pauli": "ZZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "input measurement flip",
+        "axis": "Z",
+        "position": 3,
+        "accepted": true,
+        "loss": 0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "IX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "IY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "IZ",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "XI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "XX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "XY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "XZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "YI",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "YX",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "YY",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "YZ",
+        "accepted": false,
+        "loss": null
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "ZI",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "ZX",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "ZY",
+        "accepted": true,
+        "loss": 0.0
+      },
+      {
+        "kind": "physical correction CX",
+        "axis": "Z",
+        "position": 3,
+        "pauli": "ZZ",
+        "accepted": true,
+        "loss": 0.0
+      }
+    ],
+    "partition": [
+      "lookup/native/idle/initial errors: 4952 exact scan cases, perfect recorded input",
+      "data idles and H errors: one physical coordinate, corrected by judge",
+      "syndrome memory X/Y between input read and physical correction: final source comparison rejects",
+      "input read flip: memory and record change together; exactly one physical correction, no logical frame",
+      "physical CX: a control X/Y is rejected by source comparison; otherwise at most one data Pauli",
+      "single OR-read error: duplicate comparison rejects; single source-read error: memory comparison rejects",
+      "post-read depolarization on a discarded helper: no output effect"
+    ],
+    "unverified": "an actual noisy syndrome extractor before this tail"
+  },
+  "c_native_fault_witness": {
+    "gate_index": 55,
+    "gate": "H q9",
+    "fault": "X after H",
+    "input_syndrome": 0,
+    "final_onehot_mask": 127,
+    "output_syndrome": 0,
+    "output": "logical X or logical Z, according to correction axis",
+    "loss_X": 0.5,
+    "loss_Z": 1.0,
+    "fault_probability": 0.0003333333333333333
+  },
+  "e_accepts_nonzero_syndrome_single_faults": [
+    {
+      "label": "DEPOLARIZE2 IX@[14, 0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 8,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IX"
+    },
+    {
+      "label": "DEPOLARIZE2 IY@[14, 0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 9,
+      "decoded_loss": 0.0,
+      "pauli": "IY"
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[14, 0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 1,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "IZ"
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[14, 0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 8,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XX"
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[14, 0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 9,
+      "decoded_loss": 0.0,
+      "pauli": "XY"
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[14, 0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 1,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "XZ"
+    },
+    {
+      "label": "DEPOLARIZE1 X@[0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 8,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "X"
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 9,
+      "decoded_loss": 0.0,
+      "pauli": "Y"
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[0] after/before native#81 srcL108",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 1,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "Z"
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[15, 1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 16,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IX"
+    },
+    {
+      "label": "DEPOLARIZE2 IY@[15, 1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 18,
+      "decoded_loss": 0.0,
+      "pauli": "IY"
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[15, 1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 2,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "IZ"
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[15, 1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 16,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XX"
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[15, 1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 18,
+      "decoded_loss": 0.0,
+      "pauli": "XY"
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[15, 1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 2,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "XZ"
+    },
+    {
+      "label": "DEPOLARIZE1 X@[1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 16,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "X"
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 18,
+      "decoded_loss": 0.0,
+      "pauli": "Y"
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[1] after/before native#82 srcL109",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 2,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "Z"
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[16, 2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 24,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IX"
+    },
+    {
+      "label": "DEPOLARIZE2 IY@[16, 2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 27,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "IY"
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[16, 2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 3,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IZ"
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[16, 2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 24,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XX"
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[16, 2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 27,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "XY"
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[16, 2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 3,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XZ"
+    },
+    {
+      "label": "DEPOLARIZE1 X@[2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 24,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "X"
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 27,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "Y"
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[2] after/before native#83 srcL110",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 3,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "Z"
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[17, 3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 32,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IX"
+    },
+    {
+      "label": "DEPOLARIZE2 IY@[17, 3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 36,
+      "decoded_loss": 0.0,
+      "pauli": "IY"
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[17, 3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 4,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "IZ"
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[17, 3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 32,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XX"
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[17, 3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 36,
+      "decoded_loss": 0.0,
+      "pauli": "XY"
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[17, 3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 4,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "XZ"
+    },
+    {
+      "label": "DEPOLARIZE1 X@[3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 32,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "X"
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 36,
+      "decoded_loss": 0.0,
+      "pauli": "Y"
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[3] after/before native#84 srcL111",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 4,
+      "decoded_loss": 5.551115123125783e-17,
+      "pauli": "Z"
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[18, 4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 40,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IX"
+    },
+    {
+      "label": "DEPOLARIZE2 IY@[18, 4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 45,
+      "decoded_loss": 0.0,
+      "pauli": "IY"
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[18, 4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 5,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IZ"
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[18, 4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 40,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XX"
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[18, 4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 45,
+      "decoded_loss": 0.0,
+      "pauli": "XY"
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[18, 4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 5,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XZ"
+    },
+    {
+      "label": "DEPOLARIZE1 X@[4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 40,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "X"
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 45,
+      "decoded_loss": 0.0,
+      "pauli": "Y"
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[4] after/before native#85 srcL112",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 5,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "Z"
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[19, 5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 48,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IX"
+    },
+    {
+      "label": "DEPOLARIZE2 IY@[19, 5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 54,
+      "decoded_loss": 0.0,
+      "pauli": "IY"
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[19, 5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 6,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IZ"
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[19, 5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 48,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XX"
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[19, 5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 54,
+      "decoded_loss": 0.0,
+      "pauli": "XY"
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[19, 5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 6,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XZ"
+    },
+    {
+      "label": "DEPOLARIZE1 X@[5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 48,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "X"
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 54,
+      "decoded_loss": 0.0,
+      "pauli": "Y"
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[5] after/before native#86 srcL113",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 6,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "Z"
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[20, 6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 56,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IX"
+    },
+    {
+      "label": "DEPOLARIZE2 IY@[20, 6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 63,
+      "decoded_loss": 0.0,
+      "pauli": "IY"
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[20, 6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 7,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "IZ"
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[20, 6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 56,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XX"
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[20, 6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 63,
+      "decoded_loss": 0.0,
+      "pauli": "XY"
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[20, 6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 7,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "XZ"
+    },
+    {
+      "label": "DEPOLARIZE1 X@[6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 56,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "X"
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 63,
+      "decoded_loss": 0.0,
+      "pauli": "Y"
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[6] after/before native#87 srcL114",
+      "accepted_probability": 1.0,
+      "syndrome_bits": 7,
+      "decoded_loss": 1.1102230246251565e-16,
+      "pauli": "Z"
+    }
+  ]
+}

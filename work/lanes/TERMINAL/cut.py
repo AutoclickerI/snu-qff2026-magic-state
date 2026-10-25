@@ -1,7 +1,10 @@
-"""Cut sweep: all-orders loss of <stem> with every op before tick t0 made noiseless, for each t0 in argv[2:]."""
+"""Operation-owned cut, NOT a chronological noise cut: dropping an earlier
+operation also drops its following idle run. Use price.py's noise_start for
+chronological cuts. At most three workers plus this parent on hippo.
+"""
 import sys, json, io, contextlib
 from pathlib import Path
-sys.path.insert(0, '/home/jihoon/competitions/quantumn/work/lanes/MAIN/sparse')
+sys.path.insert(0, str(Path(__file__).resolve().parent/'sparse'))
 import sparse_walsh as sw, region
 stem = Path(sys.argv[1])
 m, *_ = sw.prepare(stem, True)
@@ -15,5 +18,5 @@ for t in range(T - 5, T + 1):
 for t0 in map(int, sys.argv[2:]):
     spec = dict(name=f'before {t0} perfect', units=[[t, list(qs)] for t, qs, _ in ops if t < t0])
     with contextlib.redirect_stdout(io.StringIO()):
-        r = region.run(stem, spec, 8)
+        r = region.run(stem, spec, 3)
     print(json.dumps(dict(t0=t0, loss=r['loss'], acceptance=r['acceptance'])), flush=True)
