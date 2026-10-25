@@ -1,39 +1,21 @@
 {
- "data_qubits": [
-  0,
-  20,
-  7,
-  10,
-  3,
-  22,
-  21
- ],
- "cx": 327,
- "native_depth": 47,
- "source": "ACCBUY: MAIN/v36g + 4 known-state guards (pre-role resets moved into dead ticks) + q18 read guard funded by 2 MX->reset trades",
- "base": "MAIN/v36g",
- "additions": [
-  "q4: reset 37->36, CX 4->10 @37 (guard on D3 idle); pair 4-5 kept @38-39",
-  "q22: reset 34->33, CX 22->16 @34",
-  "q19: reset 35->33, CX 19->20 @34",
-  "q12: init 18->16, CX 12->6 @17",
-  "q18: reset 40->34, CX 18->19 @35 (read variant, acceptance -0.0017)",
-  "q11: known |0> control, CX 11->10 @32",
-  "q13: known |0> control, CX 13->14 @32",
-  "trades: c181 and c182 MX -> reset (INTEG2 trade list)"
- ],
- "allorders_ev2": 3.815473322405639e-05,
- "allorders_acceptance_ev2": 0.5016415049479503,
- "incumbent_v36g": 3.836054467100275e-05,
- "fast_check_1e6_seed0": {
-  "one_minus_F": 4.685e-05,
-  "stderr": 8.6e-06,
-  "acceptance": 0.501579,
-  "pass": true
- },
- "speed": {
-  "single_process_s_per_1e6": 2.6,
-  "speed_predict_s_per_1e6": 3.58,
-  "class": "FAST"
- }
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "cx": 327,
+  "native_depth": 47,
+  "source": "GLOBAL",
+  "qasm_sha256": "f6ebd4edd6dc4ecb864f9d847907195ae4aa5e547565588886c418bd76afeb89",
+  "allorders": {
+    "loss": 3.654533979991291e-05,
+    "acceptance": 0.49950305795531114,
+    "J_tau": -8.038969371997535e-07,
+    "qasm_sha256": "f6ebd4edd6dc4ecb864f9d847907195ae4aa5e547565588886c418bd76afeb89"
+  }
 }

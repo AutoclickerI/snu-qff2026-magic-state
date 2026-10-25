@@ -1,0 +1,31 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "cx": 327,
+  "native_depth": 47,
+  "source": "ACCBUY: MAIN/v36g + 4 known-state guards (pre-role resets moved into dead ticks) + q18 read guard funded by 2 MX->reset trades",
+  "base": "MAIN/v36g",
+  "additions": [
+    "q4: reset 37->36, CX 4->10 @37 (guard on D3 idle); pair 4-5 kept @38-39",
+    "q22: reset 34->33, CX 22->16 @34",
+    "q19: reset 35->33, CX 19->20 @34",
+    "q12: init 18->16, CX 12->6 @17",
+    "q18: reset 40->34, CX 18->19 @35 (read variant, acceptance -0.0017)",
+    "q11: known |0> control, CX 11->10 @32",
+    "q13: known |0> control, CX 13->14 @32",
+    "trades: c181 and c182 MX -> reset (INTEG2 trade list)"
+  ],
+  "allorders": {
+    "loss": 3.802490327655496e-05,
+    "acceptance": 0.5006791559953582,
+    "J_tau": -6.500314892576373e-08,
+    "qasm_sha256": "6d51608fe5e83308c0885c19bda827edd5ec88d1c583b24679db172ddbc166a6"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "cx": 390,
+  "native_depth": 49,
+  "global_change": {
+    "family": "joint measured preparation and early A readout",
+    "changes": {
+      "family": "joint measured preparation and early A readout",
+      "base": "r46integ_013",
+      "retime": {
+        "q": 14,
+        "old": 48,
+        "new": 47
+      }
+    }
+  },
+  "integ": {
+    "family": "joint measured preparation and early A readout",
+    "base": "r46integ_013",
+    "retime": {
+      "q": 14,
+      "old": 48,
+      "new": 47
+    }
+  },
+  "allorders": {
+    "loss": 3.761821654824e-05,
+    "acceptance": 0.5007854638217537,
+    "J_tau": -2.6867975273472643e-07,
+    "qasm_sha256": "cdaa719694c647348ca0fc5e3b311f1586df7f974ad993c0249fef18b9ee1b0e"
+  },
+  "qasm_sha256": "cdaa719694c647348ca0fc5e3b311f1586df7f974ad993c0249fef18b9ee1b0e",
+  "judge_1e6": {
+    "shots": 1000000,
+    "seed": 0,
+    "passed": true,
+    "gates_ok": true,
+    "sampled_loss": 3.090481317541957e-05,
+    "sampled_acceptance": 0.50154,
+    "sem": 6.38e-06,
+    "seconds": 3.5,
+    "log": "logs/global_r46_m14.judge1e6.txt",
+    "log_sha256": "dff3f19ed8c6a1ef9affd21e27e2d55082bdb3033979a844ad69ca9b0dceb9ca"
+  },
+  "global_layout": {
+    "status": "OPTIMAL",
+    "R": 46,
+    "hops": 10,
+    "paths": {
+      "0": [
+        0,
+        6
+      ],
+      "1": [
+        20
+      ],
+      "2": [
+        7,
+        13,
+        19
+      ],
+      "3": [
+        4,
+        10
+      ],
+      "4": [
+        3,
+        2
+      ],
+      "5": [
+        15,
+        16,
+        22
+      ],
+      "6": [
+        8,
+        9,
+        15,
+        16
+      ]
+    },
+    "A": [
+      7,
+      14,
+      13,
+      9,
+      8,
+      21,
+      15
+    ],
+    "B": [
+      12,
+      26,
+      25,
+      11,
+      3,
+      28,
+      17
+    ],
+    "C": [
+      18,
+      27,
+      24,
+      5,
+      4,
+      29,
+      23
+    ],
+    "late": [
+      3,
+      4,
+      20,
+      26
+    ],
+    "flag": [
+      {
+        "tri": [
+          0,
+          3,
+          4
+        ],
+        "mid": 4,
+        "end1": 3,
+        "end2": 0
+      }
+    ],
+    "flagdata": [
+      0,
+      4
+    ],
+    "helpers": [
+      {
+        "data": 0,
+        "cell": 6,
+        "helper": 0
+      },
+      {
+        "data": 4,
+        "cell": 2,
+        "helper": 1
+      }
+    ],
+    "arrival": {
+      "0": 35,
+      "1": 33,
+      "2": 38,
+      "3": 35,
+      "4": 39,
+      "5": 35,
+      "6": 39
+    },
+    "moved_roles": 15,
+    "moved": [
+      "A0:1->7",
+      "A2:8->13",
+      "A4:2->8",
+      "A5:16->21",
+      "B0:6->12",
+      "B2:13->25",
+      "B4:4->3",
+      "B5:23->28",
+      "B6:27->17",
+      "C0:12->18",
+      "C1:25->27",
+      "C2:19->24",
+      "C3:17->5",
+      "C4:5->4",
+      "C6:28->23"
+    ],
+    "D": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ]
+  },
+  "global_summary": "R46 relocated layout; rebuilt A and B/C; two A flag-gap helpers; acceptance trades; known-state guards and identity pairs; measured preparations on q5; final A14 measurement advanced 48->47"
+}

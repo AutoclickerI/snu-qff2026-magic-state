@@ -3,13 +3,14 @@
 ## Status (2026-10-25 17:20 KST)
 - Board: **rank 1** with v36h_h2517_r342819, **server 3.48827e-5** (17:37; key 3.49e-5); Placeholder 4.906e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36k` from the 18:20 race) against the key boundary below our best and submits the best at :37.
-- **Best expected circuit: v36k** (`work/lanes/MAIN/v36k`: v36i + 35 edits from a greedy joint extension with
-  BUNDLE's v36h-positive 2-bundles and singles; pass 2 over all 3,401 found only −7.4e-10): **all-orders 3.789826e-5
-  (−0.67% vs v36h), acceptance 0.50104**, 364 CX, FAST (7.9 s per 1e6); races from the 19:37 slot. Lineage: v36c (ST2)
-  4.11516e-5 → v36d 4.02862e-5 → v36e (r3) 3.92343e-5 → v36f 3.83761e-5 → v36g 3.83605e-5 → v36h (ACCBUY) 3.815473e-5 →
-  v36i (APROC) 3.809138e-5 → v36j (five bundles) 3.798125e-5 → v36k. Local edits on v36h were not exhausted: greedy
-  joint pricing of bundles that each gain ≤ 3e-8 compounds (−8.3e-8 over v36j).
+  `lanes/MAIN/v37a` from the 20:20 race) against the key boundary below our best and submits the best at :37.
+- **Best expected circuit: v37a** (`work/lanes/MAIN/v37a`, GLOBAL's R46 layout with both A-flag-gap helpers on the
+  grid, rebuilt A and B/C, repaired and acceptance-funded): **all-orders 3.761822e-5 (−0.74% vs v36k), acceptance
+  0.50079**, 390 CX, 49 ticks; races from the 20:37 slot. Lineage: v36c (ST2) 4.11516e-5 → v36e (r3) 3.92343e-5 → v36h
+  (ACCBUY) 3.815473e-5 → v36i (APROC) 3.809138e-5 → v36k (greedy bundles) 3.789826e-5 → v37a (layout R46) 3.761822e-5.
+  Not yet applied to v37a: the greedy bundle polish (worth −2.6e-7 from v36h to v36k), a B/C resource of r3's
+  quality (B/C gate noise removed is worth 4.73e-6 on R46 against 3.81e-6 on v36h), and a late X check (−1.15e-6 as
+  a phantom on v36h).
 - Where the loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
   3.041e-5, of which 2.274e-5 is our terminal class's floor (TERM) and 0.768e-5 leaks that every template tried keeps;
   A, B, C preparation 0.456e-5; prefix and data wait 0.618e-5. Closed today on this layout: an earlier round (R43, worth
@@ -37,7 +38,7 @@ so lane searches are bound by ideas, not evaluation.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P91 | G1 | Room next to the data on the real grid. Off-grid phantoms on v36h, all orders: both A-flag-gap helpers −1.609e-6, late X check S12X (data 0, 20, 3, 22 at 40–43) −1.150e-6, **both −2.705e-6 (−7.1%)** at acceptance 0.4985 (`work/lanes/GLOBAL/room/prices.txt`); the largest lever left above the round. Blocked in v36h only by occupancy: no free cell next to q10/q21 at 44 or over a stabilizer's support at 39–43; R43's layout model found helper room only with +4–6 hops and 4–17 moved roles, never built (closure inferred). Build cheapest-first (cats or chains over free cells, single role or guard swaps, block translations that keep r3 and the A encoder), then R43's layouts with re-synthesized blocks | finalist L < τ − 5e-7 at A ≥ 0.5002, or every realization priced with the cost that ate the prize per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active |
+| 1 | P91 | G1 | Room next to the data on the real grid. Off-grid phantoms on v36h, all orders: both A-flag-gap helpers −1.609e-6, late X check S12X (data 0, 20, 3, 22 at 40–43) −1.150e-6, **both −2.705e-6 (−7.1%)** at acceptance 0.4985 (`work/lanes/GLOBAL/room/prices.txt`); the largest lever left above the round. Blocked in v36h only by occupancy: no free cell next to q10/q21 at 44 or over a stabilizer's support at 39–43; R43's layout model found helper room only with +4–6 hops and 4–17 moved roles, never built (closure inferred). Built: R46 with both helpers, repaired, is v37a (−5.4e-7 vs v36h); next on v37a: r3-quality B/C on R46 cells (≈ 0.9e-6 behind), a late X check, greedy bundle polish | finalist L < τ − 5e-7 at A ≥ 0.5002, or every realization priced with the cost that ate the prize per family | GLOBAL (Codex, `work/lanes/GLOBAL`, jerry ≤ 24) | active: finalist v37a (−5.4e-7 vs v36h); continuing on v37a |
 | 2 | P99 | G1 | A state-specific end of the 15-T phase network (DIGEST #1, reviewer 12 #2–4): synthesize only the completion the target needs, with output placement free, and archive release profiles so A/B/C preparation, the round or GLOBAL's room can move earlier (data waits 28–42 3.88e-6, a tick shorter −0.68e-6); first a model that round-trips v36k | finalist L < τ(v36k) − 3e-7 at A ≥ 0.5002, or three release profiles built downstream with the cost that ate the gain | COMPLETE (Codex, `work/lanes/COMPLETE`, tom ≤ 24) | active |
 | 3 | P100 | G1 | A encoder, nearby data guards and A's partial decoder as one process with transient encoded flags (DIGEST #2, reviewer 11 Task 5, reviewer 12 #6, reviewer 7 M06); A cells 33–42 noiseless −1.64e-6 | finalist as P99, or the window grown until the boundary model no longer fits, with the cost that ate the gain | AJOINT (Codex, `work/lanes/AJOINT`, hippo ≤ 24) | active |
 | 4 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
