@@ -3,11 +3,12 @@
 ## Status (2026-10-25 17:20 KST)
 - Board: **rank 1** with v36h_h2517_r342819, **server 3.48827e-5** (17:37; key 3.49e-5); Placeholder 4.906e-5.
   The hourly loop `work/receipts/draw_loop.sh` races seed-0 draws of the stem in `work/receipts/next_stem.txt` (now
-  `lanes/MAIN/v36i` from the 18:20 race) against the key boundary below our best and submits the best at :37.
-- **Best expected circuit: v36i** (`work/lanes/MAIN/v36i`, APROC: v36h + a joint A-side guard witness and greedy
-  repairs): **all-orders 3.809138e-5 (−0.17% vs v36h), acceptance 0.50673** (+0.0051), 353 CX, FAST (6.1 s per 1e6);
-  `next_stem.txt` races it from the 19:37 slot (each race starts at HH:20 for the next hour's :37). Lineage: v36c (ST2) 4.11516e-5 → v36d 4.02862e-5 → v36e (r3)
-  3.92343e-5 → v36f 3.83761e-5 → v36g 3.83605e-5 → v36h (ACCBUY) 3.815473e-5 → v36i.
+  `lanes/MAIN/v36j` from the 18:20 race) against the key boundary below our best and submits the best at :37.
+- **Best expected circuit: v36j** (`work/lanes/MAIN/v36j`: v36i + five disjoint BUNDLE 2-edit bundles; a greedy
+  joint extension with more bundles and cheap acceptance sources is running): **all-orders 3.798125e-5 (−0.45% vs v36h),
+  acceptance 0.50055**, 357 CX, FAST (9.4 s per 1e6); races from the 19:37 slot. Lineage: v36c (ST2) 4.11516e-5 → v36d
+  4.02862e-5 → v36e (r3) 3.92343e-5 → v36f 3.83761e-5 → v36g 3.83605e-5 → v36h (ACCBUY) 3.815473e-5 → v36i (APROC)
+  3.809138e-5 → v36j.
 - Where the loss sits (FINDINGS "Where v36c's loss sits"): the final round with everything before it noiseless costs
   3.041e-5, of which 2.274e-5 is our terminal class's floor (TERM) and 0.768e-5 leaks that every template tried keeps;
   A, B, C preparation 0.456e-5; prefix and data wait 0.618e-5. Closed today on this layout: an earlier round (R43, worth

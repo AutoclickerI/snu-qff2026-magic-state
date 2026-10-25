@@ -50,7 +50,8 @@ Evidence paths no longer in HEAD resolve through git (FINDINGS header): `git sho
 | v36f: v36e + PRECELL's continuous guards, echo ends and late B/C guards (raced re-draws h2508_r8782, h2509_r154749, h2510_r252072) | server | 3.62209e-5, then 3.58239e-5 and 3.56477e-5 with the κ-rule racer, 293 CX (all-orders 3.83761e-5) | `work/submissions/v36f_h25{08,09,10}_r*.*`, `work/lanes/PRECELL/REPORT.md` |
 | v36g: v36f + INTEG2 re-integration (raced re-draws h2511_r42271, h2512_r151914; neither lowered the key) | server | 3.57728e-5, 3.55529e-5, 320 CX (all-orders 3.83605e-5) | `work/submissions/v36g_h2511_r42271.*`, `work/submissions/v36g_h2512_r151914.*`, `work/lanes/INTEG2/REPORT.md` |
 | v36h: v36g + ACCBUY known-state guards and init-check trades (raced re-draw h2513_r4852) | server | 3.53131e-5, 327 CX (all-orders 3.81547e-5) | `work/submissions/v36h_h2513_r4852.*`, `work/lanes/ACCBUY/REPORT.md` |
-| v36i: v36h + APROC's joint A-side guard witness (CX22→16 at 40 replaces CX10→16 at 39 and MX16 at 40) and greedy guard/echo repairs; racing from the 19:37 slot | all orders | 3.809138e-5, acceptance 0.50673, 353 CX, judge 1e6 6.1 s at 1 process | `work/lanes/MAIN/v36i.*`, `work/lanes/APROC/REPORT.md` |
+| v36i: v36h + APROC's joint A-side guard witness (CX22→16 at 40 replaces CX10→16 at 39 and MX16 at 40) and greedy guard/echo repairs | all orders | 3.809138e-5, acceptance 0.50673, 353 CX, judge 1e6 6.1 s at 1 process | `work/lanes/MAIN/v36i.*`, `work/lanes/APROC/REPORT.md` |
+| v36j: v36i + five disjoint 2-edit bundles from BUNDLE's v36h enumeration (greedy union, 10 edits at ticks 14–35: guard h5 on q4, pair 7_13, CX20→26 at 15 and 32 with MX26 moves, CX19→18 at 35); racing from the 19:37 slot | all orders | 3.798125e-5 (−0.29% vs v36i), acceptance 0.50055, 357 CX, judge 1e6 9.4 s at 1 process | `work/lanes/MAIN/v36j.*`, `work/lanes/BUNDLE/res/b2.jsonl` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |
