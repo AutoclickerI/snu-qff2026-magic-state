@@ -39,8 +39,9 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Phantom gadgets** (ideal adjacency, off-grid ancillas, up to 40 qubits): `work/lanes/ACCBUY/sparse40/`.
 - **Terminal model** (exact second order of any ending with perfect resources): `work/lanes/TERM/terminal_model.py`;
   block-transversal endings: `work/lanes/ENDSEARCH/MODEL.md`.
-- **Judge speed**: `work/fast_check.py <qasm> <json> 1000000 1` prints the seconds; a finalist stays within 1.5× the
-  incumbent's, and `promote.sh` refuses > 20 s per 1e6 shots.
+- **Judge speed**: `work/fast_check.py <qasm> <json> 1000000 1` prints the seconds. `promote.sh` refuses > 20 s per 1e6
+  shots (CONSTRAINTS rule 5); promotion also keeps a finalist within 1.5× the incumbent's time, a default because the
+  hourly race's draw count falls with judge time.
 
 ## Search machinery
 Lanes copy the tools they use into their own dirs, so a fix in one lane reaches no other. Code of removed lanes:
