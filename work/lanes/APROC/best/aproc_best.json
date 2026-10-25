@@ -1,0 +1,54 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "native_depth": 47,
+  "aproc_change": {
+    "base": "d278g_0141",
+    "composition": [
+      "repairp__6_7_5_m4",
+      "d278g_0141__S_pair_5_11_23",
+      "d278g_0141__S_echoZ_18_h24_36_38",
+      "d278g_0141__S_pair_18_19_21",
+      "d278g_0141__S_pair_16_17_23",
+      "d278g_0141__S_pair_15_21_7",
+      "repairp__13_19_26_m25",
+      "d278g_0141__S_g24_25_20_29",
+      "repairp__12_18_37_p",
+      "d278g_0141__S_pair_18_19_27",
+      "repairp__12_13_18"
+    ]
+  },
+  "cx": 353,
+  "all_orders": {
+    "loss": 3.809137946902697e-05,
+    "acceptance": 0.5067293020027641,
+    "J_tau": -3.21032044578233e-08,
+    "sha256": "cc3fc3bd02466d2daa246f2846d3dc291bbdf00611d6776fb9c9903d6dcffd58",
+    "evaluator": {
+      "sparse_walsh.py": "3f9545dd340371b2fa8585850e8681f995befb570e78ad57ab13c71708a4e039",
+      "frontend.py": "b4971e2ce3dfd122cae8a72f432594dce88e708afdc078c9e6b4751f1a1fe987",
+      "fastfill.py": "bdd8a5d825be541e3fac6c0878b7ecbd8fdc50e8f72cfac9819578f11ebb3b77",
+      "basis_warm.json": "afa66e1f76ba2455b17302289cd653732790b3006a3b39d7129b3154712b1289"
+    }
+  },
+  "judge_1e6": {
+    "passed": true,
+    "shots": 1000000,
+    "seed": 0,
+    "loss_MC": 3.652019764336129e-05,
+    "sem": 7.32e-06,
+    "acceptance_MC": 0.506569,
+    "cx": 353,
+    "seconds": 7.8,
+    "log": "logs/aproc_best.judge1e6.txt"
+  },
+  "qualified_finalist": false,
+  "finalist_loss_threshold": 3.785473322483099e-05
+}
