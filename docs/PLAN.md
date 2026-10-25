@@ -29,7 +29,8 @@ rule"); before that racing examined ≈ 7.6× more draws than plain re-draws.
 ## Ranked work
 | Rank | Id | Serves | Work | Done when | Who | State |
 |---|---|---|---|---|---|---|
-| 1 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
+| 1 | P84 | G1 | Earlier round end state (R43, R42 floor) with the prefix kept: EARLY valued a tick at ≈ 0.56e-6 (data wait only) and judged R43 not worth a rebuild, but ACCBUY measured an inserted late tick at +2.6–2.8e-6 (every live qubit pays); price the prize, then rebuild A (EXENC/AENC), B/C (BFLAG pipeline), hops, decoder and guards on EARLY's R43/R42 layouts, keeping the blue check and the A flag | a finalist below v36h, or the block that keeps it above, with numbers | R43 (Claude, `work/lanes/R43`, zebra ≤ 32 processes) | active |
+| 2 | P2 | G1 | Hourly submission of the best verified candidate; keep `next_stem.txt` on the best all-orders stem (R-20261023-10) | final best in by 2026-10-30 10:00 | main session | active |
 
 ## Parked (an identity or legal witness, no price yet; bundles in `work/lanes/MAIN/spec/`, older ones in git)
 - Reviewer 9 (`spec/reviewer9/`, TASKS.json): M03 adjoint environment reuse for local edits, M04 finite-p pair
