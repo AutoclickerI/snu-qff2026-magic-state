@@ -128,6 +128,13 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: CONSTRAINTS rule 11 is suspended while Codex does not answer; new workers are Claude subagents.
 
 
+## R-20261025-2 — 2026-10-25 14:47 KST — Codex reported back, still refused locally
+> "codex subagents are back. use codex subagents from now on again."
+> Q: "Codex is still blocked on this machine ... 429 local_auth_cap with retry_after ≈ 475,000 s ... How should I proceed?" A: "Claude until Codex admits (Recommended)" — option text: "Keep the running Claude lanes (BCX nearly done, BUNDLE just started); test the proxy before each new lane and switch to Codex as soon as it answers."
+
+- Source: this session; the first message restates CONSTRAINTS rule 11 (Codex first), not a new rule.
+- Effect: R-20261025-1 continues until a proxy probe (RESOURCES "Codex") admits Codex; then new workers go to Codex.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |

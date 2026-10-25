@@ -42,7 +42,7 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 | pegasus | — | SSH from zebra times out |
 | Submission quota | one per hour (slot :37) | `work/submit.py`; the board keeps each team's best entry, so every slot is used |
 | Claude subagents | research lanes while Codex is down (R-20261025-1), one dir each under `work/lanes/` | Agent tool, background; the brief names the goal and incumbent numbers, the docs to read, prior lanes' git paths, evaluator commands, host limits, and "no submit, no commit"; the main session verifies and commits |
-| Codex | research lanes when it answers | down since 2026-10-25 02:26 KST (Hermes proxy 127.0.0.1:18645: 429, ~6-day retry on every model); test with a one-line `codex-companion.mjs task` before relaunching; briefs forbid `spawn_agent` |
+| Codex | research lanes when it answers (CONSTRAINTS rule 11) | refused since 2026-10-25 02:26 KST: the local Hermes reserve policy (`~/.hermes/auth_cap.json`, 1% minimum 7-day remaining per credential) returns 429 `local_auth_cap` on every model (retry ≈ 5.5 days at 14:44); probe before each new lane: `T=$(~/.local/bin/hermes-bridge-token); curl -s -H "Authorization: Bearer $T" -H "Content-Type: application/json" -H "x-openai-actor-authorization: hermes-proxy" http://127.0.0.1:18645/v1/responses -d '{"model":"gpt-6-astra","input":"Reply OK","max_output_tokens":16}'` (200 = admitted); briefs forbid `spawn_agent` |
 | Reviewer bundles | independent audits with circuits, certificates and task lists | `work/lanes/MAIN/spec/reviewer{8,9,11}/`; reviewers 3–7: `git show b2a5243:work/lanes/MAIN/spec/reviewer<n>/...` |
 | Upstream | judge and cultivation code | `upstream/snu-qff2026-problem` (76fe47c), `upstream/magic-state-cultivation` (871e68f); not in git |
 

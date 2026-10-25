@@ -17,8 +17,9 @@
 - Reviewer 11 (bundle in `work/lanes/MAIN/spec/reviewer11/`, TASKS.json; untrusted, run with `python -I`): two
   widenings of the B/C search space (P85; PCC closed), the evaluator speedup and planner fix (both done), and four
   closures (FINDINGS). It found no circuit below v36g.
-- **Codex is down** (429, ~6-day retry, from 2026-10-25 02:26 KST). Workers are Claude subagents (R-20261025-1); their
-  dirs are `work/lanes/<LANE>` and they report to the main session, which verifies and promotes.
+- **Codex is refused locally** (429 `local_auth_cap` since 02:26 KST; RESOURCES "Codex" has the probe). Workers are
+  Claude subagents until a probe admits Codex (R-20261025-1, R-20261025-2); their dirs are `work/lanes/<LANE>` and they
+  report to the main session, which verifies and promotes.
 
 ## Critical path
 Lane delta on v36h → all orders (≈ 1 s at 16 processes) → judge 1e6, speed → `next_stem.txt` → hourly race of seed-0
