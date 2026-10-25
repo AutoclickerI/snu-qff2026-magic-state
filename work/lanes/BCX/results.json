@@ -1,0 +1,155 @@
+{
+ "v36h_reproduction": {
+  "all_orders_loss": 3.8154733224167045e-05,
+  "acceptance": 0.5016415049479503,
+  "resplice_r3_byte_identical": true,
+  "resplice_r3_extended_tail_byte_identical": true,
+  "r3_proxy_v36h": {
+   "X2": 2.6844444444444453e-06,
+   "X2leak": 1.68e-06,
+   "XC": 7.28e-06,
+   "leak": 0.0028,
+   "RZ": 0.023866666666666606,
+   "acc1_region": 0.3218666666666604,
+   "J_KZ1.1e-4_KA1e-5": 1.748844444444438e-05
+  }
+ },
+ "region_counterfactuals_v36h": {
+  "r3_prep_perfect": 3.423739453538128e-05,
+  "bc44_perfect": 3.4151838619485235e-05,
+  "prep_and_bc44_perfect": 3.065957544378845e-05
+ },
+ "later_start_feasibility": {
+  "hard_F1": {
+   "T0_34": "INFEASIBLE",
+   "T0_35": "INFEASIBLE",
+   "T0_36": "INFEASIBLE",
+   "T0_34_extended": "INFEASIBLE",
+   "T0_35_extended": "INFEASIBLE"
+  },
+  "safe_F1": {
+   "T0_35": "INFEASIBLE",
+   "T0_36": "INFEASIBLE",
+   "T0_36_extended": "INFEASIBLE",
+   "T0_37_extended": "INFEASIBLE",
+   "T0_34": {
+    "status": "FEASIBLE",
+    "cx": 39,
+    "all_orders": 7.535579324482478e-05,
+    "acceptance": 0.5039387438855789
+   },
+   "T0_34_extended": {
+    "status": "FEASIBLE",
+    "cx": 46,
+    "all_orders": 6.540217280743707e-05,
+    "acceptance": 0.501771947012481
+   }
+  }
+ },
+ "calibration": {
+  "n": 50,
+  "fit": "dL = 1.00*d(X2+X2leak+XC) (+ small RZ term), R2 0.97, rank corr 0.98 (KZ 1.1e-4: 0.985)",
+  "best": "v36h itself"
+ },
+ "h_window_43_44": {
+  "checked": 262456,
+  "cx_only_equivalents": 42,
+  "with_H_equivalents": 0
+ },
+ "tau": 3.815473322483099e-05,
+ "waves_1_2": {
+  "runs": "wave1 c{1,2}{h,s}_{1..3} (1=plain to tick 43, 2=extended through 44; h=hard F1, s=safe F1), wave2 p{1,2}s_k0{a,b}/k3 (Lead 1: safe F1, KXC 0 or 0.3) and b{1,2}h (wide windows kmax 8 wmax 7 extras 0..3); all start r3 (syn/r3.json), base v36h",
+  "proxy": "every run: start J 1.748844e-5 -> best 1.747178e-5 (-1.67e-8 = KA*acc1 only); p runs same delta on their own scale",
+  "all_orders_front": "front_w1.jsonl + front_w2.jsonl (all archived Pareto points priced)",
+  "best_loss_points": {
+   "b1h:435e5b798acada04": [
+    3.815677e-05,
+    0.50248
+   ],
+   "b1h:a472c56de3916078": [
+    3.81624e-05,
+    0.50195
+   ],
+   "b1h:f409b1c96d94cc2c": [
+    3.817229e-05,
+    0.50141
+   ],
+   "b1h:c4e1e6c7cb5cf583": [
+    3.832322e-05,
+    0.50265
+   ]
+  },
+  "acceptance_only_move": "b1h:435e5b798acada04 = cand/b1h_435e5b798acada04 if built: L +2.03e-9, A +0.00084 vs v36h",
+  "result": "no J_tau<0; Lead 1 and Lead 2 closed"
+ },
+ "wave3_fresh_lns": {
+  "f33h": [
+   4.094084e-05,
+   0.50292
+  ],
+  "f33sx": [
+   4.053011e-05,
+   0.50072
+  ],
+  "f34r": [
+   4.476196e-05,
+   0.50149
+  ],
+  "f34rx": [
+   4.476196e-05,
+   0.50149
+  ],
+  "result": "closed: fresh starts stall far above r3"
+ },
+ "r102_witnesses": {
+  "note": "CP-SAT syntheses on contract r102 (ext.contract_r102), base v36h_r102 (ext102.py), objective lifetime/CX not error weight; [L, A, matched floor]",
+  "q102near": [
+   4.891268e-05,
+   0.49659,
+   3.514014e-05
+  ],
+  "q102h": [
+   5.423277e-05,
+   0.49568,
+   3.584757e-05
+  ],
+  "q102hx": [
+   5.409533e-05,
+   0.49552,
+   3.584757e-05
+  ],
+  "q102s": [
+   6.936841e-05,
+   0.4954,
+   3.435272e-05
+  ],
+  "q102sx": [
+   7.604706e-05,
+   0.50136,
+   3.28025e-05
+  ],
+  "q102_quick_s": [
+   6.08027e-05,
+   0.49792,
+   3.636487e-05
+  ],
+  "v36h_floor": 3.43964e-05,
+  "reviewer12_phantom_floors": {
+   "R102": 3.3636035e-05,
+   "R0": 3.445831e-05
+  },
+  "proxy_vs_all_orders": "dL/dJ(X2+X2leak+XC) = 1.32 (q102h), 1.11 (q102s), 1.02 (q102sx), 1.06 (quick_s): proxy undercounts large-X2 states (higher orders); rank by all orders"
+ },
+ "r102_acceptance_fit": {
+  "fit": "dA = -0.00475 - 0.5*dacc1 (vs v36h, 5 witnesses, residual <=0.0002)",
+  "gate": "A>=0.5002 needs acc1 <= 0.3153 (v36h region acc1 0.32187)"
+ },
+ "r102_wave4": {
+  "host": "hippo",
+  "script": "wave4.sh",
+  "launched": "2026-10-25 15:29:50 KST",
+  "seconds": 1800,
+  "pids": "pids/r4*.pid (3267396..3267465, 24 runs)",
+  "outputs": "runs/r4*.{log,json,arch.jsonl}"
+ }
+}
