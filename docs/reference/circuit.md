@@ -37,6 +37,9 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **With FRAME lines and S/Pauli gates**: `work/lanes/WHOLEEND/sparseframe/` (called by WHOLEEND's `price.py`;
   verified against the organizer's raw correctness check).
 - **Exact 2nd + 3rd order with sensitivities**: `work/lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`.
+- **Detector-span completeness** (per new incumbent): `work/lanes/INTEG2/detgap.py` lists the deterministic record
+  parities outside the declared detector span (Clifford surrogate); price each and small combinations by all orders, never
+  prune them by second order (reviewer 17: v37f had 6 missing, c309 gains −8.3e-9 at zero second-order effect).
 - **3-seed official MC**: `work/lanes/MAIN/spec/mc3.py <stem>`; one seed hides ≈ 1%.
 - **Region counterfactuals**: `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python region.py ../<stem> <spec.json> 16`,
   spec = `{"name", "units": [[time, [qubits]], ...]}`: the named ops' noise channels made perfect. The cut sweep
@@ -47,14 +50,17 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Terminal model** (exact second order of any ending with perfect resources): `work/lanes/TERM/terminal_model.py`;
   block-transversal endings: `work/lanes/ENDSEARCH/MODEL.md`.
 - **Judge speed**: `work/fast_check.py <qasm> <json> 1000000 1` prints the seconds. `promote.sh` refuses > 20 s per 1e6
-  shots (CONSTRAINTS rule 5); promotion also keeps a finalist within 1.5× the incumbent's time, a default because the
-  hourly race's draw count falls with judge time.
+  shots (CONSTRAINTS rule 5). Promotion compares expected keys: a finalist wins if its loss gain exceeds
+  ≈ 1.1e-7 × log2(its judge time / the incumbent's), timed on the same host in the same minutes (the hourly race's draw
+  count falls with judge time; FINDINGS "Score spread per stem").
 
 ## Search machinery
 Lanes copy the tools they use into their own dirs, so a fix in one lane reaches no other. Code of removed lanes:
 `git log --oneline -1 -- work/lanes/<LANE>` names the removing commit (use its `^`).
-- Greedy repair on any stem (singles, connected bundles, guard trades, retiming, joint extension, acceptance buying):
-  `work/lanes/MERGE/` (`menu.py`, `lib.py`, `elements.py`, `joint.py`); cached pricing keyed by sha256:
+- Greedy repair on any stem (singles, connected bundles, guard trades, retiming, joint extension, acceptance buying,
+  pass 4's ejections, multi-buyer funding and signature pairs) in `work/lanes/MERGE/`. A known mechanism the grammar cannot
+  express is never searched: the reset-then-herald compound (R one tick earlier, M plus detector in its place; reviewer 17's
+  q17, −8.3e-8, was missing until pass 5). Code: `menu.py`, `lib.py`, `elements.py`, `joint.py`; cached pricing keyed by sha256:
   `work/lanes/BUNDLE/ev.py`.
 - Gadget libraries: `work/lanes/INTEG/` (`lib.py`, `gadgets.py`, `joint.py`), `INTEG2/`, `ACCBUY/` (`kstate.py`,
   `greedy.py`).

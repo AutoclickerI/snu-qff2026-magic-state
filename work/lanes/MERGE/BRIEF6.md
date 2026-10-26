@@ -1,22 +1,34 @@
 <task>
 You are the MERGE lane (work/lanes/MERGE) of our SNU QFF2026 entry: fault-tolerant Steane |T_L> on a 6x6 grid,
 scored by conditional 1-F (lower is better) at acceptance >= 0.5. Read AGENTS.md, docs/GOAL.md, docs/CONSTRAINTS.md,
-then this lane's REPORT.md, CONTINUE4.md and results.json, and the pass-4 code (pass4.py, wide4.py, signature4.py,
-judge4.py, controls4.py). The previous Codex thread for this lane died at 03:22 KST 2026-10-26 when zebra's root disk
-filled (its thread is locked, so you start fresh); everything it wrote under this dir is intact.
+docs/reference/circuit.md, then this lane's REPORT.md, CONTINUE4.md and results.json and the pass-4 code (pass4.py,
+wide4.py, signature4.py, judge4.py, controls4.py). Earlier threads of this lane were stopped; everything under this dir
+is intact, and no MERGE process is running (checked 10:40 KST).
 
-State: pass 4 on v37f gave r1 and then r2 = cand/merge4_r2_79fc464667ef (all orders 3.6211236525327396e-5,
-A 0.5035268387133266, 406 CX), now the incumbent work/lanes/MAIN/v37g. At death the r2-based joint scan had reached
-4,700 proposals (logs37f/), then multi-buyer repairs of the best under-floor results were next. Stale remote workers
-are gone; check by PID.
+New incumbent: work/lanes/MAIN/v37h = your pass-4 r2 (v37g, 3.621123652554788e-5) plus reviewer 17's two edits:
+q17's reset moved from tick 30 to 29 and a Z measurement into new record c[367] with a DETECTOR at tick 30 (MX17@28
+precedes it), and DETECTOR c[309] on an existing deterministic record. All orders 3.611954991494179e-5, A
+0.5015489333258328 (-9.17e-8, the same gain the reviewer measured on v37f). Your grammar could not express the first
+edit: menu.py has no move that adds a new preparation-check measurement, and pd only moves a preparation before an
+existing measurement.
 
-Do: continue pass 4 from the ledger and caches (do not re-price circuits already in the ledger) with r2 as the base:
-finish the joint scan and the multi-buyer repairs, then iterate the widened greedy (CONTINUE4.md items 1-3: PREPFREE's
-measured inits and POLISH's edits where they still transplant, ejection moves, several acceptance buyers per move,
-pairs chosen by error-signature interaction) until a round gains < 1e-9 or you can name why it cannot gain.
-Finalist: L < L(v37g) - 3e-8 at exact A >= 0.5002, judge gates_ok at 1e6, judge time within 1.5x of v37g's (time
-both on the same host, 1 process). Write each new finalist to cand/ as soon as it exists (the main session promotes
-intermediate finalists hourly), and keep REPORT.md (<= 100 lines, each < 2,000 characters) and results.json current.
+Pass 5 on v37h:
+1. Reset-then-herald compounds as one atomic move at every reset and RX/H-prepared |+> (reset one tick earlier, a
+   measurement in the matching basis plus a detector in its old place), with small joint retiming of neighbouring
+   CX/M where the tick before is busy (reviewer 17: q4's reset is risky but MX precedes it). Reviewer screens on v37f:
+   work/lanes/MAIN/spec/reviewer17/results/herald_reset_screen.json and
+   herald_rx_screen.json (untrusted data; run its code only with python -I).
+2. Detector-span completion: list the deterministic record parities outside v37h's declared detector span
+   (work/lanes/INTEG2/detgap.py does this with a Clifford surrogate; on v37f the span had rank 61 of 67, missing
+   c3, c281, c309, c312, c352, c362) and price each and their small combinations by all orders. Never prune these or
+   retimings by second-order mass: every residual direction had zero second-order harmful change on v37f, yet c309
+   gained at all orders. Each added detector costs acceptance; v37h has 0.0013 above the 0.5002 floor, so pair
+   detector or herald gains with your acceptance buyers.
+3. Then the pass-4 grammar (ejections, multi-buyer funding, signature pairs) to convergence (< 1e-9 per round).
+Finalist: L < L(v37h) - 3e-8 at exact A >= 0.5002, judge gates_ok at 1e6, judge time next to v37h's (same host,
+same minutes, 1 process; the main session weighs time by the expected-key rule in circuit.md). Write each new
+finalist to cand/ as soon as it exists (the main session promotes intermediate finalists), and keep REPORT.md
+(<= 100 lines, each < 2,000 characters) and results.json current.
 </task>
 
 <tools>
@@ -46,7 +58,7 @@ REPORT.md, and continue. A finalist does not end the lane; keep improving until 
 </default_follow_through_policy>
 
 <verification_loop>
-Reproduce v37g first (work/lanes/MAIN/v37g: 3.621123652554788e-5, 0.5035268387133266). Every claimed number comes from the evaluator on a
+Reproduce the incumbent v37h first (work/lanes/MAIN/v37h: 3.611954991494179e-5, 0.5015489333258328). Every claimed number comes from the evaluator on a
 saved circuit; record the sha256 of each priced qasm. Run fast_check on each finalist.
 </verification_loop>
 

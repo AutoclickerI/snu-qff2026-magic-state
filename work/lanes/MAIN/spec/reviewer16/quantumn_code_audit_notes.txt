@@ -1,0 +1,104 @@
+quantumn code audit — immutable commit 7f5a18cf386c850ad8a59e195edb14df087f6457
+
+LOCAL REPRODUCTION
+Command: OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python quantumn_code_audit.py
+Use --recompute-baseline to rerun all 73 moments. NumPy is the only external
+dependency of the checked all-orders code. The official xtim Monte Carlo judge
+was not run in this environment.
+
+Baseline independently reproduced with the repository evaluator:
+  v37d loss = 3.676346632406467e-5
+  acceptance = 0.5023547642585299
+  777 channels; 457 factors; conditioned width 12
+  cutoff-omission bound = 3.678889650645882e-14 (excludes FP roundoff)
+  elapsed = 22.089 s, one process in this environment
+The result agrees with the stored documentation to its displayed precision.
+Full receipt: quantumn_snapshot/work/lanes/MAIN/sparse/v37d_canonical_sparse_result.json
+Consolidated receipts and source hashes: quantumn_code_audit_results.json
+
+1. FIXED-TAU RANKING IS NOT MINIMUM CONDITIONAL LOSS
+work/lanes/MERGE/campaign.py:10 fixes TAU at 3.742321460072e-5 (v37b).
+greedy_pass.py:42 chooses the minimum A*(L-TAU) among A >= .5002.
+final_repair.py:29-41 also accepts moves on the fixed J_tau criterion.
+
+An AST-extracted, unmodified choose() was executed on synthetic feasible rows:
+  row A: L=3.676347e-5, A=.50235, J=-3.31422700171691e-7
+  row B: L=3.678000e-5, A=.52000, J=-3.34471592374400e-7
+The live function selects B even though its conditional loss is larger by
+1.653e-8. This is a counterexample to the ranking rule, not evidence that this
+specific physical circuit exists or that the saved incumbent is wrong.
+
+For a fixed current loss tau=L_current, J_tau(candidate)<0 is equivalent to
+L_candidate<L_current because A>0. An adaptive fractional optimization can
+update tau after each accepted candidate. For final choice among an already
+priced feasible set, directly minimize L. Keep useful higher-A alternatives on
+a Pareto frontier rather than silently calling them the lowest-L candidate.
+That change is guaranteed to select the smallest L in the available finite
+set; it does not guarantee a new circuit better than v37d exists.
+
+2. THE SEARCH CONVERGENCE IS SCOPED TO A FROZEN, MONOTONE MENU
+greedy_pass.py:26-29 defines singleton eligibility; :45-46 freezes eligible
+singleton IDs on the initial base. A losing non-funding singleton is absent
+from later combinations even if it would enable a different edit.
+:62 generates selected UNION move, without ejection of selected IDs.
+:65 considers only five under-floor candidates; :67 adds exactly one buyer.
+:74 stops when the selected loss improvement is below 1e-9. The acceptance of
+a stale-J improvement with a negative loss gain can therefore immediately
+terminate the pass after replacing the lower-loss incumbent.
+final_repair.py:14-20 regenerates only previously useful IDs plus five named
+extras; it is not an exhaustive regenerated neighborhood.
+
+menu.py:409-415 calls edits connected only when intervals overlap on a shared
+physical qubit. Conditional acceptance and the final code decoder also couple
+spatially disjoint edits. A concrete mathematical counterexample to physical
+independence: independent depolarizing channels D1(p) on two distinct Steane
+output coordinates, otherwise perfect, each individually have zero decoded
+loss; together their exact decoded loss is 5*p^2/9. Thus the mixed derivative
+is nonzero despite disjoint footprints. This does not establish a missing
+winning edit, only that the pruning graph is a heuristic, not a proof.
+
+Precise follow-up, extending archived C38/C62 rather than claiming a new family:
+build interaction edges from shared detector/rotation/output signature factors,
+use the finite four-point delta of N-tau*A to choose nonlocal combinations,
+and search ejection/multiple-buyer chains of 3-6 edits without pre-discarding
+every individually losing structural edit. Re-evaluate complete combined QASM;
+never add separately measured loss savings. Compare against the same evaluator
+budget and preserve the incumbent in the candidate archive.
+
+3. OUTPUT METADATA CAN COLLIDE BEFORE THE CORRECT CACHE KEY IS USED
+ev37.py:88-89 includes ordered data_qubits in key(), but :104-114 names the
+on-disk stem using only sha256(QASM), and writes its JSON only on first use.
+Calling write_stem(same_text, D1) then write_stem(same_text, D2) reuses D1's JSON
+even though key(sha,D1) != key(sha,D2). AST execution reproduced exactly this.
+campaign.py:16-19 likewise names its cached price by QASM only and compares
+cached data_qubits against global E.D rather than the requested stem's metadata.
+The current fixed-D MERGE lane is not shown corrupted. A variable-output or
+output-order search needs a content ID over both text and ordered outputs,
+plus evaluator/context identity, before using this harness.
+This is a concrete remaining C81 implementation defect, not a new circuit idea.
+
+4. PREPARE'S NOISELESS VALIDITY PREDICATE IS WEAKER THAN THE OFFICIAL GATE
+sparse_walsh.py:101-107 checks scope, A0=1 and zero DECODED loss. It does not
+check that the noiseless output lies in the Steane code before ideal correction.
+The official tprep/exact.py:256-267 explicitly checks that code-space property.
+
+Exact local witness: append H*T^4*H (= a deterministic physical X) to output q6.
+Original v37d: all six noiseless stabilizer expectations = +1 within 4e-16.
+Modified witness: T count 19 (below this evaluator's 20-T limit), A0=1,
+decoded loss=1.1102230246251565e-16, one output stabilizer expectation=-1.
+The current search predicate passes its A0/N0 tests, but the official ideal
+correctness requirement rejects this code-space violation. This example is
+not an optimized circuit and was not submitted or Monte Carlo evaluated.
+
+Add six noiseless output-stabilizer checks (or a shared official exact check)
+before treating an arbitrary synthesized candidate as ideal-valid. Current
+v37d satisfies them, and the repository also runs official gates on finalists;
+there is no evidence here that its recorded incumbent is invalid.
+
+ALREADY-SUGGESTED IDEAS TO AVOID RELABELING
+The archived DIGEST already contains C80 (multi-family wins per CPU racing),
+C42 (persistent workers), C53/C64 (broader all-orders evaluator scope),
+C56/C81 (semantic cache), C38/C62 (interacting bundle search). They may still
+be worth implementing, but are not novel proposals. The fixed-tau executable
+counterexample and the explicit raw-code-space predicate gap are new audit
+findings from the current stored implementation.

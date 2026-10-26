@@ -1,0 +1,121 @@
+{
+  "commit": "7f5a18cf386c850ad8a59e195edb14df087f6457",
+  "ranking": {
+    "evidence": "synthetic counterexample executing the unmodified choose function",
+    "tau": 3.742321460072e-05,
+    "floor": 0.5002,
+    "rows": [
+      {
+        "name": "v37d_like",
+        "loss": 3.676347e-05,
+        "acceptance": 0.50235,
+        "J_tau": -3.31422700171691e-07
+      },
+      {
+        "name": "hypothetical_higher_acceptance",
+        "loss": 3.678e-05,
+        "acceptance": 0.52,
+        "J_tau": -3.3447159237440027e-07
+      }
+    ],
+    "live_choose": "hypothetical_higher_acceptance",
+    "minimum_loss": "v37d_like",
+    "excess_loss": 1.652999999999762e-08,
+    "dynamic_tau_choice": "v37d_like",
+    "singleton_loser_removed_before_combinations": true,
+    "scope": "Shows possible misranking; does not show that an archived physical candidate was missed.",
+    "source": [
+      "work/lanes/MERGE/campaign.py:10-11",
+      "work/lanes/MERGE/greedy_pass.py:26-29,42,45-74",
+      "work/lanes/MERGE/final_repair.py:29-41"
+    ]
+  },
+  "metadata": {
+    "evidence": "synthetic metadata counterexample executing unmodified key/write_stem functions",
+    "same_stem": true,
+    "requested_second_outputs": [
+      20,
+      6,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "stored_second_outputs": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "cache_keys_differ": true,
+    "scope": "Current fixed-output MERGE lane is not shown affected; this breaks variable-output reuse.",
+    "source": [
+      "work/lanes/MERGE/ev37.py:88-89,104-114",
+      "work/lanes/MERGE/campaign.py:15-20"
+    ]
+  },
+  "correctness": {
+    "evidence": "exact noiseless NumPy frontend calculation; official gate read from source",
+    "rows": [
+      {
+        "case": "v37d",
+        "t_count": 15,
+        "ideal_acceptance": 1.0,
+        "ideal_decoded_loss": 0.0,
+        "output_stabilizers": [
+          0.9999999999999997,
+          0.9999999999999997,
+          0.9999999999999997,
+          0.9999999999999997,
+          0.9999999999999997,
+          0.9999999999999997
+        ],
+        "output_in_code_space": true
+      },
+      {
+        "case": "v37d_with_physical_X_on_one_output",
+        "t_count": 19,
+        "ideal_acceptance": 1.0,
+        "ideal_decoded_loss": 1.1102230246251565e-16,
+        "output_stabilizers": [
+          0.9999999999999997,
+          0.9999999999999997,
+          0.9999999999999997,
+          -0.9999999999999997,
+          0.9999999999999997,
+          0.9999999999999997
+        ],
+        "output_in_code_space": false
+      }
+    ],
+    "scope": "Current v37d is valid in this check; this demonstrates a weaker search validity predicate.",
+    "source": [
+      "work/lanes/MAIN/sparse/sparse_walsh.py:101-107",
+      "official tprep/exact.py:256-267"
+    ]
+  },
+  "baseline": {
+    "evidence": "locally reproduced all-orders evaluator result; no official MC run",
+    "loss": 3.676346632406467e-05,
+    "acceptance": 0.5023547642585299,
+    "channels": 777,
+    "factors": 457,
+    "conditioned_width": 12,
+    "seconds": 22.08937230000447,
+    "conditional_loss_kernel_omission_bound": 3.678889650645882e-14
+  },
+  "source_sha256": {
+    "work/lanes/MERGE/greedy_pass.py": "76771eb21e94d097beb3555ea4af3f9217ea0244c5e60a02102c40609be99ce7",
+    "work/lanes/MERGE/campaign.py": "a4ae284ae739f1ee4328f3829398f38a39e4b47614cc8be9767aa61b4d61b9e8",
+    "work/lanes/MERGE/ev37.py": "490b45ad954f794fe583c813ec9b7bdaa67021faeeb68d24ce4394433642f484",
+    "work/lanes/MERGE/final_repair.py": "545ec825099dfedaf0745d259cb7f949698087c10a56fcd3c79f8f09009f845b",
+    "work/lanes/MAIN/sparse/frontend.py": "b4971e2ce3dfd122cae8a72f432594dce88e708afdc078c9e6b4751f1a1fe987",
+    "work/lanes/MAIN/sparse/sparse_walsh.py": "3f9545dd340371b2fa8585850e8681f995befb570e78ad57ab13c71708a4e039",
+    "work/lanes/MAIN/v37d.qasm": "dbe6f8db6e0b990c9f0007c8239283a92c95a429a7b83fc49aa01e8892178af4",
+    "work/lanes/MAIN/v37d.json": "556124ad95763bdc66e9b6c2d57ac10d202b444d2d8321e93f93bb094110b67f"
+  }
+}
