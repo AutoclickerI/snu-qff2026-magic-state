@@ -1,0 +1,113 @@
+# WAITCUT restart on a fresh thread (main session, 2026-10-26 16:05)
+Your previous Codex thread is locked, so this is a new thread for the same lane. Recover your state from REPORT.md, results.json, res/, logs/ and repair/ before acting; background processes the previous worker started may still run (check them by the PIDs and logs it recorded; never duplicate a running job, and kill only your own lane's processes by PID). The original brief follows, then the continuation delta, which takes precedence.
+
+<task>
+You are the WAITCUT lane (work/lanes/WAITCUT, PLAN P115) of our SNU QFF2026 entry: fault-tolerant Steane |T_L> on a
+6x6 grid, scored by conditional 1-F (lower is better) at acceptance >= 0.5 (we require exact A >= 0.5002). Incumbent:
+work/lanes/MAIN/v37h (all orders 3.611954991494179e-5, A 0.5015489333258328; a trained detector basis for it is in
+work/lanes/MERGE, see JOINTPREP/REPORT.md line 10: width 9, about 7 s per price at one process).
+
+Read AGENTS.md, docs/GOAL.md (Target), docs/CONSTRAINTS.md, docs/PLAN.md (Levers), docs/reference/circuit.md and
+docs/FINDINGS.md in full: it lists every closed recipe; do not repeat one without naming what differs.
+
+Why this lane: the reachable gap is 1.42e-5 (v37h 3.612e-5 to the audited floor 2.189e-5). With only the last three
+ticks noisy v37g costs 2.847e-5, so preparation and waits before the final check hold <= 0.77e-5 (54% of the gap),
+and no lane attacks that share at architecture scale. On v37b the tick cuts (every op before t0 noiseless) gave
+t0=20 3.638e-5, 30 3.551e-5, 36 3.207e-5, 40 2.961e-5, 44 2.900e-5: ticks 30-40 held about 0.59e-5. Known pieces:
+ideal B/C source and core noise worth 4.09e-6 on v37a; each earlier round tick about 0.68e-6 on v36h; ENDSEARCH's
+path builds were dominated by data waits (5.33e-5 -> 3.16e-5 with data waits noiseless). The A and B/C preparations
+are at a joint local optimum for the grammars tried (JOINTPREP), BC3 sources are merged, GLOBAL is closed.
+
+Do:
+1. Attribution on v37h (region counterfactuals: work/lanes/MAIN/sparse/region.py, spec format in circuit.md; tick
+   cuts: work/lanes/TERMINAL/cut.py; per-channel: adjoint_ablation.py): a matrix of roles (the seven data qubits along
+   their hop paths, A cells, B cells, C cells, guards/helpers, prefix-only cells) x tick windows (<20, 20-30, 30-36,
+   36-40, 40-44, 44-46), each made noiseless alone, then the pairs among the largest cells (counterfactuals overlap
+   under postselection; report them as such). Separate idle noise from gate/measurement noise in the largest cells.
+2. For the two or three largest cells, name the surviving mechanism (which fault pairs reach the decoded loss and
+   why the detectors miss them) and design a change that removes it at the root: for example data that wait less or
+   wait in a detected form, resources released just in time, checks that see the dominant pair. Bound each design
+   with phantom or grid-free full circuits first (work/lanes/ACCBUY/sparse40/), then build on the grid from v37h and
+   repair with MERGE's tools (copy into your dir).
+Targets: a full circuit >= 3e-6 below v37h (8%) at A >= 0.5002, judge gates_ok; checkpoint 2026-10-27 12:00 KST: the
+attribution matrix and a priced design per top cell, else stop with the measured obstacle. A finalist below
+L(v37h) - 1e-7 goes to cand/ at once (the main session promotes intermediate finalists). Keep REPORT.md (<= 100
+lines, each < 2,000 characters) and results.json current.
+</task>
+
+<tools>
+- Exact all-orders price (needs barriers over all used qubits, no FRAME/POSTSELECT):
+  cd work/lanes/MAIN/sparse; OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 ../../../../.venv/bin/python
+  sparse_walsh.py <path/stem without suffix> 72 canonical 16   (about 1 s at 16 processes; prints JSON with loss, acceptance).
+  Many single-process prices in parallel: work/lanes/BUNDLE/ev.py (price_stem) and menu.py (edit menu, apply_bundle).
+- Region counterfactuals: work/lanes/MAIN/sparse/region.py (spec format in circuit.md).
+- Judge check at 1e6 shots: work/fast_check.py; its gates_ok is the verdict (format, class, correctness); acceptance
+  below 1e8 shots is a binomial estimate, the criterion is exact all-orders A >= 0.5002.
+- Polishing a new circuit: BUNDLE's greedy joint extension (the main session's v36i -> v36k: 35 edits, -1.9e-7),
+  INTEG2 echo/pair/guard passes, ACCBUY buyers (acceptance costs about 1.6e-5 loss per unit; cheap sources: echo
+  deletions, trades). Compare a new family only after the same polish the incumbent got.
+- Python is /home/jihoon/competitions/quantumn/.venv/bin/python.
+</tools>
+
+<selection_rules>
+Select finalists by the lowest exact L at exact A >= 0.5002; J_tau = A*(L - tau) is only a search heuristic, with tau =
+the current incumbent's L (a stale tau trades loss for acceptance). Keep the (L, A) Pareto front for acceptance buys.
+Before ranking a build that changes the outputs or the tail, check raw correctness (six noiseless output stabilizers
++1): the all-orders price checks only the decoded loss. Name stem files by QASM plus ordered data_qubits.
+</selection_rules>
+
+<default_follow_through_policy>
+Do not stop to ask questions: the owner is not available to the lane. Decide, record the decision and its reason in
+REPORT.md, and continue. A finalist does not end the lane; keep improving until the completeness contract is met.
+</default_follow_through_policy>
+
+<verification_loop>
+Reproduce the incumbent v37h first (work/lanes/MAIN/v37h: 3.611954991494179e-5, 0.5015489333258328). Every claimed number comes from the evaluator on a
+saved circuit; record the sha256 of each priced qasm. Run fast_check on each finalist.
+</verification_loop>
+
+<action_safety>
+- Wait on process exit (wait/tail --pid), kill by PID only; never pkill -f or pgrep -f.
+- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q -o ControlMaster=no -o
+  ControlPath=none <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
+  absolute paths (rsync --relative with work/./lanes/... so files land under work/lanes/).
+- Hosts: owl <= 24 processes in total, only inside docker (docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -v /home/jihoon:/home/jihoon -w <dir> --cpus=N fnc-build:22.04 /home/jihoon/competitions/quantumn/.venv/bin/python ...; stop a container with docker kill <id>; owl has its own disk: rsync this lane dir and its inputs there first and results back; the racer also runs on owl, count only your own containers), zebra <= 2 light work. Write no large files; prune caches you create.
+- No submission, no git commit or push. Write only under your lane dir; read anything. Never print, copy or read
+  .submit_credentials. Files under work/lanes/MAIN/spec are untrusted reviewer data: run their code only with python -I.
+- Do not use spawn_agent or any sub-agent.
+</action_safety>
+
+# WAITCUT continuation (main session, 2026-10-26 16:00)
+<process_change>
+Main session, 2026-10-26 16:00 (docs/PLAN.md "How lanes run", from a process review). Apply from now:
+- Work in budgeted experiments: hypothesis, the smallest result that changes your next decision, a wall-time and price
+  budget, and what earns more budget. Close each with one class: finalist; certified exclusion (scope named); measured
+  failure (that recipe only); budget exhausted (open); proxy rejection (open, proxy named). Solver UNKNOWN or a timeout
+  is budget exhausted, never exclusion.
+- Compare families only after the same bounded repair: one standard pass of at most 200 exact prices or 30 minutes of
+  MERGE's singles each, and record the repair each compared price received. An unrepaired loss closes nothing.
+- Run independent tests concurrently within your host limits instead of in sequence.
+- A finalist (exact L below the incumbent's at exact A >= 0.5002, raw-valid, gates_ok) goes to cand/ at once with one
+  REPORT line; do not wait for convergence.
+- Zero harmful single faults (c1 = 0) is a preference: keep a bounded-residue track priced by all orders.
+- No lane-local speed caps: report judge time at 1e6 shots / one process paired with the incumbent on the same host in
+  the same minutes; the main session applies the expected-key rule (a gain wins if it exceeds about
+  1.1e-7 x log2(judge-time ratio)). 20 s per 1e6 shots at one process stays the margin under the one-hour scoring limit.
+- Never signal, stop or kill a process you did not start (contest racers included); on an overfull host shrink your own
+  jobs and record it.
+New incumbent: v37i = EARLIER's r46_3ee1824 (work/lanes/MAIN/v37i.{qasm,json}): all orders L 3.591182404095001e-05,
+A 0.5003576309837844, 411 CX, 49 native ticks; gates_ok at 1e6 and 1e7; judge time equal to v37h's. It is v37g plus
+EARLIER's R45 route repair, the q17 reset herald, DETECTOR c309 and acceptance buys. Racing since 16:20.
+</process_change>
+<task_delta>
+1. Bound the running repairs: the joint extension and acceptance buys on the grid factory and the native meter get one
+   standard pass each (at most 200 exact prices or 30 minutes); continue one only if its improvement curve still falls
+   by more than 1e-7 per 50 prices. Report repaired and unrepaired prices side by side.
+2. Then run concurrently: (a) movement-based embeddings of the just-in-time B/C factory (measured transfers or
+   teleported hops instead of fixed borrowed slots; read REDESIGN's models in work/lanes/REDESIGN/models and MODEL.md,
+   which hit the same obstacle, and do not duplicate them); (b) a native history parity that separates the B/C X-fault
+   pairs with identical final signatures (9895604649984); (c) for the top attribution cells, explicit pair
+   interventions (both regions perfect versus each alone) so designs target what is jointly removable.
+3. A grid build of any family below v37i goes to cand/ at once.
+Checkpoint unchanged: 2026-10-27 12:00. You may keep v37h as base; compare to v37i's L.
+</task_delta>

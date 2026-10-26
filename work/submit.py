@@ -11,6 +11,7 @@ import json
 import pathlib
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -56,6 +57,9 @@ def main():
         print(st, json.dumps(rows, indent=1, ensure_ascii=False)[:4000])
         st, nxt = call("/rest/v1/rpc/team_next_submission", {"p_team_name": team, "p_password": pw})
         print("next:", st, nxt)
+    elif cmd == "key":  # our board key (3 significant figures), inf if we have no entry
+        st, rows = call(f"/rest/v1/qff_leaderboard?select=score_key&team_name=eq.{urllib.parse.quote(team)}", method="GET")
+        print(min((float(r["score_key"]) for r in rows), default=float("inf")) if st == 200 else -1)
     elif cmd == "wait":  # seconds until the server accepts our next submission
         st, nxt = call("/rest/v1/rpc/team_next_submission", {"p_team_name": team, "p_password": pw})
         print(nxt[0]["wait_seconds"] if st == 200 and not nxt[0]["pending"] else -1)

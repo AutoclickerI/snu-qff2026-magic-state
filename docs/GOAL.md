@@ -7,16 +7,16 @@ close, 2026-10-30 12:00 KST (last loop slot about 11:24). The key, the best race
 to fewer CX, then the earlier entry.
 
 ## Target
-Official 1-F now 3.338e-5 ([SOTA](SOTA.md)); true mean 3.612e-5 (v37h); goal 1e-5, out of reach: every admissible
-circuit has true mean ≥ 2.189e-5 (reviewer 18, audited; FINDINGS). Reachable gap ≤ 1.42e-5 of mean (39%); a 1% lower
+Official 1-F now 3.338e-5 ([SOTA](SOTA.md)); true mean 3.591e-5 (v37i); goal 1e-5, out of reach: every admissible
+circuit has true mean ≥ 2.189e-5 (reviewer 18, audited; FINDINGS). Reachable gap ≤ 1.40e-5 of mean (39%); a 1% lower
 mean ≈ 0.5σ of key. PLAN "Levers" sizes each lever against this gap. Next team 3.856e-5.
 
 ## Subgoals (ranked)
 
 | Rank | Id | Subgoal | Serves G0 by | Done when |
 |---|---|---|---|---|
-| 1 | G1 | Lowest true 1-F circuit that passes every judge gate, submitted | it is the key; a lower true mean keeps the seed-0 key low | our key is below every competitor's at the deadline and every PLAN lever is built or closed |
-| 2 | G2 | Fast, predictable search with solvers and validated evaluators (R-20261023-4, R-20261023-5) | turns each idea into a ranked, verified candidate in minutes | evaluator ranking matches 3-seed official means; one all-orders price ≤ 1 s, FRAME lines included; edit to official score < 5 min; the repair grammar expresses every mechanism in FINDINGS and each incumbent's detector span is complete |
+| 1 | G1 | Lowest true 1-F circuit that passes every judge gate, submitted | it is the key; a lower true mean keeps the seed-0 key low | our key is below every competitor's at the deadline and each PLAN lever got a budget sized by its gain and an outcome |
+| 2 | G2 | Fast, predictable search with solvers and validated evaluators (R-20261023-4, R-20261023-5) | turns each idea into a ranked, verified candidate in minutes | evaluator ranking matches 3-seed official means; one all-orders price ≤ 1 s, FRAME lines included; edit to official score < 5 min; every lane prices through one shared, versioned, cached tool set |
 | 3 | G3 | Bounds and the gap per loss source | picks the lever with the most headroom | current best has floors and a loss split (FINDINGS) |
 | 4 | G4 | Fewer 2-qubit gates at equal key | wins ties | our best entry has the fewest CX among teams at our key |
 

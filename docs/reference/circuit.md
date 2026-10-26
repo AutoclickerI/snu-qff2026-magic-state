@@ -22,8 +22,9 @@ round R45 (one tick earlier than v37a's).
 Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes and timing are design variables.
 
 ## Evaluators (rank by all orders; the others diagnose, confirm or gate)
-- **Selection**: the finalist is the lowest exact L at exact A ≥ 0.5002. J_τ = A(L − τ) is only a search heuristic,
-  with τ = the current incumbent's L: MERGE's τ fixed at v37b's L made `greedy_pass.choose` trade loss for acceptance
+- **Selection** (the one promotion policy; lanes add no caps of their own): the finalist is the lowest exact L at exact
+  A ≥ 0.5002, raw-valid, `gates_ok`, by the expected-key speed rule below; c1 = 0 is a preference, not a gate.
+  J_τ = A(L − τ) is only a search heuristic, with τ = the current incumbent's L: MERGE's τ fixed at v37b's L made `greedy_pass.choose` trade loss for acceptance
   (cost so far 6.5e-11). Keep the (L, A) Pareto front for later acceptance buys.
 - **Validity before ranking**: the all-orders price checks only the decoded loss; a build that changes the outputs or
   the tail must first have its six noiseless output stabilizers at +1 (the judge's raw code-space check; reviewer 16:
@@ -50,12 +51,13 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Terminal model** (exact second order of any ending with perfect resources): `work/lanes/TERM/terminal_model.py`;
   block-transversal endings: `work/lanes/ENDSEARCH/MODEL.md`.
 - **Judge speed**: `work/fast_check.py <qasm> <json> 1000000 1` prints the seconds. `promote.sh` refuses > 20 s per 1e6
-  shots (CONSTRAINTS rule 5). Promotion compares expected keys: a finalist wins if its loss gain exceeds
+  shots, our margin under the one-hour scoring limit (CONSTRAINTS rule 5; ≈ 27 server minutes at 1e8). Promotion compares expected keys: a finalist wins if its loss gain exceeds
   ≈ 1.1e-7 × log2(its judge time / the incumbent's), timed on the same host in the same minutes (the hourly race's draw
   count falls with judge time; FINDINGS "Score spread per stem").
 
 ## Search machinery
-Lanes copy the tools they use into their own dirs, so a fix in one lane reaches no other. Code of removed lanes:
+Shared, versioned tools go to `work/tools/` (P118); lanes still running copied tools in their own dirs, where a fix in one
+lane reaches no other, switch at their next restart. Code of removed lanes:
 `git log --oneline -1 -- work/lanes/<LANE>` names the removing commit (use its `^`).
 - Greedy repair on any stem (singles, connected bundles, guard trades, retiming, joint extension, acceptance buying,
   pass 4's ejections, multi-buyer funding and signature pairs) in `work/lanes/MERGE/`. A known mechanism the grammar cannot
