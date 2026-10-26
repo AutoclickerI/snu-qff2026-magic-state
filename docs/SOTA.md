@@ -6,9 +6,9 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v37f_h2609_r343039**, server 1-F = 3.338e-5 (key 3.34e-5), 405 CX, acceptance 0.503, submitted 2026-10-26 09:24 KST (`work/receipts/seq_v37f_h2609_r343039.txt`; best raced seed-0 draw of `work/lanes/MAIN/v37f`, all-orders 3.630561e-5). v37f's hourly bests from 03:40 to 09:24 KST: 3.376, 3.370, 3.372, 3.356, 3.351, 3.338e-5 (the 04:37 slot had no draw below the board key).
+Ours on the board (**rank 2**, team shown as "초정밀모델제어학회쨩"): **v37i_h2617_r1992**, server 1-F = 3.325e-5 (key 3.32e-5), 411 CX, acceptance 0.500, submitted 2026-10-26 17:29 KST (`work/receipts/seq_v37i_h2617_r1992.txt`; best raced seed-0 draw of `work/lanes/MAIN/v37i`, all-orders 3.591182e-5).
 
-Best competitor: Placeholder 3.856e-5 (key 3.86e-5), 201 CX, acceptance 0.579, submitted 2026-10-25 22:53 KST; then @nize_reze 5.847e-5, Inae 7.751e-5, Noah 2.402e-4. Board read 2026-10-26 10:30 KST; refresh with `work/submit.py board`.
+Rank 1: **Placeholder 3.086e-5** (key 3.09e-5), 293 CX, acceptance 0.510, submitted 2026-10-26 19:31 KST; their earlier entries 6.286e-5 at 169 CX (10-24), 3.856e-5 at 201 CX (10-25 22:53). Then @nize_reze 5.847e-5, Inae 7.751e-5, Noah 2.17e-4. Board read 2026-10-26 19:42 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 The submitted lineage from v4 (1.534e-4) to v36g is in `git show b9051547^:docs/SOTA.md`; its circuits are in git history under `work/submissions/` and `work/lanes/MAIN/`.
