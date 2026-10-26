@@ -143,6 +143,14 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Source: this session (message 15:51 KST).
 - Effect: CONSTRAINTS rule 14. The digest itself was a one-time instruction (DIGEST lane, PLAN P93/P94).
 
+## R-20261026-1 — 2026-10-26 14:00 KST — redesign lane now
+> "so what larger gain can we get from now? what is our limit and how can we approach there?"
+> Q: "How much should I bet on a from-scratch redesign (new layout and starting stage built around a cheaper final check) versus locking in the steady gains?" A: "Redesign lane now"
+
+- Source: this session (question-tool answer).
+- Effect: one-time decision, not a rule: PLAN P116 (REDESIGN lane started 2026-10-26 on jerry, racing cores ceded),
+  alongside racing, repair lanes and WAITCUT.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
