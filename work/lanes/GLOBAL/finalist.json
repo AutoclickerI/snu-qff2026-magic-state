@@ -1,35 +1,29 @@
 {
-  "path": "cand/global_r46_m14.qasm",
-  "sha256": "cdaa719694c647348ca0fc5e3b311f1586df7f974ad993c0249fef18b9ee1b0e",
-  "loss": 3.761821654824e-05,
-  "acceptance": 0.5007854638217537,
-  "J_tau": -2.6867975273472643e-07,
-  "improvement": 5.365166765909933e-07,
-  "threshold_margin": 3.651667659099471e-08,
+  "path": "cand/global_v37g_bcflip.qasm",
+  "sha256": "10f7b7cd5522c0670541f92addd3b3baaa4a44c73dded7c8099fd2f7a56e8eb8",
+  "loss": 3.61903056326152e-05,
+  "acceptance": 0.5003222863958133,
+  "J_tau": -1.0472192098070637e-08,
   "judge_1e6": {
     "shots": 1000000,
     "seed": 0,
-    "passed": true,
     "gates_ok": true,
-    "sampled_loss": 3.090481317541957e-05,
-    "sampled_acceptance": 0.50154,
-    "sem": 6.38e-06,
-    "seconds": 3.5,
-    "log": "logs/global_r46_m14.judge1e6.txt",
-    "log_sha256": "dff3f19ed8c6a1ef9affd21e27e2d55082bdb3033979a844ad69ca9b0dceb9ca"
+    "passed": true,
+    "seconds": 14.4,
+    "log": "logs/v37g_bcport_01.judge1e6.txt",
+    "log_sha256": "13ea53e425e0cb1905b900d134b5e89a14671e763ff33ffbb0f990f52eb352e1"
   },
-  "data_qubits": [
-    6,
-    20,
-    19,
-    10,
-    2,
-    22,
-    16
-  ],
-  "native_depth": 49,
-  "cx": 390,
-  "bytes": 20304,
-  "commands": 649,
-  "resets_and_measurements": 152
+  "status": "verified; complete",
+  "selection": "lowest exact loss at exact A>=0.5002",
+  "reference_incumbent": "v37g",
+  "incumbent_sha256": "79fc464667ef82bc8b9b9113a5807a1d9459132e4a4f72fb8a8e68ceaaf6645c",
+  "tau_current": 3.6211236525327396e-05,
+  "improvement": 2.0930892712194536e-08,
+  "J_current": -1.0472192098070637e-08,
+  "J_v37a": -7.144156541303992e-07,
+  "tau": 3.6211236525327396e-05,
+  "paired_1e6": {
+    "v37g_control": 10.86773574250401,
+    "v37g_bcport_01": 9.344156469509471
+  }
 }

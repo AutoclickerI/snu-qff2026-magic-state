@@ -60,12 +60,21 @@ for b in S1:
             continue
         emit(cc, f'{mode}_{b}', dict(family='trade', kind='check', bit=b, mode=mode))
 # Measurement preparation with exactly propagated, detector-compensated byproducts.
-from measured_init import variants
+from measured_init import variants,checked_variants,fused_variants
 for cc,spec in variants(c):
     emit(cc,f"minit{spec['axis']}_{spec['q']}_{spec['t']}",dict(family='measured_init',**spec))
-    checked=copy.deepcopy(cc)
-    checked['tail'].append(f"// DETECTOR c[{spec['bit']}]")
-    emit(checked,f"minitcheck{spec['axis']}_{spec['q']}_{spec['t']}",dict(family='checked measured_init',**spec))
+for cc,spec in checked_variants(c):
+    emit(cc,f"checkinit{spec['axis']}_{spec['q']}_{spec['t']}",dict(family='checked_initialization',**spec))
+for cc,spec in fused_variants(c):
+    emit(cc,f"fuse{spec['axis']}_{spec['q']}_{spec['old_measure']}_{spec['reset_t']}",dict(family='fused_preparation',**spec))
+# Existing measured preparations may have a deterministic zero outcome without a literal check.
+# Numerical ideal validation rejects random records; the final judge independently verifies legality.
+for o in c['ops']:
+    if unit(o).name not in ('MEASURE','MX'):continue
+    b=bits_of(o)[0]
+    if in_span(c,b):continue
+    cc=copy.deepcopy(c);cc['tail'].append(f'// DETECTOR c[{b}]')
+    emit(fix(cc),f'checkrec_{b}',dict(family='existing_record_check',bit=b,q=unit(o).qs[0],t=o['t'],axis='X' if unit(o).name=='MX' else 'Z'))
 (H / f'singles_{base}.list').write_text(' '.join(names))
 (H / f'singles_{base}.json').write_text(json.dumps(specs))
 print(len(names), collections.Counter(s['family'] for s in specs.values()))

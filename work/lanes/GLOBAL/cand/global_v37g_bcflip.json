@@ -1,0 +1,60 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "cx": 406,
+  "native_depth": 48,
+  "global_change": {
+    "family": "BC3 residual delta on v37g",
+    "base": "v37g_control",
+    "modules": [
+      "middle25_24"
+    ],
+    "record_sources": {
+      "root0": 352,
+      "root1": 361,
+      "root2": 353
+    }
+  },
+  "allorders": {
+    "loss": 3.61903056326152e-05,
+    "acceptance": 0.5003222863958133,
+    "J_tau": -7.144156541303992e-07,
+    "qasm_sha256": "10f7b7cd5522c0670541f92addd3b3baaa4a44c73dded7c8099fd2f7a56e8eb8"
+  },
+  "qualification": {
+    "path": "cand/global_v37g_bcflip.qasm",
+    "sha256": "10f7b7cd5522c0670541f92addd3b3baaa4a44c73dded7c8099fd2f7a56e8eb8",
+    "loss": 3.61903056326152e-05,
+    "acceptance": 0.5003222863958133,
+    "J_tau": -1.0472192098070637e-08,
+    "judge_1e6": {
+      "shots": 1000000,
+      "seed": 0,
+      "gates_ok": true,
+      "passed": true,
+      "seconds": 14.4,
+      "log": "logs/v37g_bcport_01.judge1e6.txt",
+      "log_sha256": "13ea53e425e0cb1905b900d134b5e89a14671e763ff33ffbb0f990f52eb352e1"
+    },
+    "status": "verified; complete",
+    "selection": "lowest exact loss at exact A>=0.5002",
+    "reference_incumbent": "v37g",
+    "incumbent_sha256": "79fc464667ef82bc8b9b9113a5807a1d9459132e4a4f72fb8a8e68ceaaf6645c",
+    "tau_current": 3.6211236525327396e-05,
+    "improvement": 2.0930892712194536e-08,
+    "J_current": -1.0472192098070637e-08,
+    "J_v37a": -7.144156541303992e-07,
+    "tau": 3.6211236525327396e-05,
+    "paired_1e6": {
+      "v37g_control": 10.86773574250401,
+      "v37g_bcport_01": 9.344156469509471
+    }
+  }
+}

@@ -48,3 +48,27 @@ def variants(c):
         if unit(o).name not in ('RESET','RX'):continue
         result=convert_init(c,i)
         if result is not None:yield result
+
+def checked_variants(c):
+    """A deterministic zero outcome needs no output-frame restriction: the new detector fixes its bit to zero."""
+    for index,o in enumerate(c['ops']):
+        v=unit(o)
+        if v.name not in ('RESET','RX'):continue
+        cc=copy.deepcopy(c);q=v.qs[0];b=bit(cc);axis='X' if v.name=='RX' else 'Z'
+        cc['ops'][index]['lines']=([f'h q[{q}];'] if axis=='X' else [])+[f'measure q[{q}] -> c[{b}];']+([f'h q[{q}];'] if axis=='X' else [])
+        cc['tail'].append(f'// DETECTOR c[{b}]')
+        yield fix(cc),dict(q=q,t=o['t'],axis=axis,bit=b,postselected_zero=True)
+
+def fused_variants(c):
+    """Move a preceding same-basis measurement onto a redundant reset slot, retaining its checked record."""
+    for index,o in enumerate(c['ops']):
+        v=unit(o)
+        if v.name not in ('RESET','RX'):continue
+        q=v.qs[0];before=[(i,p) for i,p in enumerate(c['ops']) if q in unit(p).qs and p['t']<o['t']]
+        if not before:continue
+        j,p=max(before,key=lambda x:x[1]['t']);pv=unit(p)
+        if pv.name!=('MX' if v.name=='RX' else 'MEASURE'):continue
+        b=bits_of(p)[0];cc=copy.deepcopy(c);cc['ops'][j]['t']=o['t'];cc['ops'].pop(index)
+        added=not in_span(c,b)
+        if added:cc['tail'].append(f'// DETECTOR c[{b}]')
+        yield fix(cc),dict(q=q,old_measure=p['t'],reset_t=o['t'],bit=b,axis='X' if v.name=='RX' else 'Z',added_detector=added)

@@ -5,7 +5,7 @@ from price import price,ROOT,TAU
 sys.path.insert(0,str(ROOT/'repairtools'))
 from lib import read,save,remove_check,prep_options,delay_preps,BITRE
 
-def main(base,tag,jobs,floor):
+def main(base,tag,jobs,floor,fast=False):
     current=base;r=price(ROOT/'builds'/current,1);accepted=[]
     for step in itertools.count():
         if r['acceptance']>=floor:break
@@ -32,10 +32,19 @@ def main(base,tag,jobs,floor):
             projected=r['J_tau']+delta*max(1,need/da)
             choices.append((projected,x['J_tau'],n,sp,x))
         if not choices:raise RuntimeError('No acceptance-increasing trade')
+        if fast:
+            import general_atoms
+            screened=[]
+            for item in sorted(choices):
+                screen=general_atoms.analyze(ROOT/'builds'/item[2])
+                (ROOT/'logs'/(item[2]+'.speed_screen.json')).write_text(json.dumps(screen,indent=2)+'\n')
+                if screen['prediction']=='FAST':screened.append(item);break
+            choices=screened
+            if not choices:raise RuntimeError('No fast acceptance-increasing trade')
         _,_,current,sp,r=min(choices);accepted.append(dict(path=current,trade=sp,loss=r['loss'],acceptance=r['acceptance']))
         print(json.dumps(dict(chosen=current,trade=sp,loss=r['loss'],acceptance=r['acceptance'],J_tau=r['J_tau'])),flush=True)
     out=dict(base=base,best=current,loss=r['loss'],acceptance=r['acceptance'],J_tau=r['J_tau'],trades=accepted,scope='full singleton-check/prep-delay menu repriced at every joint step')
     (ROOT/'logs'/f'{tag}.buy_result.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out),flush=True)
 
 if __name__=='__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('base');ap.add_argument('tag');ap.add_argument('--jobs',type=int,default=22);ap.add_argument('--floor',type=float,default=0.5002);a=ap.parse_args();main(a.base,a.tag,a.jobs,a.floor)
+    ap=argparse.ArgumentParser();ap.add_argument('base');ap.add_argument('tag');ap.add_argument('--jobs',type=int,default=22);ap.add_argument('--floor',type=float,default=0.5002);ap.add_argument('--fast',action='store_true');a=ap.parse_args();main(a.base,a.tag,a.jobs,a.floor,a.fast)
