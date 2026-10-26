@@ -6,9 +6,9 @@ grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output).
 sit exactly there. Checked 2026-10-23.
 
 ## Current best
-Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v37c_h2600_r43418**, server 1-F = 3.428e-5 (key 3.43e-5), 400 CX, acceptance 0.506, submitted 2026-10-26 00:40 KST (`work/receipts/seq_v37c_h2600_r43418.txt`; best raced seed-0 draw of `work/lanes/MAIN/v37c`, all-orders 3.690403e-5).
+Ours on the board (rank 1, team shown as "초정밀모델제어학회쨩"): **v37f_h2609_r343039**, server 1-F = 3.338e-5 (key 3.34e-5), 405 CX, acceptance 0.503, submitted 2026-10-26 09:24 KST (`work/receipts/seq_v37f_h2609_r343039.txt`; best raced seed-0 draw of `work/lanes/MAIN/v37f`, all-orders 3.630561e-5). v37f's hourly bests from 03:40 to 09:24 KST: 3.376, 3.370, 3.372, 3.356, 3.351, 3.338e-5 (the 04:37 slot had no draw below the board key).
 
-Best competitor: Placeholder 3.856e-5 (key 3.86e-5), 201 CX, acceptance 0.579, submitted 2026-10-25 22:53 KST (4.005e-5 an hour earlier); then @nize_reze 6.02e-5, Inae 7.75e-5. Board read 2026-10-26 00:12 KST; refresh with `work/submit.py board`.
+Best competitor: Placeholder 3.856e-5 (key 3.86e-5), 201 CX, acceptance 0.579, submitted 2026-10-25 22:53 KST; then @nize_reze 5.847e-5, Inae 7.751e-5, Noah 2.402e-4. Board read 2026-10-26 10:30 KST; refresh with `work/submit.py board`.
 
 ## Comparisons
 The submitted lineage from v4 (1.534e-4) to v36g is in `git show b9051547^:docs/SOTA.md`; its circuits are in git history under `work/submissions/` and `work/lanes/MAIN/`.
@@ -22,6 +22,7 @@ The submitted lineage from v4 (1.534e-4) to v36g is in `git show b9051547^:docs/
 | v37d: v37c + MERGE pass 2 (AJOINT's q9 guard/check reorder moved to R45, source-check trades, echo protection, retiming, guard repairs; two greedy passes to convergence); racing from the 01:37 slot (race 00:20–01:20) | all orders | **3.676347e-5 (−0.38% vs v37c)**, acceptance 0.50235, 406 CX, 48 ticks; judge 1e7 3.784e-5 ± 2.3e-6, gates_ok, same speed | `work/lanes/MAIN/v37d.*`, `work/lanes/MERGE/REPORT.md` |
 | v37e: v37d + MERGE pass 3 stage `bc3_sources` (GLOBAL's BC3 joint B/C sources: actual earlier releases, checked same-basis measurements, fresh measured-plus sources with propagated detector byproducts, ported onto v37d); raced 01:20–02:20 for the 02:37 slot | all orders | **3.637096e-5 (−1.07% vs v37d)**, acceptance 0.50243, 406 CX; judge 1e7 3.833e-5 ± 2.4e-6, gates_ok; judge time 1.23–1.48× v37d's | `work/lanes/MAIN/v37e.*`, `work/lanes/MERGE/REPORT.md` |
 | v37f: MERGE pass 3 on v37d: GLOBAL's BC3 modules R+L+q3 transported (−3.92e-7; R alone +7.6e-8, gains only with q3), POLISH transports, six greedy rounds to convergence (last +2.8e-10); races from the 03:37 slot (race 02:20–03:20) | all orders | **3.630561e-5 (−0.18% vs v37e, −1.25% vs v37d)**, acceptance 0.50346, 405 CX, 48 ticks; judge 4e7 3.769e-5 ± 1.2e-6, gates_ok; judge time 0.72× v37e's | `work/lanes/MAIN/v37f.*`, `work/lanes/MERGE/REPORT.md` |
+| v37g: MERGE pass 4 on v37f, source transplants then two widened-greedy rounds (round 1 adds CX pairs 11_17@32 and 13_14@33; candidate `MERGE/cand/merge4_r2_79fc464667ef`); races from the 11:20 race | all orders | **3.621124e-5 (−0.26% vs v37f)**, acceptance 0.50353, 406 CX; judge 1e7 4.120e-5 ± 2.5e-6, 4e7 3.689e-5 ± 1.2e-6, gates_ok; judge time 1.17× v37f's (same host, same minute) | `work/lanes/MAIN/v37g.*`, `work/lanes/MERGE/REPORT.md` |
 
 ## Prior work
 | Work | Relevance (subgoal) | Source status |

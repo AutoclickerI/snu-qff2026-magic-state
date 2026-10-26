@@ -2,7 +2,7 @@
 
 ## G0 — Official 1-F of 1e-5, or as close to it as possible, by the deadline (R-20261024-3)
 The measure is the official 1-F (`tprep.check(..., shots=10**8, seed=0)`) of our best board entry when submissions
-close, 2026-10-30 12:00 KST (last slot 11:37); the score is the gap to 1e-5. 1e-5 is out of practical reach: every
+close, 2026-10-30 12:00 KST (last slot about 11:24); the score is the gap to 1e-5. 1e-5 is out of practical reach: every
 admissible circuit has true expected 1-F ≥ 1.366e-5 (FINDINGS "Floor, any circuit"), and the key, the best raced
 seed-0 draw, sits only ≈ 3.5–4σ (≈ 2.7e-6) below its circuit's true mean. The levers are a lower true mean (1% ≈ 0.5σ), then draws
 per hour (racing compute, judge time). Our terminal class (outputs end on a CX with a measured partner) has floor 2.274e-5; every tested
