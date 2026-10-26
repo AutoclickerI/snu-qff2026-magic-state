@@ -1,0 +1,93 @@
+{
+  "scope": "positive second-order unnormalized harmful pair mass; idle probabilities linearized to n*p; disjoint coarse channel classes; no full finite-p gain predicted",
+  "module_pairs": [
+    {
+      "modules": [
+        "terminal",
+        "terminal"
+      ],
+      "mass": 2.9084444444444594e-05
+    },
+    {
+      "modules": [
+        "BC_internal_prep",
+        "BC_internal_prep"
+      ],
+      "mass": 1.7799999999999897e-06
+    },
+    {
+      "modules": [
+        "prefix_other",
+        "prefix_other"
+      ],
+      "mass": 3.1888888888888893e-07
+    },
+    {
+      "modules": [
+        "prefix_other",
+        "terminal"
+      ],
+      "mass": 1.2777777777777766e-07
+    },
+    {
+      "modules": [
+        "prefix_other",
+        "resource_cross_guard"
+      ],
+      "mass": 1.222222222222224e-07
+    },
+    {
+      "modules": [
+        "A_prep_idle",
+        "prefix_other"
+      ],
+      "mass": 1.1111111111111112e-07
+    },
+    {
+      "modules": [
+        "BC_internal_prep",
+        "BC_prep_idle"
+      ],
+      "mass": 8.88888888888889e-08
+    },
+    {
+      "modules": [
+        "BC_internal_prep",
+        "resource_cross_guard"
+      ],
+      "mass": 8.888888888888884e-08
+    },
+    {
+      "modules": [
+        "finished_data_idle",
+        "prefix_other"
+      ],
+      "mass": 5.555555555555556e-08
+    },
+    {
+      "modules": [
+        "A_internal_prep",
+        "prefix_other"
+      ],
+      "mass": 4.4444444444444494e-08
+    }
+  ],
+  "total_positive_N2": 3.182222222222236e-05,
+  "module_channel_counts": {
+    "A_internal_prep": 22,
+    "A_prep_idle": 5,
+    "BC_internal_prep": 96,
+    "BC_prep_idle": 13,
+    "finished_data_idle": 6,
+    "prefix_other": 544,
+    "resource_cross_guard": 18,
+    "terminal": 78
+  },
+  "classification_notes": [
+    "Finished data waiting uses conservative post-handoff/post-last-T ready ticks",
+    "Source and internal prep masks use actual v37g epoch map",
+    "Cross guards include mixed module channels; they are not allocated to both modules",
+    "Terminal includes all true channel start times>=45 and early D-to-A gates6-to7,2-to8 at44",
+    "A/BC idle runs are kept as their own classes"
+  ]
+}

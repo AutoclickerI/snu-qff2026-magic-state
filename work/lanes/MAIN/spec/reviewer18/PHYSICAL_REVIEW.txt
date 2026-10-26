@@ -1,0 +1,45 @@
+# Independent review of the proposed stronger terminal bound
+
+## Assessment
+
+The physical reduction in `penultimate_bound_proof.md` passed this independent adversarial review under the inspected STANDARD noise, native scheduling, participant-record and ideal-decoder contract. No omitted legal terminal case or counterexample was found. Together with the exact integer channel certificate and the independent dense-matrix calculation below, the analysis supports the rounded-down assertion
+
+\[
+\mathbb E[1-F\mid\mathrm{accepted}]\ge 2.189\times10^{-5}
+\]
+
+for that model. The relaxed channel optimum is
+`0.00002189251282477007777220770314650567867210494796160689...`.
+
+This is newly derived analysis of the inspected judge, not an organizer-endorsed theorem or a result already established in the repository. It concerns the true conditional mean, not an individual finite-shot score. It does not prove that a complete noisy preparation can attain the bound or that any new candidate passes the official judge.
+
+The source contract was checked against the repository's existing `work/lanes/BOUND/PROOF.md` at commit `bb98bed0e695e8c94e45aca4088c80a95a7cb98b` and the actual native noise/schedule implementation used by the local evaluator.
+
+## Coverage reviewed
+
+- The final tick is the global last **actual native tick**. Native gate operands form disjoint matchings. Final output measurements/resets/untouched outputs are excluded by the required pure entangled ideal output; final output-output CX channels have a separately certified, much larger floor.
+- The penultimate matching covers output-output, output-other-helper, helper-helper with either equal or opposite final axes, own output-helper, and exactly one retained endpoint with an outside partner.
+- The large-loss exclusions use the **entire induced Pauli channel**, optimized over all 64 incoming syndrome sectors and all logical states. A single same-axis weight-two error would not suffice: for example, both `X_i|T_L>` and `X_i X_j X_i|T_L> = X_j|T_L>` decode perfectly. The certificate correctly avoids that invalid shortcut.
+- Arbitrary final one-qubit gates, including non-Clifford gates, preserve the reduction because the relevant output channels are isotropic in the needed conditional branches. The argument does not assume all final local gates are Clifford.
+- For a measured outside partner, its commuting/noncommuting measurement branches admit a common output depolarizing factor. Helper errors must first be projected to their propagated output axis; directly factoring the claimed binary rate from the full helper depolarizing channel would be invalid. The written proof uses the correct order.
+- An unmeasured outside partner cannot communicate a penultimate fault to a new final measurement by another CX at the final tick: its CX partner could not also be measured in that tick. Tracing the discarded outside systems therefore gives the stated marginal channel.
+- Helper-helper opposite-axis noise has a positive residual after extracting the two independent binary axis factors. Its correlated residual remains in the arbitrary input state, rather than being discarded by an unjustified independence assumption.
+- Reset, first-use and post-measurement exceptions are covered. The reset decomposition is a preparation-state identity, not an assertion about arbitrary entangled input. For a helper prepared in the commuting basis, insertion of the helper-axis flip is an identity on the prepared state; after the final CX and helper trace the corresponding output dephasing is an exact invariance.
+- Arbitrary residual entanglement, syndrome-sector mixtures/coherences, logical bias and postselection correlations are allowed. The common extracted factors hold branchwise and do not change record probabilities. Logical Pauli frames commute with the resulting output Pauli channels.
+- No monotonicity assumption about deleting physical noise from a postselected circuit is needed. Positivity of the explicit residual channels/instruments, followed by optimization over arbitrary conditional input states, supplies the bound.
+
+## Wording correction requested
+
+Define a final helper `H_i` **only when output `D_i` participates in a CX at the global final tick T**. The phrase “its last gate is a CX” is ambiguous because an earlier CX may be followed by final idle ticks. In the latter case the output belongs to the local/idle terminal type and that earlier partner is not a final helper in the set S.
+
+## Independent arithmetic check
+
+`verify_penultimate_dense.py` does not import the certificate generator, its convolution/moment routines, or the sparse circuit evaluator. It constructs the seven-qubit Steane CSS codewords and the physical 128×128 ideal-decoder fidelity projector directly. It then applies each Pauli channel by matrix conjugation and diagonalizes the resulting matrices.
+
+All 264 orbit-representative spectra and six excluded/mixed-axis spectra were checked: **34,560 eigenvalues** in total. Maximum absolute disagreement with the exact certificate was `9.547918011776346e-15`. The dense optimal loss was `2.1892512826582333e-5`, differing from the exact rational-derived value by `1.8122540957048877e-15`. Both select the all-helper-to-output assignment `XXXXXXX`.
+
+This second calculation is an independent numerical validation, not another exact rational certificate. Its receipts are `penultimate_bound_dense_verification.json` and `penultimate_bound_dense_cases.json`. The exact arithmetic, explicit orbit coverage and all-sector inequalities remain in `penultimate_bound_certificate.py` and its JSON certificate.
+
+## Practical limit
+
+The bound relaxes preparation, layout occupancy, routing, acceptance amount and residual-state quality. A perfect-input terminal construction near the bound is evidence about a terminal mechanism, not about the cost or feasibility of producing its input state. A full circuit must still meet the raw ideal output requirement, include every native preparation/gate/readout/idle error, satisfy acceptance, and pass official validation.

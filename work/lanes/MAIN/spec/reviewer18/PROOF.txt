@@ -1,0 +1,200 @@
+# New independently audited last-two-tick lower bound
+
+Status: the exact finite-p channel certificate and an independent physical-reduction audit are complete. A separate dense-matrix implementation also verified 34,560 eigenvalues, with maximum discrepancy below 9.55e-15. This note is original analysis of the inspected judge, not a result already present in the repository or a contest-organizer endorsement.
+
+## Statement and scope
+
+For the inspected STANDARD channel convention at p = 1/1000, the bound is
+
+\[
+ L=\mathbb E[1-F\mid\mathrm{accepted}]
+ \ge 0.00002189251282477007777220770314650567867210494796160689\ldots.
+\]
+
+The convenient exact rounded-down assertion is L >= 0.00002189. As in the existing BOUND proof, this concerns the true conditional mean, not one finite-shot official draw. It does not claim a complete admissible preparation attaining the bound. The physical grid, preparation depth and acceptance amount are relaxed; the actual gate set, scheduling, noise, permitted records and final decoding are retained.
+
+Definitions: D1(a) has probabilities (1-a,a/3,a/3,a/3). D2(p) gives each of the fifteen nonidentity two-qubit Paulis probability p/15. B_A(b) applies Pauli A with probability b. Set
+
+\[
+ q=2p/5=1/2500,\qquad r=4p/15=1/3750.
+\]
+
+The old certificate extracted D1(p/5) independently on every output and final helper. That factorization is valid but loses information about which penultimate contacts can occur in a low-loss circuit. The new reduction classifies those contacts before discarding their residual noise.
+
+## Source assumptions inherited from the existing proof
+
+Read `work/lanes/BOUND/PROOF.md`, especially its Source contract and Exhaustive terminal cases, and `docs/reference/judge.md:13-25` in the inspected source snapshot. The relevant contract is:
+
+1. Every native one-qubit unitary and every idle tick has independent D1(p); every CX has independent D2(p). The noise is after the operation. Reset/first-use preparation has orthogonal-state error p. A reused measured qubit has post-measurement D1(p).
+2. Gates on a qubit cannot overlap. RX/MX folding occurs before native scheduling. Standalone H, T and all other one-qubit unitaries cost one noisy tick; the H inside native RX/MX is not a separate operation.
+3. T is the last actual native tick anywhere. Output qubits idle until T. At T a qubit cannot both participate in a CX and be measured.
+4. Acceptance depends on participant records. The ideal final decoder cannot reject shots, and its records are unavailable to the submitted detector/frame declarations. Affine logical Pauli frames are permitted.
+5. The seven ideal accepted outputs must be the specified pure entangled Steane T state up to the allowed logical frame. Every one-qubit reduction of that target is I/2.
+
+A terminal output measurement/reset/untouched output followed only by local operations is therefore inadmissible, as already proved by BOUND. A final output-output CX has the existing exact floor 0.00033332888592396909..., larger than this bound. Otherwise each output's final operation is local/idle, or a CX with a distinct non-output helper. Every such final helper is unmeasured thereafter.
+
+Let D_i be output i. If its operation **at the global final tick T** is a CX, call its partner H_i. A CX earlier than T does not create an H_i in this definition: an output that finishes its gates earlier is a local/idle output at T. Let S contain all seven D_i and all H_i. No measurement at T is on S. Different final pairs are disjoint. Assign an axis to a helper: X when H_i controls D_i, and Z when D_i controls H_i.
+
+## Why late noise remains a factor after acceptance
+
+A Pauli error on S after tick T-1 cannot alter any later participant record: those measurements are disjoint from S, and no S qubit has a later interaction except its designated final CX or local output unitary. For a final CX, conjugation preserves the output Pauli and adds only a helper Pauli; a helper Pauli contributes either I or its designated X/Z axis to the output. All helpers are then traced out. This is an operator identity for arbitrary joint input states, including entanglement with measured outside systems. It is not an assumption of an initially factorized resource.
+
+When a penultimate CX connects S to an outside qubit that is measured at T, the explicit measured instrument must instead be factored as described below. That factorization holds on each record branch. Every remaining positive residual instrument is retained inside an arbitrary conditional output density matrix. Consequently no monotonicity claim about deleting physical noise from a postselected circuit is used.
+
+After this reduction every retained noise factor is an output Pauli channel. It commutes with the other retained factors and with logical Pauli frames. Correlated residual Pauli channels can be absorbed into the arbitrary input state.
+
+### Arbitrary final one-qubit gates
+
+If D_i has a final local unitary, it can be non-Clifford. Local D1 is fully covariant. A penultimate output-output D2 is fully covariant under either endpoint's local unitary. A penultimate D_i-H_j channel, after the helper is discarded, is isotropic on D_i separately in each helper-axis branch. It is likewise covariant under the final local unitary on D_i. Thus the Pauli-channel classifications below do not assume final output gates are Clifford.
+
+## Classify the penultimate matching
+
+Every CX at T-1 touches zero, one or two members of S. Since it is a matching, these cases are disjoint.
+
+### 1. Two different outputs
+
+For a CX between D_i and D_j, its complete D2(p) channel pushes through the final operations to exactly D2(p) on those two outputs. Its optimized decoded loss, over all 64 incoming syndrome sectors and every logical Bloch direction, is
+
+\[
+0.0003333288859239690921781719211967\ldots.
+\]
+
+It alone exceeds the new floor. Other late Pauli channels commute with it and can be absorbed into its arbitrary input. This is an exact complete-channel bound, not an inference from one bad weight-two error on a code-space input.
+
+### 2. An output and another output's helper
+
+For a CX between D_i and H_j with i != j, the complete D2 channel projects to the eight-element Pauli subgroup {P_i A_j : P in {I,X,Y,Z}, A_j in {I,axis_j}}. Identity has probability 1-14p/15 and each of the other seven subgroup elements has probability 2p/15. Exact spectral optimization gives:
+
+| Final helper axis | Exact minimum decoded loss |
+|---|---:|
+| X | 0.000133315550813866582420564192284968... |
+| Z | 0.000266666666666666666666666666666667... |
+
+Both exceed the new floor. The optimization includes nonzero incoming syndromes; several sectors tie for the optimum.
+
+### 3. Two helpers with the same final axis
+
+For a CX between H_i and H_j, the projected binary Pauli channel has probabilities
+
+\[
+(I,A_i,A_j,A_iA_j):\quad (1-3r,r,r,r).
+\]
+
+When the axes are both X, its exact optimized loss is 0.00013331555081386658...; when both are Z it is 0.00026666666666666667.... These are again complete-channel, all-sector bounds. Such contacts cannot occur in a circuit beating the new floor.
+
+### 4. Two helpers with opposite final axes
+
+This case cannot be discarded by the preceding argument: X_i, Z_j and X_i Z_j can all be corrected on a code-space input. Its optimized isolated-channel loss is exactly zero.
+
+Instead factor the binary channel exactly:
+
+\[
+ \mathcal C_{XZ} = B_X(r)\otimes B_Z(r)\circ \mathcal R,
+\]
+
+where the residual probabilities, in the order I, X_i, Z_j, X_i Z_j, are
+
+\[
+\frac{1}{(1-2r)^2}
+  (1-5r+5r^2,\ r^2,\ r^2,\ r(1-3r)).
+\]
+
+They are nonnegative and sum to one at the specified p. The certificate checks their convolution exactly. Thus each helper still supplies an independent output-axis flip of rate r; the remaining correlated error is absorbed into the arbitrary residual input.
+
+### 5. An output and its own final helper
+
+If the penultimate CX is on D_i,H_i themselves, the pair's D2(p) is covariant through the final CX on the same pair, regardless of the two CX orientations. Tracing H_i gives D1(4p/5) on D_i. The final CX supplies another independent D1(4p/5). Retain their composition as channel type P. Do not attempt to extract independent D1(q) and B(r) from this same noise location.
+
+### 6. Exactly one member of S
+
+Let K be the outside endpoint of the penultimate CX.
+
+If K is measured at T, group K's post-CX Paulis by whether they commute with its measurement. The no-flip group has weight 1-8p/15 and a normalized S-qubit D1(q0), with
+
+\[
+q_0=\frac{2p/5}{1-8p/15}=\frac3{7496}>q.
+\]
+
+The flip group has weight 8p/15 and completely depolarized S. Both factor D1(q) on an output. Extra measurement noise is part of the residual instrument and does not remove the common factor.
+
+For a helper, first push its Pauli channel through the final CX and trace it. The helper's X/Y (or Z/Y) errors project to a binary output-axis flip. In the no-flip measurement branch its rate is 2q0/3 >= r; in the flip branch it is 1/2. Both factor B_axis(r). **This is a factorization after helper projection; it does not assert that the full helper D1(q0) factors B_axis(r) before projection.**
+
+If K is not measured at T, it is ultimately discarded. It may have a local gate or a CX with other outside qubits at T, but cannot communicate its post-T-1 error to a later measured qubit: such a qubit could not simultaneously take part in that CX and be measured at T. Tracing the outside systems gives D1(4p/5) on the S endpoint. This factors D1(q) on an output, or projects to an axis flip 8p/15 >= r for a helper.
+
+## Idle, one-qubit gate, measurement, reset and first-use cases
+
+An output with ordinary D1(p) at T-1 supplies D1(q) with a positive residual. A helper's D1(p) projects through its final CX to an output-axis flip 2p/3, which factors B_axis(r). These statements cover post-measurement D1(p) on reused qubits. A final local/idle output operation contributes its additional D1(p).
+
+For a reset or first-use output preparation, the identity
+
+\[
+ p' = \frac{p-2q/3}{1-4q/3}=\frac{11}{14992}
+\]
+
+shows that the noisy prepared basis state is D1(q) applied to a preparation with orthogonal-state error p'. This is an identity on the prepared state, not a factorization of a single-axis error on arbitrary entangled input. It also covers a first-use preparation immediately before the final gate and the no-idle-before-reset exception.
+
+For a helper reset/first use, consider its propagated axis A. If the prepared state is in the anticommuting basis, its orthogonal-state error p projects to an output-axis flip p; equivalently its preparation factors B_A(r) with residual flip probability (p-r)/(1-2r) = 11/14992. If the prepared basis commutes with A, then B_A(r) acts identically on both prepared basis states, so it may be inserted for free before the final CX. After conjugation and helper trace this inserts the required output-axis factor exactly. It does not manufacture observable errors: the reduced output in that branch is already invariant under that dephasing.
+
+The latter commuting-basis case would in fact dephase a single output in X or Z, preventing a pure entangled Steane target on accepted ideal branches. Likewise an output prepared immediately before its sole final CX cannot produce the required pure entanglement after the helper is discarded. These ideal-validity observations are useful checks, but the bound does not need them: the preparation-channel factorizations above already cover these cases.
+
+## Reduced finite channel problem
+
+Unless one of the exactly excluded large-loss contacts occurs, every output has one of four retained local channels:
+
+\[
+\begin{aligned}
+ L&=D1(p)\circ D1(q),\\
+ X&=D1(4p/5)\circ D1(q)\circ B_X(r),\\
+ Z&=D1(4p/5)\circ D1(q)\circ B_Z(r),\\
+ P&=D1(4p/5)\circ D1(4p/5).
+\end{aligned}
+\]
+
+Their independent tensor product acts on an arbitrary conditional seven-qubit density matrix. Allowing every one of the 4^7 assignments relaxes any compatibility restrictions between final orientations and helper pairings.
+
+The decoded fidelity observable is the one used in BOUND. It is block diagonal in 64 Steane syndrome sectors, each of dimension two. For each sector the two eigenvalues after the adjoint noise channel are
+
+\[
+\frac{1\pm\sqrt{(v_x^2+v_y^2)/2}}2.
+\]
+
+The script computes v_x and v_y as exact integer moments of the 256-bin syndrome/parity distribution. It covers all 16,384 assignments and all 64 sectors using 264 explicitly listed GL(3,2) orbits. The 168 permutations are generated and checked to preserve the actual stabilizer rowspace. Thus 1,048,576 sector inequalities are covered, with no heuristic search or leading-order approximation.
+
+The unique best assignment is XXXXXXX and its unique best incoming syndrome is (0,0). The exact optimal relaxed loss is
+
+\[
+0.00002189251282477007777220770314650567867210494796160689\ldots.
+\]
+
+All excluded-contact channel floors are larger. This completes the physical reduction plus exact finite enumeration. Independent review checked the source-to-channel cases, and a separately implemented dense-matrix verification checked the complete orbit spectra and excluded-channel spectra.
+
+## What equality would require, and what remains uncharged
+
+1. Seven simultaneous unmeasured helper-to-output CXs are needed to attain the reduced optimum. They are not necessary merely to improve the incumbent or reach 2.5e-5. A circuit with a local final output uses type L and has a higher relaxed minimum.
+2. The useful penultimate contacts are external checked contacts, with a separate outside readout partner for each of the fourteen D/H endpoints. Direct output-output contacts, crossed output-helper contacts, and same-axis helper-helper contacts incur the large unavoidable floors above. Own-pair contacts use the more costly type P.
+3. This identifies a 28-qubit terminal scaffold: seven outputs, seven unmeasured final helpers, and fourteen partners read at T. Seven four-qubit tiles on the 6x6 grid can realize these contacts. Supplying their inverse-encoded state perfectly is not a full preparation circuit.
+4. The factorization absorbs earlier preparation noise, all residual correlated errors, occupancy/routing costs and logical bias into an arbitrary state. A noisy preparation must still put that state close to the best zero-syndrome eigenvector while meeting acceptance >= 0.5. Those costs can only raise the attainable optimum relative to this bound, but their effect cannot be estimated by subtracting arbitrary physical noise-ablation prices.
+5. For the all-X reduced channel, the best nonzero-syndrome sector has loss 0.00317621670783830857..., versus 0.00002189251282477008... in sector zero. Hence if w is the nonzero-syndrome weight of the **conditional residual state in this factorization**, then
+
+\[
+ L\ge L_*+0.00315432419501353850\,w.
+\]
+
+This is a preparation-dependent bound, not a statement about an unconditioned raw prefix syndrome histogram. Logical misalignment inside the zero sector contributes further loss. It gives a concrete acceptance-conditioned boundary target for preparing the terminal scaffold.
+
+## Independent audit
+
+An independent reviewer examined the complete physical case reduction, including arbitrary final non-Clifford gates, outside partners, conditioning on records, correlated residual states, same-pair contacts, reset/first-use exceptions, and measurement noise. The reviewer found no omitted legal case. The definition of H_i was clarified to refer only to a CX at global tick T, not an earlier last CX followed by output idles. The parent reviewer also read the full proof and found no missing case.
+
+A separate implementation constructed the actual Steane decoder projector and Pauli matrices, without importing this certificate generator or its moment/convolution routines. It checked all 128 eigenvalues of each of the 264 orbit matrices and six excluded/mixed-contact matrices: 34,560 eigenvalues in total. The maximum spectral discrepancy was below 9.55e-15; the optimal loss differed by approximately 1.81e-15. It independently identified the all-X optimum.
+
+These audits establish the new bound under the inspected STANDARD contract. They are not a contest-organizer endorsement, a full-preparation construction, or evidence that a submitted circuit attains the bound.
+
+## Reproduction and audit artifacts
+
+- `penultimate_bound_certificate.py`: standard-library exact arithmetic; no judge, network or remote jobs.
+- `penultimate_bound_summary.json`: channel numerators, exact optimum, orbit counts and excluded-contact floors.
+- `penultimate_bound_certificate.json`: all orbit members and all exact sector moments, plus complete excluded-channel certificates.
+- `verify_penultimate_dense.py` and `penultimate_bound_dense_verification.json`: independent dense Pauli-matrix/decoder-projector verification, without importing the certificate generator or its moment/convolution routines.
+
+Run `python3 penultimate_bound_certificate.py` in this directory. The initial local run took approximately 0.24 seconds.

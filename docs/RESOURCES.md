@@ -21,7 +21,7 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    e.g. 02:20>" <hosts incl. zebra>`; the slot follows the HH:20 cut once the one-hour cooldown allows (about :24 since 2026-10-26 05:24). Hourly loop: `work/receipts/draw_loop.sh <pid of the running cut>`
    races an hour-named copy of the stem in `work/receipts/next_stem.txt` until HH:20 and promotes it; variant k of a stem is
    the same circuit every hour, so `work/receipts/offset_<stem>.txt` carries the next unused k; `work/receipts/race_specs.sh`
-   sizes each host's processes from its free cores at the start of the hour (cap 75%; racer maxima zebra 8, sunfish 4, hippo 12, jerry 24, tom 36 leave
+   sizes each host's processes from its free cores at the start of the hour (cap 75%; racer maxima zebra 8, sunfish 4, hippo 12, jerry 24, owl 24, tom 36 leave
    room for lanes: edit its host list when lanes move). `race.py` changes reach
    the hosts only by rsync (promote.sh copies the stem, not the code). By hand: `work/submit.py submit|status|board|wait`.
 7. Remote hosts: the uv Python, venv and repo are mirrored at the same absolute paths, without credentials or caches.
@@ -44,7 +44,7 @@ From the repo root `/home/jihoon/competitions/quantumn`:
 | Submission quota | one per hour (slot about :24) | `work/submit.py`; the board keeps each team's best entry, so every slot is used |
 | Claude subagents | research lanes while Codex is down (R-20261025-1), one dir each under `work/lanes/` | Agent tool, background; the brief names the goal and incumbent numbers, the docs to read, prior lanes' git paths, evaluator commands, host limits, and "no submit, no commit"; the main session verifies and commits |
 | Codex | all subagent work (CONSTRAINTS rule 11), via the `codex:codex-rescue` agent | launch from the lane dir: `node ~/.local/src/codex-plugin-cc/plugins/codex/scripts/codex-companion.mjs task --background --write "$(cat BRIEF.md)"`; continue a thread with `CODEX_RESUME_THREAD_ID=<threadId>` (in `~/.claude/plugins/data/codex-openai-codex/state/<repo>/jobs/<job>.json`); wait until the job json leaves `running` or its `pid` dies (a dead worker leaves the json at `running`); a thread whose worker died can stay locked (`already has an active writer`): start a fresh thread with a full brief; `cancel` leaves remote processes and owl's docker containers running (kill by PID, `docker kill`). 429 `local_auth_cap` means the local Hermes reserve policy `~/.hermes/auth_cap.json` refuses every credential; probe: `node ~/.local/src/codex-plugin-cc/plugins/codex/scripts/codex-companion.mjs task "Reply with the single word OK and do nothing else."` (answers OK within a minute when admitted); briefs forbid `spawn_agent` |
-| Reviewer bundles | independent audits with circuits, certificates and task lists | `work/lanes/MAIN/spec/reviewer{14,15,16,17}/`; reviewers 8–13: `git show b9051547^:work/lanes/MAIN/spec/reviewer<n>/...`, 3–7: `b2a5243` |
+| Reviewer bundles | independent audits with circuits, certificates and task lists | `work/lanes/MAIN/spec/reviewer{14,15,16,17,18}/`; reviewers 8–13: `git show b9051547^:work/lanes/MAIN/spec/reviewer<n>/...`, 3–7: `b2a5243` |
 | Upstream | judge and cultivation code | `upstream/snu-qff2026-problem` (76fe47c), `upstream/magic-state-cultivation` (871e68f); not in git |
 
 ## Consumers

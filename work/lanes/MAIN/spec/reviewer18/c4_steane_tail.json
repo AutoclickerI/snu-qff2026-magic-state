@@ -1,0 +1,114 @@
+{
+  "p": 0.001,
+  "scope": "PERFECT pre-tail concatenated-code input; two noisy native ticks only",
+  "noise": "STANDARD D2 after CX, readout flip p, no waiting; discarded postmeasurement noise irrelevant",
+  "physical_channels_per_tile": 3,
+  "readout_checks": 14,
+  "independent_calculations": {
+    "tile_acceptance_enumeration": 0.996937814507812,
+    "tile_acceptance_formula": 0.9969378145078043,
+    "local_distribution_max_abs_difference": 1.1102230246251565e-16,
+    "loss_enumeration": 2.1920963918185657e-05,
+    "loss_formula": 2.192096391818694e-05
+  },
+  "effective_output_paulis": {
+    "I": 0.9985331649638891,
+    "X": 0.00066671068557286,
+    "Z": 0.00040006217526909234,
+    "Y": 0.00040006217526909234
+  },
+  "acceptance": 0.9787606162143908,
+  "loss": 2.192096391818694e-05,
+  "logical_paulis_after_ideal_decoder": {
+    "I": 0.9999661893403373,
+    "X": 2.041659455627748e-05,
+    "Z": 1.0031268191824124e-05,
+    "Y": 3.362796896445397e-06
+  },
+  "leading_pauli_rates_in_p_over_15": {
+    "X": 10,
+    "Y": 6,
+    "Z": 6
+  },
+  "c2": 22.026666666666667,
+  "low_p_crosscheck": {
+    "p": 1e-06,
+    "loss_over_p2": 22.026560756356485
+  },
+  "baseline_v37g_L": 3.6211236525327396e-05,
+  "ideal_oracle_relative_gain": 0.39463641616174416,
+  "target_gaps": {
+    "2.5e-05": 3.0790360818130597e-06,
+    "2.8e-05": 6.079036081813058e-06,
+    "2.5347865567729175e-05": 3.4269016495422338e-06,
+    "3.259011287279466e-05": 1.0669148954607718e-05
+  },
+  "gap_caveat": "Differences are design targets, NOT additive certified preparation-noise budgets; noisy full-circuit A and L must be evaluated jointly.",
+  "official_validation": false,
+  "code_certificate": {
+    "n": 28,
+    "k": 1,
+    "stabilizer_rank": 27,
+    "all_stabilizers_commute": true,
+    "decoded_generators_match": true,
+    "logical_XZ_map_to_Steane": true,
+    "inner_logical_min_weights": {
+      "I": 0,
+      "X": 2,
+      "Z": 2,
+      "Y": 3
+    },
+    "concatenated_logical_min_weights": {
+      "I": 0,
+      "X": 6,
+      "Z": 6,
+      "Y": 9
+    },
+    "distance": 6,
+    "grid_tiles": [
+      {
+        "D": 1,
+        "H": 0,
+        "K": 7,
+        "L": 6
+      },
+      {
+        "D": 3,
+        "H": 2,
+        "K": 9,
+        "L": 8
+      },
+      {
+        "D": 5,
+        "H": 4,
+        "K": 11,
+        "L": 10
+      },
+      {
+        "D": 13,
+        "H": 12,
+        "K": 19,
+        "L": 18
+      },
+      {
+        "D": 15,
+        "H": 14,
+        "K": 21,
+        "L": 20
+      },
+      {
+        "D": 17,
+        "H": 16,
+        "K": 23,
+        "L": 22
+      },
+      {
+        "D": 25,
+        "H": 24,
+        "K": 31,
+        "L": 30
+      }
+    ],
+    "preparation_excluded": true
+  }
+}

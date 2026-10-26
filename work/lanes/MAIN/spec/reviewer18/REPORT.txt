@@ -1,0 +1,225 @@
+QUANTUMN: A LARGER JUMP TOWARD THE LIMIT
+2026-10-26 (KST)
+
+EXECUTIVE FINDINGS
+
+The previous 0.253% improvement does not address a request for an architectural
+breakthrough. The new study targets reductions of 20-30%, with a concrete terminal
+construction and a substantially stronger lower bound.
+
+The repository advanced to v37g during this follow-up. The reviewed commit is
+bb98bed0e695e8c94e45aca4088c80a95a7cb98b. v37g has expected conditional loss
+3.6211236525327396e-5, acceptance .5035268387133266, 406 CX and 48 native ticks.
+The local all-orders replay gives 3.621123652554788e-5, agreeing to 2.2e-16.
+The prior v37f audit remains about its earlier pinned version.
+
+1. A NEW, STRONGER LOWER BOUND
+
+Under the inspected STANDARD judge and p=1/1000, this study derives
+
+  E[1-F | accepted] >= 2.1892512824770077772...e-5.
+
+An exact rounded-down statement is L >= 2.189e-5.
+
+This is original analysis, independently checked within this study. It is not a
+result already published in the repository, an organizer endorsement, or proof
+that a complete noisy preparation attains it. The former universal certificate
+1.3657850790536654e-5 remains valid, but is substantially loose.
+
+The strengthened proof retains the structure of the penultimate native layer.
+Let S contain outputs and the helpers used in CXs at the global final tick T.
+Later participant measurements are disjoint from S. Penultimate contacts within
+S cannot simply be treated as generic cheap residual noise:
+
+- Output-output contacts have an optimized complete-channel floor 3.3332889e-4.
+- An output coupled to a different output's helper, or two same-axis helpers,
+  has an optimized floor at least 1.3331555e-4.
+- Opposite-axis helper contacts are possible, but their correlated channel
+  factors independent propagated axis flips of rate 4p/15, with a positive
+  correlated residual channel.
+- A contact with an outside partner measured at T factors D1(2p/5) on an output,
+  or the propagated axis flip 4p/15 for a helper.
+- An output's penultimate contact with its own final helper contributes
+  D1(4p/5), in addition to the final CX's D1(4p/5).
+
+The exclusions optimize whole channels over all 64 incoming syndrome sectors;
+they are not inferred from a single weight-two fault on a code-space input.
+Reset, first-use, postmeasurement, final local non-Clifford gates, unmeasured
+outside partners, arbitrary entanglement, postselection and logical frames are
+covered in the physical reduction.
+
+Set q=2p/5 and r=4p/15. The remaining independent output factors have four types:
+  L: D1(p) composed with D1(q)
+  X: D1(4p/5) composed with D1(q) and an X flip of rate r
+  Z: D1(4p/5) composed with D1(q) and a Z flip of rate r
+  P: D1(4p/5) composed with D1(4p/5).
+
+Exact integer arithmetic covers 4^7 assignments and 64 syndrome sectors each,
+through 264 explicitly listed GL(3,2) orbits. The group is checked to preserve
+the actual Steane stabilizer rowspace. Seven X-type endings are the unique
+minimizing assignment, with the zero incoming syndrome sector.
+
+Independent verification constructs the physical 128x128 decoded-fidelity
+observable from Steane CSS codewords, applies Pauli matrices, and diagonalizes
+all 264 representative channels plus six excluded/mixed-axis cases. It shares
+neither the certificate's moment/convolution routines nor the sparse evaluator.
+34,560 eigenvalues agree within 9.55e-15. The optimum differs by 1.82e-15.
+A separate physical-case review found no omitted legal case. The full derivation,
+certificate and independent implementation are included.
+
+2. WHAT THIS CHANGES ABOUT THE TARGET
+
+All losses in this comparison are true conditional means:
+  Current v37g                         36.211237e-6
+  Old universal relaxation             13.657851e-6
+  New independently checked bound      21.892513e-6
+  Current measured-partner class floor 22.742700e-6
+
+v37g is 2.6513 times the old bound, but 1.6540 times the stronger one. The
+remaining theoretical mean reduction is at most 39.54%, before charging an
+attainable full preparation. A true mean of 2.0e-5 or 1.5e-5 is excluded by the
+new bound. Finite-shot official scores are not bounded in this way.
+
+The gap between the measured-partner class floor and the new universal bound is
+only .850187e-6. That is 5.94% of the remaining v37g-to-bound headroom. Most of the
+available improvement lies above the existing class floor. Escaping that class
+alone does not explain a large jump; reducing the extra check, preparation and
+waiting costs is essential.
+
+Meaningful full-circuit targets are:
+  3.0e-5: 17.15% improvement
+  2.8e-5: 22.68% improvement
+  2.5e-5: 30.96% improvement
+  2.2e-5: 39.25% improvement, extremely close to the new bound.
+
+3. WHERE CURRENT v37g PAYS ITS LOSS
+
+New all-orders counterfactuals preserve the exact QASM and accepted-state
+semantics while removing noise before a specified true native tick. Idle runs
+that straddle a cut are shortened using the exact repeated-depolarization law,
+not assigned wholesale to the preceding gate.
+
+Noise retained                         L                   A
+All 48 ticks                           3.6211236526e-5      .5035268387
+Only ticks44-47 (last four)             2.9045907357e-5      .9403898312
+Only ticks45-47 (last three)            2.8473938227e-5      .9609786310
+Only ticks46-47 (last two)              2.2758138120e-5      .9728339651
+Only tick47                            1.1625252534e-5      .9910359231
+
+The last-three-tick diagnostic is already 78.63% of the complete score.
+Therefore local preparation cleanup is not a persuasive route to the largest
+jump. The final checking process must be redesigned, or entered through a
+different, better-prepared encoded state. These counterfactuals are not legal
+circuits, an additive loss decomposition, or universal bounds on alternative
+upstream states. In particular the one-tick value below the new bound is
+possible only because required earlier physical noise has artificially vanished.
+
+A separate second-order diagnostic finds terminal-terminal pairs contribute
+2.9084444e-5 out of total positive N2=3.1822222e-5. This is an unnormalized
+second-order pair mass, not 91.4% of the exact finite-p loss. It corroborates
+the choice of research focus without replacing the all-orders measurements.
+
+4. A CONCRETE NEW TERMINAL CONSTRUCTION
+
+Use seven four-qubit tiles, each with data D, unmeasured helper H and checks K,L.
+One native 2x2 embedding has H,D in the top row and L,K in the bottom row.
+
+For each tile, the last two layers are:
+  T-1: CX D->K and CX H->L, in parallel.
+  T:   CX H->D, measure Z on K and L, in parallel.
+Postselect the fourteen K/L records to zero. Discard H without measuring it.
+
+The required pre-tail inner-code stabilizers are
+  X_D X_H X_K X_L,  Z_D Z_K,  Z_H Z_L,
+with inner logical X = X_D X_K and logical Z = Z_H Z_D.
+Encode the outer Steane qubit across these seven inner qubits.
+
+The resulting code has 28 physical qubits, one logical qubit and distance six.
+Exact binary checks show 27 independent commuting stabilizers. The two final
+layers map them to the six Steane output stabilizers and X_H,Z_K,Z_L on each
+tile. Logical X and Z map to the required Steane logical operators on D.
+Exact coset-weight enumeration gives minimum logical weights X=6,Z=6,Y=9.
+
+With the pre-tail encoded input supplied perfectly, the complete noisy two-layer
+transition gives
+  L_tail = 2.192096391818694e-5
+  A_tail = .9787606162143908.
+
+This includes D2 noise after all21 CXs and p readout flips on all14 measurements.
+There are no idle wires within either of these two layers. Postmeasurement
+noise is irrelevant to the discarded measured qubits. The calculation is
+checked by explicit 16^3 x 4 local Pauli/readout enumeration and an independent
+conditional-channel formula, followed by all4^7 physical output Pauli patterns
+through the exact Steane decoder. The leading rates are (X,Y,Z)=(10,6,6)p/15.
+
+The ideal-boundary tail is 39.46% below full v37g and only .13% above the new
+bound. This does NOT establish that a complete circuit obtains that gain.
+
+5. THE REAL PREPARATION PROBLEM
+
+The construction must prepare and verify the 28-qubit logical T state itself.
+Encoding the old noisy seven-qubit prefix into these tiles and decoding it again
+would preserve its existing outer-code errors. The fourteen final tile records
+are not a replacement for missing outer-code syndrome verification.
+
+For a full target of2.5e-5, the numerical gap above the ideal tail is3.079e-6;
+for2.8e-5 it is6.079e-6. These are target differences, not additive certified
+preparation-noise budgets. Full numerator N and acceptance A must be evaluated
+together, including native preparation, waiting, routing and records.
+
+The strengthened proof supplies a necessary preparation condition. For the
+minimizing extracted all-X channel, let w be the nonzero-syndrome weight of its
+conditional residual state. Then
+  L >= L_star + .0031543241950135385 * w.
+Consequently L<=2.5e-5 requires w<=.0009851515 (about.0985%), before paying any
+logical misalignment inside the zero-syndrome sector. This w is not an arbitrary
+raw-prefix syndrome histogram: its definition follows the exact factorization.
+
+Geometry is also a concrete obstacle. The tile contacts fit the6x6 grid, but
+that alone does not solve preparation routing. Exact enumeration finds242
+disjoint seven-tile packings. Only12 leave eight connected free cells, and none
+of those free regions touches all seven tiles; the maximum is five. Thus a
+static28-data layout with a connected free-ancilla bus visiting every tile is
+impossible in this grammar. This does not exclude moving or borrowed-data
+preparation. The finite static-geometry check
+in c4_tile_geometry.json distinguishes terminal packing from an accessible
+ancillary verification workspace. Verification may have to occur before the
+tiles are frozen, or use moving/borrowed data and changing gauge layouts.
+All such costs remain to be constructed and measured.
+
+6. CHANGE THE RESEARCH SUCCESS CRITERION
+
+Current MERGE/EARLIER briefs accept improvements of3e-8, about.083% ofv37g.
+That is a polishing criterion. A breakthrough lane needs a separate full-circuit
+target, such as L<=2.8e-5 with exact A>=.5002 and legal official runtime.
+
+The principal new experiment is a direct, verified28-qubit preparation or a
+fault-tolerant growth process with sufficiently clean residual state, co-designed
+with the two-layer contraction. Constrain the seven tiles only at the final
+boundary, rather than freezing28 data positions throughout preparation.
+Use the exact tail environment for N and A while choosing earlier checks and
+source completion. Do not rank a full architecture by distance, gate count or
+an isolated second-order coefficient.
+
+As a lower-risk parallel branch, reducing prefix moves and verification costs
+on a measured-partner architecture can still target roughly10-20%. Ordinary
+output teleportation by itself is known to be fault-graph equivalent under
+this noise model; it helps only if its geometry changes actual preparation,
+movement and waiting costs. It does not supply a new lower-noise tail.
+
+No complete circuit with a20-30% measured full-noise gain is claimed here.
+The completed results are: current-v37g diagnostics; a new independently
+audited stronger bound; an algebraically valid, native-grid terminal scaffold;
+and its independently cross-checked exact finite-p tail loss. The outstanding
+step is a sufficiently inexpensive, verified noisy preparation.
+
+SOURCE REFERENCES
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/work/lanes/MAIN/v37g.json
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/docs/PLAN.md
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/work/lanes/MERGE/BRIEF5.md
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/work/lanes/EARLIER/CONTINUE2.md
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/work/lanes/BOUND/REPORT.md
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/work/lanes/WHOLEEND/REPORT.md
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/work/lanes/ENDSEARCH/MODEL.md
+https://github.com/AutoclickerI/quantumn/blob/bb98bed0e695e8c94e45aca4088c80a95a7cb98b/work/lanes/MAIN/sparse/judge_subset/noise.py
+https://github.com/SNUQuantums/snu-qff2026-problem/blob/main/problem.md

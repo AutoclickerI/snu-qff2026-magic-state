@@ -70,5 +70,6 @@ Lanes copy the tools they use into their own dirs, so a fix in one lane reaches 
   `work/lanes/GLOBAL/`.
 - Layout and timing CP-SAT: `work/lanes/EARLY/layout.py`, `work/lanes/R43/`, GLOBAL's R46 models; square layouts with a
   Steane automorphism: `work/lanes/SQUARE/` (`find_layout.py`, `layout_model.py`).
-- Floors: `work/lanes/BOUND/` (any-circuit certificate), `work/lanes/WHOLEEND/logs/floors_exact_certificate.json`
+- Floors: `work/lanes/BOUND/` (any-circuit certificate, 1.366e-5), reviewer 18's penultimate-layer certificate
+  (`work/lanes/MAIN/spec/reviewer18/penultimate_bound_certificate.py`, 2.189e-5; C4–Steane tail `c4_steane_tail.py`), `work/lanes/WHOLEEND/logs/floors_exact_certificate.json`
   (outputs without a CX at T−1).
