@@ -24,7 +24,7 @@ import joint as J
 
 ROOTQ = H.parents[2]
 V36H = H / 'c/baseline'
-ORDER = {'rm': 0, 'rmcx': 1, 'trade': 2, 'pd': 3, 'shift': 4, 'cx': 5, 'pair': 6, 'echo': 7, 'guard': 8, 'global': 9}
+ORDER = {'rm': 0, 'rmcx': 1, 'trade': 2, 'mi':2.1,'fuse':2.2,'rev':2.3,'pd': 3, 'shift': 4, 'ajoint': 4.5, 'polishguard': 4.75, 'cx': 5, 'pair': 6, 'echo': 7, 'guard': 8, 'global': 9}
 ADDF = ('cx', 'pair', 'echo', 'guard')
 
 
@@ -51,6 +51,34 @@ def free_at(c, q, t):
 def apply_edit(c, e):
     """Mutates and returns c (callers deep-copy once per bundle)."""
     f = e['fam']
+    if f=='mi':
+        from measured_init import convert_init
+        o=_find(c,e['t'],e['q'],e['name']);i=c['ops'].index(o);result=convert_init(c,i)
+        if result is None:raise Invalid('measured source output byproduct changed')
+        return result[0]
+    if f=='fuse':
+        o=_find(c,e['t'],e['q'],e['name']);m=op_of_bit(c,e['bit'])
+        if m['t']!=e['mt']:raise Invalid('fused source timing changed')
+        m['t']=o['t'];c['ops'].remove(o)
+        if not in_span(c,e['bit']):c['tail'].append(f"// DETECTOR c[{e['bit']}]")
+        return c
+    if f=='rev':
+        o=_find(c,e['t'],[e['a'],e['b']],'CX');o['lines']=[f"cx q[{e['b']}],q[{e['a']}];"];return c
+    if f == 'polishguard':
+        if e.get('remove28',True):c=apply_edit(c,dict(fam='rmcx',a=28,b=22,t=29))
+        c=apply_edit(c,dict(fam='shift',name='RESET',qs=[23],t=29,nt=28))
+        c=apply_edit(c,dict(fam='cx',a=23,b=22,t=29))
+        if e['switch21']:
+            c=apply_edit(c,dict(fam='rmcx',a=21,b=20,t=30))
+            c=apply_edit(c,dict(fam='cx',a=21,b=22,t=30))
+        return c
+    if f == 'ajoint':
+        o = _find(c,37,9,'MEASURE')
+        if bits_of(o)!=[321] or not free_at(c,9,38) or not free_at(c,10,37):
+            raise Invalid('AJOINT interface changed')
+        o['t']=38
+        c['ops'].append(dict(t=37,lines=['cx q[9],q[10];']))
+        return c
     if f == 'global':
         m = bit(c)
         if e['kind'] == 'source6':
@@ -163,6 +191,11 @@ def apply_bundle(base, bundle):
 # ---------------------------------------------------------------- menu generation
 def eid(e):
     f = e['fam']
+    if f=='mi':return f"mi:{e['name']}{e['q']}@{e['t']}"
+    if f=='fuse':return f"fuse:{e['name']}{e['q']}@{e['t']}:M{e['bit']}@{e['mt']}"
+    if f=='rev':return f"rev:{e['a']}_{e['b']}@{e['t']}"
+    if f == 'polishguard':return 'polishguard:R45_switch21='+str(int(e['switch21']))+'_remove28='+str(int(e.get('remove28',True)))
+    if f == 'ajoint': return 'ajoint:M321_37>38+CX9_10@37'
     if f == 'global': return 'global:' + e['kind']
     if f == 'rm':
         return 'rm:' + e['name']
@@ -355,6 +388,11 @@ def guard_menu(c, st):
 def touched(c, e):
     """(qubit, tick) cells an edit removes, adds or moves, in base-plan ticks."""
     f = e['fam']
+    if f=='mi':return [(e['q'],e['t'])]
+    if f=='fuse':return [(e['q'],e['t']),(e['q'],e['mt'])]
+    if f=='rev':return [(e['a'],e['t']),(e['b'],e['t'])]
+    if f == 'polishguard':return [(28,29),(22,29),(23,28),(23,29)]+([(21,30),(20,30),(22,30)] if e['switch21'] else [])
+    if f == 'ajoint':return [(9,37),(9,38),(10,37)]
     cells = []
     if f == 'rm':
         for p in e['ed']:

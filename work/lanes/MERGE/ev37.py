@@ -105,11 +105,18 @@ def sha_of(text):
     return hashlib.sha256(text.encode()).hexdigest()
 
 
+def identity(text, dq):
+    return sha_of(text) + '_' + hashlib.sha256(json.dumps(list(dq),separators=(',',':')).encode()).hexdigest()[:16]
+
+
 def write_stem(text, dq=D):
-    s = sha_of(text)
-    st = CDIR / s[:24]
-    if not st.with_suffix('.qasm').exists():
-        st.with_suffix('.json').write_text(json.dumps(dict(data_qubits=dq)))
+    st = CDIR / identity(text, dq)
+    CDIR.mkdir(exist_ok=True)
+    if st.with_suffix('.qasm').exists():
+        assert st.with_suffix('.qasm').read_text() == text
+        assert json.loads(st.with_suffix('.json').read_text())['data_qubits'] == list(dq)
+    else:
+        st.with_suffix('.json').write_text(json.dumps(dict(data_qubits=list(dq))))
         st.with_suffix('.qasm').write_text(text)
     return st
 
@@ -120,6 +127,9 @@ def price_stem(st, nkeys=72):
     try:
         with contextlib.redirect_stdout(io.StringIO()):
             m, eng, groups, nd, ks, psi, where, de = sw.prepare(Path(st), True)
+            ideal = eng.phi(0)
+            raw_stabilizers = [0.0 if eng.B.express(x) is None else eng.expect(ideal,(eng.B.express(x),eng._w(z),c)) for x,z,c in m.gen_m]
+            assert all(abs(v-1)<1e-10 for v in raw_stabilizers), ('raw output code space',raw_stabilizers)
             compiled, elim = sw.compile_best(m, eng, groups, nd, ks)
             keys = [None] + eng.keys[:nkeys]
             sw._CTX.update(eng=eng, ks=ks, psi=psi, where=where, compiled=compiled, elim=elim)
@@ -129,7 +139,7 @@ def price_stem(st, nkeys=72):
         eA = rows[0]['absolute_kernel_omission_bound']
         eO = sum(abs(w * b) * r['absolute_kernel_omission_bound'] for w, b, r in zip(eng.W, eng.beta, rows[1:]))
         return dict(loss=(A - obs) / (2 * A), acceptance=A, bound=eO / (2 * (A - eA)) + abs(obs) * eA / (2 * A * (A - eA)),
-                    width=elim['width'], seconds=time.perf_counter() - t)
+                    raw_stabilizers=raw_stabilizers, width=elim['width'], seconds=time.perf_counter() - t)
     except Exception as e:
         return dict(error=repr(e)[:200], seconds=time.perf_counter() - t)
 

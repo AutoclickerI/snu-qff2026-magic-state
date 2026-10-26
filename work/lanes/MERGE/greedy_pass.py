@@ -33,13 +33,16 @@ def make_tasks(base,sets,es,tag):
   try:
    c,txt=M.apply_bundle(base,[es[i] for i in ids]);s=hashlib.sha256(txt.encode()).hexdigest()
    if s in seen:continue
-   seen.add(s);st=H/'c'/s[:24]
+   seen.add(s);st=H/'c'/E.identity(txt,c['meta']['data_qubits'])
    st.with_suffix('.qasm').write_text(txt);write(st.with_suffix('.json'),dict(c['meta'],source=dict(stage=tag,edits=ids)))
    tasks.append(dict(stem=str(st.relative_to(H)),why=dict(stage=tag,edits=ids)))
   except Exception as ex:errors.append(dict(edits=ids,error=repr(ex)))
  write(H/'res'/f'{tag}_invalid.json',errors)
  return tasks
-def choose(rows):return min([r for r in rows if 'loss' in r and r['acceptance']>=FLOOR],key=lambda r:(r['acceptance']*(r['loss']-TAU),r['loss']))
+def choose(rows, incumbent=None):
+ candidates=([incumbent] if incumbent else [])+list(rows)
+ tau=incumbent['loss'] if incumbent else TAU
+ return min([r for r in candidates if 'loss' in r and r['acceptance']>=FLOOR],key=lambda r:(r['loss'],r['acceptance']*(r['loss']-tau)))
 def greedy(scan,stem,tag):
  base=M.read(stem);b=price(stem,tag+' control');es=json.loads((H/'res'/f'{scan}_menu.json').read_text())
  singles=rows_for(scan);good=[r for r in singles if eligible(r,b)]
@@ -67,7 +70,7 @@ def greedy(scan,stem,tag):
    sets=sorted({tuple(sorted(set(r['what_moved']['edits'])|{i})) for r in under for i in buyers})
    tasks=make_tasks(base,sets,es,f'{tag}_{rnd}_fund')
    if tasks:rows+=run_tasks(tasks,f'{tag}_{rnd}_fund')
-  best=choose([current]+rows);gain=current['loss']-best['loss'];before=current
+  best=choose(rows,current);gain=current['loss']-best['loss'];before=current
   current=best;selected=current.get('what_moved',{}).get('edits',selected)
   event=dict(round=rnd,selected=selected,before=before['loss'],after=current['loss'],acceptance=current['acceptance'],gain=gain,stem=current['stem'])
   history.append(event);write(H/'res'/f'{tag}_history.json',history);print(json.dumps(dict(event='greedy_round',**event)),flush=True)

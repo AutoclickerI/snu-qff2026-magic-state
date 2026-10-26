@@ -11,7 +11,7 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    gives the server's 1-F (`receipts/seq_v37c_h2600_r43418.txt`) (another host may differ in the last ulp). Below 1e8 shots, read `gates_ok`
    (format, class, correctness); acceptance there is a binomial estimate, so gate on the exact all-orders A ≥ 0.5002.
 3. Ranking evaluators (all orders, exact 2nd/3rd order, 3-seed MC, speed): `docs/reference/circuit.md` "Evaluators".
-4. Sequential judge plus fault scan (~5 min): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
+4. Sequential official judge (~4 min; no fault scan, a diagnostic run only when it answers a question): `work/seqcheck.py <stem> > work/receipts/seq_<name>.txt`.
 5. Seed-0 re-draws of one circuit (same noise model, verified per variant): `RACE_THRESHOLD=<x> work/race.py <stem> <n> [procs]
    [first]` → `work/reorder/` (gitignored); it drops a variant once its chance of ending below x (or below `reorder/<name>.thr`) falls under 0.7× a fresh variant's (`work/reorder.py` holds the
    variant generator and runs every variant to the end).

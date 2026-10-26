@@ -11,10 +11,9 @@ for k in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS'):
 sys.dont_write_bytecode = True
 H = Path(__file__).resolve().parent
 ROOT = H.parents[2]
-sys.path[:0] = [str(H), str(ROOT / 'work/lanes/SCHED'), str(ROOT / 'work/lanes/BCSYN2'), str(ROOT / 'work/lanes/FRESH'),
-                str(ROOT / 'work/lanes/EVAL'), str(ROOT / 'work')]
-import schedule as S
-from util import native_times
+sys.path.insert(0, str(H))
+import schedule_local as S
+from util_local import native_times
 
 C = H / 'c'
 D = json.loads((H / 'c' / 'baseline.json').read_text())['data_qubits']

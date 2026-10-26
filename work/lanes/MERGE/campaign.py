@@ -7,19 +7,21 @@ H=Path(__file__).resolve().parent
 sys.path.insert(0,str(H))
 import menu as M, ev37 as E
 ROOT=H.parents[2]
-TAU=3.742321460072e-5
+TAU=json.loads((H/"v37f/base.json").read_text())["loss"]
 FLOOR=.5002
 def write(p,x):
  p=Path(p);t=p.with_name(p.name+'.tmp');t.write_text(json.dumps(x,indent=2)+'\n');t.replace(p)
 def sha(st):return hashlib.sha256(Path(st).with_suffix('.qasm').read_bytes()).hexdigest()
-def price(st,why='',log='prices'):
- st=Path(st).resolve();s=sha(st);cache=H/'res'/f'{s}.json'
+def price(st,why='',log='prices',tau=None):
+ tau=TAU if tau is None else tau
+ st=Path(st).resolve();s=sha(st);data=json.loads(st.with_suffix('.json').read_text())['data_qubits'];cache=H/'res'/(hashlib.sha256(E.key(s,data).encode()).hexdigest()+'.json')
  r=json.loads(cache.read_text()) if cache.exists() else None
- if r is None or r.get('evaluator_hash')!=E.EVH or r.get('data_qubits')!=E.D:
+ if r is None or r.get('evaluator_hash')!=E.EVH or r.get('data_qubits')!=data:
   r=dict(E.price_stem(st),sha256=s,data_qubits=json.loads(st.with_suffix('.json').read_text())['data_qubits'],evaluator_hash=E.EVH)
-  if 'loss' in r:r['J_tau']=r['acceptance']*(r['loss']-TAU)
+  if 'loss' in r:r['J_tau']=r['acceptance']*(r['loss']-tau)
   write(cache,r)
- row=dict(r,stem=str(st),what_moved=why)
+ row=dict(r,stem=str(st),what_moved=why,tau=tau)
+ if 'loss' in row:row['J_tau']=row['acceptance']*(row['loss']-tau)
  with (H/'res'/f'{log}.jsonl').open('a') as f:f.write(json.dumps(row)+'\n')
  print(json.dumps(row),flush=True)
  return row
