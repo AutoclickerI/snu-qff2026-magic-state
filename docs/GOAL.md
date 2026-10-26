@@ -7,7 +7,7 @@ close, 2026-10-30 12:00 KST (last loop slot about 11:24). The key, the best race
 to fewer CX, then the earlier entry.
 
 ## Target
-Official 1-F now 3.338e-5 ([SOTA](SOTA.md)); true mean 3.591e-5 (v37i); goal 1e-5, out of reach: every admissible
+Official 1-F now 3.338e-5 ([SOTA](SOTA.md)); true mean 3.587e-5 (v37j); goal 1e-5, out of reach: every admissible
 circuit has true mean ≥ 2.189e-5 (reviewer 18, audited; FINDINGS). Reachable gap ≤ 1.40e-5 of mean (39%); a 1% lower
 mean ≈ 0.5σ of key. PLAN "Levers" sizes each lever against this gap. Next team 3.856e-5.
 

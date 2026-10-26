@@ -6,14 +6,13 @@
   `work/receipts/next_stem.txt` (read at HH:20) and submits the hour's best once the server's one-hour cooldown ends
   (about HH:24); `submit_when_ready.sh` submits a pick only if its key beats our board key (a worse key changes
   nothing, and each submission drifts the next slot ≈ 8 s). v37f's slots scored 3.338–3.376e-5, v37h's 3.350–3.397e-5.
-- **Best expected circuit: v37i** (`work/lanes/MAIN/v37i`): **all-orders 3.591182e-5, acceptance 0.50036**, 411 CX,
-  49 native ticks: EARLIER's repair of v37g's R45 route plus the q17 herald, DETECTOR c[309] and acceptance buys
-  (−2.08e-7 vs v37h 3.611955e-5); races from the 16:20 race; judge time equal to v37h's. Round R45 on GLOBAL's R46
-  layout (data [6,20,19,10,2,22,16]). Since v36h (3.815473e-5): greedy bundles, R46 with both A-flag-gap helpers (v37a
-  3.761822e-5), POLISH (v37b), MERGE passes (v37c, v37d 3.676347e-5), BC3 (v37e, v37f 3.630561e-5), MERGE pass 4
-  (v37g), reviewer 17 (v37h), EARLIER (v37i). Lane gains on a shared base compound.
-- Lanes (18:00): MERGE combines its pass-5 gains on v37i with EARLIER's last finalist, screening judge speed; WAITCUT
-  (asynchronous movement, to 01:00) and REDESIGN run under "How lanes run" below. EARLIER (P111) and CONTRACTS (P117)
+- **Best expected circuit: v37j** (`work/lanes/MAIN/v37j`): **all-orders 3.587095e-5, acceptance 0.50102**, 412 CX,
+  49 native ticks: MERGE's pass 5 on v37i (3.591182e-5, EARLIER's R45 route repair) combined with EARLIER's last
+  finalist; races from the 19:20 race; judge time 1.2–1.27× v37i's (expected-key delta ≈ +1e-8). Round R45 on GLOBAL's
+  R46 layout (data [6,20,19,10,2,22,16]). Since v36h (3.815473e-5): greedy bundles, R46 with both A-flag-gap helpers
+  (v37a 3.761822e-5), POLISH (v37b), MERGE passes (v37c, v37d 3.676347e-5), BC3 (v37e, v37f 3.630561e-5), MERGE pass 4
+  (v37g), reviewer 17 (v37h 3.611955e-5), EARLIER (v37i), MERGE pass 5 (v37j).
+- Lanes (19:00): WAITCUT (asynchronous movement, to 01:00) and REDESIGN run under "How lanes run" below. EARLIER (P111) and CONTRACTS (P117)
   closed (FINDINGS "Closed recipes").
 - Where the loss sits (FINDINGS): with only v37g's last 2/3/4 ticks noisy the loss is 2.276/2.847/2.905e-5, so 79%
   survives a noiseless prefix: a ≥ 20% gain needs a different final check or a cleaner state entering it, not polish.
@@ -62,7 +61,7 @@ the final slot (2026-10-30 about 11:24): `next_stem.txt` before 10:20 that day; 
 rule 7), so a better stem verified later can still race a shorter window by hand and be submitted before 11:55.
 
 ## Levers
-Gap: v37i's true mean 3.591e-5 to the floor 2.189e-5 = 1.40e-5. Shares come from v37g's noise cuts (only the last
+Gap: v37j's true mean 3.587e-5 to the floor 2.189e-5 = 1.40e-5. Shares come from v37g's noise cuts (only the last
 2/3 ticks noisy: 2.276/2.847e-5); cuts are ordered counterfactuals, not additive allocations.
 | Lever | Stage | Ceiling (basis) | Cost per verdict | Standing |
 |---|---|---|---|---|
@@ -78,7 +77,7 @@ Gap: v37i's true mean 3.591e-5 to the floor 2.189e-5 = 1.40e-5. Shares come from
 |---|---|---|---|---|---|---|
 | 1 | P115 | G1 | Attack the preparation-and-waits share (≤ 0.77e-5, 54% of the gap). Measured on v37h (FINDINGS): each pre-44 window of B, C or data made noiseless alone gains 1.1–1.9e-6, jointly less (B/C operations 30–44 3.18e-6 vs 5.44e-6 summed); the surviving mechanisms are X faults on B/C with identical final signatures and late data Y idles. Grid-free just-in-time B/C factory 3.341e-5 (with X-memory 3.282e-5); every grid build loses after bounded repair (factory 4.82e-5, history meter 3.82e-5, retimed history checks fail acceptance); synchronized movement schedules on the real prefix infeasible. Now one budgeted experiment: asynchronous movement with measured transfers between encoder layers and new templates on v37i's prefix (8 h from 17:00; stop if every model is infeasible or the best repaired build is > 1e-6 above v37i) | a full circuit below v37i at A ≥ 0.5002, or the experiment closed with its class | WAITCUT (Codex, `work/lanes/WAITCUT`, owl ≤ 24 in docker, zebra ≤ 2) | active |
 | 2 | P116 | G1 | From-scratch layout, prefix placement and ending around a check cheaper than the Steane round (R-20261026-1). Measured: grid-free path ending with 8-CX templates 3.305e-5 on v37h's prefix; joint CP-SAT layouts with ≤ 1 transfer per coordinate infeasible through tick 47–60 (scoped). Next, concurrently: ≤ 2 transfers per coordinate and relaxed prefix occupancy (geometry); square, path and leaf families each through one bounded repair (numerical); a bounded boundary-window branch that may change the prefix–ending interface (blue check, hops, handoff, consumed detector parities); zero-singles and bounded-residue tracks | a full circuit below v37i − 1e-7 (aim 3.2e-5, stretch 2.9e-5); checkpoints 2026-10-27 12:00 (prices and a witness or certificate), 2026-10-28 18:00 (a priced grid build below 3.6e-5, else stop) | REDESIGN (Codex, `work/lanes/REDESIGN`, jerry ≤ 24, zebra ≤ 2) | active |
-| 3 | P104 | G1 | Merge the lanes' gains onto the incumbent and repair in budgeted passes, selecting by lowest L. Pass 3 gave v37f, pass 4 v37g; pass 5 (reset-then-herald compounds at every reset, detector-span completion priced without second-order pruning) reached 3.605590e-5 on v37h (−6.4e-8) and is replayed on v37i. Next pass also prices GLOBAL's last edit with acceptance funding (`GLOBAL/cand/global_v37g_bcflip`: −2.09e-8 on v37g at −0.0032 acceptance) | finalist L < L(v37i) − 3e-8, or the measured reason the grammar is exhausted | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 24, zebra ≤ 4) | active |
+| 3 | P104 | G1 | Merge the lanes' gains onto the incumbent and repair in budgeted passes, selecting by lowest L with judge speed screened before pricing (a measured state reused as an X-basis preparation can send the judge to its slow path, FINDINGS). Pass 5 gave v37j (−4.09e-8 on v37i, judge 1.2–1.27× slower). Passes now gain ≈ 4e-8 at a judge-time cost of ≈ 3e-8, so the lane waits for new material; its hippo cores race meanwhile | repair of any architecture lane's grid build within 1e-6 of v37j, or a new mechanism worth ≥ 1e-7 | MERGE (Codex, `work/lanes/MERGE`, hippo ≤ 24 when active) | next: when P115 or P116 delivers a grid build |
 | 4 | P110 | G2 | Second cleanup: once the lanes above end, delete the closed lanes they still read (ACCBUY, AENC, AJOINT, APROC, BCSYN2, BCV, BCX, BFLAG, BUNDLE, COMPLETE, EARLY, EVAL, EXENC, FLAG, FRESH, CONTRACT, ENDSEARCH, GLOBAL, GUARDNET, INTEG, INTEG2, JOINTPREP, POLISH, PREPFREE, R43, SCHED, SQPROJ, SQUARE, T14, TERM, WHOLEEND, XTIM) (shared tools live in `work/tools/qtools`) | `work/lanes` holds only live lanes and MAIN | main session | next: when the active lanes end |
 | 5 | P2 | G1 | Hourly race of the stem with the lowest expected key: the lowest all-orders mean unless its judge time costs more draws than its gain (≈ 1.1e-7 per halving of the draw rate; σ per draw is equal across stems, FINDINGS "Score spread per stem") (R-20261023-10); the hour's best draw is submitted when its key beats the board | final best in by 2026-10-30 10:20 (later only with a shortened race before the 12:00 close) | main session | active |
 
