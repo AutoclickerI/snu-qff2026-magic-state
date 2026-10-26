@@ -1,0 +1,2697 @@
+{
+  "status": "complete_measured_obstacles",
+  "incumbent": {
+    "loss": 3.611954991483112e-05,
+    "acceptance": 0.5015489333258327,
+    "raw_stabilizers": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "kernel_omission_bound": 3.684801061227347e-14,
+    "width": 10,
+    "single_fault_loss": 2.794061278639928e-19,
+    "ticks": 48,
+    "cx": 406,
+    "channels": 784,
+    "name": "incumbent",
+    "stem": "circuits/v37h",
+    "spec": {},
+    "seconds": 32.849288229015656,
+    "host": "zebra",
+    "sha256": "78ca0e26298a1df5090b2ccc779cf2e3c4ba3f9298ef8d85487297be0432918b",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ]
+  },
+  "audit": {
+    "verdict": "holds under inspected judge; no counterexample found",
+    "details": "AUDIT.md"
+  },
+  "experiments": [
+    {
+      "loss": 8.410714884897572e-05,
+      "acceptance": 0.48597990034128064,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.802802930641036e-14,
+      "width": 10,
+      "single_fault_loss": 5.53162454113785e-19,
+      "ticks": 50,
+      "cx": 434,
+      "channels": 833,
+      "name": "c3_incumbent_full",
+      "stem": "circuits/538fd1c6f4823dcbc6c3",
+      "spec": {},
+      "seconds": 41.86284906801302,
+      "host": "zebra",
+      "sha256": "b0986a8fcace1fb2ca54e114405d0a4f7b5438970e27bdeba0891e13ecd74e95",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 3.2596897011766146e-05,
+      "acceptance": 0.9428547050624673,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 5,
+      "single_fault_loss": 1.0954200509634839e-18,
+      "ticks": 14,
+      "cx": 93,
+      "channels": 100,
+      "name": "compact_c3_ideal_oracle",
+      "stem": "circuits/d75e65c259da16f10bd5",
+      "spec": {
+        "noise_start": 10
+      },
+      "seconds": 0.40342539601260796,
+      "host": "zebra",
+      "sha256": "4abc598641956d8611e6453a6bbe910575860952668a489ca23a88f11b4e53a1",
+      "data_qubits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "loss": 3.6108223027714786e-05,
+      "acceptance": 0.5668688973017494,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.260203648190533e-14,
+      "width": 10,
+      "single_fault_loss": 3.3121653567983824e-19,
+      "ticks": 48,
+      "cx": 381,
+      "channels": 691,
+      "name": "compact_c3_perfect_resource",
+      "stem": "circuits/da787fb594d13eb72064",
+      "spec": {
+        "perfect_intervals": {
+          "30": [
+            37,
+            44
+          ],
+          "34": [
+            37,
+            44
+          ],
+          "35": [
+            37,
+            44
+          ],
+          "36": [
+            37,
+            44
+          ],
+          "37": [
+            37,
+            44
+          ],
+          "38": [
+            37,
+            44
+          ],
+          "39": [
+            37,
+            44
+          ],
+          "29": [
+            39,
+            44
+          ],
+          "4": [
+            39,
+            44
+          ],
+          "17": [
+            39,
+            44
+          ],
+          "5": [
+            39,
+            44
+          ],
+          "28": [
+            39,
+            44
+          ],
+          "26": [
+            39,
+            44
+          ],
+          "11": [
+            39,
+            44
+          ],
+          "33": [
+            39,
+            44
+          ],
+          "27": [
+            39,
+            44
+          ],
+          "12": [
+            39,
+            44
+          ],
+          "31": [
+            39,
+            44
+          ],
+          "18": [
+            39,
+            44
+          ],
+          "32": [
+            39,
+            44
+          ],
+          "24": [
+            39,
+            44
+          ],
+          "23": [
+            40,
+            44
+          ],
+          "3": [
+            43,
+            44
+          ],
+          "25": [
+            43,
+            44
+          ],
+          "9": [
+            43,
+            44
+          ],
+          "7": [
+            43,
+            44
+          ],
+          "8": [
+            43,
+            44
+          ],
+          "13": [
+            43,
+            44
+          ],
+          "15": [
+            43,
+            44
+          ]
+        }
+      },
+      "seconds": 12.562208478047978,
+      "host": "zebra",
+      "sha256": "857c560b439a5d122af3c081b597db9b105705963c5baa99a78e7ceebca0f99a",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 4.838990655490007e-05,
+      "acceptance": 0.5068561538241363,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.6462067943647434e-14,
+      "width": 10,
+      "single_fault_loss": 3.3121653567983824e-19,
+      "ticks": 52,
+      "cx": 381,
+      "channels": 773,
+      "name": "compact_c3_reset_full",
+      "stem": "circuits/19e599446380584c4f00",
+      "spec": {},
+      "seconds": 8.115938219998498,
+      "host": "zebra",
+      "sha256": "de7bd5ef2882d0f9ee3c116625c1614c5538b981ae7bcdc89a3fb3ea4a60a232",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 4.3679956801180474e-05,
+      "acceptance": 0.5211466809616303,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.546227201330487e-14,
+      "width": 10,
+      "single_fault_loss": 3.3121653567983824e-19,
+      "ticks": 48,
+      "cx": 381,
+      "channels": 774,
+      "name": "compact_c3_reset_jit_full",
+      "stem": "circuits/da787fb594d13eb72064",
+      "spec": {},
+      "seconds": 20.6130070159561,
+      "host": "zebra",
+      "sha256": "857c560b439a5d122af3c081b597db9b105705963c5baa99a78e7ceebca0f99a",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 3.8344204605418895e-05,
+      "acceptance": 0.9459372335264465,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 5,
+      "single_fault_loss": 1.1398289719484729e-18,
+      "ticks": 14,
+      "cx": 65,
+      "channels": 93,
+      "name": "compact_standard_ideal_oracle",
+      "stem": "circuits/5ccd88d544433c34b990",
+      "spec": {
+        "noise_start": 10
+      },
+      "seconds": 0.40728505403967574,
+      "host": "zebra",
+      "sha256": "a5fb4983c8a44e0c65c6fc2c0cfcb241ca9cf999a4022a7cb03c0b9709ad1aeb",
+      "data_qubits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "loss": 5.531608840187591e-05,
+      "acceptance": 0.5085190079473286,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.634277403967606e-14,
+      "width": 10,
+      "single_fault_loss": 3.5342099617233455e-19,
+      "ticks": 52,
+      "cx": 353,
+      "channels": 762,
+      "name": "compact_standard_reset_full",
+      "stem": "circuits/025aa5cc056555c79141",
+      "spec": {},
+      "seconds": 9.484816760988906,
+      "host": "zebra",
+      "sha256": "2d793048dcfd8f598f04f48cebaebfb9a4f0ffba3556c0689e0b0f4309a32fd8",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 5.0318380817423875e-05,
+      "acceptance": 0.5228539785864783,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.534641665297722e-14,
+      "width": 10,
+      "single_fault_loss": 3.5342099617233455e-19,
+      "ticks": 48,
+      "cx": 353,
+      "channels": 761,
+      "name": "compact_standard_reset_jit_full",
+      "stem": "circuits/707495c08fbe59fc06ab",
+      "spec": {},
+      "seconds": 25.339569482952356,
+      "host": "zebra",
+      "sha256": "5ea1be813e4aac9c333b16311f8f8d7d5a432258535a037c4f63cf6cd023feaa",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.0003997464182758222,
+      "acceptance": 0.44862357812980014,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 4.11913130062375e-14,
+      "width": 10,
+      "single_fault_loss": 1.4334460861096562e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 923,
+      "name": "early_c4_DK_HL_full",
+      "stem": "circuits/e3117b72c9df1ff4d473",
+      "spec": {},
+      "seconds": 46.03503456199542,
+      "host": "zebra",
+      "sha256": "ba22a448c1cc2a4249eff5a28b38e442cb45168b9030b110f97b731ef0022220",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.0003837136861119303,
+      "acceptance": 0.8593765310241962,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 2.1503343304870065e-14,
+      "width": 3,
+      "single_fault_loss": 1.4686031485561195e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 216,
+      "name": "early_c4_DK_HL_growth_tail",
+      "stem": "circuits/e3117b72c9df1ff4d473",
+      "spec": {
+        "noise_start": 45
+      },
+      "seconds": 9.741319810040295,
+      "host": "zebra",
+      "sha256": "ba22a448c1cc2a4249eff5a28b38e442cb45168b9030b110f97b731ef0022220",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.0001064101662775941,
+      "acceptance": 0.9324483577656936,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.9819601071047142e-14,
+      "width": 1,
+      "single_fault_loss": 7.54655597271861e-19,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 105,
+      "name": "early_c4_DK_HL_outer_tail",
+      "stem": "circuits/e3117b72c9df1ff4d473",
+      "spec": {
+        "noise_start": 49
+      },
+      "seconds": 7.935015523980837,
+      "host": "zebra",
+      "sha256": "ba22a448c1cc2a4249eff5a28b38e442cb45168b9030b110f97b731ef0022220",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.0002278897868459323,
+      "acceptance": 0.4517359293026076,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 4.0909278968967206e-14,
+      "width": 10,
+      "single_fault_loss": 1.085872264533682e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 923,
+      "name": "early_c4_DK_full",
+      "stem": "circuits/0f0732395a6792621fbe",
+      "spec": {},
+      "seconds": 8.667524927994236,
+      "host": "zebra",
+      "sha256": "602dbda7bade354c0e81cf93c7ec0c40dd23655f5bdd6a1b54e62483d1e864f6",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.00021264437327335957,
+      "acceptance": 0.8653800417845755,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 2.1355082108396858e-14,
+      "width": 3,
+      "single_fault_loss": 1.1210293269801452e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 216,
+      "name": "early_c4_DK_growth_tail",
+      "stem": "circuits/0f0732395a6792621fbe",
+      "spec": {
+        "noise_start": 45
+      },
+      "seconds": 2.6306513639865443,
+      "host": "zebra",
+      "sha256": "602dbda7bade354c0e81cf93c7ec0c40dd23655f5bdd6a1b54e62483d1e864f6",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 5.155803325439742e-05,
+      "acceptance": 0.9324483577656936,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.9819873855132323e-14,
+      "width": 1,
+      "single_fault_loss": 4.736951571733963e-19,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 105,
+      "name": "early_c4_DK_outer_tail",
+      "stem": "circuits/0f0732395a6792621fbe",
+      "spec": {
+        "noise_start": 49
+      },
+      "seconds": 2.105336712033022,
+      "host": "zebra",
+      "sha256": "602dbda7bade354c0e81cf93c7ec0c40dd23655f5bdd6a1b54e62483d1e864f6",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.00039973651929006346,
+      "acceptance": 0.4486235781298005,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 4.1191313108557077e-14,
+      "width": 10,
+      "single_fault_loss": 1.4334460861096562e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 923,
+      "name": "early_c4_KD_HL_full",
+      "stem": "circuits/dae7b05776a89229c238",
+      "spec": {},
+      "seconds": 53.504099846002646,
+      "host": "zebra",
+      "sha256": "1184aa0eff6b8d0aacb435bbdb334c6a9fc0982bbf6346bbab670068c702476f",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.0003837030858160073,
+      "acceptance": 0.8593765310241969,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 2.150334336206857e-14,
+      "width": 3,
+      "single_fault_loss": 1.4686031485561195e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 216,
+      "name": "early_c4_KD_HL_growth_tail",
+      "stem": "circuits/dae7b05776a89229c238",
+      "spec": {
+        "noise_start": 45
+      },
+      "seconds": 11.473022710997611,
+      "host": "zebra",
+      "sha256": "1184aa0eff6b8d0aacb435bbdb334c6a9fc0982bbf6346bbab670068c702476f",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.00010640853003237644,
+      "acceptance": 0.9324483577656936,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.981960107918432e-14,
+      "width": 1,
+      "single_fault_loss": 7.54655597271861e-19,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 105,
+      "name": "early_c4_KD_HL_outer_tail",
+      "stem": "circuits/dae7b05776a89229c238",
+      "spec": {
+        "noise_start": 49
+      },
+      "seconds": 10.942170416994486,
+      "host": "zebra",
+      "sha256": "1184aa0eff6b8d0aacb435bbdb334c6a9fc0982bbf6346bbab670068c702476f",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.00022788710619487022,
+      "acceptance": 0.45173592930260736,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 4.0909278996484536e-14,
+      "width": 10,
+      "single_fault_loss": 1.085872264533682e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 923,
+      "name": "early_c4_KD_full",
+      "stem": "circuits/30405123e04b22aab37e",
+      "spec": {},
+      "seconds": 19.90328241395764,
+      "host": "zebra",
+      "sha256": "3cdeb4de1af28adacefbc7e84197e376dcda576cbd29c33d4ac6b108357c0294",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.00021264118496804645,
+      "acceptance": 0.8653800417845752,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 2.1355082125481405e-14,
+      "width": 3,
+      "single_fault_loss": 1.1210293269801452e-18,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 216,
+      "name": "early_c4_KD_growth_tail",
+      "stem": "circuits/30405123e04b22aab37e",
+      "spec": {
+        "noise_start": 45
+      },
+      "seconds": 2.9791185859940015,
+      "host": "zebra",
+      "sha256": "3cdeb4de1af28adacefbc7e84197e376dcda576cbd29c33d4ac6b108357c0294",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 5.156026467956439e-05,
+      "acceptance": 0.9324483577656936,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.9819873844035265e-14,
+      "width": 1,
+      "single_fault_loss": 4.736951571733963e-19,
+      "ticks": 53,
+      "cx": 455,
+      "channels": 105,
+      "name": "early_c4_KD_outer_tail",
+      "stem": "circuits/30405123e04b22aab37e",
+      "spec": {
+        "noise_start": 49
+      },
+      "seconds": 2.8814244150416926,
+      "host": "zebra",
+      "sha256": "3cdeb4de1af28adacefbc7e84197e376dcda576cbd29c33d4ac6b108357c0294",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.0001105143492972605,
+      "acceptance": 0.3723313186203802,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 4.963518918331063e-14,
+      "width": 10,
+      "single_fault_loss": 4.792462722965216e-19,
+      "ticks": 62,
+      "cx": 405,
+      "channels": 871,
+      "name": "early_storage_full",
+      "stem": "circuits/a60f7d1f39ffefc7ec44",
+      "spec": {},
+      "seconds": 12.094926274963655,
+      "host": "zebra",
+      "sha256": "c6f38ee8ea8e49151f8eabda3e8eb75930b84fb88fd5ba7b331a0a8b8cabdcb1",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 8.49663046753557e-05,
+      "acceptance": 0.6236291942618553,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 2.963436298127824e-14,
+      "width": 4,
+      "single_fault_loss": 5.181040781584017e-19,
+      "ticks": 62,
+      "cx": 405,
+      "channels": 276,
+      "name": "early_storage_growth_tail",
+      "stem": "circuits/a60f7d1f39ffefc7ec44",
+      "spec": {
+        "noise_start": 43
+      },
+      "seconds": 3.998922151979059,
+      "host": "zebra",
+      "sha256": "c6f38ee8ea8e49151f8eabda3e8eb75930b84fb88fd5ba7b331a0a8b8cabdcb1",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 5.155803325419919e-05,
+      "acceptance": 0.9287241552959155,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.989935194638371e-14,
+      "width": 1,
+      "single_fault_loss": 4.736951571733963e-19,
+      "ticks": 62,
+      "cx": 405,
+      "channels": 113,
+      "name": "early_storage_outer_tail",
+      "stem": "circuits/a60f7d1f39ffefc7ec44",
+      "spec": {
+        "noise_start": 58
+      },
+      "seconds": 3.26014451100491,
+      "host": "zebra",
+      "sha256": "c6f38ee8ea8e49151f8eabda3e8eb75930b84fb88fd5ba7b331a0a8b8cabdcb1",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 8.661030166182063e-05,
+      "acceptance": 0.4785152668723512,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.862122603908926e-14,
+      "width": 10,
+      "single_fault_loss": 5.754656010973626e-19,
+      "ticks": 51,
+      "cx": 427,
+      "channels": 847,
+      "name": "early_zz_DK_full",
+      "stem": "circuits/94fdbdc9b663fdfbe5d6",
+      "spec": {},
+      "seconds": 31.170302140002605,
+      "host": "zebra",
+      "sha256": "ba06f14f4de32f85a13523eb69a58fff15b2d9546cdb538f7114f40b9d53fd3a",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 7.680341869620492e-05,
+      "acceptance": 0.9167908835006646,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 2.0158241201486934e-14,
+      "width": 3,
+      "single_fault_loss": 6.106226635438259e-19,
+      "ticks": 51,
+      "cx": 427,
+      "channels": 140,
+      "name": "early_zz_DK_growth_tail",
+      "stem": "circuits/94fdbdc9b663fdfbe5d6",
+      "spec": {
+        "noise_start": 45
+      },
+      "seconds": 1.9780322380247526,
+      "host": "zebra",
+      "sha256": "ba06f14f4de32f85a13523eb69a58fff15b2d9546cdb538f7114f40b9d53fd3a",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 5.505121405131826e-05,
+      "acceptance": 0.9583110348652897,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.928496276949112e-14,
+      "width": 1,
+      "single_fault_loss": 4.51490696680889e-19,
+      "ticks": 51,
+      "cx": 427,
+      "channels": 75,
+      "name": "early_zz_DK_outer_tail",
+      "stem": "circuits/94fdbdc9b663fdfbe5d6",
+      "spec": {
+        "noise_start": 47
+      },
+      "seconds": 3.2953177529852837,
+      "host": "zebra",
+      "sha256": "ba06f14f4de32f85a13523eb69a58fff15b2d9546cdb538f7114f40b9d53fd3a",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 8.661443219664182e-05,
+      "acceptance": 0.47851526687235096,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.862122599906156e-14,
+      "width": 10,
+      "single_fault_loss": 5.754656010973626e-19,
+      "ticks": 51,
+      "cx": 427,
+      "channels": 847,
+      "name": "early_zz_KD_full",
+      "stem": "circuits/df98a90513e0c92d65f3",
+      "spec": {},
+      "seconds": 9.875826034985948,
+      "host": "zebra",
+      "sha256": "3b18b746b3b4a5cd6c8ee16b79b06ab6b6780b9c8014fb07c8f0df8a8ef00405",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 7.680741202509445e-05,
+      "acceptance": 0.9167908835006642,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 2.015824118128863e-14,
+      "width": 3,
+      "single_fault_loss": 6.106226635438259e-19,
+      "ticks": 51,
+      "cx": 427,
+      "channels": 140,
+      "name": "early_zz_KD_growth_tail",
+      "stem": "circuits/df98a90513e0c92d65f3",
+      "spec": {
+        "noise_start": 45
+      },
+      "seconds": 4.018351633043494,
+      "host": "zebra",
+      "sha256": "3b18b746b3b4a5cd6c8ee16b79b06ab6b6780b9c8014fb07c8f0df8a8ef00405",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 5.5054178618683624e-05,
+      "acceptance": 0.9583110348652895,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.9284962755145972e-14,
+      "width": 1,
+      "single_fault_loss": 4.51490696680889e-19,
+      "ticks": 51,
+      "cx": 427,
+      "channels": 75,
+      "name": "early_zz_KD_outer_tail",
+      "stem": "circuits/df98a90513e0c92d65f3",
+      "spec": {
+        "noise_start": 47
+      },
+      "seconds": 3.8363020000397228,
+      "host": "zebra",
+      "sha256": "3b18b746b3b4a5cd6c8ee16b79b06ab6b6780b9c8014fb07c8f0df8a8ef00405",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 8.721397936170504e-05,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.5691152081368811e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_000_oracle",
+      "stem": "circuits/a734d83cf8b22dc9084d",
+      "spec": {
+        "perfect_before": {
+          "0": 7,
+          "4": 7,
+          "8": 7,
+          "12": 7,
+          "16": 7,
+          "20": 7,
+          "24": 7
+        }
+      },
+      "seconds": 0.15661191998515278,
+      "host": "zebra",
+      "sha256": "fe88edc7f6cdb9d7e2432f9947d36ea5776105cf3ff444e5b80741d684faf769",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011574627462950795,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_001_oracle",
+      "stem": "circuits/5a79257efe78aba3508e",
+      "spec": {
+        "perfect_before": {
+          "0": 7,
+          "4": 7,
+          "8": 7,
+          "12": 7,
+          "16": 7,
+          "20": 7,
+          "24": 7
+        }
+      },
+      "seconds": 0.1427501089638099,
+      "host": "zebra",
+      "sha256": "e5a84e1615c22302e0085823e45b55373b9c3bdcec91d99caa1e87143cde6c9b",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011584895897295258,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_002_oracle",
+      "stem": "circuits/ad79e5a09b9b24a7d69d",
+      "spec": {
+        "perfect_before": {
+          "0": 7,
+          "4": 7,
+          "8": 7,
+          "12": 7,
+          "16": 7,
+          "20": 7,
+          "24": 7
+        }
+      },
+      "seconds": 0.16397720098029822,
+      "host": "zebra",
+      "sha256": "ab562ce1e03fafa0cd5b4ccf1e91f212911758a32a2049b5fa6a7a8b28bb798e",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00013658313735063688,
+      "acceptance": 0.4804858489082456,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.846234929902901e-14,
+      "width": 10,
+      "single_fault_loss": 6.568819562365489e-19,
+      "ticks": 51,
+      "cx": 448,
+      "channels": 867,
+      "name": "encoder_003_full",
+      "stem": "circuits/731401f7dda188966b81",
+      "spec": {},
+      "seconds": 32.424806016962975,
+      "host": "zebra",
+      "sha256": "927c70d85b54bc1f8ba1cee5c7ea59e00ea20ad7e2280542476ccd36902441fb",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 8.71700284773147e-05,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.5691152081368811e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_003_oracle",
+      "stem": "circuits/1b2e90c293c6d2e67255",
+      "spec": {
+        "perfect_before": {
+          "0": 7,
+          "4": 7,
+          "8": 7,
+          "12": 7,
+          "16": 7,
+          "20": 7,
+          "24": 7
+        }
+      },
+      "seconds": 0.3356699430150911,
+      "host": "zebra",
+      "sha256": "0d0a7a40705ee9fc04758e2961738c0d35c01cf1ccfe6b473f4502aee3093f4a",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011574627462950795,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_004_oracle",
+      "stem": "circuits/2704decf521655dcdb90",
+      "spec": {
+        "perfect_before": {
+          "0": 7,
+          "4": 7,
+          "8": 7,
+          "12": 7,
+          "16": 7,
+          "20": 7,
+          "24": 7
+        }
+      },
+      "seconds": 0.1551472860155627,
+      "host": "zebra",
+      "sha256": "d3acd6a6fba4ba317cad3df60a88f83b44458977ea1873c15174da1c0157cb97",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011584895897295258,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_005_oracle",
+      "stem": "circuits/1837293fcbbe89114ae5",
+      "spec": {
+        "perfect_before": {
+          "0": 7,
+          "4": 7,
+          "8": 7,
+          "12": 7,
+          "16": 7,
+          "20": 7,
+          "24": 7
+        }
+      },
+      "seconds": 0.21921768400352448,
+      "host": "zebra",
+      "sha256": "e0d03b5c3e38950ddb22aa92588ec93da01d2dcff7c5b3b3eb0b3d54a86634a9",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00036593543435238854,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_006_oracle",
+      "stem": "circuits/40a6198d24b644c03f20",
+      "spec": {
+        "perfect_before": {
+          "1": 7,
+          "5": 7,
+          "9": 7,
+          "13": 7,
+          "17": 7,
+          "21": 7,
+          "25": 7
+        }
+      },
+      "seconds": 0.1792608990217559,
+      "host": "zebra",
+      "sha256": "e14314d0c7f4ef4222dbe530a97dd810a7b92c66975ada32e1a7714ee4f85e6a",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00036601575514834693,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_007_oracle",
+      "stem": "circuits/2f17191b71b7d476d857",
+      "spec": {
+        "perfect_before": {
+          "1": 7,
+          "5": 7,
+          "9": 7,
+          "13": 7,
+          "17": 7,
+          "21": 7,
+          "25": 7
+        }
+      },
+      "seconds": 0.26568812201730907,
+      "host": "zebra",
+      "sha256": "8686b68dd63550f2e6b76ce530fb67b98772ed7065b966e51b8a6bf8f4c3364e",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00017355837916634386,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 2.1797378716807147e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_008_oracle",
+      "stem": "circuits/4160a882e82266535a13",
+      "spec": {
+        "perfect_before": {
+          "1": 7,
+          "5": 7,
+          "9": 7,
+          "13": 7,
+          "17": 7,
+          "21": 7,
+          "25": 7
+        }
+      },
+      "seconds": 0.21198600495699793,
+      "host": "zebra",
+      "sha256": "67af84eecbcc0e639ab988171a5ae17c24d9817bfa4cee375d4ed67971fb4771",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00017351462629793565,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 2.1797378716807147e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_009_oracle",
+      "stem": "circuits/8ef9e8a1a15a87bfcdb8",
+      "spec": {
+        "perfect_before": {
+          "1": 7,
+          "5": 7,
+          "9": 7,
+          "13": 7,
+          "17": 7,
+          "21": 7,
+          "25": 7
+        }
+      },
+      "seconds": 0.1543341590440832,
+      "host": "zebra",
+      "sha256": "96dbe756ac2be976bd891d891d5b2dda8f5e5175d3e637a2d85d50ccac3269e5",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00036593543435238854,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_010_oracle",
+      "stem": "circuits/01346d46b6278ab93abe",
+      "spec": {
+        "perfect_before": {
+          "1": 7,
+          "5": 7,
+          "9": 7,
+          "13": 7,
+          "17": 7,
+          "21": 7,
+          "25": 7
+        }
+      },
+      "seconds": 0.14325070602353662,
+      "host": "zebra",
+      "sha256": "e844f0c4c0e1f8ef05f22a277a3a33f6c26cd25655156047e15d918d06e777b7",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00036601575514834693,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_011_oracle",
+      "stem": "circuits/1ef542365ad340ed53cc",
+      "spec": {
+        "perfect_before": {
+          "1": 7,
+          "5": 7,
+          "9": 7,
+          "13": 7,
+          "17": 7,
+          "21": 7,
+          "25": 7
+        }
+      },
+      "seconds": 0.2385347270173952,
+      "host": "zebra",
+      "sha256": "61ba7356a06e57d337d80f3b1dfc0fec47fb19637d619a5c0dbf0867dafd269e",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011579294731829154,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_012_oracle",
+      "stem": "circuits/9a01439fc8730f92c742",
+      "spec": {
+        "perfect_before": {
+          "2": 7,
+          "6": 7,
+          "10": 7,
+          "14": 7,
+          "18": 7,
+          "22": 7,
+          "26": 7
+        }
+      },
+      "seconds": 0.1616310789831914,
+      "host": "zebra",
+      "sha256": "34e364c7998be3542bdb4728c761803855b2d8f4267b218b4e4ea28458a31880",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011589567596659346,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_013_oracle",
+      "stem": "circuits/2222324b0dd36a358f70",
+      "spec": {
+        "perfect_before": {
+          "2": 7,
+          "6": 7,
+          "10": 7,
+          "14": 7,
+          "18": 7,
+          "22": 7,
+          "26": 7
+        }
+      },
+      "seconds": 0.19061670603696257,
+      "host": "zebra",
+      "sha256": "0c775b474ca4400be1766ffcdbb758b08462bf22c1c2c585aaa27674af12ab33",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 8.72579504430322e-05,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.5691152081368811e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_014_oracle",
+      "stem": "circuits/424b25078e5aee17d3c6",
+      "spec": {
+        "perfect_before": {
+          "2": 7,
+          "6": 7,
+          "10": 7,
+          "14": 7,
+          "18": 7,
+          "22": 7,
+          "26": 7
+        }
+      },
+      "seconds": 0.19155955302994698,
+      "host": "zebra",
+      "sha256": "570d6ed738231c1b04a809afbe35d827a510670912a207ade6acee0c9affac8a",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 8.721397936124148e-05,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.5691152081368813e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_015_oracle",
+      "stem": "circuits/94c8f0ef0426938b8312",
+      "spec": {
+        "perfect_before": {
+          "2": 7,
+          "6": 7,
+          "10": 7,
+          "14": 7,
+          "18": 7,
+          "22": 7,
+          "26": 7
+        }
+      },
+      "seconds": 0.17029033601284027,
+      "host": "zebra",
+      "sha256": "c4240c3bddd283bcd627b770489de89dec2856bcdfb1ff452a644f02e18a8792",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011579294731829154,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_016_oracle",
+      "stem": "circuits/a258829316d8aadb2700",
+      "spec": {
+        "perfect_before": {
+          "2": 7,
+          "6": 7,
+          "10": 7,
+          "14": 7,
+          "18": 7,
+          "22": 7,
+          "26": 7
+        }
+      },
+      "seconds": 0.20501715602586046,
+      "host": "zebra",
+      "sha256": "ff04a137a6549c42da088f8fb4657e54a7073823bdfebfc7d1c1d29b0f2d57b9",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00011589567596659346,
+      "acceptance": 0.9412268324048212,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 1.650531563276046e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_017_oracle",
+      "stem": "circuits/548523d94431246d2bdf",
+      "spec": {
+        "perfect_before": {
+          "2": 7,
+          "6": 7,
+          "10": 7,
+          "14": 7,
+          "18": 7,
+          "22": 7,
+          "26": 7
+        }
+      },
+      "seconds": 0.15350065397797152,
+      "host": "zebra",
+      "sha256": "51c15986c8030d9d0fc36152d98eb47700bb8c3126f2cde0dcc421eb30aa2b60",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.0003659816513389889,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_018_oracle",
+      "stem": "circuits/628e7b7f27e29a0764e9",
+      "spec": {
+        "perfect_before": {
+          "3": 7,
+          "7": 7,
+          "11": 7,
+          "15": 7,
+          "19": 7,
+          "23": 7,
+          "27": 7
+        }
+      },
+      "seconds": 0.1741222949931398,
+      "host": "zebra",
+      "sha256": "4d01fac8006ccbdf798ca43aeac213f98b7c3c695680469d62f9cf891e30b66f",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00036606201623568365,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_019_oracle",
+      "stem": "circuits/0324366d66d6bfadb2d8",
+      "spec": {
+        "perfect_before": {
+          "3": 7,
+          "7": 7,
+          "11": 7,
+          "15": 7,
+          "19": 7,
+          "23": 7,
+          "27": 7
+        }
+      },
+      "seconds": 0.18140181299531832,
+      "host": "zebra",
+      "sha256": "4802e0d3d34fabe48731c0a20e778a68821217ff01ea0a01d55e756ae51fd0e6",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00017360215223250012,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 2.1797378716807147e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_020_oracle",
+      "stem": "circuits/ecfdebd7d8255d7ba63b",
+      "spec": {
+        "perfect_before": {
+          "3": 7,
+          "7": 7,
+          "11": 7,
+          "15": 7,
+          "19": 7,
+          "23": 7,
+          "27": 7
+        }
+      },
+      "seconds": 0.15676551102660596,
+      "host": "zebra",
+      "sha256": "1691ed3b5d533d92f9efa746d045f0b02e86a1f3bc8c9f41ac2896b119b2f425",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.0003659816513389889,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_021_oracle",
+      "stem": "circuits/8f00094a04ca9e75d031",
+      "spec": {
+        "perfect_before": {
+          "3": 7,
+          "7": 7,
+          "11": 7,
+          "15": 7,
+          "19": 7,
+          "23": 7,
+          "27": 7
+        }
+      },
+      "seconds": 0.18675133300712332,
+      "host": "zebra",
+      "sha256": "0d08169c02d0c9f4f843f7f76241f20b6f3e7a1c6a648331a7a498df5651bd69",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.00036606201623568365,
+      "acceptance": 0.9412268324048203,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 3.0491411864532637e-18,
+      "ticks": 12,
+      "cx": 53,
+      "channels": 112,
+      "name": "encoder_022_oracle",
+      "stem": "circuits/346ef45174ce1cc6728a",
+      "spec": {
+        "perfect_before": {
+          "3": 7,
+          "7": 7,
+          "11": 7,
+          "15": 7,
+          "19": 7,
+          "23": 7,
+          "27": 7
+        }
+      },
+      "seconds": 0.1836704279994592,
+      "host": "zebra",
+      "sha256": "d62e6dd3176bfa179abc2633c8eb3275271661402f4609c046e5433ae7b643ea",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.0001735583791661121,
+      "acceptance": 0.9580039293914637,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 2.1797378716807147e-18,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 91,
+      "name": "encoder_023_oracle",
+      "stem": "circuits/52a13c133f1cdb2bb1a3",
+      "spec": {
+        "perfect_before": {
+          "3": 7,
+          "7": 7,
+          "11": 7,
+          "15": 7,
+          "19": 7,
+          "23": 7,
+          "27": 7
+        }
+      },
+      "seconds": 0.17898123199120164,
+      "host": "zebra",
+      "sha256": "5b5b437f1b6e19d80adb7c4be773415cfa41d32d93015dcc687d9c3e7bf8858f",
+      "data_qubits": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    {
+      "loss": 0.0003317671892202486,
+      "acceptance": 0.4804858489082457,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.84604655891095e-14,
+      "width": 10,
+      "single_fault_loss": 1.0267095815505634e-18,
+      "ticks": 53,
+      "cx": 448,
+      "channels": 875,
+      "name": "grid_late_full",
+      "stem": "circuits/d3945f1ed0916dfca5d3",
+      "spec": {},
+      "seconds": 29.188273852982093,
+      "host": "zebra",
+      "sha256": "deadf74d349f09ed1b0c7ee00e0d0e9005b3488c91397617093e6d5d75cd33c4",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 3.611954991483112e-05,
+      "acceptance": 0.5015489333258327,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.684801061227347e-14,
+      "width": 10,
+      "single_fault_loss": 2.794061278639928e-19,
+      "ticks": 48,
+      "cx": 406,
+      "channels": 784,
+      "name": "incumbent",
+      "stem": "circuits/v37h",
+      "spec": {},
+      "seconds": 32.849288229015656,
+      "host": "zebra",
+      "sha256": "78ca0e26298a1df5090b2ccc779cf2e3c4ba3f9298ef8d85487297be0432918b",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 2.9045907356666057e-05,
+      "acceptance": 0.9403898312079825,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.9652608530977215e-14,
+      "width": 4,
+      "single_fault_loss": 3.1826393372587325e-19,
+      "ticks": 48,
+      "cx": 406,
+      "channels": 101,
+      "name": "incumbent_cut_44",
+      "stem": "circuits/v37h",
+      "spec": {
+        "noise_start": 44
+      },
+      "seconds": 3.414040264033247,
+      "host": "zebra",
+      "sha256": "78ca0e26298a1df5090b2ccc779cf2e3c4ba3f9298ef8d85487297be0432918b",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 2.8473938227042813e-05,
+      "acceptance": 0.9609786310429544,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.9231557575308465e-14,
+      "width": 3,
+      "single_fault_loss": 3.1456319031045603e-19,
+      "ticks": 48,
+      "cx": 406,
+      "channels": 77,
+      "name": "incumbent_cut_45",
+      "stem": "circuits/v37h",
+      "spec": {
+        "noise_start": 45
+      },
+      "seconds": 5.993058021005709,
+      "host": "zebra",
+      "sha256": "78ca0e26298a1df5090b2ccc779cf2e3c4ba3f9298ef8d85487297be0432918b",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 2.2758138119549243e-05,
+      "acceptance": 0.9728339651247643,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 1.8997221559944464e-14,
+      "width": 2,
+      "single_fault_loss": 2.5905203907919825e-19,
+      "ticks": 48,
+      "cx": 406,
+      "channels": 62,
+      "name": "incumbent_cut_46",
+      "stem": "circuits/v37h",
+      "spec": {
+        "noise_start": 46
+      },
+      "seconds": 4.158993812976405,
+      "host": "zebra",
+      "sha256": "78ca0e26298a1df5090b2ccc779cf2e3c4ba3f9298ef8d85487297be0432918b",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 0.00013658313735063688,
+      "acceptance": 0.4804858489082456,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 3.846234929902901e-14,
+      "width": 10,
+      "single_fault_loss": 6.568819562365489e-19,
+      "ticks": 51,
+      "cx": 448,
+      "channels": 867,
+      "name": "late_full",
+      "stem": "circuits/731401f7dda188966b81",
+      "spec": {},
+      "seconds": 38.00069914199412,
+      "host": "zebra",
+      "sha256": "927c70d85b54bc1f8ba1cee5c7ea59e00ea20ad7e2280542476ccd36902441fb",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    {
+      "loss": 2.192096391856255e-05,
+      "acceptance": 0.9787606162143896,
+      "raw_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_omission_bound": 0.0,
+      "width": 0,
+      "single_fault_loss": 7.845576040684419e-19,
+      "ticks": 11,
+      "cx": 53,
+      "channels": 49,
+      "name": "tail_perfect",
+      "stem": "circuits/5b5d6cffe5efb417de94",
+      "spec": {
+        "noise_start": 9
+      },
+      "seconds": 0.1723359749885276,
+      "host": "zebra",
+      "sha256": "9624d72d2b7f3a818a6b7b63f3465ff220ba7560ae258606a171d3a481d67298",
+      "data_qubits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "pareto": [
+    "compact_c3_reset_jit_full",
+    "compact_standard_reset_jit_full"
+  ],
+  "finalists": [],
+  "geometry": [
+    {
+      "fixed_outputs": true,
+      "connected_bus": false,
+      "status": "OPTIMAL",
+      "seconds": 0.10008426598506048,
+      "options": 91,
+      "scope": "exact path-tile occupancy; no preparation, routing, or noise claim",
+      "tiles": [
+        {
+          "index": 0,
+          "D": 6,
+          "H": 12,
+          "K": 7,
+          "L": 13
+        },
+        {
+          "index": 1,
+          "D": 20,
+          "H": 21,
+          "K": 26,
+          "L": 27
+        },
+        {
+          "index": 2,
+          "D": 19,
+          "H": 25,
+          "K": 18,
+          "L": 24
+        },
+        {
+          "index": 3,
+          "D": 10,
+          "H": 4,
+          "K": 11,
+          "L": 5
+        },
+        {
+          "index": 4,
+          "D": 2,
+          "H": 1,
+          "K": 3,
+          "L": 0
+        },
+        {
+          "index": 5,
+          "D": 22,
+          "H": 28,
+          "K": 23,
+          "L": 34
+        },
+        {
+          "index": 6,
+          "D": 16,
+          "H": 15,
+          "K": 17,
+          "L": 14
+        }
+      ],
+      "free": [
+        8,
+        9,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35
+      ]
+    },
+    {
+      "fixed_outputs": true,
+      "connected_bus": true,
+      "status": "INFEASIBLE",
+      "seconds": 0.06324796105036512,
+      "options": 91,
+      "scope": "exact path-tile occupancy; no preparation, routing, or noise claim"
+    },
+    {
+      "fixed_outputs": false,
+      "connected_bus": true,
+      "status": "OPTIMAL",
+      "seconds": 3.752004478999879,
+      "options": 752,
+      "scope": "exact path-tile occupancy; no preparation, routing, or noise claim",
+      "tiles": [
+        {
+          "index": 0,
+          "D": 3,
+          "H": 4,
+          "K": 2,
+          "L": 10
+        },
+        {
+          "index": 0,
+          "D": 7,
+          "H": 8,
+          "K": 1,
+          "L": 9
+        },
+        {
+          "index": 0,
+          "D": 11,
+          "H": 17,
+          "K": 5,
+          "L": 23
+        },
+        {
+          "index": 0,
+          "D": 19,
+          "H": 20,
+          "K": 25,
+          "L": 26
+        },
+        {
+          "index": 0,
+          "D": 24,
+          "H": 30,
+          "K": 18,
+          "L": 31
+        },
+        {
+          "index": 0,
+          "D": 27,
+          "H": 33,
+          "K": 21,
+          "L": 32
+        },
+        {
+          "index": 0,
+          "D": 34,
+          "H": 28,
+          "K": 35,
+          "L": 29
+        }
+      ],
+      "free": [
+        0,
+        6,
+        12,
+        13,
+        14,
+        15,
+        16,
+        22
+      ]
+    }
+  ],
+  "encoder_exhaustion": {
+    "count": 24,
+    "best_oracle": "encoder_003_oracle",
+    "best_loss": 8.71700284773147e-05,
+    "full": {
+      "name": "encoder_003_full",
+      "stem": "circuits/731401f7dda188966b81",
+      "sha256": "927c70d85b54bc1f8ba1cee5c7ea59e00ea20ad7e2280542476ccd36902441fb",
+      "data_qubits": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ],
+      "growth_start": 47,
+      "tail_start": 49,
+      "encoder": {
+        "input": 0,
+        "plus": {
+          "1": 1,
+          "2": 0,
+          "3": 0
+        },
+        "ops": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            3
+          ]
+        ],
+        "depth": 2
+      },
+      "spec": {},
+      "scope": "complete v37h then minimal C4 growth"
+    }
+  },
+  "organizer_raw_verification": "raw_verification.json",
+  "judge_controls": {
+    "incumbent": "1-F=np.float64(3.290812052748703e-05) sem=6.69e-06 acc=0.501396 (z vs 0.5 = +2.79) n_2q=406 gates_ok=True passed=True (24.0s, 1 procs)",
+    "grid_late": "1-F=np.float64(0.0003571621953708445) sem=2.33e-05 acc=0.480174 (z vs 0.5 = -39.65) n_2q=448 gates_ok=True passed=False (22.6s, 1 procs)"
+  },
+  "obstacles": {
+    "a": {
+      "receipts": [
+        "late_full",
+        "grid_late_full",
+        "encoder_003_oracle"
+      ],
+      "conclusion": "All 24 minimal three-CX CSS growth encoders exceed the target with a perfect incoming Steane state; real late growth is worse."
+    },
+    "b": {
+      "receipts": [
+        "early_storage_full",
+        "early_storage_outer_tail",
+        "early_c4_KD_full",
+        "early_c4_DK_full",
+        "early_c4_KD_HL_full",
+        "early_c4_DK_HL_full"
+      ],
+      "conclusion": "Both tested inner logical-X supports and orders fail; full early storage before both outer checks also fails. The encoded final outer check plus tail alone costs >5.15e-5 on the ideal-prefix diagnostic."
+    },
+    "c": {
+      "receipts": [
+        "early_zz_DK_full",
+        "c3_incumbent_full",
+        "compact_c3_reset_jit_full",
+        "compact_c3_perfect_resource"
+      ],
+      "conclusion": "ZZ repetition and C reuse miss 3.4e-5; best complete alternative is 4.3679956801180474e-5 at A=0.5211466809616303, even perfect resource preparation leaves its specific real-prefix diagnostic above 3.4e-5."
+    }
+  },
+  "limits": [
+    "Negative conclusions close the priced preparations, not every C4 preparation or inner code.",
+    "New architectures did not receive a complete incumbent-equivalent polishing search; no polished-family dominance claim is made.",
+    "Non-square connected-bus layout is occupancy feasibility, not a routed/noisily prepared candidate.",
+    "No finalist, no submission, no commit or push."
+  ]
+}

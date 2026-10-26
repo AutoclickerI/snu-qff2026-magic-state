@@ -2,12 +2,14 @@
 
 ## G0 — Official 1-F of 1e-5, or as close to it as possible, by the deadline (R-20261024-3)
 The measure is the official 1-F (`tprep.check(..., shots=10**8, seed=0)`) of our best board entry when submissions
-close, 2026-10-30 12:00 KST (last loop slot about 11:24); the score is the gap to 1e-5. 1e-5 is out of reach: every
-admissible circuit has true expected 1-F ≥ 1.366e-5, ≥ 2.189e-5 by reviewer 18 (P114 audits; FINDINGS), and the key, the best raced
-seed-0 draw, sits ≈ 3.5–4σ (≈ 2.7e-6) below its true mean. Levers: a lower true mean (1% ≈ 0.5σ), then draws
-per hour (racing compute, judge time). Our terminal class floor is 2.274e-5; every tested
-ending outside it is worse. Rank 1
-(R-20261023-1) holds while our key beats every other team's; ties go to fewer CX, then the earlier entry.
+close, 2026-10-30 12:00 KST (last loop slot about 11:24). The key, the best raced seed-0 draw, sits ≈ 3.5–4σ
+(≈ 2.7e-6) below its circuit's true mean. Rank 1 (R-20261023-1) holds while our key beats every other team's; ties go
+to fewer CX, then the earlier entry.
+
+## Target
+Official 1-F now 3.338e-5 ([SOTA](SOTA.md)); true mean 3.612e-5 (v37h); goal 1e-5, out of reach: every admissible
+circuit has true mean ≥ 2.189e-5 (reviewer 18, audited; FINDINGS). Reachable gap ≤ 1.42e-5 of mean (39%); a 1% lower
+mean ≈ 0.5σ of key. PLAN "Levers" sizes each lever against this gap. Next team 3.856e-5.
 
 ## Subgoals (ranked)
 
