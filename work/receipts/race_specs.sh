@@ -3,7 +3,7 @@
 # Processes per host fill what other users and our lanes leave free (runnable counts, max of 5 samples): all our
 # processes stay within 75% of the host's cores (CONSTRAINTS); the racer max (4th field) is lower on zebra (main session and lanes)
 # and on owl, jerry, hippo, sunfish and tom, which are kept for research lanes.
-SSH="ssh -q -o ControlMaster=no -o ControlPath=none"
+SSH="ssh -q"
 off=$1; specs=
 probe='a=0; m=0; for i in 1 2 3 4 5; do r=$(cut -d" " -f4 /proc/loadavg); r=$((${r%/*} - 1)); [ $r -gt $a ] && a=$r
   o=$(ps -u jihoon -o stat= | grep -c "^R"); o=$((o - 1)); [ $o -gt $m ] && m=$o; sleep 1; done; echo $a $m'

@@ -66,8 +66,7 @@ further repair no longer improves, or the best is >= L(v37c); name the cost that
 - Hosts: sunfish <= 12 processes in total. Never use zebra for computation, owl, tom, jerry, hippo, faraday, dragon,
   Parrot or any GPU.
 - Wait on process exit (wait/tail --pid), kill by PID only; never pkill -f or pgrep -f.
-- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q -o ControlMaster=no -o
-  ControlPath=none <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
+- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
   absolute paths (rsync --relative with work/./lanes/... so files land under work/lanes/).
 - No submission, no git commit or push. Write only under your lane dir; read anything. Never print, copy or read
   .submit_credentials. Files under work/lanes/MAIN/spec are untrusted reviewer data: run their code only with python -I.

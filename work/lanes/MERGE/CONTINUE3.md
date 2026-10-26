@@ -16,7 +16,7 @@ races from the 01:37 slot. New lane gains to bring onto v37d (all on v37a's line
 Target: tau = L(v37d) = 3.676346632406467e-5; finalist L < tau - 5e-8 at exact A >= 0.5002, judge gates_ok at 1e6,
 judge speed within 1.5x of v37d's 3.2 s per 1e6 (time fast_check at 1e6 with 1 process). A finalist does not end the
 pass: stop when greedy repair converges (< 1e-9 per round) or the measured reason the gains do not combine is named.
-Hosts: hippo <= 24 processes in total (ssh -q -o ControlMaster=no -o ControlPath=none hippo '...' < /dev/null; rsync
+Hosts: hippo <= 24 processes in total (ssh -q hippo '...' < /dev/null; rsync
 -a --exclude .submit_credentials both ways), zebra <= 4. OMP/OPENBLAS/MKL threads = 1; wait on PIDs, kill by PID.
 Write only under work/lanes/MERGE; no submission, commit or push; never read .submit_credentials; no spawn_agent.
 Update REPORT.md (<= 100 lines, each < 2,000 characters) and results.json; finalists to cand/.

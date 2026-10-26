@@ -1,6 +1,6 @@
 from cont37 import *
 import subprocess,shlex
-SSH=['ssh','-q','-o','ControlMaster=no','-o','ControlPath=none'];PY=str(ROOT/'.venv/bin/python')
+SSH=['ssh','-q'];PY=str(ROOT/'.venv/bin/python')
 def sync(paths):
  rel=['work/./lanes/MERGE/'+str(Path(p).relative_to(H)) for p in paths]
  subprocess.run(['rsync','-a','--exclude','.submit_credentials','--exclude','__pycache__','--relative','-e',' '.join(SSH),*rel,'hippo:'+str(ROOT/'work')+'/'],cwd=ROOT,check=True)

@@ -49,7 +49,7 @@ stop to ask questions: decide within this brief and record each decision in REPO
 
 <action_safety>
 - Wait on process exit (wait/tail --pid), kill by PID only; never pkill -f or pgrep -f. Always OMP_NUM_THREADS=1
-  OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. ssh as ssh -q -o ControlMaster=no -o ControlPath=none <host> '...' < /dev/null;
+  OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. ssh as ssh -q <host> '...' < /dev/null;
   sync with rsync -a --exclude .submit_credentials. Never use owl, faraday, dragon, Parrot or any GPU, and never touch
   other lanes' or the racer's processes.
 - No submission, no git commit, push, checkout or reset. Write only under your lane dir; read anything. Never print,

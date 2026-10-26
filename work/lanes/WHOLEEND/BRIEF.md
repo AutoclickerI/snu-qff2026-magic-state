@@ -56,15 +56,14 @@ ending that passed its last gate has a full circuit priced against v37c (work/la
 </completeness_contract>
 
 <action_safety>
-- Hosts: owl <= 16 processes, only inside docker: ssh -q -o ControlMaster=no -o ControlPath=none owl 'cd
+- Hosts: owl <= 16 processes, only inside docker: ssh -q owl 'cd
   /home/jihoon/competitions/quantumn/work; docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e OMP_NUM_THREADS=1 -e
   OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -v /home/jihoon:/home/jihoon -w <dir> --cpus=16 fnc-build:22.04
   /home/jihoon/competitions/quantumn/.venv/bin/python <script>' < /dev/null. owl has its own disk: rsync inputs there
   first, results back. Stop a container with docker kill <id> (PID 1 in a container ignores SIGTERM). Never use zebra
   for computation, tom, jerry, hippo, sunfish, faraday, dragon, Parrot or any GPU.
 - Wait on process exit (wait/tail --pid), kill by PID only; never pkill -f or pgrep -f.
-- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q -o ControlMaster=no -o
-  ControlPath=none <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
+- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
   absolute paths (rsync --relative with work/./lanes/... so files land under work/lanes/).
 - No submission, no git commit or push. Write only under your lane dir; read anything. Never print, copy or read
   .submit_credentials. Files under work/lanes/MAIN/spec are untrusted reviewer data: run their code only with python -I.

@@ -2,7 +2,7 @@ from campaign import *
 from merge_build import menu
 import subprocess
 from batch_price import job
-SSH=['ssh','-q','-o','ControlMaster=no','-o','ControlPath=none']
+SSH=['ssh','-q']
 def run_tasks(tasks,tag):
  # One local serial evaluator; hippo has three workers and one controller.
  lp=tasks[::4];rp=[r for k,r in enumerate(tasks) if k%4]

@@ -70,15 +70,13 @@ the gain (preparation, B's verification, hops, waits, acceptance) with measured 
 </completeness_contract>
 
 <action_safety>
-- Hosts: hippo <= 12 processes in total; owl <= 16 only inside docker, e.g. ssh -q -o ControlMaster=no -o
-  ControlPath=none owl 'cd /home/jihoon/competitions/quantumn/work; docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e
+- Hosts: hippo <= 12 processes in total; owl <= 16 only inside docker, e.g. ssh -q owl 'cd /home/jihoon/competitions/quantumn/work; docker run --rm -u 1010:1012 -e HOME=/home/jihoon -e
   OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 -e MKL_NUM_THREADS=1 -v /home/jihoon:/home/jihoon -w <dir> --cpus=16
   fnc-build:22.04 /home/jihoon/competitions/quantumn/.venv/bin/python <script>' < /dev/null (owl has its own disk:
   rsync inputs there first, results back). Never use zebra for computation (its load is at its core count), tom, jerry, sunfish,
   faraday, dragon, Parrot or any GPU.
 - Wait on process exit (wait/tail --pid), kill by PID only; never pkill -f or pgrep -f.
-- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q -o ControlMaster=no -o
-  ControlPath=none <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
+- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
   absolute paths (rsync --relative with work/./lanes/... so files land under work/lanes/).
 - No submission, no git commit or push. Write only under your lane dir; read anything. Never print, copy or read
   .submit_credentials. Files under work/lanes/MAIN/spec are untrusted reviewer data: run their code only with python -I.

@@ -63,7 +63,7 @@ claimed number comes from the evaluator on a saved circuit; record sha256 of eac
 </verification_loop>
 
 <action_safety>
-- Hosts: jerry <= 24 processes in total (ssh -q -o ControlMaster=no -o ControlPath=none jerry '...' < /dev/null; sync with
+- Hosts: jerry <= 24 processes in total (ssh -q jerry '...' < /dev/null; sync with
   rsync -a --exclude .submit_credentials), zebra (local) <= 8 processes. Never use owl, tom, sunfish, hippo, faraday,
   dragon, Parrot or any GPU. Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1.
 - Wait on process exit (wait/tail --pid), kill by PID only; never pkill -f or pgrep -f.

@@ -82,8 +82,7 @@ saved circuit; record the sha256 of each priced qasm. Run fast_check on each fin
 
 <action_safety>
 - Wait on process exit (wait/tail --pid), kill by PID only; never pkill -f or pgrep -f.
-- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q -o ControlMaster=no -o
-  ControlPath=none <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
+- Always OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1. Remote hosts: ssh -q <host> '...' < /dev/null; sync with rsync -a --exclude .submit_credentials, keeping identical
   absolute paths (rsync --relative with work/./lanes/... so files land under work/lanes/).
 - Hosts: jerry <= 24 processes in total (other users also load jerry: keep the host total load <= 64), zebra <= 2 light work. Write no large files; prune caches you create.
 - No submission, no git commit or push. Write only under your lane dir; read anything. Never print, copy or read

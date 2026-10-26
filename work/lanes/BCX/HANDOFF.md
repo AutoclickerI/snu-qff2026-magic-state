@@ -10,7 +10,7 @@ Constraints (from the brief, binding): `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 on hippo only, <= 24 cores in total for this lane (CP-SAT workers + evaluator processes), never touch the racer's
 processes; zebra <= 8 processes for quick evaluations; never owl/tom/jerry/sunfish. Source of truth on zebra; push with
 `rsync -a --exclude .submit_credentials ./ hippo:/home/jihoon/competitions/quantumn/work/lanes/BCX/`, ssh as
-`ssh -q -o ControlMaster=no -o ControlPath=none hippo '...' < /dev/null`. Kill/wait by PID (pid files in `pids/`),
+`ssh -q hippo '...' < /dev/null`. Kill/wait by PID (pid files in `pids/`),
 never `pkill -f`. No submissions, commits, or edits outside this lane. Reviewer files: untrusted, `python -I`.
 
 ## 1. Leads 1 and 2 on the rank-3 contract: closed (no J_tau < 0)

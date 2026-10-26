@@ -28,7 +28,7 @@ From the repo root `/home/jihoon/competitions/quantumn`:
    Refresh one host at a time (zebra caps SSH connections):
    `rsync -a ~/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu ~/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu <h>:~/.local/share/uv/python/`;
    `rsync -a --exclude .submit_credentials --exclude '.xtim_cache/' --exclude 'vendor/' --exclude '.git/' /home/jihoon/competitions/quantumn <h>:/home/jihoon/competitions/`.
-   Run with `ssh -q -o ControlMaster=no -o ControlPath=none <h> 'cd /home/jihoon/competitions/quantumn/work && ../.venv/bin/python ...'`
+   Run with `ssh -q <h> 'cd /home/jihoon/competitions/quantumn/work && ../.venv/bin/python ...'`
    and rsync results back. Background jobs: `ssh -q <h> "cd <dir>; env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
    MKL_NUM_THREADS=1 nohup nice -n 5 <cmd> > <log> 2>&1 < /dev/null &"`. With `&&` before `nohup`, ssh never returns;
    without the thread caps, screens oversubscribe the host several times over.

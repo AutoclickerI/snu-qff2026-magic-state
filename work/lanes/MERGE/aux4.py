@@ -1,7 +1,7 @@
 """Evaluate a remote-queued tail locally, syncing exact cache receipts on completion events."""
 from pass4 import *
 import subprocess
-SSH=['ssh','-q','-o','ControlMaster=no','-o','ControlPath=none']
+SSH=['ssh','-q']
 if __name__=='__main__':
  rnd=int(sys.argv[1]);stem=Path(sys.argv[2]);basis=Path(sys.argv[3]);E.configure(basis,12);menuf=R/f'wide_r{rnd}_menu.json';tasks=json.loads((R/f'wide_r{rnd}_joint_tasks.json').read_text())[-1600:];init(stem,menuf,json.loads(stem.with_suffix('.json').read_text()).get('loss',TAU))
  tag=f'assist_r{rnd}';out=R/(tag+'.jsonl');done={tuple(json.loads(x)['edits'])for x in out.read_text().splitlines()}if out.exists()else set();tasks=[x for x in tasks if tuple(x)not in done];pending=set();start=time.monotonic();count=0

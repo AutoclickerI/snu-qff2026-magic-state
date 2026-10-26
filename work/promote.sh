@@ -8,7 +8,7 @@ R=/home/jihoon/competitions/quantumn
 cd $R/work
 PY=$R/.venv/bin/python
 ENV="OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1"
-SSH="ssh -q -o ControlMaster=no -o ControlPath=none"
+SSH="ssh -q"
 stem=$1; shift
 name=$(basename "$stem"); dir=$(dirname "$stem")
 # Server time limit (CONSTRAINTS rule 5): refuse a candidate whose single-process 1e6-shot judge run exceeds 20 s.

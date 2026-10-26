@@ -2,7 +2,7 @@
 import os,sys,json,subprocess
 from pathlib import Path
 os.environ.update(OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1')
-H=Path(__file__).resolve().parent;PID=int(sys.argv[1]);ssh=['ssh','-q','-o','ControlMaster=no','-o','ControlPath=none','hippo'];transport='ssh -q -o ControlMaster=no -o ControlPath=none';remote='hippo:'+str(H)+'/'
+H=Path(__file__).resolve().parent;PID=int(sys.argv[1]);ssh=['ssh','-q','hippo'];transport='ssh -q';remote='hippo:'+str(H)+'/'
 def sync(final=False):
  subprocess.run(['rsync','-a','-e',transport,'--exclude','.submit_credentials','--include','merge5*','--exclude','*',remote+'cand/',str(H/'cand')+'/'],check=True,stdin=subprocess.DEVNULL)
  subprocess.run(['rsync','-a','-e',transport,'--exclude','.submit_credentials',remote+'res37h/',str(H/'res37h')+'/'],check=True,stdin=subprocess.DEVNULL)
