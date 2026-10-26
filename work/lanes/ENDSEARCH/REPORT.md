@@ -1,50 +1,33 @@
-# ENDSEARCH
+# ENDSEARCH — closed: measured P114 obstacles
+Verdict: STOP under the main session’s continuation gate. All four C4/dual full prices and four completed CP-SAT retimes lose; every outer-check-on diagnostic exceeds 3.4e-5. No P114 finalist and no new grid build.
+Baseline: v37h exact L=3.611954991494179e-5, A=0.5015489333258328; finalist threshold L<3.601954991494179e-5 at A>=0.5002. The full-circuit 2.8e-5 target remains unmet.
+Path closure: compiled example L=5.327964809001302e-5, A=0.5019189441179466; A preparation noiseless gives 5.165114701859771e-5; data waits noiseless gives 3.1612989451564574e-5. Later best sampled native build reached 5.04792166198866e-5, A=0.5063572844528017. Waiting dominates this family; joint layout searches were UNKNOWN/interrupted, not a general infeasibility certificate. Details: tree37/PATH_REPORT.md.
+Original terminal frontier is preserved in results.json and the archived path report: square 25.667 p^2, trees >=27.207 p^2, unmeasured-partner templates >=28.747 p^2 within the enumerated grammar. These are not universal floors.
 
-Verdict: **no admissible improvement over v37b**. Systematic search found a useful five-block path and a square-with-leaf round, but all three leading grid-free suffixes lose after the tested grid preparation/routing. No submission, commit, push, or other-lane modification.
+Every full build retains v37h’s real prefix/resource preparation and records. Serial builds grow outputs before both outer checks and lift data contacts to inner logical supports; retimes interleave commuting growth and check operations. The extra check measures XXXX for C4, ZZZZ for its X/Z dual. Complete circuits use phantom cells; they are architecture tests, not 36-cell submissions.
+Optimistic diagnostic: disable every gate/read/reset/idle noise channel strictly before the first final encoded B contact; retain every channel at and after that native tick. This also removes growth and earlier-check noise when they precede the cut. Retimed schedules may interleave residual preparation after the cut. Cuts are counterfactual prices, not additive costs or certified lower bounds.
 
-Baseline reproduced exactly: v37b L = 3.7423214600721095e-05, A = 0.5034793765659655. All L values below are expected conditional 1−F at p=0.001, not 1e8-shot draws.
+| Variant / schedule | Full L | Full A | Cut tick | Outer-check-on L | Outer-check-on A |
+|---|---:|---:|---:|---:|---:|
+| C4 | 0.000136976004841 | 0.382682870819 | 50 | 9.96759372014e-05 | 0.898813148552 |
+| C4 + XXXX | 0.000153695638659 | 0.327211311823 | 50 | 0.000125532430255 | 0.788637782314 |
+| Dual | 0.00018834678184 | 0.386237730728 | 50 | 9.08973026348e-05 | 0.900899639775 |
+| Dual + ZZZZ | 0.000122177111482 | 0.327213386184 | 50 | 8.23404417602e-05 | 0.78863851821 |
+| C4 / retimed | 0.000149631299447 | 0.464928577225 | 46 | 0.000104826194861 | 0.911896057208 |
+| C4 + XXXX / retimed | 0.000154680893665 | 0.436675251482 | 46 | 0.000106155392751 | 0.872400104097 |
+| Dual / retimed | 0.000122078140801 | 0.459753067206 | 46 | 9.11297714928e-05 | 0.900906137179 |
+| Dual + ZZZZ / retimed | 0.000108401108361 | 0.43075094095 | 45 | 8.35054631104e-05 | 0.834276111444 |
 
-| Template / representative | Blocks including D | Per-index graph | Exact c2 (p²) | All-orders tail L | Tail A | First-order |
-|---|---:|---|---:|---:|---:|---|
-| Enumerated square, A→C shear | 4 | 4-cycle | 25.66666667 | 2.555843124e-05 | 0.9575251362 | zero harmful singles |
-| New independently verified path | 5 | E–A–D–B–C | 27.20666667 | 2.708626922e-05 | 0.9450961587 | zero harmful singles |
-| New square with B-check leaf | 5 | 4-cycle + leaf | 25.66666667 | 2.565405296e-05 | 0.9250332098 | zero harmful singles |
-| Retained helper control | 5 | triangle + two leaves; needs motion | 28.74666667 | 2.862222985e-05 | 0.9566430715 | zero harmful singles |
-| Best priced 3-block tree representative | 3 | tree | 34.30000000 | 3.413126152e-05 | 0.9723934376 | zero harmful singles |
-| Best priced 4-block tree representative | 4 | tree | 28.84000000 | 2.871362795e-05 | 0.9647025057 | zero harmful singles |
-| Physical GHZ checker variant | 5 | path | 27.25333333 | 2.715003305e-05 | 0.9451560274 | zero harmful singles |
+Best complete new ending: dual + ZZZZ, retime_4, L=1.0840110836108175e-4, A=0.4307509409503924, 52 native ticks; SHA256 cbaab4979cbae74becb5a9e9a2e491ced1108c2e7899a1a8fe530044cff8fc1b. It misses both loss and acceptance. Best diagnostic among all eight: dual + ZZZZ serial schedule, L=8.234044176023708e-5, A=0.7886385182095561.
+(b) C4 obstacle: even perfect history before encoded B leaves >=9.967593720144728e-5 in the two unflagged schedules, and >=1.0615539275052061e-4 with XXXX verification. The implemented check/wait/contraction sequence itself is already too expensive.
+(c) Dual obstacle: the corresponding minima are 9.089730263483849e-5 without ZZZZ and 8.234044176023708e-5 with it. Dual checking improves some full prices but cannot meet the continuation gate in these schedules.
+CP-SAT retimes completed OPTIMAL: 51 ticks without the extra check, 52 with it. This certifies the objective only for each fixed native gate list, pairwise commutation constraints, fixed prefix before tick 28, and last-two-layer handoff. It does not certify optimal Clifford synthesis or grid preparation.
+A precursor-synthesis sweep saved exact six/seven-wire ideal-instrument solutions; two precursor layers were infeasible in the six-wire normal grammar, while three/four layers produced witnesses. Those witnesses were not full noisy circuits. Rep2-XX builds passed raw ideal checks but were not priced. Neither search is resumed under the owner’s stop gate; they remain open, not negative results.
 
-The new path uses A,E = |+_L>, B,C = |0_L>: tick 0 D→A ∥ B→C; tick 1 A→E ∥ B→D. Read C in Z at tick 1 and A,B in X plus E in Z at tick 2. Use all read-block syndrome rows, logical X_A and logical Z_C. It catches every single-block logical resource Pauli and needs no separate logical verification helper.
-
-| Full v37b-prefix experiment | Grid-free L | A | Gain vs v37b | Best tested grid L | Grid A | Official gates |
-|---|---:|---:|---:|---:|---:|---|
-| square | 3.466519226e-05 | 0.5419507838 | 2.758022339e-06 | 0.001031097926 | 0.159223596 | format/class/correctness pass; acceptance fails |
-| tree | 3.407979867e-05 | 0.5341342258 | 3.343415935e-06 | 0.001222343584 | 0.1068649345 | format/class/correctness pass; acceptance fails |
-| square_leaf | 3.394450812e-05 | 0.5264929365 | 3.478706476e-06 | 0.002464003866 | 0.0819148879 | format/class/correctness pass; acceptance fails |
-
-Unmeasured-helper full suffix: L = 4.491679756e-05, A = 0.5229417834; fails the grid gate. A concrete one-cell helper move reusing the measured A block costs two CXs, reset and a zero read: tail c2 = 339.26666667 p², L = 0.0003306558095, A = 0.936339998; three extra native ticks. It fits 35 qubits and changes the triangle into a square-with-leaf interaction graph.
-
-The table uses the better original/JIT preparation schedule per family. JIT prepares each block immediately before its first coupling, instead of waiting for all blocks before starting the round. It improves the square-with-leaf from 3.551030177e-5 to 3.394450812e-5 and the path from 3.518330590e-5 to 3.407979867e-5. These improvements and their grid variants were implemented and priced.
-Grid facts: seven disjoint path gadgets need ≥1 data hop from v37b; square-with-leaf gadgets need ≥3 when each data qubit moves at most one grid edge (CP-SAT OPTIMAL in that domain). The original global preparations finish at R104/R120 in the shallowest builds. Eight GF(2)/Steiner syntheses per layout were built; the two shallowest and their JIT variants were priced. These are failed constructions, not lower bounds on optimal routed preparations.
-The square grid test reuses SQUARE’s completed routing and storage guards, replaces its prefix by v37b’s causal prefix, and changes the square shear/readout. SQUARE and TERMINAL stayed read only.
-
-Coverage and bounds:
-
-- Encoded space: 1,787,217 symmetry-reduced schedules; 706,379,271 measurement/output assignments. All nonempty directed-CX matchings of depth 2–4 on 2–5 blocks; every output choice; X/Z/unmeasured endings; earliest final reads; connected AND disconnected interaction graphs. All pure logical CSS resources (2,5,16,67 subspaces for 1–4 ancillas), including encoded Bell/GHZ. Full-rank candidates receive the ideal Choi/detector/frame solve or an exact-c2 pruning test. Rank-0/3 assignments are counted but remain outside this frontier, under the universal bound below. Pauli signs/cosets are noise-covariant representatives.
-- Physical resources: all products of encoded 0/+, literal 0^7/+^7, Z/X GHZ, plus disjoint physical Bell-paired blocks; connected 3-block templates through four ticks and 4–5-block templates through two ticks, with D retained. Full physical CSS stabilizers derive every deterministic detector and frame. Counts and survivors are in physical_*.log/jsonl.
-- The larger physical-resource remainder is bounded by the enumerated zero-record-fault oracle, independent of resource type/entanglement: every pair of zero-record faults must pass any deterministic detector and any affine frame. Their positive c2 contribution bounds every first-order-safe implementation from below (MODEL.md). All connected/disconnected graphs and output choices through four CX ticks are included in the bound.
-- In the full-rank uniform-transversal family the oracle minimum is 25.66666667 p²; every tree is ≥27.20666667 p² and every unmeasured-partner ending is ≥28.74666667 p². Thus no tree reaches the requested ≤26.7 p² target, even with arbitrary perfect resources. These are second-order bounds, not finite-p optimality certificates.
-- Scope of that terminal bound: every resource is present before tick 0, with idle noise charged from tick 0. It does not bound interleaved just-in-time nontransversal preparation. The full-suffix JIT prices include that preparation and can improve the realizable circuit without contradicting the terminal bound.
-- Every stored connected frontier graph was tested for fixed-cell grid embedding and one initially-empty-cell move. None of the ≤26.7 p² representatives requires a hop: they contain a unit-square core. Splitting one square vertex by one move creates an odd five-cycle, so it cannot remove that core on a bipartite grid. The separate reusable-cell hop above is explicitly priced.
-- Space 3 includes all retained-helper CX/affine-frame endings in the exhaustive sweep and physical-resource tests. General Clifford+T/nonlinear lookup/coherent syndrome recovery, nonuniform cross-index gadgets, intermediate read/reset reuse beyond the priced hop, and partial-rank checks are not enumerated or excluded. They retain BOUND’s certified all-orders L ≥1.3657850790536654e-5; measured-partner cases retain ≥2.2742699650371855e-5. Their local/interaction search becomes much larger and the per-index Pauli-rate reduction no longer applies. A bound below v37b leaves these families open.
-- The search frontier is exact at second order for the stated family; finite-p prices are for saved frontier representatives and selected ties, not a proof of global all-orders optimality. The real-input prefix was cut before tick 44, and physical preparations were assigned to released cells and scheduled as late as dependencies allow.
-
-Verified versus inferred:
-
-- Verified: 262 independent explicit fault-pair Taylor coefficients agree with the search model within 5.68e-14; the hop coefficient is computed separately, for 263 audited tails in total. All scored tail/frontier representatives have zero harmful singles. Idle derivatives and FRAME records are included. The finite-p hop pair sum was corrected during this audit; its all-orders price did not change.
-- Verified: organizer tprep.exact.verify gives raw noiseless infidelity 0 for all four full-suffix families, their JIT variants, and the hop, over every measurement branch. For abstract grid-free circuits this is a correctness test only, not a format-pass claim.
-- Verified: three complete grid circuits pass official format/class/correctness at 1e6 shots and fail acceptance; their sampled losses agree with the all-orders prices within sampling uncertainty. Hashes and ordered outputs are recorded. v37b reproduces the supplied exact L/A.
-- Inferred: a better local preparation/layout could recover a grid-free gain. No admissible finalist or complete preparation near the universal floor was found; no grid-optimality claim is made. No 1e8-shot run or official submission was warranted.
-
-Files: results.json is keyed by QASM SHA256, with multiple experiments per circuit; cand/ contains the four full-suffix families, their JIT variants and tested grid finalists. manifest.json, choices.json, coverage.json, geometry.json, grid_manifest.json and coefficient_audit.json expose search coverage. logs/ contains process receipts, all-orders prices, counts and failures; builds/ saves every priced witness. MODEL.md gives the terminal-model derivation and explicit open families. src/search.cpp, src/physical.cpp, build_candidates.py, grid_new.py, price.py and audit_coeff.py reproduce the work.
-Execution: all research computation ran on tom, OMP/BLAS/MKL threads = 1, at most three simultaneous compute workers; capacity waits used existing process exits. No subagents, GPUs, credentials, commits, pushes or submissions.
+Verified here: incumbent replay matches L and A exactly; C4 perfect-input tail reproduced L=2.192096391856255e-5, A=0.9787606162143896. All 18 completed prices pass six raw output stabilizers +1 and organizer exact raw correctness before ranking. No harmful first-order event found; computed single-fault contributions are <1e-18. Largest recorded kernel omission bound is <5.7e-14, excluding floating-point roundoff.
+Validation failure retained: the old path prefix cut was not raw-correct on v37h and was never priced. These full builds preserve the complete incumbent instrument. CONTRACT independently localized the reused M1@28 boundary and repaired it; no fresh-resource boundary repair was assumed here.
+CONTRACT REPORT.md, AUDIT.md and all 61 result records were read, not modified: its case audit supports floor 2.1892512824770078e-5; its independent early-storage outer-tail cost is 5.15580332542e-5, and compact helper alternative is 4.36799568012e-5 full / 3.61082230277e-5 with perfect resource preparation. These are CONTRACT measurements, not ENDSEARCH reruns.
+Geometry remains open for prepared circuits: CONTRACT found movable D admits a connected bus with non-square K-D-H-L paths. No static-square packing assumption is used to close this lane. Missing XXXX measurement means C4 distance alone does not guarantee protection from waiting errors.
+Unverified: arbitrary larger/direct verified inner-code preparation, new precursor synthesis, grid placement of those alternatives, and universal preparation no-go claims. No P114 circuit qualified for judge speed/gates testing or promotion; cand/ retains only historical search prototypes, not a current finalist.
+Execution: old path containers and queued launchers were stopped by verified IDs/PIDs. C4 jobs and the final diagnostic container exited; no owned endsearch-* container remains. Other lanes’ containers were not touched. No Tom, subagents, submissions, commits/pushes, credential reads, or writes outside this lane.
+Files: c4/{lift.py,retime.py,diagnose.py,price.py,raw.py,collect.py,summary.json}; c4/builds/ saved QASM+ordered outputs; c4/logs/*.receipt.json exact prices and evaluator hashes; c4/owl/diagnostic_results.json and solver logs. results.json has all 18 P114 prices merged into the SHA256-keyed ledger, with separate scopes for full noise and cuts.
