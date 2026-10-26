@@ -1,0 +1,46 @@
+{
+  "method": "Independent dense-matrix verification of the proposed terminal bound.\n\nBuild the physical seven-qubit decoder fidelity observable from CSS codewords,\napply Pauli channels by matrix conjugation, and diagonalize 128x128 matrices.\nDoes not import the certificate generator or use its convolution/moment code.\n",
+  "orbit_representatives": 264,
+  "spectra_checked": 270,
+  "eigenvalues_checked": 34560,
+  "max_absolute_spectral_disagreement": 9.547918011776346e-15,
+  "best_assignment": "XXXXXXX",
+  "dense_minimum_loss": 2.1892512826582333e-05,
+  "certificate_minimum_loss": "0.000021892512824770077772207703146505678672104947961606891362335219720810484",
+  "minimum_loss_disagreement": 1.8122540957048877e-15,
+  "excluded": [
+    {
+      "name": "output_output",
+      "minimum_loss": 0.00033332888592318977,
+      "max_spectral_error": 1.5543122344752192e-15
+    },
+    {
+      "name": "output_other_helper_X",
+      "minimum_loss": 0.0001333155508143058,
+      "max_spectral_error": 2.220446049250313e-15
+    },
+    {
+      "name": "output_other_helper_Z",
+      "minimum_loss": 0.00026666666666630423,
+      "max_spectral_error": 1.5543122344752192e-15
+    },
+    {
+      "name": "helper_helper_XX",
+      "minimum_loss": 0.00013331555081275148,
+      "max_spectral_error": 2.3314683517128287e-15
+    },
+    {
+      "name": "helper_helper_ZZ",
+      "minimum_loss": 0.0002666666666655271,
+      "max_spectral_error": 2.7755575615628914e-15
+    },
+    {
+      "name": "helper_helper_XZ",
+      "minimum_loss": -4.440892098500626e-16,
+      "max_spectral_error": 1.887379141862766e-15
+    }
+  ],
+  "seconds": 0.5915230850223452,
+  "precision": "IEEE754 complex128; independent numerical arithmetic, not a second exact rational certificate",
+  "physical_universality": "Requires the separately reviewed schedule and instrument reduction"
+}

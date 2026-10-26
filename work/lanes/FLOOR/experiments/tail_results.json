@@ -1,0 +1,226 @@
+{
+  "one_idle": {
+    "loss": 1.162525253345372e-05,
+    "acceptance": 0.9999999999999982,
+    "channels": 633,
+    "cut": 601,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 596\n  RESULT: PASS",
+    "seconds": 1.0220067820046097,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "qtools"
+  },
+  "two_idle": {
+    "loss": 4.627435034498807e-05,
+    "acceptance": 0.9999999999999998,
+    "channels": 634,
+    "cut": 601,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 596\n  RESULT: PASS",
+    "seconds": 0.623068009968847,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "qtools"
+  },
+  "one_helper_CX": {
+    "loss": 7.445455739274474e-06,
+    "acceptance": 0.9999999999999988,
+    "channels": 634,
+    "cut": 602,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 603\n  RESULT: PASS",
+    "seconds": 0.7364798500202596,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "qtools"
+  },
+  "inverse_two_CX": {
+    "loss": 2.9665621143037993e-05,
+    "acceptance": 0.9999999999999984,
+    "channels": 641,
+    "cut": 602,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 610\n  RESULT: PASS",
+    "seconds": 0.47337607794906944,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "qtools"
+  },
+  "measured_helper": {
+    "loss": 2.2755684192274168e-05,
+    "acceptance": 0.9893233122768257,
+    "channels": 662,
+    "cut": 603,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 610\n  RESULT: PASS",
+    "seconds": 0.5897818279918283,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "qtools"
+  },
+  "measured_helper_then_fresh_helper": {
+    "loss": 7.068011597642463e-05,
+    "acceptance": 0.9893233122768257,
+    "channels": 665,
+    "cut": 603,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 617\n  RESULT: PASS",
+    "seconds": 0.5789028139552101,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "qtools"
+  },
+  "measured_helper_then_early_helper": {
+    "loss": 4.8133915718490023e-05,
+    "acceptance": 0.9893233122768257,
+    "channels": 672,
+    "cut": 604,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 617\n  RESULT: PASS",
+    "seconds": 0.7194100830238312,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "qtools"
+  },
+  "logical_X_gate_with_frame": {
+    "loss": 1.162525253350923e-05,
+    "acceptance": 0.9999999999999983,
+    "channels": 631,
+    "cut": 601,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 596\n  RESULT: PASS",
+    "seconds": 0.5887960660038516,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "WHOLEEND/sparseframe"
+  },
+  "logical_S_gate": {
+    "loss": 1.162525253350923e-05,
+    "acceptance": 0.9999999999999983,
+    "channels": 638,
+    "cut": 608,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 596\n  RESULT: PASS",
+    "seconds": 0.5762354319449514,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "WHOLEEND/sparseframe"
+  },
+  "physical_XZ_perfect_inverse": {
+    "loss": 1.162525253350923e-05,
+    "acceptance": 0.9999999999999983,
+    "channels": 638,
+    "cut": 602,
+    "omission": 0.0,
+    "width": 0,
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 596\n  RESULT: PASS",
+    "seconds": 0.4888451029546559,
+    "prefix_noise": "suppressed before native cut; straddling idles retained",
+    "engine": "WHOLEEND/sparseframe"
+  }
+}

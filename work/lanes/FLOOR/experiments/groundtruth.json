@@ -1,0 +1,557 @@
+{
+  "ordinary_gates": {
+    "errors": [],
+    "stim": "I 0\nX 1\nY 2\nZ 3\nH 4\nS 5\nS_DAG 6\nSQRT_X 7\nSQRT_X_DAG 8\nT 9\nT_DAG 10\n",
+    "steps": [
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            1
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            2
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            3
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            4
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            5
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            6
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            7
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            8
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            9
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            10
+          ],
+          0
+        ]
+      ]
+    ],
+    "gaps": [],
+    "noisy": "X_ERROR(0.001) 0\nI 0\nDEPOLARIZE1(0.001) 0\nX_ERROR(0.001) 1\nX 1\nDEPOLARIZE1(0.001) 1\nX_ERROR(0.001) 2\nY 2\nDEPOLARIZE1(0.001) 2\nX_ERROR(0.001) 3\nZ 3\nDEPOLARIZE1(0.001) 3\nX_ERROR(0.001) 4\nH 4\nDEPOLARIZE1(0.001) 4\nX_ERROR(0.001) 5\nS 5\nDEPOLARIZE1(0.001) 5\nX_ERROR(0.001) 6\nS_DAG 6\nDEPOLARIZE1(0.001) 6\nX_ERROR(0.001) 7\nSQRT_X 7\nDEPOLARIZE1(0.001) 7\nX_ERROR(0.001) 8\nSQRT_X_DAG 8\nDEPOLARIZE1(0.001) 8\nX_ERROR(0.001) 9\nT 9\nDEPOLARIZE1(0.001) 9\nX_ERROR(0.001) 10\nT_DAG 10\nDEPOLARIZE1(0.001) 10"
+  },
+  "terminal_idle": {
+    "errors": [],
+    "stim": "H 0\nCX 0 1\nM 1\n",
+    "steps": [
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            1
+          ],
+          1
+        ]
+      ],
+      [
+        [
+          [
+            1
+          ],
+          2
+        ]
+      ]
+    ],
+    "gaps": [
+      [
+        1,
+        0,
+        2,
+        1
+      ]
+    ],
+    "noisy": "X_ERROR(0.001) 0\nH 0\nDEPOLARIZE1(0.001) 0\nX_ERROR(0.001) 1\nCX 0 1\nDEPOLARIZE2(0.001) 0 1\nDEPOLARIZE1(0.0009999999999999731) 0\nX_ERROR(0.001) 1\nM 1\nDEPOLARIZE1(0.001) 1"
+  },
+  "first_use_and_reset_gap": {
+    "errors": [],
+    "stim": "H 0\nI 0\nR 2  # barrier 0 2\nCX 1 2\n",
+    "steps": [
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          1
+        ]
+      ],
+      [
+        [
+          [
+            2
+          ],
+          2
+        ]
+      ],
+      [
+        [
+          [
+            1,
+            2
+          ],
+          3
+        ]
+      ]
+    ],
+    "gaps": [
+      [
+        1,
+        0,
+        2,
+        2
+      ]
+    ],
+    "noisy": "X_ERROR(0.001) 0\nH 0\nDEPOLARIZE1(0.001) 0\nI 0\nDEPOLARIZE1(0.001) 0\nDEPOLARIZE1(0.001998666666666621) 0\nR 2\nX_ERROR(0.001) 2\nX_ERROR(0.001) 1\nCX 1 2\nDEPOLARIZE2(0.001) 1 2"
+  },
+  "final_measure_no_idle": {
+    "errors": [],
+    "stim": "M 1\nH 0\nI 0\nI 0\n",
+    "steps": [
+      [
+        [
+          [
+            1
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          1
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          2
+        ]
+      ]
+    ],
+    "gaps": [],
+    "noisy": "X_ERROR(0.001) 1\nX_ERROR(0.001) 1\nM 1\nDEPOLARIZE1(0.001) 1\nX_ERROR(0.001) 0\nH 0\nDEPOLARIZE1(0.001) 0\nI 0\nDEPOLARIZE1(0.001) 0\nI 0\nDEPOLARIZE1(0.001) 0"
+  },
+  "reused_measure_idle": {
+    "errors": [],
+    "stim": "M 1\nH 0\nI 0\nI 1  # barrier 0 1\n",
+    "steps": [
+      [
+        [
+          [
+            1
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          1
+        ]
+      ],
+      [
+        [
+          [
+            1
+          ],
+          2
+        ]
+      ]
+    ],
+    "gaps": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        2,
+        1
+      ]
+    ],
+    "noisy": "X_ERROR(0.001) 1\nX_ERROR(0.001) 1\nM 1\nDEPOLARIZE1(0.001) 1\nDEPOLARIZE1(0.0009999999999999731) 1\nX_ERROR(0.001) 0\nH 0\nDEPOLARIZE1(0.001) 0\nI 0\nDEPOLARIZE1(0.001) 0\nDEPOLARIZE1(0.0009999999999999731) 0\nI 1\nDEPOLARIZE1(0.001) 1"
+  },
+  "native_x": {
+    "errors": [],
+    "stim": "RX 0\nCX 0 1\nMX 0\nI 0\n",
+    "steps": [
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            1
+          ],
+          1
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          2
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          3
+        ]
+      ]
+    ],
+    "gaps": [
+      [
+        1,
+        1,
+        2,
+        2
+      ]
+    ],
+    "noisy": "RX 0\nZ_ERROR(0.001) 0\nX_ERROR(0.001) 1\nCX 0 1\nDEPOLARIZE2(0.001) 0 1\nDEPOLARIZE1(0.001998666666666621) 1\nZ_ERROR(0.001) 0\nMX 0\nDEPOLARIZE1(0.001) 0\nI 0\nDEPOLARIZE1(0.001) 0"
+  },
+  "native_across_barrier": {
+    "errors": [],
+    "stim": "RX 0\nCX 0 1  # barrier 0 1\nMX 0  # barrier 0 1\n",
+    "steps": [
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            1
+          ],
+          1
+        ]
+      ],
+      [
+        [
+          [
+            0
+          ],
+          2
+        ]
+      ]
+    ],
+    "gaps": [
+      [
+        1,
+        1,
+        2,
+        1
+      ]
+    ],
+    "noisy": "RX 0\nZ_ERROR(0.001) 0\nX_ERROR(0.001) 1\nCX 0 1\nDEPOLARIZE2(0.001) 0 1\nDEPOLARIZE1(0.0009999999999999731) 1\nZ_ERROR(0.001) 0\nMX 0\nDEPOLARIZE1(0.001) 0"
+  },
+  "trailing_barrier": {
+    "errors": [],
+    "stim": "H 0\nCX 0 1\n",
+    "steps": [
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            1
+          ],
+          1
+        ]
+      ]
+    ],
+    "gaps": [],
+    "noisy": "X_ERROR(0.001) 0\nH 0\nDEPOLARIZE1(0.001) 0\nX_ERROR(0.001) 1\nCX 0 1\nDEPOLARIZE2(0.001) 0 1"
+  },
+  "record_overwrite": {
+    "errors": [],
+    "stim": "M 0\nM 1\nDETECTOR rec[-1]\n#!FRAME_X(0) 1\n#!FRAME_Z(0)\n",
+    "steps": [
+      [
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      [
+        [
+          [
+            1
+          ],
+          0
+        ]
+      ],
+      []
+    ],
+    "gaps": [],
+    "noisy": "X_ERROR(0.001) 0\nX_ERROR(0.001) 0\nM 0\nDEPOLARIZE1(0.001) 0\nX_ERROR(0.001) 1\nX_ERROR(0.001) 1\nM 1\nDEPOLARIZE1(0.001) 1\nDETECTOR rec[-1]"
+  },
+  "forbidden_feedforward": {
+    "errors": [
+      "instruction 2 (if_else q[1]): if_else is not an allowed operation (problem.md section 1.2)"
+    ],
+    "stim": null
+  },
+  "base": {
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 28\n  RESULT: PASS",
+    "passed": true
+  },
+  "output_M": {
+    "raw": {
+      "errors": [
+        "noiselessly the output is not in the code space in 0.5 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes"
+      ],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.5,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: FAIL\n    - the output on data_qubits is not |T_L>: the expectation of X^7 on it is not fixed by the circuit (wrong state or wrong data_qubits)\n  RESULT: FAIL",
+    "passed": false
+  },
+  "output_MX": {
+    "raw": {
+      "errors": [
+        "noiselessly the output is not in the code space in 0.5 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes"
+      ],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.5,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: FAIL\n    - the output on data_qubits is not |T_L>: the expectation of Y^7 on it is not fixed by the circuit (wrong state or wrong data_qubits)\n  RESULT: FAIL",
+    "passed": false
+  },
+  "output_R": {
+    "raw": {
+      "errors": [
+        "noiselessly the output is not in the code space in 0.75 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes"
+      ],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.75,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: FAIL\n    - the output on data_qubits is not |T_L>: the expectation of X^7 on it is not fixed by the circuit (wrong state or wrong data_qubits)\n  RESULT: FAIL",
+    "passed": false
+  },
+  "output_RX": {
+    "raw": {
+      "errors": [
+        "noiselessly the output is not in the code space in 0.75 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes"
+      ],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.75,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: FAIL\n    - the output on data_qubits is not |T_L>: the expectation of X^7 on it is not fixed by the circuit (wrong state or wrong data_qubits)\n  RESULT: FAIL",
+    "passed": false
+  },
+  "output_M_postselect": {
+    "raw": {
+      "errors": [
+        "noiselessly the output is not in the code space in 0.5 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes"
+      ],
+      "acceptance": 0.5,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.5,
+      "rank": 2
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: FAIL\n    - the output on data_qubits is not |T_L>: the expectation of X^7 on it is not fixed by the circuit (wrong state or wrong data_qubits)\n  RESULT: FAIL",
+    "passed": false
+  },
+  "wrong_physical_frame": {
+    "raw": {
+      "errors": [
+        "noiselessly the output is not in the code space in 1 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes"
+      ],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 1.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: FAIL\n    - noiselessly the output is not in the code space in 1 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes\n  RESULT: FAIL",
+    "passed": false
+  },
+  "logical_X_frame": {
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 28\n  RESULT: PASS",
+    "passed": true
+  },
+  "late_helper_M": {
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: PASS\n  acceptance:  PASS  (1.0000, floor 0.5)\n  score 1-F = 0 \u00b1 0   (3 significant figures: 0)\n  2q+ gates = 28\n  RESULT: PASS",
+    "passed": true
+  },
+  "unused_output": {
+    "raw": {
+      "errors": [
+        "noiselessly the output is not in the code space in 0.75 of the accepted runs: a stabilizer of the output is -1 or depends on the measurement outcomes"
+      ],
+      "acceptance": 1.0,
+      "detector_values": [],
+      "conditional_detectors": [],
+      "infidelity": 0.75,
+      "rank": 1
+    },
+    "judge": "p=0  shots=64  seed=0\n  format:      PASS\n  class:       PASS\n  correctness: FAIL\n    - the output on data_qubits is not |T_L>: the expectation of X^7 on it is not fixed by the circuit (wrong state or wrong data_qubits)\n  RESULT: FAIL",
+    "passed": false
+  }
+}
