@@ -151,6 +151,14 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: one-time decision, not a rule: PLAN P116 (REDESIGN lane started 2026-10-26 on jerry, racing cores ceded),
   alongside racing, repair lanes and WAITCUT.
 
+## R-20261026-2 — 2026-10-26 21:40 KST — target 2e-5; re-audit the floor
+> "we need large jump. target 2e-5. I believe we can reach there."
+> Q: "A true mean of 2e-5 is below the audited floor ... Which target should drive the lanes' go/stop decisions?" A: "Re-audit the floor"
+
+- Source: this session (message and question-tool answer).
+- Effect: one-time decision: an independent adversarial re-audit of the 2.189e-5 floor (PLAN P121, lane FLOOR). G0 is
+  unchanged ("1e-5, or as close as possible"); lanes keep reachable go/stop gates until the audit reports.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
