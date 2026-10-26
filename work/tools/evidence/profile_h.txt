@@ -1,0 +1,34 @@
+72.44924446195364 3.611954991494179e-05
+         5250265 function calls (5218556 primitive calls) in 72.426 seconds
+
+   Ordered by: cumulative time
+   List reduced from 3535 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       73    0.019    0.000   70.061    0.960 sparse_walsh.py:482(_row)
+       73   26.616    0.365   67.838    0.929 sparse_walsh.py:417(contract_quotient)
+    26672    0.064    0.000   29.530    0.001 fromnumeric.py:48(_wrapfunc)
+    22760    0.061    0.000   29.509    0.001 fromnumeric.py:106(take)
+    22760   29.375    0.001   29.375    0.001 {method 'take' of 'numpy.ndarray' objects}
+    54077   10.021    0.000   10.021    0.000 sparse_walsh.py:340(multiply)
+       73    0.739    0.010    2.204    0.030 sparse_walsh.py:130(sparse_kernel)
+      122    0.005    0.000    1.897    0.016 __init__.py:1(<module>)
+        1    0.016    0.016    1.359    1.359 sparse_walsh.py:275(compile_best)
+       12    0.442    0.037    1.183    0.099 sparse_walsh.py:198(search_basis)
+    33653    0.757    0.000    0.893    0.000 sparse_walsh.py:316(patterns)
+     1641    0.801    0.000    0.809    0.000 sparse_walsh.py:23(fwht)
+    29476    0.227    0.000    0.576    0.000 sparse_walsh.py:435(cls)
+    960/8    0.004    0.000    0.514    0.064 <frozen importlib._bootstrap>:1349(_find_and_load)
+    959/8    0.003    0.000    0.513    0.064 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
+    937/9    0.002    0.000    0.512    0.057 <frozen importlib._bootstrap>:911(_load_unlocked)
+    900/9    0.002    0.000    0.511    0.057 <frozen importlib._bootstrap_external>:993(exec_module)
+  2057/17    0.004    0.000    0.510    0.030 <frozen importlib._bootstrap>:480(_call_with_frames_removed)
+   1017/9    0.015    0.000    0.502    0.056 {built-in method builtins.exec}
+       15    0.025    0.002    0.453    0.030 fastfill.py:4(minfill_adj)
+   500/31    0.000    0.000    0.438    0.014 {built-in method builtins.__import__}
+        1    0.134    0.134    0.438    0.438 sparse_walsh.py:75(prepare)
+        1    0.000    0.000    0.427    0.427 qasm.py:148(to_stim)
+        1    0.005    0.005    0.427    0.427 qasm.py:154(convert)
+ 1064/187    0.001    0.000    0.421    0.002 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+
+

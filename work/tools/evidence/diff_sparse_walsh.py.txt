@@ -1,0 +1,19 @@
+--- MAIN/sparse_walsh.py
++++ MERGE/sparse_walsh.py
+@@ -281,10 +281,13 @@
+     compiled = compile_channels(m, groups, nd, kernel_scope)
+     elim = minfill([set(e[0]) for e in compiled])
+     warms = list(json.loads(WARM.read_text())['bases'].values())
+-    ops, cost = min((search_basis(m, eng, groups, nd, set(kernel_scope), w, trials=0) for w in warms),
+-                    key=lambda r: r[1])
++    (ops, cost), best_warm = min(((search_basis(m, eng, groups, nd, set(kernel_scope), w, trials=0), w) for w in warms),
++                               key=lambda r: r[0][1])
+     if min(cost, (elim['work_entries'], elim['width']))[1] > SEARCH_WIDTH:
+-        ops = min((search_basis(m, eng, groups, nd, set(kernel_scope), w) for w in warms), key=lambda r: r[1])[0]
++        # Refinement changes contraction coordinates only. Refine the cheapest
++        # replay once; retraining every saved basis repeated the same costly
++        # hill-climb for each neighbouring circuit.
++        ops = search_basis(m, eng, groups, nd, set(kernel_scope), best_warm)[0]
+     if ops:
+         rows = [1 << i for i in range(nd)]
+         for target, source in ops:

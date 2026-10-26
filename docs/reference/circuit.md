@@ -29,12 +29,13 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
 - **Validity before ranking**: the all-orders price checks only the decoded loss; a build that changes the outputs or
   the tail must first have its six noiseless output stabilizers at +1 (the judge's raw code-space check; reviewer 16:
   H·T⁴·H = X on one output keeps decoded loss 0 and fails). Stem files must be named by QASM plus ordered
-  `data_qubits`: `write_stem` in `MERGE/ev37.py` and `BUNDLE/ev.py` writes the JSON once per QASM hash.
-- **All orders** (AGENTS): `cd work/lanes/MAIN/sparse; ../../../../.venv/bin/python sparse_walsh.py <path/stem> 72 canonical 16`,
-  ≈ 1 s (7 s at 1 process); prints JSON with loss and acceptance. Scope: barriers over all used qubits, no
-  FRAME/POSTSELECT, ≤ 20 T. `compile_best` replays saved detector bases (`basis_warm.json`) and searches only above
-  width 9. A result cache must key on the QASM sha256, the ordered `data_qubits` and the evaluator files' hashes. After
-  editing `sparse_walsh.py`, rsync it to the hosts and restart long searches (FINDINGS "Failures").
+  `data_qubits`: `qtools.write_stem`.
+- **All orders** (AGENTS): `work/tools/qtools` (README there): `price` (loss, acceptance; rejects raw-invalid builds),
+  `validate` (adds judge gates and seconds at 1e6), `is_finalist` (the policy above), `write_stem`. v37i: 2.7 s warm vs
+  447 s with MAIN's old copy; the shared registry `work/tools/bases.json` replays every saved detector basis and trains only
+  above width 12; the cache keys on QASM sha256, ordered outputs and the package's source hashes. Scope: barriers over
+  all used qubits, no FRAME/POSTSELECT, ≤ 20 T. After editing qtools, run its tests, `pin_hosts.py`, and restart
+  long searches (FINDINGS "Failures").
 - **With FRAME lines and S/Pauli gates**: `work/lanes/WHOLEEND/sparseframe/` (called by WHOLEEND's `price.py`;
   verified against the organizer's raw correctness check).
 - **Exact 2nd + 3rd order with sensitivities**: `work/lanes/EVAL/exact2.py <qasm> [--top N] [--json f] [--third]`.
@@ -56,8 +57,8 @@ Every gate, init, measurement and idle tick is noisy (judge.md), so lifetimes an
   count falls with judge time; FINDINGS "Score spread per stem").
 
 ## Search machinery
-Shared, versioned tools go to `work/tools/` (P118); lanes still running copied tools in their own dirs, where a fix in one
-lane reaches no other, switch at their next restart. Code of removed lanes:
+Pricing, stems, validity and policy live in `work/tools/qtools`; lanes still running copied tools switch at their next
+restart, and new lanes import qtools instead of copying. Code of removed lanes:
 `git log --oneline -1 -- work/lanes/<LANE>` names the removing commit (use its `^`).
 - Greedy repair on any stem (singles, connected bundles, guard trades, retiming, joint extension, acceptance buying,
   pass 4's ejections, multi-buyer funding and signature pairs) in `work/lanes/MERGE/`. A known mechanism the grammar cannot

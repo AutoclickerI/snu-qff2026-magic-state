@@ -16,9 +16,8 @@ dropped rules) · [reference/judge.md](docs/reference/judge.md) (how scores aris
 - Use idle capacity, caches and other lanes' outputs (RESOURCES); fix the critical path (PLAN).
 - Take the widest reading the rules allow (CONSTRAINTS "Boundary cases"); ask Jihoon when unclear.
 - No conservative or incremental steps, fallbacks or ritual checks; delete stale docs when you touch them.
-- Rank candidates by the all-orders expectation where its scope covers them (`cd work/lanes/MAIN/sparse;
-  ../../../../.venv/bin/python sparse_walsh.py ../v37d 72 canonical 16`: stem without suffix, last arg = processes,
-  ≈ 1 s; needs barriers over all used qubits, no FRAME/POSTSELECT; final pick: lowest L at A ≥ 0.5002); otherwise by the
+- Rank candidates by the all-orders expectation where its scope covers them (`PYTHONPATH=work/tools
+  .venv/bin/python -m qtools price <stem> --processes 1`: stem without suffix, ≈ 3–30 s, cached; needs barriers over all used qubits, no FRAME/POSTSELECT; final pick: lowest L at A ≥ 0.5002); otherwise by the
   3-seed mean (one seed hides 1%), and when that and the exact third order disagree within noise, by ≥ 100 seed-0
   re-draws. Submit by the seed-0 key and report the numbers used.
 - Wait on process exit, never on an output file. Never `pkill -f` a pattern that your own command
