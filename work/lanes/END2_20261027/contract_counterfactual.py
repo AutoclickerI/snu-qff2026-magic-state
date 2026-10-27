@@ -32,10 +32,10 @@ def ideal_prep(pc,start):
     return ops,R
 
 
-def build(pc,source=True):
+def build(pc,source=True,delay=0,source_stem=None):
     if source:
         prefix_meta=json.loads((ROOT/'work/lanes/NATIVE2_20261027/prefix_release.json').read_text())
-        prefix=Path(prefix_meta['stem'])
+        prefix=Path(source_stem or prefix_meta['stem'])
         ops,dets=f.parse_current(prefix.with_suffix('.qasm').read_text())
         first=max(o.time for o in ops)+1
         ideal_source=[]
@@ -45,17 +45,21 @@ def build(pc,source=True):
         ops += [f.Op('T',(pc.D[2],),1),f.Op('CX',(pc.D[2],pc.D[4]),2),f.Op('CX',(pc.D[2],pc.D[5]),3)]
         for k,layer in enumerate(ENC):ops.extend(f.Op('CX',(pc.D[a],pc.D[b]),4+k) for a,b in layer)
         ideal_source=list(range(first))
+    for t in range(first,first+delay):ops.append(f.Op('ID',(pc.D[0],),t))
+    first+=delay
     new,R=ideal_prep(pc,first);ops+=new
     for kind,qs,t,bit in pc.terminal():ops.append(f.Op(kind,qs,R+t,None if bit is None else 400+bit))
     dets += [{400+b for b in row} for row in pc.DETECTORS]
     text=emit(ops,dets);raw=ideal_contract_check(text,pc.D)
-    stem=HERE/'counterfactual'/f'{pc.kind}_m{pc.square_mask:02x}_{"source251" if source else "tail"}'
+    stem=HERE/'counterfactual'/f'{pc.kind}_m{pc.square_mask:02x}_{"source251" if source else "tail"}{"_delay"+str(delay) if delay else ""}'
+    if source_stem:stem=stem.with_name(stem.name+'_sourcealt')
     meta=dict(data_qubits=pc.D,roles=pc.roles,kind=pc.kind,square_mask=pc.square_mask,
         ideal_contract=raw,diagnostic_only=True,gate_valid=False,
         source=str(prefix.relative_to(ROOT)) if source else 'synthetic ideal logicalT',
         source_noisy=source,first_inserted_tick=first,round=R,inserted_ticks=list(range(first,R)),
+        actual_round=first,extra_wait_ticks=delay,
         ideal_source_ticks=ideal_source,
-        scope='Noisy source251 (or perfect logicalT control), ideal instantaneous resource, native terminal.',
+        scope='Actual noisy source identified by the source field (or perfect logicalT control), ideal instantaneous resource, native terminal.',
         full_resource_rows=[sorted(row) for row in pc.FULL_ROWS])
     stem.with_suffix('.qasm').write_text(text);stem.with_suffix('.json').write_text(json.dumps(meta,indent=2)+'\n')
     return stem

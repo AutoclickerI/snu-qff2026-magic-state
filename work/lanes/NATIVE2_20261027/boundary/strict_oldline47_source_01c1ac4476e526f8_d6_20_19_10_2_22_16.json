@@ -1,0 +1,67 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": {
+    "acceptance_policy": "Changed cut3/RX9 source: keep c317 atM7@38, remove c318 when M13@39 becomes real RX13; delete CX7-to-1@38.",
+    "edits": [
+      {
+        "action": "remove",
+        "kind": "CX",
+        "qs": [
+          7,
+          1
+        ],
+        "time": 38
+      },
+      {
+        "action": "move",
+        "kind": "M",
+        "new_time": 38,
+        "qs": [
+          7
+        ],
+        "retained_bit": 317,
+        "time": 39
+      },
+      {
+        "action": "replace",
+        "new_kind": "RX",
+        "old_kind": "M",
+        "qs": [
+          13
+        ],
+        "removed_bit": 318,
+        "removed_checks": [
+          [
+            318
+          ]
+        ],
+        "time": 39
+      }
+    ],
+    "parent": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/boundary/cut3_rx9_38_source_f88362832c0c1c20_d6_20_19_10_2_22_16",
+    "raw": {
+      "acceptance": 0.9999999999999997,
+      "conditional_detectors": [],
+      "errors": [],
+      "infidelity": 0.0,
+      "ok": true,
+      "rank": 5,
+      "six_stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ]
+    }
+  }
+}

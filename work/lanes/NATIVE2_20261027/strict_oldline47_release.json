@@ -1,0 +1,98 @@
+{
+  "stem": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/boundary/strict_oldline47_source_01c1ac4476e526f8_d6_20_19_10_2_22_16",
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "release": {
+    "0": 37,
+    "1": 40,
+    "3": 39,
+    "4": 34,
+    "5": 34,
+    "7": 39,
+    "8": 38,
+    "9": 39,
+    "11": 33,
+    "12": 30,
+    "13": 40,
+    "14": 37,
+    "15": 39,
+    "17": 28,
+    "18": 25,
+    "21": 38,
+    "23": 0,
+    "24": 30,
+    "25": 29,
+    "26": 16,
+    "27": 12,
+    "28": 29,
+    "29": 0,
+    "30": 27,
+    "31": 0,
+    "32": 0,
+    "33": 0,
+    "34": 0,
+    "35": 0
+  },
+  "cx": 237,
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999997,
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997
+    ],
+    "ok": true
+  },
+  "edits": [
+    {
+      "action": "remove",
+      "kind": "CX",
+      "qs": [
+        7,
+        1
+      ],
+      "time": 38
+    },
+    {
+      "action": "move",
+      "kind": "M",
+      "qs": [
+        7
+      ],
+      "time": 39,
+      "new_time": 38,
+      "retained_bit": 317
+    },
+    {
+      "action": "replace",
+      "old_kind": "M",
+      "new_kind": "RX",
+      "qs": [
+        13
+      ],
+      "time": 39,
+      "removed_bit": 318,
+      "removed_checks": [
+        [
+          318
+        ]
+      ]
+    }
+  ],
+  "acceptance_policy": "Changed cut3/RX9 source: keep c317 atM7@38, remove c318 when M13@39 becomes real RX13; delete CX7-to-1@38.",
+  "product_states": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/strict_oldline47_product_states.json"
+}

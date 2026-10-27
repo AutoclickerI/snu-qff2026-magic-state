@@ -5,9 +5,16 @@ HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[2]
 files=set(HERE.glob('*.py'))|{HERE/'REPORT.md'}
 names=['linear_magic_d6_s2.json','linear_magic_d8_s1.json','linear_cat_d8_s1.json','hybrid_d10_m4_s1.json',
     'clifford_frontend_verification.json','prefix_release.json','prefix_product_states.json',
-    'contracted105_product_states.json','a_factory_search.json','a_orientation.json','a_factory_contracted105.json']
+    'contracted105_product_states.json','a_factory_search.json','a_orientation.json','a_factory_contracted105.json',
+    'old_b_module.json','old_a_instrument.json','old_b_instrument_module.json',
+    'old_footprint_a_s1.json','compact_a_modes_instrument48.json','compact_a_weak_instrument48.json',
+    'record_contract_control.json','record_contract_filtered_control.json','record_contract_modes_control.json',
+    'discarded_mz_h_probe.json','a_measured.json','a_measured_pairs_fixed.json']
 files.update(HERE/n for n in names)
 files.update(HERE.glob('*.result.json'))
+for pattern in ('*_module.json','dual_old_a_module*.json','q15_early39_*.json',
+                '*.pairs.json','*probe_result.json'):
+    files.update(HERE.glob(pattern))
 files.update(p for p in (HERE/'boundary').glob('*') if p.suffix in ('.qasm','.json'))
 prefixes=[
     'separate_w2_full_pcXZ_reuse_jit_linear_magic_d6_s2_d66d',

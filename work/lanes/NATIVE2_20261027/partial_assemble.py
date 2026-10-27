@@ -16,7 +16,7 @@ from qtools import write_stem,price
 from qtools.validity import raw_check
 from qtools.evaluator import frontend as f
 from joint import emit
-from partial_contract import D,A,B,C,CELLS,HELPERS,COLS,ROWS,terminal,DETECTORS,make_contract
+from partial_contract import D,A,B,C,CELLS,HELPERS,COLS,ROWS,terminal,DETECTORS,make_contract,make_four_square_contract
 from record_contract import complete
 import prefix_boundary as pb
 
@@ -30,7 +30,8 @@ def integrate(sol,name,prefix_path=None,states_path=None,complete_records=True):
     states={r['q']:r for r in certified['cells']}
     if prefix_path:assert Path(certified['prefix_stem']).with_suffix('.qasm').read_text()==text,'A new prefix requires its own product-state certificate.'
     ops=copy.deepcopy(prefix);dets=copy.deepcopy(dets)
-    contract=make_contract(sol.get('orientation',0),sol.get('late_c14',False));roles=sol.get('roles',contract.roles)
+    contract=make_four_square_contract(True,sol.get('dual_a',False)) if sol.get('contract_kind')=='four_square' else make_contract(sol.get('orientation',0),sol.get('late_c14',False))
+    roles=sol.get('roles',contract.roles)
     role_A=list(map(int,roles.get('A',sol.get('A',A))));role_B=list(map(int,roles.get('B',sol.get('B',B))));role_C=list(map(int,roles.get('C',sol.get('C',C))))
     cells=list(map(int,sol.get('cells',CELLS+HELPERS)));t0=int(sol.get('T0',0))
     layers=[[tuple(e) for e in layer] for layer in sol['ops']]
@@ -53,7 +54,7 @@ def integrate(sol,name,prefix_path=None,states_path=None,complete_records=True):
             touches=[max(max(o.time for o in prefix)+1,t0+len(layers))]
         first=min(touches);kind='RX' if piv.get(q,0) else 'R';axis='X' if kind=='RX' else 'Z'
         known=states[q].get('product_axis')==axis and not states[q].get('phase_xor') and not states[q].get('phase_constant')
-        conditional=(q==17 and axis=='X' and states[q].get('phase_xor')==[311] and not states[q].get('phase_constant') and not(piv[q]&15))
+        conditional=(q==17 and axis=='X' and states[q].get('phase_xor')==[311] and not states[q].get('phase_constant') and (sol.get('dual_a',False) or not(piv[q]&15)))
         if conditional and first==release[q]:
             assert complete_records,'Conditional resource phases require recomputing the complete affine record contract.'
             reused.append(dict(qubit=q,time=first,axis=axis,phase_xor=[311]));continue
@@ -66,6 +67,9 @@ def integrate(sol,name,prefix_path=None,states_path=None,complete_records=True):
         t=int(r['time']);assert t>=release[q]
         assert not any(q in o.qs and o.time>=t for o in ops if o not in prefix),('late init overlaps resource lifetime',q,t)
         ops.append(f.Op(r['kind'],(q,),t))
+    for row in sol.get('late_cliffords',[]):
+        q=int(row['qubit']);t=int(row['time']);assert t>=release[q]
+        ops.append(f.Op(row['kind'],(q,),t))
     R=max(max(o.time for o in ops)+1,max(o.time for o in prefix)+1)
     firstbit=max((o.bit for o in prefix if o.bit is not None),default=-1)+1
     for i,(d,a,b,c) in enumerate(zip(D,role_A,role_B,role_C)):
@@ -92,7 +96,7 @@ def integrate(sol,name,prefix_path=None,states_path=None,complete_records=True):
         dets += [set(r['bits']) for r in added]
     text=emit(ops,dets);raw=raw_check(text,D)
     meta=dict(source_boundary=boundary,resource_solution=sol,roles=dict(D=D,A=role_A,B=role_B,C=role_C),release=release,resource_initializations=initializations,
-        reused_product_inputs=reused,late_initializations=list(late.values()),terminal_start=R,helper_checks=helpers,
+        reused_product_inputs=reused,late_initializations=list(late.values()),late_cliffords=sol.get('late_cliffords',[]),terminal_start=R,helper_checks=helpers,
         extra_record_checks=added,raw=raw,full_native_assembly=True,
         noise_scope='Full official operation and idle noise; no idealized resources or removed elapsed time.')
     stem=write_stem(text,D,HERE/'boundary',name,source=meta)

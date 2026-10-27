@@ -133,6 +133,124 @@ The 105-CX source releases many factory cells much earlier, but that freedom mus
 valued in a complete native assembly. All ideal-resource diagnostics are labeled in
 their JSON and intentionally excluded from submission candidates.
 
+## Continued assembly, readout, and scheduling work
+
+The continuing search produced complete native 48- and 47-tick circuits. Their
+official raw outputs and exhaustive single-Pauli audits pass. Exact all-orders
+prices now distinguish actual timing achievements from performance gains:
+
+| Complete native construction | CX | Ticks | c2 | Exact loss | Exact acceptance |
+|---|---:|---:|---:|---:|---:|
+| First 48-tick, early B schedule | 376 | 48 | 39.2 | 4.62502747419e-5 | 0.472779781363 |
+| B waiting-rejection optimized, strong A | 375 | 48 | 35.03 | 4.06936374726e-5 | 0.506398489982 |
+| Same, with both plus-state spare guards | 386 | 48 | 33.17 | 3.80823788643e-5 | 0.503853819645 |
+| Earlier source and B, alternate 9-CX A, both spare guards | 378 | 47 | 34.2311111 | 3.89104079039e-5 | 0.510125086243 |
+| B phase pulse before final verification, both spare guards | 385 | 48 | 32.6177778 | 3.77389420079e-5 | 0.497201343145 |
+
+The first and last rows fail acceptance. The eligible shorter circuits remain
+worse than the incumbent. The real clock saving does not outweigh the source
+protection and late fault-pair costs. Exact receipts are in NATIVE2; no circuit
+in this table is promoted as SOTA.
+
+### What the full circuit exposed
+
+An ordinary encoded-plus A resource followed by seven Z reads loses an important
+check present in v37j. The incumbent applies CX8→7 and CX9→8 after the relevant
+data interactions, then reads q9 in X. This measures the encoded X representative
+on physical qubits {7,8,9}, while the other reads retain three Z-syndrome checks.
+Restoring that check reduced one complete candidate's expected loss from
+1.01935788786e-4 to 4.39235744267e-5. Both numbers refer to the then-completed
+detector policy and remain above the incumbent.
+
+`logical_readout.py` enumerated 3,372 valid native two-layer decoders, representing
+nine distinct measured X subspaces. Twenty-seven physical representatives were
+assembled and audited with a fixed 10-CX A preparation. The best second-order
+coefficient was 38.0555556, using the original logical-X subspace. Adding a second
+X check did not improve that fixed-preparation family. The generator, choices,
+and result ledger distinguish this finite search from a global readout bound.
+
+`relaxed_a.py` tested all seven nonempty subsets of the three initially zero A
+inputs, preparing a larger X space and removing resulting state-identity gates.
+All seven were raw-correct. Three had zero single-fault contribution but
+second-order coefficients of 120.599444 or more; the other four had harmful
+single faults. Weaker A checks did not improve this family.
+
+`park_data.py` reinstates native identity interactions with independently
+heralded plus-state helpers q0 and q1 in otherwise idle data slots. For the
+10-CX A preparation, both helpers reduced the second-order coefficient from
+38.0555556 to 35.7422222 without extending the 49-tick circuit. The extra gates
+are useful because the full conditional noise channel differs from idle noise.
+This is a measured scheduling effect, not an assertion that fewer gates always
+improve performance.
+
+`original_a_resource.py` isolates the incumbent's 11-CX A preparation and its
+two-CX readout from the separate parking operations. With the preserved source
+and B factory, its coefficient is 33.5022222; adding q0/q1 parking gives
+32.0422222 at 400 CX and 49 ticks. These initial experiments used the historical
+record-exclusion policy described below and are labeled as such, rather than as
+baseline-equivalent controls.
+
+### Acceptance contract correction
+
+Completing every noiseless affine detector initially added two independent
+checks beyond the incumbent's intended contract. Simply excluding the two
+associated records did **not** restore the original detector subspace, because
+the original circuit uses them in relative checks. That intermediate policy is
+a distinct experiment and must not be called baseline-equivalent.
+
+NATIVE2 subsequently derived two permitted physical fault directions separately
+from each actual circuit, projected the completed detector rows orthogonally to
+those directions, and checked the reconstructed 412-CX circuit against the
+original canonical detector row space. The resulting spaces match exactly at
+rank 71, with the same physical operation multiset. The control receipt is
+`../NATIVE2_20261027/record_contract_modes_control.json`. Retimed modules preserve
+original record identifiers so the physical directions are resolved at their
+actual new times.
+
+### Source scheduling
+
+`commuting_schedule.py` uses CP-SAT with exact commuting-operation relations,
+native resource constraints, and explicit source releases. The preserved
+251-CX source remains 41 ticks in the completed search; its retimed ideal-resource
+diagnostic is worse, at 2.99206583656e-5. The 129-CX cancellation variant reaches
+39 ticks but its diagnostic worsens to 3.38039951164e-5. These are bounded search
+outcomes. The later 48-tick full circuit instead uses a small set of targeted
+source contractions to unblock the verified B factory, retaining its MZ heralds.
+
+The remaining work is joint optimization of the source releases, A preparation,
+measured phase representative, and the final readout schedule. A zero single-fault
+coefficient alone is insufficient: accepted correctable resource errors can pair
+with a later data error or false check to produce the dominant logical loss.
+
+### Native Clifford phase experiments
+
+`frontend_axis.py` extends the lane-local Clifford frontend with native SX/SXdg.
+It preserves the pinned noise scheduler and all-orders contraction. An independent
+Stim inverse-tableau oracle checks 11,279 fault pullbacks and 1,440 signed
+observables, including randomized H/S/Sdg/SX/SXdg/CX words. All agree; the receipt
+is `axis_frontend_verification.json`. Shared qtools and judge files are unchanged.
+
+`axis_echo.py` first put real noisy transversal Clifford pulses on data at40 and
+their inverses at47, replacing existing idle channels. All five variants passed
+raw and full single-fault checks, but every pair coefficient was worse: H44.83556,
+S/Sdg40.86111, SX/SXdg35.35778, versus35.03. These are finite failed controls.
+
+`between_checks.py` creates a distinct instrument with A taps44, B taps46, and
+readout47. Clifford pulses at45 and47 then rotate the second checked syndrome
+relative to the first. Again all five variants are raw/F1 valid. The no-pulse
+coefficient is42.69667; SX/SXdg tie it, S/Sdg increase it to52.23778, and H to
+536.89889. No full prices were needed to select these inferior controls.
+
+`b_phase_probe.py` instead applies transversal S to the encoded-zero B resource.
+It preserves the ideal resource and can make some incoming bit residues visible
+to the final phase readout. With B ready45, a pulse in the post-verification gap
+only changes c2 from45.03333 to44.51111. Moving the final B-to-C verification to45
+and placing the pulse at44 gives34.47778, compared with35.0 for the exact same
+schedule without the pulse. Adding both plus-spare guards gives32.61778. Its
+full price is included above and fails acceptance; a low pair coefficient alone
+does not make it an eligible improvement. `phase_screen.py` supplies the complete
+raw/F1/pair gate for further independently certified resource phase symmetries.
+
 ## Provenance and outstanding objective
 
 Baseline QASM SHA-256 is
@@ -142,9 +260,11 @@ Pinned qtools version is
 The official judge checkout is pinned at
 `76fe47c0324f1c1f8b72a7d55af200e88043b522`.
 
-Main advanced during this work to 0b702a7954b753e1834b27023bbb7ad813f59fc2, adding only
-an independent v37j re-draw submission and receipt. Its source circuit/evaluator did
-not change. This lane preserves that work and does not modify main or shared qtools.
+Main advanced during this work through 048e820600c7d30f9f1dee92cf0957b80e2e939a,
+adding two independent v37j re-draw submissions and receipts. Its source circuit
+and evaluator did not change. Commit 3a0b74f9527e874b9d83e9b5403134ef194ba334
+preserves both updates in the private research branch. This lane does not modify
+main or shared qtools.
 
 The remaining objective is a complete legal native circuit with materially better
 full noisy loss, followed by the official score needed to establish the leaderboard

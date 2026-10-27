@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/boundary_product.py", line 49, in <module>
+    ap=argparse.ArgumentParser();ap.add_argument('--boundary');ap.add_argument('--output');a=ap.parse_args();certify(a.boundary,a.output)
+                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/boundary_product.py", line 13, in certify
+    st=time.perf_counter();boundary=json.loads(Path(boundary_path or HERE/'prefix_release.json').read_text());stem=Path(boundary['stem'])
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'work/lanes/END2_20261027/prefix_reuse15.json'

@@ -1,0 +1,235 @@
+{
+  "status": "OPTIMAL",
+  "R": 44,
+  "t0": 36,
+  "seconds": 1.40458608,
+  "A": [
+    7,
+    14,
+    13,
+    9,
+    8,
+    21,
+    15
+  ],
+  "early_cells": [
+    8,
+    14
+  ],
+  "prefix_stem": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/boundary/q15_early39_cut5_source_3b331f0a97ac560b_d6_20_19_10_2_22_16",
+  "direct_plus": true,
+  "logical_x_herald": [
+    8,
+    14,
+    15
+  ],
+  "exclude_logical_hooks": true,
+  "soft_phase_objective": false,
+  "product_states": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/q15_early39_cut5_product_states.json",
+  "excluded_gate_multisets": 0,
+  "scope": "Native A plusL; each unflagged phase hook independently correctable or flips later logical-X herald.",
+  "cx": 9,
+  "ops": [
+    [],
+    [],
+    [],
+    [
+      [
+        14,
+        15
+      ]
+    ],
+    [
+      [
+        8,
+        14
+      ],
+      [
+        21,
+        15
+      ]
+    ],
+    [
+      [
+        7,
+        8
+      ],
+      [
+        14,
+        13
+      ],
+      [
+        15,
+        9
+      ]
+    ],
+    [
+      [
+        8,
+        9
+      ],
+      [
+        15,
+        14
+      ]
+    ],
+    [
+      [
+        21,
+        15
+      ]
+    ]
+  ],
+  "initial_rows": {
+    "7": 9,
+    "14": 7,
+    "13": 0,
+    "9": 0,
+    "8": 12,
+    "21": 6,
+    "15": 0
+  },
+  "operations": [
+    {
+      "time": 38,
+      "kind": "RX",
+      "qs": [
+        14
+      ]
+    },
+    {
+      "time": 39,
+      "kind": "CX",
+      "qs": [
+        14,
+        15
+      ]
+    },
+    {
+      "time": 39,
+      "kind": "RX",
+      "qs": [
+        8
+      ]
+    },
+    {
+      "time": 39,
+      "kind": "RX",
+      "qs": [
+        21
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "CX",
+      "qs": [
+        8,
+        14
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "CX",
+      "qs": [
+        21,
+        15
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "R",
+      "qs": [
+        9
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "R",
+      "qs": [
+        13
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "RX",
+      "qs": [
+        7
+      ]
+    },
+    {
+      "time": 41,
+      "kind": "CX",
+      "qs": [
+        7,
+        8
+      ]
+    },
+    {
+      "time": 41,
+      "kind": "CX",
+      "qs": [
+        14,
+        13
+      ]
+    },
+    {
+      "time": 41,
+      "kind": "CX",
+      "qs": [
+        15,
+        9
+      ]
+    },
+    {
+      "time": 42,
+      "kind": "CX",
+      "qs": [
+        8,
+        9
+      ]
+    },
+    {
+      "time": 42,
+      "kind": "CX",
+      "qs": [
+        15,
+        14
+      ]
+    },
+    {
+      "time": 43,
+      "kind": "CX",
+      "qs": [
+        21,
+        15
+      ]
+    }
+  ],
+  "reused_inputs": [
+    15
+  ],
+  "helpers": [],
+  "a_ready": 44,
+  "plus_inputs": [
+    7,
+    14,
+    8,
+    21
+  ],
+  "helper_x_byproducts": [],
+  "source_x_byproducts": [],
+  "independent_phase_audit": true,
+  "phase_audit_bad": [],
+  "phase_cost": 0,
+  "actual_ready": {
+    "7": 42,
+    "14": 43,
+    "13": 42,
+    "9": 43,
+    "8": 43,
+    "21": 44,
+    "15": 44
+  },
+  "source_original_solution": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/END2_20261027/sol/a_herald_R45_early8_14_no8_earlysource_hx8_14_15_native_m9_h82.json",
+  "retiming_note": "All native preparation operations shifted one tick earlier; source input states separately certified."
+}

@@ -13,8 +13,8 @@ import a_factory as af
 import a_factory_search as search
 HERE=Path(__file__).resolve().parent
 
-def construct(rng):
-    result=search.construct(rng,False)
+def construct(rng,root_pool=None):
+    result=search.construct(rng,False,root_pool)
     if not result:return
     initial,gates=result;target=search.canonical({q:v for q,v in af.TARGET.items() if q in af.A},3)
     def run(gs):
@@ -77,13 +77,13 @@ def schedule(initial,gates,final,release,states,rng):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--a',default='7,14,18,4,8,21,15');ap.add_argument('--trials',type=int,default=5000);ap.add_argument('--seed',type=int,default=1)
-    ap.add_argument('--boundary');ap.add_argument('--states');ap.add_argument('--output');a=ap.parse_args();st=time.perf_counter()
+    ap.add_argument('--boundary');ap.add_argument('--states');ap.add_argument('--output');ap.add_argument('--root-pool');a=ap.parse_args();st=time.perf_counter()
     af.A=list(map(int,a.a.split(',')));af.TARGET={q:af.A.index(q)+1 if q in af.A else 0 for q in af.CELLS}
     boundary=json.loads(Path(a.boundary or HERE/'prefix_release.json').read_text());release={int(q):v for q,v in boundary['release'].items()}
     states={r['q']:r for r in json.loads(Path(a.states or HERE/'prefix_product_states.json').read_text())['cells']};rng=random.Random(a.seed)
     candidates=[];seen=set()
     for i in range(a.trials):
-        result=construct(rng)
+        result=construct(rng,None if not a.root_pool else list(map(int,a.root_pool.split(','))))
         if not result:continue
         initial,gates,final=result;row=schedule(initial,gates,final,release,states,rng)
         key=(row['a_ready'],row['cx'],tuple(row['helpers']),tuple(row['plus_inputs']))

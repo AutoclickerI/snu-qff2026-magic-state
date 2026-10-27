@@ -26,7 +26,7 @@ def canonical(rows,width):
             if k>j and piv[k]>>j&1:piv[k]^=piv[j]
     return tuple(piv[k] for k in sorted(piv))
 
-def construct(rng,direct):
+def construct(rng,direct,root_pool=None):
     width=4 if direct else 3
     masks=[85,102,120,7]
     target={q:(sum(1<<j for j,m in enumerate(masks) if m>>af.A.index(q)&1) if q in af.A else 0) for q in af.CELLS} if direct else af.TARGET.copy()
@@ -39,8 +39,17 @@ def construct(rng,direct):
     for j in order:
         allowed=set(af.CELLS)-locked;terms=[q for q in allowed if rows[q]>>j&1]
         if not terms:continue
-        root=rng.choice(terms);tree=af.tree_for(root,terms,allowed,rng)
+        root=rng.choice(terms if root_pool is None else sorted(allowed&set(root_pool)))
+        tree=af.tree_for(root,terms,allowed,rng)
         if tree is None:return
+        if not rows[root]>>j&1:
+            # A free input pivot may start on a helper. Bring one existing
+            # column bit to the selected root before filling the tree.
+            parent={v:u for u,v in tree};one=next(q for q in [v for _,v in tree] if rows[q]>>j&1)
+            path=[];q=one
+            while q!=root:path.append((parent[q],q));q=parent[q]
+            for u,v in path:
+                if not rows[u]>>j&1:rows[u]^=rows[v];back.append((v,u))
         for u,v in tree:
             if not rows[v]>>j&1:rows[v]^=rows[u];back.append((u,v))
         for u,v in reversed(tree):rows[v]^=rows[u];back.append((u,v))

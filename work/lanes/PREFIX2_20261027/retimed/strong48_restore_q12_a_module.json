@@ -1,0 +1,328 @@
+{
+  "prefix_stem": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/PREFIX2_20261027/retimed/strong48_restore_q12_source_c4dd5423ce2c84e5_d6_20_19_10_2_22_16",
+  "candidates": [
+    {
+      "A": [
+        7,
+        14,
+        13,
+        9,
+        8,
+        21,
+        15
+      ],
+      "operations": [
+        {
+          "time": 38,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 38,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            8,
+            7
+          ]
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 40,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 40,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            13,
+            7
+          ]
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            6,
+            7
+          ],
+          "time": 44
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            20,
+            14
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            19,
+            13
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            10,
+            9
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            2,
+            8
+          ],
+          "time": 44
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            22,
+            21
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            16,
+            15
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            8,
+            7
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            14
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            7
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            13
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            21
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            15
+          ],
+          "time": 46
+        },
+        {
+          "kind": "MX",
+          "qs": [
+            9
+          ],
+          "time": 47
+        },
+        {
+          "kind": "M",
+          "qs": [
+            8
+          ],
+          "time": 47
+        }
+      ]
+    }
+  ],
+  "source_solution": "work/lanes/END2_20261027/sol/a_herald_R46_early7_8_no8_jit.json",
+  "two_heralds": false,
+  "scope": "Strong 11CX A preparation and logical-X readout shifted one tick earlier; plus9 supplied by changed source.",
+  "source_edits": [
+    {
+      "action": "remove",
+      "kind": "M",
+      "qs": [
+        15
+      ],
+      "time": 40,
+      "bit": 322,
+      "removed_record_from_checks": [
+        [
+          322
+        ]
+      ]
+    },
+    {
+      "action": "replace",
+      "old_kind": "CX",
+      "old_qs": [
+        9,
+        10
+      ],
+      "new_kind": "H",
+      "qs": [
+        9
+      ],
+      "time": 38,
+      "note": "Standalone H is one noisy clock; data10 idles honestly."
+    },
+    {
+      "action": "replace",
+      "old_kind": "M",
+      "new_kind": "MX",
+      "qs": [
+        9
+      ],
+      "time": 39,
+      "retained_bit": 321
+    },
+    {
+      "action": "move",
+      "kind": "M",
+      "qs": [
+        7
+      ],
+      "time": 40,
+      "new_time": 39,
+      "bit": 317
+    },
+    {
+      "action": "remove",
+      "kind": "CX",
+      "qs": [
+        13,
+        19
+      ],
+      "time": 39
+    },
+    {
+      "action": "move",
+      "kind": "M",
+      "qs": [
+        13
+      ],
+      "time": 40,
+      "new_time": 39,
+      "bit": 318
+    }
+  ],
+  "acceptance_policy": "Changed source postselection: remove standalone source M15 herald; retain c321 via noisy H38 then native MX39. Retain both baseline-accepted B record modes using physical fault projection."
+}

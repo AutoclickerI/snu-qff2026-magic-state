@@ -1,0 +1,91 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": {
+    "acceptance_policy": "Changed source postselection: remove standalone source M9 and M15 heralds.",
+    "edits": [
+      {
+        "action": "remove",
+        "bit": 322,
+        "kind": "M",
+        "qs": [
+          15
+        ],
+        "removed_record_from_checks": [
+          [
+            322
+          ]
+        ],
+        "time": 40
+      },
+      {
+        "action": "replace",
+        "new_kind": "RX",
+        "old_kind": "M",
+        "qs": [
+          9
+        ],
+        "removed_bit": 321,
+        "removed_record_from_checks": [
+          [
+            321
+          ]
+        ],
+        "time": 39
+      },
+      {
+        "action": "move",
+        "bit": 317,
+        "kind": "M",
+        "new_time": 39,
+        "qs": [
+          7
+        ],
+        "time": 40
+      },
+      {
+        "action": "remove",
+        "kind": "CX",
+        "qs": [
+          13,
+          19
+        ],
+        "time": 39
+      },
+      {
+        "action": "move",
+        "bit": 318,
+        "kind": "M",
+        "new_time": 39,
+        "qs": [
+          13
+        ],
+        "time": 40
+      }
+    ],
+    "parent": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/PREFIX2_20261027/retimed/source_aligned_f4c43ebcb17bfa49_d6_20_19_10_2_22_16",
+    "raw": {
+      "acceptance": 0.9999999999999997,
+      "conditional_detectors": [],
+      "errors": [],
+      "infidelity": 0.0,
+      "ok": true,
+      "rank": 5,
+      "six_stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ]
+    }
+  }
+}
