@@ -4,9 +4,9 @@
 - Board: **rank 2**. Placeholder took rank 1 at 19:31 with **3.086e-5** (key 3.09e-5, 293 CX, acceptance 0.510; their
   entries were 6.286e-5 at 169 CX and 3.856e-5 at 201 CX). Ours: v37i_h2617_r1992, 3.325e-5 (17:29). v37j's mean
   3.587e-5 would need a 7σ draw to reach 3.08e-5, so racing cannot recover rank 1: a true mean ≲ 3.35e-5 is needed
-  (hourly bests sit ≈ 3.8σ below the mean), lower as they improve. Ties go to fewer CX (theirs 293). The hourly loop
-  `work/receipts/draw_loop.sh` races the stem in `work/receipts/next_stem.txt` (read at HH:20) and
-  `submit_when_ready.sh` submits the hour's pick when its key beats our board key.
+  (hourly bests sit ≈ 3.8σ below the mean), lower as they improve. Ties go to fewer CX (theirs 293). The hourly race
+  (`work/receipts/draw_loop.sh`) is parked: Jihoon stopped it 2026-10-27 23:01 (R-20261027-1). Its picks of
+  v37j_h2719–h2722 (3.332–3.366e-5) did not beat our board key 3.3e-5 and were not submitted.
 - **Best expected circuit: v37j** (`work/lanes/MAIN/v37j`): **all-orders 3.587095e-5, acceptance 0.50102**, 412 CX,
   49 native ticks: MERGE's pass 5 on v37i (3.591182e-5, EARLIER's R45 route repair) combined with EARLIER's last
   finalist; races from the 19:20 race; judge time 1.2–1.27× v37i's (expected-key delta ≈ +1e-8). Round R45 on GLOBAL's
@@ -64,6 +64,7 @@ racing compute; racing gains are logarithmic, so lanes take the cores they need 
 hour's start (`race_specs.sh`). Lane searches are bound by ideas, not evaluation. Last stem change that can reach
 the final slot (2026-10-30 about 11:24): `next_stem.txt` before 10:20 that day; submissions close at 12:00 (CONSTRAINTS
 rule 7), so a better stem verified later can still race a shorter window by hand and be submitted before 11:55.
+While the hourly race is parked (R-20261027-1), a stem reaches a slot only through `work/promote.sh` run by hand.
 
 ## Levers
 Gap: v37j's true mean 3.587e-5 to the floor 2.189e-5 = 1.40e-5. Shares come from v37g's noise cuts (only the last
@@ -73,7 +74,7 @@ Gap: v37j's true mean 3.587e-5 to the floor 2.189e-5 = 1.40e-5. Shares come from
 | Preparation and waits before the final check | prefix, A/B/C, data hops | ≤ 0.77e-5, 54% (full vs last 3 ticks noisy); ideal B/C source and core 0.41e-5 (v37a); each earlier round tick ≈ 0.07e-5 (R43 on v36h) | repair pass: hours (MERGE); movement experiment: 8 h (WAITCUT) | closed for the current line: WAITCUT's factory and EARLIER's earlier round lost on the grid (FINDINGS); P104 repairs (EARLIER: R44/R45 infeasible with its operations, FINDINGS) |
 | Final check structure (the D→A / B→C tick) | ending | ≤ 0.57e-5, 40% (last 3 vs 2 ticks noisy); square round −0.29e-5 with perfect resources; C4 contraction lower still | a day per family | deciding: P116 redesigns the layout around a square-type check; grid-free with real preparation square + leaf 3.283e-5, path and square 3.316e-5 (−0.28e-5 vs v37i); no grid embedding yet; contracts chosen for preparation cost lost (CONTRACTS); every C4 feed lost (CONTRACT, ENDSEARCH) |
 | Terminal class | last two ticks | ≤ 0.09e-5, 6% (class floor 2.274e-5 vs 2.189e-5) | — | decided: stay in class |
-| Racing compute | hourly race | ≈ 1.1e-7 of key per doubling of draws (Gaussian extreme value) | free cores | decided: racer fills the cores lanes leave |
+| Racing compute | hourly race | ≈ 1.1e-7 of key per doubling of draws (Gaussian extreme value) | free cores | parked: Jihoon stopped the hourly race (R-20261027-1) |
 | Judge time per draw | race | ≈ 1.1e-7 of key per halving | one 1e6 timing | decided: expected-key promotion rule (circuit.md) |
 | Search-grammar completeness | repair | measured −9.2e-8 once (reviewer 17: herald + detector span) | minutes per incumbent | deciding: MERGE pass 5 |
 
