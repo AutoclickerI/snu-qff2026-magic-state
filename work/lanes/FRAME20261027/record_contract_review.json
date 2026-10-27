@@ -1,0 +1,106 @@
+[
+  {
+    "rotation_rank": 0,
+    "rotation_state_stabilizer_rank": 0,
+    "records": 2,
+    "declared_rank": 0,
+    "complete_rank": 1,
+    "missing": [
+      {
+        "bits": [
+          0,
+          1
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      }
+    ],
+    "name": "bell_record_parity",
+    "checked_parities": 4,
+    "oracle_affine_relations": {
+      "0": 0,
+      "3": 0
+    },
+    "passed": true
+  },
+  {
+    "rotation_rank": 1,
+    "rotation_state_stabilizer_rank": 0,
+    "records": 2,
+    "declared_rank": 0,
+    "complete_rank": 1,
+    "missing": [
+      {
+        "bits": [
+          0,
+          1
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      }
+    ],
+    "name": "magic_repeated_x_readout",
+    "checked_parities": 4,
+    "oracle_affine_relations": {
+      "0": 0,
+      "3": 0
+    },
+    "passed": true
+  },
+  {
+    "rotation_rank": 1,
+    "rotation_state_stabilizer_rank": 1,
+    "records": 1,
+    "declared_rank": 0,
+    "complete_rank": 1,
+    "missing": [
+      {
+        "bits": [
+          0
+        ],
+        "reference": 1,
+        "expectation": -1.0
+      }
+    ],
+    "name": "negative_reference_from_four_t",
+    "checked_parities": 2,
+    "oracle_affine_relations": {
+      "0": 0,
+      "1": 1
+    },
+    "passed": true
+  },
+  {
+    "rotation_rank": 2,
+    "rotation_state_stabilizer_rank": 1,
+    "records": 3,
+    "declared_rank": 0,
+    "complete_rank": 2,
+    "missing": [
+      {
+        "bits": [
+          0
+        ],
+        "reference": 1,
+        "expectation": -1.0
+      },
+      {
+        "bits": [
+          1,
+          2
+        ],
+        "reference": 1,
+        "expectation": -1.0
+      }
+    ],
+    "name": "nonorthogonal_basis_complex_phase",
+    "checked_parities": 8,
+    "oracle_affine_relations": {
+      "0": 0,
+      "1": 1,
+      "6": 1,
+      "7": 0
+    },
+    "passed": true
+  }
+]
