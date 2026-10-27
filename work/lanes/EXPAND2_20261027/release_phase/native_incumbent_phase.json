@@ -1,0 +1,89 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": {
+    "noise_scope": "All gates noisy; native pulses replace existing idle channels.",
+    "parent": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/MAIN/v37j",
+    "phase_symmetry": {
+      "family": "identical_quantum_column_pair",
+      "fixed_record_contract": true,
+      "known_z_byproducts": [],
+      "name": "t39_fixed_pair_5_12",
+      "occupied_slots_checked": true,
+      "operations": [
+        {
+          "kind": "SDG",
+          "qs": [
+            5
+          ],
+          "time": 39
+        },
+        {
+          "kind": "S",
+          "qs": [
+            12
+          ],
+          "time": 39
+        }
+      ],
+      "proof": {
+        "all_phase_values_mod4": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "classical_basis_record_xors": [
+          [
+            366
+          ]
+        ],
+        "classical_columns": {
+          "12": 0,
+          "5": 0
+        },
+        "classical_rank": 1,
+        "global_phase_by_classical_word": [
+          0,
+          0
+        ],
+        "identity": "phase(u,c)=global(c)+2*parity(z(c)&u) mod4; z=0 for fixed-record candidates",
+        "quantum_columns": {
+          "12": 1,
+          "5": 1
+        },
+        "quantum_rank": 3,
+        "z_function_by_classical_word": [
+          0,
+          0
+        ]
+      },
+      "requires_record_remapping": false,
+      "sign_quotient": "One sign assignment per pulse support. Other valid signs differ by a conditional Z stabilizer and have the same Pauli-axis action up to sign.",
+      "source_leases_checked": true
+    }
+  }
+}

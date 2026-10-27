@@ -1,0 +1,51 @@
+{
+  "baseline_sha256": "ac2d9dfbfb4967baacf85a25f2a1eaac35dd7039abe2069dc858cd5a5f4ca5cd",
+  "qasm_sha256": "bcd6a3fdb6133c5b687993fb10c57c002e13f3e873f05981c48100ba10065b08",
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999997,
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997
+    ],
+    "ok": true
+  },
+  "singles": {
+    "c1": 0.0,
+    "harmful_faults": [],
+    "fault_components": 7027
+  },
+  "cx": 412,
+  "ticks": 49,
+  "changes": [
+    {
+      "kind": "SDG",
+      "qubit": 5,
+      "tick": 39
+    },
+    {
+      "kind": "S",
+      "qubit": 12,
+      "tick": 45
+    }
+  ],
+  "detector_policy": "Exactly the original detector rows and measurement records.",
+  "noise_scope": "Real noisy native Clifford pulses replace existing idle channels at the same clock.",
+  "frontend_sha256": "364a17752d1a175ef7680c5ab4982cd318dd606af65de5c44b71f8963e63f8ae"
+}
