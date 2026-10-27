@@ -1,0 +1,87 @@
+{
+  "stem": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/cand/separate_w2_full_pcY_reuse_jit_linear_magic_d6_s2_1bd9d8c686a24d29_d0_20_7_10_3_22_21",
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "checks": 2,
+  "prechecks": "Y",
+  "uncompute": "full",
+  "reuse": true,
+  "jit": true,
+  "magic_file": "linear_magic_d6_s2.json",
+  "cat_start": 19,
+  "cat_final_read": 35,
+  "round_tick": 43,
+  "ticks": 46,
+  "cx": 184,
+  "T": 15,
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999994,
+    "conditional_detectors": [],
+    "infidelity": 1.1102230246251573e-16,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994
+    ],
+    "ok": true
+  },
+  "price": {
+    "loss": 5.143578744604398e-05,
+    "acceptance": 0.5591749921791646,
+    "width": 8,
+    "basis": {
+      "id": "plain",
+      "replayed": 36,
+      "selected": "01ac0bcb997f4061eb61ea9d196de83acc9f1236016d44423d74cfd768d29125",
+      "trained": false,
+      "threshold": 12,
+      "operations": 0
+    },
+    "raw": {
+      "errors": [],
+      "acceptance": 0.9999999999999994,
+      "conditional_detectors": [],
+      "infidelity": 1.1102230246251573e-16,
+      "rank": 5,
+      "six_stabilizers": [
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994
+      ],
+      "ok": true
+    },
+    "exact_acceptance_ok": true,
+    "kernel_omission_bound": 3.1991460268192526e-14,
+    "qasm_sha256": "1bd9d8c686a24d29dd5c31382043e9409e92e6664a912dd235b8eae788b4eb41",
+    "data_qubits": [
+      0,
+      20,
+      7,
+      10,
+      3,
+      22,
+      21
+    ],
+    "evaluator": "pinned sparse-Walsh contraction with lane-local native S/Sdg frontend",
+    "pinned_evaluator_version": "94d0bfed2b6ff678c667dd24a5e57a249e01da0febc72bec4adf0d987fb9c83f",
+    "frontend_sha256": "c350c1627077bb41a66a445ed18733f0e1b23ca03c37dffd7f99b23009506028",
+    "noiseless_model_acceptance": 1.0,
+    "noiseless_model_loss_numerator": 0.0,
+    "seconds": 5.755374024000048
+  }
+}
