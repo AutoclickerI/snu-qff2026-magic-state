@@ -1,5 +1,40 @@
 # Plan
 
+## Research decision — 2026-10-27, PR #1
+
+The current research priority is **joint native resource preparation and final
+verification, with the incoming source and measurement contract chosen together**.
+The earlier allocation below that makes the best grid-free design the sole
+embedding target is superseded for this research branch. CP-SAT remains useful
+for local synthesis and scheduling; fixed gate lists, fixed interfaces and
+CX/depth objectives are optional search scopes.
+
+The working native reference remains the verified phase candidate at
+L=3.5681272391347155e-5, A=0.501016046737387. This checkpoint adds no native
+performance winner. Its completed decision experiments comprise 28 fully noisy
+abstract circuit evaluations, 16 noise interventions on that native reference,
+four bounded native beam searches, and two raw-valid native interface controls.
+
+The matched Bell2 comparison improves from3.4411230e-5 to3.0093765e-5 by changing
+its physical resource/ending. Doubling the Bell checks after that ending saves
+only3.62e-9 while adding16CX. Cheap B flags and measured-codeword final reuse
+pass raw correctness but lose under full noise. A generic beam also fails to
+rediscover a known24CX module: changing the optimizer alone is not the answer.
+
+Native noise diagnostics prioritize B/C preparation and verification jointly.
+Complete native candidates must be compared by all-orders L=N/A at A>=0.5002;
+c1,c2,CX count and depth remain diagnostics. Keep an incumbent-source anchor
+and a native logical-check challenger; allow their resource, final-check and
+accepted-record interfaces to change together. Use grid-free results to test a
+mechanism and its margin, rather than as a required architecture. The cited
+DEEP2.7185e-5 artifact was not recovered from the inspected checkout/main/PR;
+recover its exact circuit and receipt before treating it as a reproducible
+current candidate.
+
+Full findings, numerical scope, reproduction and the one-time research
+allocation: [architecture decision](../work/lanes/STRATEGY_20261027/DECISION.md).
+The production racer and submissions were not changed by these experiments.
+
 ## Status (2026-10-26 20:00 KST)
 - Board: **rank 2**. Placeholder took rank 1 at 19:31 with **3.086e-5** (key 3.09e-5, 293 CX, acceptance 0.510; their
   entries were 6.286e-5 at 169 CX and 3.856e-5 at 201 CX). Ours: v37i_h2617_r1992, 3.325e-5 (17:29). v37j's mean
@@ -117,3 +152,4 @@ Gap: v37j's true mean 3.587e-5 to the floor 2.189e-5 = 1.40e-5. Shares come from
 
 ## Open questions
 - Organizers might rescore with other seeds; P §2.3 says seed 0 is official. True-mean gains protect us either way.
+
