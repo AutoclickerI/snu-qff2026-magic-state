@@ -69,7 +69,7 @@ def main():
         status=own_manifest['status'],
         previous_research_head='c645a5f77ebfcb7db00c48c35e006d046e729470',
         prepared_main='82657bf8e1de91f40e9137f5a517e6f4dacd7518',
-        publication='Blocked by automatic approval review pending explicit approval; branch unchanged.',
+        publication='Selected checkpoint published to draft PR #1 at 781ab32058a0567516981f9586338d5cdb6896d1 after explicit approval; status corrections follow.',
         upstream_files='Unchanged additional main files are listed in upstream_integration.json.',
         lanes=summaries, files=rows, count=len(rows),
         total_bytes=sum(r['bytes'] for r in rows),

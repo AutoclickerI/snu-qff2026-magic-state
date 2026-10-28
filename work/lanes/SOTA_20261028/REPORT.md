@@ -10,7 +10,7 @@ The [public leaderboard snapshot](leaderboard_final.json), retrieved **2026-10-2
 
 The hourly race remains parked under the owner's recorded stop instruction, R-20261027-1. This checkpoint did not restart it, submit a circuit, change the judge or shared evaluator, or promote a research candidate into production.
 
-Publication of the broad checkpoint was blocked by automatic approval review. The existing draft PR has not been advanced; the complete selected work is local. [PUBLICATION.md](PUBLICATION.md) records the exact proposed export and approval requirement. Detailed lane reports retain their earlier timestamped benchmark; the later leaderboard refresh is reflected above.
+After an initial automatic approval-review block and the owner's explicit approval, the selected checkpoint was published to draft PR #1 in commit `781ab32058a0567516981f9586338d5cdb6896d1`. [PUBLICATION.md](PUBLICATION.md) records the approval history and scope. Detailed lane reports retain their earlier timestamped benchmark; the later leaderboard refresh is reflected above.
 
 ## The best-supported method
 
