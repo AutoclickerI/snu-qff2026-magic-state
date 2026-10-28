@@ -1,0 +1,1019 @@
+{
+  "c1": 2.066666666666668,
+  "fault_components": 2711,
+  "top_operations": [
+    {
+      "time": 4,
+      "kind": "R",
+      "qubits": [
+        26
+      ],
+      "c1": 0.5000000000000001
+    },
+    {
+      "time": 7,
+      "kind": "R",
+      "qubits": [
+        23
+      ],
+      "c1": 0.5000000000000001
+    },
+    {
+      "time": 5,
+      "kind": "CX",
+      "qubits": [
+        32,
+        26
+      ],
+      "c1": 0.23333333333333336
+    },
+    {
+      "time": 10,
+      "kind": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "c1": 0.23333333333333336
+    },
+    {
+      "time": 18,
+      "kind": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "c1": 0.13333333333333336
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qubits": [
+        29,
+        23
+      ],
+      "c1": 0.06666666666666668
+    },
+    {
+      "time": 9,
+      "kind": "CX",
+      "qubits": [
+        23,
+        17
+      ],
+      "c1": 0.06666666666666668
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qubits": [
+        25,
+        26
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qubits": [
+        26,
+        32
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 9,
+      "kind": "CX",
+      "qubits": [
+        32,
+        33
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 10,
+      "kind": "CX",
+      "qubits": [
+        31,
+        32
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 11,
+      "kind": "CX",
+      "qubits": [
+        32,
+        33
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 12,
+      "kind": "CX",
+      "qubits": [
+        23,
+        17
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 13,
+      "kind": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 17,
+      "kind": "CX",
+      "qubits": [
+        17,
+        23
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 19,
+      "kind": "CX",
+      "qubits": [
+        23,
+        17
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 20,
+      "kind": "CX",
+      "qubits": [
+        17,
+        23
+      ],
+      "c1": 0.03333333333333334
+    },
+    {
+      "time": 0,
+      "kind": "RX",
+      "qubits": [
+        19
+      ],
+      "c1": 0.0
+    },
+    {
+      "time": 1,
+      "kind": "T",
+      "qubits": [
+        19
+      ],
+      "c1": 0.0
+    },
+    {
+      "time": 2,
+      "kind": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "c1": 0.0
+    },
+    {
+      "time": 3,
+      "kind": "CX",
+      "qubits": [
+        19,
+        22
+      ],
+      "c1": 0.0
+    },
+    {
+      "time": 4,
+      "kind": "CX",
+      "qubits": [
+        10,
+        19
+      ],
+      "c1": 0.0
+    },
+    {
+      "time": 4,
+      "kind": "CX",
+      "qubits": [
+        20,
+        22
+      ],
+      "c1": 0.0
+    },
+    {
+      "time": 5,
+      "kind": "CX",
+      "qubits": [
+        10,
+        2
+      ],
+      "c1": 0.0
+    }
+  ],
+  "harmful": [
+    {
+      "label": "Z_ERROR Z@[19] after/before native#2 srcL9",
+      "channel": 4,
+      "time": 0,
+      "operation": "RX",
+      "qubits": [
+        19
+      ],
+      "pauli": "Z",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE1 X@[19] after/before native#14 srcL28",
+      "channel": 21,
+      "time": 1,
+      "operation": "T",
+      "qubits": [
+        19
+      ],
+      "pauli": "X",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "label": "DEPOLARIZE1 Y@[19] after/before native#14 srcL28",
+      "channel": 21,
+      "time": 1,
+      "operation": "T",
+      "qubits": [
+        19
+      ],
+      "pauli": "Y",
+      "acceptance": 1.0,
+      "loss_numerator": 0.49999999999999994,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[19] after/before native#14 srcL28",
+      "channel": 21,
+      "time": 1,
+      "operation": "T",
+      "qubits": [
+        19
+      ],
+      "pauli": "Z",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[19, 2] after/before native#18 srcL33",
+      "channel": 26,
+      "time": 2,
+      "operation": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "pauli": "IZ",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        10,
+        11
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[19, 2] after/before native#18 srcL33",
+      "channel": 26,
+      "time": 2,
+      "operation": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "pauli": "XX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[19, 2] after/before native#18 srcL33",
+      "channel": 26,
+      "time": 2,
+      "operation": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "pauli": "XY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.49999999999999994,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        2,
+        4,
+        5,
+        7,
+        10,
+        11
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 YX@[19, 2] after/before native#18 srcL33",
+      "channel": 26,
+      "time": 2,
+      "operation": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "pauli": "YX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.49999999999999994,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 YY@[19, 2] after/before native#18 srcL33",
+      "channel": 26,
+      "time": 2,
+      "operation": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "pauli": "YY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        2,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 ZI@[19, 2] after/before native#18 srcL33",
+      "channel": 26,
+      "time": 2,
+      "operation": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "pauli": "ZI",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE1 Z@[2] after/before native#18 srcL33",
+      "channel": 27,
+      "time": 2,
+      "operation": "CX",
+      "qubits": [
+        19,
+        2
+      ],
+      "pauli": "Z",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        10,
+        11
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 IZ@[19, 22] after/before native#24 srcL41",
+      "channel": 34,
+      "time": 3,
+      "operation": "CX",
+      "qubits": [
+        19,
+        22
+      ],
+      "pauli": "IZ",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 ZI@[19, 22] after/before native#24 srcL41",
+      "channel": 34,
+      "time": 3,
+      "operation": "CX",
+      "qubits": [
+        19,
+        22
+      ],
+      "pauli": "ZI",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 YY@[10, 19] after/before native#35 srcL56",
+      "channel": 51,
+      "time": 4,
+      "operation": "CX",
+      "qubits": [
+        10,
+        19
+      ],
+      "pauli": "YY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 ZZ@[10, 19] after/before native#35 srcL56",
+      "channel": 51,
+      "time": 4,
+      "operation": "CX",
+      "qubits": [
+        10,
+        19
+      ],
+      "pauli": "ZZ",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 YY@[20, 22] after/before native#36 srcL57",
+      "channel": 53,
+      "time": 4,
+      "operation": "CX",
+      "qubits": [
+        20,
+        22
+      ],
+      "pauli": "YY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        1,
+        2,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 ZZ@[20, 22] after/before native#36 srcL57",
+      "channel": 53,
+      "time": 4,
+      "operation": "CX",
+      "qubits": [
+        20,
+        22
+      ],
+      "pauli": "ZZ",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "label": "X_ERROR X@[26] after/before native#38 srcL59",
+      "channel": 55,
+      "time": 4,
+      "operation": "R",
+      "qubits": [
+        26
+      ],
+      "pauli": "X",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.5000000000000001,
+      "record_flips": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 ZZ@[10, 2] after/before native#45 srcL67",
+      "channel": 63,
+      "time": 5,
+      "operation": "CX",
+      "qubits": [
+        10,
+        2
+      ],
+      "pauli": "ZZ",
+      "acceptance": 1.0,
+      "loss_numerator": 0.9999999999999999,
+      "c1_contribution": 0.0,
+      "record_flips": [
+        7,
+        10,
+        11
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[32, 26] after/before native#53 srcL75",
+      "channel": 74,
+      "time": 5,
+      "operation": "CX",
+      "qubits": [
+        32,
+        26
+      ],
+      "pauli": "IX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 ZY@[32, 26] after/before native#53 srcL75",
+      "channel": 74,
+      "time": 5,
+      "operation": "CX",
+      "qubits": [
+        32,
+        26
+      ],
+      "pauli": "ZY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        11,
+        13,
+        18,
+        20
+      ]
+    },
+    {
+      "label": "DEPOLARIZE1 X@[26] after/before native#53 srcL75",
+      "channel": 75,
+      "time": 5,
+      "operation": "CX",
+      "qubits": [
+        32,
+        26
+      ],
+      "pauli": "X",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.16666666666666669,
+      "record_flips": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "label": "X_ERROR X@[23] after/before native#63 srcL87",
+      "channel": 94,
+      "time": 7,
+      "operation": "R",
+      "qubits": [
+        23
+      ],
+      "pauli": "X",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.5000000000000001,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[25, 26] after/before native#65 srcL89",
+      "channel": 96,
+      "time": 7,
+      "operation": "CX",
+      "qubits": [
+        25,
+        26
+      ],
+      "pauli": "IX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[26, 32] after/before native#72 srcL97",
+      "channel": 107,
+      "time": 8,
+      "operation": "CX",
+      "qubits": [
+        26,
+        32
+      ],
+      "pauli": "XX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[29, 23] after/before native#73 srcL98",
+      "channel": 109,
+      "time": 8,
+      "operation": "CX",
+      "qubits": [
+        29,
+        23
+      ],
+      "pauli": "IX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 ZY@[29, 23] after/before native#73 srcL98",
+      "channel": 109,
+      "time": 8,
+      "operation": "CX",
+      "qubits": [
+        29,
+        23
+      ],
+      "pauli": "ZY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": [
+        8,
+        9,
+        10,
+        11,
+        16,
+        18
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[23, 17] after/before native#76 srcL102",
+      "channel": 113,
+      "time": 9,
+      "operation": "CX",
+      "qubits": [
+        23,
+        17
+      ],
+      "pauli": "XX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 YY@[23, 17] after/before native#76 srcL102",
+      "channel": 113,
+      "time": 9,
+      "operation": "CX",
+      "qubits": [
+        23,
+        17
+      ],
+      "pauli": "YY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": [
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "label": "DEPOLARIZE2 XI@[32, 33] after/before native#79 srcL105",
+      "channel": 118,
+      "time": 9,
+      "operation": "CX",
+      "qubits": [
+        32,
+        33
+      ],
+      "pauli": "XI",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XI@[17, 11] after/before native#82 srcL109",
+      "channel": 121,
+      "time": 10,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "XI",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 YZ@[17, 11] after/before native#82 srcL109",
+      "channel": 121,
+      "time": 10,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "YZ",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": [
+        8,
+        10,
+        12,
+        14,
+        20
+      ]
+    },
+    {
+      "label": "DEPOLARIZE1 X@[17] after/before native#82 srcL109",
+      "channel": 122,
+      "time": 10,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "X",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.16666666666666669,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[31, 32] after/before native#85 srcL112",
+      "channel": 125,
+      "time": 10,
+      "operation": "CX",
+      "qubits": [
+        31,
+        32
+      ],
+      "pauli": "IX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[32, 33] after/before native#94 srcL122",
+      "channel": 136,
+      "time": 11,
+      "operation": "CX",
+      "qubits": [
+        32,
+        33
+      ],
+      "pauli": "XX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[23, 17] after/before native#97 srcL126",
+      "channel": 139,
+      "time": 12,
+      "operation": "CX",
+      "qubits": [
+        23,
+        17
+      ],
+      "pauli": "IX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[17, 11] after/before native#105 srcL135",
+      "channel": 151,
+      "time": 13,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "XX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XI@[17, 23] after/before native#137 srcL171",
+      "channel": 193,
+      "time": 17,
+      "operation": "CX",
+      "qubits": [
+        17,
+        23
+      ],
+      "pauli": "XI",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XI@[17, 11] after/before native#145 srcL180",
+      "channel": 203,
+      "time": 18,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "XI",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[17, 11] after/before native#145 srcL180",
+      "channel": 203,
+      "time": 18,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "XX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XY@[17, 11] after/before native#145 srcL180",
+      "channel": 203,
+      "time": 18,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "XY",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XZ@[17, 11] after/before native#145 srcL180",
+      "channel": 203,
+      "time": 18,
+      "operation": "CX",
+      "qubits": [
+        17,
+        11
+      ],
+      "pauli": "XZ",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 IX@[23, 17] after/before native#154 srcL190",
+      "channel": 213,
+      "time": 19,
+      "operation": "CX",
+      "qubits": [
+        23,
+        17
+      ],
+      "pauli": "IX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    },
+    {
+      "label": "DEPOLARIZE2 XX@[17, 23] after/before native#163 srcL200",
+      "channel": 230,
+      "time": 20,
+      "operation": "CX",
+      "qubits": [
+        17,
+        23
+      ],
+      "pauli": "XX",
+      "acceptance": 1.0,
+      "loss_numerator": 0.5000000000000001,
+      "c1_contribution": 0.03333333333333334,
+      "record_flips": []
+    }
+  ]
+}

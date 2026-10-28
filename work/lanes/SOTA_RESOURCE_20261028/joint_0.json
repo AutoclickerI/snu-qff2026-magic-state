@@ -1,0 +1,50 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": {
+    "noise_scope": "All gates noisy; native pulses replace existing idle channels.",
+    "parent": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/MAIN/v37j",
+    "phase_symmetry": {
+      "fixed_record_contract": true,
+      "name": "spacetime_c1_t39q5_t45q12_r0",
+      "noise_scope": "Real native S/Sdg pulses in active idle slots. All original operations, measurements, detectors and clocks retained.",
+      "operations": [
+        {
+          "kind": "SDG",
+          "qs": [
+            5
+          ],
+          "time": 39
+        },
+        {
+          "kind": "S",
+          "qs": [
+            12
+          ],
+          "time": 45
+        }
+      ],
+      "proof": {
+        "first_slot": [
+          39,
+          5
+        ],
+        "last_slot": [
+          45,
+          12
+        ],
+        "phase_polynomial": "-parity(column & u) + parity(column & u) == 0 mod 4",
+        "raw_column": 1,
+        "scope": "CX/MZ-only module after its last reset; complete literal-circuit raw replay is mandatory.",
+        "support_source": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/END2_20261027/incumbent_b_affine_support_columns.json"
+      }
+    }
+  }
+}

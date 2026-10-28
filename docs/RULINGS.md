@@ -159,6 +159,15 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: one-time decision: an independent adversarial re-audit of the 2.189e-5 floor (PLAN P121, lane FLOOR). G0 is
   unchanged ("1e-5, or as close as possible"); lanes keep reachable go/stop gates until the audit reports.
 
+## R-20261027-1 — 2026-10-27 23:00 KST — hourly race stopped
+> "it just pushed to quantumn repo in 10 minutes before. see what is running in background. I want to kill all stale sessions."
+> Q: "The quantumn push came from receipts/draw_loop.sh, an orphan of ended session b847d206. It isn't a stray process: PLAN.md names it as the hourly seed-0 race that should run until submissions close (10-30 12:00 KST). ... What should I do with it?" A: "Stop it now"
+
+- Source: `/home/jihoon/.claude/projects/-home-jihoon/f989403d-d772-4c20-a29f-4ad22dbf8b1c.jsonl` (message and
+  question-tool answer; the agent recommended keeping it).
+- Effect: one-time decision, not a rule: at 23:01 the loop, its v37j_h2723 promote and cut, and the race workers on
+  owl, jerry, hippo, sunfish, tom and zebra were killed before the hour's pick. PLAN parks the hourly race.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |

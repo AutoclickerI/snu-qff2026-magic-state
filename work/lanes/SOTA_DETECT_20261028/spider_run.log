@@ -1,0 +1,43 @@
+LOADED (True, array([[1, 1, 1, 1, 0, 0, 0],
+       [0, 1, 1, 0, 1, 1, 0],
+       [0, 0, 1, 1, 0, 1, 1]], dtype=int8), array([[1, 1, 1, 1, 0, 0, 0],
+       [0, 1, 1, 0, 1, 1, 0],
+       [0, 0, 1, 1, 0, 1, 1]], dtype=int8), array([[1, 1, 0, 0, 1, 0, 0]], dtype=int8), array([[1, 1, 0, 0, 1, 0, 0]], dtype=int8), 3)
+TARGET ReuseTarget.DEPTH 
+ RX 0
+R 1 2 3
+RX 4
+R 5
+RX 6
+R 7
+CX 0 7 7 3 0 2
+R 8
+CX 4 8
+R 9
+CX 6 9 7 1 8 2 4 5 9 3 8 1 9 2 6 5 0 7
+M 7
+CX 4 8
+M 8
+CX 6 9
+M 9
+DETECTOR rec[-3]
+DETECTOR rec[-2]
+DETECTOR rec[-1]
+TARGET ReuseTarget.QUBITS 
+ RX 0
+R 1 2 3 4
+CX 0 4 0 2 4 1 4 3 0 4
+M 4
+RX 4
+R 6
+CX 4 6 4 1
+R 5
+CX 6 2 6 5 4 6
+M 6
+RX 6
+R 7
+CX 6 7 7 2 6 3 7 5 6 7
+M 7
+DETECTOR rec[-3]
+DETECTOR rec[-2]
+DETECTOR rec[-1]

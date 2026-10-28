@@ -1,0 +1,25 @@
+"""Build a reproducible research checkpoint without downloaded dependencies."""
+import hashlib,json
+from pathlib import Path
+H=Path(__file__).resolve().parent
+files=['REPORT.md','PROVENANCE.md','ARCHITECTURE_CRITIQUE.md','make_manifest.py',
+'bell_terminal.py','bell_terminal_result.json','onebit_terminal.py','onebit_terminal_results.json','onebit_terminal_jit.py','onebit_terminal_jit_results.json','onebit_full.py','onebit_full_results.json','native_teleport.py','native_teleport_results.json','native_teleport_contract.py','native_teleport_contract.json',
+'acceptance_search.py','search.log','accept_results.json','herald_test.py','heralds.json','official_1m.log',
+'frame_search.py','frame_search.log','frame_screen.json','frame_prices.json','frame_control.py','frame_control.log','frame_joint.py','frame_joint_singles.py','frame_joint_singles.json','frame_joint_official_1m.log','frame_joint_official_10m.log','frame_pair_audit.py','frame_pair_audit.json','frame_joint_pairs.py','frame_joint_cross_pairs.json','frame_official_1m.log',
+'run_spidercss.py','spider_map.py','spider_run.log','fao_map.py','fao_abstract.py','fao_abstract_result.json','spider_abstract.py','spider_abstract_result.json',
+'spider_bc.py','spider_bc.log','spider_bc_check.py','spider_bc_abstract.py','spider_bc_abstract_result.json','spider_flag_schedule.py',
+'spider_bc85.py','spider_bc85.log','spider_bc85_check.py','spider_bc85_abstract.py','spider_bc85_abstract_result.json','spider_bc85_alt.py','spider_bc85_alt_result.json','spider_bc85_asource.py','spider_bc85_asource_result.json','spider_bc85_jit.py','spider_bc85_jit_result.json','spider_bc85_swapchecks.py','spider_bc85_swapchecks_result.json',
+'spider_abc.py','spider_abc.log','spider_abc_reuse.py','spider_abc_reuse.log',
+'deep_schedule.py','deep_schedule_results.json','deep_contract.py','deep_contract_results.json','deep_flag_search.py','deep_flag_results.json','deep_flag_schedule.py','deep_flag_schedule_results.json','deep_bcheck.py','deep_bcheck_results.json','deep_bschedule.py','deep_bschedule_results.json','deep_hybrid.py','deep_hybrid_results.json','deep_hybrid_flags.py','deep_hybrid_flags_results.json','deep_hybrid_b.py','deep_hybrid_b_results.json','deep_extraflags.py','deep_extra_results.json','deep_extra_best.py','deep_extra_best_results.json','deep_extra_best_k.py','deep_extra_best_k_results.json','deep_pairs.py','deep_best_pairs.json','deep_tree.py','deep_tree_results.json',
+'ulo_insert.py','ulo_results.json','ulo_replace.py','ulo_replace_results.json','ulo_schedule.py','ulo_schedule_results.json','ulo_resched.py','ulo_resched_results.json',
+'deep_kverify.py','deep_kverify_results.json','deep_kverify_early.py','deep_kverify_early_results.json','deep_kverify_reuse.py','deep_kverify_reuse_results.json','deep_kverify_reuse_full.py','deep_kverify_reuse_full_results.json','deep_kperm.py','deep_kverify_schedule.py','deep_kverify_schedule_results.json']
+stems=['bell_terminal/ideal_bell','onebit_terminal/ideal_X','onebit_terminal/ideal_Z','onebit_terminal_jit/ideal_X','onebit_terminal_jit/ideal_Z','onebit_full/onebit_X_0','onebit_full/onebit_X_1','onebit_full/onebit_Z_0','onebit_full/onebit_Z_1','native_teleport/fixed_source','native_teleport/fixed_complete','native_teleport/fresh','accept_cand/one_0','frame_cand/control','frame_cand/framed_0','frame_cand/framed_1','frame_cand/framed_2','frame_cand/joint0','cand/fao_abstract','cand/spider_abstract','cand/spider_bc_abstract','cand/spider_bc85_abstract','cand/spider_bc85_jit','cand/spider_bc85_swapchecks','deep_cand/deep_007','deep_flag/flags_005','deep_flag_schedule/deep_007','deep_bcheck/bcheck_029','deep_hybrid_input','deep_hybrid/deep_007','deep_extra_best/flag_9_0_5','ulo/insert_Z','ulo/insert_X','ulo/replace_X','ulo/replace_Z','ulo_schedule/deep_005','deep_kverify/verify_A','deep_kverify/verify_B','deep_kverify/verify_C','deep_kverify_early/verify_A','deep_kverify_early/verify_B','deep_kverify_early/verify_C','deep_kverify_reuse_full/verify_B']
+for st in stems:
+ for ext in ('.qasm','.json','.exact.json','.price.json'):
+  p=H/(st+ext)
+  if p.is_file():files.append(st+ext)
+files=list(dict.fromkeys(files));missing=[p for p in files if not (H/p).is_file()]
+if missing:raise SystemExit('missing: '+repr(missing))
+entries=[{'path':p,'sha256':hashlib.sha256((H/p).read_bytes()).hexdigest(),'bytes':(H/p).stat().st_size}for p in files]
+doc={'scope':'lane-relative reproducibility manifest; excludes external compiler/env/vendor and unselected circuits','lane':'work/lanes/SOTA_DETECT_20261028','status':'research checkpoint; all named topologies abstract except explicitly described native tests, no SOTA claim','selected':{'ulo':{'stem':'ulo_schedule/deep_005','loss':2.9649858252424977e-5,'acceptance':0.640392636273766,'cx':155,'clocks':25},'seven_cat':{'stem':'deep_extra_best/flag_9_0_5','loss':2.9720782263202955e-5,'acceptance':0.7081682122007729,'cx':141,'clocks':21}},'external_dependencies':'PROVENANCE.md','files':entries}
+(H/'publish_manifest.json').write_text(json.dumps(doc,indent=2)+'\n');print('files',len(files),'bytes',sum(x['bytes']for x in entries))

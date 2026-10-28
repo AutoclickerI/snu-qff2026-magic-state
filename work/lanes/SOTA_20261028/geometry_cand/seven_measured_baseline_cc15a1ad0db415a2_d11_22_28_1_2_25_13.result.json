@@ -1,0 +1,304 @@
+{
+  "source": "work/lanes/SOTA_SOURCE_20261028/tile_boundary/seven_source_original_reuse.release.json",
+  "a_file": "-",
+  "a_index": 0,
+  "bc_file": "work/lanes/SOTA_20261028/joint_modules/seven_constructive_0.json",
+  "bc_shift": 0,
+  "roles": {
+    "D": [
+      11,
+      22,
+      28,
+      1,
+      2,
+      25,
+      13
+    ],
+    "A": [
+      10,
+      16,
+      27,
+      7,
+      8,
+      26,
+      14
+    ],
+    "B": [
+      5,
+      23,
+      34,
+      0,
+      3,
+      31,
+      19
+    ],
+    "C": [
+      4,
+      17,
+      33,
+      6,
+      9,
+      32,
+      20
+    ]
+  },
+  "square_mask": 127,
+  "tail": 82,
+  "cx": 447,
+  "ticks": 85,
+  "detectors": 58,
+  "record_contract": {
+    "rotation_rank": 5,
+    "rotation_state_stabilizer_rank": 4,
+    "records": 79,
+    "declared_rank": 45,
+    "complete_rank": 58,
+    "missing": [
+      {
+        "bits": [
+          11
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          286,
+          292
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          312
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          381,
+          386,
+          387,
+          388,
+          389
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          381,
+          385,
+          387,
+          388,
+          390
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          381,
+          383,
+          384,
+          385,
+          386,
+          388,
+          391
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          382,
+          393,
+          394,
+          395,
+          396
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          381,
+          392,
+          394,
+          395,
+          397
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          381,
+          383,
+          384,
+          392,
+          393,
+          395,
+          398
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          381,
+          383,
+          384,
+          399,
+          400,
+          401
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          381,
+          382,
+          399,
+          402,
+          403
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          400,
+          402,
+          404
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          381,
+          383,
+          384,
+          399,
+          400,
+          402,
+          405
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      }
+    ]
+  },
+  "qasm_sha256": "cc15a1ad0db415a22d9f8d017adde28fae652ecd90b9496a3390bba53b28afff",
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999997,
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997
+    ],
+    "ok": true
+  },
+  "stem": "/workspace/scratch/3c9006f1546a/quantumn/work/lanes/SOTA_20261028/geometry_cand/seven_measured_baseline_cc15a1ad0db415a2_d11_22_28_1_2_25_13",
+  "singles": {
+    "c1": 0.06666666666666667,
+    "harmful_faults": [
+      {
+        "label": "DEPOLARIZE2 XI@[32, 33] after/before native#529 srcL701",
+        "channel": 777,
+        "time": 70,
+        "operation": "CX",
+        "qubits": [
+          32,
+          33
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0,
+        "loss_numerator": 0.5,
+        "c1_contribution": 0.03333333333333333,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[32, 31] after/before native#534 srcL707",
+        "channel": 786,
+        "time": 71,
+        "operation": "CX",
+        "qubits": [
+          32,
+          31
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.5,
+        "c1_contribution": 0.03333333333333333,
+        "record_flips": []
+      }
+    ],
+    "fault_components": 7850
+  },
+  "exact": {
+    "loss": 0.001258305289004034,
+    "acceptance": 0.219812508654334,
+    "width": 12,
+    "basis": {
+      "id": "7ad4882ba2259e25583dbb16abfcdb31ba0345222418a35268753bc01d5ba179",
+      "replayed": 47,
+      "selected": "7f8331a4956cb8a0efec5f9445a3a97a309f9048cff1720a3c58ebde1e659946",
+      "trained": false,
+      "threshold": 12,
+      "operations": 34
+    },
+    "raw": {
+      "errors": [],
+      "acceptance": 0.9999999999999997,
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 5,
+      "six_stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ],
+      "ok": true
+    },
+    "exact_acceptance_ok": false,
+    "kernel_omission_bound": 8.494482859594404e-14,
+    "qasm_sha256": "cc15a1ad0db415a22d9f8d017adde28fae652ecd90b9496a3390bba53b28afff",
+    "data_qubits": [
+      11,
+      22,
+      28,
+      1,
+      2,
+      25,
+      13
+    ],
+    "evaluator_version": "94d0bfed2b6ff678c667dd24a5e57a249e01da0febc72bec4adf0d987fb9c83f",
+    "seconds": 13.015439830000105,
+    "evaluation_seconds": 13.015439830000105,
+    "cache_hit": false
+  },
+  "seconds": 14.197619029000634
+}
