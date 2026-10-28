@@ -8,11 +8,11 @@ sit exactly there. Checked 2026-10-23.
 ## Current checkpoint — 2026-10-28 KST
 
 **No native SOTA result has been reached.** The public board was read at
-2026-10-27 17:29:26 UTC / 2026-10-28 02:29:26 KST. The leader's sampled score
-is **2.82064394141452e-5**, key **2.82e-5**, 277 CX, acceptance 0.50059491.
+2026-10-28 02:07:35 UTC / 2026-10-28 11:07:35 KST. The leader's sampled score
+is **2.7646927086892e-5**, key **2.76e-5**, 277 CX, acceptance 0.50059813.
 Our existing board entry remains **3.30430020090153e-5**, key **3.30e-5**,
 412 CX, acceptance 0.5010138. These are official sampled results, not exact
-expectations. Evidence: [public leaderboard snapshot](../work/lanes/SOTA_20261028/leaderboard_final.json).
+expectations. Evidence: [public leaderboard snapshot](../work/lanes/CONTINUE_20261028/leaderboard_latest.json).
 
 | Circuit / result | Evidence and scope | Loss | Acceptance | CX / clocks |
 |---|---|---:|---:|---:|
@@ -28,6 +28,16 @@ See the [complete research report](../work/lanes/SOTA_20261028/REPORT.md),
 [exact receipt](../work/lanes/SOTA_20261028/native_best/schedule_heralds_c167977fdd48de1f_d6_20_19_10_2_22_16.result.json),
 and [official 1M gate check](../work/lanes/SOTA_20261028/native_best/official_1m.log).
 The favorable low-shot loss in that gate check is not used as a ranking result.
+
+The [completed continuation](../work/lanes/CONTINUE_20261028/REPORT.md) leaves
+this best native expectation unchanged. It implements and prices physical
+coherent gauging, Bell teleportation resources, direct C4/C2 sources and native
+cat repairs; no new result is promoted. The corrected native CAT7 family reaches
+8.977878556875212e-5 at A=0.5618977639 with 190 CX/41 clocks, after repairing a
+borrowed-module input assumption and adding physical source-transfer heralds.
+That is a family improvement, not an improvement over the incumbent. The
+369-CX source-isometry control also loses at 3.650300459139864e-5 despite its
+lower gate count. Full circuits, scopes and receipts are linked in the report.
 
 The historical DEEP 2.7185e-5 number remains a lead without its QASM/receipt in
 the inspected checkout or queried GitHub path history. The reconstructed

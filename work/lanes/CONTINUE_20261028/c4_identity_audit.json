@@ -1,0 +1,32 @@
+{
+  "tile_order": [
+    "H",
+    "D",
+    "L",
+    "K"
+  ],
+  "stabilizers": [
+    "XXXX",
+    "Z_D Z_K",
+    "Z_H Z_L"
+  ],
+  "logical_x": "X_D X_K",
+  "logical_z": "Z_H Z_D",
+  "phase_gate": "CX H,D; T D; CX H,D",
+  "max_stabilizer_error": 0.0,
+  "max_logical_x_error": 0.0,
+  "max_logical_z_error": 0.0,
+  "max_logical_phase_gadget_error": 0.0,
+  "max_controlled_x_error": 0.0,
+  "max_native_bridge_error": 0.0,
+  "qubit_budget": {
+    "physical_tiles": 28,
+    "cat_qubits": 7,
+    "spare_during_cat": 1,
+    "spare_without_cat": 8,
+    "simultaneous_cat_and_seven_extra_meters": 42,
+    "device": 36
+  },
+  "bridge": "CX D,K; CX cat,D; CX D,K implements CX cat,D; CX cat,K using two adjacent edges.",
+  "note": "Ideal algebra only; simultaneous placement, physical flagging, faults, cat preparation and full-code schedule not tested."
+}

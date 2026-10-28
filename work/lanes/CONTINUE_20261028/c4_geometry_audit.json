@@ -1,0 +1,92 @@
+{
+  "packings": 242,
+  "with_seven_distinct_adjacent_cats": 28,
+  "with_connected_seven_cats_and_matching": 0,
+  "matching_witness": {
+    "tiles": [
+      [
+        0,
+        1,
+        6,
+        7
+      ],
+      [
+        2,
+        3,
+        8,
+        9
+      ],
+      [
+        4,
+        5,
+        10,
+        11
+      ],
+      [
+        13,
+        14,
+        19,
+        20
+      ],
+      [
+        22,
+        23,
+        28,
+        29
+      ],
+      [
+        24,
+        25,
+        30,
+        31
+      ],
+      [
+        26,
+        27,
+        32,
+        33
+      ]
+    ],
+    "cats": [
+      12,
+      15,
+      17,
+      18,
+      21,
+      34,
+      35
+    ],
+    "assignment": {
+      "0": [
+        12,
+        6
+      ],
+      "1": [
+        15,
+        9
+      ],
+      "2": [
+        17,
+        11
+      ],
+      "5": [
+        18,
+        24
+      ],
+      "6": [
+        34,
+        33
+      ],
+      "3": [
+        21,
+        20
+      ],
+      "4": [
+        35,
+        29
+      ]
+    }
+  },
+  "connected_witness": null,
+  "scope": "Static 2x2 tiles; each tile may choose any corner D and an adjacent internal K; no data/cat movement. Seven cat cells must be distinct. Connected-cat test assumes no extra bus."
+}
