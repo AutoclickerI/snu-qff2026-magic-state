@@ -168,6 +168,15 @@ Jihoon's words behind current standing decisions, verbatim, oldest first. Ids ar
 - Effect: one-time decision, not a rule: at 23:01 the loop, its v37j_h2723 promote and cut, and the race workers on
   owl, jerry, hippo, sunfish, tom and zebra were killed before the hour's pick. PLAN parks the hourly race.
 
+## R-20261103-1 — 2026-11-03 22:02 KST — public repo, renamed, with its full history
+> update the "https://github.com/AutoclickerI/quantumn" and open to public in the same way. and we won the 2nd place. so make the repo like that as well. make anyone can understand what it is.
+> and polish repo name. I think the repo name is bad.
+
+- Source: Claude Code session `0045ab8f-54dd-41a4-8c54-fd714e9ef389`. Question-tool answers: "Publish as-is" (the
+  history, including the team's earlier name) and "English (Recommended)" for the README.
+- Effect: the repo is public as github.com/AutoclickerI/snu-qff2026-magic-state with its full history; README.md is a
+  plain-language front door for the 2nd-place result; the research logs stay as they were.
+
 ## Dropped agent rules (do not reintroduce)
 
 | Rule an agent introduced | Dropped | Match |
