@@ -1,0 +1,4879 @@
+{
+  "geometry": "/workspace/scratch/3c9006f1546a/quantumn/work/lanes/SOTA_20261028/tile_geometry_free2.json",
+  "roles": {
+    "D": [
+      10,
+      20,
+      19,
+      16,
+      2,
+      22,
+      28
+    ],
+    "A": [
+      9,
+      14,
+      13,
+      15,
+      8,
+      21,
+      27
+    ],
+    "B": [
+      4,
+      26,
+      18,
+      17,
+      1,
+      23,
+      34
+    ],
+    "C": [
+      3,
+      32,
+      12,
+      11,
+      7,
+      29,
+      33
+    ]
+  },
+  "release": {
+    "9": 0,
+    "14": 0,
+    "13": 0,
+    "15": 0,
+    "8": 0,
+    "21": 0,
+    "27": 0
+  },
+  "trials": 4000,
+  "seconds": 1.236604443001852,
+  "candidates": [
+    {
+      "cx": 11,
+      "a_ready": 7,
+      "module_end": 7,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        9,
+        13,
+        14
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "RX",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 9,
+        "9": 4,
+        "13": 3,
+        "14": 1,
+        "15": 0,
+        "21": 0,
+        "27": 0
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 2509,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 8,
+      "module_end": 8,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        15,
+        21,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            8,
+            14
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 0,
+        "13": 0,
+        "15": 4,
+        "8": 0,
+        "21": 1,
+        "27": 7
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 412,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 8,
+      "module_end": 8,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        14,
+        21,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            8,
+            14
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 2,
+        "13": 0,
+        "15": 0,
+        "8": 0,
+        "21": 6,
+        "27": 3
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 588,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 8,
+      "module_end": 8,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        9,
+        13,
+        21
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 6,
+        "9": 5,
+        "13": 10,
+        "14": 0,
+        "15": 0,
+        "21": 4,
+        "27": 0
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 1599,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 8,
+      "module_end": 8,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        9,
+        13,
+        15
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 7,
+        "9": 2,
+        "13": 10,
+        "14": 0,
+        "15": 1,
+        "21": 0,
+        "27": 0
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 2709,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 8,
+      "module_end": 8,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        9,
+        13,
+        14,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "RX",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 0,
+        "9": 2,
+        "13": 7,
+        "14": 1,
+        "15": 0,
+        "21": 0,
+        "27": 8
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 2635,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        13,
+        14,
+        21
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 4,
+        "13": 2,
+        "15": 0,
+        "8": 0,
+        "21": 1,
+        "27": 0
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 592,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        13,
+        14,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 4,
+        "13": 3,
+        "15": 0,
+        "8": 0,
+        "21": 0,
+        "27": 1
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 608,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        14,
+        21,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 4,
+        "13": 0,
+        "15": 0,
+        "8": 0,
+        "21": 2,
+        "27": 3
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 788,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        13,
+        14,
+        15
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 5,
+        "13": 6,
+        "15": 4,
+        "8": 0,
+        "21": 0,
+        "27": 0
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 1232,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        13,
+        14,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 5,
+        "13": 7,
+        "15": 0,
+        "8": 0,
+        "21": 0,
+        "27": 1
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 1786,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        13,
+        14,
+        15
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            9,
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 2,
+        "13": 7,
+        "15": 1,
+        "8": 0,
+        "21": 0,
+        "27": 0
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 2030,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 11,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        9,
+        13,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            8,
+            14
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 9,
+        "9": 2,
+        "13": 3,
+        "14": 0,
+        "15": 0,
+        "21": 0,
+        "27": 6
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 3923,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 12,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        14,
+        15,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 7,
+        "9": 0,
+        "13": 0,
+        "14": 8,
+        "15": 1,
+        "21": 0,
+        "27": 4
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 327,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 12,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        21,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            8,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 0,
+        "13": 0,
+        "15": 0,
+        "8": 1,
+        "21": 3,
+        "27": 4
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 506,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 12,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        15,
+        21,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 15,
+        "9": 0,
+        "13": 0,
+        "14": 0,
+        "15": 4,
+        "21": 12,
+        "27": 10
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 937,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 12,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        14,
+        21,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 1,
+        "13": 0,
+        "15": 0,
+        "8": 0,
+        "21": 5,
+        "27": 7
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 2434,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 12,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": false,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        13,
+        21
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            8,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "H",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "H",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "H",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "H",
+          "qs": [
+            15
+          ]
+        }
+      ],
+      "initial_rows": {
+        "9": 0,
+        "14": 0,
+        "13": 7,
+        "15": 0,
+        "8": 5,
+        "21": 4,
+        "27": 0
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 3038,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 12,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        9,
+        13,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            8,
+            14
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 12,
+        "9": 1,
+        "13": 4,
+        "14": 0,
+        "15": 0,
+        "21": 0,
+        "27": 6
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 3133,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    },
+    {
+      "cx": 12,
+      "a_ready": 9,
+      "module_end": 9,
+      "direct": true,
+      "helpers": [],
+      "helper_release": {},
+      "reused_inputs": [],
+      "plus_inputs": [
+        8,
+        9,
+        13,
+        27
+      ],
+      "operations": [
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "R",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 0,
+          "kind": "RX",
+          "qs": [
+            27
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            13,
+            14
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 1,
+          "kind": "R",
+          "qs": [
+            15
+          ]
+        },
+        {
+          "time": 2,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 3,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 4,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "CX",
+          "qs": [
+            27,
+            21
+          ]
+        },
+        {
+          "time": 5,
+          "kind": "RX",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 6,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 7,
+          "kind": "CX",
+          "qs": [
+            15,
+            21
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "CX",
+          "qs": [
+            9,
+            15
+          ]
+        },
+        {
+          "time": 8,
+          "kind": "CX",
+          "qs": [
+            21,
+            27
+          ]
+        }
+      ],
+      "initial_rows": {
+        "8": 11,
+        "9": 4,
+        "13": 2,
+        "14": 0,
+        "15": 0,
+        "21": 0,
+        "27": 10
+      },
+      "backward_map_verified": true,
+      "target": "A plusL; borrowed non-A helpers returned to zero and MZ heralded",
+      "trial": 3221,
+      "A": [
+        9,
+        14,
+        13,
+        15,
+        8,
+        21,
+        27
+      ],
+      "stabilizers": [
+        {
+          "axis": "X",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 120,
+          "expectation": 1
+        },
+        {
+          "axis": "X",
+          "mask": 7,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 85,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 102,
+          "expectation": 1
+        },
+        {
+          "axis": "Z",
+          "mask": 120,
+          "expectation": 1
+        }
+      ]
+    }
+  ],
+  "scope": "Actual native A modules; no complete circuit score claimed."
+}

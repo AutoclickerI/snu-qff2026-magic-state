@@ -1,0 +1,161 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "roles": {
+    "D": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "A": [
+      7,
+      21,
+      18,
+      4,
+      8,
+      23,
+      17
+    ],
+    "B": [
+      12,
+      26,
+      25,
+      11,
+      3,
+      28,
+      15
+    ],
+    "C": [
+      13,
+      27,
+      24,
+      5,
+      9,
+      29,
+      14
+    ]
+  },
+  "square_mask": 63,
+  "ideal_contract": {
+    "errors": [],
+    "acceptance": 1.0,
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 1,
+    "six_stabilizers": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "ok": true,
+    "scope": "Official exact simulator on abstract native stream; excludes adjacency validation of ideal nonlocal encoders."
+  },
+  "gate_valid": false,
+  "record_contract": {
+    "rotation_rank": 1,
+    "rotation_state_stabilizer_rank": 0,
+    "records": 21,
+    "declared_rank": 0,
+    "complete_rank": 8,
+    "missing": [
+      {
+        "bits": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      },
+      {
+        "bits": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      },
+      {
+        "bits": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      },
+      {
+        "bits": [
+          7,
+          9,
+          10,
+          12
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      },
+      {
+        "bits": [
+          7,
+          8,
+          10,
+          13
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      },
+      {
+        "bits": [
+          14,
+          15,
+          16
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      },
+      {
+        "bits": [
+          14,
+          17,
+          18
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      },
+      {
+        "bits": [
+          15,
+          17,
+          19
+        ],
+        "reference": 0,
+        "expectation": 1.0
+      }
+    ]
+  },
+  "noisy_source_ticks": [
+    7,
+    8,
+    9
+  ],
+  "diagnostic_only": true,
+  "scope": "Ideal nonlocal input/resource encoders; only terminal source channels noisy."
+}

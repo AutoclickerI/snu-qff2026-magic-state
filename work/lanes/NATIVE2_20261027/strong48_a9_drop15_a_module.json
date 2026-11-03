@@ -1,0 +1,277 @@
+{
+  "prefix_stem": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/END2_20261027/boundary/source_retimed_drop15",
+  "source_solution": "work/lanes/END2_20261027/sol/a_herald_R45_early8_14_no8_earlysource_hx8_14_15_native_m9_h82.json",
+  "candidates": [
+    {
+      "A": [
+        7,
+        14,
+        13,
+        9,
+        8,
+        21,
+        15
+      ],
+      "operations": [
+        {
+          "time": 39,
+          "kind": "RX",
+          "qs": [
+            14
+          ]
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            14,
+            15
+          ]
+        },
+        {
+          "time": 40,
+          "kind": "RX",
+          "qs": [
+            8
+          ]
+        },
+        {
+          "time": 40,
+          "kind": "RX",
+          "qs": [
+            21
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            8,
+            14
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "R",
+          "qs": [
+            9
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "R",
+          "qs": [
+            13
+          ]
+        },
+        {
+          "time": 41,
+          "kind": "RX",
+          "qs": [
+            7
+          ]
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            7,
+            8
+          ]
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            14,
+            13
+          ]
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            15,
+            9
+          ]
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            8,
+            9
+          ]
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ]
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            21,
+            15
+          ]
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            6,
+            7
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            20,
+            14
+          ],
+          "time": 44
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            19,
+            13
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            10,
+            9
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            2,
+            8
+          ],
+          "time": 44
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            22,
+            21
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            16,
+            15
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            14,
+            8
+          ],
+          "time": 45
+        },
+        {
+          "kind": "CX",
+          "qs": [
+            15,
+            14
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            7
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            13
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            9
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            8
+          ],
+          "time": 46
+        },
+        {
+          "kind": "M",
+          "qs": [
+            21
+          ],
+          "time": 46
+        },
+        {
+          "kind": "MX",
+          "qs": [
+            15
+          ],
+          "time": 47
+        },
+        {
+          "kind": "M",
+          "qs": [
+            14
+          ],
+          "time": 47
+        }
+      ]
+    }
+  ],
+  "logical_x_herald": [
+    8,
+    14,
+    15
+  ],
+  "early_data_cells": [
+    8,
+    14
+  ],
+  "boundary_adaptation": {
+    "original_prefix": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/END2_20261027/boundary/source_native_m9_drop15",
+    "boundary": "work/lanes/END2_20261027/prefix_retimed_drop15.json",
+    "certificate": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/END2_20261027/retimed_drop15_product_states.json",
+    "reused_inputs": [
+      {
+        "q": 15,
+        "axis": "Z",
+        "expectation": 0.9999999999999997
+      }
+    ],
+    "note": "Changed physical source; certify all unreinitialized A inputs, then recheck complete native output and faults."
+  },
+  "scope": "Native A plusL preparation with selected early data taps and logical-X readout by tick47."
+}

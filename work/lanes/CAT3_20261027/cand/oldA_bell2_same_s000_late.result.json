@@ -1,0 +1,1320 @@
+{
+  "data_qubits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "roles": {
+    "D": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "A": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "B": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "C": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "cats": [
+      [
+        28,
+        29
+      ],
+      [
+        30,
+        31
+      ]
+    ]
+  },
+  "cat_groups": [
+    [
+      0,
+      1,
+      3
+    ],
+    [
+      2,
+      4,
+      5,
+      6
+    ]
+  ],
+  "cat_n": 2,
+  "cat_first": 12,
+  "cat_second": 12,
+  "cat_second_reversed": false,
+  "second_groups": null,
+  "interleaved": true,
+  "cat_reads": [
+    16,
+    16
+  ],
+  "cat_interactions": [
+    {
+      "round": 0,
+      "control": 29,
+      "data": 2,
+      "time": 12
+    },
+    {
+      "round": 0,
+      "control": 28,
+      "data": 3,
+      "time": 13
+    },
+    {
+      "round": 0,
+      "control": 29,
+      "data": 4,
+      "time": 13
+    },
+    {
+      "round": 0,
+      "control": 28,
+      "data": 1,
+      "time": 14
+    },
+    {
+      "round": 0,
+      "control": 29,
+      "data": 6,
+      "time": 14
+    },
+    {
+      "round": 0,
+      "control": 28,
+      "data": 0,
+      "time": 15
+    },
+    {
+      "round": 0,
+      "control": 29,
+      "data": 5,
+      "time": 15
+    },
+    {
+      "round": 1,
+      "control": 30,
+      "data": 3,
+      "time": 12
+    },
+    {
+      "round": 1,
+      "control": 31,
+      "data": 4,
+      "time": 12
+    },
+    {
+      "round": 1,
+      "control": 30,
+      "data": 1,
+      "time": 13
+    },
+    {
+      "round": 1,
+      "control": 31,
+      "data": 6,
+      "time": 13
+    },
+    {
+      "round": 1,
+      "control": 30,
+      "data": 0,
+      "time": 14
+    },
+    {
+      "round": 1,
+      "control": 31,
+      "data": 5,
+      "time": 14
+    },
+    {
+      "round": 1,
+      "control": 31,
+      "data": 2,
+      "time": 15
+    }
+  ],
+  "round_groups": [
+    [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2,
+        4,
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2,
+        4,
+        5,
+        6
+      ]
+    ]
+  ],
+  "cat_rounds": 2,
+  "tail_start": 17,
+  "A_logical_X_herald": true,
+  "A_staggered": false,
+  "B_check_time": 17,
+  "cx": 113,
+  "ticks": 20,
+  "T": 15,
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999997,
+    "conditional_detectors": [],
+    "infidelity": 1.110223024625157e-16,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997
+    ],
+    "ok": true,
+    "scope": "Official exact simulator on abstract native stream; excludes adjacency validation of ideal nonlocal encoders."
+  },
+  "record_contract": {
+    "rotation_rank": 5,
+    "rotation_state_stabilizer_rank": 4,
+    "records": 40,
+    "declared_rank": 0,
+    "complete_rank": 20,
+    "missing": [
+      {
+        "bits": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          7,
+          9,
+          10,
+          12
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          7,
+          8,
+          10,
+          13
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          14,
+          15
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          16,
+          17
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          100,
+          101,
+          102
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          100,
+          103,
+          104
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          101,
+          103,
+          105
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          100,
+          101,
+          103,
+          106
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          109
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          108,
+          110,
+          111
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          107,
+          110,
+          112
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          107,
+          113
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          115,
+          116,
+          117,
+          118
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          114,
+          116,
+          117,
+          119
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          114,
+          115,
+          117,
+          120
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          121
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      }
+    ]
+  },
+  "qasm_sha256": "bbcbcd1fa7a51cc980650ff21ed40abe67b7fd82068bff469cc73c8b5ae5af02",
+  "diagnostic_only": true,
+  "grid_valid": false,
+  "scope": "Complete abstract circuit with every real gate, reset, read and waiting channel noisy; adjacency is not claimed. No channel is idealized.",
+  "evaluator_version": "94d0bfed2b6ff678c667dd24a5e57a249e01da0febc72bec4adf0d987fb9c83f",
+  "A_instrument": "Original A preparation and logical-X herald remapped abstractly; carry-zero inputs are explicit noisy resets.",
+  "old_A_source": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/PREFIX20261027/cand/final_phase_random_1.qasm",
+  "singles": {
+    "c1": 0.0,
+    "harmful_faults": [],
+    "fault_components": 2099
+  },
+  "c2": 31.801666666666748,
+  "exact": {
+    "loss": 3.37023198569909e-05,
+    "acceptance": 0.7643301933424673,
+    "observable": 0.7642786739411626,
+    "acceptance_kernel_omission_bound": 4.926862773018339e-15,
+    "observable_kernel_omission_bound": 3.148883786264757e-14,
+    "loss_kernel_omission_interval": [
+      3.370231983318428e-05,
+      3.370231988081285e-05
+    ],
+    "bound_scope": "Analytic sparse-kernel omission only; not a floating-point roundoff certificate.",
+    "rows": [
+      {
+        "key": null,
+        "value": 0.7643301933424673,
+        "kernel_nonzero": 245,
+        "peak_bucket_elements": 75264,
+        "absolute_kernel_omission_bound": 4.926862773018339e-15,
+        "seconds": 0.03774272199370898
+      },
+      {
+        "key": [
+          "X",
+          0,
+          0
+        ],
+        "value": 0.5333853461613058,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.04640740800095955
+      },
+      {
+        "key": [
+          "X",
+          1,
+          0
+        ],
+        "value": 0.5374184872494043,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.03969968199817231
+      },
+      {
+        "key": [
+          "X",
+          2,
+          0
+        ],
+        "value": 0.537403266743548,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.040700379002373666
+      },
+      {
+        "key": [
+          "X",
+          3,
+          0
+        ],
+        "value": 0.537427975191726,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.03636021599959349
+      },
+      {
+        "key": [
+          "X",
+          4,
+          0
+        ],
+        "value": 0.5374091003966509,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.04393918400455732
+      },
+      {
+        "key": [
+          "X",
+          5,
+          0
+        ],
+        "value": 0.5374259120068913,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.028413179999915883
+      },
+      {
+        "key": [
+          "X",
+          6,
+          0
+        ],
+        "value": 0.5374077276730505,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.03954316000454128
+      },
+      {
+        "key": [
+          "X",
+          7,
+          0
+        ],
+        "value": 0.5374267229057607,
+        "kernel_nonzero": 1148,
+        "peak_bucket_elements": 50176,
+        "absolute_kernel_omission_bound": 5.358692716204112e-15,
+        "seconds": 0.03404837899870472
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          0
+        ],
+        "value": -0.5308272185113514,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03358418400603114
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          1
+        ],
+        "value": -0.5322262681377791,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03352486599760596
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          2
+        ],
+        "value": -0.5322116423282002,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03324853799858829
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          3
+        ],
+        "value": -0.5320117897959906,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03378096400410868
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          4
+        ],
+        "value": -0.5325760502042007,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03485257599822944
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          5
+        ],
+        "value": -0.5322174084295949,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.034228746000735555
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          6
+        ],
+        "value": -0.5322078813026514,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03357456000230741
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          7
+        ],
+        "value": -0.5325560693312859,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.034118942996428814
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          0
+        ],
+        "value": -0.5308491433448256,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.028191985002194997
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          1
+        ],
+        "value": -0.5362506597048053,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.036993386995163746
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          2
+        ],
+        "value": -0.5342287896979503,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.038349368995113764
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          3
+        ],
+        "value": -0.5340326388439725,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.040106161002768204
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          4
+        ],
+        "value": -0.5345959680266583,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03232318299706094
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          5
+        ],
+        "value": -0.5342376273548564,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03228837200003909
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          6
+        ],
+        "value": -0.5342252731140168,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.035428246002993546
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          7
+        ],
+        "value": -0.5345787049057937,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03534976999799255
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          0
+        ],
+        "value": -0.5308360694962037,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03531412799929967
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          1
+        ],
+        "value": -0.5342302681554262,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.030510165997839067
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          2
+        ],
+        "value": -0.5362207285198495,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03668764499889221
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          3
+        ],
+        "value": -0.5340175597455703,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03091020700230729
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          4
+        ],
+        "value": -0.5345830274226924,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03112108799541602
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          5
+        ],
+        "value": -0.5342218755039949,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03198964100010926
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          6
+        ],
+        "value": -0.5342127105308232,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03268930299964268
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          7
+        ],
+        "value": -0.5345633690784252,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03319379800086608
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          0
+        ],
+        "value": -0.5308559616486639,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03996121199452318
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          1
+        ],
+        "value": -0.5342548355405814,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03707713999756379
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          2
+        ],
+        "value": -0.5342382235607043,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03743047100579133
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          3
+        ],
+        "value": -0.536043991882865,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04207678099919576
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          4
+        ],
+        "value": -0.5346033301739794,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04277980300685158
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          5
+        ],
+        "value": -0.5342461552337794,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03453460599848768
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          6
+        ],
+        "value": -0.5342341949686065,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.035929566998675
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          7
+        ],
+        "value": -0.5345864744380766,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.037574283000139985
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          0
+        ],
+        "value": -0.530837925912972,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.035083456998108886
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          1
+        ],
+        "value": -0.5342335554328247,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04063071099517401
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          2
+        ],
+        "value": -0.5342191383088263,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.032592810995993204
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          3
+        ],
+        "value": -0.534018756950643,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.0498268149967771
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          4
+        ],
+        "value": -0.5365936987395733,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.044995198004471604
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          5
+        ],
+        "value": -0.5342283089766621,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04834441199636785
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          6
+        ],
+        "value": -0.534218492784496,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.038404259001254104
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          7
+        ],
+        "value": -0.5345677549457705,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04963631899590837
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          0
+        ],
+        "value": -0.5308528881372628,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.045871661001001485
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          1
+        ],
+        "value": -0.5342502970805937,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.038107432003016584
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          2
+        ],
+        "value": -0.5342330510157373,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03891586399549851
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          3
+        ],
+        "value": -0.534036624437258,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03943913200055249
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          4
+        ],
+        "value": -0.5346033796577747,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.042151125002419576
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          5
+        ],
+        "value": -0.5362491076658793,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04356309399736347
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          6
+        ],
+        "value": -0.5342321661623571,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.038330590999976266
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          7
+        ],
+        "value": -0.5345858598059904,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04913949500041781
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          0
+        ],
+        "value": -0.530837348619765,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.0792095370052266
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          1
+        ],
+        "value": -0.5342318050965265,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.06555767700047
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          2
+        ],
+        "value": -0.5342177928614978,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.058605117999832146
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          3
+        ],
+        "value": -0.53401858124306,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.04026835600234335
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          4
+        ],
+        "value": -0.534587471983139,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03726566299883416
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          5
+        ],
+        "value": -0.5342260600632263,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.041635732995928265
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          6
+        ],
+        "value": -0.5362213664678936,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03619903399521718
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          7
+        ],
+        "value": -0.5345680612063006,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.031808473002456594
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          0
+        ],
+        "value": -0.5308521318616294,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.032419285002106335
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          1
+        ],
+        "value": -0.5342507050853228,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.033572806998563465
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          2
+        ],
+        "value": -0.5342338611564282,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03356477600027574
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          3
+        ],
+        "value": -0.5340362700783341,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03361862499878043
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          4
+        ],
+        "value": -0.5346021133962541,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03485598199767992
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          5
+        ],
+        "value": -0.5342451677218395,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.033474561998446006
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          6
+        ],
+        "value": -0.5342334534805756,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03383588500582846
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          7
+        ],
+        "value": -0.5365911040321114,
+        "kernel_nonzero": 1144,
+        "peak_bucket_elements": 48128,
+        "absolute_kernel_omission_bound": 4.981633564514137e-15,
+        "seconds": 0.03596419699897524
+      }
+    ],
+    "peak_bucket_elements": 75264,
+    "qasm_sha256": "bbcbcd1fa7a51cc980650ff21ed40abe67b7fd82068bff469cc73c8b5ae5af02",
+    "seconds": 3.0658095180042437,
+    "diagnostic_only": true,
+    "grid_valid": false,
+    "scope": "All channels noisy; only adjacency requirement is relaxed.",
+    "evaluator_version": "94d0bfed2b6ff678c667dd24a5e57a249e01da0febc72bec4adf0d987fb9c83f"
+  },
+  "completed": true
+}

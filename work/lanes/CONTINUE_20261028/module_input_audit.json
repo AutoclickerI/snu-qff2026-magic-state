@@ -1,0 +1,794 @@
+{
+  "modules": {
+    "A_original": [
+      {
+        "q": 7,
+        "time": 42,
+        "kind": "RX",
+        "qubits": [
+          7
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 8,
+        "time": 40,
+        "kind": "R",
+        "qubits": [
+          8
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 9,
+        "time": 40,
+        "kind": "RX",
+        "qubits": [
+          9
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 13,
+        "time": 41,
+        "kind": "RX",
+        "qubits": [
+          13
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 14,
+        "time": 40,
+        "kind": "RX",
+        "qubits": [
+          14
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 15,
+        "time": 41,
+        "kind": "CX",
+        "qubits": [
+          9,
+          15
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 21,
+        "time": 41,
+        "kind": "R",
+        "qubits": [
+          21
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      }
+    ],
+    "B_original": [
+      {
+        "q": 3,
+        "time": 39,
+        "kind": "CX",
+        "qubits": [
+          3,
+          4
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 4,
+        "time": 36,
+        "kind": "R",
+        "qubits": [
+          4
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 5,
+        "time": 36,
+        "kind": "CX",
+        "qubits": [
+          11,
+          5
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 11,
+        "time": 35,
+        "kind": "CX",
+        "qubits": [
+          17,
+          11
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 12,
+        "time": 33,
+        "kind": "R",
+        "qubits": [
+          12
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 17,
+        "time": 30,
+        "kind": "R",
+        "qubits": [
+          17
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 18,
+        "time": 32,
+        "kind": "R",
+        "qubits": [
+          18
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 23,
+        "time": 29,
+        "kind": "R",
+        "qubits": [
+          23
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 24,
+        "time": 33,
+        "kind": "CX",
+        "qubits": [
+          24,
+          18
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 25,
+        "time": 31,
+        "kind": "R",
+        "qubits": [
+          25
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 26,
+        "time": 16,
+        "kind": "CX",
+        "qubits": [
+          32,
+          26
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 27,
+        "time": 30,
+        "kind": "R",
+        "qubits": [
+          27
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 28,
+        "time": 31,
+        "kind": "MX",
+        "qubits": [
+          28
+        ],
+        "initial_operation": false,
+        "original_bit": 361
+      },
+      {
+        "q": 29,
+        "time": 30,
+        "kind": "MX",
+        "qubits": [
+          29
+        ],
+        "initial_operation": false,
+        "original_bit": 353
+      },
+      {
+        "q": 31,
+        "time": 29,
+        "kind": "R",
+        "qubits": [
+          31
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 32,
+        "time": 15,
+        "kind": "R",
+        "qubits": [
+          32
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 33,
+        "time": 33,
+        "kind": "R",
+        "qubits": [
+          33
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      }
+    ],
+    "A_cat_schedule": [
+      {
+        "q": 7,
+        "time": 34,
+        "kind": "RX",
+        "qubits": [
+          7
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 8,
+        "time": 32,
+        "kind": "R",
+        "qubits": [
+          8
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 9,
+        "time": 32,
+        "kind": "RX",
+        "qubits": [
+          9
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 13,
+        "time": 33,
+        "kind": "RX",
+        "qubits": [
+          13
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 14,
+        "time": 32,
+        "kind": "RX",
+        "qubits": [
+          14
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 15,
+        "time": 33,
+        "kind": "CX",
+        "qubits": [
+          9,
+          15
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 21,
+        "time": 33,
+        "kind": "R",
+        "qubits": [
+          21
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      }
+    ],
+    "B_cat_schedule": [
+      {
+        "q": 3,
+        "time": 30,
+        "kind": "CX",
+        "qubits": [
+          3,
+          4
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 4,
+        "time": 28,
+        "kind": "R",
+        "qubits": [
+          4
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 5,
+        "time": 28,
+        "kind": "CX",
+        "qubits": [
+          11,
+          5
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 11,
+        "time": 27,
+        "kind": "CX",
+        "qubits": [
+          17,
+          11
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 12,
+        "time": 22,
+        "kind": "R",
+        "qubits": [
+          12
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 17,
+        "time": 21,
+        "kind": "R",
+        "qubits": [
+          17
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 18,
+        "time": 21,
+        "kind": "R",
+        "qubits": [
+          18
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 23,
+        "time": 21,
+        "kind": "R",
+        "qubits": [
+          23
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 24,
+        "time": 22,
+        "kind": "CX",
+        "qubits": [
+          24,
+          18
+        ],
+        "initial_operation": false,
+        "original_bit": null
+      },
+      {
+        "q": 25,
+        "time": 21,
+        "kind": "R",
+        "qubits": [
+          25
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 26,
+        "time": 21,
+        "kind": "MX",
+        "qubits": [
+          26
+        ],
+        "initial_operation": false,
+        "original_bit": 352
+      },
+      {
+        "q": 27,
+        "time": 21,
+        "kind": "R",
+        "qubits": [
+          27
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 28,
+        "time": 21,
+        "kind": "MX",
+        "qubits": [
+          28
+        ],
+        "initial_operation": false,
+        "original_bit": 361
+      },
+      {
+        "q": 29,
+        "time": 21,
+        "kind": "MX",
+        "qubits": [
+          29
+        ],
+        "initial_operation": false,
+        "original_bit": 353
+      },
+      {
+        "q": 31,
+        "time": 21,
+        "kind": "R",
+        "qubits": [
+          31
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 32,
+        "time": 21,
+        "kind": "R",
+        "qubits": [
+          32
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      },
+      {
+        "q": 33,
+        "time": 25,
+        "kind": "R",
+        "qubits": [
+          33
+        ],
+        "initial_operation": true,
+        "original_bit": null
+      }
+    ]
+  },
+  "probed_nonreset_inputs": [
+    3,
+    5,
+    11,
+    15,
+    24,
+    26,
+    28,
+    29
+  ],
+  "old_source": {
+    "path": "work/lanes/NATIVE2_20261027/boundary/source_prefix_d828869d5031c029_d6_20_19_10_2_22_16.qasm",
+    "sha256": "d828869d5031c0297adfe18c1d8c5bcdc92395a815ce4affe2f06ecb60ac9769",
+    "scope": "Noiseless unconditioned physical source state with all prior measurement records retained; not a full fault or instrument equivalence proof.",
+    "rows": [
+      {
+        "q": 3,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999997
+        },
+        "fresh": false,
+        "last": {
+          "kind": "CX",
+          "time": 38,
+          "qubits": [
+            2,
+            3
+          ],
+          "bit": null
+        }
+      },
+      {
+        "q": 5,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999997
+        },
+        "fresh": false,
+        "last": {
+          "kind": "M",
+          "time": 35,
+          "qubits": [
+            5
+          ],
+          "bit": 351
+        },
+        "last_read_correlation": {
+          "axis": "Z",
+          "bit": 351,
+          "expectation": 0.9999999999999997
+        }
+      },
+      {
+        "q": 11,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999997
+        },
+        "fresh": false,
+        "last": {
+          "kind": "M",
+          "time": 34,
+          "qubits": [
+            11
+          ],
+          "bit": 297
+        },
+        "last_read_correlation": {
+          "axis": "Z",
+          "bit": 297,
+          "expectation": 0.9999999999999997
+        }
+      },
+      {
+        "q": 15,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999997
+        },
+        "fresh": false,
+        "last": {
+          "kind": "M",
+          "time": 40,
+          "qubits": [
+            15
+          ],
+          "bit": 322
+        },
+        "last_read_correlation": {
+          "axis": "Z",
+          "bit": 322,
+          "expectation": 0.9999999999999997
+        }
+      },
+      {
+        "q": 24,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999997
+        },
+        "fresh": false,
+        "last": {
+          "kind": "M",
+          "time": 32,
+          "qubits": [
+            24
+          ],
+          "bit": 362
+        },
+        "last_read_correlation": {
+          "axis": "Z",
+          "bit": 362,
+          "expectation": 0.9999999999999997
+        }
+      },
+      {
+        "q": 26,
+        "expectations": {
+          "X": 0.9999999999999997,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "fresh": false,
+        "last": {
+          "kind": "MX",
+          "time": 15,
+          "qubits": [
+            26
+          ],
+          "bit": 288
+        },
+        "last_read_correlation": {
+          "axis": "X",
+          "bit": 288,
+          "expectation": 0.9999999999999997
+        }
+      },
+      {
+        "q": 28,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999997
+        },
+        "fresh": false,
+        "last": {
+          "kind": "CX",
+          "time": 29,
+          "qubits": [
+            28,
+            22
+          ],
+          "bit": null
+        }
+      },
+      {
+        "q": 29,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999997
+        },
+        "fresh": true,
+        "last": null
+      }
+    ]
+  },
+  "cat_source": {
+    "path": "work/lanes/NATIVE_CAT7_20261028/source_opt_t11_m0_d21_51201317fc1a1c71_d6_20_19_10_2_22_16.qasm",
+    "sha256": "51201317fc1a1c71be211bb6025e5db52131cdde45807c66464e0bd54c7b6adc",
+    "scope": "Noiseless unconditioned physical source state with all prior measurement records retained; not a full fault or instrument equivalence proof.",
+    "rows": [
+      {
+        "q": 3,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999994
+        },
+        "fresh": true,
+        "last": null
+      },
+      {
+        "q": 5,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999994
+        },
+        "fresh": true,
+        "last": null
+      },
+      {
+        "q": 11,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999994
+        },
+        "fresh": true,
+        "last": null
+      },
+      {
+        "q": 15,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "fresh": false,
+        "last": {
+          "kind": "MX",
+          "time": 31,
+          "qubits": [
+            15
+          ],
+          "bit": 21
+        },
+        "last_read_correlation": {
+          "axis": "X",
+          "bit": 21,
+          "expectation": 0.9999999999999994
+        }
+      },
+      {
+        "q": 24,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999994
+        },
+        "fresh": true,
+        "last": null
+      },
+      {
+        "q": 26,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999994
+        },
+        "fresh": true,
+        "last": null
+      },
+      {
+        "q": 28,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999994
+        },
+        "fresh": true,
+        "last": null
+      },
+      {
+        "q": 29,
+        "expectations": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.9999999999999994
+        },
+        "fresh": true,
+        "last": null
+      }
+    ]
+  },
+  "q26_before_module_mx": {
+    "old": {
+      "before_clock": 31,
+      "expectations": {
+        "X": 0.9999999999999992,
+        "Z": 0.0
+      },
+      "scope": "Actual source plus B operations strictly before MX26, no detector conditioning; preserved q26 guards in original module."
+    },
+    "cat": {
+      "before_clock": 21,
+      "expectations": {
+        "X": 0.0,
+        "Z": 0.9999999999999999
+      },
+      "scope": "Actual source plus B operations strictly before MX26, no detector conditioning; preserved q26 guards in original module."
+    }
+  },
+  "qualification": "First module operations are compared; values at source ends may not capture all interleaved module\u2013source correlations. MX/M are physical preparations with record-dependent outcomes, not unconditional reset."
+}

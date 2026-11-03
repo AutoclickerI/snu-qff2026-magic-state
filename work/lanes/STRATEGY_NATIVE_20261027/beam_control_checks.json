@@ -1,0 +1,451 @@
+{
+  "purpose": "Official raw oracle checks of the emitter and both boundary modes; these are constructed controls, not beam search results.",
+  "clear": {
+    "mode": "control_clear",
+    "seed": 0,
+    "helper_mask": 0,
+    "cells": [
+      7,
+      14,
+      13,
+      9,
+      8,
+      21,
+      15,
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "initial_rows": {
+      "7": 9,
+      "14": 0,
+      "13": 0,
+      "9": 8,
+      "8": 0,
+      "21": 6,
+      "15": 11,
+      "6": 0,
+      "20": 0,
+      "19": 0,
+      "10": 0,
+      "2": 0,
+      "22": 0,
+      "16": 0
+    },
+    "magic_input": 9,
+    "layers": [
+      [
+        [
+          9,
+          8
+        ],
+        [
+          15,
+          14
+        ]
+      ],
+      [
+        [
+          7,
+          8
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          21,
+          15
+        ]
+      ],
+      [
+        [
+          8,
+          14
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          21,
+          22
+        ]
+      ],
+      [
+        [
+          8,
+          9
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          19,
+          13
+        ],
+        [
+          22,
+          21
+        ]
+      ],
+      [
+        [
+          9,
+          8
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          15,
+          16
+        ]
+      ],
+      [
+        [
+          9,
+          10
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          20,
+          14
+        ],
+        [
+          16,
+          15
+        ]
+      ],
+      [
+        [
+          10,
+          9
+        ],
+        [
+          2,
+          8
+        ]
+      ]
+    ],
+    "cx": 24,
+    "cx_layers": 7,
+    "ticks": 9,
+    "helper_measurements": [],
+    "frame_Z_bits": [],
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1,
+      "six_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ok": true
+    },
+    "seconds": 0,
+    "adjacent": true,
+    "scope": "Raw-valid native input module only; no complete fault-tolerant performance claim.",
+    "qasm_sha256": "9417e77488eaaa364ff85c8544229945ca94ba56dc554b78419e720ca4f239ad",
+    "stem": "work/lanes/STRATEGY_NATIVE_20261027/candidates/input_control_clear_seed0_cx24"
+  },
+  "logical_frame": {
+    "mode": "control_logical_frame",
+    "seed": 0,
+    "helper_mask": 1,
+    "cells": [
+      7,
+      14,
+      13,
+      9,
+      8,
+      21,
+      15,
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "initial_rows": {
+      "7": 9,
+      "14": 0,
+      "13": 0,
+      "9": 8,
+      "8": 0,
+      "21": 6,
+      "15": 11,
+      "6": 0,
+      "20": 0,
+      "19": 0,
+      "10": 0,
+      "2": 0,
+      "22": 0,
+      "16": 0
+    },
+    "magic_input": 9,
+    "layers": [
+      [
+        [
+          9,
+          8
+        ],
+        [
+          15,
+          14
+        ]
+      ],
+      [
+        [
+          7,
+          8
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          21,
+          15
+        ]
+      ],
+      [
+        [
+          8,
+          14
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          21,
+          22
+        ]
+      ],
+      [
+        [
+          8,
+          9
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          19,
+          13
+        ],
+        [
+          22,
+          21
+        ]
+      ],
+      [
+        [
+          9,
+          8
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          19,
+          13
+        ]
+      ],
+      [
+        [
+          9,
+          10
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          20,
+          14
+        ],
+        [
+          16,
+          15
+        ]
+      ],
+      [
+        [
+          10,
+          9
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          20,
+          14
+        ]
+      ],
+      [
+        [
+          14,
+          13
+        ]
+      ],
+      [
+        [
+          13,
+          7
+        ]
+      ],
+      [
+        [
+          6,
+          7
+        ],
+        [
+          14,
+          13
+        ]
+      ],
+      [
+        [
+          19,
+          13
+        ],
+        [
+          20,
+          14
+        ]
+      ]
+    ],
+    "cx": 32,
+    "cx_layers": 11,
+    "ticks": 14,
+    "helper_measurements": [
+      7
+    ],
+    "frame_Z_bits": [
+      400
+    ],
+    "raw": {
+      "errors": [],
+      "acceptance": 1.0,
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 1,
+      "six_stabilizers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ok": true
+    },
+    "seconds": 0,
+    "adjacent": true,
+    "scope": "Raw-valid native input module only; no complete fault-tolerant performance claim.",
+    "qasm_sha256": "4b24be5badc44d48715a85adcc856347089e518e8c3b5563a6bd3a65aac49181",
+    "stem": "work/lanes/STRATEGY_NATIVE_20261027/candidates/input_control_logical_frame_seed0_cx32"
+  },
+  "extra_native_edges": [
+    [
+      20,
+      14
+    ],
+    [
+      19,
+      13
+    ],
+    [
+      14,
+      13
+    ],
+    [
+      13,
+      7
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      14,
+      13
+    ],
+    [
+      19,
+      13
+    ],
+    [
+      20,
+      14
+    ]
+  ]
+}

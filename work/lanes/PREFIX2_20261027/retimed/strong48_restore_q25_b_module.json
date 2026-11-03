@@ -1,0 +1,1715 @@
+{
+  "prefix_stem": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/PREFIX2_20261027/retimed/strong48_restore_q25_source_7af0c030d04937c0_d6_20_19_10_2_22_16",
+  "roles": {
+    "D": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "A": [
+      7,
+      14,
+      13,
+      9,
+      8,
+      21,
+      15
+    ],
+    "B": [
+      12,
+      26,
+      25,
+      11,
+      3,
+      28,
+      17
+    ],
+    "C": [
+      18,
+      27,
+      24,
+      5,
+      4,
+      29,
+      23
+    ]
+  },
+  "square_mask": 0,
+  "terminal_operations": [
+    [
+      "CX",
+      [
+        12,
+        6
+      ],
+      0,
+      null
+    ],
+    [
+      "CX",
+      [
+        26,
+        20
+      ],
+      0,
+      null
+    ],
+    [
+      "CX",
+      [
+        25,
+        19
+      ],
+      0,
+      null
+    ],
+    [
+      "CX",
+      [
+        11,
+        10
+      ],
+      0,
+      null
+    ],
+    [
+      "CX",
+      [
+        3,
+        2
+      ],
+      0,
+      null
+    ],
+    [
+      "CX",
+      [
+        28,
+        22
+      ],
+      0,
+      null
+    ],
+    [
+      "CX",
+      [
+        17,
+        16
+      ],
+      0,
+      null
+    ],
+    [
+      "MX",
+      [
+        12
+      ],
+      1,
+      7
+    ],
+    [
+      "MX",
+      [
+        26
+      ],
+      1,
+      8
+    ],
+    [
+      "MX",
+      [
+        25
+      ],
+      1,
+      9
+    ],
+    [
+      "MX",
+      [
+        11
+      ],
+      1,
+      10
+    ],
+    [
+      "MX",
+      [
+        3
+      ],
+      1,
+      11
+    ],
+    [
+      "MX",
+      [
+        28
+      ],
+      1,
+      12
+    ],
+    [
+      "MX",
+      [
+        17
+      ],
+      1,
+      13
+    ]
+  ],
+  "allow_record_faults": [
+    {
+      "original_bit": 352,
+      "time": 31,
+      "kind": "MX",
+      "qubits": [
+        26
+      ],
+      "channel": "Z_ERROR",
+      "pauli": "Z"
+    },
+    {
+      "original_bit": 376,
+      "time": 42,
+      "kind": "M",
+      "qubits": [
+        31
+      ],
+      "channel": "X_ERROR",
+      "pauli": "X"
+    }
+  ],
+  "record_contract_note": "Preserve the two benign physical record modes accepted by the incumbent: phase before MX26@31 and bit flip before M31@42, including their later record correlations.",
+  "candidates": [
+    {
+      "operations": [
+        {
+          "time": 16,
+          "kind": "R",
+          "qs": [
+            32
+          ],
+          "original_bit": null,
+          "original_time": 15,
+          "schedule_parent_time": 15
+        },
+        {
+          "time": 17,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 18,
+          "schedule_parent_time": 16
+        },
+        {
+          "time": 18,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 19,
+          "schedule_parent_time": 17
+        },
+        {
+          "time": 19,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 20,
+          "schedule_parent_time": 18
+        },
+        {
+          "time": 20,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 21,
+          "schedule_parent_time": 19
+        },
+        {
+          "time": 21,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 22,
+          "schedule_parent_time": 20
+        },
+        {
+          "time": 22,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 23,
+          "schedule_parent_time": 21
+        },
+        {
+          "time": 23,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 24,
+          "schedule_parent_time": 22
+        },
+        {
+          "time": 24,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 25,
+          "schedule_parent_time": 23
+        },
+        {
+          "time": 25,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 26,
+          "schedule_parent_time": 24
+        },
+        {
+          "time": 26,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 27,
+          "schedule_parent_time": 25
+        },
+        {
+          "time": 27,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 28,
+          "schedule_parent_time": 26
+        },
+        {
+          "time": 28,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 29,
+          "schedule_parent_time": 27
+        },
+        {
+          "time": 28,
+          "kind": "R",
+          "qs": [
+            31
+          ],
+          "original_bit": null,
+          "original_time": 29,
+          "schedule_parent_time": 27
+        },
+        {
+          "time": 28,
+          "kind": "R",
+          "qs": [
+            23
+          ],
+          "original_bit": null,
+          "original_time": 29,
+          "schedule_parent_time": 0
+        },
+        {
+          "time": 29,
+          "kind": "MX",
+          "qs": [
+            29
+          ],
+          "original_bit": 353,
+          "original_time": 30,
+          "schedule_parent_time": 0
+        },
+        {
+          "time": 29,
+          "kind": "CX",
+          "qs": [
+            32,
+            31
+          ],
+          "original_bit": null,
+          "original_time": 30,
+          "schedule_parent_time": 28
+        },
+        {
+          "time": 29,
+          "kind": "R",
+          "qs": [
+            17
+          ],
+          "original_bit": null,
+          "original_time": 30,
+          "schedule_parent_time": 28
+        },
+        {
+          "time": 29,
+          "kind": "R",
+          "qs": [
+            27
+          ],
+          "original_bit": null,
+          "original_time": 30,
+          "schedule_parent_time": 12
+        },
+        {
+          "time": 29,
+          "kind": "M",
+          "qs": [
+            23
+          ],
+          "original_bit": 375,
+          "original_time": 30,
+          "schedule_parent_time": 1
+        },
+        {
+          "time": 30,
+          "kind": "CX",
+          "qs": [
+            29,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 31,
+          "schedule_parent_time": 2
+        },
+        {
+          "time": 30,
+          "kind": "MX",
+          "qs": [
+            26
+          ],
+          "original_bit": 352,
+          "original_time": 31,
+          "schedule_parent_time": 28
+        },
+        {
+          "time": 30,
+          "kind": "CX",
+          "qs": [
+            31,
+            32
+          ],
+          "original_bit": null,
+          "original_time": 31,
+          "schedule_parent_time": 29
+        },
+        {
+          "time": 30,
+          "kind": "MX",
+          "qs": [
+            28
+          ],
+          "original_bit": 361,
+          "original_time": 31,
+          "schedule_parent_time": 30
+        },
+        {
+          "time": 30,
+          "kind": "M",
+          "qs": [
+            17
+          ],
+          "original_bit": 367,
+          "original_time": 31,
+          "schedule_parent_time": 29
+        },
+        {
+          "time": 30,
+          "kind": "R",
+          "qs": [
+            25
+          ],
+          "original_bit": null,
+          "original_time": 31,
+          "schedule_parent_time": 29
+        },
+        {
+          "time": 30,
+          "kind": "M",
+          "qs": [
+            27
+          ],
+          "original_bit": 372,
+          "original_time": 31,
+          "schedule_parent_time": 13
+        },
+        {
+          "time": 31,
+          "kind": "CX",
+          "qs": [
+            26,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 32,
+          "schedule_parent_time": 29
+        },
+        {
+          "time": 31,
+          "kind": "CX",
+          "qs": [
+            31,
+            32
+          ],
+          "original_bit": null,
+          "original_time": 32,
+          "schedule_parent_time": 30
+        },
+        {
+          "time": 31,
+          "kind": "R",
+          "qs": [
+            18
+          ],
+          "original_bit": null,
+          "original_time": 32,
+          "schedule_parent_time": 29
+        },
+        {
+          "time": 31,
+          "kind": "CX",
+          "qs": [
+            23,
+            17
+          ],
+          "original_bit": null,
+          "original_time": 32,
+          "schedule_parent_time": 30
+        },
+        {
+          "time": 31,
+          "kind": "CX",
+          "qs": [
+            28,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 32,
+          "schedule_parent_time": 31
+        },
+        {
+          "time": 31,
+          "kind": "M",
+          "qs": [
+            25
+          ],
+          "original_bit": 371,
+          "original_time": 32,
+          "schedule_parent_time": 30
+        },
+        {
+          "time": 32,
+          "kind": "R",
+          "qs": [
+            12
+          ],
+          "original_bit": null,
+          "original_time": 33,
+          "schedule_parent_time": 30
+        },
+        {
+          "time": 32,
+          "kind": "CX",
+          "qs": [
+            26,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 33,
+          "schedule_parent_time": 31
+        },
+        {
+          "time": 32,
+          "kind": "CX",
+          "qs": [
+            27,
+            28
+          ],
+          "original_bit": null,
+          "original_time": 33,
+          "schedule_parent_time": 32
+        },
+        {
+          "time": 32,
+          "kind": "R",
+          "qs": [
+            33
+          ],
+          "original_bit": null,
+          "original_time": 33,
+          "schedule_parent_time": 32
+        },
+        {
+          "time": 32,
+          "kind": "CX",
+          "qs": [
+            31,
+            32
+          ],
+          "original_bit": null,
+          "original_time": 33,
+          "schedule_parent_time": 31
+        },
+        {
+          "time": 32,
+          "kind": "CX",
+          "qs": [
+            29,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 33,
+          "schedule_parent_time": 32
+        },
+        {
+          "time": 32,
+          "kind": "CX",
+          "qs": [
+            24,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 33,
+          "schedule_parent_time": 30
+        },
+        {
+          "time": 33,
+          "kind": "CX",
+          "qs": [
+            25,
+            24
+          ],
+          "original_bit": null,
+          "original_time": 34,
+          "schedule_parent_time": 32
+        },
+        {
+          "time": 33,
+          "kind": "CX",
+          "qs": [
+            28,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 34,
+          "schedule_parent_time": 33
+        },
+        {
+          "time": 33,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 34,
+          "schedule_parent_time": 32
+        },
+        {
+          "time": 33,
+          "kind": "CX",
+          "qs": [
+            33,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 34,
+          "schedule_parent_time": 33
+        },
+        {
+          "time": 33,
+          "kind": "R",
+          "qs": [
+            31
+          ],
+          "original_bit": null,
+          "original_time": 34,
+          "schedule_parent_time": 32
+        },
+        {
+          "time": 33,
+          "kind": "CX",
+          "qs": [
+            23,
+            17
+          ],
+          "original_bit": null,
+          "original_time": 34,
+          "schedule_parent_time": 33
+        },
+        {
+          "time": 33,
+          "kind": "CX",
+          "qs": [
+            18,
+            12
+          ],
+          "original_bit": null,
+          "original_time": 34,
+          "schedule_parent_time": 31
+        },
+        {
+          "time": 34,
+          "kind": "CX",
+          "qs": [
+            26,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 35,
+          "schedule_parent_time": 33
+        },
+        {
+          "time": 34,
+          "kind": "CX",
+          "qs": [
+            28,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 35,
+          "schedule_parent_time": 34
+        },
+        {
+          "time": 34,
+          "kind": "CX",
+          "qs": [
+            17,
+            11
+          ],
+          "original_bit": null,
+          "original_time": 35,
+          "schedule_parent_time": 34
+        },
+        {
+          "time": 34,
+          "kind": "CX",
+          "qs": [
+            24,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 35,
+          "schedule_parent_time": 33
+        },
+        {
+          "time": 34,
+          "kind": "CX",
+          "qs": [
+            29,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 35,
+          "schedule_parent_time": 34
+        },
+        {
+          "time": 34,
+          "kind": "CX",
+          "qs": [
+            31,
+            32
+          ],
+          "original_bit": null,
+          "original_time": 35,
+          "schedule_parent_time": 33
+        },
+        {
+          "time": 34,
+          "kind": "M",
+          "qs": [
+            33
+          ],
+          "original_bit": 349,
+          "original_time": 35,
+          "schedule_parent_time": 34
+        },
+        {
+          "time": 35,
+          "kind": "M",
+          "qs": [
+            12
+          ],
+          "original_bit": 364,
+          "original_time": 35,
+          "schedule_parent_time": 32
+        },
+        {
+          "time": 35,
+          "kind": "R",
+          "qs": [
+            4
+          ],
+          "original_bit": null,
+          "original_time": 36,
+          "schedule_parent_time": 35
+        },
+        {
+          "time": 35,
+          "kind": "CX",
+          "qs": [
+            11,
+            5
+          ],
+          "original_bit": null,
+          "original_time": 36,
+          "schedule_parent_time": 35
+        },
+        {
+          "time": 35,
+          "kind": "CX",
+          "qs": [
+            18,
+            24
+          ],
+          "original_bit": null,
+          "original_time": 36,
+          "schedule_parent_time": 34
+        },
+        {
+          "time": 35,
+          "kind": "CX",
+          "qs": [
+            27,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 36,
+          "schedule_parent_time": 35
+        },
+        {
+          "time": 35,
+          "kind": "CX",
+          "qs": [
+            29,
+            28
+          ],
+          "original_bit": null,
+          "original_time": 36,
+          "schedule_parent_time": 35
+        },
+        {
+          "time": 35,
+          "kind": "CX",
+          "qs": [
+            23,
+            17
+          ],
+          "original_bit": null,
+          "original_time": 36,
+          "schedule_parent_time": 35
+        },
+        {
+          "time": 35,
+          "kind": "CX",
+          "qs": [
+            31,
+            32
+          ],
+          "original_bit": null,
+          "original_time": 36,
+          "schedule_parent_time": 34
+        },
+        {
+          "time": 36,
+          "kind": "CX",
+          "qs": [
+            24,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 37,
+          "schedule_parent_time": 35
+        },
+        {
+          "time": 36,
+          "kind": "CX",
+          "qs": [
+            17,
+            11
+          ],
+          "original_bit": null,
+          "original_time": 37,
+          "schedule_parent_time": 36
+        },
+        {
+          "time": 36,
+          "kind": "CX",
+          "qs": [
+            18,
+            12
+          ],
+          "original_bit": null,
+          "original_time": 37,
+          "schedule_parent_time": 35
+        },
+        {
+          "time": 36,
+          "kind": "CX",
+          "qs": [
+            27,
+            28
+          ],
+          "original_bit": null,
+          "original_time": 37,
+          "schedule_parent_time": 36
+        },
+        {
+          "time": 36,
+          "kind": "CX",
+          "qs": [
+            5,
+            4
+          ],
+          "original_bit": null,
+          "original_time": 37,
+          "schedule_parent_time": 36
+        },
+        {
+          "time": 36,
+          "kind": "CX",
+          "qs": [
+            29,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 37,
+          "schedule_parent_time": 36
+        },
+        {
+          "time": 36,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 37,
+          "schedule_parent_time": 36
+        },
+        {
+          "time": 37,
+          "kind": "CX",
+          "qs": [
+            26,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 38,
+          "schedule_parent_time": 37
+        },
+        {
+          "time": 37,
+          "kind": "CX",
+          "qs": [
+            11,
+            5
+          ],
+          "original_bit": null,
+          "original_time": 38,
+          "schedule_parent_time": 37
+        },
+        {
+          "time": 37,
+          "kind": "CX",
+          "qs": [
+            28,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 38,
+          "schedule_parent_time": 37
+        },
+        {
+          "time": 37,
+          "kind": "CX",
+          "qs": [
+            24,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 38,
+          "schedule_parent_time": 36
+        },
+        {
+          "time": 37,
+          "kind": "CX",
+          "qs": [
+            23,
+            17
+          ],
+          "original_bit": null,
+          "original_time": 38,
+          "schedule_parent_time": 37
+        },
+        {
+          "time": 37,
+          "kind": "CX",
+          "qs": [
+            32,
+            33
+          ],
+          "original_bit": null,
+          "original_time": 38,
+          "schedule_parent_time": 37
+        },
+        {
+          "time": 37,
+          "kind": "M",
+          "qs": [
+            25
+          ],
+          "original_bit": 365,
+          "original_time": 38,
+          "schedule_parent_time": 36
+        },
+        {
+          "time": 38,
+          "kind": "CX",
+          "qs": [
+            26,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 39,
+          "schedule_parent_time": 38
+        },
+        {
+          "time": 38,
+          "kind": "CX",
+          "qs": [
+            17,
+            11
+          ],
+          "original_bit": null,
+          "original_time": 39,
+          "schedule_parent_time": 38
+        },
+        {
+          "time": 38,
+          "kind": "CX",
+          "qs": [
+            18,
+            24
+          ],
+          "original_bit": null,
+          "original_time": 39,
+          "schedule_parent_time": 37
+        },
+        {
+          "time": 38,
+          "kind": "CX",
+          "qs": [
+            27,
+            28
+          ],
+          "original_bit": null,
+          "original_time": 39,
+          "schedule_parent_time": 38
+        },
+        {
+          "time": 38,
+          "kind": "CX",
+          "qs": [
+            23,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 39,
+          "schedule_parent_time": 38
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            3,
+            4
+          ],
+          "original_bit": null,
+          "original_time": 39,
+          "schedule_parent_time": 39
+        },
+        {
+          "time": 38,
+          "kind": "CX",
+          "qs": [
+            31,
+            32
+          ],
+          "original_bit": null,
+          "original_time": 39,
+          "schedule_parent_time": 38
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            25,
+            24
+          ],
+          "original_bit": null,
+          "original_time": 40,
+          "schedule_parent_time": 39
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            28,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 40,
+          "schedule_parent_time": 39
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            17,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 40,
+          "schedule_parent_time": 39
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            27,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 40,
+          "schedule_parent_time": 39
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            5,
+            11
+          ],
+          "original_bit": null,
+          "original_time": 40,
+          "schedule_parent_time": 39
+        },
+        {
+          "time": 39,
+          "kind": "CX",
+          "qs": [
+            31,
+            32
+          ],
+          "original_bit": null,
+          "original_time": 40,
+          "schedule_parent_time": 39
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            4,
+            3
+          ],
+          "original_bit": null,
+          "original_time": 40,
+          "schedule_parent_time": 40
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            11,
+            17
+          ],
+          "original_bit": null,
+          "original_time": 41,
+          "schedule_parent_time": 40
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            28,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 41,
+          "schedule_parent_time": 40
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            24,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 41,
+          "schedule_parent_time": 40
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            29,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 41,
+          "schedule_parent_time": 40
+        },
+        {
+          "time": 40,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 41,
+          "schedule_parent_time": 40
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            4,
+            5
+          ],
+          "original_bit": null,
+          "original_time": 41,
+          "schedule_parent_time": 41
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            25,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 42,
+          "schedule_parent_time": 41
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            17,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 42,
+          "schedule_parent_time": 41
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            29,
+            28
+          ],
+          "original_bit": null,
+          "original_time": 42,
+          "schedule_parent_time": 41
+        },
+        {
+          "time": 41,
+          "kind": "M",
+          "qs": [
+            31
+          ],
+          "original_bit": 376,
+          "original_time": 42,
+          "schedule_parent_time": 40
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            32,
+            33
+          ],
+          "original_bit": null,
+          "original_time": 42,
+          "schedule_parent_time": 41
+        },
+        {
+          "time": 41,
+          "kind": "CX",
+          "qs": [
+            24,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 42,
+          "schedule_parent_time": 41
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            5,
+            11
+          ],
+          "original_bit": null,
+          "original_time": 42,
+          "schedule_parent_time": 42
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            32,
+            33
+          ],
+          "original_bit": null,
+          "original_time": 43,
+          "schedule_parent_time": 42
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            26,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 43,
+          "schedule_parent_time": 42
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            28,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 43,
+          "schedule_parent_time": 42
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            23,
+            17
+          ],
+          "original_bit": null,
+          "original_time": 43,
+          "schedule_parent_time": 42
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            31,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 43,
+          "schedule_parent_time": 42
+        },
+        {
+          "time": 42,
+          "kind": "CX",
+          "qs": [
+            24,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 43,
+          "schedule_parent_time": 42
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            4,
+            5
+          ],
+          "original_bit": null,
+          "original_time": 43,
+          "schedule_parent_time": 43
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            31,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 44,
+          "schedule_parent_time": 43
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            11,
+            17
+          ],
+          "original_bit": null,
+          "original_time": 44,
+          "schedule_parent_time": 43
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            27,
+            28
+          ],
+          "original_bit": null,
+          "original_time": 44,
+          "schedule_parent_time": 43
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            23,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 44,
+          "schedule_parent_time": 43
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null,
+          "original_time": 44,
+          "schedule_parent_time": 43
+        },
+        {
+          "time": 43,
+          "kind": "CX",
+          "qs": [
+            24,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 44,
+          "schedule_parent_time": 43
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            26,
+            25
+          ],
+          "original_bit": null,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            28,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            17,
+            11
+          ],
+          "original_bit": null,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            24,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            29,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 44,
+          "kind": "M",
+          "qs": [
+            32
+          ],
+          "original_bit": 347,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 44,
+          "kind": "CX",
+          "qs": [
+            4,
+            5
+          ],
+          "original_bit": null,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 44,
+          "kind": "M",
+          "qs": [
+            31
+          ],
+          "original_bit": 348,
+          "original_time": 45,
+          "schedule_parent_time": 44
+        },
+        {
+          "time": 45,
+          "kind": "CX",
+          "qs": [
+            12,
+            18
+          ],
+          "original_bit": null,
+          "original_time": 46,
+          "schedule_parent_time": 45
+        },
+        {
+          "time": 45,
+          "kind": "CX",
+          "qs": [
+            26,
+            27
+          ],
+          "original_bit": null,
+          "original_time": 46,
+          "schedule_parent_time": 45
+        },
+        {
+          "time": 45,
+          "kind": "CX",
+          "qs": [
+            25,
+            24
+          ],
+          "original_bit": null,
+          "original_time": 46,
+          "schedule_parent_time": 45
+        },
+        {
+          "time": 45,
+          "kind": "CX",
+          "qs": [
+            11,
+            5
+          ],
+          "original_bit": null,
+          "original_time": 46,
+          "schedule_parent_time": 45
+        },
+        {
+          "time": 45,
+          "kind": "CX",
+          "qs": [
+            3,
+            4
+          ],
+          "original_bit": null,
+          "original_time": 46,
+          "schedule_parent_time": 45
+        },
+        {
+          "time": 45,
+          "kind": "CX",
+          "qs": [
+            28,
+            29
+          ],
+          "original_bit": null,
+          "original_time": 46,
+          "schedule_parent_time": 45
+        },
+        {
+          "time": 45,
+          "kind": "CX",
+          "qs": [
+            17,
+            23
+          ],
+          "original_bit": null,
+          "original_time": 46,
+          "schedule_parent_time": 45
+        },
+        {
+          "time": 46,
+          "kind": "M",
+          "qs": [
+            18
+          ],
+          "original_bit": 337,
+          "original_time": 47,
+          "schedule_parent_time": 46
+        },
+        {
+          "time": 46,
+          "kind": "M",
+          "qs": [
+            27
+          ],
+          "original_bit": 338,
+          "original_time": 47,
+          "schedule_parent_time": 46
+        },
+        {
+          "time": 46,
+          "kind": "M",
+          "qs": [
+            24
+          ],
+          "original_bit": 339,
+          "original_time": 47,
+          "schedule_parent_time": 46
+        },
+        {
+          "time": 46,
+          "kind": "M",
+          "qs": [
+            5
+          ],
+          "original_bit": 340,
+          "original_time": 47,
+          "schedule_parent_time": 46
+        },
+        {
+          "time": 46,
+          "kind": "M",
+          "qs": [
+            4
+          ],
+          "original_bit": 341,
+          "original_time": 47,
+          "schedule_parent_time": 46
+        },
+        {
+          "time": 46,
+          "kind": "M",
+          "qs": [
+            29
+          ],
+          "original_bit": 342,
+          "original_time": 47,
+          "schedule_parent_time": 46
+        },
+        {
+          "time": 46,
+          "kind": "M",
+          "qs": [
+            23
+          ],
+          "original_bit": 343,
+          "original_time": 47,
+          "schedule_parent_time": 46
+        }
+      ],
+      "cx": 107,
+      "resource_ready": 46,
+      "module_end": 47,
+      "preserved_wire_order": true,
+      "parking_removed": [
+        {
+          "time": 16,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null
+        },
+        {
+          "time": 17,
+          "kind": "CX",
+          "qs": [
+            32,
+            26
+          ],
+          "original_bit": null
+        }
+      ],
+      "jit_resets": true,
+      "scheduling": "rejection with unchanged per-wire order",
+      "schedule_parent": "work/lanes/PREFIX2_20261027/retimed/strong48_m9_b_alap46.json",
+      "fixed_ready_deadline": 46,
+      "fixed_module_deadline": 47,
+      "optimization": {
+        "objective": 75995021.0,
+        "status": "OPTIMAL",
+        "reference": "work/lanes/NATIVE2_20261027/boundary/strong48_m9_b_alap46_05b8d2bc520082b7_d6_20_19_10_2_22_16",
+        "reference_rejection": 685.0666666667199,
+        "scope": "Exact first-order waiting-noise rejection with unchanged per-wire operation order; late-time tie break."
+      }
+    }
+  ]
+}

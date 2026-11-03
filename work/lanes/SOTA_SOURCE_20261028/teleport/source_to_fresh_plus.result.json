@@ -1,0 +1,186 @@
+{
+  "stem": "work/lanes/SOTA_SOURCE_20261028/teleport/source_to_fresh_plus",
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999997,
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 5,
+    "ok": true,
+    "six_stabilizers": [
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997
+    ],
+    "scope": "Official raw exact checker including affine logical frame, before ideal syndrome decoding. Only physical adjacency validation is bypassed."
+  },
+  "sha256": "d4ae1df8346150591b69cc4cc48d52e910a0cff6cb4fe99e653496cd1e7474d6",
+  "loss": 0.0010324138330873153,
+  "acceptance": 0.6134594903501775,
+  "width": 12,
+  "rank_rot": 5,
+  "rank_total": 5,
+  "seconds": 4.3371390479951515,
+  "cx": 267,
+  "kernel_omission_sum": 4.2845858095504606e-13,
+  "singles": {
+    "first_order_loss": 0.00046666666666666666,
+    "harmful_count": 7,
+    "harmful": [
+      {
+        "weight": 6.666666666666667e-05,
+        "acceptance": 1.0,
+        "x": 267608942382367477698428619271780338071764992,
+        "z": 5575186299632655785383929568162090376495104,
+        "p": 6.666666666666667e-05,
+        "m": 15,
+        "chan": 539,
+        "pauli": "IZ",
+        "qs": [
+          15,
+          14
+        ],
+        "ins": 382,
+        "jl": 1,
+        "label": "DEPOLARIZE2 IZ@[15, 14] after/before native#382 srcL517",
+        "s": 0,
+        "d": 0,
+        "e": 1,
+        "record_flips": []
+      },
+      {
+        "weight": 6.666666666666667e-05,
+        "acceptance": 1.0,
+        "x": 267608942382367477698428619271780338071764992,
+        "z": 22300745198530623141535718272648361505980416,
+        "p": 6.666666666666667e-05,
+        "m": 15,
+        "chan": 540,
+        "pauli": "IZ",
+        "qs": [
+          21,
+          9
+        ],
+        "ins": 383,
+        "jl": 1,
+        "label": "DEPOLARIZE2 IZ@[21, 9] after/before native#383 srcL518",
+        "s": 0,
+        "d": 0,
+        "e": 1,
+        "record_flips": []
+      },
+      {
+        "weight": 6.666666666666667e-05,
+        "acceptance": 1.0,
+        "x": 267608942382367477698428619271780338071764992,
+        "z": 5575186299632655785383929568162090376495104,
+        "p": 6.666666666666667e-05,
+        "m": 15,
+        "chan": 543,
+        "pauli": "ZZ",
+        "qs": [
+          13,
+          14
+        ],
+        "ins": 385,
+        "jl": 1,
+        "label": "DEPOLARIZE2 ZZ@[13, 14] after/before native#385 srcL521",
+        "s": 0,
+        "d": 0,
+        "e": 1,
+        "record_flips": []
+      },
+      {
+        "weight": 6.666666666666667e-05,
+        "acceptance": 1.0,
+        "x": 267608942382367477698428619271780338071764992,
+        "z": 22300745198530623141535718272648361505980416,
+        "p": 6.666666666666667e-05,
+        "m": 15,
+        "chan": 544,
+        "pauli": "ZZ",
+        "qs": [
+          8,
+          9
+        ],
+        "ins": 386,
+        "jl": 1,
+        "label": "DEPOLARIZE2 ZZ@[8, 9] after/before native#386 srcL522",
+        "s": 0,
+        "d": 0,
+        "e": 1,
+        "record_flips": []
+      },
+      {
+        "weight": 6.666666666666666e-05,
+        "acceptance": 1.0,
+        "x": 55751862996326557853839295681620903764951040,
+        "z": 2787593149816327892691964784081045188247552,
+        "p": 6.666666666666667e-05,
+        "m": 15,
+        "chan": 538,
+        "pauli": "IZ",
+        "qs": [
+          8,
+          7
+        ],
+        "ins": 381,
+        "jl": 1,
+        "label": "DEPOLARIZE2 IZ@[8, 7] after/before native#381 srcL516",
+        "s": 0,
+        "d": 0,
+        "e": 6,
+        "record_flips": []
+      },
+      {
+        "weight": 6.666666666666666e-05,
+        "acceptance": 1.0,
+        "x": 55751862996326557853839295681620903764951040,
+        "z": 47389083546877574175763401329377768200208384,
+        "p": 6.666666666666667e-05,
+        "m": 15,
+        "chan": 538,
+        "pauli": "XY",
+        "qs": [
+          8,
+          7
+        ],
+        "ins": 381,
+        "jl": 1,
+        "label": "DEPOLARIZE2 XY@[8, 7] after/before native#381 srcL516",
+        "s": 0,
+        "d": 0,
+        "e": 646,
+        "record_flips": [
+          379,
+          382,
+          383
+        ]
+      },
+      {
+        "weight": 6.666666666666666e-05,
+        "acceptance": 1.0,
+        "x": 55751862996326557853839295681620903764951040,
+        "z": 2787593149816327892691964784081045188247552,
+        "p": 6.666666666666667e-05,
+        "m": 15,
+        "chan": 542,
+        "pauli": "ZZ",
+        "qs": [
+          15,
+          7
+        ],
+        "ins": 384,
+        "jl": 1,
+        "label": "DEPOLARIZE2 ZZ@[15, 7] after/before native#384 srcL520",
+        "s": 0,
+        "d": 0,
+        "e": 6,
+        "record_flips": []
+      }
+    ]
+  }
+}

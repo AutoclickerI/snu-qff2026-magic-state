@@ -5,12 +5,49 @@ The organizers' starter circuit (P §4: inject one physical |T⟩, encode with H
 grid) scores 1-F = 0.0252 with 28 CX and acceptance 1.0 (P §4.2 sample output). Teams "Noah" and "lss"
 sit exactly there. Checked 2026-10-23.
 
-## Current best
-Ours on the board (**rank 2**, team shown as "초정밀모델제어학회쨩"): **v37i_h2617_r1992**, server 1-F = 3.325e-5 (key 3.32e-5), 411 CX, acceptance 0.500, submitted 2026-10-26 17:29 KST (`work/receipts/seq_v37i_h2617_r1992.txt`; best raced seed-0 draw of `work/lanes/MAIN/v37i`, all-orders 3.591182e-5).
+## Current checkpoint — 2026-10-28 KST
 
-Rank 1: **Placeholder 3.086e-5** (key 3.09e-5), 293 CX, acceptance 0.510, submitted 2026-10-26 19:31 KST; their earlier entries 6.286e-5 at 169 CX (10-24), 3.856e-5 at 201 CX (10-25 22:53). Then @nize_reze 5.847e-5, Inae 7.751e-5, Noah 2.17e-4. Board read 2026-10-26 19:42 KST; refresh with `work/submit.py board`.
+**No native SOTA result has been reached.** The public board was read at
+2026-10-28 02:07:35 UTC / 2026-10-28 11:07:35 KST. The leader's sampled score
+is **2.7646927086892e-5**, key **2.76e-5**, 277 CX, acceptance 0.50059813.
+Our existing board entry remains **3.30430020090153e-5**, key **3.30e-5**,
+412 CX, acceptance 0.5010138. These are official sampled results, not exact
+expectations. Evidence: [public leaderboard snapshot](../work/lanes/CONTINUE_20261028/leaderboard_latest.json).
 
-## Comparisons
+| Circuit / result | Evidence and scope | Loss | Acceptance | CX / clocks |
+|---|---|---:|---:|---:|
+| Best complete native research circuit | Exact mean; raw correct; official 1M gates pass; not submitted | **3.566732196898089e-5** | **0.5016443322953218** | **412 / 49** |
+| Previous phase candidate | Exact mean; its prior 100M receipt belongs to that QASM | 3.5681272391347155e-5 | 0.501016046737387 | 412 / 49 |
+| MAIN/v37j | Prior native reference, exact mean | 3.5870950035e-5 | approximately 0.50102 | 412 / 49 |
+| New seven-cat plus published Steane check | Complete noisy **abstract connectivity**, not submittable | 2.9649858252424977e-5 | 0.640392636273766 | 155 / 25 |
+
+The new native gain is 0.0391% over the phase candidate and 0.5677% over v37j.
+It does not deliver the requested architectural jump. Its stem is
+`work/lanes/SOTA_20261028/native_best/schedule_heralds_c167977fdd48de1f_d6_20_19_10_2_22_16`.
+See the [complete research report](../work/lanes/SOTA_20261028/REPORT.md),
+[exact receipt](../work/lanes/SOTA_20261028/native_best/schedule_heralds_c167977fdd48de1f_d6_20_19_10_2_22_16.result.json),
+and [official 1M gate check](../work/lanes/SOTA_20261028/native_best/official_1m.log).
+The favorable low-shot loss in that gate check is not used as a ranking result.
+
+The [completed continuation](../work/lanes/CONTINUE_20261028/REPORT.md) leaves
+this best native expectation unchanged. It implements and prices physical
+coherent gauging, Bell teleportation resources, direct C4/C2 sources and native
+cat repairs; no new result is promoted. The corrected native CAT7 family reaches
+8.977878556875212e-5 at A=0.5618977639 with 190 CX/41 clocks, after repairing a
+borrowed-module input assumption and adding physical source-transfer heralds.
+That is a family improvement, not an improvement over the incumbent. The
+369-CX source-isometry control also loses at 3.650300459139864e-5 despite its
+lower gate count. Full circuits, scopes and receipts are linked in the report.
+
+The historical DEEP 2.7185e-5 number remains a lead without its QASM/receipt in
+the inspected checkout or queried GitHub path history. The reconstructed
+seven-cat candidates are separate artifacts. Ideal-resource headroom values
+in the reports are counterfactual and are not achieved scores.
+
+The hourly race remains parked under R-20261027-1. This research made no
+submission, restarted no race and changed no production candidate.
+
+## Earlier native comparisons
 The submitted lineage from v4 (1.534e-4) to v36g is in `git show b9051547^:docs/SOTA.md`; its circuits are in git history under `work/submissions/` and `work/lanes/MAIN/`.
 | Method | Conditions | Result | Evidence |
 |---|---|---|---|
@@ -34,9 +71,10 @@ The submitted lineage from v4 (1.534e-4) to v36g is in `git show b9051547^:docs/
 | Chamberland & Cross, flag-based magic-state prep (cited in P references) | G1: flagged direct readout (lane L3) | from memory |
 | Postler et al., "Demonstration of fault-tolerant universal quantum gate operations" (cited in P) | G1: Steane-code T-state prep | from memory |
 | Bravyi & Kitaev 2005, magic state distillation (P ref 1) | background | from memory |
-| Gao, Yuan, Yao, "Extremely Low-Cost Magic State Preparation toward Fault-Tolerant Quantum Computing", arXiv:2609.12698 (2026-09) | G1: RM15 \|+_L⟩, transversal T, gauge-fix to Steane; postselected 210.2 p³ (≤ 2.2e-7 at p=1e-3), acceptance 86.9%, 19 qubits, 82 CNOT, all-to-all; the unmeasured output block's final noise is excluded, and under our judge that tail is ≥ 1.1e-5 (FINDINGS floor) | paper read; reproduced exactly (RM_PROTO); under our judge grid-free best 8.52e-5, on the grid 587–700 CX (FINDINGS) |
+| Gao, Yuan, Yao, "Extremely Low-Cost Magic State Preparation toward Fault-Tolerant Quantum Computing", arXiv:2609.12698 (2026-09) | G1: qRM15 source and grouped checks; the published destructive diagnostic is not this judge's live-output score | New independently reconstructed, physically corrected live-output circuit: 160 CX, 23 clocks, abstract full-noise L=4.5215039968e-5, A=0.724118; generic encoder uses 32 CX versus the paper's 25. See `SOTA_SOURCE_20261028/REPORT.md` |
 | Goto, Sci. Rep. 6, 19578 (2016) | G1: FT Steane \|0_L⟩ with one verification ancilla; magic state with 2 + 16 ancillas | abstract checked (nature.com/articles/srep19578) |
 | Chamberland & Noh, npj QI 6, 91 (2020), arXiv:2003.03049 | G1: redundant ancilla encoding + flags for color-code H-type magic states; 5e-8 at p=1e-4 with 64 qubits | abstract checked |
 | Weilandt, Peham, Wille, arXiv:2601.13313; Criger et al., arXiv:2607.22498; arXiv:2610.09749 | G1: automated synthesis/reduction of FT state-prep circuits (Steane-type detection, ILP flags) | titles and abstracts checked; lane LIT |
 | Daguerre & Kim, arXiv:2410.07327 | G1: two-block RM15 → Steane code switch, corrected-output fit 25.5p² (≈ 2.44e-5 at 1e-3) without idles, acceptance ≈ 0.84, 26 qubits, 100 CX | lane SEARCH summary (Eq. 23, Table VII); not reproduced |
 | Weilandt et al. MQT branch `ft-stateprep-qubit-perm` (Zenodo 23183007) | G1: fault-set-guided synthesis of verified CSS state preps, a candidate generator for B/C resources | code on Zenodo 23183007 (the SEARCH lane's copy was removed in the 2026-10-25 cleanup) |
+

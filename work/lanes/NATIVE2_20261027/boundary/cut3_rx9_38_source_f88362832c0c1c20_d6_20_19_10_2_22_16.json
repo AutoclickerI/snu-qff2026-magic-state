@@ -1,0 +1,70 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": {
+    "acceptance_policy": "Changed source postselection: omit source c321 herald; keep the actual noisy RX9 at38 and all other cut3 operations.",
+    "edits": [
+      {
+        "action": "replace",
+        "new_kind": "RX",
+        "old_kind": "H",
+        "qs": [
+          9
+        ],
+        "time": 38
+      },
+      {
+        "action": "remove",
+        "bit": 321,
+        "kind": "MX",
+        "qs": [
+          9
+        ],
+        "removed_checks": [
+          [
+            321
+          ]
+        ],
+        "time": 39
+      }
+    ],
+    "official_native_q9": [
+      {
+        "kind": "RX",
+        "noise_block": [
+          "RX 9",
+          "Z_ERROR(0.001) 9",
+          "DEPOLARIZE1(0.0009999999999999731) 9"
+        ],
+        "qs": [
+          9
+        ],
+        "time": 38
+      }
+    ],
+    "parent": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/boundary/q15_early39_cut3_source_53a631c4e5411b03_d6_20_19_10_2_22_16",
+    "raw": {
+      "acceptance": 0.9999999999999997,
+      "conditional_detectors": [],
+      "errors": [],
+      "infidelity": 0.0,
+      "ok": true,
+      "rank": 5,
+      "six_stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ]
+    }
+  }
+}

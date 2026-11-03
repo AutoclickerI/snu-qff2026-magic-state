@@ -1,0 +1,251 @@
+{
+  "status": "OPTIMAL",
+  "R": 44,
+  "t0": 37,
+  "seconds": 0.9844303700000001,
+  "A": [
+    7,
+    14,
+    13,
+    9,
+    8,
+    21,
+    15
+  ],
+  "early_cells": [
+    7,
+    8
+  ],
+  "prefix_stem": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/END2_20261027/boundary/source_cut3_rx9_early",
+  "direct_plus": true,
+  "logical_x_herald": [
+    7,
+    8,
+    9
+  ],
+  "exclude_logical_hooks": false,
+  "soft_phase_objective": true,
+  "product_states": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/END2_20261027/cut3_rx9_early_product_states.json",
+  "excluded_gate_multisets": 0,
+  "scope": "Native A plusL; weighted residual phase-hook proxy minimized. Residual unsafe classes are listed explicitly; this is not a full logical-loss objective.",
+  "cx": 11,
+  "ops": [
+    [],
+    [
+      [
+        14,
+        8
+      ]
+    ],
+    [
+      [
+        9,
+        15
+      ]
+    ],
+    [
+      [
+        14,
+        13
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        21,
+        15
+      ]
+    ],
+    [
+      [
+        7,
+        13
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        15,
+        14
+      ]
+    ],
+    [
+      [
+        13,
+        14
+      ],
+      [
+        15,
+        9
+      ]
+    ],
+    [
+      [
+        9,
+        15
+      ]
+    ]
+  ],
+  "initial_rows": {
+    "7": 9,
+    "14": 2,
+    "13": 0,
+    "9": 5,
+    "8": 0,
+    "21": 6,
+    "15": 0
+  },
+  "operations": [
+    {
+      "time": 37,
+      "kind": "RX",
+      "qs": [
+        14
+      ]
+    },
+    {
+      "time": 38,
+      "kind": "CX",
+      "qs": [
+        14,
+        8
+      ]
+    },
+    {
+      "time": 39,
+      "kind": "CX",
+      "qs": [
+        9,
+        15
+      ]
+    },
+    {
+      "time": 39,
+      "kind": "RX",
+      "qs": [
+        21
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "CX",
+      "qs": [
+        8,
+        9
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "CX",
+      "qs": [
+        14,
+        13
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "CX",
+      "qs": [
+        21,
+        15
+      ]
+    },
+    {
+      "time": 40,
+      "kind": "RX",
+      "qs": [
+        7
+      ]
+    },
+    {
+      "time": 41,
+      "kind": "CX",
+      "qs": [
+        7,
+        13
+      ]
+    },
+    {
+      "time": 41,
+      "kind": "CX",
+      "qs": [
+        9,
+        8
+      ]
+    },
+    {
+      "time": 41,
+      "kind": "CX",
+      "qs": [
+        15,
+        14
+      ]
+    },
+    {
+      "time": 42,
+      "kind": "CX",
+      "qs": [
+        13,
+        14
+      ]
+    },
+    {
+      "time": 42,
+      "kind": "CX",
+      "qs": [
+        15,
+        9
+      ]
+    },
+    {
+      "time": 43,
+      "kind": "CX",
+      "qs": [
+        9,
+        15
+      ]
+    }
+  ],
+  "reused_inputs": [
+    13,
+    9,
+    8,
+    15
+  ],
+  "helpers": [],
+  "a_ready": 44,
+  "plus_inputs": [
+    7,
+    14,
+    9,
+    21
+  ],
+  "helper_x_byproducts": [],
+  "source_x_byproducts": [],
+  "independent_phase_audit": false,
+  "phase_audit_bad": [
+    [
+      5,
+      13,
+      14,
+      1
+    ],
+    [
+      5,
+      14,
+      1
+    ]
+  ],
+  "phase_cost": 8,
+  "actual_ready": {
+    "7": 42,
+    "14": 43,
+    "13": 43,
+    "9": 44,
+    "8": 42,
+    "21": 41,
+    "15": 44
+  }
+}

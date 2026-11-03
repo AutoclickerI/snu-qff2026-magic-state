@@ -1,0 +1,53 @@
+[
+  {
+    "block": "A",
+    "tap": 18,
+    "delta": 1,
+    "added_detectors": 3,
+    "clocks": 22,
+    "cx": 155,
+    "raw": true,
+    "c1": 0.0,
+    "loss": 3.1956878374764387e-05,
+    "acceptance": 0.6491753424378118,
+    "stem": "/workspace/scratch/3c9006f1546a/quantumn/work/lanes/SOTA_DETECT_20261028/deep_kverify_reuse/verify_A"
+  },
+  {
+    "block": "B",
+    "tap": 18,
+    "delta": 1,
+    "added_detectors": 6,
+    "clocks": 22,
+    "cx": 155,
+    "raw": false,
+    "detail": {
+      "errors": [
+        "detector(s) #13, #14, #15 (in the order written) are not deterministic: noiselessly they read 1 for some measurement outcomes (use POSTSELECT for a condition that is random by design)"
+      ],
+      "acceptance": 0.9999999999999994,
+      "six_stabilizers": [
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994,
+        0.9999999999999994
+      ],
+      "ok": false,
+      "scope": "Official exact simulator on abstract native stream; excludes adjacency validation of ideal nonlocal encoders."
+    }
+  },
+  {
+    "block": "C",
+    "tap": 18,
+    "delta": 1,
+    "added_detectors": 3,
+    "clocks": 22,
+    "cx": 155,
+    "raw": true,
+    "c1": 0.0,
+    "loss": 3.1957784488748795e-05,
+    "acceptance": 0.6491753424378118,
+    "stem": "/workspace/scratch/3c9006f1546a/quantumn/work/lanes/SOTA_DETECT_20261028/deep_kverify_reuse/verify_C"
+  }
+]

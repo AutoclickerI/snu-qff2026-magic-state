@@ -1,0 +1,321 @@
+{
+  "data_qubits": [
+    0,
+    20,
+    7,
+    10,
+    3,
+    22,
+    21
+  ],
+  "cx": 153,
+  "native_depth": 38,
+  "source": "Dynamic flag with individual wire release",
+  "parent": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/PREFIX2_20261027/cand/dynamic11_5_first0",
+  "early": false,
+  "omit_dead_reset": true,
+  "removed": [
+    {
+      "reason": "reset before fresh preparation",
+      "k": "R",
+      "q": [
+        2
+      ],
+      "t": 0,
+      "b": null
+    },
+    {
+      "reason": "reset before fresh preparation",
+      "k": "R",
+      "q": [
+        10
+      ],
+      "t": 0,
+      "b": null
+    },
+    {
+      "reason": "discarded state is reset before every later interaction",
+      "k": "R",
+      "q": [
+        10
+      ],
+      "t": 24,
+      "b": null
+    }
+  ],
+  "parent_synthesis": {
+    "rows": [
+      0,
+      0,
+      0,
+      0,
+      9,
+      16,
+      22,
+      23,
+      18,
+      0,
+      0
+    ],
+    "actions": [
+      [
+        "up",
+        9,
+        -1
+      ],
+      [
+        "cx",
+        9,
+        5
+      ],
+      [
+        "cx",
+        5,
+        4
+      ],
+      [
+        "cx",
+        8,
+        9
+      ],
+      [
+        "cx",
+        2,
+        5
+      ],
+      [
+        "cx",
+        9,
+        8
+      ],
+      [
+        "cx",
+        5,
+        9
+      ],
+      [
+        "cx",
+        8,
+        7
+      ],
+      [
+        "cx",
+        5,
+        7
+      ],
+      [
+        "cx",
+        6,
+        4
+      ],
+      [
+        "cx",
+        4,
+        6
+      ],
+      [
+        "cx",
+        5,
+        4
+      ],
+      [
+        "cx",
+        8,
+        7
+      ],
+      [
+        "cx",
+        7,
+        6
+      ],
+      [
+        "cx",
+        5,
+        4
+      ],
+      [
+        "cx",
+        9,
+        5
+      ],
+      [
+        "cx",
+        6,
+        4
+      ],
+      [
+        "cx",
+        4,
+        5
+      ],
+      [
+        "cx",
+        9,
+        8
+      ],
+      [
+        "cx",
+        6,
+        7
+      ],
+      [
+        "cx",
+        8,
+        7
+      ],
+      [
+        "cx",
+        4,
+        1
+      ],
+      [
+        "cx",
+        2,
+        1
+      ],
+      [
+        "cx",
+        6,
+        4
+      ],
+      [
+        "cx",
+        4,
+        1
+      ],
+      [
+        "cx",
+        1,
+        0
+      ],
+      [
+        "cx",
+        5,
+        4
+      ],
+      [
+        "cx",
+        8,
+        7
+      ],
+      [
+        "cx",
+        7,
+        6
+      ],
+      [
+        "cx",
+        6,
+        4
+      ],
+      [
+        "cx",
+        4,
+        1
+      ],
+      [
+        "cx",
+        7,
+        5
+      ],
+      [
+        "cx",
+        8,
+        7
+      ],
+      [
+        "cx",
+        5,
+        7
+      ],
+      [
+        "cx",
+        7,
+        6
+      ],
+      [
+        "cx",
+        8,
+        9
+      ],
+      [
+        "cx",
+        9,
+        5
+      ],
+      [
+        "cx",
+        5,
+        2
+      ],
+      [
+        "cx",
+        8,
+        7
+      ],
+      [
+        "cx",
+        9,
+        8
+      ],
+      [
+        "move",
+        9,
+        1
+      ],
+      [
+        "cx",
+        1,
+        4
+      ],
+      [
+        "cx",
+        1,
+        4
+      ],
+      [
+        "down",
+        1,
+        -1
+      ]
+    ],
+    "goals": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "seed": 1,
+    "cells": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      9,
+      14,
+      15,
+      16,
+      10,
+      13
+    ],
+    "source_cx": 41,
+    "periods": 2,
+    "cx_depth": 22,
+    "exposure_proxy": 182.0,
+    "dynamic_flag": true,
+    "phase_mode": "first",
+    "phase_seed": 0
+  }
+}

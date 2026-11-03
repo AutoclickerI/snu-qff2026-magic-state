@@ -1,0 +1,828 @@
+{
+  "first": 2.8865798640254076e-16,
+  "second": 28.059999999999935,
+  "pairs": [
+    [
+      "terminal_round + terminal_round",
+      25.737777777777712
+    ],
+    [
+      "terminal_resource + terminal_resource",
+      0.7422222222222222
+    ],
+    [
+      "logical_check_or_data_wait + terminal_resource",
+      0.4066666666666667
+    ],
+    [
+      "terminal_resource + terminal_round",
+      0.3822222222222221
+    ],
+    [
+      "precheck_resource + terminal_resource",
+      0.33944444444444444
+    ],
+    [
+      "logical_check_or_data_wait + precheck_resource",
+      0.21000000000000005
+    ],
+    [
+      "precheck_resource + terminal_round",
+      0.12166666666666671
+    ],
+    [
+      "first_cat + terminal_resource",
+      0.033333333333333326
+    ],
+    [
+      "T_layers + terminal_resource",
+      0.033333333333333326
+    ],
+    [
+      "second_cat + terminal_resource",
+      0.033333333333333326
+    ],
+    [
+      "precheck + terminal_resource",
+      0.02
+    ]
+  ],
+  "top": [
+    {
+      "value": 0.4622222222222222,
+      "module": "terminal_resource + terminal_resource",
+      "a": [
+        "DEPOLARIZE2 XI@[8, 13] after/before native#173 srcL225",
+        "DEPOLARIZE2 XI@[10, 12] after/before native#174 srcL226",
+        "DEPOLARIZE2 XX@[8, 9] after/before native#176 srcL229",
+        "DEPOLARIZE2 XX@[10, 11] after/before native#177 srcL230"
+      ],
+      "b": [
+        "X_ERROR X@[14] after/before native#179 srcL232",
+        "X_ERROR X@[21] after/before native#186 srcL243",
+        "DEPOLARIZE2 IX@[16, 14] after/before native#194 srcL256",
+        "DEPOLARIZE2 XI@[16, 14] after/before native#194 srcL256",
+        "DEPOLARIZE2 YZ@[16, 14] after/before native#194 srcL256",
+        "DEPOLARIZE2 ZY@[16, 14] after/before native#194 srcL256",
+        "DEPOLARIZE1 X@[16] after/before native#194 srcL256",
+        "DEPOLARIZE2 IX@[23, 21] after/before native#197 srcL259",
+        "DEPOLARIZE2 XI@[23, 21] after/before native#197 srcL259",
+        "DEPOLARIZE2 YZ@[23, 21] after/before native#197 srcL259",
+        "DEPOLARIZE2 ZY@[23, 21] after/before native#197 srcL259",
+        "DEPOLARIZE1 X@[23] after/before native#197 srcL259",
+        "DEPOLARIZE2 IX@[18, 14] after/before native#201 srcL264",
+        "DEPOLARIZE2 XI@[18, 14] after/before native#201 srcL264",
+        "DEPOLARIZE2 IX@[25, 21] after/before native#204 srcL267",
+        "DEPOLARIZE2 XI@[25, 21] after/before native#204 srcL267"
+      ],
+      "loss": 0.49999999999999994
+    },
+    {
+      "value": 0.23999999999999996,
+      "module": "terminal_resource + terminal_round",
+      "a": [
+        "DEPOLARIZE2 XI@[8, 13] after/before native#173 srcL225",
+        "DEPOLARIZE2 XI@[10, 12] after/before native#174 srcL226",
+        "DEPOLARIZE2 XX@[8, 9] after/before native#176 srcL229",
+        "DEPOLARIZE2 XX@[10, 11] after/before native#177 srcL230"
+      ],
+      "b": [
+        "DEPOLARIZE2 IX@[20, 14] after/before native#208 srcL272",
+        "DEPOLARIZE2 XX@[16, 15] after/before native#209 srcL273",
+        "DEPOLARIZE2 XX@[18, 17] after/before native#210 srcL274",
+        "DEPOLARIZE2 IX@[27, 21] after/before native#211 srcL275",
+        "DEPOLARIZE2 XX@[23, 22] after/before native#212 srcL276",
+        "DEPOLARIZE2 XX@[25, 24] after/before native#213 srcL277",
+        "DEPOLARIZE2 IX@[0, 14] after/before native#215 srcL280",
+        "DEPOLARIZE2 IX@[7, 21] after/before native#216 srcL281",
+        "DEPOLARIZE2 IX@[21, 14] after/before native#230 srcL296",
+        "DEPOLARIZE2 IY@[21, 14] after/before native#230 srcL296",
+        "DEPOLARIZE2 XX@[21, 14] after/before native#230 srcL296",
+        "DEPOLARIZE2 XY@[21, 14] after/before native#230 srcL296",
+        "X_ERROR X@[14] after/before native#243 srcL310"
+      ],
+      "loss": 0.49999999999999994
+    },
+    {
+      "value": 0.2222222222222222,
+      "module": "logical_check_or_data_wait + terminal_resource",
+      "a": [
+        "DEPOLARIZE1 X@[0] after/before native#165 srcL217",
+        "DEPOLARIZE1 X@[0] after/before native#165 srcL217"
+      ],
+      "b": [
+        "DEPOLARIZE2 XI@[8, 13] after/before native#173 srcL225",
+        "DEPOLARIZE2 XI@[10, 12] after/before native#174 srcL226",
+        "DEPOLARIZE2 XX@[8, 9] after/before native#176 srcL229",
+        "DEPOLARIZE2 XX@[10, 11] after/before native#177 srcL230"
+      ],
+      "loss": 0.5
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Y@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Y@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Y@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Y@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Z@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Y@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Z@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XY@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Y@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Z@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Y@[1] after/before native#231 srcL297"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Y@[2] after/before native#233 srcL299"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Y@[3] after/before native#235 srcL301"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Y@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Z@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Y@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE2 XZ@[7, 0] after/before native#229 srcL295",
+        "DEPOLARIZE1 Z@[0] after/before native#229 srcL295"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Y@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Y@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Y@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Y@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Z@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Y@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Z@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XY@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Y@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Z@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Y@[2] after/before native#233 srcL299"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Y@[3] after/before native#235 srcL301"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Y@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Y@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Z@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE2 XZ@[8, 1] after/before native#231 srcL297",
+        "DEPOLARIZE1 Z@[1] after/before native#231 srcL297"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Y@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Y@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Y@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Z@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Y@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Z@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XY@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Y@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Z@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Y@[3] after/before native#235 srcL301"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Y@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Y@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Y@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE2 XZ@[9, 2] after/before native#233 srcL299",
+        "DEPOLARIZE1 Z@[2] after/before native#233 srcL299"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Z@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Y@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Z@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Y@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Z@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XY@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Y@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Z@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Y@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XZ@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Z@[4] after/before native#237 srcL303"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XY@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Y@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Z@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XY@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Y@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE2 XZ@[10, 3] after/before native#235 srcL301",
+        "DEPOLARIZE1 Z@[3] after/before native#235 srcL301"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Z@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Y@[4] after/before native#237 srcL303"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE2 XZ@[12, 5] after/before native#239 srcL305",
+        "DEPOLARIZE1 Z@[5] after/before native#239 srcL305"
+      ],
+      "loss": 1.0
+    },
+    {
+      "value": 0.2177777777777778,
+      "module": "terminal_round + terminal_round",
+      "a": [
+        "DEPOLARIZE2 IY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE2 XY@[11, 4] after/before native#237 srcL303",
+        "DEPOLARIZE1 Y@[4] after/before native#237 srcL303"
+      ],
+      "b": [
+        "DEPOLARIZE2 IZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE2 XZ@[13, 6] after/before native#241 srcL307",
+        "DEPOLARIZE1 Z@[6] after/before native#241 srcL307"
+      ],
+      "loss": 1.0
+    }
+  ],
+  "kernel_tables": 743
+}

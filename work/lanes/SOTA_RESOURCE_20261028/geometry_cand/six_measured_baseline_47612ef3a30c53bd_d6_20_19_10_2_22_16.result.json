@@ -1,0 +1,501 @@
+{
+  "source": "work/lanes/SOTA_RESOURCE_20261028/six_source_release.json",
+  "a_file": "-",
+  "a_index": 0,
+  "bc_file": "work/lanes/SOTA_RESOURCE_20261028/joint_modules/six_identity_2.json",
+  "bc_shift": 0,
+  "roles": {
+    "D": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "A": [
+      7,
+      21,
+      18,
+      4,
+      8,
+      23,
+      17
+    ],
+    "B": [
+      12,
+      26,
+      25,
+      11,
+      3,
+      28,
+      15
+    ],
+    "C": [
+      13,
+      27,
+      24,
+      5,
+      9,
+      29,
+      14
+    ]
+  },
+  "square_mask": 63,
+  "tail": 81,
+  "cx": 401,
+  "ticks": 84,
+  "detectors": 58,
+  "record_contract": {
+    "rotation_rank": 5,
+    "rotation_state_stabilizer_rank": 4,
+    "records": 74,
+    "declared_rank": 45,
+    "complete_rank": 58,
+    "missing": [
+      {
+        "bits": [
+          11
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          286,
+          292
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          312
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          381,
+          382,
+          383,
+          384
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          380,
+          382,
+          383,
+          385
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          380,
+          381,
+          383,
+          386
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          388,
+          389,
+          390,
+          391
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          387,
+          389,
+          390,
+          392
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          387,
+          388,
+          390,
+          393
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          379,
+          394,
+          395,
+          396
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          394,
+          397,
+          398
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          395,
+          397,
+          399
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      },
+      {
+        "bits": [
+          400
+        ],
+        "reference": 0,
+        "expectation": 0.9999999999999997
+      }
+    ]
+  },
+  "qasm_sha256": "47612ef3a30c53bd0281ac70ad5cad68b400a766655f27eab57ee2a3442acaa3",
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999997,
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997,
+      0.9999999999999997
+    ],
+    "ok": true
+  },
+  "stem": "/workspace/scratch/3c9006f1546a/quantumn/work/lanes/SOTA_RESOURCE_20261028/geometry_cand/six_measured_baseline_47612ef3a30c53bd_d6_20_19_10_2_22_16",
+  "singles": {
+    "c1": 5.699999999999999,
+    "harmful_faults": [
+      {
+        "label": "DEPOLARIZE2 XI@[3, 9] after/before native#375 srcL505",
+        "channel": 526,
+        "time": 41,
+        "operation": "CX",
+        "qubits": [
+          3,
+          9
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[3, 9] after/before native#375 srcL505",
+        "channel": 526,
+        "time": 41,
+        "operation": "CX",
+        "qubits": [
+          3,
+          9
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": [
+          383,
+          380,
+          384,
+          397,
+          390,
+          387,
+          394,
+          393,
+          388,
+          395
+        ]
+      },
+      {
+        "label": "DEPOLARIZE1 X@[3] after/before native#375 srcL505",
+        "channel": 527,
+        "time": 41,
+        "operation": "CX",
+        "qubits": [
+          3,
+          9
+        ],
+        "pauli": "X",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 3.333333333333333,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[9, 3] after/before native#434 srcL589",
+        "channel": 625,
+        "time": 62,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "IX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 X@[3] after/before native#434 srcL589",
+        "channel": 626,
+        "time": 62,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "X",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.49999999999999994,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[9, 3] after/before native#445 srcL606",
+        "channel": 645,
+        "time": 66,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "IX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 X@[3] after/before native#445 srcL606",
+        "channel": 646,
+        "time": 66,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "X",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 1.1666666666666665,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 ZX@[13, 7] after/before native#466 srcL634",
+        "channel": 682,
+        "time": 72,
+        "operation": "CX",
+        "qubits": [
+          13,
+          7
+        ],
+        "pauli": "ZX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.5,
+        "c1_contribution": 0.03333333333333333,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[9, 3] after/before native#478 srcL649",
+        "channel": 701,
+        "time": 74,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "IX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 X@[3] after/before native#478 srcL649",
+        "channel": 702,
+        "time": 74,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "X",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.16666666666666663,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[9, 3] after/before native#488 srcL662",
+        "channel": 718,
+        "time": 76,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "IX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 X@[3] after/before native#488 srcL662",
+        "channel": 719,
+        "time": 76,
+        "operation": "CX",
+        "qubits": [
+          9,
+          3
+        ],
+        "pauli": "X",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.16666666666666663,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[5, 4] after/before native#494 srcL671",
+        "channel": 730,
+        "time": 77,
+        "operation": "CX",
+        "qubits": [
+          5,
+          4
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 ZX@[5, 4] after/before native#494 srcL671",
+        "channel": 730,
+        "time": 77,
+        "operation": "CX",
+        "qubits": [
+          5,
+          4
+        ],
+        "pauli": "ZX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[4, 3] after/before native#499 srcL677",
+        "channel": 738,
+        "time": 78,
+        "operation": "CX",
+        "qubits": [
+          4,
+          3
+        ],
+        "pauli": "IX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[3, 9] after/before native#506 srcL685",
+        "channel": 747,
+        "time": 79,
+        "operation": "CX",
+        "qubits": [
+          3,
+          9
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      }
+    ],
+    "fault_components": 7050
+  },
+  "exact": {
+    "loss": 0.006270610322780911,
+    "acceptance": 0.27801426350428343,
+    "width": 12,
+    "basis": {
+      "id": "7ad4882ba2259e25583dbb16abfcdb31ba0345222418a35268753bc01d5ba179",
+      "replayed": 47,
+      "selected": "7f8331a4956cb8a0efec5f9445a3a97a309f9048cff1720a3c58ebde1e659946",
+      "trained": false,
+      "threshold": 12,
+      "operations": 34
+    },
+    "raw": {
+      "errors": [],
+      "acceptance": 0.9999999999999997,
+      "conditional_detectors": [],
+      "infidelity": 0.0,
+      "rank": 5,
+      "six_stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ],
+      "ok": true
+    },
+    "exact_acceptance_ok": false,
+    "kernel_omission_bound": 6.707029078990345e-14,
+    "qasm_sha256": "47612ef3a30c53bd0281ac70ad5cad68b400a766655f27eab57ee2a3442acaa3",
+    "data_qubits": [
+      6,
+      20,
+      19,
+      10,
+      2,
+      22,
+      16
+    ],
+    "evaluator_version": "94d0bfed2b6ff678c667dd24a5e57a249e01da0febc72bec4adf0d987fb9c83f",
+    "seconds": 14.379381240003568,
+    "evaluation_seconds": 14.379381240003568,
+    "cache_hit": false
+  },
+  "seconds": 15.63058992799779
+}

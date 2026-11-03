@@ -1,0 +1,1489 @@
+{
+  "stem": "/workspace/scratch/3c9006f1546a/quantumn/work/lanes/C4_DIRECT_20261028/direct_flagged",
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999994,
+    "conditional_detectors": [],
+    "infidelity": 1.1102230246251573e-16,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994
+    ],
+    "ok": true,
+    "scope": "Official exact simulator on abstract native stream; excludes adjacency validation of ideal nonlocal encoders."
+  },
+  "cx": 210,
+  "clocks": 49,
+  "T": 15,
+  "detectors": 26,
+  "abstract": true,
+  "singles": {
+    "c1": 1.5833333333333344,
+    "harmful_faults": [
+      {
+        "label": "DEPOLARIZE2 XI@[28, 32] after/before native#143 srcL186",
+        "channel": 246,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XI",
+        "acceptance": 0.49999999999999994,
+        "loss_numerator": 0.25,
+        "c1_contribution": 0.016666666666666666,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 32] after/before native#143 srcL186",
+        "channel": 246,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YZ",
+        "acceptance": 0.49999999999999994,
+        "loss_numerator": 0.25,
+        "c1_contribution": 0.016666666666666666,
+        "record_flips": [
+          7,
+          10,
+          11
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[29, 34] after/before native#144 srcL187",
+        "channel": 247,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          29,
+          34
+        ],
+        "pauli": "XI",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[31, 33] after/before native#145 srcL188",
+        "channel": 248,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          31,
+          33
+        ],
+        "pauli": "XI",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 34] after/before native#146 srcL190",
+        "channel": 250,
+        "time": 21,
+        "operation": "CX",
+        "qubits": [
+          28,
+          34
+        ],
+        "pauli": "XX",
+        "acceptance": 0.49999999999999994,
+        "loss_numerator": 0.25,
+        "c1_contribution": 0.016666666666666666,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 30] after/before native#147 srcL191",
+        "channel": 251,
+        "time": 21,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XX",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[31, 32] after/before native#148 srcL192",
+        "channel": 252,
+        "time": 21,
+        "operation": "CX",
+        "qubits": [
+          31,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          16,
+          18
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 32] after/before native#201 srcL267",
+        "channel": 353,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 32] after/before native#201 srcL267",
+        "channel": 353,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          16,
+          20
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 32] after/before native#204 srcL271",
+        "channel": 358,
+        "time": 29,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XZ@[28, 32] after/before native#204 srcL271",
+        "channel": 358,
+        "time": 29,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          16,
+          20
+        ]
+      },
+      {
+        "label": "DEPOLARIZE1 X@[28] after/before native#204 srcL271",
+        "channel": 359,
+        "time": 29,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "X",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.16666666666666669,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[29, 30] after/before native#205 srcL272",
+        "channel": 360,
+        "time": 29,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XZ@[29, 30] after/before native#205 srcL272",
+        "channel": 360,
+        "time": 29,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          17,
+          18
+        ]
+      },
+      {
+        "label": "DEPOLARIZE1 X@[29] after/before native#205 srcL272",
+        "channel": 361,
+        "time": 29,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "X",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.16666666666666669,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 32] after/before native#208 srcL277",
+        "channel": 366,
+        "time": 31,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 32] after/before native#208 srcL277",
+        "channel": 366,
+        "time": 31,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          16,
+          20
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 30] after/before native#209 srcL278",
+        "channel": 367,
+        "time": 31,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[29, 30] after/before native#209 srcL278",
+        "channel": 367,
+        "time": 31,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          17,
+          18
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 30] after/before native#239 srcL329",
+        "channel": 423,
+        "time": 37,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 30] after/before native#239 srcL329",
+        "channel": 423,
+        "time": 37,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          25,
+          27
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 32] after/before native#241 srcL332",
+        "channel": 426,
+        "time": 38,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 32] after/before native#241 srcL332",
+        "channel": 426,
+        "time": 38,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          25,
+          29
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 32] after/before native#244 srcL336",
+        "channel": 431,
+        "time": 39,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XZ@[28, 32] after/before native#244 srcL336",
+        "channel": 431,
+        "time": 39,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          25,
+          29
+        ]
+      },
+      {
+        "label": "DEPOLARIZE1 X@[28] after/before native#244 srcL336",
+        "channel": 432,
+        "time": 39,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "X",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.16666666666666669,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[29, 30] after/before native#245 srcL337",
+        "channel": 433,
+        "time": 39,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XZ@[29, 30] after/before native#245 srcL337",
+        "channel": 433,
+        "time": 39,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          26,
+          27
+        ]
+      },
+      {
+        "label": "DEPOLARIZE1 X@[29] after/before native#245 srcL337",
+        "channel": 434,
+        "time": 39,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "X",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.16666666666666669,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 32] after/before native#248 srcL342",
+        "channel": 439,
+        "time": 41,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 32] after/before native#248 srcL342",
+        "channel": 439,
+        "time": 41,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          25,
+          29
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 30] after/before native#249 srcL343",
+        "channel": 440,
+        "time": 41,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[29, 30] after/before native#249 srcL343",
+        "channel": 440,
+        "time": 41,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          26,
+          27
+        ]
+      }
+    ],
+    "fault_components": 3996
+  },
+  "exact": {
+    "loss": 0.004629184867733414,
+    "acceptance": 0.33128522843897273,
+    "observable": 0.32821806730618613,
+    "acceptance_kernel_omission_bound": 8.489099722654159e-15,
+    "observable_kernel_omission_bound": 3.050306827541815e-14,
+    "loss_kernel_omission_interval": [
+      0.004629184867674718,
+      0.004629184867792124
+    ],
+    "bound_scope": "Analytic sparse-kernel omission only; not a floating-point roundoff certificate.",
+    "rows": [
+      {
+        "key": null,
+        "value": 0.33128522843897273,
+        "kernel_nonzero": 21,
+        "peak_bucket_elements": 688128,
+        "absolute_kernel_omission_bound": 8.489099722654159e-15,
+        "seconds": 0.1265280600055121
+      },
+      {
+        "key": [
+          "X",
+          0,
+          0
+        ],
+        "value": 0.21619264795139165,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 5.564347683586026e-15,
+        "seconds": 0.9343381939979736
+      },
+      {
+        "key": [
+          "X",
+          1,
+          0
+        ],
+        "value": 0.225125822909665,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.404178729578803e-15,
+        "seconds": 0.05487346999871079
+      },
+      {
+        "key": [
+          "X",
+          2,
+          0
+        ],
+        "value": 0.22620718042300575,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.166519389908494e-15,
+        "seconds": 0.05752048899012152
+      },
+      {
+        "key": [
+          "X",
+          3,
+          0
+        ],
+        "value": 0.22463047636910644,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.388963264989037e-15,
+        "seconds": 0.058008320003864355
+      },
+      {
+        "key": [
+          "X",
+          4,
+          0
+        ],
+        "value": 0.22733019856228953,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 5.3442509368023246e-15,
+        "seconds": 0.059455045993672684
+      },
+      {
+        "key": [
+          "X",
+          5,
+          0
+        ],
+        "value": 0.22555815751344926,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 5.093547130925622e-15,
+        "seconds": 0.06417961198894773
+      },
+      {
+        "key": [
+          "X",
+          6,
+          0
+        ],
+        "value": 0.2246942482294821,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.204891888243245e-15,
+        "seconds": 0.06241618900094181
+      },
+      {
+        "key": [
+          "X",
+          7,
+          0
+        ],
+        "value": 0.22505383118845473,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.275813533400374e-15,
+        "seconds": 0.05249737600388471
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          0
+        ],
+        "value": -0.21536379718706591,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8639211959962267
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          1
+        ],
+        "value": -0.21578095012718748,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8473489540047012
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          2
+        ],
+        "value": -0.2157935890718252,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8983240780071355
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          3
+        ],
+        "value": -0.21573967066102392,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.9855603560135933
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          4
+        ],
+        "value": -0.21579420708311017,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8949934809934348
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          5
+        ],
+        "value": -0.2157391472729178,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8748500619985862
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          6
+        ],
+        "value": -0.21583290989596174,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8474078039871529
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          7
+        ],
+        "value": -0.215780136617277,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.9214914399926784
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          0
+        ],
+        "value": -0.21556125974789453,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05137135898985434
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          1
+        ],
+        "value": -0.2247557786964999,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.053362998994998634
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          2
+        ],
+        "value": -0.22194538035997652,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05055225899559446
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          3
+        ],
+        "value": -0.21867565518945303,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05588466800691094
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          4
+        ],
+        "value": -0.2212155504748406,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05909751800936647
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          5
+        ],
+        "value": -0.21784551217573261,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05931797399534844
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          6
+        ],
+        "value": -0.21892182815925,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.055157388997031376
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          7
+        ],
+        "value": -0.22021613100362356,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05286439700284973
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          0
+        ],
+        "value": -0.21430905306330478,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.053850890006287955
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          1
+        ],
+        "value": -0.22009604251601672,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.051992745997267775
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          2
+        ],
+        "value": -0.22583536872995338,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.05094460801046807
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          3
+        ],
+        "value": -0.21917812209227622,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.05331257499346975
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          4
+        ],
+        "value": -0.22312028883480933,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.04874197600292973
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          5
+        ],
+        "value": -0.22015317574272397,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.049960473988903686
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          6
+        ],
+        "value": -0.21738682381981916,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.05990220600506291
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          7
+        ],
+        "value": -0.219119899705294,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.05197368700464722
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          0
+        ],
+        "value": -0.21599056648955467,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.05079459599801339
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          1
+        ],
+        "value": -0.2191565613786301,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.053774978005094454
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          2
+        ],
+        "value": -0.2215025656342015,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.08044809498824179
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          3
+        ],
+        "value": -0.22426109332185987,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.05926153899054043
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          4
+        ],
+        "value": -0.22176082055248017,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.05557994300033897
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          5
+        ],
+        "value": -0.22071381447806443,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.10236986599920783
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          6
+        ],
+        "value": -0.21838149340600166,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.06804062899027485
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          7
+        ],
+        "value": -0.21735221251818104,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.05324746901169419
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          0
+        ],
+        "value": -0.21272107373674987,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.065690547999111
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          1
+        ],
+        "value": -0.21906264973215134,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.06585748499492183
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          2
+        ],
+        "value": -0.2214605555203239,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05820802399830427
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          3
+        ],
+        "value": -0.21911628408659883,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.0563012280035764
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          4
+        ],
+        "value": -0.2269571061512611,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05427399399923161
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          5
+        ],
+        "value": -0.22073854378315688,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.058112258004257455
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          6
+        ],
+        "value": -0.21846453754543507,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05742186200222932
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          7
+        ],
+        "value": -0.22068315370979977,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.06296006099728402
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          0
+        ],
+        "value": -0.21433126784650064,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.06885852498817258
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          1
+        ],
+        "value": -0.21741667106145998,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.06728367500181776
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          2
+        ],
+        "value": -0.22077600189893587,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.0708789250056725
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          3
+        ],
+        "value": -0.2197954582699373,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.06162729300558567
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          4
+        ],
+        "value": -0.22247382296846335,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.053090517001692206
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          5
+        ],
+        "value": -0.2251867042858419,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.057483464013785124
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          6
+        ],
+        "value": -0.2200598534834683,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.06101931500597857
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          7
+        ],
+        "value": -0.21908321883329662,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.06351280699891504
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          0
+        ],
+        "value": -0.21579694438922675,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.05631151299166959
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          1
+        ],
+        "value": -0.2193375363917724,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.05223406199365854
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          2
+        ],
+        "value": -0.21885432793244086,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.049851764997583814
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          3
+        ],
+        "value": -0.21832199579991723,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.053508315002545714
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          4
+        ],
+        "value": -0.22158513400966628,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.06158856599358842
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          5
+        ],
+        "value": -0.22091744048267214,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.06155048000800889
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          6
+        ],
+        "value": -0.22432421218334553,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.06232448299124371
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          7
+        ],
+        "value": -0.21998217119316565,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.06245593600033317
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          0
+        ],
+        "value": -0.21485923810615642,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.061335192003753036
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          1
+        ],
+        "value": -0.2202830651033023,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.06145714200101793
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          2
+        ],
+        "value": -0.22023742303738603,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.06648667799890973
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          3
+        ],
+        "value": -0.2169388389562966,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.06757542099512648
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          4
+        ],
+        "value": -0.22292060329093158,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.08456597100303043
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          5
+        ],
+        "value": -0.21957823595665393,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.06169627400231548
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          6
+        ],
+        "value": -0.21962233718604468,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.1110440100019332
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          7
+        ],
+        "value": -0.22468305583865816,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.06653797399485484
+      }
+    ],
+    "peak_bucket_elements": 8388608,
+    "qasm_sha256": "19cf3ef7ef8edaefb93aa420e75e7d5c42b6a3b4d3f91ed5221b1c30fa0d3124",
+    "seconds": 13.547379189010826,
+    "diagnostic_only": true,
+    "grid_valid": false,
+    "scope": "All channels noisy; only adjacency requirement is relaxed.",
+    "evaluator_version": "94d0bfed2b6ff678c667dd24a5e57a249e01da0febc72bec4adf0d987fb9c83f"
+  }
+}

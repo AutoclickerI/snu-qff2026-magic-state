@@ -1,0 +1,1811 @@
+{
+  "stem": "/workspace/scratch/3c9006f1546a/quantumn/work/lanes/C4_DIRECT_20261028/direct_unflagged",
+  "raw": {
+    "errors": [],
+    "acceptance": 0.9999999999999994,
+    "conditional_detectors": [],
+    "infidelity": 1.1102230246251573e-16,
+    "rank": 5,
+    "six_stabilizers": [
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994,
+      0.9999999999999994
+    ],
+    "ok": true,
+    "scope": "Official exact simulator on abstract native stream; excludes adjacency validation of ideal nonlocal encoders."
+  },
+  "cx": 202,
+  "clocks": 43,
+  "T": 15,
+  "detectors": 22,
+  "abstract": true,
+  "singles": {
+    "c1": 4.883333333333328,
+    "harmful_faults": [
+      {
+        "label": "DEPOLARIZE2 XI@[28, 32] after/before native#143 srcL186",
+        "channel": 246,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XI",
+        "acceptance": 0.49999999999999994,
+        "loss_numerator": 0.25,
+        "c1_contribution": 0.016666666666666666,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 32] after/before native#143 srcL186",
+        "channel": 246,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YZ",
+        "acceptance": 0.49999999999999994,
+        "loss_numerator": 0.25,
+        "c1_contribution": 0.016666666666666666,
+        "record_flips": [
+          7,
+          10,
+          11
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[29, 34] after/before native#144 srcL187",
+        "channel": 247,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          29,
+          34
+        ],
+        "pauli": "XI",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[31, 33] after/before native#145 srcL188",
+        "channel": 248,
+        "time": 20,
+        "operation": "CX",
+        "qubits": [
+          31,
+          33
+        ],
+        "pauli": "XI",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 34] after/before native#146 srcL190",
+        "channel": 250,
+        "time": 21,
+        "operation": "CX",
+        "qubits": [
+          28,
+          34
+        ],
+        "pauli": "XX",
+        "acceptance": 0.49999999999999994,
+        "loss_numerator": 0.25,
+        "c1_contribution": 0.016666666666666666,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 30] after/before native#147 srcL191",
+        "channel": 251,
+        "time": 21,
+        "operation": "CX",
+        "qubits": [
+          29,
+          30
+        ],
+        "pauli": "XX",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[31, 32] after/before native#148 srcL192",
+        "channel": 252,
+        "time": 21,
+        "operation": "CX",
+        "qubits": [
+          31,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 0.5000000000000001,
+        "loss_numerator": 0.2500000000000001,
+        "c1_contribution": 0.016666666666666673,
+        "record_flips": []
+      },
+      {
+        "label": "X_ERROR X@[29] after/before native#177 srcL239",
+        "channel": 309,
+        "time": 25,
+        "operation": "R",
+        "qubits": [
+          29
+        ],
+        "pauli": "X",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.7500000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "X_ERROR X@[30] after/before native#178 srcL240",
+        "channel": 310,
+        "time": 25,
+        "operation": "R",
+        "qubits": [
+          30
+        ],
+        "pauli": "X",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.49999999999999983,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 X@[30] after/before native#178 srcL240",
+        "channel": 311,
+        "time": 25,
+        "operation": "R",
+        "qubits": [
+          30
+        ],
+        "pauli": "X",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.1666666666666666,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 Y@[30] after/before native#178 srcL240",
+        "channel": 311,
+        "time": 25,
+        "operation": "R",
+        "qubits": [
+          30
+        ],
+        "pauli": "Y",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.1666666666666666,
+        "record_flips": [
+          14,
+          16
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[28, 29] after/before native#184 srcL248",
+        "channel": 321,
+        "time": 26,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "IX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 29] after/before native#184 srcL248",
+        "channel": 321,
+        "time": 26,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 29] after/before native#184 srcL248",
+        "channel": 321,
+        "time": 26,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          14,
+          15
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 ZY@[28, 29] after/before native#184 srcL248",
+        "channel": 321,
+        "time": 26,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "ZY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          14,
+          15
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "IX",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          14,
+          16
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          14,
+          16
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 ZY@[28, 30] after/before native#199 srcL264",
+        "channel": 350,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "ZY",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": [
+          14,
+          16
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[29, 31] after/before native#200 srcL265",
+        "channel": 351,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 31] after/before native#200 srcL265",
+        "channel": 351,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[29, 31] after/before native#200 srcL265",
+        "channel": 351,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          15,
+          17
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[29, 31] after/before native#200 srcL265",
+        "channel": 351,
+        "time": 27,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": [
+          15,
+          17
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 32] after/before native#201 srcL267",
+        "channel": 353,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 32] after/before native#201 srcL267",
+        "channel": 353,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          14,
+          18
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 33] after/before native#202 srcL268",
+        "channel": 354,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          29,
+          33
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[29, 33] after/before native#202 srcL268",
+        "channel": 354,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          29,
+          33
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": [
+          15,
+          19
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[30, 34] after/before native#203 srcL269",
+        "channel": 355,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          30,
+          34
+        ],
+        "pauli": "XX",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[30, 34] after/before native#203 srcL269",
+        "channel": 355,
+        "time": 28,
+        "operation": "CX",
+        "qubits": [
+          30,
+          34
+        ],
+        "pauli": "YY",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": [
+          16,
+          20
+        ]
+      },
+      {
+        "label": "X_ERROR X@[29] after/before native#225 srcL309",
+        "channel": 398,
+        "time": 32,
+        "operation": "R",
+        "qubits": [
+          29
+        ],
+        "pauli": "X",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.7500000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "X_ERROR X@[30] after/before native#226 srcL310",
+        "channel": 399,
+        "time": 32,
+        "operation": "R",
+        "qubits": [
+          30
+        ],
+        "pauli": "X",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.49999999999999983,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 X@[30] after/before native#226 srcL310",
+        "channel": 400,
+        "time": 32,
+        "operation": "R",
+        "qubits": [
+          30
+        ],
+        "pauli": "X",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.1666666666666666,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE1 Y@[30] after/before native#226 srcL310",
+        "channel": 400,
+        "time": 32,
+        "operation": "R",
+        "qubits": [
+          30
+        ],
+        "pauli": "Y",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.1666666666666666,
+        "record_flips": [
+          21,
+          23
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[28, 29] after/before native#232 srcL318",
+        "channel": 410,
+        "time": 33,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "IX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 29] after/before native#232 srcL318",
+        "channel": 410,
+        "time": 33,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 29] after/before native#232 srcL318",
+        "channel": 410,
+        "time": 33,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          21,
+          22
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 ZY@[28, 29] after/before native#232 srcL318",
+        "channel": 410,
+        "time": 33,
+        "operation": "CX",
+        "qubits": [
+          28,
+          29
+        ],
+        "pauli": "ZY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          21,
+          22
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 IX@[28, 30] after/before native#233 srcL320",
+        "channel": 411,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "IX",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[28, 30] after/before native#233 srcL320",
+        "channel": 411,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 30] after/before native#233 srcL320",
+        "channel": 411,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 30] after/before native#233 srcL320",
+        "channel": 411,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          21,
+          23
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[28, 30] after/before native#233 srcL320",
+        "channel": 411,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          21,
+          23
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 ZY@[28, 30] after/before native#233 srcL320",
+        "channel": 411,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          28,
+          30
+        ],
+        "pauli": "ZY",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": [
+          21,
+          23
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XI@[29, 31] after/before native#234 srcL321",
+        "channel": 412,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "XI",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 31] after/before native#234 srcL321",
+        "channel": 412,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[29, 31] after/before native#234 srcL321",
+        "channel": 412,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.7500000000000001,
+        "c1_contribution": 0.05000000000000001,
+        "record_flips": [
+          22,
+          24
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 YZ@[29, 31] after/before native#234 srcL321",
+        "channel": 412,
+        "time": 34,
+        "operation": "CX",
+        "qubits": [
+          29,
+          31
+        ],
+        "pauli": "YZ",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": [
+          22,
+          24
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[28, 32] after/before native#235 srcL323",
+        "channel": 414,
+        "time": 35,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[28, 32] after/before native#235 srcL323",
+        "channel": 414,
+        "time": 35,
+        "operation": "CX",
+        "qubits": [
+          28,
+          32
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0000000000000002,
+        "loss_numerator": 0.5000000000000001,
+        "c1_contribution": 0.03333333333333334,
+        "record_flips": [
+          21,
+          25
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[29, 33] after/before native#236 srcL324",
+        "channel": 415,
+        "time": 35,
+        "operation": "CX",
+        "qubits": [
+          29,
+          33
+        ],
+        "pauli": "XX",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[29, 33] after/before native#236 srcL324",
+        "channel": 415,
+        "time": 35,
+        "operation": "CX",
+        "qubits": [
+          29,
+          33
+        ],
+        "pauli": "YY",
+        "acceptance": 1.0,
+        "loss_numerator": 0.49999999999999994,
+        "c1_contribution": 0.033333333333333326,
+        "record_flips": [
+          22,
+          26
+        ]
+      },
+      {
+        "label": "DEPOLARIZE2 XX@[30, 34] after/before native#237 srcL325",
+        "channel": 416,
+        "time": 35,
+        "operation": "CX",
+        "qubits": [
+          30,
+          34
+        ],
+        "pauli": "XX",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": []
+      },
+      {
+        "label": "DEPOLARIZE2 YY@[30, 34] after/before native#237 srcL325",
+        "channel": 416,
+        "time": 35,
+        "operation": "CX",
+        "qubits": [
+          30,
+          34
+        ],
+        "pauli": "YY",
+        "acceptance": 0.9999999999999997,
+        "loss_numerator": 0.49999999999999983,
+        "c1_contribution": 0.03333333333333332,
+        "record_flips": [
+          23,
+          27
+        ]
+      }
+    ],
+    "fault_components": 3836
+  },
+  "exact": {
+    "loss": 0.006530844922103654,
+    "acceptance": 0.3935079593885619,
+    "observable": 0.3883680804718016,
+    "acceptance_kernel_omission_bound": 8.489099722654159e-15,
+    "observable_kernel_omission_bound": 3.050306827541815e-14,
+    "loss_kernel_omission_interval": [
+      0.006530844922054302,
+      0.006530844922153001
+    ],
+    "bound_scope": "Analytic sparse-kernel omission only; not a floating-point roundoff certificate.",
+    "rows": [
+      {
+        "key": null,
+        "value": 0.3935079593885619,
+        "kernel_nonzero": 21,
+        "peak_bucket_elements": 688128,
+        "absolute_kernel_omission_bound": 8.489099722654159e-15,
+        "seconds": 0.1006641749991104
+      },
+      {
+        "key": [
+          "X",
+          0,
+          0
+        ],
+        "value": 0.25803714423713653,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 5.564347683586026e-15,
+        "seconds": 0.9610703929938609
+      },
+      {
+        "key": [
+          "X",
+          1,
+          0
+        ],
+        "value": 0.2693453885931204,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.404178729578803e-15,
+        "seconds": 0.06639079199521802
+      },
+      {
+        "key": [
+          "X",
+          2,
+          0
+        ],
+        "value": 0.26851611152299715,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.166519389908494e-15,
+        "seconds": 0.05685427000571508
+      },
+      {
+        "key": [
+          "X",
+          3,
+          0
+        ],
+        "value": 0.2674070470203148,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.388963264989037e-15,
+        "seconds": 0.055585535999853164
+      },
+      {
+        "key": [
+          "X",
+          4,
+          0
+        ],
+        "value": 0.26968900289814934,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 5.3442509368023246e-15,
+        "seconds": 0.05696774600073695
+      },
+      {
+        "key": [
+          "X",
+          5,
+          0
+        ],
+        "value": 0.26690940749195213,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 5.093547130925622e-15,
+        "seconds": 0.0583501380024245
+      },
+      {
+        "key": [
+          "X",
+          6,
+          0
+        ],
+        "value": 0.2669920947185483,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.204891888243245e-15,
+        "seconds": 0.05495263100601733
+      },
+      {
+        "key": [
+          "X",
+          7,
+          0
+        ],
+        "value": 0.2666678354710502,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 5.275813533400374e-15,
+        "seconds": 0.05509442399488762
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          0
+        ],
+        "value": -0.2570517374459785,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8288742680015275
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          1
+        ],
+        "value": -0.25754699749227977,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.9176839089923305
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          2
+        ],
+        "value": -0.25756189691852266,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8695793579972815
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          3
+        ],
+        "value": -0.2574969822370332,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.9460780069930479
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          4
+        ],
+        "value": -0.25756263949108366,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8367425510077737
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          5
+        ],
+        "value": -0.257496348688137,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8901721029978944
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          6
+        ],
+        "value": -0.25760958552774404,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.8000567369890632
+      },
+      {
+        "key": [
+          "Y",
+          0,
+          7
+        ],
+        "value": -0.25754603382321545,
+        "kernel_nonzero": 1032,
+        "peak_bucket_elements": 8388608,
+        "absolute_kernel_omission_bound": 4.9360114435327345e-15,
+        "seconds": 0.7574197119974997
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          0
+        ],
+        "value": -0.25839236539430255,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05593386999680661
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          1
+        ],
+        "value": -0.26890440246070935,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.056794731004629284
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          2
+        ],
+        "value": -0.2640105421605475,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05410843300342094
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          3
+        ],
+        "value": -0.2636461818288054,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.052855743997497484
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          4
+        ],
+        "value": -0.26420116932023513,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.17248948098858818
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          5
+        ],
+        "value": -0.2588413206772805,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05996856700221542
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          6
+        ],
+        "value": -0.2618435676645816,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05205197700706776
+      },
+      {
+        "key": [
+          "Y",
+          1,
+          7
+        ],
+        "value": -0.26127628421652205,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.701580464061767e-15,
+        "seconds": 0.05255209599272348
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          0
+        ],
+        "value": -0.2576301131149983,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.06023305800044909
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          1
+        ],
+        "value": -0.2632113560240958,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.05130654599633999
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          2
+        ],
+        "value": -0.2680764801998083,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.051619808000396006
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          3
+        ],
+        "value": -0.2628206655266405,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.049492307007312775
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          4
+        ],
+        "value": -0.2634372102660985,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.05452175500977319
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          5
+        ],
+        "value": -0.26095761934912803,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.04511725599877536
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          6
+        ],
+        "value": -0.25811715826324233,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.04400582499511074
+      },
+      {
+        "key": [
+          "Y",
+          2,
+          7
+        ],
+        "value": -0.26042827308486793,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.535322296075851e-15,
+        "seconds": 0.0477950800122926
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          0
+        ],
+        "value": -0.2569172210858105,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.04783024299831595
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          1
+        ],
+        "value": -0.26219482843290187,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.04650346300331876
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          2
+        ],
+        "value": -0.26216461502926114,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.046059617001446895
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          3
+        ],
+        "value": -0.26696904683464545,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.045997677007107995
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          4
+        ],
+        "value": -0.26456457842222225,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.04680324600485619
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          5
+        ],
+        "value": -0.26158235275239705,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.04660204901301768
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          6
+        ],
+        "value": -0.26161283677532965,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.05950141299399547
+      },
+      {
+        "key": [
+          "Y",
+          3,
+          7
+        ],
+        "value": -0.2586659130973407,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.612032140878042e-15,
+        "seconds": 0.05342004699923564
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          0
+        ],
+        "value": -0.25423875872157375,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.051577475998783484
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          1
+        ],
+        "value": -0.2622488195237867,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05066658099531196
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          2
+        ],
+        "value": -0.26228651065945785,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05179993399360683
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          3
+        ],
+        "value": -0.262312140180321,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05370239399780985
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          4
+        ],
+        "value": -0.26924811885646255,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05282199400244281
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          5
+        ],
+        "value": -0.26144873969623605,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.05291166600363795
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          6
+        ],
+        "value": -0.261549145471956,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.051482315990142524
+      },
+      {
+        "key": [
+          "Y",
+          4,
+          7
+        ],
+        "value": -0.2613827706126369,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.564636412314428e-15,
+        "seconds": 0.054423699009930715
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          0
+        ],
+        "value": -0.2568189887797355,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.0527741489931941
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          1
+        ],
+        "value": -0.25961596469648895,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.04972416900272947
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          2
+        ],
+        "value": -0.26253837822875226,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.05043417800334282
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          3
+        ],
+        "value": -0.2620617004208926,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.048397009988548234
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          4
+        ],
+        "value": -0.26417523283710237,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.06012524900143035
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          5
+        ],
+        "value": -0.26647156597552535,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.047709404010674916
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          6
+        ],
+        "value": -0.2617039132499419,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.04951021399756428
+      },
+      {
+        "key": [
+          "Y",
+          5,
+          7
+        ],
+        "value": -0.26122952148443224,
+        "kernel_nonzero": 17,
+        "peak_bucket_elements": 557056,
+        "absolute_kernel_omission_bound": 4.691509136439795e-15,
+        "seconds": 0.0501464830012992
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          0
+        ],
+        "value": -0.25687225618253073,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.05220516301051248
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          1
+        ],
+        "value": -0.2625496376759867,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.05566068600455765
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          2
+        ],
+        "value": -0.2596039047071054,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.05136005500389729
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          3
+        ],
+        "value": -0.262015290901058,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.1396328109985916
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          4
+        ],
+        "value": -0.2641989312078694,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.052477125005680136
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          5
+        ],
+        "value": -0.26162166004177984,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.04589905100874603
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          6
+        ],
+        "value": -0.2665541188681071,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.04792190699663479
+      },
+      {
+        "key": [
+          "Y",
+          6,
+          7
+        ],
+        "value": -0.2612137756264651,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.922431599564117e-15,
+        "seconds": 0.0567090570111759
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          0
+        ],
+        "value": -0.25711568618887454,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.05264340799476486
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          1
+        ],
+        "value": -0.26230124205656463,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.05263859099068213
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          2
+        ],
+        "value": -0.26223763148677914,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.051080299002933316
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          3
+        ],
+        "value": -0.25938035870146986,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.05141634598840028
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          4
+        ],
+        "value": -0.26435019587240016,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.04822080700250808
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          5
+        ],
+        "value": -0.26146849339847655,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.04677535200607963
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          6
+        ],
+        "value": -0.26153229196994177,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.047459102992434055
+      },
+      {
+        "key": [
+          "Y",
+          7,
+          7
+        ],
+        "value": -0.26623021264661173,
+        "kernel_nonzero": 16,
+        "peak_bucket_elements": 524288,
+        "absolute_kernel_omission_bound": 4.75653500876756e-15,
+        "seconds": 0.05159334800555371
+      }
+    ],
+    "peak_bucket_elements": 8388608,
+    "qasm_sha256": "e0bddb1e3b40233e4c350e2aaaaf958c2fe7769079537505c32f7dbad1e9cf40",
+    "seconds": 12.939393588996609,
+    "diagnostic_only": true,
+    "grid_valid": false,
+    "scope": "All channels noisy; only adjacency requirement is relaxed.",
+    "evaluator_version": "94d0bfed2b6ff678c667dd24a5e57a249e01da0febc72bec4adf0d987fb9c83f"
+  }
+}

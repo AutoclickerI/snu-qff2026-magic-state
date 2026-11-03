@@ -1,0 +1,431 @@
+{
+  "status": "OPTIMAL",
+  "depth_bound": 5,
+  "seconds": 23.894791438000002,
+  "seed": 1,
+  "A": [
+    7,
+    14,
+    13,
+    9,
+    8,
+    21,
+    15
+  ],
+  "D": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "css_generators": [
+    85,
+    102,
+    120,
+    7
+  ],
+  "scope": "Native exact one-T input module; standalone fault tolerance is not claimed.",
+  "initial_rows": {
+    "7": 9,
+    "14": 0,
+    "13": 0,
+    "9": 8,
+    "8": 0,
+    "21": 6,
+    "15": 11
+  },
+  "magic_input": 9,
+  "encoding_cx": 10,
+  "cx": 24,
+  "encoding_layers": [
+    [
+      [
+        9,
+        8
+      ],
+      [
+        15,
+        14
+      ]
+    ],
+    [
+      [
+        7,
+        8
+      ],
+      [
+        14,
+        13
+      ],
+      [
+        21,
+        15
+      ]
+    ],
+    [
+      [
+        8,
+        14
+      ],
+      [
+        15,
+        9
+      ]
+    ],
+    [
+      [
+        8,
+        9
+      ]
+    ],
+    [
+      [
+        14,
+        15
+      ],
+      [
+        9,
+        8
+      ]
+    ]
+  ],
+  "operations": [
+    {
+      "time": 0,
+      "kind": "R",
+      "qs": [
+        8
+      ]
+    },
+    {
+      "time": 0,
+      "kind": "R",
+      "qs": [
+        13
+      ]
+    },
+    {
+      "time": 0,
+      "kind": "R",
+      "qs": [
+        14
+      ]
+    },
+    {
+      "time": 0,
+      "kind": "RX",
+      "qs": [
+        7
+      ]
+    },
+    {
+      "time": 0,
+      "kind": "RX",
+      "qs": [
+        9
+      ]
+    },
+    {
+      "time": 0,
+      "kind": "RX",
+      "qs": [
+        15
+      ]
+    },
+    {
+      "time": 0,
+      "kind": "RX",
+      "qs": [
+        21
+      ]
+    },
+    {
+      "time": 1,
+      "kind": "T",
+      "qs": [
+        9
+      ]
+    },
+    {
+      "time": 2,
+      "kind": "CX",
+      "qs": [
+        9,
+        8
+      ]
+    },
+    {
+      "time": 2,
+      "kind": "CX",
+      "qs": [
+        15,
+        14
+      ]
+    },
+    {
+      "time": 3,
+      "kind": "CX",
+      "qs": [
+        7,
+        8
+      ]
+    },
+    {
+      "time": 3,
+      "kind": "CX",
+      "qs": [
+        14,
+        13
+      ]
+    },
+    {
+      "time": 3,
+      "kind": "CX",
+      "qs": [
+        21,
+        15
+      ]
+    },
+    {
+      "time": 4,
+      "kind": "CX",
+      "qs": [
+        8,
+        14
+      ]
+    },
+    {
+      "time": 4,
+      "kind": "CX",
+      "qs": [
+        15,
+        9
+      ]
+    },
+    {
+      "time": 5,
+      "kind": "CX",
+      "qs": [
+        8,
+        9
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "CX",
+      "qs": [
+        9,
+        8
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "CX",
+      "qs": [
+        14,
+        15
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "R",
+      "qs": [
+        2
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "R",
+      "qs": [
+        6
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "R",
+      "qs": [
+        10
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "R",
+      "qs": [
+        16
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "R",
+      "qs": [
+        19
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "R",
+      "qs": [
+        20
+      ]
+    },
+    {
+      "time": 6,
+      "kind": "R",
+      "qs": [
+        22
+      ]
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qs": [
+        7,
+        6
+      ]
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qs": [
+        8,
+        2
+      ]
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qs": [
+        9,
+        10
+      ]
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qs": [
+        13,
+        19
+      ]
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qs": [
+        14,
+        20
+      ]
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qs": [
+        15,
+        16
+      ]
+    },
+    {
+      "time": 7,
+      "kind": "CX",
+      "qs": [
+        21,
+        22
+      ]
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qs": [
+        2,
+        8
+      ]
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qs": [
+        6,
+        7
+      ]
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qs": [
+        10,
+        9
+      ]
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qs": [
+        16,
+        15
+      ]
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qs": [
+        19,
+        13
+      ]
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qs": [
+        20,
+        14
+      ]
+    },
+    {
+      "time": 8,
+      "kind": "CX",
+      "qs": [
+        22,
+        21
+      ]
+    }
+  ],
+  "data_ready": 9,
+  "cleared_cells": [
+    7,
+    14,
+    13,
+    9,
+    8,
+    21,
+    15
+  ],
+  "raw": {
+    "errors": [],
+    "acceptance": 1.0,
+    "conditional_detectors": [],
+    "infidelity": 0.0,
+    "rank": 1,
+    "six_stabilizers": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "ok": true
+  },
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "qasm_sha256": "cae13d3a494bcc645b4a04115846ad14ec3d3841834e391c9173f4c989e467b4",
+  "stem": "work/lanes/CATNATIVE3_20261027/encoder/depth5_seed1"
+}

@@ -1,0 +1,486 @@
+{
+  "data_qubits": [
+    6,
+    20,
+    19,
+    10,
+    2,
+    22,
+    16
+  ],
+  "source": {
+    "a_index": 2,
+    "a_module": "work/lanes/PREFIX2_20261027/measured_resource_m00_s2.json",
+    "assigned_helper_records": [
+      {
+        "bit": 379,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 35,
+        "time": 17
+      },
+      {
+        "bit": 380,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 34,
+        "time": 33
+      },
+      {
+        "bit": 381,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 33,
+        "time": 34
+      },
+      {
+        "bit": 382,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 32,
+        "time": 35
+      },
+      {
+        "bit": 383,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 24,
+        "time": 39
+      },
+      {
+        "bit": 384,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 0,
+        "time": 41
+      },
+      {
+        "bit": 385,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 1,
+        "time": 42
+      },
+      {
+        "bit": 386,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 13,
+        "time": 46
+      },
+      {
+        "bit": 387,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 27,
+        "time": 46
+      },
+      {
+        "bit": 388,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 29,
+        "time": 46
+      },
+      {
+        "bit": 389,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 23,
+        "time": 47
+      },
+      {
+        "bit": 390,
+        "kind": "MX",
+        "module": "ABC",
+        "qubit": 9,
+        "time": 49
+      }
+    ],
+    "bc_index": 0,
+    "bc_module": "work/lanes/PREFIX2_20261027/measured_resource_m00_s2.json",
+    "extra_record_checks": [
+      {
+        "bits": [
+          386,
+          390,
+          392,
+          393,
+          394,
+          395
+        ],
+        "expectation": 0.9999999999999997,
+        "reference": 0
+      },
+      {
+        "bits": [
+          384,
+          385,
+          386,
+          391,
+          393,
+          394,
+          396
+        ],
+        "expectation": 0.9999999999999997,
+        "reference": 0
+      },
+      {
+        "bits": [
+          384,
+          385,
+          391,
+          392,
+          394,
+          397
+        ],
+        "expectation": 0.9999999999999997,
+        "reference": 0
+      },
+      {
+        "bits": [
+          379,
+          387,
+          390,
+          399,
+          400,
+          401,
+          402
+        ],
+        "expectation": 0.9999999999999997,
+        "reference": 0
+      },
+      {
+        "bits": [
+          379,
+          380,
+          381,
+          382,
+          383,
+          387,
+          398,
+          400,
+          401,
+          403
+        ],
+        "expectation": 0.9999999999999997,
+        "reference": 0
+      },
+      {
+        "bits": [
+          379,
+          383,
+          388,
+          389,
+          398,
+          399,
+          401,
+          404
+        ],
+        "expectation": 0.9999999999999997,
+        "reference": 0
+      }
+    ],
+    "full_native_assembly": true,
+    "joint_resource": true,
+    "noise_scope": "Full source, preparation, measurement and idle noise; no idealized resources.",
+    "omitted_free_cx": null,
+    "raw": {
+      "acceptance": 0.9999999999999997,
+      "conditional_detectors": [],
+      "errors": [],
+      "infidelity": 0.0,
+      "ok": true,
+      "rank": 5,
+      "six_stabilizers": [
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997,
+        0.9999999999999997
+      ]
+    },
+    "roles": {
+      "A": [
+        7,
+        14,
+        18,
+        4,
+        8,
+        21,
+        15
+      ],
+      "B": [
+        12,
+        26,
+        25,
+        11,
+        3,
+        28,
+        17
+      ],
+      "C": [
+        13,
+        27,
+        24,
+        5,
+        9,
+        29,
+        23
+      ],
+      "D": [
+        6,
+        20,
+        19,
+        10,
+        2,
+        22,
+        16
+      ]
+    },
+    "source_prefix": "/workspace/scratch/bb05e419457d/quantumn/work/lanes/NATIVE2_20261027/boundary/source_prefix_d828869d5031c029_d6_20_19_10_2_22_16",
+    "square_mask": 0,
+    "terminal_operations": [
+      [
+        "CX",
+        [
+          6,
+          7
+        ],
+        0,
+        null
+      ],
+      [
+        "CX",
+        [
+          20,
+          14
+        ],
+        0,
+        null
+      ],
+      [
+        "CX",
+        [
+          19,
+          18
+        ],
+        0,
+        null
+      ],
+      [
+        "CX",
+        [
+          10,
+          4
+        ],
+        0,
+        null
+      ],
+      [
+        "CX",
+        [
+          2,
+          8
+        ],
+        0,
+        null
+      ],
+      [
+        "CX",
+        [
+          22,
+          21
+        ],
+        0,
+        null
+      ],
+      [
+        "CX",
+        [
+          16,
+          15
+        ],
+        0,
+        null
+      ],
+      [
+        "CX",
+        [
+          12,
+          6
+        ],
+        1,
+        null
+      ],
+      [
+        "CX",
+        [
+          26,
+          20
+        ],
+        1,
+        null
+      ],
+      [
+        "CX",
+        [
+          25,
+          19
+        ],
+        1,
+        null
+      ],
+      [
+        "CX",
+        [
+          11,
+          10
+        ],
+        1,
+        null
+      ],
+      [
+        "CX",
+        [
+          3,
+          2
+        ],
+        1,
+        null
+      ],
+      [
+        "CX",
+        [
+          28,
+          22
+        ],
+        1,
+        null
+      ],
+      [
+        "CX",
+        [
+          17,
+          16
+        ],
+        1,
+        null
+      ],
+      [
+        "M",
+        [
+          7
+        ],
+        2,
+        0
+      ],
+      [
+        "M",
+        [
+          14
+        ],
+        2,
+        1
+      ],
+      [
+        "M",
+        [
+          18
+        ],
+        2,
+        2
+      ],
+      [
+        "M",
+        [
+          4
+        ],
+        2,
+        3
+      ],
+      [
+        "M",
+        [
+          8
+        ],
+        2,
+        4
+      ],
+      [
+        "M",
+        [
+          21
+        ],
+        2,
+        5
+      ],
+      [
+        "M",
+        [
+          15
+        ],
+        2,
+        6
+      ],
+      [
+        "MX",
+        [
+          12
+        ],
+        2,
+        7
+      ],
+      [
+        "MX",
+        [
+          26
+        ],
+        2,
+        8
+      ],
+      [
+        "MX",
+        [
+          25
+        ],
+        2,
+        9
+      ],
+      [
+        "MX",
+        [
+          11
+        ],
+        2,
+        10
+      ],
+      [
+        "MX",
+        [
+          3
+        ],
+        2,
+        11
+      ],
+      [
+        "MX",
+        [
+          28
+        ],
+        2,
+        12
+      ],
+      [
+        "MX",
+        [
+          17
+        ],
+        2,
+        13
+      ]
+    ],
+    "terminal_start": 50
+  }
+}
