@@ -98,6 +98,13 @@ below **2.19 × 10⁻⁵** ([`docs/FINDINGS.md`](docs/FINDINGS.md), "Bounds").
 our run of the official judge in [`work/receipts/`](work/receipts/); those runs match the server bit for bit. Earlier
 circuits are in git history. [`docs/SOTA.md`](docs/SOTA.md) lists the later steps.
 
+After the race stopped, a last research round on Oct 27–28 (the lanes in `work/lanes/` whose names end in `20261027`
+or `20261028`) tried new architectures. Its best circuit has an exact expected 1 − F of 3.567 × 10⁻⁵, 0.6% below
+v37j. That gain could not have changed our rank, and the circuit was never submitted. Its summary is in
+[`work/lanes/CONTINUE_20261028/REPORT.md`](work/lanes/CONTINUE_20261028/REPORT.md). That round's archive is
+incomplete: 594 of its 885 files were lost before upload, so some files the report links to are missing
+([`PUBLICATION.md`](work/lanes/CONTINUE_20261028/PUBLICATION.md) has the details).
+
 The work used these tools:
 
 - **An exact evaluator** ([`work/tools/qtools`](work/tools/qtools)). It computes a circuit's expected 1 − F to all
@@ -109,8 +116,8 @@ The work used these tools:
 - **AI agents.** AI coding agents (a Claude Code orchestrator, Codex lanes and Claude subagents) did most of the
   work, directed by Jihoon. Outside reviews in [`work/lanes/MAIN/spec/`](work/lanes/MAIN/spec/) contributed key
   ideas, including the 2.19 × 10⁻⁵ bound. The contest allowed AI tools.
-- **Working notes.** [`AGENTS.md`](AGENTS.md) and [`docs/`](docs/) are the agents' notes, frozen as of Oct 27. They
-  are dense and assume the context above, and the "current best" they name predates the final board.
+- **Working notes.** [`AGENTS.md`](AGENTS.md) and [`docs/`](docs/) are the agents' notes, frozen as of Oct 28. They
+  are dense and assume the context above, and the leader score they quote is a snapshot from before the final board.
 
 ## Check the score yourself
 
